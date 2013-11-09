@@ -7,7 +7,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{c1ddf2bd-48bc-4a57-a27b-ed4e8ecfef62}</ProjectGuid>
     <ArchitectureToolsVersion>2.0.0.0</ArchitectureToolsVersion>
-    <Name>Modelisation_projetPOO</Name>
+    <Name>Modelisation_SmallWorld</Name>
     <RootNamespace>Modelisation_projetPOO</RootNamespace>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
