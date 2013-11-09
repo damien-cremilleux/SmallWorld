@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<useCaseModelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" dslVersion="1.0.0.0" Id="b21a60a8-a61a-4fe6-8a5c-950b9ee7d4a0" name="UMLUseCaseDiagram1" linkedPackageId="883fff78-3311-4bfa-af1f-0f882bd8a65e" xmlns="http://schemas.microsoft.com/dsltools/UseCaseModel">
+  <profileInstances>
+    <packageHasProfileInstances Id="bde06f6c-93b1-4993-9c69-ab321e1edc54">
+      <profileInstance Id="1936cb54-fa52-4dcf-b20f-91bfe8e3650d" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="970cf8de-f2f9-4796-a979-6563ee774070">
+      <profileInstance Id="5ed0a0f7-ca9f-47f6-b1f8-7b4e1d9b97ff" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <useCaseModelRootHasTypes>
+      <actor Id="b222777a-63e1-4a86-88f6-e0632c7407ba" name="Joueur" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="f4105d51-73f8-4739-9a32-7494efe95407" />
+        <targetEnds>
+          <association Id="4a7af983-9dfe-47b8-b352-b803ef0c7184" isDerived="false" sourceEndRoleName="Joueur" targetEndRoleName="Créer une nouvelle partie" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="250a6e58-f22c-42be-a9c9-4065b39eece8" LastKnownName="Créer une nouvelle partie" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="dda0885a-cde3-46bb-a12b-5cf7c8e54496" name="Joueur" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="6537ec47-acad-492c-b487-231ba63dbcad" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="740b94d0-a654-41d9-835c-13e1ba3418a4" name="Créer une nouvelle partie" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="bc908cd4-59cd-49db-864f-0b32a9266233" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="5037ba82-e408-41b4-84ad-22dd3ebcd521" />
+          </association>
+          <association Id="2cfbecc6-4b09-460d-89c5-4a3d7ad69e3c" isDerived="false" sourceEndRoleName="Joueur" targetEndRoleName="Charger une partie sauvergardée" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="ac6ae89b-12ca-422b-b004-11863dd79385" LastKnownName="Charger une partie sauvergardée" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="290e6122-1655-4cc0-924d-238a86637e5b" name="Joueur" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="d340f2d5-3987-41b6-999e-35a104463010" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="dd0ab48c-a57b-4f67-9ad8-e4f9829c6793" name="Charger une partie sauvergardée" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="ef8dba3d-0e21-45e1-b8b3-faea37fbc5fe" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="3a1d3636-0fdf-402a-8598-61194ae6a245" />
+          </association>
+        </targetEnds>
+      </actor>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <subsystem Id="6aff0bb9-869e-41c5-8ec0-1ddd1a0f248f" name="Jeu SmallWorld" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="1ece64e3-ea4f-461c-b119-a351e28a6855" />
+      </subsystem>
+    </useCaseModelRootHasTypes>
+    <packageHasNamedElement>
+      <useCase Id="250a6e58-f22c-42be-a9c9-4065b39eece8" name="Créer une nouvelle partie" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="99570bf1-bbbf-4ca1-ba94-b7e384d2389d" />
+        <subjects>
+          <subsystemMoniker Id="6aff0bb9-869e-41c5-8ec0-1ddd1a0f248f" LastKnownName="Jeu SmallWorld" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="ac6ae89b-12ca-422b-b004-11863dd79385" name="Charger une partie sauvergardée" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="dc744c8c-65d9-4831-89b2-d77a5efc4695" />
+        <additions>
+          <include Id="4b2bcd7e-5cfb-4d99-bdd8-ea685dbea126">
+            <useCaseMoniker Id="4294ca9d-7985-490e-b258-2e6ebc84af30" LastKnownName="Choisir la partie à restaurer" />
+            <elementDefinition Id="49925e22-5998-4494-996e-4b8ef0f8d7cd" />
+          </include>
+        </additions>
+        <subjects>
+          <subsystemMoniker Id="6aff0bb9-869e-41c5-8ec0-1ddd1a0f248f" LastKnownName="Jeu SmallWorld" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="4294ca9d-7985-490e-b258-2e6ebc84af30" name="Choisir la partie à restaurer" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="d7a30272-33bf-4b6f-a744-725fa2054834" />
+        <subjects>
+          <subsystemMoniker Id="6aff0bb9-869e-41c5-8ec0-1ddd1a0f248f" LastKnownName="Jeu SmallWorld" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+  </packagedElements>
+  <package Id="883fff78-3311-4bfa-af1f-0f882bd8a65e" name="Modelisation_projetPOO">
+    <elementDefinition Id="1ef72cda-9600-40a4-a1c1-afeec437006f" />
+  </package>
+</useCaseModelRoot>

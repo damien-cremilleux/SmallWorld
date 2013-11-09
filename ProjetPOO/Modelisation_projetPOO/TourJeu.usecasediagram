@@ -1,0 +1,154 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<useCaseModelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" dslVersion="1.0.0.0" Id="9c6b4c0c-a316-40ea-8ad7-f9e399f17483" name="UMLUseCaseDiagram3" linkedPackageId="c0258aec-620e-460d-abbe-90b551b4486c" xmlns="http://schemas.microsoft.com/dsltools/UseCaseModel">
+  <profileInstances>
+    <packageHasProfileInstances Id="90393a4d-8387-43dc-bdda-9c0d68695973">
+      <profileInstance Id="e81ef716-2b74-4811-bd40-4bbdb7843cca" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="35ed1653-0480-4551-867a-5c5a2c44fd6a">
+      <profileInstance Id="bba399da-d2c1-49f0-90d3-982f6866f816" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <useCaseModelRootHasTypes>
+      <actor Id="c0837efc-bcc7-4f95-bfed-c9c3357f63dc" name="Joueur" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="52e336f3-7891-41f8-9bd6-a544a3a7bce4" />
+        <targetEnds>
+          <association Id="e436b7ec-8113-49e5-ba92-6393c9ab7711" isDerived="false" sourceEndRoleName="Joueur" targetEndRoleName="déplacer unité" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="3efcd62a-b3e7-4946-91bf-dcf5122a324a" LastKnownName="déplacer unité" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="2a7afb26-e041-4e3c-b317-112e8936fdd2" name="Joueur" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="3c5219bc-1d21-4586-98be-26a9a2d14b83" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="b7ffd177-2c6d-4856-b48d-64b0286809b5" name="déplacer unité" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="33b322b0-02ab-4dc0-8fd5-d425b6a7ebbb" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="a7ee3961-a4c7-4be1-a491-71fea94b4140" />
+          </association>
+          <association Id="9e1f475d-73de-4141-a9b6-561d7f33f4c6" isDerived="false" sourceEndRoleName="Joueur" targetEndRoleName="Passer son tour à l'unité" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="cbb277f0-b921-4fe6-b8e1-2724569781f4" LastKnownName="Passer son tour à l'unité" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="b21c6125-913d-4eef-a5b0-31ee79e9f8b4" name="Joueur" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="4792bd2c-4886-4d0b-bde9-9e4eb5ff3f2a" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="c89deb7a-cd7a-43b7-9fe9-4212115510f5" name="Passer son tour à l'unité" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="f648a081-6374-46b0-b5e4-ca3c02554d08" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="0b51ff67-073a-4957-bd28-69d8fc26a10e" />
+          </association>
+          <association Id="08754380-95f3-46dd-855a-925419fbc36b" isDerived="false" sourceEndRoleName="Joueur" targetEndRoleName="engager combat" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="3a797611-1387-403f-b07d-5a35941412a0" LastKnownName="engager combat" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="2b863ce8-27cc-4ae0-bb18-69f2b729d69a" name="Joueur" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="74babbbb-22e5-4645-97b6-110652ab9eda" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="c9829417-1de9-4ee8-97e5-49c0757c8fa3" name="engager combat" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="0636ecd1-443f-42b8-bca0-11004b17ed97" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="e95202ee-fd0d-4db1-83d8-1922076a68a0" />
+          </association>
+          <association Id="3796be25-1905-4458-970b-42713a3976ca" isDerived="false" sourceEndRoleName="Joueur" targetEndRoleName="valider son tour" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="559546d2-9226-4558-b56b-b60125944716" LastKnownName="valider son tour" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="984dbdd4-f45a-464f-9bcd-19d1f7f11928" name="Joueur" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="e867c0fb-d92d-4150-92e7-274ec7bd394d" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="c2c56c25-62ef-47c8-ba8e-61cf9b159318" name="valider son tour" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="db340af7-6471-45b7-a3d4-fcf26e022198" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="a65344f8-0de7-4adf-9db5-21bf3123d2f1" />
+          </association>
+          <association Id="94e76b74-ebc5-485d-8ffa-8dc91ef6fe44" isDerived="false" sourceEndRoleName="Joueur" targetEndRoleName="sauvegarder partie" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="1735d305-0ef1-42ab-bb18-6c886170ef01" LastKnownName="sauvegarder partie" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="7de2391d-1a4c-42ca-a2a5-fc34f4e3558e" name="Joueur" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="a4d0b509-0cc7-4fd9-8972-fd63af8acbc5" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="560e2943-d328-44fc-a71d-6129e29863b4" name="sauvegarder partie" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="0e80a2a3-cbe1-4f4d-933a-80aff685d941" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="1f435033-d8f1-48e0-8a82-c727694a5d38" />
+          </association>
+        </targetEnds>
+      </actor>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <subsystem Id="3facd660-7b66-4404-807e-36b1d0f655ca" name="Tour de jeu" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="2ec34e1c-3711-48b3-bbd8-b2ac345868ad" />
+      </subsystem>
+    </useCaseModelRootHasTypes>
+    <packageHasNamedElement>
+      <useCase Id="3efcd62a-b3e7-4946-91bf-dcf5122a324a" name="déplacer unité" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="9ce507e3-490c-4a3f-9b3f-338a2b588e48" />
+        <subjects>
+          <subsystemMoniker Id="3facd660-7b66-4404-807e-36b1d0f655ca" LastKnownName="Tour de jeu" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="cbb277f0-b921-4fe6-b8e1-2724569781f4" name="Passer son tour à l'unité" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="381c47e4-88e0-4d0c-8699-6b1232f3d69c" />
+        <subjects>
+          <subsystemMoniker Id="3facd660-7b66-4404-807e-36b1d0f655ca" LastKnownName="Tour de jeu" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="3a797611-1387-403f-b07d-5a35941412a0" name="engager combat" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="5c6dc71a-5856-4c4f-ba5b-7bdce4134532" />
+        <subjects>
+          <subsystemMoniker Id="3facd660-7b66-4404-807e-36b1d0f655ca" LastKnownName="Tour de jeu" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="559546d2-9226-4558-b56b-b60125944716" name="valider son tour" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="691b8789-7141-49be-8831-8219f1d5fc66" />
+        <subjects>
+          <subsystemMoniker Id="3facd660-7b66-4404-807e-36b1d0f655ca" LastKnownName="Tour de jeu" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="1735d305-0ef1-42ab-bb18-6c886170ef01" name="sauvegarder partie" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="d68e0246-38d8-461f-8274-11225b2e87d5" />
+        <subjects>
+          <subsystemMoniker Id="3facd660-7b66-4404-807e-36b1d0f655ca" LastKnownName="Tour de jeu" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+  </packagedElements>
+  <package Id="c0258aec-620e-460d-abbe-90b551b4486c" name="Modelisation_projetPOO">
+    <elementDefinition Id="1ef72cda-9600-40a4-a1c1-afeec437006f" />
+  </package>
+</useCaseModelRoot>

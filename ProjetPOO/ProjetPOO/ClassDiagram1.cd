@@ -1,0 +1,171 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="NameAndType">
+  <Comment CommentText="Fabrique concrète pour la génération des peuples">
+    <Position X="5.909" Y="9.382" Height="0.75" Width="1.7" />
+  </Comment>
+  <Comment CommentText="ajouter FabriqueUnite&#xD;&#xA;creer peuple avant joueur">
+    <Position X="6.275" Y="10.608" Height="0.75" Width="1.7" />
+  </Comment>
+  <Interface Name="ProjetPOO.FabriqueCase">
+    <Position X="6" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>FabriqueCase.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="ProjetPOO.Case">
+    <Position X="8.75" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Case.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="ProjetPOO.Foret">
+    <Position X="7.75" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>foret.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="ProjetPOO.Montagne">
+    <Position X="13.25" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>montagne.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="ProjetPOO.Desert">
+    <Position X="11.5" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>desert.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="ProjetPOO.Eau">
+    <Position X="15" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>eau.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="ProjetPOO.Plaine">
+    <Position X="9.75" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>plaine.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="ProjetPOO.StrategieCarte">
+    <Position X="8.5" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Carte.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="ProjetPOO.FabriquePeuple">
+    <Position X="8.25" Y="9.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAJAAAAAAAAAAAAAAAAAAAAAAgA=</HashCode>
+      <FileName>Fabrique.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="ProjetPOO.Peuple">
+    <Position X="11.75" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Peuple.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="ProjetPOO.StragegieDemo">
+    <Position X="6" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Demo.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="ProjetPOO.StrategiePetite">
+    <Position X="8.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Petite.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="ProjetPOO.StrategieNormale">
+    <Position X="11" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Normale.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="ProjetPOO.Carte">
+    <Position X="13.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAA=</HashCode>
+      <FileName>Carte.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="ProjetPOO.MonteurPartie">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MonteurCarte.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="ProjetPOO.Unite">
+    <Position X="7.5" Y="11.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAA=</HashCode>
+      <FileName>Unite.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="ProjetPOO.Sauvegarder">
+    <Position X="7.25" Y="15.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAA=</HashCode>
+      <FileName>Sauvegarder.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="ProjetPOO.PeupleGaulois">
+    <Position X="9.5" Y="11.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>PeupleGaulois.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="ProjetPOO.PeupleNain">
+    <Position X="14" Y="11.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>PeupleNain.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="ProjetPOO.PeupleViking">
+    <Position X="11.75" Y="11.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>PeupleViking.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="ProjetPOO.Joueur">
+    <Position X="8.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Joueur.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="ProjetPOO.Partie">
+    <Position X="8.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Partie.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="ProjetPOO.FabriqueJeu">
+    <Position X="5.25" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAACAAAgAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>FabriqueJeu.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
