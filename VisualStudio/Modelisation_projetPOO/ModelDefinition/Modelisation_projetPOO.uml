@@ -1,13 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner"
+<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm9="http://schemas.microsoft.com/dsltools/UseCaseModel"
   dslVersion="1.0.0.0"
   Id="1ef72cda-9600-40a4-a1c1-afeec437006f"
   name="Modelisation_projetPOO" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
   <ownedCommentsInternal>
     <comment
       Id="a2e8efa6-fad9-460a-8d7a-fad76b6ab660">
-      <body>Le joueur 1 est plus spécialisé que le joueur 2, il choisit la taille de la carte et lance la partie
+      <body>Le joueur A est plus spécialisé que le joueur B, il choisit la taille de la carte et lance la partie
 </body>
+    </comment>
+    <comment
+      Id="a6c8db03-ee36-45d2-b851-2d96f4009545">
+      <body>Inclure les cas d'erreur (ex : déplacement impossible)</body>
     </comment>
   </ownedCommentsInternal>
   <profileInstances>
@@ -161,7 +165,7 @@
     <packageHasNamedElement>
       <actor
         Id="42893471-d4d3-4b90-b78b-0cbdc2f11f67"
-        name="Joueur2"
+        name="Joueur"
         isAbstract="false"
         isLeaf="false">
         <targetEnds>
@@ -174,7 +178,7 @@
             isAbstract="false">
             <useCaseMoniker
               Id="03a822fc-f0f7-46cb-8dcf-646837d068f9"
-              LastKnownName="Choisir peuple"
+              LastKnownName="Sélectionner un peuple"
               LastKnownLocation="Modelisation_projetPOO.uml" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
@@ -213,7 +217,7 @@
             isAbstract="false">
             <useCaseMoniker
               Id="bd29e867-5431-4b0f-bcc8-cb5be5b4acba"
-              LastKnownName="Choisir nom du joueur"
+              LastKnownName="Choisir son nom de joueur"
               LastKnownLocation="Modelisation_projetPOO.uml" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
@@ -249,7 +253,7 @@
     <packageHasNamedElement>
       <subsystem
         Id="4cb382a9-06b6-4169-97b7-3f434044a2e9"
-        name="Création partie"
+        name="Jeu SmallWorld"
         isAbstract="false"
         isLeaf="false"
         isActiveClass="false" />
@@ -257,7 +261,7 @@
     <packageHasNamedElement>
       <useCase
         Id="03a822fc-f0f7-46cb-8dcf-646837d068f9"
-        name="Choisir peuple"
+        name="Sélectionner un peuple"
         isAbstract="false"
         isLeaf="false">
         <extendedCases>
@@ -265,7 +269,7 @@
             Id="52aa3ac5-9373-4955-9a1a-9a714ca2a550">
             <useCaseMoniker
               Id="eb1ca754-50a9-4008-acca-3fe0a2a1b83f"
-              LastKnownName="choisir Gaulois"
+              LastKnownName="Choisir Gaulois"
               LastKnownLocation="Modelisation_projetPOO.uml" />
           </extend>
           <extend
@@ -279,14 +283,14 @@
             Id="d962c7b5-02c9-4c57-a089-0c6183d65c9a">
             <useCaseMoniker
               Id="84155e9b-81d2-42cb-9b86-ac1c999acd44"
-              LastKnownName="choisir Nain"
+              LastKnownName="Choisir Nain"
               LastKnownLocation="Modelisation_projetPOO.uml" />
           </extend>
         </extendedCases>
         <subjects>
           <subsystemMoniker
             Id="4cb382a9-06b6-4169-97b7-3f434044a2e9"
-            LastKnownName="Création partie"
+            LastKnownName="Jeu SmallWorld"
             LastKnownLocation="Modelisation_projetPOO.uml" />
         </subjects>
       </useCase>
@@ -302,28 +306,28 @@
             Id="219e0480-179b-4658-b4bf-d3976633bff6">
             <useCaseMoniker
               Id="bb895bea-0f9e-4eff-8a25-b89d52d6a5da"
-              LastKnownName="demo"
+              LastKnownName="Démonstration"
               LastKnownLocation="Modelisation_projetPOO.uml" />
           </extend>
           <extend
             Id="944da32b-2e1a-4292-bf62-c554ee20fe89">
             <useCaseMoniker
               Id="5078bb96-4553-44d7-8fa9-40a6bbb01597"
-              LastKnownName="petite"
+              LastKnownName="Petite"
               LastKnownLocation="Modelisation_projetPOO.uml" />
           </extend>
           <extend
             Id="f8884368-3a16-4918-97da-9f60abc37aaa">
             <useCaseMoniker
               Id="8dee6f18-e14c-4585-894e-2895d5c5461a"
-              LastKnownName="normale"
+              LastKnownName="Normale"
               LastKnownLocation="Modelisation_projetPOO.uml" />
           </extend>
         </extendedCases>
         <subjects>
           <subsystemMoniker
             Id="4cb382a9-06b6-4169-97b7-3f434044a2e9"
-            LastKnownName="Création partie"
+            LastKnownName="Jeu SmallWorld"
             LastKnownLocation="Modelisation_projetPOO.uml" />
         </subjects>
       </useCase>
@@ -344,7 +348,7 @@
             isAbstract="false">
             <useCaseMoniker
               Id="9ce507e3-490c-4a3f-9b3f-338a2b588e48"
-              LastKnownName="déplacer unité"
+              LastKnownName="Déplacer une unité"
               LastKnownLocation="Modelisation_projetPOO.uml" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
@@ -422,7 +426,7 @@
             isAbstract="false">
             <useCaseMoniker
               Id="5c6dc71a-5856-4c4f-ba5b-7bdce4134532"
-              LastKnownName="engager combat"
+              LastKnownName="Engager un combat"
               LastKnownLocation="Modelisation_projetPOO.uml" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
@@ -461,7 +465,7 @@
             isAbstract="false">
             <useCaseMoniker
               Id="691b8789-7141-49be-8831-8219f1d5fc66"
-              LastKnownName="valider son tour"
+              LastKnownName="Valider son tour"
               LastKnownLocation="Modelisation_projetPOO.uml" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
@@ -500,7 +504,7 @@
             isAbstract="false">
             <useCaseMoniker
               Id="d68e0246-38d8-461f-8274-11225b2e87d5"
-              LastKnownName="sauvegarder partie"
+              LastKnownName="Sauvegarder la partie"
               LastKnownLocation="Modelisation_projetPOO.uml" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
@@ -530,13 +534,52 @@
               </associationHasOwnedEnds>
             </relationshipOwnedElementsInternal>
           </association>
+          <association
+            Id="e5492960-45fb-45f9-9469-52b71ab1a036"
+            isDerived="false"
+            sourceEndRoleName="Joueur"
+            targetEndRoleName="Annuler le dernier coup"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="b1083ac4-74dd-4c83-9e72-2060d3406a38"
+              LastKnownName="Annuler le dernier déplacement"
+              LastKnownLocation="Modelisation_projetPOO.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="d70b0665-768a-4682-9c0f-3e8d2e54de12"
+                  name="Joueur"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="d86f3b53-04f2-4039-9a9e-465ed44e7b6b"
+                  name="Annuler le dernier coup"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
         </targetEnds>
       </actor>
     </packageHasNamedElement>
     <packageHasNamedElement>
       <subsystem
         Id="2ec34e1c-3711-48b3-bbd8-b2ac345868ad"
-        name="Tour de jeu"
+        name="Jeu SmallWorld"
         isAbstract="false"
         isLeaf="false"
         isActiveClass="false" />
@@ -544,13 +587,29 @@
     <packageHasNamedElement>
       <useCase
         Id="9ce507e3-490c-4a3f-9b3f-338a2b588e48"
-        name="déplacer unité"
+        name="Déplacer une unité"
         isAbstract="false"
         isLeaf="false">
+        <additions>
+          <include
+            Id="29f337aa-042d-44bd-a104-9e05622fb111">
+            <useCaseMoniker
+              Id="b737fedd-e52f-44a9-b3bd-d5e31b2d3507"
+              LastKnownName="Choisir l'unité à déplacer"
+              LastKnownLocation="Modelisation_projetPOO.uml" />
+          </include>
+          <include
+            Id="64664686-50ea-4c37-8ba6-61da282314c2">
+            <useCaseMoniker
+              Id="17b50141-e991-4986-a133-e674f38413e4"
+              LastKnownName="Choisir case d'arrivée"
+              LastKnownLocation="Modelisation_projetPOO.uml" />
+          </include>
+        </additions>
         <subjects>
           <subsystemMoniker
             Id="2ec34e1c-3711-48b3-bbd8-b2ac345868ad"
-            LastKnownName="Tour de jeu"
+            LastKnownName="Jeu SmallWorld"
             LastKnownLocation="Modelisation_projetPOO.uml" />
         </subjects>
       </useCase>
@@ -564,7 +623,7 @@
         <subjects>
           <subsystemMoniker
             Id="2ec34e1c-3711-48b3-bbd8-b2ac345868ad"
-            LastKnownName="Tour de jeu"
+            LastKnownName="Jeu SmallWorld"
             LastKnownLocation="Modelisation_projetPOO.uml" />
         </subjects>
       </useCase>
@@ -572,13 +631,29 @@
     <packageHasNamedElement>
       <useCase
         Id="5c6dc71a-5856-4c4f-ba5b-7bdce4134532"
-        name="engager combat"
+        name="Engager un combat"
         isAbstract="false"
         isLeaf="false">
+        <additions>
+          <include
+            Id="649948f2-4c2a-4104-988d-ac5478476612">
+            <useCaseMoniker
+              Id="8dbf640c-ee57-4234-86aa-2d73f1da9746"
+              LastKnownName="Choisir l'unité  qui attaque"
+              LastKnownLocation="Modelisation_projetPOO.uml" />
+          </include>
+          <include
+            Id="ad795a7a-e337-47f8-8b8f-046ca93e87bc">
+            <useCaseMoniker
+              Id="c6cad01c-e721-4666-b1b0-1cca2298cf18"
+              LastKnownName="Choisir la case à attaquer"
+              LastKnownLocation="Modelisation_projetPOO.uml" />
+          </include>
+        </additions>
         <subjects>
           <subsystemMoniker
             Id="2ec34e1c-3711-48b3-bbd8-b2ac345868ad"
-            LastKnownName="Tour de jeu"
+            LastKnownName="Jeu SmallWorld"
             LastKnownLocation="Modelisation_projetPOO.uml" />
         </subjects>
       </useCase>
@@ -586,13 +661,13 @@
     <packageHasNamedElement>
       <useCase
         Id="691b8789-7141-49be-8831-8219f1d5fc66"
-        name="valider son tour"
+        name="Valider son tour"
         isAbstract="false"
         isLeaf="false">
         <subjects>
           <subsystemMoniker
             Id="2ec34e1c-3711-48b3-bbd8-b2ac345868ad"
-            LastKnownName="Tour de jeu"
+            LastKnownName="Jeu SmallWorld"
             LastKnownLocation="Modelisation_projetPOO.uml" />
         </subjects>
       </useCase>
@@ -600,13 +675,13 @@
     <packageHasNamedElement>
       <useCase
         Id="89784553-7082-499a-9237-1ecd774b77ec"
-        name="Lancer partie"
+        name="Lancer la partie"
         isAbstract="false"
         isLeaf="false">
         <subjects>
           <subsystemMoniker
             Id="4cb382a9-06b6-4169-97b7-3f434044a2e9"
-            LastKnownName="Création partie"
+            LastKnownName="Jeu SmallWorld"
             LastKnownLocation="Modelisation_projetPOO.uml" />
         </subjects>
       </useCase>
@@ -614,13 +689,13 @@
     <packageHasNamedElement>
       <useCase
         Id="eb1ca754-50a9-4008-acca-3fe0a2a1b83f"
-        name="choisir Gaulois"
+        name="Choisir Gaulois"
         isAbstract="false"
         isLeaf="false">
         <subjects>
           <subsystemMoniker
             Id="4cb382a9-06b6-4169-97b7-3f434044a2e9"
-            LastKnownName="Création partie"
+            LastKnownName="Jeu SmallWorld"
             LastKnownLocation="Modelisation_projetPOO.uml" />
         </subjects>
       </useCase>
@@ -634,7 +709,7 @@
         <subjects>
           <subsystemMoniker
             Id="4cb382a9-06b6-4169-97b7-3f434044a2e9"
-            LastKnownName="Création partie"
+            LastKnownName="Jeu SmallWorld"
             LastKnownLocation="Modelisation_projetPOO.uml" />
         </subjects>
       </useCase>
@@ -642,13 +717,13 @@
     <packageHasNamedElement>
       <useCase
         Id="84155e9b-81d2-42cb-9b86-ac1c999acd44"
-        name="choisir Nain"
+        name="Choisir Nain"
         isAbstract="false"
         isLeaf="false">
         <subjects>
           <subsystemMoniker
             Id="4cb382a9-06b6-4169-97b7-3f434044a2e9"
-            LastKnownName="Création partie"
+            LastKnownName="Jeu SmallWorld"
             LastKnownLocation="Modelisation_projetPOO.uml" />
         </subjects>
       </useCase>
@@ -656,13 +731,13 @@
     <packageHasNamedElement>
       <useCase
         Id="bb895bea-0f9e-4eff-8a25-b89d52d6a5da"
-        name="demo"
+        name="Démonstration"
         isAbstract="false"
         isLeaf="false">
         <subjects>
           <subsystemMoniker
             Id="4cb382a9-06b6-4169-97b7-3f434044a2e9"
-            LastKnownName="Création partie"
+            LastKnownName="Jeu SmallWorld"
             LastKnownLocation="Modelisation_projetPOO.uml" />
         </subjects>
       </useCase>
@@ -670,13 +745,13 @@
     <packageHasNamedElement>
       <useCase
         Id="5078bb96-4553-44d7-8fa9-40a6bbb01597"
-        name="petite"
+        name="Petite"
         isAbstract="false"
         isLeaf="false">
         <subjects>
           <subsystemMoniker
             Id="4cb382a9-06b6-4169-97b7-3f434044a2e9"
-            LastKnownName="Création partie"
+            LastKnownName="Jeu SmallWorld"
             LastKnownLocation="Modelisation_projetPOO.uml" />
         </subjects>
       </useCase>
@@ -684,13 +759,13 @@
     <packageHasNamedElement>
       <useCase
         Id="8dee6f18-e14c-4585-894e-2895d5c5461a"
-        name="normale"
+        name="Normale"
         isAbstract="false"
         isLeaf="false">
         <subjects>
           <subsystemMoniker
             Id="4cb382a9-06b6-4169-97b7-3f434044a2e9"
-            LastKnownName="Création partie"
+            LastKnownName="Jeu SmallWorld"
             LastKnownLocation="Modelisation_projetPOO.uml" />
         </subjects>
       </useCase>
@@ -712,13 +787,13 @@
     <packageHasNamedElement>
       <useCase
         Id="d68e0246-38d8-461f-8274-11225b2e87d5"
-        name="sauvegarder partie"
+        name="Sauvegarder la partie"
         isAbstract="false"
         isLeaf="false">
         <subjects>
           <subsystemMoniker
             Id="2ec34e1c-3711-48b3-bbd8-b2ac345868ad"
-            LastKnownName="Tour de jeu"
+            LastKnownName="Jeu SmallWorld"
             LastKnownLocation="Modelisation_projetPOO.uml" />
         </subjects>
       </useCase>
@@ -1797,13 +1872,13 @@
     <packageHasNamedElement>
       <useCase
         Id="bd29e867-5431-4b0f-bcc8-cb5be5b4acba"
-        name="Choisir nom du joueur"
+        name="Choisir son nom de joueur"
         isAbstract="false"
         isLeaf="false">
         <subjects>
           <subsystemMoniker
             Id="4cb382a9-06b6-4169-97b7-3f434044a2e9"
-            LastKnownName="Création partie"
+            LastKnownName="Jeu SmallWorld"
             LastKnownLocation="Modelisation_projetPOO.uml" />
         </subjects>
       </useCase>
@@ -1811,7 +1886,7 @@
     <packageHasNamedElement>
       <actor
         Id="5db1afb6-ed97-42fe-b263-9312579277a1"
-        name="Joueur1"
+        name="Joueur A"
         isAbstract="false"
         isLeaf="false">
         <generalsInternal>
@@ -1820,7 +1895,7 @@
             isSubstitutable="false">
             <actorMoniker
               Id="42893471-d4d3-4b90-b78b-0cbdc2f11f67"
-              LastKnownName="Joueur2"
+              LastKnownName="Joueur"
               LastKnownLocation="Modelisation_projetPOO.uml" />
           </generalization>
         </generalsInternal>
@@ -1873,7 +1948,7 @@
             isAbstract="false">
             <useCaseMoniker
               Id="89784553-7082-499a-9237-1ecd774b77ec"
-              LastKnownName="Lancer partie"
+              LastKnownName="Lancer la partie"
               LastKnownLocation="Modelisation_projetPOO.uml" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
@@ -1955,6 +2030,172 @@
       <executionEvent
         Id="5d0048b7-1fba-401f-8398-fe0bcdf4dd9d"
         name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <actor
+        Id="e48c08d1-3973-428b-93a0-619c9d03b9f0"
+        name="Joueur B"
+        isAbstract="false"
+        isLeaf="false">
+        <generalsInternal>
+          <generalization
+            Id="5cf86c9f-b4c3-4366-bec7-b2b53fa76740"
+            isSubstitutable="false">
+            <actorMoniker
+              Id="f4105d51-73f8-4739-9a32-7494efe95407"
+              LastKnownName="Joueur"
+              LastKnownLocation="Modelisation_projetPOO.uml" />
+          </generalization>
+        </generalsInternal>
+      </actor>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <actor
+        Id="1c9d0d50-8231-497c-979f-3c5454eec5ba"
+        name="Joueur A"
+        isAbstract="false"
+        isLeaf="false">
+        <generalsInternal>
+          <generalization
+            Id="125faaf3-f5ea-4964-bdac-bb9b08a2106e"
+            isSubstitutable="false">
+            <actorMoniker
+              Id="f4105d51-73f8-4739-9a32-7494efe95407"
+              LastKnownName="Joueur"
+              LastKnownLocation="Modelisation_projetPOO.uml" />
+          </generalization>
+        </generalsInternal>
+      </actor>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <actor
+        Id="8dfcab92-da4d-4f1b-83d0-fa001e28694b"
+        name="Joueur A"
+        isAbstract="false"
+        isLeaf="false">
+        <generalsInternal>
+          <generalization
+            Id="59a98ce9-cc88-4376-8189-aad11bdf5452"
+            isSubstitutable="false">
+            <actorMoniker
+              Id="52e336f3-7891-41f8-9bd6-a544a3a7bce4"
+              LastKnownName="Joueur"
+              LastKnownLocation="Modelisation_projetPOO.uml" />
+          </generalization>
+        </generalsInternal>
+      </actor>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <actor
+        Id="50e9fc68-0b8f-4c78-bdaf-de6ae589024f"
+        name="Joueur B"
+        isAbstract="false"
+        isLeaf="false">
+        <generalsInternal>
+          <generalization
+            Id="be8251e0-cfa2-44ca-8417-1c285fc5a4b0"
+            isSubstitutable="false">
+            <actorMoniker
+              Id="52e336f3-7891-41f8-9bd6-a544a3a7bce4"
+              LastKnownName="Joueur"
+              LastKnownLocation="Modelisation_projetPOO.uml" />
+          </generalization>
+        </generalsInternal>
+      </actor>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="b737fedd-e52f-44a9-b3bd-d5e31b2d3507"
+        name="Choisir l'unité à déplacer"
+        isAbstract="false"
+        isLeaf="false">
+        <subjects>
+          <subsystemMoniker
+            Id="2ec34e1c-3711-48b3-bbd8-b2ac345868ad"
+            LastKnownName="Jeu SmallWorld"
+            LastKnownLocation="Modelisation_projetPOO.uml" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="17b50141-e991-4986-a133-e674f38413e4"
+        name="Choisir case d'arrivée"
+        isAbstract="false"
+        isLeaf="false">
+        <subjects>
+          <subsystemMoniker
+            Id="2ec34e1c-3711-48b3-bbd8-b2ac345868ad"
+            LastKnownName="Jeu SmallWorld"
+            LastKnownLocation="Modelisation_projetPOO.uml" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="8dbf640c-ee57-4234-86aa-2d73f1da9746"
+        name="Choisir l'unité  qui attaque"
+        isAbstract="false"
+        isLeaf="false">
+        <subjects>
+          <subsystemMoniker
+            Id="2ec34e1c-3711-48b3-bbd8-b2ac345868ad"
+            LastKnownName="Jeu SmallWorld"
+            LastKnownLocation="Modelisation_projetPOO.uml" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="c6cad01c-e721-4666-b1b0-1cca2298cf18"
+        name="Choisir la case à attaquer"
+        isAbstract="false"
+        isLeaf="false">
+        <subjects>
+          <subsystemMoniker
+            Id="2ec34e1c-3711-48b3-bbd8-b2ac345868ad"
+            LastKnownName="Jeu SmallWorld"
+            LastKnownLocation="Modelisation_projetPOO.uml" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="3943045d-cbed-4585-b5bf-e4c59f639739"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <actor
+        Id="69518a8e-a5ac-4ace-b6ab-29260069a60b"
+        name="Joueur B"
+        isAbstract="false"
+        isLeaf="false">
+        <generalsInternal>
+          <generalization
+            Id="29ced1ad-2b1a-42b4-96eb-7f5bb78adbbe"
+            isSubstitutable="false">
+            <actorMoniker
+              Id="42893471-d4d3-4b90-b78b-0cbdc2f11f67"
+              LastKnownName="Joueur"
+              LastKnownLocation="Modelisation_projetPOO.uml" />
+          </generalization>
+        </generalsInternal>
+      </actor>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="b1083ac4-74dd-4c83-9e72-2060d3406a38"
+        name="Annuler le dernier déplacement"
+        isAbstract="false"
+        isLeaf="false">
+        <subjects>
+          <subsystemMoniker
+            Id="2ec34e1c-3711-48b3-bbd8-b2ac345868ad"
+            LastKnownName="Jeu SmallWorld"
+            LastKnownLocation="Modelisation_projetPOO.uml" />
+        </subjects>
+      </useCase>
     </packageHasNamedElement>
   </packagedElements>
   <primitiveType

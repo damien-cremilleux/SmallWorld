@@ -1,19 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<useCaseModelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" dslVersion="1.0.0.0" Id="b21a60a8-a61a-4fe6-8a5c-950b9ee7d4a0" name="UMLUseCaseDiagram1" linkedPackageId="883fff78-3311-4bfa-af1f-0f882bd8a65e" xmlns="http://schemas.microsoft.com/dsltools/UseCaseModel">
-  <profileInstances>
-    <packageHasProfileInstances Id="bde06f6c-93b1-4993-9c69-ab321e1edc54">
-      <profileInstance Id="1936cb54-fa52-4dcf-b20f-91bfe8e3650d" name="StandardProfileL2">
-        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
-      </profileInstance>
-      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
-    </packageHasProfileInstances>
-    <packageHasProfileInstances Id="970cf8de-f2f9-4796-a979-6563ee774070">
-      <profileInstance Id="5ed0a0f7-ca9f-47f6-b1f8-7b4e1d9b97ff" name="StandardProfileL3">
-        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
-      </profileInstance>
-      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
-    </packageHasProfileInstances>
-  </profileInstances>
+<useCaseModelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="b21a60a8-a61a-4fe6-8a5c-950b9ee7d4a0" name="Lancement d'une partie" linkedPackageId="883fff78-3311-4bfa-af1f-0f882bd8a65e" xmlns="http://schemas.microsoft.com/dsltools/UseCaseModel">
   <packagedElements>
     <useCaseModelRootHasTypes>
       <actor Id="b222777a-63e1-4a86-88f6-e0632c7407ba" name="Joueur" isAbstract="false" isLeaf="false">
@@ -89,8 +75,44 @@
         </subjects>
       </useCase>
     </packageHasNamedElement>
+    <useCaseModelRootHasTypes>
+      <actor Id="6425787c-b029-4e7e-b779-9d7e1340b2f3" name="Joueur B" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="e48c08d1-3973-428b-93a0-619c9d03b9f0" />
+        <generalsInternal>
+          <generalization Id="2b1acdab-1924-48f3-a222-351999492569" isSubstitutable="false">
+            <actorMoniker Id="b222777a-63e1-4a86-88f6-e0632c7407ba" LastKnownName="Joueur" />
+            <elementDefinition Id="5cf86c9f-b4c3-4366-bec7-b2b53fa76740" />
+          </generalization>
+        </generalsInternal>
+      </actor>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <actor Id="787a5747-00ef-4e8e-9b00-0c723d6cbcc0" name="Joueur A" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="1c9d0d50-8231-497c-979f-3c5454eec5ba" />
+        <generalsInternal>
+          <generalization Id="83ae7733-de59-4b4e-a4ad-3b6a845880e7" isSubstitutable="false">
+            <actorMoniker Id="b222777a-63e1-4a86-88f6-e0632c7407ba" LastKnownName="Joueur" />
+            <elementDefinition Id="125faaf3-f5ea-4964-bdac-bb9b08a2106e" />
+          </generalization>
+        </generalsInternal>
+      </actor>
+    </useCaseModelRootHasTypes>
   </packagedElements>
   <package Id="883fff78-3311-4bfa-af1f-0f882bd8a65e" name="Modelisation_projetPOO">
     <elementDefinition Id="1ef72cda-9600-40a4-a1c1-afeec437006f" />
+    <profileInstances>
+      <packageHasProfileInstances Id="bde06f6c-93b1-4993-9c69-ab321e1edc54">
+        <profileInstance Id="1936cb54-fa52-4dcf-b20f-91bfe8e3650d" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="970cf8de-f2f9-4796-a979-6563ee774070">
+        <profileInstance Id="5ed0a0f7-ca9f-47f6-b1f8-7b4e1d9b97ff" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+    </profileInstances>
   </package>
 </useCaseModelRoot>

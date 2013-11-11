@@ -1,33 +1,19 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<useCaseModelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" dslVersion="1.0.0.0" Id="d5368a6f-a517-4f92-9015-ce867b98dac5" name="UMLUseCaseDiagram2" linkedPackageId="6013658f-b030-40b9-8c67-717094245ea0" xmlns="http://schemas.microsoft.com/dsltools/UseCaseModel">
+<useCaseModelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="d5368a6f-a517-4f92-9015-ce867b98dac5" name="Création d'une partie" linkedPackageId="6013658f-b030-40b9-8c67-717094245ea0" xmlns="http://schemas.microsoft.com/dsltools/UseCaseModel">
   <ownedCommentsInternal>
     <comment Id="4ecf9697-6d82-4da1-b463-edc15525d67e">
       <elementDefinition Id="a2e8efa6-fad9-460a-8d7a-fad76b6ab660" />
-      <body>Le joueur 1 est plus spécialisé que le joueur 2, il choisit la taille de la carte et lance la partie
+      <body>Le joueur A est plus spécialisé que le joueur B, il choisit la taille de la carte et lance la partie
 </body>
     </comment>
   </ownedCommentsInternal>
-  <profileInstances>
-    <packageHasProfileInstances Id="a28b81a8-cd6b-4ac0-878d-b0d9e6c7da97">
-      <profileInstance Id="363c0eee-8068-4168-9e86-4d4671cea5df" name="StandardProfileL2">
-        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
-      </profileInstance>
-      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
-    </packageHasProfileInstances>
-    <packageHasProfileInstances Id="4c28a1aa-c639-4372-8568-11f7952f8aee">
-      <profileInstance Id="d87a43c0-5a2e-4b40-8e73-a467f9f3a896" name="StandardProfileL3">
-        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
-      </profileInstance>
-      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
-    </packageHasProfileInstances>
-  </profileInstances>
   <packagedElements>
     <useCaseModelRootHasTypes>
-      <actor Id="61289664-13a3-4ccc-a44e-0d2db924229d" name="Joueur2" isAbstract="false" isLeaf="false">
+      <actor Id="61289664-13a3-4ccc-a44e-0d2db924229d" name="Joueur" isAbstract="false" isLeaf="false">
         <elementDefinition Id="42893471-d4d3-4b90-b78b-0cbdc2f11f67" />
         <targetEnds>
           <association Id="f01cd523-0be3-4668-9452-73592573fec0" isDerived="false" sourceEndRoleName="Joueur" targetEndRoleName="Choisir peuple" isLeaf="false" isAbstract="false">
-            <useCaseMoniker Id="0b38e929-73d7-4c74-a019-c65fbd37f110" LastKnownName="Choisir peuple" />
+            <useCaseMoniker Id="0b38e929-73d7-4c74-a019-c65fbd37f110" LastKnownName="Sélectionner un peuple" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
                 <memberEnd Id="93f1ddb1-2a0d-4d59-895b-1de36a87c929" name="Joueur" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
@@ -43,7 +29,7 @@
             <elementDefinition Id="aabf4705-3f18-4e06-a77b-f53c2a965a80" />
           </association>
           <association Id="c24afc20-2089-4d10-882e-f3cbad1f4f69" isDerived="false" sourceEndRoleName="Joueur2" targetEndRoleName="Choisir nom du joueur" isLeaf="false" isAbstract="false">
-            <useCaseMoniker Id="8d2ad9e2-0d01-4850-bb75-aa69e61776fa" LastKnownName="Choisir nom du joueur" />
+            <useCaseMoniker Id="8d2ad9e2-0d01-4850-bb75-aa69e61776fa" LastKnownName="Choisir son nom de joueur" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
                 <memberEnd Id="0b8335e0-6678-4807-b012-52518b94a0f5" name="Joueur2" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
@@ -62,16 +48,16 @@
       </actor>
     </useCaseModelRootHasTypes>
     <useCaseModelRootHasTypes>
-      <subsystem Id="7e936428-bdd2-47c6-b552-21fd1667464f" name="Création partie" isAbstract="false" isLeaf="false" isActiveClass="false">
+      <subsystem Id="7e936428-bdd2-47c6-b552-21fd1667464f" name="Jeu SmallWorld" isAbstract="false" isLeaf="false" isActiveClass="false">
         <elementDefinition Id="4cb382a9-06b6-4169-97b7-3f434044a2e9" />
       </subsystem>
     </useCaseModelRootHasTypes>
     <packageHasNamedElement>
-      <useCase Id="0b38e929-73d7-4c74-a019-c65fbd37f110" name="Choisir peuple" isAbstract="false" isLeaf="false">
+      <useCase Id="0b38e929-73d7-4c74-a019-c65fbd37f110" name="Sélectionner un peuple" isAbstract="false" isLeaf="false">
         <elementDefinition Id="03a822fc-f0f7-46cb-8dcf-646837d068f9" />
         <extendedCases>
           <extend Id="41833eaa-541b-493a-a1ee-67e89ea44e02">
-            <useCaseMoniker Id="233cb98e-e432-4dc4-806e-9db4571e3535" LastKnownName="choisir Gaulois" />
+            <useCaseMoniker Id="233cb98e-e432-4dc4-806e-9db4571e3535" LastKnownName="Choisir Gaulois" />
             <elementDefinition Id="52aa3ac5-9373-4955-9a1a-9a714ca2a550" />
           </extend>
           <extend Id="cec400c6-8f95-41ec-847f-8b7e81570e6d">
@@ -79,12 +65,12 @@
             <elementDefinition Id="a8b116d8-0e88-49b1-a75b-7301300500bc" />
           </extend>
           <extend Id="6236d09f-747d-45b7-a4f6-a3c4de8c8468">
-            <useCaseMoniker Id="9209cb76-aa2a-461f-b77d-27d34e0a7c8e" LastKnownName="choisir Nain" />
+            <useCaseMoniker Id="9209cb76-aa2a-461f-b77d-27d34e0a7c8e" LastKnownName="Choisir Nain" />
             <elementDefinition Id="d962c7b5-02c9-4c57-a089-0c6183d65c9a" />
           </extend>
         </extendedCases>
         <subjects>
-          <subsystemMoniker Id="7e936428-bdd2-47c6-b552-21fd1667464f" LastKnownName="Création partie" />
+          <subsystemMoniker Id="7e936428-bdd2-47c6-b552-21fd1667464f" LastKnownName="Jeu SmallWorld" />
         </subjects>
       </useCase>
     </packageHasNamedElement>
@@ -93,36 +79,36 @@
         <elementDefinition Id="c4bf23ad-af40-401c-975e-fcd07b656376" />
         <extendedCases>
           <extend Id="1f16fd5c-2a80-49b3-bb34-9cf5c510290f">
-            <useCaseMoniker Id="1b2e1567-42d0-4f9b-8caa-2beaa632e3e6" LastKnownName="demo" />
+            <useCaseMoniker Id="1b2e1567-42d0-4f9b-8caa-2beaa632e3e6" LastKnownName="Démonstration" />
             <elementDefinition Id="219e0480-179b-4658-b4bf-d3976633bff6" />
           </extend>
           <extend Id="769b316a-2005-4b3b-9b69-62e71a553d91">
-            <useCaseMoniker Id="0fc1246b-417f-4034-906b-ceb75ef904df" LastKnownName="petite" />
+            <useCaseMoniker Id="0fc1246b-417f-4034-906b-ceb75ef904df" LastKnownName="Petite" />
             <elementDefinition Id="944da32b-2e1a-4292-bf62-c554ee20fe89" />
           </extend>
           <extend Id="25c46353-ca59-483c-a315-e0e222c3e402">
-            <useCaseMoniker Id="f8412cee-069b-4dca-bc98-5c17a39b941d" LastKnownName="normale" />
+            <useCaseMoniker Id="f8412cee-069b-4dca-bc98-5c17a39b941d" LastKnownName="Normale" />
             <elementDefinition Id="f8884368-3a16-4918-97da-9f60abc37aaa" />
           </extend>
         </extendedCases>
         <subjects>
-          <subsystemMoniker Id="7e936428-bdd2-47c6-b552-21fd1667464f" LastKnownName="Création partie" />
+          <subsystemMoniker Id="7e936428-bdd2-47c6-b552-21fd1667464f" LastKnownName="Jeu SmallWorld" />
         </subjects>
       </useCase>
     </packageHasNamedElement>
     <packageHasNamedElement>
-      <useCase Id="b08b33d9-28bb-46b7-8db9-176898a07629" name="Lancer partie" isAbstract="false" isLeaf="false">
+      <useCase Id="b08b33d9-28bb-46b7-8db9-176898a07629" name="Lancer la partie" isAbstract="false" isLeaf="false">
         <elementDefinition Id="89784553-7082-499a-9237-1ecd774b77ec" />
         <subjects>
-          <subsystemMoniker Id="7e936428-bdd2-47c6-b552-21fd1667464f" LastKnownName="Création partie" />
+          <subsystemMoniker Id="7e936428-bdd2-47c6-b552-21fd1667464f" LastKnownName="Jeu SmallWorld" />
         </subjects>
       </useCase>
     </packageHasNamedElement>
     <packageHasNamedElement>
-      <useCase Id="233cb98e-e432-4dc4-806e-9db4571e3535" name="choisir Gaulois" isAbstract="false" isLeaf="false">
+      <useCase Id="233cb98e-e432-4dc4-806e-9db4571e3535" name="Choisir Gaulois" isAbstract="false" isLeaf="false">
         <elementDefinition Id="eb1ca754-50a9-4008-acca-3fe0a2a1b83f" />
         <subjects>
-          <subsystemMoniker Id="7e936428-bdd2-47c6-b552-21fd1667464f" LastKnownName="Création partie" />
+          <subsystemMoniker Id="7e936428-bdd2-47c6-b552-21fd1667464f" LastKnownName="Jeu SmallWorld" />
         </subjects>
       </useCase>
     </packageHasNamedElement>
@@ -130,56 +116,56 @@
       <useCase Id="45715bf1-a53e-497f-9e6d-9b3261a24314" name="Choisir Vikings" isAbstract="false" isLeaf="false">
         <elementDefinition Id="ff52eff0-863a-4213-923e-9bc2c7ddde51" />
         <subjects>
-          <subsystemMoniker Id="7e936428-bdd2-47c6-b552-21fd1667464f" LastKnownName="Création partie" />
+          <subsystemMoniker Id="7e936428-bdd2-47c6-b552-21fd1667464f" LastKnownName="Jeu SmallWorld" />
         </subjects>
       </useCase>
     </packageHasNamedElement>
     <packageHasNamedElement>
-      <useCase Id="9209cb76-aa2a-461f-b77d-27d34e0a7c8e" name="choisir Nain" isAbstract="false" isLeaf="false">
+      <useCase Id="9209cb76-aa2a-461f-b77d-27d34e0a7c8e" name="Choisir Nain" isAbstract="false" isLeaf="false">
         <elementDefinition Id="84155e9b-81d2-42cb-9b86-ac1c999acd44" />
         <subjects>
-          <subsystemMoniker Id="7e936428-bdd2-47c6-b552-21fd1667464f" LastKnownName="Création partie" />
+          <subsystemMoniker Id="7e936428-bdd2-47c6-b552-21fd1667464f" LastKnownName="Jeu SmallWorld" />
         </subjects>
       </useCase>
     </packageHasNamedElement>
     <packageHasNamedElement>
-      <useCase Id="1b2e1567-42d0-4f9b-8caa-2beaa632e3e6" name="demo" isAbstract="false" isLeaf="false">
+      <useCase Id="1b2e1567-42d0-4f9b-8caa-2beaa632e3e6" name="Démonstration" isAbstract="false" isLeaf="false">
         <elementDefinition Id="bb895bea-0f9e-4eff-8a25-b89d52d6a5da" />
         <subjects>
-          <subsystemMoniker Id="7e936428-bdd2-47c6-b552-21fd1667464f" LastKnownName="Création partie" />
+          <subsystemMoniker Id="7e936428-bdd2-47c6-b552-21fd1667464f" LastKnownName="Jeu SmallWorld" />
         </subjects>
       </useCase>
     </packageHasNamedElement>
     <packageHasNamedElement>
-      <useCase Id="0fc1246b-417f-4034-906b-ceb75ef904df" name="petite" isAbstract="false" isLeaf="false">
+      <useCase Id="0fc1246b-417f-4034-906b-ceb75ef904df" name="Petite" isAbstract="false" isLeaf="false">
         <elementDefinition Id="5078bb96-4553-44d7-8fa9-40a6bbb01597" />
         <subjects>
-          <subsystemMoniker Id="7e936428-bdd2-47c6-b552-21fd1667464f" LastKnownName="Création partie" />
+          <subsystemMoniker Id="7e936428-bdd2-47c6-b552-21fd1667464f" LastKnownName="Jeu SmallWorld" />
         </subjects>
       </useCase>
     </packageHasNamedElement>
     <packageHasNamedElement>
-      <useCase Id="f8412cee-069b-4dca-bc98-5c17a39b941d" name="normale" isAbstract="false" isLeaf="false">
+      <useCase Id="f8412cee-069b-4dca-bc98-5c17a39b941d" name="Normale" isAbstract="false" isLeaf="false">
         <elementDefinition Id="8dee6f18-e14c-4585-894e-2895d5c5461a" />
         <subjects>
-          <subsystemMoniker Id="7e936428-bdd2-47c6-b552-21fd1667464f" LastKnownName="Création partie" />
+          <subsystemMoniker Id="7e936428-bdd2-47c6-b552-21fd1667464f" LastKnownName="Jeu SmallWorld" />
         </subjects>
       </useCase>
     </packageHasNamedElement>
     <packageHasNamedElement>
-      <useCase Id="8d2ad9e2-0d01-4850-bb75-aa69e61776fa" name="Choisir nom du joueur" isAbstract="false" isLeaf="false">
+      <useCase Id="8d2ad9e2-0d01-4850-bb75-aa69e61776fa" name="Choisir son nom de joueur" isAbstract="false" isLeaf="false">
         <elementDefinition Id="bd29e867-5431-4b0f-bcc8-cb5be5b4acba" />
         <subjects>
-          <subsystemMoniker Id="7e936428-bdd2-47c6-b552-21fd1667464f" LastKnownName="Création partie" />
+          <subsystemMoniker Id="7e936428-bdd2-47c6-b552-21fd1667464f" LastKnownName="Jeu SmallWorld" />
         </subjects>
       </useCase>
     </packageHasNamedElement>
     <useCaseModelRootHasTypes>
-      <actor Id="d19c4be8-9641-4f8c-9663-a0081651f652" name="Joueur1" isAbstract="false" isLeaf="false">
+      <actor Id="d19c4be8-9641-4f8c-9663-a0081651f652" name="Joueur A" isAbstract="false" isLeaf="false">
         <elementDefinition Id="5db1afb6-ed97-42fe-b263-9312579277a1" />
         <generalsInternal>
           <generalization Id="85f4a77e-ded6-451a-97dc-590ae55916d2" isSubstitutable="false">
-            <actorMoniker Id="61289664-13a3-4ccc-a44e-0d2db924229d" LastKnownName="Joueur2" />
+            <actorMoniker Id="61289664-13a3-4ccc-a44e-0d2db924229d" LastKnownName="Joueur" />
             <elementDefinition Id="3dfd96d4-57a8-4669-bfcb-175ea35c413c" />
           </generalization>
         </generalsInternal>
@@ -201,7 +187,7 @@
             <elementDefinition Id="bdff31a0-8385-4250-a733-d9d757490105" />
           </association>
           <association Id="da618abf-912e-4873-833a-68e737e6e243" isDerived="false" sourceEndRoleName="Joueur1" targetEndRoleName="Lancer partie" isLeaf="false" isAbstract="false">
-            <useCaseMoniker Id="b08b33d9-28bb-46b7-8db9-176898a07629" LastKnownName="Lancer partie" />
+            <useCaseMoniker Id="b08b33d9-28bb-46b7-8db9-176898a07629" LastKnownName="Lancer la partie" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
                 <memberEnd Id="59661426-a148-4793-b06a-666013ea5911" name="Joueur1" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
@@ -219,8 +205,33 @@
         </targetEnds>
       </actor>
     </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <actor Id="af3c2eff-8644-4a99-bb33-ef9354848a4f" name="Joueur B" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="69518a8e-a5ac-4ace-b6ab-29260069a60b" />
+        <generalsInternal>
+          <generalization Id="f37f3bed-0f1b-447b-be64-3a4c4b46f81a" isSubstitutable="false">
+            <actorMoniker Id="61289664-13a3-4ccc-a44e-0d2db924229d" LastKnownName="Joueur" />
+            <elementDefinition Id="29ced1ad-2b1a-42b4-96eb-7f5bb78adbbe" />
+          </generalization>
+        </generalsInternal>
+      </actor>
+    </useCaseModelRootHasTypes>
   </packagedElements>
   <package Id="6013658f-b030-40b9-8c67-717094245ea0" name="Modelisation_projetPOO">
     <elementDefinition Id="1ef72cda-9600-40a4-a1c1-afeec437006f" />
+    <profileInstances>
+      <packageHasProfileInstances Id="a28b81a8-cd6b-4ac0-878d-b0d9e6c7da97">
+        <profileInstance Id="363c0eee-8068-4168-9e86-4d4671cea5df" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="4c28a1aa-c639-4372-8568-11f7952f8aee">
+        <profileInstance Id="d87a43c0-5a2e-4b40-8e73-a467f9f3a896" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+    </profileInstances>
   </package>
 </useCaseModelRoot>

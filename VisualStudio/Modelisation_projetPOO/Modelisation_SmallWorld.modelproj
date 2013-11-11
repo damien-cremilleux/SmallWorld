@@ -24,6 +24,7 @@
   <ItemGroup>
     <Content Include="JeuGlobal.usecasediagram">
       <SubType>Content</SubType>
+      <CustomToolNamespace>test</CustomToolNamespace>
     </Content>
     <Content Include="JeuGlobal.usecasediagram.layout">
       <SubType>Content</SubType>
