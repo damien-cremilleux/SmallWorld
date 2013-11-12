@@ -5,7 +5,7 @@ using System.Text;
 
 namespace ProjetPOO
 {
-    public interface StrategiePetite : StrategieCarte
+    public interface CreateurPartie
     {
         void construire();
     }

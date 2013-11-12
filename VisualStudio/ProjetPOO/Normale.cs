@@ -7,5 +7,6 @@ namespace ProjetPOO
 {
     public interface StrategieNormale : StrategieCarte
     {
+        void construire();
     }
 }

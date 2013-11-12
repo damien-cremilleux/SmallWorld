@@ -7,10 +7,11 @@ namespace ProjetPOO
 {
     public interface StrategieCarte
     {
+        /// <remarks></remarks>
+        void construire();
+
+        void definirStrategie();
     }
 
-    public interface Carte
-    {
-        void choisirStrategie();
-    }
+ 
 }
