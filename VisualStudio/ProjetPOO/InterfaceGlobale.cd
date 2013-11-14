@@ -3,9 +3,6 @@
   <Comment CommentText="Fabrique concrète pour la génération des peuples">
     <Position X="9.774" Y="9.861" Height="0.75" Width="1.7" />
   </Comment>
-  <Comment CommentText="ajouter FabriqueUnite&#xD;&#xA;creer peuple avant joueur">
-    <Position X="5.223" Y="11.202" Height="0.75" Width="1.7" />
-  </Comment>
   <Comment CommentText="Stratégie pour la création des différents types de cartes">
     <Position X="2.781" Y="4.479" Height="0.75" Width="1.7" />
   </Comment>
@@ -15,10 +12,13 @@
   <Comment CommentText="Poids Mouche pour la création des cases">
     <Position X="11.141" Y="6.635" Height="0.75" Width="1.7" />
   </Comment>
+  <Comment CommentText="Il n'y a qu'une seule unité possible par peuple, donc pas besoin de fabrique">
+    <Position X="9.688" Y="13.396" Height="0.75" Width="1.7" />
+  </Comment>
   <Interface Name="ProjetPOO.FabriqueCase">
-    <Position X="13" Y="5.25" Width="1.5" />
+    <Position X="13.25" Y="5.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AABAQAAAgAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAIA=</HashCode>
+      <HashCode>AABAQgAAgAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAIA=</HashCode>
       <FileName>FabriqueCase.cs</FileName>
     </TypeIdentifier>
   </Interface>
@@ -109,19 +109,19 @@
   <Interface Name="ProjetPOO.MonteurPartie">
     <Position X="5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAABAAAAAAAAAAAAAAAAAAAAAQgAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAEAAAAAAAAAAAAAAAAAAAAAAAAgIAAAAAAAAEAAAAA=</HashCode>
       <FileName>MonteurCarte.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="ProjetPOO.Unite">
-    <Position X="6.25" Y="12.25" Width="1.5" />
+    <Position X="11.75" Y="13" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAA=</HashCode>
       <FileName>Unite.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="ProjetPOO.Sauvegarder">
-    <Position X="7.25" Y="15.25" Width="1.5" />
+    <Position X="5.75" Y="15.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAABAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAA=</HashCode>
       <FileName>Sauvegarder.cs</FileName>
@@ -149,14 +149,14 @@
     </TypeIdentifier>
   </Interface>
   <Interface Name="ProjetPOO.Joueur">
-    <Position X="10" Y="0.5" Width="1.5" />
+    <Position X="8.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Joueur.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="ProjetPOO.Partie">
-    <Position X="10" Y="1.75" Width="1.5" />
+    <Position X="9" Y="1.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Partie.cs</FileName>
@@ -195,6 +195,27 @@
     <TypeIdentifier>
       <HashCode>AAAABAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Carte.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Code_SmallWorld.UniteGauloise">
+    <Position X="9.5" Y="14.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>UniteGauloise.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Code_SmallWorld.UniteViking">
+    <Position X="11.75" Y="14.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>UniteViking.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Code_SmallWorld.UniteNaine">
+    <Position X="14" Y="14.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>UniteNaine.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Font Name="Segoe UI" Size="9" />

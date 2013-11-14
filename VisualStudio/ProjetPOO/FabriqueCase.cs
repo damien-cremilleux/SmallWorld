@@ -16,5 +16,7 @@ namespace ProjetPOO
         void obtenirPlaine();
 
         void obtenirForet();
+
+        void obtenirCase();
     }
 }

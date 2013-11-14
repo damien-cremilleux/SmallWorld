@@ -10,8 +10,10 @@ namespace ProjetPOO
 
         Partie creerPartie();
 
-        void ajouterPeuple();
+        void ajouterCarte();
 
-        void creerCarte();
+        void ajouterJoueur();
+
+        void placerUnites();
     }
 }
