@@ -58,6 +58,20 @@
       <SubType>Content</SubType>
       <DependentUpon>UMLActivityDiagram1.activitydiagram</DependentUpon>
     </Content>
+    <Content Include="UMLActivityDiagram2.activitydiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="UMLActivityDiagram2.activitydiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>UMLActivityDiagram2.activitydiagram</DependentUpon>
+    </Content>
+    <Content Include="UMLActivityDiagram3.activitydiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="UMLActivityDiagram3.activitydiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>UMLActivityDiagram3.activitydiagram</DependentUpon>
+    </Content>
     <Folder Include="ModelDefinition\" />
     <Content Include="ModelDefinition\Modelisation_projetPOO.uml">
       <SubType>Content</SubType>

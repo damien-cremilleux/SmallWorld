@@ -15,6 +15,9 @@
   <Comment CommentText="Il n'y a qu'une seule unité possible par peuple, donc pas besoin de fabrique">
     <Position X="9.688" Y="13.396" Height="0.75" Width="1.7" />
   </Comment>
+  <Comment CommentText="Observateur à mettre en place entre Carte et Unité : carte observe unité">
+    <Position X="15.339" Y="13.438" Height="0.75" Width="1.7" />
+  </Comment>
   <Interface Name="ProjetPOO.FabriqueCase">
     <Position X="13.25" Y="5.25" Width="1.5" />
     <TypeIdentifier>
@@ -120,8 +123,8 @@
       <FileName>Unite.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="ProjetPOO.Sauvegarder">
-    <Position X="5.75" Y="15.25" Width="1.5" />
+  <Interface Name="ProjetPOO.Sauvegarde">
+    <Position X="12.5" Y="3.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAABAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAA=</HashCode>
       <FileName>Sauvegarder.cs</FileName>
@@ -149,14 +152,14 @@
     </TypeIdentifier>
   </Interface>
   <Interface Name="ProjetPOO.Joueur">
-    <Position X="8.25" Y="0.5" Width="1.5" />
+    <Position X="9" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Joueur.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="ProjetPOO.Partie">
-    <Position X="9" Y="1.5" Width="1.5" />
+    <Position X="10.5" Y="3.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Partie.cs</FileName>

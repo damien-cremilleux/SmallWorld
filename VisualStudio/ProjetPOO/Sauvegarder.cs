@@ -5,7 +5,7 @@ using System.Text;
 
 namespace ProjetPOO
 {
-    public interface Sauvegarder
+    public interface Sauvegarde
     {
         void charge();
 

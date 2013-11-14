@@ -1,0 +1,184 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<activityRootModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" xmlns:dm10="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm11="http://schemas.microsoft.com/dsltools/UseCaseModel" dslVersion="1.0.0.0" Id="1cb32c4e-c529-4727-94b0-d0fa2b5cac85" name="Déroulement d'un combat" linkedPackageId="ff45273f-5149-412c-9ce6-25ad3bb2ac05" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner">
+  <ownedCommentsInternal>
+    <comment Id="ceeb8f4e-9fea-4fc2-8d67-f72bc11d0f25">
+      <elementDefinition Id="c7f9b5de-1e9e-4f43-92f1-2c7516e0a547" />
+      <body>Sortie par match nul</body>
+    </comment>
+  </ownedCommentsInternal>
+  <profileInstances>
+    <packageHasProfileInstances Id="f2f0d8f1-fc14-4120-af55-935967252f44">
+      <profileInstance Id="572bc6f1-0cc3-4b65-9ffe-a0b1a2c959a6" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="fd54eeb7-4cbd-4cce-9f3c-ac86d0a1e074">
+      <profileInstance Id="cc639ce0-b4ac-4e82-b32f-3c6a5f13c5ae" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <activityRootModelHasActivity>
+      <activity Id="8395a1b3-39f8-4703-bc80-5e79d5e64418" name="Déroulement d'un combat" isAbstract="false" isLeaf="false" isActiveClass="false" isReentrant="false" isReadOnly="false" isSingleExecution="false">
+        <elementDefinition Id="b327f63a-e401-46eb-bde0-a2447222ab89" />
+        <nodes>
+          <initialNode Id="532ce05b-ed0f-4a0e-9521-83592b5f457d" name="Initial1" isLeaf="false">
+            <elementDefinition Id="10981243-8f73-4413-8329-9eb0ec694cb9" />
+            <flowNodeTargets>
+              <controlFlow Id="da52fc81-3e3c-4599-8f07-fdc8b0377ab0" isLeaf="false">
+                <opaqueActionMoniker Id="2753aeb6-c240-443c-9492-042e31b4fed9" LastKnownName="La meilleure unité défensive est choisie" />
+                <elementDefinition Id="a938ebe2-5634-4f33-933a-1f56508f61f1" />
+              </controlFlow>
+            </flowNodeTargets>
+          </initialNode>
+          <opaqueAction Id="2753aeb6-c240-443c-9492-042e31b4fed9" name="La meilleure unité défensive est choisie" isLeaf="false">
+            <elementDefinition Id="aa67b381-1d39-46b7-ba9b-cfd8b93b8d37" />
+            <flowNodeTargets>
+              <controlFlow Id="9523e53a-2464-4622-b705-853378153741" isLeaf="false">
+                <decisionNodeMoniker Id="30ed544c-41c7-4fe3-9d40-4efb8b6f5780" LastKnownName="Decision1" />
+                <elementDefinition Id="3894cee3-7408-45c7-99c5-43a29b5eb043" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode Id="30ed544c-41c7-4fe3-9d40-4efb8b6f5780" name="Decision1" isLeaf="false">
+            <elementDefinition Id="f550f4cf-e898-43cb-90ec-0138f9811ead" />
+            <flowNodeTargets>
+              <controlFlow Id="f7aaa896-64fb-48b6-be9f-a4b60dfcc1b9" guard="0 en défense" isLeaf="false">
+                <opaqueActionMoniker Id="b80a0148-2749-4e35-bb39-8418a78d6647" LastKnownName="L'unité attaquée meurt" />
+                <elementDefinition Id="2cd142a3-fca1-4ad2-ac04-2c2907e35946" />
+              </controlFlow>
+              <controlFlow Id="1df6105d-411b-4572-a5ee-e170df5e4234" guard="défense &gt; 0" isLeaf="false">
+                <opaqueActionMoniker Id="895b60cd-95ba-446a-8619-79fecd3055b3" LastKnownName="Calcul nombre de combats" />
+                <elementDefinition Id="84fd0a03-35db-42e2-b4d2-1d6847e3a7b6" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <opaqueAction Id="b80a0148-2749-4e35-bb39-8418a78d6647" name="L'unité attaquée meurt" isLeaf="false">
+            <elementDefinition Id="221b7a1c-02cf-46d4-bedd-3fa66ee879dc" />
+            <flowNodeTargets>
+              <controlFlow Id="b65c87a3-2dcd-4934-aeac-a795e0affdab" isLeaf="false">
+                <activityFinalNodeMoniker Id="34d25a35-80a8-4e18-a44b-d1cc3d4cfe1c" LastKnownName="ActivityFinal1" />
+                <elementDefinition Id="468451b4-d430-4424-b8ae-55003119b105" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="895b60cd-95ba-446a-8619-79fecd3055b3" name="Calcul nombre de combats" isLeaf="false">
+            <elementDefinition Id="d175a45d-2802-4c97-8319-79ae4f0d216d" />
+            <flowNodeTargets>
+              <controlFlow Id="cf1aa736-4d69-499c-847c-8995afa1b91c" isLeaf="false">
+                <opaqueActionMoniker Id="84a79d23-414d-4199-8b46-888747dfad5b" LastKnownName="Début d'un combat" />
+                <elementDefinition Id="91a26f83-c940-4e35-9478-c55444845f40" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <activityFinalNode Id="34d25a35-80a8-4e18-a44b-d1cc3d4cfe1c" name="ActivityFinal1" isLeaf="false">
+            <elementDefinition Id="0bedac02-8ecc-4527-ac61-ed6570c1748b" />
+          </activityFinalNode>
+          <opaqueAction Id="84a79d23-414d-4199-8b46-888747dfad5b" name="Début d'un combat" isLeaf="false">
+            <elementDefinition Id="4738529b-1c78-45c9-a93e-65afdabade82" />
+            <flowNodeTargets>
+              <controlFlow Id="945bed3a-fcb0-4ffe-88bc-ac3f7789b3f7" isLeaf="false">
+                <decisionNodeMoniker Id="dc39e613-0483-4623-9cd9-8db0bd1f21fc" LastKnownName="Decision2" />
+                <elementDefinition Id="5fefc6e7-9189-4be5-b865-5ef08f7b432c" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode Id="dc39e613-0483-4623-9cd9-8db0bd1f21fc" name="Decision2" isLeaf="false">
+            <elementDefinition Id="a7abbba0-8594-4471-bb94-7fea166ef3e1" />
+            <flowNodeTargets>
+              <controlFlow Id="455d679c-9b28-40e8-8810-612af112a07a" guard="NbCombatRestant == 0" isLeaf="false">
+                <activityFinalNodeMoniker Id="34d25a35-80a8-4e18-a44b-d1cc3d4cfe1c" LastKnownName="ActivityFinal1" />
+                <elementDefinition Id="e762a249-1e8d-4272-a9c6-9d289cf8c1cc" />
+              </controlFlow>
+              <controlFlow Id="b81965ba-0b5f-45ba-b44b-385212e623d3" guard="NbCombatRestant &gt; 0" isLeaf="false">
+                <opaqueActionMoniker Id="0f43c505-6e6d-4c7e-a1f3-90f7cb92e5df" LastKnownName="Calcul du vainqueur" />
+                <elementDefinition Id="e91977eb-0594-4ade-90ee-66b72ea3f0c8" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <opaqueAction Id="0f43c505-6e6d-4c7e-a1f3-90f7cb92e5df" name="Calcul du vainqueur" isLeaf="false">
+            <elementDefinition Id="197ec925-a57f-4eb5-8970-e8fdcad6b1c8" />
+            <flowNodeTargets>
+              <controlFlow Id="33c6b442-f030-4b70-9fe5-7f31ef88414b" isLeaf="false">
+                <decisionNodeMoniker Id="3a9fa869-6e2f-40b7-942e-c38ad04fd36e" LastKnownName="Decision3" />
+                <elementDefinition Id="0c632538-1e03-4b8e-a069-ef060b8f31c8" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode Id="3a9fa869-6e2f-40b7-942e-c38ad04fd36e" name="Decision3" isLeaf="false">
+            <elementDefinition Id="cc4e0c57-94e8-4dca-a691-f03a4285bc55" />
+            <flowNodeTargets>
+              <controlFlow Id="dc08ffc1-47de-4a7a-ac7c-2688b0f70fc1" guard="Attaquant gagnant" isLeaf="false">
+                <opaqueActionMoniker Id="4b433cc1-77ea-44ce-b689-1c607658f285" LastKnownName="La défense perd un point de vie" />
+                <elementDefinition Id="412ef3a8-6ab4-4ff3-8d39-5ee51933d134" />
+              </controlFlow>
+              <controlFlow Id="a2354283-c130-4295-8556-904684749dc1" guard="Défenseur gagnant" isLeaf="false">
+                <opaqueActionMoniker Id="a532ff07-2e28-4bd7-a952-e9b8113eafe6" LastKnownName="Unite attaquée vainqueur" />
+                <elementDefinition Id="22dd6735-3c05-4f41-b39d-3025432e49ad" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <opaqueAction Id="4b433cc1-77ea-44ce-b689-1c607658f285" name="La défense perd un point de vie" isLeaf="false">
+            <elementDefinition Id="b14e5d35-a95a-4435-8345-2b901f0d2fff" />
+            <flowNodeTargets>
+              <controlFlow Id="89a4b9e2-4768-4fbe-859b-ee1cd7154ea2" isLeaf="false">
+                <decisionNodeMoniker Id="ce7b7bd5-a5f7-48c0-a3e1-f6396589d67e" LastKnownName="Decision4" />
+                <elementDefinition Id="110726f8-76b5-459b-a3a1-e3e0c7c131c6" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="a532ff07-2e28-4bd7-a952-e9b8113eafe6" name="Unite attaquée vainqueur" isLeaf="false">
+            <elementDefinition Id="71732ee4-b426-4095-9898-0e088ce27e24" />
+            <flowNodeTargets>
+              <controlFlow Id="7fe82f8a-52fb-48ae-a1a4-230355d4e7b4" isLeaf="false">
+                <decisionNodeMoniker Id="fb414ee5-ed0b-409a-944f-2143e05c55e6" LastKnownName="Decision5" />
+                <elementDefinition Id="b55cc4e0-a606-4089-9945-735ed5d963a0" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode Id="ce7b7bd5-a5f7-48c0-a3e1-f6396589d67e" name="Decision4" isLeaf="false">
+            <elementDefinition Id="f28ce1b7-35c0-4e1b-bd47-ff97e3a05088" />
+            <flowNodeTargets>
+              <controlFlow Id="80069247-ff8d-4541-82fd-fa59ad6344c5" guard="point_vie == 0" isLeaf="false">
+                <opaqueActionMoniker Id="b80a0148-2749-4e35-bb39-8418a78d6647" LastKnownName="L'unité attaquée meurt" />
+                <elementDefinition Id="af2b05ee-b034-4337-91e6-34089adaa82e" />
+              </controlFlow>
+              <controlFlow Id="a61b4134-8718-4151-a188-244fa7b2a2a7" guard="point_vie &gt; 0" isLeaf="false">
+                <opaqueActionMoniker Id="84a79d23-414d-4199-8b46-888747dfad5b" LastKnownName="Début d'un combat" />
+                <elementDefinition Id="2eee4a7e-743b-444f-9f31-d9eb66da5ba2" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <decisionNode Id="fb414ee5-ed0b-409a-944f-2143e05c55e6" name="Decision5" isLeaf="false">
+            <elementDefinition Id="35d1922d-a96b-4759-94ef-53ce97e8db28" />
+            <flowNodeTargets>
+              <controlFlow Id="09087bb5-da79-43ce-a461-f3b471de1d55" guard="point_vie &gt; 0" isLeaf="false">
+                <opaqueActionMoniker Id="84a79d23-414d-4199-8b46-888747dfad5b" LastKnownName="Début d'un combat" />
+                <elementDefinition Id="d9c1a2a6-57c8-4588-99f6-ca5fc94b3f26" />
+              </controlFlow>
+              <controlFlow Id="1a5a06a0-139d-4e49-ab01-8f1eba265c8a" guard="point_vie == 0" isLeaf="false">
+                <opaqueActionMoniker Id="118a6a34-5c92-415f-8ee8-2788d753bd02" LastKnownName="L'unité attanquante meurt" />
+                <elementDefinition Id="6600d48f-eba3-4c24-8b41-7ab854d868a1" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <opaqueAction Id="118a6a34-5c92-415f-8ee8-2788d753bd02" name="L'unité attanquante meurt" isLeaf="false">
+            <elementDefinition Id="d619afb0-195a-4fc3-aa0f-b7501b1a2aa6" />
+            <flowNodeTargets>
+              <controlFlow Id="52c0eb52-db6d-4ce4-8e1d-904ee5f006ed" isLeaf="false">
+                <activityFinalNodeMoniker Id="34d25a35-80a8-4e18-a44b-d1cc3d4cfe1c" LastKnownName="ActivityFinal1" />
+                <elementDefinition Id="f43630f4-dcc6-4aa6-9bc4-473511bb744e" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+        </nodes>
+      </activity>
+    </activityRootModelHasActivity>
+  </packagedElements>
+  <package Id="ff45273f-5149-412c-9ce6-25ad3bb2ac05" name="Modelisation_projetPOO">
+    <elementDefinition Id="1ef72cda-9600-40a4-a1c1-afeec437006f" />
+  </package>
+</activityRootModel>
