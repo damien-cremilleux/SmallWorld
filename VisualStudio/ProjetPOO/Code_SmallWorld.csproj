@@ -80,6 +80,9 @@
     </Compile>
     <Compile Include="Sauvegarder.cs" />
     <Compile Include="Unite.cs" />
+    <Compile Include="UniteGauloise.cs" />
+    <Compile Include="UniteNaine.cs" />
+    <Compile Include="UniteViking.cs" />
     <Compile Include="Viking.cs" />
   </ItemGroup>
   <ItemGroup>
