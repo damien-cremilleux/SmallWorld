@@ -7,10 +7,10 @@
       <relativeChildShapes />
     </actorShape>
     <actorShape Id="e3a7139e-daab-40d9-a3ca-8992a6aec9fd" absoluteBounds="0.5, 2.875, 0.5, 0.5" isReference="false" heightOffset="0">
-      <actorMoniker Id="d19c4be8-9641-4f8c-9663-a0081651f652" LastKnownName="Joueur A" />
+      <actorMoniker Id="d19c4be8-9641-4f8c-9663-a0081651f652" LastKnownName="Joueur B" />
       <relativeChildShapes />
     </actorShape>
-    <useCaseGeneralizationConnector edgePoints="[(1 : 2.91071428571429); (1.375 : 2.58928571428571)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="113, 111, 110">
+    <useCaseGeneralizationConnector edgePoints="[(1 : 2.91071428571429); (1.375 : 2.58928571428571)]" fixedFrom="NotFixed" fixedTo="NotFixed" customColor="113, 111, 110">
       <generalizationMoniker Id="85f4a77e-ded6-451a-97dc-590ae55916d2" />
       <relativeChildShapes />
       <nodes>
@@ -23,10 +23,10 @@
       <relativeChildShapes />
     </commentShape>
     <actorShape Id="011940b6-ce2f-4478-bd40-47a90ed80e62" absoluteBounds="0.5, 1.375, 0.5, 0.5" isReference="false" heightOffset="0">
-      <actorMoniker Id="af3c2eff-8644-4a99-bb33-ef9354848a4f" LastKnownName="Joueur B" />
+      <actorMoniker Id="af3c2eff-8644-4a99-bb33-ef9354848a4f" LastKnownName="Joueur A" />
       <relativeChildShapes />
     </actorShape>
-    <useCaseGeneralizationConnector edgePoints="[(1 : 1.83928571428571); (1.375 : 2.16071428571429)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="113, 111, 110">
+    <useCaseGeneralizationConnector edgePoints="[(1 : 1.83928571428571); (1.375 : 2.16071428571429)]" fixedFrom="NotFixed" fixedTo="NotFixed" customColor="113, 111, 110">
       <generalizationMoniker Id="f37f3bed-0f1b-447b-be64-3a4c4b46f81a" />
       <relativeChildShapes />
       <nodes>
@@ -79,7 +79,7 @@
         </useCaseShape>
       </nestedChildShapes>
     </SubsystemShape>
-    <useCaseAssociationConnector edgePoints="[(1.875 : 2.36890243902439); (3.62554130567417 : 2.3262063096177)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="113, 111, 110" sourceMultiplicity="" targetMultiplicity="">
+    <useCaseAssociationConnector edgePoints="[(1.875 : 2.36890243902439); (3.62554130567417 : 2.3262063096177)]" fixedFrom="NotFixed" fixedTo="NotFixed" customColor="113, 111, 110" sourceMultiplicity="" targetMultiplicity="">
       <associationMoniker Id="f01cd523-0be3-4668-9452-73592573fec0" />
       <relativeChildShapes />
       <nodes>
@@ -87,7 +87,7 @@
         <useCaseShapeMoniker Id="9ca4e9ca-a4f4-4b7f-adeb-ab7bf3ab44da" />
       </nodes>
     </useCaseAssociationConnector>
-    <extendConnector edgePoints="[(4.62096583624809 : 2.11334002118331); (6.1318362396223 : 1.4191563223357)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="Black" useCaseStereotype="«étendre»">
+    <extendConnector edgePoints="[(4.62096583624809 : 2.11334002118331); (6.1318362396223 : 1.4191563223357)]" fixedFrom="NotFixed" fixedTo="NotFixed" customColor="Black" useCaseStereotype="«étendre»">
       <extendMoniker Id="41833eaa-541b-493a-a1ee-67e89ea44e02" />
       <relativeChildShapes />
       <moveableDecoratorHostShapes>
@@ -98,7 +98,7 @@
         <useCaseShapeMoniker Id="22c35a10-4392-4476-ba12-b606bf1c3cdd" />
       </nodes>
     </extendConnector>
-    <extendConnector edgePoints="[(4.7340630267786 : 2.23864013151641); (6.01731830348587 : 2.06522725628569)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="Black" useCaseStereotype="«étendre»">
+    <extendConnector edgePoints="[(4.7340630267786 : 2.23864013151641); (6.01731830348587 : 2.06522725628569)]" fixedFrom="NotFixed" fixedTo="NotFixed" customColor="Black" useCaseStereotype="«étendre»">
       <extendMoniker Id="cec400c6-8f95-41ec-847f-8b7e81570e6d" />
       <relativeChildShapes />
       <moveableDecoratorHostShapes>
@@ -109,7 +109,7 @@
         <useCaseShapeMoniker Id="12a736b4-0770-40cb-8bee-b41021feeeb8" />
       </nodes>
     </extendConnector>
-    <extendConnector edgePoints="[(4.7199718871254 : 2.41323792459129); (6.03235687127186 : 2.66152697564603)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="Black" useCaseStereotype="«étendre»">
+    <extendConnector edgePoints="[(4.7199718871254 : 2.41323792459129); (6.03235687127186 : 2.66152697564603)]" fixedFrom="NotFixed" fixedTo="NotFixed" customColor="Black" useCaseStereotype="«étendre»">
       <extendMoniker Id="6236d09f-747d-45b7-a4f6-a3c4de8c8468" />
       <relativeChildShapes />
       <moveableDecoratorHostShapes>
@@ -120,7 +120,7 @@
         <useCaseShapeMoniker Id="bf106156-de21-4f9a-9731-2ed503292399" />
       </nodes>
     </extendConnector>
-    <extendConnector edgePoints="[(4.74930891466625 : 3.73686029171931); (6.00086385666719 : 3.70392463535086)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="Black" useCaseStereotype="«étendre»">
+    <extendConnector edgePoints="[(4.74930891466625 : 3.73686029171931); (6.00086385666719 : 3.70392463535086)]" fixedFrom="NotFixed" fixedTo="NotFixed" customColor="Black" useCaseStereotype="«étendre»">
       <extendMoniker Id="1f16fd5c-2a80-49b3-bb34-9cf5c510290f" />
       <relativeChildShapes />
       <moveableDecoratorHostShapes>
@@ -131,7 +131,7 @@
         <useCaseShapeMoniker Id="88c6d348-fc1f-479d-ab8d-0e67ab4e4673" />
       </nodes>
     </extendConnector>
-    <extendConnector edgePoints="[(4.67274445151549 : 3.883498247847); (6.20225554848451 : 4.366501752153)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="Black" useCaseStereotype="«étendre»">
+    <extendConnector edgePoints="[(4.67274445151549 : 3.883498247847); (6.20225554848451 : 4.366501752153)]" fixedFrom="NotFixed" fixedTo="NotFixed" customColor="Black" useCaseStereotype="«étendre»">
       <extendMoniker Id="769b316a-2005-4b3b-9b69-62e71a553d91" />
       <relativeChildShapes />
       <moveableDecoratorHostShapes>
@@ -142,7 +142,7 @@
         <useCaseShapeMoniker Id="97bf429d-1814-4e21-8c83-e783ea977172" />
       </nodes>
     </extendConnector>
-    <extendConnector edgePoints="[(4.56035147218278 : 3.94601145611544); (6.31464852781722 : 5.05398854388456)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="Black" useCaseStereotype="«étendre»">
+    <extendConnector edgePoints="[(4.56035147218278 : 3.94601145611544); (6.31464852781722 : 5.05398854388456)]" fixedFrom="NotFixed" fixedTo="NotFixed" customColor="Black" useCaseStereotype="«étendre»">
       <extendMoniker Id="25c46353-ca59-483c-a315-e0e222c3e402" />
       <relativeChildShapes />
       <moveableDecoratorHostShapes>
@@ -153,7 +153,7 @@
         <useCaseShapeMoniker Id="4a8cda7a-9628-47e3-9f3e-15ccb9cb7e0b" />
       </nodes>
     </extendConnector>
-    <useCaseAssociationConnector edgePoints="[(1 : 3.16964285714286); (3.77912904420258 : 3.66591590075046)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="113, 111, 110" sourceMultiplicity="" targetMultiplicity="">
+    <useCaseAssociationConnector edgePoints="[(1 : 3.16964285714286); (3.77912904420258 : 3.66591590075046)]" fixedFrom="NotFixed" fixedTo="NotFixed" customColor="113, 111, 110" sourceMultiplicity="" targetMultiplicity="">
       <associationMoniker Id="63415127-3895-4e7a-95c0-89198925534f" />
       <relativeChildShapes />
       <nodes>
@@ -161,7 +161,7 @@
         <useCaseShapeMoniker Id="f47c8cf0-369f-456c-be2a-379d1cf7a882" />
       </nodes>
     </useCaseAssociationConnector>
-    <useCaseAssociationConnector edgePoints="[(1.875 : 2.275); (3.68382352941176 : 1.55147058823529)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="113, 111, 110" sourceMultiplicity="" targetMultiplicity="">
+    <useCaseAssociationConnector edgePoints="[(1.875 : 2.275); (3.68382352941176 : 1.55147058823529)]" fixedFrom="NotFixed" fixedTo="NotFixed" customColor="113, 111, 110" sourceMultiplicity="" targetMultiplicity="">
       <associationMoniker Id="c24afc20-2089-4d10-882e-f3cbad1f4f69" />
       <relativeChildShapes />
       <nodes>
@@ -169,7 +169,7 @@
         <useCaseShapeMoniker Id="5bfe7444-c40e-40cc-be54-0e92be10c4a1" />
       </nodes>
     </useCaseAssociationConnector>
-    <useCaseAssociationConnector edgePoints="[(1 : 3.26293103448276); (4.03924028763057 : 4.939753262141)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="113, 111, 110" sourceMultiplicity="" targetMultiplicity="">
+    <useCaseAssociationConnector edgePoints="[(1 : 3.26293103448276); (4.03924028763057 : 4.939753262141)]" fixedFrom="NotFixed" fixedTo="NotFixed" customColor="113, 111, 110" sourceMultiplicity="" targetMultiplicity="">
       <associationMoniker Id="da618abf-912e-4873-833a-68e737e6e243" />
       <relativeChildShapes />
       <nodes>

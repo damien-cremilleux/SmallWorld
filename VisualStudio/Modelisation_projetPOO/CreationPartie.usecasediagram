@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<useCaseModelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="d5368a6f-a517-4f92-9015-ce867b98dac5" name="Création d'une partie" linkedPackageId="6013658f-b030-40b9-8c67-717094245ea0" xmlns="http://schemas.microsoft.com/dsltools/UseCaseModel">
+<useCaseModelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" xmlns:dm10="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="d5368a6f-a517-4f92-9015-ce867b98dac5" name="Création d'une partie" linkedPackageId="6013658f-b030-40b9-8c67-717094245ea0" xmlns="http://schemas.microsoft.com/dsltools/UseCaseModel">
   <ownedCommentsInternal>
     <comment Id="4ecf9697-6d82-4da1-b463-edc15525d67e">
       <elementDefinition Id="a2e8efa6-fad9-460a-8d7a-fad76b6ab660" />
-      <body>Le joueur A est plus spécialisé que le joueur B, il choisit la taille de la carte et lance la partie
+      <body>Le joueur B est plus spécialisé que le joueur A, il choisit la taille de la carte et lance la partie
 </body>
     </comment>
   </ownedCommentsInternal>
@@ -161,7 +161,7 @@
       </useCase>
     </packageHasNamedElement>
     <useCaseModelRootHasTypes>
-      <actor Id="d19c4be8-9641-4f8c-9663-a0081651f652" name="Joueur A" isAbstract="false" isLeaf="false">
+      <actor Id="d19c4be8-9641-4f8c-9663-a0081651f652" name="Joueur B" isAbstract="false" isLeaf="false">
         <elementDefinition Id="5db1afb6-ed97-42fe-b263-9312579277a1" />
         <generalsInternal>
           <generalization Id="85f4a77e-ded6-451a-97dc-590ae55916d2" isSubstitutable="false">
@@ -206,7 +206,7 @@
       </actor>
     </useCaseModelRootHasTypes>
     <useCaseModelRootHasTypes>
-      <actor Id="af3c2eff-8644-4a99-bb33-ef9354848a4f" name="Joueur B" isAbstract="false" isLeaf="false">
+      <actor Id="af3c2eff-8644-4a99-bb33-ef9354848a4f" name="Joueur A" isAbstract="false" isLeaf="false">
         <elementDefinition Id="69518a8e-a5ac-4ace-b6ab-29260069a60b" />
         <generalsInternal>
           <generalization Id="f37f3bed-0f1b-447b-be64-3a4c4b46f81a" isSubstitutable="false">

@@ -7,11 +7,7 @@ namespace ProjetPOO
 {
     public interface FabriquePeuple
     {
-    
-        void creerPeupleGaulois();
 
-        void creerPeupleViking();
-
-        void creerPeupleNain();
+        void fabriquerPeuple();
     }
 }

@@ -9,6 +9,11 @@ namespace ProjetPOO
     {
         /// <remarks></remarks>
         void construire();
+    }
+
+    public interface Carte
+    {
+        void creerCarte();
 
         void definirStrategie();
     }

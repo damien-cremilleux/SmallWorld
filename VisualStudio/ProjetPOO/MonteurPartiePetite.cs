@@ -7,6 +7,6 @@ namespace Code_SmallWorld
 {
     public interface MonteurPartiePetite : ProjetPOO.MonteurPartie
     {
-        void addPeuple();
+        void ajouterPeuple();
     }
 }

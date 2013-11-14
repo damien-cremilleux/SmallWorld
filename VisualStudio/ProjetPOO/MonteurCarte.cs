@@ -10,6 +10,8 @@ namespace ProjetPOO
 
         Partie creerPartie();
 
-        void addPeuple();
+        void ajouterPeuple();
+
+        void creerCarte();
     }
 }
