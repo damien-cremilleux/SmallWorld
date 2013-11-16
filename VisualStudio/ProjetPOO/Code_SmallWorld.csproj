@@ -7,7 +7,7 @@
     <ProjectGuid>{F89C3FAF-2529-4189-BD90-D8B5ED0324BD}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Code_SmallWorld</RootNamespace>
+    <RootNamespace>SmallWorld</RootNamespace>
     <AssemblyName>Code_SmallWorld</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -58,6 +58,7 @@
     <Compile Include="MonteurCarte.cs" />
     <Compile Include="MonteurDemo.cs" />
     <Compile Include="MonteurNormal.cs" />
+    <Compile Include="MonteurPartie.cs" />
     <Compile Include="MonteurPartieDemo.cs" />
     <Compile Include="MonteurPartieNormale.cs" />
     <Compile Include="MonteurPartiePetite.cs" />
@@ -86,6 +87,7 @@
     <Compile Include="Viking.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Monteur.cd" />
     <None Include="InterfaceGlobale.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

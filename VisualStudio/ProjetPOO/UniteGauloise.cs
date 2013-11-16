@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Code_SmallWorld
 {
-    public interface UniteGauloise : ProjetPOO.Unite
+    public interface UniteGauloise : Code_SmallWorld.Unite
     {
     }
 }

@@ -1,5 +1,5 @@
-C:\Users\damienc\Documents\GitHub\SmallWorld\VisualStudio\ProjetPOO\bin\Debug\ProjetPOO.dll
-C:\Users\damienc\Documents\GitHub\SmallWorld\VisualStudio\ProjetPOO\bin\Debug\ProjetPOO.pdb
 C:\Users\damienc\Documents\GitHub\SmallWorld\VisualStudio\ProjetPOO\obj\Debug\Code_SmallWorld.csprojResolveAssemblyReference.cache
-C:\Users\damienc\Documents\GitHub\SmallWorld\VisualStudio\ProjetPOO\obj\Debug\ProjetPOO.dll
-C:\Users\damienc\Documents\GitHub\SmallWorld\VisualStudio\ProjetPOO\obj\Debug\ProjetPOO.pdb
+C:\Users\damienc\Documents\GitHub\SmallWorld\VisualStudio\ProjetPOO\bin\Debug\Code_SmallWorld.dll
+C:\Users\damienc\Documents\GitHub\SmallWorld\VisualStudio\ProjetPOO\bin\Debug\Code_SmallWorld.pdb
+C:\Users\damienc\Documents\GitHub\SmallWorld\VisualStudio\ProjetPOO\obj\Debug\Code_SmallWorld.dll
+C:\Users\damienc\Documents\GitHub\SmallWorld\VisualStudio\ProjetPOO\obj\Debug\Code_SmallWorld.pdb

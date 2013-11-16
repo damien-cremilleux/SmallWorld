@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace ProjetPOO
+namespace Code_SmallWorld
 {
-    public interface MonteurPartie
+    public interface InterMonteurPartie
     {
 
         Partie creerPartie();

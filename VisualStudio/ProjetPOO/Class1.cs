@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ProjetPOO
+namespace Code_SmallWorld
 {
     public class Class1
     {

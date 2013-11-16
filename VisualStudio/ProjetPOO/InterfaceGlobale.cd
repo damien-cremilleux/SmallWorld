@@ -4,7 +4,7 @@
     <Position X="9.774" Y="9.861" Height="0.75" Width="1.7" />
   </Comment>
   <Comment CommentText="Stratégie pour la création des différents types de cartes">
-    <Position X="2.781" Y="4.479" Height="0.75" Width="1.7" />
+    <Position X="3" Y="6.25" Height="0.75" Width="1.7" />
   </Comment>
   <Comment CommentText="Monteur, pour la création d'une partie">
     <Position X="2.823" Y="0.875" Height="0.75" Width="1.7" />
@@ -18,183 +18,183 @@
   <Comment CommentText="Observateur à mettre en place entre Carte et Unité : carte observe unité">
     <Position X="15.339" Y="13.438" Height="0.75" Width="1.7" />
   </Comment>
-  <Interface Name="ProjetPOO.FabriqueCase">
+  <Interface Name="Code_SmallWorld.FabriqueCase">
     <Position X="13.25" Y="5.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AABAQgAAgAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAIA=</HashCode>
       <FileName>FabriqueCase.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="ProjetPOO.Case">
+  <Interface Name="Code_SmallWorld.Case">
     <Position X="9.5" Y="6.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Case.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="ProjetPOO.Foret">
-    <Position X="7.75" Y="8.25" Width="1.5" />
+  <Interface Name="Code_SmallWorld.Foret">
+    <Position X="7.5" Y="9.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>foret.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="ProjetPOO.Montagne">
+  <Interface Name="Code_SmallWorld.Montagne">
     <Position X="13.25" Y="8.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>montagne.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="ProjetPOO.Desert">
+  <Interface Name="Code_SmallWorld.Desert">
     <Position X="11.5" Y="8.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>desert.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="ProjetPOO.Eau">
+  <Interface Name="Code_SmallWorld.Eau">
     <Position X="15" Y="8.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>eau.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="ProjetPOO.Plaine">
+  <Interface Name="Code_SmallWorld.Plaine">
     <Position X="9.75" Y="8.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>plaine.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="ProjetPOO.StrategieCarte">
-    <Position X="4.75" Y="4.25" Width="2.25" />
+  <Interface Name="Code_SmallWorld.StrategieCarte">
+    <Position X="5" Y="6" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Carte.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="ProjetPOO.FabriquePeuple">
-    <Position X="7.5" Y="9.75" Width="2" />
+  <Interface Name="Code_SmallWorld.FabriquePeuple">
+    <Position X="7" Y="11.25" Width="2" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Fabrique.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="ProjetPOO.Peuple">
+  <Interface Name="Code_SmallWorld.Peuple">
     <Position X="11.75" Y="9.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Peuple.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="ProjetPOO.StrategieDemo">
-    <Position X="3.75" Y="6.25" Width="1.5" />
+  <Interface Name="Code_SmallWorld.StrategieDemo">
+    <Position X="3.25" Y="8" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Demo.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="ProjetPOO.StrategiePetite">
-    <Position X="5.5" Y="6.25" Width="1.5" />
+  <Interface Name="Code_SmallWorld.StrategiePetite">
+    <Position X="5.25" Y="8" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Petite.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="ProjetPOO.StrategieNormale">
-    <Position X="7.25" Y="6.25" Width="1.5" />
+  <Interface Name="Code_SmallWorld.StrategieNormale">
+    <Position X="7.25" Y="8" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Normale.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="ProjetPOO.MonteurPartie">
-    <Position X="5" Y="0.5" Width="1.5" />
+  <Interface Name="Code_SmallWorld.InterMonteurPartie">
+    <Position X="6" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAEAAAAAAAAAAAAAAAAAAAAAAAAgIAAAAAAAAEAAAAA=</HashCode>
       <FileName>MonteurCarte.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="ProjetPOO.Unite">
+  <Interface Name="Code_SmallWorld.Unite">
     <Position X="11.75" Y="13" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAA=</HashCode>
       <FileName>Unite.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="ProjetPOO.Sauvegarde">
+  <Interface Name="Code_SmallWorld.Sauvegarde">
     <Position X="12.5" Y="3.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAABAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAA=</HashCode>
       <FileName>Sauvegarder.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="ProjetPOO.PeupleGaulois">
+  <Interface Name="Code_SmallWorld.PeupleGaulois">
     <Position X="9.5" Y="11.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>PeupleGaulois.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="ProjetPOO.PeupleNain">
+  <Interface Name="Code_SmallWorld.PeupleNain">
     <Position X="14" Y="11.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>PeupleNain.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="ProjetPOO.PeupleViking">
+  <Interface Name="Code_SmallWorld.PeupleViking">
     <Position X="11.75" Y="11.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>PeupleViking.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="ProjetPOO.Joueur">
+  <Interface Name="Code_SmallWorld.Joueur">
     <Position X="9" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Joueur.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="ProjetPOO.Partie">
+  <Interface Name="Code_SmallWorld.Partie">
     <Position X="10.5" Y="3.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Partie.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="ProjetPOO.CreateurPartie">
+  <Interface Name="Code_SmallWorld.InterCreateurPartie">
     <Position X="1" Y="0.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>CreateurPartie.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="Code_SmallWorld.MonteurPartieDemo">
+  <Interface Name="Code_SmallWorld.InterMonteurPartieDemo">
     <Position X="4.25" Y="2.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>MonteurPartieDemo.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="Code_SmallWorld.MonteurPartieNormale">
+  <Interface Name="Code_SmallWorld.InterMonteurPartieNormale">
     <Position X="7.75" Y="2.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>MonteurPartieNormale.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="Code_SmallWorld.MonteurPartiePetite">
+  <Interface Name="Code_SmallWorld.InterMonteurPartiePetite">
     <Position X="6" Y="2.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>MonteurPartiePetite.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="ProjetPOO.Carte">
-    <Position X="0.75" Y="4.25" Width="2" />
+  <Interface Name="Code_SmallWorld.Carte">
+    <Position X="0.5" Y="6" Width="2" />
     <TypeIdentifier>
       <HashCode>AAAABAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Carte.cs</FileName>
