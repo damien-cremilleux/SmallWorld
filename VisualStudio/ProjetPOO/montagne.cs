@@ -3,9 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Code_SmallWorld
+namespace SmallWorld
 {
-    public interface Montagne : Case
+    public interface InterMontagne : InterCase
+    {
+    }
+
+    public class Montagne : Case, InterMontagne
     {
     }
 }

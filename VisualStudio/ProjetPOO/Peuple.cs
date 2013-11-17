@@ -3,11 +3,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Code_SmallWorld
+namespace SmallWorld
 {
-    public interface Peuple
+    public interface InterPeuple
     {
     
-        Unite creerUnite();
+        InterUnite creerUnite();
+    }
+
+    public class Peuple : InterPeuple
+    {
+        public InterUnite creerUnite()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

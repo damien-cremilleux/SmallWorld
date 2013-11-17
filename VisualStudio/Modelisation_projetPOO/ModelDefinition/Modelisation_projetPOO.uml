@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner" xmlns:dm11="http://schemas.microsoft.com/dsltools/UseCaseModel"
+<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm9="http://schemas.microsoft.com/dsltools/UseCaseModel" xmlns:dm10="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" xmlns:dm11="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner"
   dslVersion="1.0.0.0"
   Id="1ef72cda-9600-40a4-a1c1-afeec437006f"
   name="Modelisation_projetPOO" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
@@ -14,8 +14,14 @@
       <body>Inclure les cas d'erreur (ex : déplacement impossible)</body>
     </comment>
     <comment
-      Id="c7f9b5de-1e9e-4f43-92f1-2c7516e0a547">
-      <body>Sortie par match nul</body>
+      Id="a8b74d92-6872-4c2a-b50c-bcd49cc7c6c8">
+      <body>Lancement de la partie</body>
+      <annotatedElements>
+        <activityFinalNodeMoniker
+          Id="9c6163fc-84bf-4775-beb6-9994b0c8b8bc"
+          LastKnownName="Lancement de la partie"
+          LastKnownLocation="Modelisation_projetPOO.uml" />
+      </annotatedElements>
     </comment>
   </ownedCommentsInternal>
   <profileInstances>
@@ -4786,7 +4792,7 @@
     <packageHasNamedElement>
       <activity
         Id="777aed80-f4d8-4890-9bc7-4a3e4403ac08"
-        name="Activity1"
+        name="Lancement d'une partie"
         isAbstract="false"
         isLeaf="false"
         isActiveClass="false"
@@ -4881,7 +4887,7 @@
           </opaqueAction>
           <activityFinalNode
             Id="9c6163fc-84bf-4775-beb6-9994b0c8b8bc"
-            name="ActivityFinal1"
+            name="Lancement de la partie"
             isLeaf="false" />
           <decisionNode
             Id="454f0b0c-d52e-467f-a471-600801648546"
@@ -4948,7 +4954,7 @@
                 isLeaf="false">
                 <activityFinalNodeMoniker
                   Id="9c6163fc-84bf-4775-beb6-9994b0c8b8bc"
-                  LastKnownName="ActivityFinal1"
+                  LastKnownName="Lancement de la partie"
                   LastKnownLocation="Modelisation_projetPOO.uml" />
               </controlFlow>
             </flowNodeTargets>
@@ -4967,24 +4973,9 @@
         isReadOnly="false"
         isSingleExecution="false">
         <nodes>
-          <initialNode
-            Id="e104c1de-9822-4821-a266-7274651d3606"
-            name="Initial1"
-            isLeaf="false">
-            <flowNodeTargets>
-              <controlFlow
-                Id="df9e8f80-2556-48cf-b9ed-4926dfbc9feb"
-                isLeaf="false">
-                <decisionNodeMoniker
-                  Id="6383899b-82b8-4221-8b1d-dd6bbf410020"
-                  LastKnownName="Decision2"
-                  LastKnownLocation="Modelisation_projetPOO.uml" />
-              </controlFlow>
-            </flowNodeTargets>
-          </initialNode>
           <opaqueAction
             Id="f28e5b1d-d27e-4588-ac6c-3cd91361e7bf"
-            name="Sélectionne une unité"
+            name="Sélectionner une unité"
             isLeaf="false">
             <flowNodeTargets>
               <controlFlow
@@ -4999,30 +4990,30 @@
           </opaqueAction>
           <opaqueAction
             Id="3142be59-aa2e-4e12-b800-a81f51ea7dc4"
-            name="Se déplacer sur une autre case"
+            name="Se déplacer sur une case adjacente"
             isLeaf="false">
             <flowNodeTargets>
               <controlFlow
-                Id="24e5b048-5bdb-4c23-be5f-54fbc2444bca"
+                Id="71bd099a-2473-4048-a1a8-d232aaf41d51"
                 isLeaf="false">
                 <opaqueActionMoniker
-                  Id="f28e5b1d-d27e-4588-ac6c-3cd91361e7bf"
-                  LastKnownName="Sélectionne une unité"
+                  Id="31dcd2c0-461b-420a-a5c6-c8b4753738a4"
+                  LastKnownName="Choisir l'action"
                   LastKnownLocation="Modelisation_projetPOO.uml" />
               </controlFlow>
             </flowNodeTargets>
           </opaqueAction>
           <opaqueAction
             Id="6ae2ce91-d9fc-4b75-be39-9dabf27f87bc"
-            name="Attaquer"
+            name="Attaque une unité adverte adjacense"
             isLeaf="false">
             <flowNodeTargets>
               <controlFlow
-                Id="e2d12e1b-6299-4ce9-b3cb-1ecf31b5a056"
+                Id="87cfd0cf-0245-4e43-95ae-e174c2845120"
                 isLeaf="false">
                 <opaqueActionMoniker
-                  Id="f28e5b1d-d27e-4588-ac6c-3cd91361e7bf"
-                  LastKnownName="Sélectionne une unité"
+                  Id="31dcd2c0-461b-420a-a5c6-c8b4753738a4"
+                  LastKnownName="Choisir l'action"
                   LastKnownLocation="Modelisation_projetPOO.uml" />
               </controlFlow>
             </flowNodeTargets>
@@ -5038,7 +5029,7 @@
                 isLeaf="false">
                 <opaqueActionMoniker
                   Id="3142be59-aa2e-4e12-b800-a81f51ea7dc4"
-                  LastKnownName="Se déplacer sur une autre case"
+                  LastKnownName="Se déplacer sur une case adjacente"
                   LastKnownLocation="Modelisation_projetPOO.uml" />
               </controlFlow>
               <controlFlow
@@ -5047,7 +5038,16 @@
                 isLeaf="false">
                 <opaqueActionMoniker
                   Id="6ae2ce91-d9fc-4b75-be39-9dabf27f87bc"
-                  LastKnownName="Attaquer"
+                  LastKnownName="Attaque une unité adverte adjacense"
+                  LastKnownLocation="Modelisation_projetPOO.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="6deddedf-2038-4bea-b313-fb4a45f72521"
+                guard="point_deplacement = 0"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="31dcd2c0-461b-420a-a5c6-c8b4753738a4"
+                  LastKnownName="Choisir l'action"
                   LastKnownLocation="Modelisation_projetPOO.uml" />
               </controlFlow>
             </flowNodeTargets>
@@ -5055,7 +5055,18 @@
           <opaqueAction
             Id="76679841-cda5-406e-9102-5e6d00cf77e8"
             name="Valider son tour"
-            isLeaf="false" />
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="942f1472-dc79-480b-8b21-63d2db0afbd0"
+                isLeaf="false">
+                <activityFinalNodeMoniker
+                  Id="13fdc91b-e53e-4169-aab8-d04114c68d88"
+                  LastKnownName="ActivityFinal1"
+                  LastKnownLocation="Modelisation_projetPOO.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
           <decisionNode
             Id="6383899b-82b8-4221-8b1d-dd6bbf410020"
             name="Decision2"
@@ -5063,14 +5074,16 @@
             <flowNodeTargets>
               <controlFlow
                 Id="82eb29c7-326e-4bc5-88e5-7cce12d71314"
+                guard="Sélection unité"
                 isLeaf="false">
                 <opaqueActionMoniker
                   Id="f28e5b1d-d27e-4588-ac6c-3cd91361e7bf"
-                  LastKnownName="Sélectionne une unité"
+                  LastKnownName="Sélectionner une unité"
                   LastKnownLocation="Modelisation_projetPOO.uml" />
               </controlFlow>
               <controlFlow
                 Id="569b5920-b425-42b8-9830-007f10fec9e9"
+                guard="Passer son tour"
                 isLeaf="false">
                 <opaqueActionMoniker
                   Id="76679841-cda5-406e-9102-5e6d00cf77e8"
@@ -5079,6 +5092,40 @@
               </controlFlow>
             </flowNodeTargets>
           </decisionNode>
+          <opaqueAction
+            Id="31dcd2c0-461b-420a-a5c6-c8b4753738a4"
+            name="Choisir l'action"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="dba9f2dd-ac78-4825-9140-4cfd6c0bd31e"
+                isLeaf="false">
+                <decisionNodeMoniker
+                  Id="6383899b-82b8-4221-8b1d-dd6bbf410020"
+                  LastKnownName="Decision2"
+                  LastKnownLocation="Modelisation_projetPOO.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <initialNode
+            Id="eb98b2d1-37d0-40d3-a5ab-c150805b8cf0"
+            name="Initial1"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="d677e834-685d-4ab0-a9c3-85452fb189ee"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="31dcd2c0-461b-420a-a5c6-c8b4753738a4"
+                  LastKnownName="Choisir l'action"
+                  LastKnownLocation="Modelisation_projetPOO.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </initialNode>
+          <activityFinalNode
+            Id="13fdc91b-e53e-4169-aab8-d04114c68d88"
+            name="ActivityFinal1"
+            isLeaf="false" />
         </nodes>
       </activity>
     </packageHasNamedElement>
@@ -5099,18 +5146,18 @@
             isLeaf="false">
             <flowNodeTargets>
               <controlFlow
-                Id="a938ebe2-5634-4f33-933a-1f56508f61f1"
+                Id="66f99cc8-fa88-441d-99bc-1d43f636ae4f"
                 isLeaf="false">
                 <opaqueActionMoniker
                   Id="aa67b381-1d39-46b7-ba9b-cfd8b93b8d37"
-                  LastKnownName="La meilleure unité défensive est choisie"
+                  LastKnownName="Choisir la meilleure unité défensive"
                   LastKnownLocation="Modelisation_projetPOO.uml" />
               </controlFlow>
             </flowNodeTargets>
           </initialNode>
           <opaqueAction
             Id="aa67b381-1d39-46b7-ba9b-cfd8b93b8d37"
-            name="La meilleure unité défensive est choisie"
+            name="Choisir la meilleure unité défensive"
             isLeaf="false">
             <flowNodeTargets>
               <controlFlow
@@ -5130,42 +5177,42 @@
             <flowNodeTargets>
               <controlFlow
                 Id="2cd142a3-fca1-4ad2-ac04-2c2907e35946"
-                guard="0 en défense"
+                guard="point_défense = 0"
                 isLeaf="false">
                 <opaqueActionMoniker
                   Id="221b7a1c-02cf-46d4-bedd-3fa66ee879dc"
-                  LastKnownName="L'unité attaquée meurt"
+                  LastKnownName="Eliminer l'unité attaquée"
                   LastKnownLocation="Modelisation_projetPOO.uml" />
               </controlFlow>
               <controlFlow
                 Id="84fd0a03-35db-42e2-b4d2-1d6847e3a7b6"
-                guard="défense &gt; 0"
+                guard="point_défense &gt; 0"
                 isLeaf="false">
                 <opaqueActionMoniker
                   Id="d175a45d-2802-4c97-8319-79ae4f0d216d"
-                  LastKnownName="Calcul nombre de combats"
+                  LastKnownName="Calculer le nombre de combats"
                   LastKnownLocation="Modelisation_projetPOO.uml" />
               </controlFlow>
             </flowNodeTargets>
           </decisionNode>
           <opaqueAction
             Id="221b7a1c-02cf-46d4-bedd-3fa66ee879dc"
-            name="L'unité attaquée meurt"
+            name="Eliminer l'unité attaquée"
             isLeaf="false">
             <flowNodeTargets>
               <controlFlow
-                Id="468451b4-d430-4424-b8ae-55003119b105"
+                Id="1c54e2fd-a22f-4831-be35-96913f07c780"
                 isLeaf="false">
-                <activityFinalNodeMoniker
-                  Id="0bedac02-8ecc-4527-ac61-ed6570c1748b"
-                  LastKnownName="ActivityFinal1"
+                <opaqueActionMoniker
+                  Id="1cf0d1a4-cda1-4097-8243-fd232579ce22"
+                  LastKnownName="Déclarer l'attaquant vainqueur"
                   LastKnownLocation="Modelisation_projetPOO.uml" />
               </controlFlow>
             </flowNodeTargets>
           </opaqueAction>
           <opaqueAction
             Id="d175a45d-2802-4c97-8319-79ae4f0d216d"
-            name="Calcul nombre de combats"
+            name="Calculer le nombre de combats"
             isLeaf="false">
             <flowNodeTargets>
               <controlFlow
@@ -5173,18 +5220,14 @@
                 isLeaf="false">
                 <opaqueActionMoniker
                   Id="4738529b-1c78-45c9-a93e-65afdabade82"
-                  LastKnownName="Début d'un combat"
+                  LastKnownName="Débuter un combat"
                   LastKnownLocation="Modelisation_projetPOO.uml" />
               </controlFlow>
             </flowNodeTargets>
           </opaqueAction>
-          <activityFinalNode
-            Id="0bedac02-8ecc-4527-ac61-ed6570c1748b"
-            name="ActivityFinal1"
-            isLeaf="false" />
           <opaqueAction
             Id="4738529b-1c78-45c9-a93e-65afdabade82"
-            name="Début d'un combat"
+            name="Débuter un combat"
             isLeaf="false">
             <flowNodeTargets>
               <controlFlow
@@ -5203,28 +5246,28 @@
             isLeaf="false">
             <flowNodeTargets>
               <controlFlow
-                Id="e762a249-1e8d-4272-a9c6-9d289cf8c1cc"
-                guard="NbCombatRestant == 0"
-                isLeaf="false">
-                <activityFinalNodeMoniker
-                  Id="0bedac02-8ecc-4527-ac61-ed6570c1748b"
-                  LastKnownName="ActivityFinal1"
-                  LastKnownLocation="Modelisation_projetPOO.uml" />
-              </controlFlow>
-              <controlFlow
                 Id="e91977eb-0594-4ade-90ee-66b72ea3f0c8"
                 guard="NbCombatRestant &gt; 0"
                 isLeaf="false">
                 <opaqueActionMoniker
                   Id="197ec925-a57f-4eb5-8970-e8fdcad6b1c8"
-                  LastKnownName="Calcul du vainqueur"
+                  LastKnownName="Calculer le vainqueur"
+                  LastKnownLocation="Modelisation_projetPOO.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="fa066a1a-9ac1-4cf9-a807-4549f4888919"
+                guard="NbCombatRestant = 0"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="a01d8204-ab2b-471a-8a1c-cfd90129dbff"
+                  LastKnownName="Déclarer un match nul"
                   LastKnownLocation="Modelisation_projetPOO.uml" />
               </controlFlow>
             </flowNodeTargets>
           </decisionNode>
           <opaqueAction
             Id="197ec925-a57f-4eb5-8970-e8fdcad6b1c8"
-            name="Calcul du vainqueur"
+            name="Calculer le vainqueur"
             isLeaf="false">
             <flowNodeTargets>
               <controlFlow
@@ -5248,7 +5291,7 @@
                 isLeaf="false">
                 <opaqueActionMoniker
                   Id="b14e5d35-a95a-4435-8345-2b901f0d2fff"
-                  LastKnownName="La défense perd un point de vie"
+                  LastKnownName="Enlever un point de vie au défenseur"
                   LastKnownLocation="Modelisation_projetPOO.uml" />
               </controlFlow>
               <controlFlow
@@ -5257,14 +5300,14 @@
                 isLeaf="false">
                 <opaqueActionMoniker
                   Id="71732ee4-b426-4095-9898-0e088ce27e24"
-                  LastKnownName="Unite attaquée vainqueur"
+                  LastKnownName="Enlever un point de vie à l'attaquant"
                   LastKnownLocation="Modelisation_projetPOO.uml" />
               </controlFlow>
             </flowNodeTargets>
           </decisionNode>
           <opaqueAction
             Id="b14e5d35-a95a-4435-8345-2b901f0d2fff"
-            name="La défense perd un point de vie"
+            name="Enlever un point de vie au défenseur"
             isLeaf="false">
             <flowNodeTargets>
               <controlFlow
@@ -5279,7 +5322,7 @@
           </opaqueAction>
           <opaqueAction
             Id="71732ee4-b426-4095-9898-0e088ce27e24"
-            name="Unite attaquée vainqueur"
+            name="Enlever un point de vie à l'attaquant"
             isLeaf="false">
             <flowNodeTargets>
               <controlFlow
@@ -5298,21 +5341,21 @@
             isLeaf="false">
             <flowNodeTargets>
               <controlFlow
-                Id="af2b05ee-b034-4337-91e6-34089adaa82e"
-                guard="point_vie == 0"
-                isLeaf="false">
-                <opaqueActionMoniker
-                  Id="221b7a1c-02cf-46d4-bedd-3fa66ee879dc"
-                  LastKnownName="L'unité attaquée meurt"
-                  LastKnownLocation="Modelisation_projetPOO.uml" />
-              </controlFlow>
-              <controlFlow
                 Id="2eee4a7e-743b-444f-9f31-d9eb66da5ba2"
                 guard="point_vie &gt; 0"
                 isLeaf="false">
                 <opaqueActionMoniker
                   Id="4738529b-1c78-45c9-a93e-65afdabade82"
-                  LastKnownName="Début d'un combat"
+                  LastKnownName="Débuter un combat"
+                  LastKnownLocation="Modelisation_projetPOO.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="1b779594-2fb3-45db-af9a-c233abc640f5"
+                guard="point_vie = 0"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="221b7a1c-02cf-46d4-bedd-3fa66ee879dc"
+                  LastKnownName="Eliminer l'unité attaquée"
                   LastKnownLocation="Modelisation_projetPOO.uml" />
               </controlFlow>
             </flowNodeTargets>
@@ -5328,35 +5371,84 @@
                 isLeaf="false">
                 <opaqueActionMoniker
                   Id="4738529b-1c78-45c9-a93e-65afdabade82"
-                  LastKnownName="Début d'un combat"
+                  LastKnownName="Débuter un combat"
                   LastKnownLocation="Modelisation_projetPOO.uml" />
               </controlFlow>
               <controlFlow
                 Id="6600d48f-eba3-4c24-8b41-7ab854d868a1"
-                guard="point_vie == 0"
+                guard="point_vie = 0"
                 isLeaf="false">
                 <opaqueActionMoniker
                   Id="d619afb0-195a-4fc3-aa0f-b7501b1a2aa6"
-                  LastKnownName="L'unité attanquante meurt"
+                  LastKnownName="Eliminer l'unité attaquante"
                   LastKnownLocation="Modelisation_projetPOO.uml" />
               </controlFlow>
             </flowNodeTargets>
           </decisionNode>
           <opaqueAction
             Id="d619afb0-195a-4fc3-aa0f-b7501b1a2aa6"
-            name="L'unité attanquante meurt"
+            name="Eliminer l'unité attaquante"
             isLeaf="false">
             <flowNodeTargets>
               <controlFlow
-                Id="f43630f4-dcc6-4aa6-9bc4-473511bb744e"
+                Id="ee9469c4-1546-48db-ac26-df59b8195f46"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="dfed1b10-2175-42da-ab2f-45c3b529c93f"
+                  LastKnownName="Déclarer le défenseur vainqueur"
+                  LastKnownLocation="Modelisation_projetPOO.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="1cf0d1a4-cda1-4097-8243-fd232579ce22"
+            name="Déclarer l'attaquant vainqueur"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="9e2c8d91-5a07-45e0-b165-640a742eee3d"
                 isLeaf="false">
                 <activityFinalNodeMoniker
-                  Id="0bedac02-8ecc-4527-ac61-ed6570c1748b"
+                  Id="97ea56aa-33ab-45bd-a066-bfc6caf8aec9"
                   LastKnownName="ActivityFinal1"
                   LastKnownLocation="Modelisation_projetPOO.uml" />
               </controlFlow>
             </flowNodeTargets>
           </opaqueAction>
+          <opaqueAction
+            Id="a01d8204-ab2b-471a-8a1c-cfd90129dbff"
+            name="Déclarer un match nul"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="cbdc3f66-7b89-44c4-8eb6-64eea40bbd52"
+                isLeaf="false">
+                <activityFinalNodeMoniker
+                  Id="97ea56aa-33ab-45bd-a066-bfc6caf8aec9"
+                  LastKnownName="ActivityFinal1"
+                  LastKnownLocation="Modelisation_projetPOO.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="dfed1b10-2175-42da-ab2f-45c3b529c93f"
+            name="Déclarer le défenseur vainqueur"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="7ba3c786-7601-450a-8e9d-4ac4d99f5507"
+                isLeaf="false">
+                <activityFinalNodeMoniker
+                  Id="97ea56aa-33ab-45bd-a066-bfc6caf8aec9"
+                  LastKnownName="ActivityFinal1"
+                  LastKnownLocation="Modelisation_projetPOO.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <activityFinalNode
+            Id="97ea56aa-33ab-45bd-a066-bfc6caf8aec9"
+            name="ActivityFinal1"
+            isLeaf="false" />
         </nodes>
       </activity>
     </packageHasNamedElement>

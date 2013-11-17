@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<useCaseDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="UMLUseCaseDiagram2">
+<useCaseDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11.75, 8.5" name="UMLUseCaseDiagram2">
   <useCaseModelRootMoniker Id="d5368a6f-a517-4f92-9015-ce867b98dac5" />
   <nestedChildShapes>
     <actorShape Id="d022cd36-0f33-41e6-95e5-85463647a389" absoluteBounds="1.375, 2.125, 0.5, 0.5" isReference="false" heightOffset="0">
@@ -18,7 +18,7 @@
         <actorShapeMoniker Id="d022cd36-0f33-41e6-95e5-85463647a389" />
       </nodes>
     </useCaseGeneralizationConnector>
-    <commentShape Id="43c5cbea-a4d4-4ffc-944d-7beaba0ae173" absoluteBounds="0.5, 3.875, 1.25, 1" customColor="251, 247, 200">
+    <commentShape Id="43c5cbea-a4d4-4ffc-944d-7beaba0ae173" absoluteBounds="10.25, 2.25, 1.25, 1" customColor="251, 247, 200">
       <commentMoniker Id="4ecf9697-6d82-4da1-b463-edc15525d67e" />
       <relativeChildShapes />
     </commentShape>
@@ -169,7 +169,7 @@
         <useCaseShapeMoniker Id="5bfe7444-c40e-40cc-be54-0e92be10c4a1" />
       </nodes>
     </useCaseAssociationConnector>
-    <useCaseAssociationConnector edgePoints="[(1 : 3.26293103448276); (4.03924028763057 : 4.939753262141)]" fixedFrom="NotFixed" fixedTo="NotFixed" customColor="113, 111, 110" sourceMultiplicity="" targetMultiplicity="">
+    <useCaseAssociationConnector edgePoints="[(1 : 3.26293103448276); (4.03924028763057 : 4.939753262141)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="113, 111, 110" sourceMultiplicity="" targetMultiplicity="">
       <associationMoniker Id="da618abf-912e-4873-833a-68e737e6e243" />
       <relativeChildShapes />
       <nodes>

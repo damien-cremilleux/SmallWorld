@@ -1,7 +1,6 @@
 var NAVTREE =
 [
   [ "SmallWorld", "index.html", [
-    [ "SmallWorld", "md__c_1__users_damienc__documents__git_hub__small_world__r_e_a_d_m_e.html", null ],
     [ "Packages", null, [
       [ "Packages", "namespaces.html", "namespaces" ]
     ] ],
@@ -11,15 +10,19 @@ var NAVTREE =
       [ "Class Hierarchy", "hierarchy.html", "hierarchy" ],
       [ "Class Members", "functions.html", [
         [ "All", "functions.html", null ],
-        [ "Functions", "functions_func.html", null ]
+        [ "Functions", "functions_func.html", null ],
+        [ "Properties", "functions_prop.html", null ]
       ] ]
+    ] ],
+    [ "Files", null, [
+      [ "File List", "files.html", "files" ]
     ] ]
   ] ]
 ];
 
 var NAVTREEINDEX =
 [
-"annotated.html"
+"_createur_partie_8cs.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

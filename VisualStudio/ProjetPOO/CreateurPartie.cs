@@ -1,33 +1,41 @@
 ﻿/**
- * @Brief Directeur pour la création d'un partie
+ * @file CreateurPartie.cs
+ * @brief Interface et classe du créateur de partie
  * 
- * Cette classe définit le processus de création d'une partie
+ * Directeur du patron de conception Monteur, contient le processus de création
  * 
- * @author <a href="mailto:damien.cremilleux@insa-rennes.fr">Damien Crémilleux</a>
- * @author <a href="mailto:lauriane.holy@insa-rennes.fr">Lauriane Holy</a>
+ * @author <a href="mailto:damien.cremilleux@insa-rennes.fr">Damien Crémilleux</@>
+ * @author <a href="mailto:lauriane.holy@insa-rennes.fr">Lauriane Holy</@>
  * 
- * @date 16/11/2013
+ * @date 18/11/2013
  * @version 0.1
- * */
+ */
 
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Code_SmallWorld
+namespace SmallWorld
 {
-    
-    /**
-     * @Brief 
+   /**
+    * @brief Interface du créateur de partie
+    */ 
     public interface InterCreateurPartie
     {
         void construire();
     }
 
+
+    /**
+     * @brief Class du créateur de partie
+     */
     public class CreateurPartie : InterCreateurPartie
     {
-        public Code_SmallWorld.MonteurPartie MonteurPartie
+        /**
+         * @brief Attribut permettant de monter une partie
+         */
+         public MonteurPartie MonteurPartie
         {
             get
             {
@@ -38,6 +46,9 @@ namespace Code_SmallWorld
             }
         }
     
+        /**
+         * @brief Construction d'une nouvelle partie
+         */
         public void construire()
         {
             throw new NotImplementedException();

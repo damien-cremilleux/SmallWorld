@@ -3,9 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Code_SmallWorld
+namespace SmallWorld
 {
-    public interface Case
+    public interface InterCase
+    {
+    }
+
+    public class Case : InterCase
     {
     }
 }

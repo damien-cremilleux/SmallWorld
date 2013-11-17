@@ -3,9 +3,22 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Code_SmallWorld
+namespace SmallWorld
 {
-    public interface UniteViking : Code_SmallWorld.Unite
+    public interface InterUniteViking : SmallWorld.InterUnite
     {
+    }
+
+    public class UniteViking : Unite, InterUniteViking
+    {
+        public void attaquer()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void deplacer()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

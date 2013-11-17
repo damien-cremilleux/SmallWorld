@@ -3,9 +3,22 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Code_SmallWorld
+namespace SmallWorld
 {
-    public interface UniteNaine : Code_SmallWorld.Unite
+    public interface InterUniteNaine : SmallWorld.InterUnite
     {
+    }
+
+    public class UniteNaine : Unite, InterUniteNaine
+    {
+        public void attaquer()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void deplacer()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

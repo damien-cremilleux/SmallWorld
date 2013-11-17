@@ -3,9 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Code_SmallWorld
+namespace SmallWorld
 {
-    public interface PeupleViking : Peuple
+    public interface InterPeupleViking : InterPeuple
     {
+    }
+
+    public class PeupleViking : Peuple, InterPeupleViking
+    {
+        public InterUnite creerUnite()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

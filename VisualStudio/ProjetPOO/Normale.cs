@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Code_SmallWorld
+namespace SmallWorld
 {
-    public interface StrategieNormale : StrategieCarte
+    public interface InterStrategieNormale : InterStrategieCarte
     {
         void construire();
     }

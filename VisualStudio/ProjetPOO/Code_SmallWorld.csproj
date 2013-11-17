@@ -41,7 +41,6 @@
   <ItemGroup>
     <Compile Include="Carte.cs" />
     <Compile Include="Case.cs" />
-    <Compile Include="Class1.cs" />
     <Compile Include="CreateurPartie.cs" />
     <Compile Include="Demo.cs" />
     <Compile Include="desert.cs" />
@@ -55,20 +54,12 @@
     <Compile Include="foret.cs" />
     <Compile Include="Joueur.cs" />
     <Compile Include="montagne.cs" />
-    <Compile Include="MonteurCarte.cs" />
-    <Compile Include="MonteurDemo.cs" />
-    <Compile Include="MonteurNormal.cs" />
     <Compile Include="MonteurPartie.cs" />
-    <Compile Include="MonteurPartieDemo.cs" />
-    <Compile Include="MonteurPartieNormale.cs" />
-    <Compile Include="MonteurPartiePetite.cs" />
-    <Compile Include="MonteurPetit.cs" />
     <Compile Include="Nain.cs" />
     <Compile Include="Normale.cs" />
     <Compile Include="Partie.cs" />
     <Compile Include="Petite.cs" />
     <Compile Include="Peuple.cs" />
-    <Compile Include="PeupleG.cs" />
     <Compile Include="PeupleGaulois.cs" />
     <Compile Include="PeupleNain.cs" />
     <Compile Include="PeupleViking.cs" />
@@ -80,6 +71,10 @@
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
     <Compile Include="Sauvegarder.cs" />
+    <Compile Include="StrategieCarte.cs" />
+    <Compile Include="StrategieDemo.cs" />
+    <Compile Include="StrategieNormale.cs" />
+    <Compile Include="StrategiePetite.cs" />
     <Compile Include="Unite.cs" />
     <Compile Include="UniteGauloise.cs" />
     <Compile Include="UniteNaine.cs" />
@@ -87,12 +82,15 @@
     <Compile Include="Viking.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="fabrique.cd" />
     <None Include="Monteur.cd" />
     <None Include="InterfaceGlobale.cd" />
+    <None Include="poidsmouche.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <None Include="Strategie.cd" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
