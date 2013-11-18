@@ -11,7 +11,7 @@ namespace SmallWorld
         InterUnite creerUnite();
     }
 
-    public class Peuple : InterPeuple
+    public abstract class Peuple : InterPeuple
     {
         public InterUnite creerUnite()
         {

@@ -23,7 +23,7 @@
               </controlFlow>
             </flowNodeTargets>
           </opaqueAction>
-          <opaqueAction Id="85f439b7-b512-44d1-be59-2c57a1ab7987" name="Attaque une unité adverte adjacense" isLeaf="false">
+          <opaqueAction Id="85f439b7-b512-44d1-be59-2c57a1ab7987" name="Attaquer une unité adverse adjacente" isLeaf="false">
             <elementDefinition Id="6ae2ce91-d9fc-4b75-be39-9dabf27f87bc" />
             <flowNodeTargets>
               <controlFlow Id="455588c2-45d8-4933-bb39-4a29d619dc82" isLeaf="false">
@@ -35,15 +35,15 @@
           <decisionNode Id="a9c34d70-c6d5-4a7d-8591-1483e6f2b0f7" name="Decision1" isLeaf="false">
             <elementDefinition Id="81542a4d-30ce-44ee-ade1-7ccb5520e7b8" />
             <flowNodeTargets>
-              <controlFlow Id="114fbdf7-ff89-45bb-b259-f8f9011ec9a8" guard="point_deplacement &gt; 0" isLeaf="false">
+              <controlFlow Id="114fbdf7-ff89-45bb-b259-f8f9011ec9a8" guard="déplacement possible" isLeaf="false">
                 <opaqueActionMoniker Id="4cda9418-cfff-4963-868b-e024631bc732" LastKnownName="Se déplacer sur une case adjacente" />
                 <elementDefinition Id="dd35d6d6-13d2-4a9d-8c64-e775c3979cd4" />
               </controlFlow>
-              <controlFlow Id="91796ef4-4661-4cbc-94d0-8d59a4215787" guard="point_deplacement &gt; 0" isLeaf="false">
-                <opaqueActionMoniker Id="85f439b7-b512-44d1-be59-2c57a1ab7987" LastKnownName="Attaque une unité adverte adjacense" />
+              <controlFlow Id="91796ef4-4661-4cbc-94d0-8d59a4215787" guard="déplacement possible" isLeaf="false">
+                <opaqueActionMoniker Id="85f439b7-b512-44d1-be59-2c57a1ab7987" LastKnownName="Attaquer une unité adverse adjacente" />
                 <elementDefinition Id="7df18498-4206-4197-90d6-de84da33a06b" />
               </controlFlow>
-              <controlFlow Id="8ccba414-393c-4899-85bb-709dd9ff9b1c" guard="point_deplacement = 0" isLeaf="false">
+              <controlFlow Id="8ccba414-393c-4899-85bb-709dd9ff9b1c" guard="déplacement impossible" isLeaf="false">
                 <opaqueActionMoniker Id="249196bc-6ddf-4bc4-a418-6a1c66b1fdaa" LastKnownName="Choisir l'action" />
                 <elementDefinition Id="6deddedf-2038-4bea-b313-fb4a45f72521" />
               </controlFlow>

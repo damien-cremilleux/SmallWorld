@@ -36,13 +36,13 @@
           <decisionNode Id="91e1ebb0-c05b-4d99-b207-f4bbed5beb36" name="Decision1" isLeaf="false">
             <elementDefinition Id="d3b3044d-df2f-49bb-aba5-0bf0dc4f6bce" />
             <flowNodeTargets>
-              <controlFlow Id="341fcf32-204c-4168-a64c-a93c5acf2da1" guard="joueur A" isLeaf="false">
-                <opaqueActionMoniker Id="d3ef4420-0c8e-41ba-89c4-ad411cc0ebad" LastKnownName="Donner le nom du joueur" />
-                <elementDefinition Id="35bd3f59-9dcd-44fc-bc33-f96c1d5198c7" />
-              </controlFlow>
               <controlFlow Id="3ae6209b-2237-42ce-969a-bd784b3fd5bc" guard="joueur B" isLeaf="false">
                 <opaqueActionMoniker Id="fc1b0fbe-3748-434e-9741-a18cbe155a52" LastKnownName="Sélectionner la taille de la carte" />
                 <elementDefinition Id="efb93b52-6280-40be-807b-b84dbccd1547" />
+              </controlFlow>
+              <controlFlow Id="3e4d1858-3698-4106-a6ec-5ed3197baa04" guard="joueur A" isLeaf="false">
+                <opaqueActionMoniker Id="b8803b55-1d61-49f0-acc6-f908d70f055c" LastKnownName="Laisser la place au joueur B" />
+                <elementDefinition Id="f18a727c-f3b8-4a63-b933-bc042b174fae" />
               </controlFlow>
             </flowNodeTargets>
           </decisionNode>
@@ -107,6 +107,15 @@
               </controlFlow>
             </flowNodeTargets>
           </joinNode>
+          <opaqueAction Id="b8803b55-1d61-49f0-acc6-f908d70f055c" name="Laisser la place au joueur B" isLeaf="false">
+            <elementDefinition Id="23df64da-ca13-4180-adac-816cafecb375" />
+            <flowNodeTargets>
+              <controlFlow Id="61a4edff-76ed-4fed-a333-8073c60ee5e9" isLeaf="false">
+                <opaqueActionMoniker Id="d3ef4420-0c8e-41ba-89c4-ad411cc0ebad" LastKnownName="Donner le nom du joueur" />
+                <elementDefinition Id="ea1beaff-6a95-4316-9110-2499b8d83419" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
         </nodes>
       </activity>
     </activityRootModelHasActivity>

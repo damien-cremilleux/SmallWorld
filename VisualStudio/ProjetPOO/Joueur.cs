@@ -5,7 +5,15 @@ using System.Text;
 
 namespace SmallWorld
 {
-    public interface Joueur
+    public interface InterJoueur
     {
+    }
+
+    public class Joueur : InterJoueur
+    {
+        public Joueur(string nomJoueur, Peuple peuple)
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

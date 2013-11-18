@@ -5,7 +5,7 @@ using System.Text;
 
 namespace SmallWorld
 {
-    public class StrategieCarte : SmallWorld.InterStrategieCarte
+    public abstract class StrategieCarte : SmallWorld.InterStrategieCarte
     {
         public void construire()
         {
