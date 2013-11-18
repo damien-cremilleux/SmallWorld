@@ -142,7 +142,7 @@ Lorsqu’un joueur peut jouer (c.-à-d. une fois par tour), il peut déplacer to
 \section{Analyse}
 \label{debut}
 \subsection{Fonctionnalités globales}
-Au lancement du jeu, le joueur a la possibilité soit de créer une nouvelle partie soit de charger une partie existante. Le diagramme de cas d'utilisation à la Figure~\ref{fig:jeuglobal} illustre ces possibilités.
+Au lancement du jeu, le joueur a la possibilité soit de créer une nouvelle partie soit de charger une partie existante. Le diagramme de cas d'utilisation présenté Figure~\ref{fig:jeuglobal} illustre ces possibilités.
 
 \begin{figure}[H]
     \centering
@@ -154,7 +154,7 @@ Au lancement du jeu, le joueur a la possibilité soit de créer une nouvelle par
 \subsection{Lancement d'une partie}
 
 La création ou le chargement d'une partie est illustré de façon plus précise à la Figure~\ref{fig:cas_creerpartie}.
-Lorsque l'on crée une partie, le joueur~A commence par choisir son nom de joueur puis son peuple. Ensuite le joueur~B fait de même et procède au choix de la taille de la carte, avant de lancer la partie. Le joueur~B est donc plus spécialisé que le joueur~A. Cette suite d'interactions est montrée à la Figure~\ref{fig:inter_creerpartie}
+Lorsque l'on crée une partie, le joueur~A commence par choisir son nom de joueur puis son peuple. Ensuite le joueur~B fait de même et procède au choix de la taille de la carte, avant de lancer la partie. Le joueur~B est donc plus spécialisé que le joueur~A. Cette suite d'interactions est représenté Figure~\ref{fig:inter_creerpartie}.
 
 Enfin, un diagramme de séquence, Figure~\ref{fig:seq_creerpartie}, nous permet de représenter les communications entre les joueurs et le jeu ainsi que de donner une représentation temporelle des interactions entre les objets. Ce diagramme de séquence nous permet de représenter la création d'une partie à partir des données (noms et peuples) entrées par les joueurs.
 
@@ -211,7 +211,7 @@ Au cours d'un tour de jeu, le joueur peut décider de combattre le joueur advers
 \subsection{Les unités}
 Nous avons utilisé un diagramme d'état-transitions, Figure~\ref{fig:trans_unite}, afin de montrer le cycle de vie d'une unité et ses différents états possibles.
 \`A sa création, l'unité possède deux points de vie. 
-Au début d'un tour, l'unité possède un point de déplacement. Elle a alors la possibilté de se déplacer, d'attaquer ou de passer son tour. \`A la fin de l'action, l'unité perd son point de déplacement et son tour est terminé.
+Au début d'un tour, l'unité possède un point de déplacement. Elle a alors la possibilité de se déplacer, d'attaquer ou de passer son tour. \`A la fin de l'action, l'unité perd son point de déplacement et son tour est terminé.
  \todo{peut etre à refaire en fonction du nouveau diagramme}
 Lorsqu'elle a perdu ses deux points de vie, l'unité a été vaincue.
 
@@ -257,7 +257,7 @@ Lors de la création d'une partie, les joueurs ont le choix entre trois tailles 
 Pour la modélisation du jeu, nous utiliserons plusieurs \textit{Fabriques}. 
 Nous en utiliserons notamment une pour fabriquer les cases. Il existe cinq types de cases : montagne, plaine, désert, eau et forêt.
 La fabrique nous permettra de créer aléatoirement des types des cases différents sur la carte.
-Son utilisation nous permettra également de faire évoluer facilement les types de case par simple ajout de classes concrètes.
+Son utilisation nous permettra également de faire évoluer facilement les types de cases par simple ajout de classes concrètes.
 
 \todo{ajout diagramme}
 
@@ -274,7 +274,7 @@ Il existe cinq types de cases dans Small World. Pour ne pas instancier un grand 
 
 \subsection{Fabrique - Gestion des peuples et des unités}
 
-Lors de la création d'une partie, le joueur choisit entre trois peuples. Le jeu devra donc manipuler les unités sans savoir s'il s'agit de vikings, gaulois ou nains. Le patron de conception \textsc{fabrique} est implémenté afin de résoudre ce problème, et de définir une interface pour la création de peuples. En outre, il sera maintenant facile de rajouter un nouveau peuple. Ces éléments sont présentés à la Figure~\ref{fig:class_fabrique}.
+Lors de la création d'une partie, le joueur choisit entre trois peuples. Le jeu devra donc manipuler les unités sans savoir s'il s'agit de vikings, gaulois ou nains. Le patron de conception \textsc{fabrique} est implémenté afin de résoudre ce problème, et de définir une interface pour la création de peuples. En outre, il sera maintenant facile de rajouter un nouveau peuple. Ces éléments sont présentés Figure~\ref{fig:class_fabrique}.
 Les unités étant d'un seul type (il n'y pas d'unité spécialisée au sein d'un peuple), il n'y a pas besoin de fabrique pour les unités. On utilise une classe abstraite pour définir les éléments communs aux unités des différents peuples. 
 
 \begin{figure}[H]
