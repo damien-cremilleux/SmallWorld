@@ -53,5 +53,15 @@ namespace SmallWorld
         {
             throw new NotImplementedException();
         }
+
+        public void ajouterJoueur(string nom, string peuple)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void ajouterCarte()
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

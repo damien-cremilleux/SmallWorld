@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<SequenceDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="de82ba71-8170-444f-89f1-33967a6be1c2" name="Sequence1" linkedPackageId="2545c6ca-9225-4a3a-a65d-bc9fcbe14393" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner">
+<SequenceDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner" xmlns:dm11="http://schemas.microsoft.com/dsltools/UseCaseModel" dslVersion="1.0.0.0" Id="de82ba71-8170-444f-89f1-33967a6be1c2" name="Sequence1" linkedPackageId="2545c6ca-9225-4a3a-a65d-bc9fcbe14393" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner">
   <packagedElements>
     <packageHasNamedElement>
       <interaction Id="5dfb7a9d-7f79-4dc1-b9ec-d7dc862e6dc8" name="Sequence1" collapseFragmentsFlag="false" isActiveClass="false" isAbstract="false" isLeaf="false" isReentrant="false">
@@ -592,15 +592,15 @@
                   <combinedFragment Id="59046fcc-fba9-445c-8fde-679a2d64a699" name="CombinedFragment1" interactionOperator="Alt" customInteractionOperator="Loop [25]">
                     <elementDefinition Id="6394ceb7-cddd-4992-a365-5792009e51f2" />
                     <coveredLifelines>
-                      <lifelineMoniker Id="3926ea1f-32b1-4466-b2a5-557904ab5c38" LastKnownName="fabriqueCase : FabriqueCase" />
                       <lifelineMoniker Id="4a4381f7-eb70-4d40-97d4-c841b9b08d50" LastKnownName="strategieDemo : StrategieDemo" />
+                      <lifelineMoniker Id="3926ea1f-32b1-4466-b2a5-557904ab5c38" LastKnownName="fabriqueCase : FabriqueCase" />
                     </coveredLifelines>
                     <operands>
                       <interactionOperand Id="d5bcd05b-a6d9-4845-8f77-cc8f900ba9bd" name="InteractionOperand1">
                         <elementDefinition Id="019f61aa-b000-4625-b4e6-ce31898bb561" />
                         <coveredLifelines>
-                          <lifelineMoniker Id="3926ea1f-32b1-4466-b2a5-557904ab5c38" LastKnownName="fabriqueCase : FabriqueCase" />
                           <lifelineMoniker Id="4a4381f7-eb70-4d40-97d4-c841b9b08d50" LastKnownName="strategieDemo : StrategieDemo" />
+                          <lifelineMoniker Id="3926ea1f-32b1-4466-b2a5-557904ab5c38" LastKnownName="fabriqueCase : FabriqueCase" />
                         </coveredLifelines>
                         <guard>
                           <interactionConstraint Id="982fe38e-4da1-45ff-ba0c-4ffdaadc3082">
@@ -1005,22 +1005,10 @@
               <lifelineMoniker Id="a3190eef-9100-480e-99e9-76212db8af61" LastKnownName="strategiePetite : StrategiePetite" />
             </covered>
           </executionOccurrenceSpecification>
-          <operandOccurrenceSpecification Id="b3317ebb-d14f-4b19-930b-f9ef1d1e9352" name="OperandOccurrenceSpecification38">
-            <elementDefinition Id="2938bba0-d7d5-404b-9b0b-4e0bad7f4e39" />
-            <covered>
-              <lifelineMoniker Id="4a4381f7-eb70-4d40-97d4-c841b9b08d50" LastKnownName="strategieDemo : StrategieDemo" />
-            </covered>
-          </operandOccurrenceSpecification>
           <operandOccurrenceSpecification Id="6d686df4-93f5-4c64-a958-dd79a0463747" name="OperandOccurrenceSpecification54">
             <elementDefinition Id="74d0ed5f-e801-4586-9fe2-e2979e27e139" />
             <covered>
               <lifelineMoniker Id="70377d48-7510-46ae-b6ad-644dbd6aaec6" LastKnownName="strategieNormale : StrategieNormale" />
-            </covered>
-          </operandOccurrenceSpecification>
-          <operandOccurrenceSpecification Id="f1fc34bc-f107-4ae1-9cf4-82061fa7ec36" name="OperandOccurrenceSpecification44">
-            <elementDefinition Id="5bd17331-88a9-4301-b0ea-20742d0c0753" />
-            <covered>
-              <lifelineMoniker Id="a3190eef-9100-480e-99e9-76212db8af61" LastKnownName="strategiePetite : StrategiePetite" />
             </covered>
           </operandOccurrenceSpecification>
           <operandOccurrenceSpecification Id="81dd549e-363b-49e7-9223-35519d763434" name="OperandOccurrenceSpecification40">
@@ -1029,10 +1017,22 @@
               <lifelineMoniker Id="9c438ecf-9784-4e9b-a9f4-b8369c320842" LastKnownName="carte : Carte" />
             </covered>
           </operandOccurrenceSpecification>
+          <operandOccurrenceSpecification Id="b3317ebb-d14f-4b19-930b-f9ef1d1e9352" name="OperandOccurrenceSpecification38">
+            <elementDefinition Id="2938bba0-d7d5-404b-9b0b-4e0bad7f4e39" />
+            <covered>
+              <lifelineMoniker Id="4a4381f7-eb70-4d40-97d4-c841b9b08d50" LastKnownName="strategieDemo : StrategieDemo" />
+            </covered>
+          </operandOccurrenceSpecification>
           <operandOccurrenceSpecification Id="da5f951a-1735-473c-8ca2-c3da7a139f32" name="OperandOccurrenceSpecification60">
             <elementDefinition Id="61a85e37-181c-4f1a-b607-5f2e0fd2299b" />
             <covered>
               <lifelineMoniker Id="3926ea1f-32b1-4466-b2a5-557904ab5c38" LastKnownName="fabriqueCase : FabriqueCase" />
+            </covered>
+          </operandOccurrenceSpecification>
+          <operandOccurrenceSpecification Id="f1fc34bc-f107-4ae1-9cf4-82061fa7ec36" name="OperandOccurrenceSpecification44">
+            <elementDefinition Id="5bd17331-88a9-4301-b0ea-20742d0c0753" />
+            <covered>
+              <lifelineMoniker Id="a3190eef-9100-480e-99e9-76212db8af61" LastKnownName="strategiePetite : StrategiePetite" />
             </covered>
           </operandOccurrenceSpecification>
           <operandOccurrenceSpecification Id="7a6bf79f-912e-4afa-8f39-15d5574b8769" name="OperandOccurrenceSpecification61">
@@ -1133,16 +1133,16 @@
               <lifelineMoniker Id="70377d48-7510-46ae-b6ad-644dbd6aaec6" LastKnownName="strategieNormale : StrategieNormale" />
             </covered>
           </operandOccurrenceSpecification>
+          <operandOccurrenceSpecification Id="98a25601-3fd2-41fd-acc6-5a5b0dd5e62b" name="OperandOccurrenceSpecification48">
+            <elementDefinition Id="3501bd12-bdc6-4765-9e49-aafde4012a8e" />
+            <covered>
+              <lifelineMoniker Id="9c438ecf-9784-4e9b-a9f4-b8369c320842" LastKnownName="carte : Carte" />
+            </covered>
+          </operandOccurrenceSpecification>
           <operandOccurrenceSpecification Id="fdf64a8a-fd32-426d-bbee-5cd462faf1fe" name="OperandOccurrenceSpecification46">
             <elementDefinition Id="1d58ea2b-8b87-4594-af07-ed3505c83d4f" />
             <covered>
               <lifelineMoniker Id="4a4381f7-eb70-4d40-97d4-c841b9b08d50" LastKnownName="strategieDemo : StrategieDemo" />
-            </covered>
-          </operandOccurrenceSpecification>
-          <operandOccurrenceSpecification Id="3a705456-2a2b-420b-ad2d-716b5e3d5d54" name="OperandOccurrenceSpecification62">
-            <elementDefinition Id="414a2dc2-b1e1-42d2-a73e-426102ca1e4f" />
-            <covered>
-              <lifelineMoniker Id="3926ea1f-32b1-4466-b2a5-557904ab5c38" LastKnownName="fabriqueCase : FabriqueCase" />
             </covered>
           </operandOccurrenceSpecification>
           <operandOccurrenceSpecification Id="a4adef67-0476-4e53-97b9-a26d926683be" name="OperandOccurrenceSpecification50">
@@ -1151,10 +1151,10 @@
               <lifelineMoniker Id="a3190eef-9100-480e-99e9-76212db8af61" LastKnownName="strategiePetite : StrategiePetite" />
             </covered>
           </operandOccurrenceSpecification>
-          <operandOccurrenceSpecification Id="98a25601-3fd2-41fd-acc6-5a5b0dd5e62b" name="OperandOccurrenceSpecification48">
-            <elementDefinition Id="3501bd12-bdc6-4765-9e49-aafde4012a8e" />
+          <operandOccurrenceSpecification Id="3a705456-2a2b-420b-ad2d-716b5e3d5d54" name="OperandOccurrenceSpecification62">
+            <elementDefinition Id="414a2dc2-b1e1-42d2-a73e-426102ca1e4f" />
             <covered>
-              <lifelineMoniker Id="9c438ecf-9784-4e9b-a9f4-b8369c320842" LastKnownName="carte : Carte" />
+              <lifelineMoniker Id="3926ea1f-32b1-4466-b2a5-557904ab5c38" LastKnownName="fabriqueCase : FabriqueCase" />
             </covered>
           </operandOccurrenceSpecification>
           <messageOccurrenceSpecification Id="ce515c9c-d045-4695-9da9-48304c08e2f7" name="MessageOccurrenceSpecification79">

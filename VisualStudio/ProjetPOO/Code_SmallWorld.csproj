@@ -41,6 +41,7 @@
   <ItemGroup>
     <Compile Include="Carte.cs" />
     <Compile Include="Case.cs" />
+    <Compile Include="Coordonnees.cs" />
     <Compile Include="CreateurPartie.cs" />
     <Compile Include="Demo.cs" />
     <Compile Include="desert.cs" />

@@ -110,9 +110,9 @@
     </TypeIdentifier>
   </Interface>
   <Interface Name="SmallWorld.InterUnite">
-    <Position X="13.75" Y="8.75" Width="1.5" />
+    <Position X="13.75" Y="8.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAA=</HashCode>
+      <HashCode>AAAAAAABAIAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAA=</HashCode>
       <FileName>Unite.cs</FileName>
     </TypeIdentifier>
   </Interface>

@@ -11,14 +11,24 @@ namespace SmallWorld
 
     public class UniteNaine : Unite, InterUniteNaine
     {
+        public UniteNaine()
+        {
+            throw new System.NotImplementedException();
+        }
+    
         public void attaquer()
         {
             throw new NotImplementedException();
         }
 
-        public void deplacer()
+        public void seDeplacer()
         {
             throw new NotImplementedException();
+        }
+
+        public void passerSonTour()
+        {
+            throw new System.NotImplementedException();
         }
     }
 }

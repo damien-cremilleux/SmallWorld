@@ -15,5 +15,43 @@ namespace SmallWorld
         {
             throw new System.NotImplementedException();
         }
+
+        public Unite unite
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+            set
+            {
+            }
+        }
+
+        public Peuple peuple
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+            set
+            {
+            }
+        }
+
+        public int pointVictoire
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+            set
+            {
+            }
+        }
+
+        public void calculerPointVictoire()
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }
