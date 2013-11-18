@@ -9,7 +9,7 @@ namespace SmallWorld
     {
     }
 
-    public class Case : InterCase
+    public abstract class Case : InterCase
     {
     }
 }

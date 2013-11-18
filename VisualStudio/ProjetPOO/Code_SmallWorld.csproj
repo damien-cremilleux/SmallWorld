@@ -83,6 +83,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="fabrique.cd" />
+    <None Include="Global.cd" />
     <None Include="Monteur.cd" />
     <None Include="InterfaceGlobale.cd" />
     <None Include="poidsmouche.cd" />

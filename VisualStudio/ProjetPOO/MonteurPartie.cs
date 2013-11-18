@@ -38,7 +38,7 @@ namespace SmallWorld
         /**
          * @brief Création la partie.
          */
-        Partie creerPartie();
+        InterPartie creerPartie();
 
         /**
          * @brief Placement des unités avant le début de la partie.
@@ -70,10 +70,42 @@ namespace SmallWorld
 
 
     /**
-    * @brief Classe abstraite implémentant InterMonteur Partie
+    * @brief Classe abstraite implémentant InterMonteur InterPartie
     */
     public abstract class MonteurPartie : InterMonteurPartie
     {
+        public FabriquePeuple FabriquePeuple
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+            set
+            {
+            }
+        }
+
+        public Partie Partie
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+            set
+            {
+            }
+        }
+
+        public Carte Carte
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+            set
+            {
+            }
+        }
         /**
          * @brief Ajout de la carte pour la construction d'une partie.
          * 
@@ -89,7 +121,7 @@ namespace SmallWorld
             throw new NotImplementedException();
         }
 
-        public SmallWorld.Partie creerPartie()
+        public SmallWorld.InterPartie creerPartie()
         {
             throw new NotImplementedException();
         }
@@ -108,7 +140,7 @@ namespace SmallWorld
             throw new NotImplementedException();
         }
 
-        public SmallWorld.Partie creerPartie()
+        public SmallWorld.InterPartie creerPartie()
         {
             throw new NotImplementedException();
         }
@@ -136,7 +168,7 @@ namespace SmallWorld
             throw new NotImplementedException();
         }
 
-        public SmallWorld.Partie creerPartie()
+        public SmallWorld.InterPartie creerPartie()
         {
             throw new NotImplementedException();
         }
@@ -165,7 +197,7 @@ namespace SmallWorld
             throw new NotImplementedException();
         }
 
-        public SmallWorld.Partie creerPartie()
+        public SmallWorld.InterPartie creerPartie()
         {
             throw new NotImplementedException();
         }

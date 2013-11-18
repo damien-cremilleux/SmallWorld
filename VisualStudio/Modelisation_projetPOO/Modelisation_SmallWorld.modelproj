@@ -37,6 +37,13 @@
       <SubType>Content</SubType>
       <DependentUpon>CreationPartie.usecasediagram</DependentUpon>
     </Content>
+    <Content Include="TourJeu.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="TourJeu.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>TourJeu.sequencediagram</DependentUpon>
+    </Content>
     <Content Include="TourJeu.usecasediagram">
       <SubType>Content</SubType>
     </Content>

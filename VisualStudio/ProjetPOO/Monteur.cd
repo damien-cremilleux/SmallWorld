@@ -16,10 +16,22 @@
   </Class>
   <Class Name="SmallWorld.MonteurPartie">
     <Position X="5.5" Y="0.5" Width="1.5" />
+    <AssociationLine Name="Partie" Type="SmallWorld.Partie" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="7" Y="2.165" />
+        <Point X="7.375" Y="2.165" />
+        <Point X="7.375" Y="2.555" />
+        <Point X="12" Y="2.555" />
+      </Path>
+    </AssociationLine>
     <TypeIdentifier>
-      <HashCode>AAEAAAAAAAAAAAAAAAAAAAAAAAAgIAAAAAAAAEAAAAA=</HashCode>
+      <HashCode>IAEAAAACAAAAAABAAAAAAAAAAAAgIAAAAAAAAEAAAAA=</HashCode>
       <FileName>MonteurPartie.cs</FileName>
     </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="FabriquePeuple" />
+      <Property Name="Partie" />
+    </ShowAsAssociation>
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="SmallWorld.MonteurPartieDemo">
@@ -43,6 +55,38 @@
     <TypeIdentifier>
       <HashCode>AAEAAAAAAAAAAAAAAAAAAAAAAAQgIAAAAAAAAEAAAAA=</HashCode>
       <FileName>MonteurPartie.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="SmallWorld.FabriquePeuple">
+    <Position X="9" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>FabriquePeuple.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="SmallWorld.Partie">
+    <Position X="12" Y="2" Width="1.5" />
+    <AssociationLine Name="Joueur" Type="SmallWorld.Joueur">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.081" Y="0.089" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAA=</HashCode>
+      <FileName>Partie.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Joueur" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="SmallWorld.Joueur">
+    <Position X="15" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Joueur.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>

@@ -5,7 +5,32 @@ using System.Text;
 
 namespace SmallWorld
 {
-    public interface Partie
+    public interface InterPartie
     {
+    }
+
+    public class Partie : InterPartie
+    {
+        public Joueur Joueur
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+            set
+            {
+            }
+        }
+
+        public Carte Carte
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+            set
+            {
+            }
+        }
     }
 }
