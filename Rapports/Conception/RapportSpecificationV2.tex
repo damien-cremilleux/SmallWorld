@@ -75,7 +75,9 @@ Nous y ferront figurer les différentes étapes d'analyse ansi que des différen
 Nous expliquons également les choix d'utilisation de patrons de conception afin de résoudre les problèmes de conception de notre jeu.
 Ils nous permettrons de décrire les procédés de conception de notre jeu au niveau de l'architecture, d'expliquer sous forme de diagramms les arrangemenst et le rôle joué par les différents modules.
 
-Enfin, nous donnerons le diagramme complet de notre jeu.
+Enfin, nous donnerons le diagramme de classe complet de notre jeu.
+
+\medskip
 
 Cette phase de conceptions et de modélisation nous servira ensuite lors de l'implémentation.
 
@@ -182,7 +184,7 @@ Enfin, un diagramme de séquence, Figure~\ref{fig:seq_creerpartie}, nous permet 
 
 \subsection{Déroulement d'un tour de jeu}
 La description d'un tour de jeu, faite à la page~\pageref{tourdejeu}, permet de réaliser le diagramme de cas d'utilisation d'un tour de jeu (Figure~\ref{fig:cas_tourdejeu}). Le déroulement du processsus est représenté sur la Figure~\ref{fig:inter_tourdejeu}.
-\todo{plus de détail ? + refaire img}
+\todo{plus de détail ?}
 
 \begin{figure}[H]
     \centering
@@ -208,7 +210,7 @@ Au cours d'un tour de jeu, le joueur peut décider de combattre le joueur advers
 		\label{fig:inter_combat}
 \end{figure}
 
-\subsection{Les unités}
+\subsection{Cycle de vie d'une unité}
 Nous avons utilisé un diagramme d'état-transitions, Figure~\ref{fig:trans_unite}, afin de montrer le cycle de vie d'une unité et ses différents états possibles.
 \`A sa création, l'unité possède deux points de vie. 
 Au début d'un tour, l'unité possède un point de déplacement. Elle a alors la possibilité de se déplacer, d'attaquer ou de passer son tour. \`A la fin de l'action, l'unité perd son point de déplacement et son tour est terminé.
@@ -242,7 +244,7 @@ En outre, le monteur permettra de pouvoir implémenter différentes configuratio
 \end{figure}
 
 
-\subsection{Stratégie - Création des différents types de cartes}
+\subsubsection{Stratégie - Création des différents types de cartes}
 
 Lors de la création d'une partie, les joueurs ont le choix entre trois tailles de cartes : démo, petite ou normale. Différents algorithmes seront développés pour ces tailles. Afin de modéliser ce changement de comportement, c'est-à-dire de changer d'algorithme en fonction du contexte, le patron de conception utilisé est la stratégie. De plus, il sera très facile d'implémenter une nouvelle taille de carte si besoin, simplement par l'ajout d'un nouvel algorithme. La stratégie est représentée à la Figure~\ref{fig:class_strategie}.
 
@@ -253,7 +255,7 @@ Lors de la création d'une partie, les joueurs ont le choix entre trois tailles 
 		\label{fig:class_strategie}
 \end{figure}
 
-\subsection{Fabrique pour la création des cases}
+\subsubsection{Fabrique pour la création des cases}
 Pour la modélisation du jeu, nous utiliserons plusieurs \textit{Fabriques}. 
 Nous en utiliserons notamment une pour fabriquer les cases. Il existe cinq types de cases : montagne, plaine, désert, eau et forêt.
 La fabrique nous permettra de créer aléatoirement des types des cases différents sur la carte.
@@ -261,7 +263,7 @@ Son utilisation nous permettra également de faire évoluer facilement les types
 
 \todo{ajout diagramme}
 
-\subsection{Poids-mouche - Modélisation de la carte}
+\subsubsection{Poids-mouche - Modélisation de la carte}
 
 Il existe cinq types de cases dans Small World. Pour ne pas instancier un grand nombre de cas et devenir trop gourmand au niveau de la mémoire, le patron de conception poids-mouche est mis en place. Nous évitons ainsi la création répétée d'une même case. La Figure~\ref{fig:class_poidsmouche} illustre le poids-mouche.
 
@@ -272,7 +274,7 @@ Il existe cinq types de cases dans Small World. Pour ne pas instancier un grand 
 		\label{fig:class_poidsmouche}
 \end{figure}
 
-\subsection{Fabrique - Gestion des peuples et des unités}
+\subsubsection{Fabrique - Gestion des peuples et des unités}
 
 Lors de la création d'une partie, le joueur choisit entre trois peuples. Le jeu devra donc manipuler les unités sans savoir s'il s'agit de vikings, gaulois ou nains. Le patron de conception \textsc{fabrique} est implémenté afin de résoudre ce problème, et de définir une interface pour la création de peuples. En outre, il sera maintenant facile de rajouter un nouveau peuple. Ces éléments sont présentés Figure~\ref{fig:class_fabrique}.
 Les unités étant d'un seul type (il n'y pas d'unité spécialisée au sein d'un peuple), il n'y a pas besoin de fabrique pour les unités. On utilise une classe abstraite pour définir les éléments communs aux unités des différents peuples. 
@@ -284,13 +286,13 @@ Les unités étant d'un seul type (il n'y pas d'unité spécialisée au sein d'u
 		\label{fig:class_fabrique}
 \end{figure}
 
-\subsection{Observateur}
+\subsubsection{Observateur}
 Enfin, nous utiliserons un observateur afin de créer une lien entre la carte et les unités. En effet, lorsqu'une unité se déplace, il faut que la carte en soit informée afin qu'elle mette à jour l'affichage et les données associés. 
 L'observateur permettra à la carte d'observer les unités et donc de créer un lien entre eux. Si une unité se déplace, la carte en sera alors avertie et se mettra à jour. 
 Nous n'avons cependant pas modélisé cette notion, puisqu'en effet, il n'est pas possible d'importer une classe/interface C\# dans un diagramme de classes. Nous en tiendrons cependant compte lors du codage.
 
 
-\section{Diagramme de classe}
+\subsection{Diagramme de classe}
 Enfin, voici le diagramme de classes complet de notre jeu. Nous y avons représenté les différentes classes et interfaces utilisées dans les patrons de conception précédemment cités ainsi que les différentes classes nécessaires au fonctionnement du jeu.
 
 
