@@ -32,6 +32,10 @@ namespace SmallWorld
      */
     public class CreateurPartie : InterCreateurPartie
     {
+        public CreateurPartie()
+        {
+            throw new System.NotImplementedException();
+        }
         /**
          * @brief Attribut permettant de monter une partie
          */

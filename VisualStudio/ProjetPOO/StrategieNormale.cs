@@ -7,6 +7,11 @@ namespace SmallWorld
 {
     public class StrategieNormale : StrategieCarte, SmallWorld.InterStrategieNormale
     {
+        public StrategieNormale()
+        {
+            throw new System.NotImplementedException();
+        }
+    
         public void construire()
         {
             throw new NotImplementedException();

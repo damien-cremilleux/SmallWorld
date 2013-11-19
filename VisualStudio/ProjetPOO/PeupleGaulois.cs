@@ -11,6 +11,11 @@ namespace SmallWorld
 
     public class PeupleGaulois : Peuple, InterPeupleGaulois
     {
+        public PeupleGaulois()
+        {
+            throw new System.NotImplementedException();
+        }
+    
         public InterUnite creerUnite()
         {
             throw new NotImplementedException();

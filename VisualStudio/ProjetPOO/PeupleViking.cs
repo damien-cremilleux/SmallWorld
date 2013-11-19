@@ -11,6 +11,11 @@ namespace SmallWorld
 
     public class PeupleViking : Peuple, InterPeupleViking
     {
+        public PeupleViking()
+        {
+            throw new System.NotImplementedException();
+        }
+    
         public InterUnite creerUnite()
         {
             throw new NotImplementedException();

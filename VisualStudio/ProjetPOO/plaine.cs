@@ -11,5 +11,9 @@ namespace SmallWorld
 
     public class Plaine : Case, InterPlaine
     {
+        public Plaine()
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

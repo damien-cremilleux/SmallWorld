@@ -3,7 +3,7 @@
   <Class Name="SmallWorld.StrategieCarte">
     <Position X="4" Y="0.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAABAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>StrategieCarte.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />

@@ -135,6 +135,11 @@ namespace SmallWorld
 
     public class MonteurPartieDemo : SmallWorld.MonteurPartie, SmallWorld.InterMonteurPartieDemo
     {
+        public MonteurPartieDemo()
+        {
+            throw new System.NotImplementedException();
+        }
+    
         public void ajouterPeuple()
         {
             throw new NotImplementedException();
@@ -163,6 +168,11 @@ namespace SmallWorld
 
     public class MonteurPartieNormale : SmallWorld.MonteurPartie, SmallWorld.InterMonteurPartieNormale
     {
+        public MonteurPartieNormale()
+        {
+            throw new System.NotImplementedException();
+        }
+    
         public void ajouterPeuple()
         {
             throw new NotImplementedException();
@@ -192,6 +202,11 @@ namespace SmallWorld
 
     public class MonteurPartiePetite : SmallWorld.MonteurPartie, SmallWorld.InterMonteurPartiePetite
     {
+        public MonteurPartiePetite()
+        {
+            throw new System.NotImplementedException();
+        }
+    
         public void ajouterPeuple()
         {
             throw new NotImplementedException();

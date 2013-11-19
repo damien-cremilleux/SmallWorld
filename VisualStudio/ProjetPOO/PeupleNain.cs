@@ -11,6 +11,11 @@ namespace SmallWorld
 
     public class PeupleNain : Peuple, InterPeupleNain
     {
+        public PeupleNain()
+        {
+            throw new System.NotImplementedException();
+        }
+    
         public InterUnite creerUnite()
         {
             throw new NotImplementedException();

@@ -11,7 +11,7 @@ namespace SmallWorld
 
     public class Joueur : InterJoueur
     {
-        public Joueur(string nomJoueur, Peuple peuple)
+        public Joueur()
         {
             throw new System.NotImplementedException();
         }
@@ -50,6 +50,11 @@ namespace SmallWorld
         }
 
         public void calculerPointVictoire()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void creerJoueur()
         {
             throw new System.NotImplementedException();
         }

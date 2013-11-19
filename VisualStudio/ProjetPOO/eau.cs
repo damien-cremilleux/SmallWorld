@@ -11,5 +11,9 @@ namespace SmallWorld
 
     public class Eau : Case, InterEau
     {
+        public Eau()
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

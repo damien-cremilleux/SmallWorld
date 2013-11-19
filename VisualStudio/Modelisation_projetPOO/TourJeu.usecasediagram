@@ -1,11 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<useCaseModelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="9c6b4c0c-a316-40ea-8ad7-f9e399f17483" name="Déroulement d'un tour de jeu" linkedPackageId="c0258aec-620e-460d-abbe-90b551b4486c" xmlns="http://schemas.microsoft.com/dsltools/UseCaseModel">
-  <ownedCommentsInternal>
-    <comment Id="36280113-53d5-4942-8361-93f1d32ff053">
-      <elementDefinition Id="a6c8db03-ee36-45d2-b851-2d96f4009545" />
-      <body>Inclure les cas d'erreur (ex : déplacement impossible)</body>
-    </comment>
-  </ownedCommentsInternal>
+<useCaseModelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" xmlns:dm10="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="9c6b4c0c-a316-40ea-8ad7-f9e399f17483" name="Déroulement d'un tour de jeu" linkedPackageId="c0258aec-620e-460d-abbe-90b551b4486c" xmlns="http://schemas.microsoft.com/dsltools/UseCaseModel">
   <packagedElements>
     <useCaseModelRootHasTypes>
       <actor Id="c0837efc-bcc7-4f95-bfed-c9c3357f63dc" name="Joueur" isAbstract="false" isLeaf="false">
@@ -42,22 +36,6 @@
               </associationHasOwnedEnds>
             </relationshipOwnedElementsInternal>
             <elementDefinition Id="0b51ff67-073a-4957-bd28-69d8fc26a10e" />
-          </association>
-          <association Id="08754380-95f3-46dd-855a-925419fbc36b" isDerived="false" sourceEndRoleName="Joueur" targetEndRoleName="engager combat" isLeaf="false" isAbstract="false">
-            <useCaseMoniker Id="3a797611-1387-403f-b07d-5a35941412a0" LastKnownName="Engager un combat" />
-            <relationshipOwnedElementsInternal>
-              <associationHasOwnedEnds>
-                <memberEnd Id="2b863ce8-27cc-4ae0-bb18-69f2b729d69a" name="Joueur" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
-                  <elementDefinition Id="74babbbb-22e5-4645-97b6-110652ab9eda" />
-                </memberEnd>
-              </associationHasOwnedEnds>
-              <associationHasOwnedEnds>
-                <memberEnd Id="c9829417-1de9-4ee8-97e5-49c0757c8fa3" name="engager combat" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-                  <elementDefinition Id="0636ecd1-443f-42b8-bca0-11004b17ed97" />
-                </memberEnd>
-              </associationHasOwnedEnds>
-            </relationshipOwnedElementsInternal>
-            <elementDefinition Id="e95202ee-fd0d-4db1-83d8-1922076a68a0" />
           </association>
           <association Id="3796be25-1905-4458-970b-42713a3976ca" isDerived="false" sourceEndRoleName="Joueur" targetEndRoleName="valider son tour" isLeaf="false" isAbstract="false">
             <useCaseMoniker Id="559546d2-9226-4558-b56b-b60125944716" LastKnownName="Valider son tour" />
@@ -144,16 +122,6 @@
     <packageHasNamedElement>
       <useCase Id="3a797611-1387-403f-b07d-5a35941412a0" name="Engager un combat" isAbstract="false" isLeaf="false">
         <elementDefinition Id="5c6dc71a-5856-4c4f-ba5b-7bdce4134532" />
-        <additions>
-          <include Id="4bc06295-d9d3-4da8-94e6-de976aa0c0a4">
-            <useCaseMoniker Id="c6ae0d04-404a-457f-8041-9d7634a699e2" LastKnownName="Choisir l'unité  qui attaque" />
-            <elementDefinition Id="649948f2-4c2a-4104-988d-ac5478476612" />
-          </include>
-          <include Id="23bfa98f-3de4-41a2-be36-e5bb735084e7">
-            <useCaseMoniker Id="0c3d2e0f-256f-49b5-ab5c-91b1decc3c52" LastKnownName="Choisir la case à attaquer" />
-            <elementDefinition Id="ad795a7a-e337-47f8-8b8f-046ca93e87bc" />
-          </include>
-        </additions>
         <subjects>
           <subsystemMoniker Id="3facd660-7b66-4404-807e-36b1d0f655ca" LastKnownName="Jeu SmallWorld" />
         </subjects>
@@ -208,22 +176,20 @@
     <packageHasNamedElement>
       <useCase Id="8bd3e0f4-420a-467c-9c76-ddd44fbf6330" name="Choisir case d'arrivée" isAbstract="false" isLeaf="false">
         <elementDefinition Id="17b50141-e991-4986-a133-e674f38413e4" />
-        <subjects>
-          <subsystemMoniker Id="3facd660-7b66-4404-807e-36b1d0f655ca" LastKnownName="Jeu SmallWorld" />
-        </subjects>
-      </useCase>
-    </packageHasNamedElement>
-    <packageHasNamedElement>
-      <useCase Id="c6ae0d04-404a-457f-8041-9d7634a699e2" name="Choisir l'unité  qui attaque" isAbstract="false" isLeaf="false">
-        <elementDefinition Id="8dbf640c-ee57-4234-86aa-2d73f1da9746" />
-        <subjects>
-          <subsystemMoniker Id="3facd660-7b66-4404-807e-36b1d0f655ca" LastKnownName="Jeu SmallWorld" />
-        </subjects>
-      </useCase>
-    </packageHasNamedElement>
-    <packageHasNamedElement>
-      <useCase Id="0c3d2e0f-256f-49b5-ab5c-91b1decc3c52" name="Choisir la case à attaquer" isAbstract="false" isLeaf="false">
-        <elementDefinition Id="c6cad01c-e721-4666-b1b0-1cca2298cf18" />
+        <extendedCases>
+          <extend Id="a276c5e7-341f-481c-9cc8-c66af76ce50b">
+            <useCaseMoniker Id="ca7bbe3a-0e5d-4ef8-b5b7-1478743db296" LastKnownName="Erreur : déplacement impossible" />
+            <elementDefinition Id="31b6c946-9806-46cc-bf45-2ade22f94f0a" />
+          </extend>
+          <extend Id="b61768d2-39f6-46ed-aae6-f8aec2245449">
+            <useCaseMoniker Id="3a797611-1387-403f-b07d-5a35941412a0" LastKnownName="Engager un combat" />
+            <elementDefinition Id="dc1e40bb-83cd-404d-ab63-5e6bf670d8bf" />
+          </extend>
+          <extend Id="6ca28653-4852-4f13-b7b6-04f5ad64a461">
+            <useCaseMoniker Id="d6ba46fe-5dba-4ffd-9c56-6dba608c887f" LastKnownName="Se déplacer sur la case" />
+            <elementDefinition Id="31d7a03b-fb47-4d01-bfe2-c1c7df031efa" />
+          </extend>
+        </extendedCases>
         <subjects>
           <subsystemMoniker Id="3facd660-7b66-4404-807e-36b1d0f655ca" LastKnownName="Jeu SmallWorld" />
         </subjects>
@@ -232,6 +198,22 @@
     <packageHasNamedElement>
       <useCase Id="381eb49d-f367-4f9a-9511-46d59213b5fe" name="Annuler le dernier déplacement" isAbstract="false" isLeaf="false">
         <elementDefinition Id="b1083ac4-74dd-4c83-9e72-2060d3406a38" />
+        <subjects>
+          <subsystemMoniker Id="3facd660-7b66-4404-807e-36b1d0f655ca" LastKnownName="Jeu SmallWorld" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="ca7bbe3a-0e5d-4ef8-b5b7-1478743db296" name="Erreur : déplacement impossible" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="1c4f137e-fb0b-4a7e-92b0-6e34224aedb0" />
+        <subjects>
+          <subsystemMoniker Id="3facd660-7b66-4404-807e-36b1d0f655ca" LastKnownName="Jeu SmallWorld" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="d6ba46fe-5dba-4ffd-9c56-6dba608c887f" name="Se déplacer sur la case" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="025e9d26-155d-4427-bee7-ebbd244a8a8a" />
         <subjects>
           <subsystemMoniker Id="3facd660-7b66-4404-807e-36b1d0f655ca" LastKnownName="Jeu SmallWorld" />
         </subjects>

@@ -11,5 +11,9 @@ namespace SmallWorld
 
     public class Montagne : Case, InterMontagne
     {
+        public Montagne()
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

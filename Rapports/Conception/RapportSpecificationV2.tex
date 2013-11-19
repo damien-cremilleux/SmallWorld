@@ -39,7 +39,7 @@
 
 %-------------------------------------------
 
-\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+\newcommand{\HRule}{\rule{\linewidth}{0.27mm}}
 
 \begin{document}
 
@@ -63,19 +63,23 @@ Le projet de conception et de programmation orienté objet a pour objectif de co
 
 \medskip
 
-Ce rapport traite les thèmes essentiels aborder lors de la phase d'analyse et de conception du jeu. Son plan est fortement inspiré du polycopié d'énoncé. L'énoncé du projet est repris dans ce rapport afin de faire le parallèle entre les tâches à réaliser et notre modélisation. 
+Ce rapport traite les thèmes essentiels abordés lors de la phase d'analyse et de conception du jeu. Son plan est fortement inspiré du polycopié d'énoncé. L'énoncé du projet est repris dans ce rapport afin de faire le parallèle entre les tâches à réaliser et notre modélisation. 
 
 \medskip
 
-Ce rapport explique nos choix de modélisation et de conception du jeu \textsc{Small World}.
-Ainsi, les principes et les règles du jeux sont d'abord rappelés, afin de comprendre et de cerner les différentsinter actions possibles. Cette partie étant tirée du polycopié, il est possible de commencer directemment à partir de la deuxième partie, page~\pageref{debut}.
+Ce rapport explique nos choix de modélisation et de conception du jeu Small World.
+Ainsi, les principes et les règles du jeux sont d'abord rappelés, afin de comprendre et de cerner les différentes interactions possibles. Cette partie étant tirée du polycopié, il est possible de commencer directemment à partir de la deuxième partie, page~\pageref{debut}.
 
-Nous y ferront figurer les différentes étapes d'analyse ansi que des différents diagrammes de classe, d'utilisation et de séquences qui viendront illustrer le fonctionnement et l'organisation du jeu.
+Nous y faisons figurer les différentes étapes d'analyse ansi que les différents diagrammes de classe, d'utilisation et de séquences qui viendront illustrer le fonctionnement et l'organisation du jeu.
 
 Nous expliquons également les choix d'utilisation de patrons de conception afin de résoudre les problèmes de conception de notre jeu.
-Ils nous permettrons de décrire les procédés de conception de notre jeu au niveau de l'architecture, d'expliquer sous forme de diagramms les arrangemenst et le rôle joué par les différents modules.
+Ils nous permettent de décrire les procédés de conception de notre jeu au niveau de l'architecture, d'expliquer sous forme de diagrammes les arrangements et le rôle joué par les différents modules.
 
-Enfin, nous donnerons le diagramme de classe complet de notre jeu.
+Enfin, nous donnons le diagramme de classe complet de notre jeu.
+
+\medskip
+
+Tous les diagrammes sont joints à ce rapport sous forme d'images. En effet, certains diagrammes sont trop volumineux pour pouvoir s'afficher correctement sur ce document. 
 
 \medskip
 
@@ -156,9 +160,9 @@ Au lancement du jeu, le joueur a la possibilité soit de créer une nouvelle par
 \subsection{Lancement d'une partie}
 
 La création ou le chargement d'une partie est illustré de façon plus précise à la Figure~\ref{fig:cas_creerpartie}.
-Lorsque l'on crée une partie, le joueur~A commence par choisir son nom de joueur puis son peuple. Ensuite le joueur~B fait de même et procède au choix de la taille de la carte, avant de lancer la partie. Le joueur~B est donc plus spécialisé que le joueur~A. Cette suite d'interactions est représenté Figure~\ref{fig:inter_creerpartie}.
+Lorsque l'on crée une partie, le joueur~A commence par choisir son nom de joueur puis son peuple. Ensuite le joueur~B fait de même et procède au choix de la taille de la carte, avant de lancer la partie. Le joueur~B est donc plus spécialisé que le joueur~A. Cette suite d'interactions est représentée Figure~\ref{fig:inter_creerpartie}.
 
-Enfin, un diagramme de séquence, Figure~\ref{fig:seq_creerpartie}, nous permet de représenter les communications entre les joueurs et le jeu ainsi que de donner une représentation temporelle des interactions entre les objets. Ce diagramme de séquence nous permet de représenter la création d'une partie à partir des données (noms et peuples) entrées par les joueurs.
+Enfin, un diagramme de séquence, Figure~\ref{fig:seq_creerpartie}, représente les communications entre les joueurs et le jeu ainsi que de donner une représentation temporelle des interactions entre les objets. Ce diagramme de séquence nous permet de représenter la création d'une partie à partir des données (noms et peuples) entrées par les joueurs.
 
 \begin{figure}[H]
     \centering
@@ -174,17 +178,18 @@ Enfin, un diagramme de séquence, Figure~\ref{fig:seq_creerpartie}, nous permet 
 		\label{fig:inter_creerpartie}
 \end{figure}
 
-%\begin{figure}[H]
-%    \centering
-%    \includegraphics[width=\textwidth]{./images/sequence/creerpartie.png}
-%		\caption{Diagramme de séquence de création d'une partie}
-%		\label{fig:seq_creerpartie}
-%\end{figure}
+\begin{figure}[H]
+   \centering
+   \includegraphics[width=\textwidth]{./images/sequence/creerpartie.png}
+		\caption{Diagramme de séquence de création d'une partie}
+		\label{fig:seq_creerpartie}
+\end{figure}
 
 
 \subsection{Déroulement d'un tour de jeu}
 La description d'un tour de jeu, faite à la page~\pageref{tourdejeu}, permet de réaliser le diagramme de cas d'utilisation d'un tour de jeu (Figure~\ref{fig:cas_tourdejeu}). Le déroulement du processsus est représenté sur la Figure~\ref{fig:inter_tourdejeu}.
-\todo{plus de détail ?}
+
+Enfin, un diagramme de séquence, Figure~\ref{fig:seq_tourJeu}, représente les communications entre les joueurs et le jeu (au travers de l'IHM) lors du déplacement d'une unité. Le déroulement des combat est explicité dans le diagramme d'activité Figure~\ref{fig:inter_combat}.
 
 \begin{figure}[H]
     \centering
@@ -200,8 +205,15 @@ La description d'un tour de jeu, faite à la page~\pageref{tourdejeu}, permet de
 		\label{fig:inter_tourdejeu}
 \end{figure}
 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{./images/sequence/tourJeu.png}
+		\caption{Diagramme de séquence du déplacement d'une unité}
+		\label{fig:seq_tourJeu}
+\end{figure}
+
 \subsection{Déroulement d'un combat}
-Au cours d'un tour de jeu, le joueur peut décider de combattre le joueur adverse à l'aide de ses unités. Le déroulement d'un combat est montré à l'aide de la Figure~\ref{fig:inter_combat}
+Au cours d'un tour de jeu, le joueur peut décider de combattre le joueur adverse à l'aide de ses unités. Le déroulement d'un combat est montré à l'aide de la Figure~\ref{fig:inter_combat}.
 
 \begin{figure}[H]
     \centering
@@ -214,8 +226,7 @@ Au cours d'un tour de jeu, le joueur peut décider de combattre le joueur advers
 Nous avons utilisé un diagramme d'état-transitions, Figure~\ref{fig:trans_unite}, afin de montrer le cycle de vie d'une unité et ses différents états possibles.
 \`A sa création, l'unité possède deux points de vie. 
 Au début d'un tour, l'unité possède un point de déplacement. Elle a alors la possibilité de se déplacer, d'attaquer ou de passer son tour. \`A la fin de l'action, l'unité perd son point de déplacement et son tour est terminé.
- \todo{peut etre à refaire en fonction du nouveau diagramme}
-Lorsqu'elle a perdu ses deux points de vie, l'unité a été vaincue.
+Lorsqu'elle a perdu ses deux points de vie, l'unité a été vaincue, elle meurt.
 
 \begin{figure}[H]
     \centering
@@ -223,7 +234,6 @@ Lorsqu'elle a perdu ses deux points de vie, l'unité a été vaincue.
 		\caption{Diagramme d'état-transitions }
 		\label{fig:trans_unite}
 \end{figure}
-
 
 \section{Modélisation du diagramme de classe}
 \todo{revoir nom titre}
@@ -233,7 +243,7 @@ Les fonctionnalités du jeu étant définies, nous allons maintenant modéliser 
 
 \subsubsection{Monteur - Création de la partie}
 
-Nous avons utilisé un \textit{Monteur} pour la création d'une partie. En effet, la création d'une partie est un assemblage de différents objets complexes. L'utilisation de ce patron de conception permet d'extérioriser la création d'une partie, sans alourdir la classe.
+Nous avons utilisé un \textit{Monteur} pour la création d'une partie. En effet, la création d'une partie est un assemblage de différents objets complexes. L'utilisation de ce patron de conception extériorise la création d'une partie, sans alourdir la classe.
 En outre, le monteur permettra de pouvoir implémenter différentes configurations de partie. Le monteur est représenté à la Figure~\ref{fig:class_monteur}.
 
 \begin{figure}[H]
@@ -246,7 +256,7 @@ En outre, le monteur permettra de pouvoir implémenter différentes configuratio
 
 \subsubsection{Stratégie - Création des différents types de cartes}
 
-Lors de la création d'une partie, les joueurs ont le choix entre trois tailles de cartes : démo, petite ou normale. Différents algorithmes seront développés pour ces tailles. Afin de modéliser ce changement de comportement, c'est-à-dire de changer d'algorithme en fonction du contexte, le patron de conception utilisé est la stratégie. De plus, il sera très facile d'implémenter une nouvelle taille de carte si besoin, simplement par l'ajout d'un nouvel algorithme. La stratégie est représentée à la Figure~\ref{fig:class_strategie}.
+Lors de la création d'une partie, les joueurs ont le choix entre trois tailles de cartes : démo, petite ou normale. Différents algorithmes seront développés pour ces tailles. Afin de modéliser ce changement de comportement, c'est-à-dire de changer d'algorithme en fonction du contexte, le patron de conception utilisé est la \textit{stratégie}. De plus, il sera très facile d'implémenter une nouvelle taille de carte si besoin, simplement par l'ajout d'un nouvel algorithme. La \textit{stratégie} est représentée à la Figure~\ref{fig:class_strategie}.
 
 \begin{figure}[H]
     \centering
@@ -255,17 +265,12 @@ Lors de la création d'une partie, les joueurs ont le choix entre trois tailles 
 		\label{fig:class_strategie}
 \end{figure}
 
-\subsubsection{Fabrique pour la création des cases}
-Pour la modélisation du jeu, nous utiliserons plusieurs \textit{Fabriques}. 
-Nous en utiliserons notamment une pour fabriquer les cases. Il existe cinq types de cases : montagne, plaine, désert, eau et forêt.
-La fabrique nous permettra de créer aléatoirement des types des cases différents sur la carte.
-Son utilisation nous permettra également de faire évoluer facilement les types de cases par simple ajout de classes concrètes.
 
-\todo{ajout diagramme}
 
 \subsubsection{Poids-mouche - Modélisation de la carte}
-
-Il existe cinq types de cases dans Small World. Pour ne pas instancier un grand nombre de cas et devenir trop gourmand au niveau de la mémoire, le patron de conception poids-mouche est mis en place. Nous évitons ainsi la création répétée d'une même case. La Figure~\ref{fig:class_poidsmouche} illustre le poids-mouche.
+ Il existe cinq types de cases : montagne, plaine, désert, eau et forêt.
+Pour ne pas instancier un grand nombre de case et devenir trop gourmand au niveau de la mémoire, le patron de conception \textit{poids-mouche} est mis en place. Nous évitons ainsi la création répétée d'une même case. La Figure~\ref{fig:class_poidsmouche} illustre le poids-mouche. Pour obtenir la carte,  nous utilisons une \textit{fabrique}. La \textit{fabrique} permet de créer aléatoirement des types des cases différents sur la carte.
+Son utilisation rend plus facile l'évolution des types de cases par simple ajout de classes concrètes.
 
 \begin{figure}[H]
     \centering
@@ -276,8 +281,8 @@ Il existe cinq types de cases dans Small World. Pour ne pas instancier un grand 
 
 \subsubsection{Fabrique - Gestion des peuples et des unités}
 
-Lors de la création d'une partie, le joueur choisit entre trois peuples. Le jeu devra donc manipuler les unités sans savoir s'il s'agit de vikings, gaulois ou nains. Le patron de conception \textsc{fabrique} est implémenté afin de résoudre ce problème, et de définir une interface pour la création de peuples. En outre, il sera maintenant facile de rajouter un nouveau peuple. Ces éléments sont présentés Figure~\ref{fig:class_fabrique}.
-Les unités étant d'un seul type (il n'y pas d'unité spécialisée au sein d'un peuple), il n'y a pas besoin de fabrique pour les unités. On utilise une classe abstraite pour définir les éléments communs aux unités des différents peuples. 
+Lors de la création d'une partie, le joueur choisit entre trois peuples. Le jeu devra donc manipuler les unités sans savoir s'il s'agit de vikings, gaulois ou nains. Le patron de conception \textit{fabrique} est implémenté afin de résoudre ce problème, et de définir une interface pour la création de peuples. En outre, il sera maintenant facile de rajouter un nouveau peuple. Ces éléments sont présentés Figure~\ref{fig:class_fabrique}.
+Les unités étant d'un seul type (il n'y pas d'unité spécialisée au sein d'un peuple), il n'y a pas besoin de \textit{fabrique} pour les unités. On utilise une classe abstraite pour définir les éléments communs aux unités des différents peuples. 
 
 \begin{figure}[H]
     \centering
@@ -287,13 +292,21 @@ Les unités étant d'un seul type (il n'y pas d'unité spécialisée au sein d'u
 \end{figure}
 
 \subsubsection{Observateur}
-Enfin, nous utiliserons un observateur afin de créer une lien entre la carte et les unités. En effet, lorsqu'une unité se déplace, il faut que la carte en soit informée afin qu'elle mette à jour l'affichage et les données associés. 
-L'observateur permettra à la carte d'observer les unités et donc de créer un lien entre eux. Si une unité se déplace, la carte en sera alors avertie et se mettra à jour. 
+Enfin, nous utiliserons un \textit{observateur} afin de créer une lien entre la carte et les unités. En effet, lorsqu'une unité se déplace, il faut que la carte en soit informée afin qu'elle mette à jour l'affichage et les données associés. 
+L'\textit{observateur} permettra à la carte d'observer les unités et donc de créer un lien entre eux. Si une unité se déplace, la carte en sera alors avertie et se mettra à jour. 
 Nous n'avons cependant pas modélisé cette notion, puisqu'en effet, il n'est pas possible d'importer une classe/interface C\# dans un diagramme de classes. Nous en tiendrons cependant compte lors du codage.
 
 
 \subsection{Diagramme de classe}
-Enfin, voici le diagramme de classes complet de notre jeu. Nous y avons représenté les différentes classes et interfaces utilisées dans les patrons de conception précédemment cités ainsi que les différentes classes nécessaires au fonctionnement du jeu.
+Enfin, la Figure~\ref{fig:class_global} montre  le diagramme de classes complet de notre jeu. Nous y avons représenté les différentes classes utilisées dans les patrons de conception précédemment cités ainsi que les différentes classes nécessaires au fonctionnement du jeu.
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth,  angle=90]{./images/classe/global.png}
+		\caption{Diagramme de classe complet}
+		\label{fig:class_global}
+\end{figure}
 
 
 \newpage
@@ -301,7 +314,12 @@ Enfin, voici le diagramme de classes complet de notre jeu. Nous y avons représe
 \section*{Conclusion}
 \addcontentsline{toc}{section}{Conclusion}
 
-Le projet de conception et de programmation orienté objet a pour objectif de concevoir un jeu inspiré de Small World. Ce rapport constitu la première phase d'analyse et de conception du jeu. Il montre la modélisation UML du comportement de l'application qui sera pas la suite implémenter.
+Le projet de conception et de programmation orienté objet a pour objectif de concevoir un jeu inspiré de Small World.
+La première phase, celle d'analyse et de conception, est donc terminée.  Le cahier des charges nous a permis de trouver les différentes fonctionnalités du jeu et ensuite de modéliser les différentes classes nécessaires à son fonctionnement.
+
+\medskip
+
+La prochaine étape de notre projet consiste donc à implémenter et compléter le code généré automatiquement. Il sera également important de tester les différentes parties du logicie au fur et à mesure  du développement.
 
 
 \newpage

@@ -11,6 +11,11 @@ namespace SmallWorld
 
     public class FabriquePeuple : InterFabriquePeuple
     {
+        public FabriquePeuple()
+        {
+            throw new System.NotImplementedException();
+        }
+    
         public Peuple Peuple
         {
             get

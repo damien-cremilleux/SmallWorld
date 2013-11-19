@@ -22,6 +22,11 @@ namespace SmallWorld
 
     public class FabriqueCase : InterFabriqueCase
     {
+        public FabriqueCase()
+        {
+            throw new System.NotImplementedException();
+        }
+    
         public Foret Foret
         {
             get

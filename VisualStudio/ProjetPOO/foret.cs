@@ -11,5 +11,9 @@ namespace SmallWorld
 
     public class Foret : Case, InterForet
     {
+        public Foret()
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

@@ -20,6 +20,11 @@ namespace SmallWorld
 
     public class Carte : InterCarte
     {
+        public Carte()
+        {
+            throw new System.NotImplementedException();
+        }
+    
         public SmallWorld.StrategieCarte StrategieCarte
         {
             get

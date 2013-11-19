@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<SequenceDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner" xmlns:dm11="http://schemas.microsoft.com/dsltools/UseCaseModel" dslVersion="1.0.0.0" Id="023b4ff8-5790-4d6e-92e8-6e587622b918" name="TourJeu" linkedPackageId="20569459-943f-4594-ba50-327f29d9c217" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner">
+<SequenceDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/UseCaseModel" dslVersion="1.0.0.0" Id="023b4ff8-5790-4d6e-92e8-6e587622b918" name="Jouer une unité" linkedPackageId="20569459-943f-4594-ba50-327f29d9c217" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner">
   <packagedElements>
     <packageHasNamedElement>
-      <interaction Id="20c039a1-8e00-41f6-b4ee-2e50fff322b8" name="TourJeu" collapseFragmentsFlag="false" isActiveClass="false" isAbstract="false" isLeaf="false" isReentrant="false">
+      <interaction Id="20c039a1-8e00-41f6-b4ee-2e50fff322b8" name="Jouer une unité" collapseFragmentsFlag="false" isActiveClass="false" isAbstract="false" isLeaf="false" isReentrant="false">
         <ownedCommentsInternal>
           <comment Id="ecae277c-7b4a-47d7-834f-ad1cc234f97a">
             <elementDefinition Id="44e7423f-8a6f-49c5-8cef-8994281c3565" />
@@ -10,68 +10,15 @@
           </comment>
           <comment Id="9760ddaf-473f-498b-8bed-70b9e2e2983f">
             <elementDefinition Id="e87455c7-6c4f-4c1d-b544-d710675fd1ba" />
-            <body>Le déroulement des combats est illustré avec un diagramme d'activité</body>
+            <body>Le déroulement des combats est illustré par diagramme d'activité</body>
           </comment>
           <comment Id="2a5f7c0c-55a6-4806-8f4a-45927b5f6ba8">
             <elementDefinition Id="2342e8f4-4113-4b01-81df-5bddd6724638" />
             <body>Les actions de partie sont appelées par l'utilisateur à travers l'IHM</body>
           </comment>
-          <comment Id="823e99de-fcfc-430a-89fb-c6446dd0439a">
-            <elementDefinition Id="c9278db4-d99c-4f02-8781-b1d5338f4049" />
-            <body>La boucle s'applique à tout le diagramme</body>
-          </comment>
         </ownedCommentsInternal>
         <elementDefinition Id="7cd476b7-631f-4e90-ab97-99aeb78fa9c6" />
         <fragments>
-          <combinedFragment Id="1850bf85-5e36-4f24-85e9-d32f849d6f2b" name="CombinedFragment2" interactionOperator="Loop">
-            <elementDefinition Id="13da731e-c994-476e-97bf-40d2ebc3dafa" />
-            <coveredLifelines>
-              <lifelineMoniker Id="9eb1ed4c-7f2b-4165-9271-de3236b81c2d" LastKnownName="utilisateur" />
-              <lifelineMoniker Id="eeb1183d-24d9-411b-9514-ccaed6fc57b7" LastKnownName="partie : Partie" />
-            </coveredLifelines>
-            <operands>
-              <interactionOperand Id="9a6d0b15-0871-4b04-9656-4acd36330367" name="InteractionOperand1">
-                <elementDefinition Id="1560b5f2-67bc-4ccf-b8cd-f76d39cf8da3" />
-                <coveredLifelines>
-                  <lifelineMoniker Id="9eb1ed4c-7f2b-4165-9271-de3236b81c2d" LastKnownName="utilisateur" />
-                  <lifelineMoniker Id="eeb1183d-24d9-411b-9514-ccaed6fc57b7" LastKnownName="partie : Partie" />
-                </coveredLifelines>
-                <guard>
-                  <interactionConstraint Id="dd07c417-8efa-477f-abab-ddc8e0379520">
-                    <elementDefinition Id="8a9b369b-0ec7-4394-8322-24191e5ebdf7" />
-                    <maxInt>
-                      <literalString Id="d55533ab-ee4e-486b-b5cf-33c21abadd38" name="LiteralString1">
-                        <elementDefinition Id="caa57fbd-5240-4ca4-be43-bb34691edf95" />
-                      </literalString>
-                    </maxInt>
-                    <minInt>
-                      <literalString Id="2def6c83-7b51-4ea5-aa4c-3c50ce7cfbb3" name="LiteralString2">
-                        <elementDefinition Id="1bc96b28-55f5-4d65-b37c-9839b11a7e17" />
-                      </literalString>
-                    </minInt>
-                  </interactionConstraint>
-                </guard>
-                <operandOccurrenceSpecifications>
-                  <operandOccurrenceSpecificationMoniker Id="b97b735a-9da8-45bf-accd-93e4c43d8a4d" LastKnownName="OperandOccurrenceSpecification73" />
-                  <operandOccurrenceSpecificationMoniker Id="9c5e0479-65c5-4ace-aa42-eafb188e2fba" LastKnownName="OperandOccurrenceSpecification74" />
-                  <operandOccurrenceSpecificationMoniker Id="787ba931-7fa0-4573-a461-c44954dd7b83" LastKnownName="OperandOccurrenceSpecification75" />
-                  <operandOccurrenceSpecificationMoniker Id="74bf07f5-f8c0-49a5-98d6-75bd5d1af4ea" LastKnownName="OperandOccurrenceSpecification76" />
-                </operandOccurrenceSpecifications>
-              </interactionOperand>
-            </operands>
-          </combinedFragment>
-          <operandOccurrenceSpecification Id="787ba931-7fa0-4573-a461-c44954dd7b83" name="OperandOccurrenceSpecification75">
-            <elementDefinition Id="67b1f47c-1b28-4213-a93b-d0481e81eafb" />
-            <covered>
-              <lifelineMoniker Id="9eb1ed4c-7f2b-4165-9271-de3236b81c2d" LastKnownName="utilisateur" />
-            </covered>
-          </operandOccurrenceSpecification>
-          <operandOccurrenceSpecification Id="b97b735a-9da8-45bf-accd-93e4c43d8a4d" name="OperandOccurrenceSpecification73">
-            <elementDefinition Id="d0538c84-c181-4d04-b385-22493717fa9a" />
-            <covered>
-              <lifelineMoniker Id="eeb1183d-24d9-411b-9514-ccaed6fc57b7" LastKnownName="partie : Partie" />
-            </covered>
-          </operandOccurrenceSpecification>
           <behaviorExecutionSpecification Id="04c97af6-3809-4a1e-9643-917892bceaab" name="BehaviorExecutionSpecification5">
             <elementDefinition Id="0ff92e06-c289-4078-acec-0c2201556ee0" />
             <coveredLifelines>
@@ -134,18 +81,6 @@
               <lifelineMoniker Id="eeb1183d-24d9-411b-9514-ccaed6fc57b7" LastKnownName="partie : Partie" />
             </covered>
           </executionOccurrenceSpecification>
-          <operandOccurrenceSpecification Id="74bf07f5-f8c0-49a5-98d6-75bd5d1af4ea" name="OperandOccurrenceSpecification76">
-            <elementDefinition Id="27f98d79-72a0-4d64-9882-30faadc1092d" />
-            <covered>
-              <lifelineMoniker Id="9eb1ed4c-7f2b-4165-9271-de3236b81c2d" LastKnownName="utilisateur" />
-            </covered>
-          </operandOccurrenceSpecification>
-          <operandOccurrenceSpecification Id="9c5e0479-65c5-4ace-aa42-eafb188e2fba" name="OperandOccurrenceSpecification74">
-            <elementDefinition Id="108302f5-50ef-4461-a645-fe2f4560cec6" />
-            <covered>
-              <lifelineMoniker Id="eeb1183d-24d9-411b-9514-ccaed6fc57b7" LastKnownName="partie : Partie" />
-            </covered>
-          </operandOccurrenceSpecification>
           <combinedFragment Id="0cbc06f0-b562-4ba3-ae92-3f41a01e1dc5" name="CombinedFragment1" interactionOperator="Alt">
             <elementDefinition Id="b699d8e1-673e-46a2-927b-fcd3fccf5e4e" />
             <coveredLifelines>
@@ -784,10 +719,8 @@
           <lifeline Id="9eb1ed4c-7f2b-4165-9271-de3236b81c2d" name="utilisateur" isActor="false" lifelineDisplayName="utilisateur">
             <elementDefinition Id="1b58acac-a9be-4025-8071-aeebbffad59e" />
             <topLevelOccurrences>
-              <operandOccurrenceSpecificationMoniker Id="787ba931-7fa0-4573-a461-c44954dd7b83" LastKnownName="OperandOccurrenceSpecification75" />
               <messageOccurrenceSpecificationMoniker Id="a01f58aa-d42f-450b-a4c5-2a91a2abd738" LastKnownName="MessageOccurrenceSpecification15" />
               <messageOccurrenceSpecificationMoniker Id="35f879f3-b064-4b24-b30f-baee5ff17399" LastKnownName="MessageOccurrenceSpecification18" />
-              <operandOccurrenceSpecificationMoniker Id="74bf07f5-f8c0-49a5-98d6-75bd5d1af4ea" LastKnownName="OperandOccurrenceSpecification76" />
               <operandOccurrenceSpecificationMoniker Id="b7b63fd4-bff4-4750-a693-eae019334e56" LastKnownName="OperandOccurrenceSpecification3" />
               <messageOccurrenceSpecificationMoniker Id="b52e15a8-2dd9-4f1f-ad81-5794eb46fb04" LastKnownName="MessageOccurrenceSpecification19" />
               <messageOccurrenceSpecificationMoniker Id="54ba414f-ad21-49e7-88bd-182e91b71473" LastKnownName="MessageOccurrenceSpecification22" />
@@ -802,10 +735,8 @@
           <lifeline Id="eeb1183d-24d9-411b-9514-ccaed6fc57b7" name="partie : Partie" isActor="false" lifelineDisplayName="partie : Partie">
             <elementDefinition Id="c713929d-076a-407e-91fd-659de17f467c" />
             <topLevelOccurrences>
-              <operandOccurrenceSpecificationMoniker Id="b97b735a-9da8-45bf-accd-93e4c43d8a4d" LastKnownName="OperandOccurrenceSpecification73" />
               <executionOccurrenceSpecificationMoniker Id="1bd5239a-a645-4d0d-83cf-58c55a706bfe" LastKnownName="ExecutionOccurrenceSpecification9" />
               <executionOccurrenceSpecificationMoniker Id="65f45600-f717-442b-85df-29db8384f74a" LastKnownName="ExecutionOccurrenceSpecification10" />
-              <operandOccurrenceSpecificationMoniker Id="9c5e0479-65c5-4ace-aa42-eafb188e2fba" LastKnownName="OperandOccurrenceSpecification74" />
               <operandOccurrenceSpecificationMoniker Id="686f1df9-1b22-49bb-8ab3-8f07ac78a789" LastKnownName="OperandOccurrenceSpecification1" />
               <executionOccurrenceSpecificationMoniker Id="d966d2fd-af5f-48ce-a26b-0987290b0506" LastKnownName="ExecutionOccurrenceSpecification11" />
               <executionOccurrenceSpecificationMoniker Id="e7cf7907-2c7d-4bf1-aa65-6e152eb8fae7" LastKnownName="ExecutionOccurrenceSpecification12" />

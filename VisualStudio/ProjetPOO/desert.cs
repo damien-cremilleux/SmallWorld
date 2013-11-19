@@ -11,5 +11,9 @@ namespace SmallWorld
 
     public class Desert : Case, InterDesert
     {
+        public Desert()
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }
