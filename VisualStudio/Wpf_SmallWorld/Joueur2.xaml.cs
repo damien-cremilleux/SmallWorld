@@ -10,23 +10,24 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace Wpf_SmallWorld
 {
     /// <summary>
-    /// Logique d'interaction pour MainWindow.xaml
+    /// Logique d'interaction pour Joueur2.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class Joueur2 : Window
     {
-        public MainWindow()
+        public Joueur2()
         {
             InitializeComponent();
         }
 
-        private void CreerPartie(object sender, RoutedEventArgs e)
+        private void LancerPartie(object sender, RoutedEventArgs e)
         {
-            Joueur1 a = new Joueur1();
+            Jeu a = new Jeu();
             a.Show();
             this.Close();
         }

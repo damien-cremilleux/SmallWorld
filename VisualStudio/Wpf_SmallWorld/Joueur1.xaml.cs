@@ -15,20 +15,22 @@ using System.Windows.Shapes;
 namespace Wpf_SmallWorld
 {
     /// <summary>
-    /// Logique d'interaction pour MainWindow.xaml
+    /// Logique d'interaction pour Joueur1.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class Joueur1 : Window
     {
-        public MainWindow()
+        public Joueur1()
         {
             InitializeComponent();
         }
 
-        private void CreerPartie(object sender, RoutedEventArgs e)
+        private void joueurSuivant(object sender, RoutedEventArgs e)
         {
-            Joueur1 a = new Joueur1();
+            Joueur2 a = new Joueur2();
             a.Show();
             this.Close();
+
         }
+       
     }
 }

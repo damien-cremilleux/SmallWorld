@@ -1,0 +1,21 @@
+﻿<Window x:Class="Wpf_SmallWorld.Jeu"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        WindowStyle="SingleBorderWindow"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Small World" Height="350" Width="525" Background="#FFF3F3B5">
+
+    <DockPanel Background="#FFF3F3B5">
+        <Grid DockPanel.Dock="top" Height="200" Name="Carte" Background="BlanchedAlmond"/>
+        <Grid ShowGridLines="true" DockPanel.Dock="Bottom">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Label Grid.Column="0"  Name="infolabel" Content="fjhfdkdfhguio"/>
+            <Button Grid.Column="1" Width="100" Height="40" HorizontalAlignment="Center" Content="Fin de tour"/>
+            <Label Grid.Column="2"  Name="infolabel2" Content="fjhfdkdfhguio"/>
+        </Grid>
+    </DockPanel>
+</Window>

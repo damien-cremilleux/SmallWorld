@@ -6,3 +6,4 @@ C:\Users\damienc\Documents\GitHub\SmallWorld\VisualStudio\ProjetPOO\obj\Debug\Co
 H:\4INFO\POO\SmallWorld\VisualStudio\ProjetPOO\obj\Debug\Code_SmallWorld.csprojResolveAssemblyReference.cache
 H:\4INFO\POO\SmallWorld\VisualStudio\ProjetPOO\obj\Debug\Code_SmallWorld.dll
 H:\4INFO\POO\SmallWorld\VisualStudio\ProjetPOO\obj\Debug\Code_SmallWorld.pdb
+C:\Users\utilisateur\Documents\GitHub\SmallWorld\VisualStudio\ProjetPOO\obj\Debug\Code_SmallWorld.csprojResolveAssemblyReference.cache
