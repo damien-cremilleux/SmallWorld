@@ -17,6 +17,9 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Wrapper_SmallWorld", "Wrapp
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wpf_SmallWorld", "Wpf_SmallWorld\Wpf_SmallWorld.csproj", "{9F74D121-7917-49B5-91A1-F9AD9D4FF627}"
+	ProjectSection(ProjectDependencies) = postProject
+		{F89C3FAF-2529-4189-BD90-D8B5ED0324BD} = {F89C3FAF-2529-4189-BD90-D8B5ED0324BD}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
