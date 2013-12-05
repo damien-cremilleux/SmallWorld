@@ -2,51 +2,16 @@
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="SmallWorld.FabriqueCase">
     <Position X="4.5" Y="4" Width="1.5" />
-    <AssociationLine Name="Foret" Type="SmallWorld.Foret" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
-      <Path>
-        <Point X="6" Y="4.688" />
-        <Point X="7.312" Y="4.688" />
-        <Point X="7.312" Y="4.247" />
-      </Path>
-    </AssociationLine>
-    <AssociationLine Name="Plaine" Type="SmallWorld.Plaine" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
-      <Path>
-        <Point X="6" Y="5.062" />
-        <Point X="9" Y="5.062" />
-        <Point X="9" Y="4.247" />
-      </Path>
-    </AssociationLine>
-    <AssociationLine Name="Desert" Type="SmallWorld.Desert" FixedFromPoint="true" FixedToPoint="true">
-      <Path>
-        <Point X="6" Y="5.375" />
-        <Point X="10.75" Y="5.375" />
-        <Point X="10.75" Y="4.247" />
-      </Path>
-    </AssociationLine>
-    <AssociationLine Name="Montagne" Type="SmallWorld.Montagne" FixedFromPoint="true" FixedToPoint="true">
-      <Path>
-        <Point X="6" Y="5.688" />
-        <Point X="12.5" Y="5.688" />
-        <Point X="12.5" Y="4.247" />
-      </Path>
-    </AssociationLine>
-    <AssociationLine Name="Eau" Type="SmallWorld.Eau" FixedFromPoint="true" FixedToPoint="true">
-      <Path>
-        <Point X="6" Y="5.938" />
-        <Point X="14.25" Y="5.938" />
-        <Point X="14.25" Y="4.247" />
-      </Path>
-    </AssociationLine>
     <TypeIdentifier>
-      <HashCode>AABAQxAAkAAAAAAAAAAAEAAAAEAAAAAAAgAAAAAAAIA=</HashCode>
+      <HashCode>EABQQxAAkABAAAAAAAAAEAAAAEACAABAAgAAAEAAAIE=</HashCode>
       <FileName>FabriqueCase.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
       <Property Name="Foret" />
-      <Property Name="Plaine" />
-      <Property Name="Desert" />
       <Property Name="Montagne" />
+      <Property Name="Desert" />
       <Property Name="Eau" />
+      <Property Name="Plaine" />
     </ShowAsAssociation>
     <Lollipop Position="0.2" />
   </Class>
@@ -66,35 +31,11 @@
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
-  <Class Name="SmallWorld.Foret">
-    <Position X="6.5" Y="3.25" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>foret.cs</FileName>
-    </TypeIdentifier>
-    <Lollipop Position="0.2" />
-  </Class>
-  <Class Name="SmallWorld.Plaine">
-    <Position X="8.25" Y="3.25" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>plaine.cs</FileName>
-    </TypeIdentifier>
-    <Lollipop Position="0.2" />
-  </Class>
   <Class Name="SmallWorld.Desert">
     <Position X="10" Y="3.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>desert.cs</FileName>
-    </TypeIdentifier>
-    <Lollipop Position="0.2" />
-  </Class>
-  <Class Name="SmallWorld.Montagne">
-    <Position X="11.75" Y="3.25" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>montagne.cs</FileName>
+      <FileName>Case.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
@@ -102,7 +43,31 @@
     <Position X="13.5" Y="3.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>eau.cs</FileName>
+      <FileName>Case.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="SmallWorld.Foret">
+    <Position X="6.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Case.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="SmallWorld.Montagne">
+    <Position X="11.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Case.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="SmallWorld.Plaine">
+    <Position X="8.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Case.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
