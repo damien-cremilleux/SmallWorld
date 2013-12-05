@@ -16,19 +16,5 @@ namespace SmallWorld
             throw new System.NotImplementedException();
         }
     
-        public void attaquer()
-        {
-            throw new NotImplementedException();
-        }
-
-        public void seDeplacer()
-        {
-            throw new NotImplementedException();
-        }
-
-        public void passerSonTour()
-        {
-            throw new System.NotImplementedException();
-        }
-    }
+     }
 }

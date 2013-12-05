@@ -43,7 +43,6 @@
     <Compile Include="Case.cs" />
     <Compile Include="Coordonnees.cs" />
     <Compile Include="CreateurPartie.cs" />
-    <Compile Include="Demo.cs" />
     <Compile Include="desert.cs" />
     <Compile Include="eau.cs" />
     <Compile Include="Fabrique.cs" />
@@ -57,9 +56,7 @@
     <Compile Include="montagne.cs" />
     <Compile Include="MonteurPartie.cs" />
     <Compile Include="Nain.cs" />
-    <Compile Include="Normale.cs" />
     <Compile Include="Partie.cs" />
-    <Compile Include="Petite.cs" />
     <Compile Include="Peuple.cs" />
     <Compile Include="PeupleGaulois.cs" />
     <Compile Include="PeupleNain.cs" />
@@ -72,10 +69,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
     <Compile Include="Sauvegarder.cs" />
-    <Compile Include="StrategieCarte.cs" />
-    <Compile Include="StrategieDemo.cs" />
-    <Compile Include="StrategieNormale.cs" />
-    <Compile Include="StrategiePetite.cs" />
+    <Compile Include="Strategie.cs" />
     <Compile Include="Unite.cs" />
     <Compile Include="UniteGauloise.cs" />
     <Compile Include="UniteNaine.cs" />
