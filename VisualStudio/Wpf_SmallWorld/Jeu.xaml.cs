@@ -68,26 +68,47 @@ namespace Wpf_SmallWorld
             for (int l = 0; l < Carte.Height; l++)
             {
                 Carte.RowDefinitions.Add(new RowDefinition() { Height = new GridLength(20, GridUnitType.Pixel) });
-                   for (int c = 0; c < taille; c++)
-                   {
-                    
-                   }
-               }
-              /* updateUnitUI();
+                    for (int c = 0; c < taille; c++)  {
+                     // dans chaque case de la grille on ajoute une tuile (logique) matérialisée par un rectangle (physique)
+                     // On récupère le numéro correspondant au type de la case
+                     // Var ???
+                        var NumCase = TCarte[c][l];
+                        // TODO obtenir le type !?
+                        Case Case = obtenirCase(NumCase);
+                        var element = createRectangle(c, l, Case);
+
+                        // Aout de la case dans la carte ?
+                        Carte.Children.Add(Case);
+                    }
+             }
+         }
+             
                   
-            }
-        }
-
-
-        private Rectangle createRectangle(int c, int l, ITile tile)
+         
+        /// <summary>
+        /// Création du rectangle matérialisant une tuile
+        /// </summary>
+        /// <param name="c"> Column </param>
+        /// <param name="l"> Row </param>
+        /// <param name="tile"> Tuile logique</param>
+        /// <returns> Rectangle créé</returns>
+        private Rectangle createRectangle(int c, int l, case Case)
         {
             var rectangle = new Rectangle();
-            if (tile is ILand)
+
+        // Test la classe de l'objet ? 
+            if (Case is InterEau)
                 rectangle.Fill = Brushes.Brown;
-            if (tile is IForest)
+            if (Case is InterForet)
                 rectangle.Fill = Brushes.DarkGreen;
-            if (tile is ISea)
+            if (Case is InterMontagne)
                 rectangle.Fill = Brushes.SlateBlue;
+            if (Case is InterPlaine)
+                rectangle.Fill = Brushes.Green;
+            if (Case is InterDesert)
+                rectangle.Fill = Brushes.Sand;
+         
+
             // mise à jour des attributs (column et Row) référencant la position dans la grille à rectangle
             Grid.SetColumn(rectangle, c);
             Grid.SetRow(rectangle, l);
@@ -100,6 +121,5 @@ namespace Wpf_SmallWorld
             rectangle.MouseLeftButtonDown += new MouseButtonEventHandler(rectangle_MouseLeftButtonDown);
             return rectangle;
         }
-*/
     }
 }
