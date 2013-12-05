@@ -7,31 +7,92 @@ namespace SmallWorld
 {
     public interface InterFabriqueCase
     {
-        void obtenirEau();
+        Case obtenirEau();
 
-        void obtenirMontagne();
+        Case obtenirMontagne();
 
-        void obtenirDesert();
+        Case obtenirDesert();
 
-        void obtenirPlaine();
+        Case obtenirPlaine();
 
-        void obtenirForet();
+        Case obtenirForet();
 
-        void obtenirCase();
+        Case obtenirCase(int typeCase);
     }
 
     public class FabriqueCase : InterFabriqueCase
     {
-        public FabriqueCase()
+        private static FabriqueCase instance_FabCase;
+
+        private Desert desert;
+        private Eau eau;
+        private Foret foret;
+        private Montagne montagne;
+        private Plaine plaine;
+
+
+        public static FabriqueCase Instance_FabCase
         {
-            throw new System.NotImplementedException();
+            get
+            {
+                if (instance_FabCase == null)
+                {
+                    instance_FabCase = new FabriqueCase();
+                }
+                return instance_FabCase;
+            }
         }
-    
+
+        private FabriqueCase()
+        {
+            desert = new Desert();
+            eau = new Eau();
+            foret = new Foret();
+            montagne = new Montagne();
+            plaine = new Plaine();
+        }
+
+
+        public Desert Desert
+        {
+            get
+            {
+                return desert;
+            }
+            set
+            {
+            }
+        }
+
+
+        public Eau Eau
+        {
+            get
+            {
+                return eau;
+            }
+            set
+            {
+            }
+        }
         public Foret Foret
         {
             get
             {
-                throw new System.NotImplementedException();
+                return foret;
+            }
+            set
+            {
+            }
+        }
+
+
+
+        public Montagne Montagne
+        {
+            get
+            {
+                return montagne;
             }
             set
             {
@@ -42,75 +103,64 @@ namespace SmallWorld
         {
             get
             {
-                throw new System.NotImplementedException();
+                return plaine;
             }
             set
             {
             }
         }
 
-        public Desert Desert
+        public Case obtenirDesert()
         {
-            get
+            return Desert;
+        }
+
+        public Case obtenirEau()
+        {
+            return Eau;
+        }
+
+        public Case obtenirForet()
+        {
+            return Foret;
+        }
+
+
+        public Case obtenirMontagne()
+        {
+            return Montagne;
+        }
+
+
+        public Case obtenirPlaine()
+        {
+            return Plaine;
+        }
+
+
+        public Case obtenirCase(int typeCase)
+        {
+            switch (typeCase)
             {
-                throw new System.NotImplementedException();
-            }
-            set
-            {
-            }
-        }
-
-        public Montagne Montagne
-        {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-            set
-            {
-            }
-        }
-
-        public Eau Eau
-        {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-            set
-            {
+                case 1:
+                    return Desert;
+       
+                case 2:
+                    return Eau;
+          
+                case 3:
+                    return Foret;
+     
+                case 4:
+                    return Montagne;
+         
+                case 5:
+                    return Plaine;
+              
+                default:
+                    return null; /* TODO */
             }
         }
-    
-        public void obtenirEau()
-        {
-            throw new NotImplementedException();
-        }
 
-        public void obtenirMontagne()
-        {
-            throw new NotImplementedException();
-        }
-
-        public void obtenirDesert()
-        {
-            throw new NotImplementedException();
-        }
-
-        public void obtenirPlaine()
-        {
-            throw new NotImplementedException();
-        }
-
-        public void obtenirForet()
-        {
-            throw new NotImplementedException();
-        }
-
-        public void obtenirCase()
-        {
-            throw new NotImplementedException();
-        }
     }
-
 }
