@@ -35,7 +35,7 @@
             <!-- Définition du rectangle matérialisant la selection -->
             <!--   Permet d'avoir un objet graphique sur lequel on va pouvoir appliquer du Binding pour mettre à jour les labels d'informations-->
             <!--<rectangle width="20" height="20" name="selectionrectangle" stroke="blue" strokethickness="1" panel.zindex="333" visibility="collapsed"/>-->
-        <!--    <Rectangle Style="{StaticResource selectionStyle}" Name="selectionRectangle" /> -->
+       <Rectangle Style="{StaticResource selectionStyle}" Name="selectionRectangle" />
             <!-- Chaque case de la grille contient potentiellement un rectangle de selection + une unité (qui ne sera pas sensible aux evts)-->
             <!-- <Ellipse Fill="White" Width="10" Height="10" Name="unitEllipse" Panel.ZIndex="444" IsHitTestVisible="False" /> -->
 
