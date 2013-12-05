@@ -18,7 +18,7 @@ namespace SmallWorld
     /**
      * @brief Interface globale du monteur
      */
-    interface InterMonteurPartie
+    public interface InterMonteurPartie
     {
         /**
          * @brief Ajout de la carte pour la construction d'une partie.
@@ -111,12 +111,12 @@ namespace SmallWorld
          * 
          * @param string <b>tailleCarte</b> La taille de la carte à créer.
          */
-        public void ajouterCarte()
+        public void ajouterCarte(string tailleCarte)
         {
             throw new NotImplementedException();
         }
 
-        public void ajouterJoueur()
+        public void ajouterJoueur(string nomJoueurA, string nomJoueurB)
         {
             throw new NotImplementedException();
         }
@@ -145,7 +145,7 @@ namespace SmallWorld
             throw new NotImplementedException();
         }
 
-        public SmallWorld.InterPartie creerPartie()
+        new public SmallWorld.InterPartie creerPartie()
         {
             throw new NotImplementedException();
         }
@@ -160,10 +160,6 @@ namespace SmallWorld
             throw new NotImplementedException();
         }
 
-        public void placerUnites()
-        {
-            throw new NotImplementedException();
-        }
     }
 
     public class MonteurPartieNormale : SmallWorld.MonteurPartie, SmallWorld.InterMonteurPartieNormale
@@ -178,7 +174,7 @@ namespace SmallWorld
             throw new NotImplementedException();
         }
 
-        public SmallWorld.InterPartie creerPartie()
+        new public SmallWorld.InterPartie creerPartie()
         {
             throw new NotImplementedException();
         }
@@ -193,10 +189,6 @@ namespace SmallWorld
             throw new NotImplementedException();
         }
 
-        public void placerUnites()
-        {
-            throw new NotImplementedException();
-        }
     }
 
 
@@ -212,7 +204,7 @@ namespace SmallWorld
             throw new NotImplementedException();
         }
 
-        public SmallWorld.InterPartie creerPartie()
+        new public SmallWorld.InterPartie creerPartie()
         {
             throw new NotImplementedException();
         }
@@ -227,9 +219,5 @@ namespace SmallWorld
             throw new NotImplementedException();
         }
 
-        public void placerUnites()
-        {
-            throw new NotImplementedException();
-        }
     }
 }

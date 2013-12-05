@@ -5,11 +5,7 @@ using System.Text;
 
 namespace SmallWorld
 {
-    public interface InterStrategieCarte
-    {
-        /// <remarks></remarks>
-        void construire();
-    }
+
 
     public interface InterCarte
     {

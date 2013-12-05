@@ -16,7 +16,7 @@ namespace SmallWorld
             throw new System.NotImplementedException();
         }
     
-        public InterUnite creerUnite()
+        new public InterUnite creerUnite()
         {
             throw new NotImplementedException();
         }
