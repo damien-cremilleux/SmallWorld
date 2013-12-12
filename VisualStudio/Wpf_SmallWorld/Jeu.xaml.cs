@@ -57,7 +57,7 @@ namespace Wpf_SmallWorld
         unsafe private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             // Initialisation de la carte
-          
+            
             //TODO : récuperer taille carte
             int taille = 10;
             int** TCarte = w.genererCarte(taille);
@@ -66,8 +66,10 @@ namespace Wpf_SmallWorld
             {
                 Carte.ColumnDefinitions.Add(new ColumnDefinition() { Width = new GridLength(20, GridUnitType.Pixel) });
             }
-            for (int l = 0; l < Carte.Height; l++)
+            
+            for (int l = 0; l < taille; l++)
             {
+                
                 Carte.RowDefinitions.Add(new RowDefinition() { Height = new GridLength(20, GridUnitType.Pixel) });
                     for (int c = 0; c < taille; c++)  {
                      // dans chaque case de la grille on ajoute une tuile (logique) matérialisée par un rectangle (physique)
@@ -75,12 +77,19 @@ namespace Wpf_SmallWorld
                      // Var ???
                         var NumCase = TCarte[c][l];
                         // TODO obtenir le type !?
-                        Case Case = FabriqueCase.Instance_FabCase.obtenirCase(NumCase);
-                        int i = Case.obtenirInt();
-                        var element = createRectangle(c, l, Case);
-
+                        //Case Case = FabriqueCase.Instance_FabCase.obtenirCase(NumCase);
+                        int i = FabriqueCase.Instance_FabCase.obtenirInt(4);
+                        MessageBox.Show("k"+i);
+                       // var element = createRectangle(c, l, Case);
+              
                         // Aout de la case dans la carte ?
-                        Carte.Children.Add(element);
+                     //   Carte.Children.Add(element);
+
+
+                        
+
+
+
                     }
              }
          }
@@ -109,7 +118,8 @@ namespace Wpf_SmallWorld
                 rectangle.Fill = Brushes.Green;
             if (Case is InterDesert)
                 rectangle.Fill = Brushes.Beige;
-         
+
+          //  Panel.SetZIndex(rectangle, 50);
 
             // mise à jour des attributs (column et Row) référencant la position dans la grille à rectangle
             Grid.SetColumn(rectangle, c);

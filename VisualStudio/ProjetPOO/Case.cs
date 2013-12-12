@@ -11,6 +11,10 @@ namespace SmallWorld
 
     public abstract class Case : InterCase
     {
+        public static int obtenirInt()
+        {
+            throw new NotImplementedException();
+        }
     }
 
     public interface InterDesert : InterCase
