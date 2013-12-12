@@ -25,10 +25,7 @@ namespace SmallWorld
             }
         }
 
-        public void construire()
-        {
-            throw new NotImplementedException();
-        }
+        public abstract void construire();
     }
 
     public interface InterStrategieDemo : InterStrategieCarte
@@ -53,7 +50,7 @@ namespace SmallWorld
             throw new System.NotImplementedException();
         }
 
-        new public void construire()
+        public override void construire()
         {
             throw new NotImplementedException();
         }
@@ -66,7 +63,7 @@ namespace SmallWorld
             throw new System.NotImplementedException();
         }
 
-        new public void construire()
+        public override void construire()
         {
             throw new NotImplementedException();
         }
@@ -79,7 +76,7 @@ namespace SmallWorld
             throw new System.NotImplementedException();
         }
 
-        new public void construire()
+        public override void construire()
         {
             throw new NotImplementedException();
         }

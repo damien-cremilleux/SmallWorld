@@ -183,41 +183,41 @@
     <Position X="0.5" Y="13.75" Width="1.5" />
     <AssociationLine Name="Desert" Type="SmallWorld.Desert" FixedFromPoint="true" FixedToPoint="true">
       <Path>
-        <Point X="2" Y="15.253" />
-        <Point X="7.25" Y="15.253" />
+        <Point X="2" Y="15.323" />
+        <Point X="7.25" Y="15.323" />
         <Point X="7.25" Y="14.232" />
       </Path>
     </AssociationLine>
     <AssociationLine Name="Eau" Type="SmallWorld.Eau" FixedFromPoint="true" FixedToPoint="true">
       <Path>
-        <Point X="2" Y="15.868" />
-        <Point X="10.75" Y="15.868" />
+        <Point X="2" Y="15.967" />
+        <Point X="10.75" Y="15.967" />
         <Point X="10.75" Y="14.232" />
       </Path>
     </AssociationLine>
     <AssociationLine Name="Foret" Type="SmallWorld.Foret" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
       <Path>
-        <Point X="2" Y="14.502" />
-        <Point X="3.812" Y="14.502" />
+        <Point X="2" Y="14.537" />
+        <Point X="3.812" Y="14.537" />
         <Point X="3.812" Y="14.232" />
       </Path>
     </AssociationLine>
     <AssociationLine Name="Montagne" Type="SmallWorld.Montagne" FixedFromPoint="true" FixedToPoint="true">
       <Path>
-        <Point X="2" Y="15.595" />
-        <Point X="9" Y="15.595" />
+        <Point X="2" Y="15.681" />
+        <Point X="9" Y="15.681" />
         <Point X="9" Y="14.232" />
       </Path>
     </AssociationLine>
     <AssociationLine Name="Plaine" Type="SmallWorld.Plaine" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
       <Path>
-        <Point X="2" Y="14.911" />
-        <Point X="5.5" Y="14.911" />
+        <Point X="2" Y="14.965" />
+        <Point X="5.5" Y="14.965" />
         <Point X="5.5" Y="14.232" />
       </Path>
     </AssociationLine>
     <TypeIdentifier>
-      <HashCode>EABQQxAAkABAAAAAAAAAEAAAAEACAABAAgAAAEAAAIE=</HashCode>
+      <HashCode>EABQQxAAkABAAAAAAAAAEAAAAEACAABAAgIAAEAAAIE=</HashCode>
       <FileName>FabriqueCase.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>

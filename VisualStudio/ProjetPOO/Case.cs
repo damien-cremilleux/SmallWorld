@@ -21,7 +21,6 @@ namespace SmallWorld
     {
         public Desert()
         {
-            throw new System.NotImplementedException();
         }
     }
 
@@ -33,7 +32,7 @@ namespace SmallWorld
     {
         public Eau()
         {
-            throw new System.NotImplementedException();
+
         }
     }
 
@@ -45,7 +44,7 @@ namespace SmallWorld
     {
         public Foret()
         {
-            throw new System.NotImplementedException();
+      
         }
     }
 
@@ -57,7 +56,7 @@ namespace SmallWorld
     {
         public Montagne()
         {
-            throw new System.NotImplementedException();
+  
         }
     }
 
@@ -69,7 +68,7 @@ namespace SmallWorld
     {
         public Plaine()
         {
-            throw new System.NotImplementedException();
+
         }
     }
 }
