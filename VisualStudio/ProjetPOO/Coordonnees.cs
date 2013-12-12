@@ -42,8 +42,8 @@ namespace SmallWorld
 
         public Coordonnees(int abs, int ord)
         {
-            this.Abscisse = abs;
-            this.Ordonnee = ord;
+            this.abscisse = abs;
+            this.ordonnee = ord;
         }
     }
 }

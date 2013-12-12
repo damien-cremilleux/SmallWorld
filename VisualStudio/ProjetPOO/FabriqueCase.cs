@@ -137,6 +137,10 @@ namespace SmallWorld
             return Plaine;
         }
 
+        public int obtenirInt(int test)
+        {
+            return test;
+        }
 
         public Case obtenirCase(int typeCase)
         {
