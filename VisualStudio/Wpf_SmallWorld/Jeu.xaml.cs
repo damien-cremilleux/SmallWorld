@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 using Wrapper;
+using SmallWorld;
 
 namespace Wpf_SmallWorld
 {
@@ -74,11 +75,12 @@ namespace Wpf_SmallWorld
                      // Var ???
                         var NumCase = TCarte[c][l];
                         // TODO obtenir le type !?
-                        Case Case = obtenirCase(NumCase);
+                        Case Case = FabriqueCase.Instance_FabCase.obtenirCase(NumCase);
+                        int i = Case.obtenirInt();
                         var element = createRectangle(c, l, Case);
 
                         // Aout de la case dans la carte ?
-                        Carte.Children.Add(Case);
+                        Carte.Children.Add(element);
                     }
              }
          }
@@ -92,7 +94,7 @@ namespace Wpf_SmallWorld
         /// <param name="l"> Row </param>
         /// <param name="tile"> Tuile logique</param>
         /// <returns> Rectangle créé</returns>
-        private Rectangle createRectangle(int c, int l, case Case)
+        private Rectangle createRectangle(int c, int l, Case Case)
         {
             var rectangle = new Rectangle();
 
@@ -106,20 +108,22 @@ namespace Wpf_SmallWorld
             if (Case is InterPlaine)
                 rectangle.Fill = Brushes.Green;
             if (Case is InterDesert)
-                rectangle.Fill = Brushes.Sand;
+                rectangle.Fill = Brushes.Beige;
          
 
             // mise à jour des attributs (column et Row) référencant la position dans la grille à rectangle
             Grid.SetColumn(rectangle, c);
             Grid.SetRow(rectangle, l);
-            rectangle.Tag = tile; // Tag : ref par defaut sur la tuile logique
+         //   rectangle.Tag = TCarte[c][l]; // Tag : ref par defaut sur la tuile logique
 
             rectangle.Stroke = Brushes.Red;
             rectangle.StrokeThickness = 1;
-            // enregistrement d'un écouteur d'evt sur le rectangle : 
+ /*           // enregistrement d'un écouteur d'evt sur le rectangle : 
             // source = rectangle / evt = MouseLeftButtonDown / délégué = rectangle_MouseLeftButtonDown
             rectangle.MouseLeftButtonDown += new MouseButtonEventHandler(rectangle_MouseLeftButtonDown);
+    */      
             return rectangle;
+ 
         }
     }
 }

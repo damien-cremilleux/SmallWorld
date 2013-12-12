@@ -118,6 +118,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\ProjetPOO\Code_SmallWorld.csproj">
+      <Project>{f89c3faf-2529-4189-bd90-d8b5ed0324bd}</Project>
+      <Name>Code_SmallWorld</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Wrapper_SmallWorld\Wrapper_SmallWorld.vcxproj">
       <Project>{4ccf6e63-00d6-479d-a393-6ad600917dfd}</Project>
       <Name>Wrapper_SmallWorld</Name>
