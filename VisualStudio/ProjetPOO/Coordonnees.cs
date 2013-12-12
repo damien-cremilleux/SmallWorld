@@ -10,9 +10,40 @@ namespace SmallWorld
         private int abscisse;
         private int ordonnee;
 
-        public Coordonnees()
+        public int Abscisse
         {
-            throw new System.NotImplementedException();
+            get
+            {
+                return abscisse;
+            }
+            set
+            {
+                if (value > 0)
+                {
+                    abscisse = value;
+                }
+            }
+        }
+
+        public int Ordonnee
+        {
+            get
+            {
+                return ordonnee;
+            }
+            set
+            {
+                if (value > 0)
+                {
+                    ordonnee = value;
+                }
+            }
+        }
+
+        public Coordonnees(int abs, int ord)
+        {
+            this.Abscisse = abs;
+            this.Ordonnee = ord;
         }
     }
 }
