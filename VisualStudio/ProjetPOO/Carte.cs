@@ -16,9 +16,13 @@ namespace SmallWorld
 
     public class Carte : InterCarte
     {
-        public Carte()
+
+        private List<List<Case>> listeCases;
+    
+        
+        public Carte( List<List<Case>> listeC)
         {
-            throw new System.NotImplementedException();
+            listeCases = listeC;
         }
     
         public SmallWorld.StrategieCarte StrategieCarte
@@ -32,11 +36,11 @@ namespace SmallWorld
             }
         }
 
-        public Case Case
+        public List<List<Case>> ListeCases
         {
             get
             {
-                throw new System.NotImplementedException();
+                return listeCases;
             }
             set
             {
