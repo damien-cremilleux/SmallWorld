@@ -3,17 +3,17 @@ C:\Users\damienc\Documents\GitHub\SmallWorld\VisualStudio\ProjetPOO\bin\Debug\Co
 C:\Users\damienc\Documents\GitHub\SmallWorld\VisualStudio\ProjetPOO\bin\Debug\Code_SmallWorld.pdb
 C:\Users\damienc\Documents\GitHub\SmallWorld\VisualStudio\ProjetPOO\obj\Debug\Code_SmallWorld.dll
 C:\Users\damienc\Documents\GitHub\SmallWorld\VisualStudio\ProjetPOO\obj\Debug\Code_SmallWorld.pdb
-H:\4INFO\POO\SmallWorld\VisualStudio\ProjetPOO\obj\Debug\Code_SmallWorld.dll
-H:\4INFO\POO\SmallWorld\VisualStudio\ProjetPOO\obj\Debug\Code_SmallWorld.pdb
+C:\4INFO\POO\SmallWorld\VisualStudio\ProjetPOO\obj\Debug\Code_SmallWorld.dll
+C:\4INFO\POO\SmallWorld\VisualStudio\ProjetPOO\obj\Debug\Code_SmallWorld.pdb
 C:\Users\utilisateur\Documents\GitHub\SmallWorld\VisualStudio\ProjetPOO\obj\Debug\Code_SmallWorld.csprojResolveAssemblyReference.cache
-H:\4INFO\POO\SmallWorld\VisualStudio\ProjetPOO\bin\Debug\Code_SmallWorld.dll
-H:\4INFO\POO\SmallWorld\VisualStudio\ProjetPOO\bin\Debug\Code_SmallWorld.pdb
+C:\4INFO\POO\SmallWorld\VisualStudio\ProjetPOO\bin\Debug\Code_SmallWorld.dll
+C:\4INFO\POO\SmallWorld\VisualStudio\ProjetPOO\bin\Debug\Code_SmallWorld.pdb
 <<<<<<< HEAD
-H:\SmallWorld\VisualStudio\ProjetPOO\bin\Debug\Code_SmallWorld.dll
-H:\SmallWorld\VisualStudio\ProjetPOO\bin\Debug\Code_SmallWorld.pdb
-H:\SmallWorld\VisualStudio\ProjetPOO\obj\Debug\Code_SmallWorld.csprojResolveAssemblyReference.cache
-H:\SmallWorld\VisualStudio\ProjetPOO\obj\Debug\Code_SmallWorld.dll
-H:\SmallWorld\VisualStudio\ProjetPOO\obj\Debug\Code_SmallWorld.pdb
+C:\SmallWorld\VisualStudio\ProjetPOO\bin\Debug\Code_SmallWorld.dll
+C:\SmallWorld\VisualStudio\ProjetPOO\bin\Debug\Code_SmallWorld.pdb
+C:\SmallWorld\VisualStudio\ProjetPOO\obj\Debug\Code_SmallWorld.csprojResolveAssemblyReference.cache
+C:\SmallWorld\VisualStudio\ProjetPOO\obj\Debug\Code_SmallWorld.dll
+C:\SmallWorld\VisualStudio\ProjetPOO\obj\Debug\Code_SmallWorld.pdb
 =======
 C:\Users\utilisateur\Documents\GitHub\SmallWorld\VisualStudio\ProjetPOO\bin\Debug\Code_SmallWorld.dll
 C:\Users\utilisateur\Documents\GitHub\SmallWorld\VisualStudio\ProjetPOO\bin\Debug\Code_SmallWorld.pdb

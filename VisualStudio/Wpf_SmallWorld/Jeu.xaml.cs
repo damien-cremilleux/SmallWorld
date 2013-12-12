@@ -21,7 +21,7 @@ namespace Wpf_SmallWorld
     /// <summary>
     /// Logique d'interaction pour Jeu.xaml
     /// </summary>
-    public partial class Jeu: Window
+    public partial class Jeu : Window
     {
         WrapperAlgo w;
         unsafe public Jeu()
@@ -47,7 +47,6 @@ namespace Wpf_SmallWorld
             string res2;
             res2 = "Joueurs : ";
             for (k = 0; k < 4; k++)
-
             {
                 res2 += placeJoueur[k] + "\t";
             }
@@ -57,45 +56,37 @@ namespace Wpf_SmallWorld
         unsafe private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             // Initialisation de la carte
-            
+
             //TODO : récuperer taille carte
             int taille = 10;
             int** TCarte = w.genererCarte(taille);
 
-            for (int c = 0; c < taille ; c++)
+            for (int c = 0; c < taille; c++)
             {
                 Carte.ColumnDefinitions.Add(new ColumnDefinition() { Width = new GridLength(20, GridUnitType.Pixel) });
             }
-            
+
             for (int l = 0; l < taille; l++)
             {
-                
+
                 Carte.RowDefinitions.Add(new RowDefinition() { Height = new GridLength(20, GridUnitType.Pixel) });
-                    for (int c = 0; c < taille; c++)  {
-                     // dans chaque case de la grille on ajoute une tuile (logique) matérialisée par un rectangle (physique)
-                     // On récupère le numéro correspondant au type de la case
-                     // Var ???
-                        var NumCase = TCarte[c][l];
-                        // TODO obtenir le type !?
-                        //Case Case = FabriqueCase.Instance_FabCase.obtenirCase(NumCase);
-                        int i = FabriqueCase.Instance_FabCase.obtenirInt(4);
-                        MessageBox.Show("k"+i);
-                       // var element = createRectangle(c, l, Case);
-              
-                        // Aout de la case dans la carte ?
-                     //   Carte.Children.Add(element);
+                for (int c = 0; c < taille; c++)
+                {
+                    // dans chaque case de la grille on ajoute une tuile (logique) matérialisée par un rectangle (physique)
+                    // On récupère le numéro correspondant au type de la case
+                    
+                    var NumCase = TCarte[c][l];
+                    Case Case = FabriqueCase.Instance_FabCase.obtenirCase(NumCase);
+                    var element = createRectangle(c, l, Case);
+
+                    // Aout de la case dans la carte
+                    Carte.Children.Add(element);
+
+                }
+            }
+        }
 
 
-                        
-
-
-
-                    }
-             }
-         }
-             
-                  
-         
         /// <summary>
         /// Création du rectangle matérialisant une tuile
         /// </summary>
@@ -107,7 +98,7 @@ namespace Wpf_SmallWorld
         {
             var rectangle = new Rectangle();
 
-        // Test la classe de l'objet ? 
+            // Test la classe de l'objet ? 
             if (Case is InterEau)
                 rectangle.Fill = Brushes.Brown;
             if (Case is InterForet)
@@ -117,23 +108,27 @@ namespace Wpf_SmallWorld
             if (Case is InterPlaine)
                 rectangle.Fill = Brushes.Green;
             if (Case is InterDesert)
-                rectangle.Fill = Brushes.Beige;
+            {
+                // A mettre avant avec chaque variable
+                BitmapSource img = System.Windows.Interop.Imaging.CreateBitmapSourceFromHBitmap(Wpf_SmallWorld.Properties.Resources.Sable.GetHbitmap(), IntPtr.Zero, Int32Rect.Empty, BitmapSizeOptions.FromEmptyOptions());
+                rectangle.Fill = new ImageBrush(img);
+            }
 
-          //  Panel.SetZIndex(rectangle, 50);
+            //  Panel.SetZIndex(rectangle, 50);
 
             // mise à jour des attributs (column et Row) référencant la position dans la grille à rectangle
             Grid.SetColumn(rectangle, c);
             Grid.SetRow(rectangle, l);
-         //   rectangle.Tag = TCarte[c][l]; // Tag : ref par defaut sur la tuile logique
+            //   rectangle.Tag = TCarte[c][l]; // Tag : ref par defaut sur la tuile logique
 
             rectangle.Stroke = Brushes.Red;
             rectangle.StrokeThickness = 1;
- /*           // enregistrement d'un écouteur d'evt sur le rectangle : 
-            // source = rectangle / evt = MouseLeftButtonDown / délégué = rectangle_MouseLeftButtonDown
-            rectangle.MouseLeftButtonDown += new MouseButtonEventHandler(rectangle_MouseLeftButtonDown);
-    */      
+            /*           // enregistrement d'un écouteur d'evt sur le rectangle : 
+                       // source = rectangle / evt = MouseLeftButtonDown / délégué = rectangle_MouseLeftButtonDown
+                       rectangle.MouseLeftButtonDown += new MouseButtonEventHandler(rectangle_MouseLeftButtonDown);
+               */
             return rectangle;
- 
+
         }
     }
 }
