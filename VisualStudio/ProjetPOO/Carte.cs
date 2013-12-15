@@ -105,6 +105,7 @@ namespace SmallWorld
          * 
          * Construit une nouvelle Carte à l'aide d'une liste de Cases
          * 
+         * @param List<List<Case>> <b>listeC</b> La liste des cases formant la carte
          * @return La nouvelle Carte
          */
         public Carte(List<List<Case>> listeC)
@@ -112,13 +113,14 @@ namespace SmallWorld
             fabriqueCase = FabriqueCase.Instance_FabCase;
             listeCases = listeC;
         }
-
-
+        
         /**
          * @fn creerCarte
          * @brief Génération d'une nouvelle Carte
          * 
          * génère une nouvelle Carte, suivant la stratégie demandée
+         * 
+         * @return void
          */
         public void creerCarte()
         {
@@ -126,8 +128,11 @@ namespace SmallWorld
         }
 
         /**
-         * @fn definirStrategie
+         * @fn definirStrategie(StrategieCarte strat)
          * @brief Définit la stratégie à adopter pour la génération d'une nouvelle carte
+         * 
+         * @param StrategieCarte <b>strat</b> La nouvelle stratégie à adopter
+         * @return void
          */
         public void definirStrategie(StrategieCarte strat)
         {
