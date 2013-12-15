@@ -1,5 +1,6 @@
 var hierarchy =
 [
+    [ "SmallWorld.Coordonnees", "class_small_world_1_1_coordonnees.html", null ],
     [ "SmallWorld.FabriqueJeu", "interface_small_world_1_1_fabrique_jeu.html", null ],
     [ "SmallWorld.InterCarte", "interface_small_world_1_1_inter_carte.html", [
       [ "SmallWorld.Carte", "class_small_world_1_1_carte.html", null ]
@@ -40,6 +41,9 @@ var hierarchy =
       [ "SmallWorld.Fabrique_Unite_Viking", "interface_small_world_1_1_fabrique___unite___viking.html", null ],
       [ "SmallWorld.FabriquePeuple", "class_small_world_1_1_fabrique_peuple.html", null ]
     ] ],
+    [ "SmallWorld.InterJoueur", "interface_small_world_1_1_inter_joueur.html", [
+      [ "SmallWorld.Joueur", "class_small_world_1_1_joueur.html", null ]
+    ] ],
     [ "SmallWorld.InterMonteurPartie", "interface_small_world_1_1_inter_monteur_partie.html", [
       [ "SmallWorld.InterMonteurPartieDemo", "interface_small_world_1_1_inter_monteur_partie_demo.html", [
         [ "SmallWorld.MonteurPartieDemo", "class_small_world_1_1_monteur_partie_demo.html", null ]
@@ -47,7 +51,6 @@ var hierarchy =
       [ "SmallWorld.InterMonteurPartieNormale", "interface_small_world_1_1_inter_monteur_partie_normale.html", [
         [ "SmallWorld.MonteurPartieNormale", "class_small_world_1_1_monteur_partie_normale.html", null ]
       ] ],
-      [ "SmallWorld.InterMonteurPartieNormale", "interface_small_world_1_1_inter_monteur_partie_normale.html", null ],
       [ "SmallWorld.InterMonteurPartiePetite", "interface_small_world_1_1_inter_monteur_partie_petite.html", [
         [ "SmallWorld.MonteurPartiePetite", "class_small_world_1_1_monteur_partie_petite.html", null ]
       ] ],
@@ -56,6 +59,9 @@ var hierarchy =
         [ "SmallWorld.MonteurPartieNormale", "class_small_world_1_1_monteur_partie_normale.html", null ],
         [ "SmallWorld.MonteurPartiePetite", "class_small_world_1_1_monteur_partie_petite.html", null ]
       ] ]
+    ] ],
+    [ "SmallWorld.InterPartie", "interface_small_world_1_1_inter_partie.html", [
+      [ "SmallWorld.Partie", "class_small_world_1_1_partie.html", null ]
     ] ],
     [ "SmallWorld.InterPeuple", "interface_small_world_1_1_inter_peuple.html", [
       [ "SmallWorld.InterPeupleGaulois", "interface_small_world_1_1_inter_peuple_gaulois.html", [
@@ -105,10 +111,7 @@ var hierarchy =
         [ "SmallWorld.UniteViking", "class_small_world_1_1_unite_viking.html", null ]
       ] ]
     ] ],
-    [ "SmallWorld.Joueur", "interface_small_world_1_1_joueur.html", null ],
     [ "SmallWorld.Nain", "interface_small_world_1_1_nain.html", null ],
-    [ "SmallWorld.Partie", "interface_small_world_1_1_partie.html", null ],
-    [ "SmallWorld.PeupleG", "interface_small_world_1_1_peuple_g.html", null ],
     [ "SmallWorld.Sauvegarde", "interface_small_world_1_1_sauvegarde.html", null ],
     [ "SmallWorld.Viking", "interface_small_world_1_1_viking.html", null ]
 ];

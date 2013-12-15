@@ -9,7 +9,6 @@ C:\Users\utilisateur\Documents\GitHub\SmallWorld\VisualStudio\ProjetPOO\obj\Debu
 <<<<<<< HEAD
 C:\4INFO\POO\SmallWorld\VisualStudio\ProjetPOO\bin\Debug\Code_SmallWorld.dll
 C:\4INFO\POO\SmallWorld\VisualStudio\ProjetPOO\bin\Debug\Code_SmallWorld.pdb
-<<<<<<< HEAD
 C:\SmallWorld\VisualStudio\ProjetPOO\bin\Debug\Code_SmallWorld.dll
 C:\SmallWorld\VisualStudio\ProjetPOO\bin\Debug\Code_SmallWorld.pdb
 C:\SmallWorld\VisualStudio\ProjetPOO\obj\Debug\Code_SmallWorld.csprojResolveAssemblyReference.cache
@@ -21,7 +20,6 @@ C:\Users\utilisateur\Documents\GitHub\SmallWorld\VisualStudio\ProjetPOO\bin\Debu
 C:\Users\utilisateur\Documents\GitHub\SmallWorld\VisualStudio\ProjetPOO\obj\Debug\Code_SmallWorld.dll
 C:\Users\utilisateur\Documents\GitHub\SmallWorld\VisualStudio\ProjetPOO\obj\Debug\Code_SmallWorld.pdb
 >>>>>>> Modification de l'affichage de la carte
-=======
 H:\4INFO\POO\SmallWorld\VisualStudio\ProjetPOO\bin\Debug\Code_SmallWorld.dll
 H:\4INFO\POO\SmallWorld\VisualStudio\ProjetPOO\bin\Debug\Code_SmallWorld.pdb
 H:\SmallWorld\VisualStudio\ProjetPOO\bin\Debug\Code_SmallWorld.dll

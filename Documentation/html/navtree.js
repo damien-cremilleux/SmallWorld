@@ -22,7 +22,7 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"_createur_partie_8cs.html"
+"_carte_8cs.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
