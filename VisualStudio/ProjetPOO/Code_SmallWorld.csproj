@@ -66,10 +66,6 @@
     <Compile Include="Sauvegarder.cs" />
     <Compile Include="Strategie.cs" />
     <Compile Include="Unite.cs" />
-    <Compile Include="UniteGauloise.cs" />
-    <Compile Include="UniteNaine.cs" />
-    <Compile Include="UniteViking.cs" />
-    <Compile Include="Viking.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="fabrique.cd" />

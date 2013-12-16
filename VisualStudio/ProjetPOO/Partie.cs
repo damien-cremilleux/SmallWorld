@@ -1,55 +1,154 @@
-﻿using System;
+﻿/**
+ * @file Partie.cs
+ * @brief Interface et classe d'une partie
+ * 
+ * @author <a href="mailto:damien.cremilleux@insa-rennes.fr">Damien Crémilleux</a>
+ * @author <a href="mailto:lauriane.holy@insa-rennes.fr">Lauriane Holy</a>
+ * 
+ * @date 16/12/2013
+ * @version 0.1
+ */
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
 namespace SmallWorld
 {
+    /**
+     * @interface InterPartie
+     * @brief interface pour les partie
+     */
     public interface InterPartie
     {
     }
 
+    /**
+     * @class Partie
+     * @brief classe pour les parties
+     */
     public class Partie : InterPartie
     {
-        private int joueurEnCours;
-    
-        public Partie()
-        {
-            throw new System.NotImplementedException();
-        }
-    
-        public Joueur Joueur
+
+        /**
+         * @brief Attribut <b>indiceJoueurEnCours</b> indice du joueur dont c'est le tour
+         */
+        private int indiceJoueurEnCours;
+
+        /**
+         * @brief Attribut <b>joueurEnCours</b> joueur dont c'est le tour
+         */
+        private Joueur joueurEnCours;
+
+        /**
+         * @brief Attribut <b>listeJoueurs</b> liste des joueurs de la partie
+         */
+        private List<Joueur> listeJoueurs;
+
+        /**
+         * @brief Attribut <b>nbTourRestant</b> nombre de tour restant
+         */
+        private int nbTourRestant;
+
+        /**
+         * @brief Attribut <b>cartePartie</b> carte de la partie
+         */
+        private Carte cartePartie;
+
+        /**
+         * @fn IndiceJoueurEnCours
+         * @brief Properties pour l'attribut indiceJoueurEnCours
+         */
+        public int IndiceJoueurEnCours
         {
             get
             {
-                throw new System.NotImplementedException();
+                return indiceJoueurEnCours;
             }
             set
             {
+                indiceJoueurEnCours = value;
             }
         }
 
-        public Carte Carte
+        /**
+         * @fn JoueurEnCours
+         * @brief Properties pour l'attribut joueurEnCours
+         */
+        public Joueur JoueurEnCours
         {
             get
             {
-                throw new System.NotImplementedException();
+                return joueurEnCours;
             }
             set
             {
+                joueurEnCours = value;
             }
         }
 
-        public int nbTourRestant
+
+        /**
+         * @fn ListeJoueurs
+         * @brief Properties pour l'attribut listeJoueurs
+         */
+        public List<Joueur> ListeJoueurs
         {
             get
             {
-                throw new System.NotImplementedException();
+                return listeJoueurs;
             }
             set
             {
+                listeJoueurs = value;
             }
         }
+
+
+        /**
+         * @fn nbTourRestant
+         * @brief Properties pour l'attribut nbTourRestant
+         */
+        public int NbTourRestant
+        {
+            get
+            {
+                return nbTourRestant;
+            }
+            set
+            {
+                nbTourRestant = value;
+            }
+        }
+
+        /**
+         * @fn CartePartie
+         * @brief Properties pour l'attribut cartePartie
+         */
+        public Carte CartePartie
+        {
+            get
+            {
+                return cartePartie;
+            }
+            set
+            {
+                cartePartie = value;
+            }
+        }
+
+        /**
+         * @fn Partie(List<Joueur> listeJ, Carte carte)
+         * @brief Constructeur d'une partie
+         * 
+         * @return une nouvelle partie
+         */
+        public Partie(List<Joueur> listeJ, Carte carte)
+        {
+            ListeJoueurs = listeJ;
+            CartePartie = carte;
+        }
+    
 
         public void nouveauTour()
         {

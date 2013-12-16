@@ -1,13 +1,4 @@
-<<<<<<< HEAD
-C:\Users\utilisateur\Documents\GitHub\SmallWorld\VisualStudio\ProjetPOO\bin\Debug\Code_SmallWorld.dll
-C:\Users\utilisateur\Documents\GitHub\SmallWorld\VisualStudio\ProjetPOO\bin\Debug\Code_SmallWorld.pdb
-C:\Users\utilisateur\Documents\GitHub\SmallWorld\VisualStudio\ProjetPOO\obj\Debug\Code_SmallWorld.dll
-C:\Users\utilisateur\Documents\GitHub\SmallWorld\VisualStudio\ProjetPOO\obj\Debug\Code_SmallWorld.pdb
-
-=======
-C:\Users\damienc\Documents\GitHub\SmallWorld\VisualStudio\ProjetPOO\obj\Debug\Code_SmallWorld.csprojResolveAssemblyReference.cache
 C:\Users\damienc\Documents\GitHub\SmallWorld\VisualStudio\ProjetPOO\bin\Debug\Code_SmallWorld.dll
 C:\Users\damienc\Documents\GitHub\SmallWorld\VisualStudio\ProjetPOO\bin\Debug\Code_SmallWorld.pdb
 C:\Users\damienc\Documents\GitHub\SmallWorld\VisualStudio\ProjetPOO\obj\Debug\Code_SmallWorld.dll
 C:\Users\damienc\Documents\GitHub\SmallWorld\VisualStudio\ProjetPOO\obj\Debug\Code_SmallWorld.pdb
->>>>>>> a918fc6bfb1c8c59e0f0c56e3b26176d6f474c30

@@ -17,9 +17,10 @@ using System.Text;
 
 namespace SmallWorld
 {
+
     /**
      * @interface InterUnite
-     * @brief Interface pour les unités
+     * @brief interface pour les unités
      */
     public interface InterUnite
     {
@@ -40,6 +41,30 @@ namespace SmallWorld
          * @brief l'unité passe son tour
          */
         void passerSonTour();
+    }
+
+    /**
+     * @interface InterUniteGauloise
+     * @brief Interface pour les unités gauloises
+     */
+    public interface InterUniteGauloise : InterUnite
+    {
+    }
+
+
+    /**
+     * @interface InterUniteNaine
+     * @brief Interface pour les unités naines
+     */
+    public interface InterUniteNaine : InterUnite
+    {
+    }
+    /**
+     * @interface InterUniteViking
+     * @brief Interface pour les unités viking
+     */
+    public interface InterUniteViking : InterUnite
+    {
     }
 
     /**
@@ -85,8 +110,7 @@ namespace SmallWorld
           * @brief Attribut <b>passeSonTour</b>, indique si l'unité passe son tour
           */
         private bool passeSonTour;
-
-
+        
         /**
          * @fn Position
          * @brief Properties pour l'attribut position
@@ -199,8 +223,27 @@ namespace SmallWorld
             }
         }
 
+
         /**
-         * @fn attaquer
+         * @fn Unite() 
+         * @brief Constructeur d'une nouvelle unité
+         * 
+         * Créé une nouvelle unité et initialise les différentes caractéristiques de celle-ci
+         * 
+         * @return la nouvelle unité
+         */
+        public Unite()
+        {
+            PointDeVie = 2;
+            PointAttaque = 2;
+            PointDefense = 1;
+            PointDeDeplacement = 1;
+            PasseSonTour = false;
+        }
+
+
+        /**
+         * @fn attaquer()
          * @brief attaquer une case contenant des unités ennemies
          */
         public void attaquer()
@@ -209,7 +252,7 @@ namespace SmallWorld
         }
 
         /**
-         * @fn seDeplacer
+         * @fn seDeplacer()
          * @brief se déplacer sur une case
          */
         public void seDeplacer()
@@ -218,31 +261,71 @@ namespace SmallWorld
         }
 
         /**
-         * @fn passerSonTour
+         * @fn passerSonTour()
          * @brief l'unité passe son tour
          */
         public void passerSonTour()
         {
-            throw new NotImplementedException();
+            this.PasseSonTour = true;
         }
 
         /**
-         * @fn perdreVie
+         * @fn perdreVie()
          * @brief l'unité perd une vie
          */
         public void perdreVie()
         {
-            throw new System.NotImplementedException();
+            this.PointDeVie--;
         }
 
         /**
-         * @fn mourir
+         * @fn mourir()
          * @brief l'unité meurt
          */
         public void mourir()
         {
             throw new System.NotImplementedException();
         }
+    }
+
+
+    /**
+     * @class UniteGauloise
+     * @brief Classe pour les unités gauloises
+     */
+    public class UniteGauloise : Unite, InterUniteGauloise
+    {
+        public UniteGauloise()
+        {
+            throw new System.NotImplementedException();
+        }
+
+    }
+
+    /**
+     * @class UniteNaine
+     * @brief Classe pour les unités naines
+     */
+    public class UniteNaine : Unite, InterUniteNaine
+    {
+        public UniteNaine()
+        {
+            throw new System.NotImplementedException();
+        }
+
+    }
+
+    /**
+     * @class UniteViking
+     * @brief Classe pour les unités viking
+     */
+    public class UniteViking : Unite, InterUniteViking
+    {
+        public UniteViking()
+        {
+            throw new System.NotImplementedException();
+        }
+
     }
 
 
