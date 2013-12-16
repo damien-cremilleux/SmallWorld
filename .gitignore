@@ -184,3 +184,5 @@ $RECYCLE.BIN/
 # =========================
 *.dll
 *.pdb
+*Code_SmallWorld.csproj.FileListAbsolute.txt
+
