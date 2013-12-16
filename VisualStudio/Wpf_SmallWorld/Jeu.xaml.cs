@@ -53,6 +53,9 @@ namespace Wpf_SmallWorld
             MessageBox.Show(res2);
         }
 
+        /// <summary>
+        /// Définit les actions a réaliser lors du chargement de la fenètre : initialisation de la carte et des unités
+        /// </summary>
         unsafe private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             // Initialisation de la carte
@@ -81,9 +84,13 @@ namespace Wpf_SmallWorld
 
                     // Aout de la case dans la carte
                     Carte.Children.Add(element);
-
+                    
                 }
+             
             }
+            // Initilisaton des unités
+            // TODO  : POUR CHAQUE UNITES
+            updateUnit();
         }
 
 
@@ -130,5 +137,19 @@ namespace Wpf_SmallWorld
             return rectangle;
 
         }
+
+        /// <summary>
+        /// Récupération de la position de l'unité , mise à jour de l'ellipse (physique) matérialisant l'unité
+        /// </summary>
+        unsafe private void updateUnit()
+        {
+            // passer une unité en paramètre ? pour ne mettre à jour qu'elle.
+
+            // ajout des attributs (column et Row) référencant la position dans la grille à unitEllipse
+
+            Grid.SetColumn(unitEllipse, 1);
+            Grid.SetRow(unitEllipse, 1);
+        }
+                
     }
 }

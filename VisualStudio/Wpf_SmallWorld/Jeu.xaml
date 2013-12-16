@@ -3,6 +3,7 @@
         WindowStyle="SingleBorderWindow"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="Small World" Height="350" Width="525" Loaded="Window_Loaded" Background="#FFF3F3B5">
+   
     <!-- illustration de la création d'un style pour les rectangles qui seront affichés-->
     <Window.Resources>
         <Style TargetType="Rectangle" x:Key="selectionStyle" >
@@ -30,14 +31,11 @@
             <Button Grid.Column="1" Width="100" Height="40" HorizontalAlignment="Center" Content="Fin de tour"/>
             <Label Grid.Column="2"  Name="infolabel2" Content="fjhfdkdfhguio"/>
         </Grid>
-        <Grid Name="Carte" Background="Azure">
-            <!--V2 : gestion avec Binding-->
+        <Grid Name="Carte" Background="Azure" HorizontalAlignment="Center" VerticalAlignment="Center">
             <!-- Définition du rectangle matérialisant la selection -->
-            <!--   Permet d'avoir un objet graphique sur lequel on va pouvoir appliquer du Binding pour mettre à jour les labels d'informations-->
-            <!--<rectangle width="20" height="20" name="selectionrectangle" stroke="blue" strokethickness="1" panel.zindex="333" visibility="collapsed"/>-->
        <Rectangle Style="{StaticResource selectionStyle}" Name="selectionRectangle" />
             <!-- Chaque case de la grille contient potentiellement un rectangle de selection + une unité (qui ne sera pas sensible aux evts)-->
-            <!-- <Ellipse Fill="White" Width="10" Height="10" Name="unitEllipse" Panel.ZIndex="444" IsHitTestVisible="False" /> -->
+       <Ellipse Fill="White" Width="10" Height="10" Name="unitEllipse" Panel.ZIndex="444" IsHitTestVisible="False" />
 
         </Grid>
     </DockPanel>
