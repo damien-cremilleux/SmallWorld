@@ -57,17 +57,13 @@
   </Class>
   <Class Name="SmallWorld.Carte">
     <Position X="0.5" Y="6" Width="1.5" />
-    <AssociationLine Name="FabriqueCase" Type="SmallWorld.FabriqueCase" FixedToPoint="true">
-      <Path>
-        <Point X="1.688" Y="8.391" />
-        <Point X="1.688" Y="13.75" />
-      </Path>
+    <AssociationLine Name="FabriqueCase" Type="SmallWorld.FabriqueCase">
       <MemberNameLabel ManuallyPlaced="true">
         <Position X="-1.07" Y="0.355" />
       </MemberNameLabel>
     </AssociationLine>
     <TypeIdentifier>
-      <HashCode>AAAABAAAAQAAAAAAAAACAAAAAQAAAAIAAAAQAAAAAAA=</HashCode>
+      <HashCode>AAACBAAAAAAAAAAAAIACAACAAAAAABIAAAAQAAAAAAA=</HashCode>
       <FileName>Carte.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
