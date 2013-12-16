@@ -19,7 +19,6 @@ int** AlgoCarte::genererCarte(int taille)
 	srand(time(NULL));
 
 
-
 	// tableau des tuiles
 	int** tabCase = (int**) malloc(taille * sizeof(int *));
 

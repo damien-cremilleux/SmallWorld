@@ -7,7 +7,7 @@
  * @author <a href="mailto:damien.cremilleux@insa-rennes.fr">Damien Crémilleux</a>
  * @author <a href="mailto:lauriane.holy@insa-rennes.fr">Lauriane Holy</a>
  * 
- * @date 15/12/2013
+ * @date 16/12/2013
  * @version 0.1
  */
 
@@ -50,6 +50,26 @@ namespace SmallWorld
         * @brief Attribut <b>fabriqueCase</b> la fabrique pour générer les nouvelles cases
         */
         private FabriqueCase fabriqueCase;
+
+        /**
+        * @brief Attribut <b>TailleCarte</b> les dimensions de la carte
+        */
+        private int tailleCarte;
+
+        /**
+         * @fn TailleCarte
+         * @brief Properties pour l'attribut TailleCarte
+         */
+        public int TailleCarte
+        {
+            get
+            {
+                return tailleCarte;
+            }
+            set
+            {
+            }
+        }
 
         /**
          * @fn StrategieCarte

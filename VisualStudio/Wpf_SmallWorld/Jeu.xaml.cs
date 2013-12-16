@@ -28,6 +28,10 @@ namespace Wpf_SmallWorld
         {
             InitializeComponent();
             w = new WrapperAlgo();
+            // Creation de la carte
+          //  Carte =  new Carte();
+          //  Carte.creerCarte();
+            
             int taille = 10;
             int** test = w.genererCarte(taille);
             int* placeJoueur = w.placerJoueur(test, taille);
@@ -54,13 +58,13 @@ namespace Wpf_SmallWorld
         }
 
         /// <summary>
-        /// Définit les actions a réaliser lors du chargement de la fenètre : initialisation de la carte et des unités
+        /// Définit les actions à réaliser lors du chargement de la fenêtre : initialisation de la carte et des unités
         /// </summary>
         unsafe private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             // Initialisation de la carte
 
-            //TODO : récuperer taille carte
+            //écuperer taille carte
             int taille = 10;
             int** TCarte = w.genererCarte(taille);
 
