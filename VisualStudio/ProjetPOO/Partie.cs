@@ -138,9 +138,25 @@ namespace SmallWorld
         }
 
         /**
+         * @fn Partie()
+         * @brief Constructeur d'une partie vide
+         * 
+         * Construit une partie sans joueur et avec une carte vide
+         * 
+         * @return une nouvelle partie
+         */
+        public Partie()
+        {
+            ListeJoueurs = new List<Joueur>();
+            CartePartie = new Carte();
+        }
+
+        /**
          * @fn Partie(List<Joueur> listeJ, Carte carte)
          * @brief Constructeur d'une partie
          * 
+         * @param List<Joueur> <b>listeJ</b> la liste des joueurs
+         * @param Carte <b>Carte</b> la carte de la partie
          * @return une nouvelle partie
          */
         public Partie(List<Joueur> listeJ, Carte carte)
@@ -148,7 +164,7 @@ namespace SmallWorld
             ListeJoueurs = listeJ;
             CartePartie = carte;
         }
-    
+
 
         public void nouveauTour()
         {

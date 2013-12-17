@@ -38,8 +38,8 @@ namespace SmallWorld
         private Peuple peupleJ;
 
         /**
-          * @brief Attribut <b>pointVictoire</b>, le nombre de point de victoire du joueur
-          */
+         * @brief Attribut <b>pointVictoire</b>, le nombre de point de victoire du joueur
+         */
         private int pointVictoire;
 
         /**
@@ -80,7 +80,7 @@ namespace SmallWorld
             }
             set
             {
-                PointVictoire = value;
+                pointVictoire = value;
             }
         }
 
@@ -101,28 +101,53 @@ namespace SmallWorld
         }
 
         /**
-         * @fn Joueur
+         * @fn Joueur(string nom, string nomPeuple)
          * @brief Constructeur d'un joueur
+         * 
+         * Crée le joueur à partir de son nom et de son peuple
+         * 
+         * @param string <b>nom</b> le nom du joueur
+         * @param string <b>nomPeuple</b> le peuple sélectionné par le joueur
          */
-        public Joueur()
+        public Joueur(string nom, string nomPeuple)
         {
-            throw new System.NotImplementedException();
+            nomJ = nom;
+            if (nomPeuple == "gaulois")
+            {
+                peupleJ = new PeupleGaulois();
+            }
+
+            if (nomPeuple == "nain")
+            {
+                peupleJ = new PeupleNain();
+            }
+
+            if (nomPeuple == "viking")
+            {
+                peupleJ = new PeupleViking();
+            }
         }
 
-
-
-
-
-     
-
+        /**
+         * @fn calculerPointVictoire()
+         * @brief Met à jour les points de victoire du joueur
+         * @return void
+         */
         public void calculerPointVictoire()
         {
-            throw new System.NotImplementedException();
+            int cptPt = 0;
+            foreach (Unite unite in listeUnite)
+            {
+                cptPt += unite.PointDeVictoire;
+            }
+            PointVictoire = cptPt;
         }
 
+
+        /* TODO enlever si inutile
         public void creerJoueur()
         {
             throw new System.NotImplementedException();
-        }
+        }*/
     }
 }
