@@ -43,7 +43,6 @@
     <Compile Include="Case.cs" />
     <Compile Include="Coordonnees.cs" />
     <Compile Include="CreateurPartie.cs" />
-    <Compile Include="Fabrique.cs" />
     <Compile Include="FabriqueCase.cs" />
     <Compile Include="FabriqueJeu.cs" />
     <Compile Include="FabriqueNain.cs" />

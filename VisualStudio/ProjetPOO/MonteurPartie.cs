@@ -8,10 +8,9 @@
  * @author <a href="mailto:damien.cremilleux@insa-rennes.fr">Damien Crémilleux</a>
  * @author <a href="mailto:lauriane.holy@insa-rennes.fr">Lauriane Holy</a>
  * 
- * @date 17/12/2013
+ * @date 20/12/2013
  * @version 0.1
  */
-
 using System;
 using System.Collections.Generic;
 namespace SmallWorld
@@ -168,6 +167,8 @@ namespace SmallWorld
          * @fn ajouterJoueur(string nomJoueur, string peuple)
          * @brief Ajout d'un joueur
          * 
+         * @param string <b>nomJoueur</b> le nom du joueur
+         * @param string <b>peuple</b> le type de peuple
          * @return void
          */
         public void ajouterJoueur(string nomJoueur, string peuple)
@@ -239,7 +240,9 @@ namespace SmallWorld
          */
         public MonteurPartieDemo()
         {
-
+            FabriquePeuple = new FabriquePeuple(); //TODO singleton
+            Carte = new Carte();
+            Partie = new Partie();
         }
 
         /**
@@ -316,7 +319,9 @@ namespace SmallWorld
          */
         public MonteurPartiePetite()
         {
-
+            FabriquePeuple = new FabriquePeuple(); //TODO singleton
+            Carte = new Carte();
+            Partie = new Partie();
         }
 
         /**
@@ -393,7 +398,9 @@ namespace SmallWorld
          */
         public MonteurPartieNormale()
         {
-
+            FabriquePeuple = new FabriquePeuple(); //TODO singleton
+            Carte = new Carte();
+            Partie = new Partie();
         }
 
         /**
