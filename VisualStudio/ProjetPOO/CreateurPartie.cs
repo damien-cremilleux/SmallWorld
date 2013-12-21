@@ -7,7 +7,7 @@
  * @author <a href="mailto:damien.cremilleux@insa-rennes.fr">Damien Crémilleux</a>
  * @author <a href="mailto:lauriane.holy@insa-rennes.fr">Lauriane Holy</a>
  * 
- * @date 25/12/2013
+ * @date 20/12/2013
  * @version 0.1
  */
 using System;
@@ -20,16 +20,26 @@ namespace SmallWorld
    /**
     * @interface InterCreateurPartie
     * @brief Interface du créateur de partie
-    */ 
+    */
     public interface InterCreateurPartie
     {
         /**
-         * @fn construire
+         * @fn construire()
          * @brief Construire la partie
          */
-        void construire();
-    }
+        Partie construire();
 
+        /**
+         * @fn ajoutJoueur(string nom, string peuple)
+         * @brief Ajouter un joueur à la partie
+         * 
+         * @param string <b>nom</b> le nom du joueur
+         * @param string <b>peuple</b> le type de peuple
+         * @return void
+         */
+        void ajoutJoueur(string nom, string peuple);
+
+    }
 
     /**
      * @class CreateurPartie
@@ -37,48 +47,106 @@ namespace SmallWorld
      */
     public class CreateurPartie : InterCreateurPartie
     {
+        /**
+         * @brief Attribut <b>monteurPartie</b> permettant de monter une partie
+         */
+        private MonteurPartie monteurPartie;
 
         /**
-         * @fn CreateurPartie
+         * @brief Attribut <b>typePartie</b> le type de partie (démo, petit ou normale)
+         */
+        private string typePartie;
+
+        /**
+         * @brief Attribut <b>listeJoueur</b> la liste caractérisant les joueurs
+         */
+        private List<string> listeJoueur;
+
+        /**
+         * @fn MonteurPartie
+         * @brief Properties pour l'attribut MonteurPartie
+         */
+        public MonteurPartie MonteurPartie
+        {
+            get
+            {
+                return monteurPartie;
+            }
+            set
+            {
+                monteurPartie = value;
+            }
+        }
+
+        /**
+         * @fn TypePartie
+         * @brief Properties pour l'attribut typePartie
+         */
+        public string TypePartie
+        {
+            get
+            {
+                return typePartie;
+            }
+            set //le monteur partie est automatiquement mis à jour
+            {
+                if (value == "demo")
+                {
+                    typePartie = value;
+                    MonteurPartie = new MonteurPartieDemo();
+                }
+
+                if (value == "petite")
+                {
+                    typePartie = value;
+                    MonteurPartie = new MonteurPartiePetite();
+                }
+
+                if (value == "normale")
+                {
+                    typePartie = value;
+                    MonteurPartie = new MonteurPartiePetite();
+                }
+            }
+        }
+
+        //TODO properties pour les listes
+        
+        /**
+         * @fn CreateurPartie()
          * @brief Constructeur du créateur de partie
          * 
          * @return CreateurPartie 
          */
         public CreateurPartie()
         {
-            throw new System.NotImplementedException();
+            listeJoueur = new List<string>();
         }
 
         /**
-         * @brief Attribut permettant de monter une partie
+         * @fn ajoutJoueur(string nom, string peuple)
+         * @brief Ajouter un joueur à la partie
+         * 
+         * @param string <b>nom</b> le nom du joueur
+         * @param string <b>peuple</b> le type de peuple
+         * @return void
          */
-         public MonteurPartie MonteurPartie
+        public void ajoutJoueur(string nom, string peuple)
         {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-            set
-            {
-            }
+            listeJoueur.Add(nom);
+            listeJoueur.Add(peuple);
         }
     
         /**
+         * @fn construire()
          * @brief Construction d'une nouvelle partie
+         * 
+         * @return void
          */
-        public void construire()
+        public Partie construire()
         {
-            throw new NotImplementedException();
+            return MonteurPartie.creerPartie(listeJoueur[0], listeJoueur[1], listeJoueur[2], listeJoueur[3]);
         }
 
-        public void ajouterJoueur(string nom, string peuple)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public void ajouterCarte()
-        {
-            throw new System.NotImplementedException();
-        }
     }
 }

@@ -43,7 +43,6 @@
     <Compile Include="Case.cs" />
     <Compile Include="Coordonnees.cs" />
     <Compile Include="CreateurPartie.cs" />
-    <Compile Include="Fabrique.cs" />
     <Compile Include="FabriqueCase.cs" />
     <Compile Include="FabriqueJeu.cs" />
     <Compile Include="FabriqueNain.cs" />
@@ -51,7 +50,6 @@
     <Compile Include="FabriqueViking.cs" />
     <Compile Include="Joueur.cs" />
     <Compile Include="MonteurPartie.cs" />
-    <Compile Include="Nain.cs" />
     <Compile Include="Partie.cs" />
     <Compile Include="Peuple.cs" />
     <Compile Include="PeupleGaulois.cs" />

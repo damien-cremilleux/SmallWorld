@@ -68,6 +68,7 @@ namespace SmallWorld
             }
             set
             {
+                tailleCarte = value;
             }
         }
 
@@ -118,6 +119,17 @@ namespace SmallWorld
             }
         }
 
+        /**
+         * @fn Carte()
+         * @brief Constructeur d'une nouvelle Carte vide
+         * 
+         * @return La nouvelle Carte
+         */
+        public Carte()
+        {
+            fabriqueCase = FabriqueCase.Instance_FabCase;
+            listeCases = new List<List<Case>>();
+        }
 
         /**
          * @fn Carte(List<List<Case>> listeC)
@@ -133,7 +145,7 @@ namespace SmallWorld
             fabriqueCase = FabriqueCase.Instance_FabCase;
             listeCases = listeC;
         }
-        
+
         /**
          * @fn creerCarte
          * @brief Génération d'une nouvelle Carte
