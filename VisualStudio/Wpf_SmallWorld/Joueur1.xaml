@@ -25,10 +25,10 @@
                 <StackPanel>
                     <Label Content="Choix du peuple :" Margin="5,0,0,0"/>
                     <StackPanel Margin="20,0,0,10">
-                        <RadioButton>Nains</RadioButton>
+                        <RadioButton Checked="peuple">Nains</RadioButton>
                         <!--    TODO : <Expander Header="Nains" ></Expander>-->
-                        <RadioButton>Gaulois</RadioButton>
-                        <RadioButton>Vickings</RadioButton>
+                        <RadioButton Checked="peuple">Gaulois</RadioButton>
+                        <RadioButton Checked="peuple">Vickings</RadioButton>
                     </StackPanel>
                 </StackPanel>
             </GroupBox>

@@ -28,9 +28,7 @@ namespace Wpf_SmallWorld
         {
             InitializeComponent();
             w = new WrapperAlgo();
-            // Creation de la carte
-          //  Carte =  new Carte();
-          //  Carte.creerCarte();
+
             
             int taille = 10;
             int** test = w.genererCarte(taille);
@@ -64,8 +62,10 @@ namespace Wpf_SmallWorld
         {
             // Initialisation de la carte
 
-            //écuperer taille carte
+            // Récuperer taille carte
             int taille = 10;
+
+            // Récuperer une liste plutôt pour éviter l'allocation dynamique
             int** TCarte = w.genererCarte(taille);
 
             for (int c = 0; c < taille; c++)
@@ -109,7 +109,7 @@ namespace Wpf_SmallWorld
         {
             var rectangle = new Rectangle();
 
-            // Test la classe de l'objet ? 
+            // Test la classe de l'objet 
             if (Case is InterEau)
                 rectangle.Fill = Brushes.Brown;
             if (Case is InterForet)
@@ -147,7 +147,7 @@ namespace Wpf_SmallWorld
         /// </summary>
         unsafe private void updateUnit()
         {
-            // passer une unité en paramètre ? pour ne mettre à jour qu'elle.
+            // passer une unité en paramètre ? pour ne mettre à jour qu'elle ?
 
             // ajout des attributs (column et Row) référencant la position dans la grille à unitEllipse
 
