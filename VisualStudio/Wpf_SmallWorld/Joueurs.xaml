@@ -1,0 +1,93 @@
+﻿<UserControl x:Class="Wpf_SmallWorld.Joueurs"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="600" d:DesignWidth="700"
+             xmlns:local="clr-namespace:Wpf_SmallWorld"
+             FontFamily="Segoe UI Light"
+             Height="550" Width="650">
+    
+  
+    <Grid>
+        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="250" />
+            <RowDefinition />
+            <RowDefinition Height="30"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0" Margin="10,5,0,0">
+                <StackPanel Margin="10,0">
+
+                <TextBlock Margin="0,0,0,7" Padding="10,5,10,5" Background="#DE2A2A" Foreground="White" FontSize="16">
+                Informations sur le premier joueur
+                    </TextBlock>
+                    <!-- INFOS JOUEUR 1 -->
+                    <!-- Nom du joueur 1-->
+                <GroupBox Header="Nom" Margin="5,0,0,5">
+                    <StackPanel Orientation="Horizontal">
+                        <Label  Content="Nom du joueur 1 :"/>
+                        <TextBox Width="100" Name="NomJ1"/>
+                    </StackPanel>
+                </GroupBox>
+                <!-- Peuple du joueur 1-->
+                    <GroupBox Header="Peuple" Margin="5,0,0,0" >
+                        <StackPanel>
+                            <Label Content="Choix du peuple :" Margin="5,0,0,0"/>
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                            <RadioButton Style="{StaticResource Radio}" Tag="Resources/smallWorld.png" Name="peupleNain" Checked="peuple1">Nains</RadioButton>
+                                <!--    TODO : <Expander Header="Nains" ></Expander>-->
+                            <RadioButton Name="peupleGaulois" Tag="Resources/smallWorld.png" Style="{StaticResource Radio}" Checked="peuple1">Gaulois</RadioButton>
+                            <RadioButton Name="puepleVikings" Style="{StaticResource RadioVikings}" Checked="peuple1">Vikings</RadioButton>
+                        </StackPanel>
+                        <TextBlock Name="Error1" HorizontalAlignment="Center" Foreground="Red" FontSize="16" Visibility="Hidden" >Ce peuple a déjà été pris</TextBlock>
+                    </StackPanel>
+                    </GroupBox>
+            </StackPanel>
+            </Grid>
+
+        <Grid Grid.Row="1" Margin="10,10,0,10">
+                <StackPanel Margin="10,0">
+                <TextBlock Margin="0,0,0,7" Padding="10,5,10,5" Background="#DE2A2A" Foreground="White" FontSize="16">
+                Informations sur le deuxième joueur
+                    </TextBlock>
+                    <!-- INFOS JOUEUR 2 -->
+                    <!-- Nom du joueur 2-->
+                    <GroupBox Header="Nom" Margin="5,0,0,0">
+                        <StackPanel Orientation="Horizontal">
+                            <Label  Content="Nom du joueur 2 :"/>
+                            <TextBox Width="100" Name="NomJ2"/>
+                        </StackPanel>
+                    </GroupBox>
+
+                    <!-- Peuple du joueur 2-->
+                    <GroupBox Header="Peuple" Margin="5,0,0,0" >
+                        <StackPanel>
+                            <Label Content="Choix du peuple :" Margin="5,0,0,0"/>
+                            <StackPanel Margin="20,0,0,5" Orientation="Horizontal" HorizontalAlignment="Center">
+                                <!-- binding pour isenable ? -->
+                            <RadioButton Style="{StaticResource RadioNains}" Name="peupleNain2" Checked="peuple2">Nains</RadioButton>
+                            <RadioButton Name="pepleGaulois" Style="{StaticResource RadioGaulois}" Checked="peuple2">Gaulois</RadioButton>
+                            <RadioButton Name="peupleVickings" Style="{StaticResource RadioVikings}" Checked="peuple2">Vikings</RadioButton>
+                            </StackPanel>
+                        <TextBlock Name="Error2" HorizontalAlignment="Center" Foreground="Red" FontSize="16" Visibility="Hidden" >Ce peuple a déjà été pris</TextBlock>
+                    </StackPanel>
+                    </GroupBox>
+                </StackPanel>
+
+            </Grid>
+        
+        <!-- Validation ou retour -->
+        <Grid Grid.Row="2" Margin="5,0,5,5">
+            <DockPanel>
+
+                <Button Style="{DynamicResource ButtonNext}" Click="joueurSuivant">Suivant</Button>
+            </DockPanel>
+        </Grid>
+    </Grid>
+</UserControl>

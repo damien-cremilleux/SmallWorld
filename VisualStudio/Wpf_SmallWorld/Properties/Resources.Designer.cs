@@ -63,9 +63,49 @@ namespace Wpf_SmallWorld.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap prec {
+            get {
+                object obj = ResourceManager.GetObject("prec", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap precOver {
+            get {
+                object obj = ResourceManager.GetObject("precOver", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Sable {
             get {
                 object obj = ResourceManager.GetObject("Sable", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap suiv {
+            get {
+                object obj = ResourceManager.GetObject("suiv", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap suivOver {
+            get {
+                object obj = ResourceManager.GetObject("suivOver", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

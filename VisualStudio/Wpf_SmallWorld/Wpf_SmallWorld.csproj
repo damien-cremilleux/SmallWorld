@@ -56,14 +56,25 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Select.xaml.cs">
-      <DependentUpon>Select.xaml</DependentUpon>
+    <Compile Include="Carte.xaml.cs">
+      <DependentUpon>Carte.xaml</DependentUpon>
     </Compile>
-    <Page Include="Joueur1.xaml">
+    <Compile Include="Joueurs.xaml.cs">
+      <DependentUpon>Joueurs.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PageJeu.xaml.cs">
+      <DependentUpon>PageJeu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Page Include="Carte.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Joueur2.xaml">
+    <Page Include="Joueurs.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -75,12 +86,6 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Joueur1.xaml.cs">
-      <DependentUpon>Joueur1.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Joueur2.xaml.cs">
-      <DependentUpon>Joueur2.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Jeu.xaml.cs">
       <DependentUpon>Jeu.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -89,7 +94,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Select.xaml">
+    <Page Include="PageJeu.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -101,11 +106,6 @@
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -113,6 +113,7 @@
     </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="ClassDiagram1.cd" />
@@ -136,10 +137,22 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <SplashScreen Include="Resources\smallWorld.png" />
+  </ItemGroup>
+  <ItemGroup>
     <None Include="Resources\free-paper-texture-2.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <SplashScreen Include="Resources\smallWorld.png" />
+    <None Include="Resources\suiv.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\suivOver.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\prec.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\precOver.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

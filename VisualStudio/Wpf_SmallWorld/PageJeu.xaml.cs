@@ -19,17 +19,19 @@ using SmallWorld;
 namespace Wpf_SmallWorld
 {
     /// <summary>
-    /// Logique d'interaction pour Jeu.xaml
+    /// Logique d'interaction pour PageJeu.xaml
     /// </summary>
-    public partial class Jeu : Window
+    public partial class PageJeu : Page
     {
         WrapperAlgo w;
-        unsafe public Jeu()
+
+        unsafe public PageJeu()
         {
+            InitializeComponent();
             InitializeComponent();
             w = new WrapperAlgo();
 
-            
+
             int taille = 10;
             int** test = w.genererCarte(taille);
             int* placeJoueur = w.placerJoueur(test, taille);
@@ -54,7 +56,6 @@ namespace Wpf_SmallWorld
             }
             MessageBox.Show(res2);
         }
-
         /// <summary>
         /// Définit les actions à réaliser lors du chargement de la fenêtre : initialisation de la carte et des unités
         /// </summary>
@@ -81,16 +82,16 @@ namespace Wpf_SmallWorld
                 {
                     // dans chaque case de la grille on ajoute une tuile (logique) matérialisée par un rectangle (physique)
                     // On récupère le numéro correspondant au type de la case
-                    
+
                     var NumCase = TCarte[c][l];
                     Case Case = FabriqueCase.Instance_FabCase.obtenirCase(NumCase);
                     var element = createRectangle(c, l, Case);
 
                     // Aout de la case dans la carte
                     Carte.Children.Add(element);
-                    
+
                 }
-             
+
             }
             // Initilisaton des unités
             // TODO  : POUR CHAQUE UNITES
@@ -154,6 +155,5 @@ namespace Wpf_SmallWorld
             Grid.SetColumn(unitEllipse, 1);
             Grid.SetRow(unitEllipse, 1);
         }
-                
     }
 }

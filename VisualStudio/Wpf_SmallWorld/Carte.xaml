@@ -1,0 +1,50 @@
+﻿<UserControl x:Class="Wpf_SmallWorld.Carte"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="600" d:DesignWidth="700"
+             FontFamily="Segoe UI Light" FontSize="14"
+             Height="550" Width="650">
+
+    <Grid Margin="10,5,0,0">
+            
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+            
+        <StackPanel Grid.Row="0" Margin="10,0">
+
+                <!-- INFOS PARTIE -->
+                <TextBlock Margin="0,0,0,7" Padding="10,5,10,5" Background="#DE2A2A" Foreground="White" FontSize="16">
+                Informations sur la partie
+                </TextBlock>
+                <!-- Taille de la carte -->
+                <GroupBox Header="Carte" Margin="5,0,0,10" >
+                    <StackPanel>
+                        <Label Content="Choix de la taille de la carte :" Margin="5,0,0,0"/>
+                        <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Margin="20,0,0,0">
+                            <RadioButton Checked="carte" Style="{StaticResource RadioTaille}" Width="60" Height="60" >Démo</RadioButton>
+                            <RadioButton Checked="carte" Style="{StaticResource RadioTaille}" Width="80" Height="80"  >Petite</RadioButton>
+                            <RadioButton Checked="carte" Style="{StaticResource RadioTaille}" Width="100" Height="100" >Normale</RadioButton>
+                        </StackPanel>
+                    </StackPanel>
+                </GroupBox>
+
+
+        </StackPanel>
+        <Grid Grid.Row="1">
+            <!-- Validation et retour -->
+            <DockPanel>
+                <Button DockPanel.Dock="Left" Style="{DynamicResource ButtonBack}" Click="Retour">Retour</Button>
+                <Button DockPanel.Dock="Right" Style="{DynamicResource ButtonNext}" Click="LancerPartie">Lancer la partie</Button>
+            </DockPanel>
+            
+        </Grid>
+    </Grid>
+</UserControl>
