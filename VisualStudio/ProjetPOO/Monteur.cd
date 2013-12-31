@@ -1,12 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Comment CommentText="Il s'agit d'une aggrégation">
-    <Position X="3.459" Y="1.417" Height="0.438" Width="1.7" />
+    <Position X="3.313" Y="1.188" Height="0.438" Width="1.7" />
   </Comment>
   <Class Name="SmallWorld.CreateurPartie">
-    <Position X="1.5" Y="0.5" Width="1.5" />
+    <Position X="1" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAEAAAABAAAAAAAAAAAAAAAAAQAAIAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAACAABAAAAAAAAAACBAAAAAQAAAAAAAAAIAAAAAAg=</HashCode>
       <FileName>CreateurPartie.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -17,31 +17,31 @@
   <Class Name="SmallWorld.MonteurPartie">
     <Position X="5.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>IAEAAAACAAAAAABAAAAAAAAAAAAgIAAAAAAAAEAAAAA=</HashCode>
+      <HashCode>IAMAAAACAEAAAABAAAAAAAAAAAAgIAAAAAAAAGAAAAA=</HashCode>
       <FileName>MonteurPartie.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="SmallWorld.MonteurPartieDemo">
-    <Position X="3.25" Y="3.5" Width="1.5" />
+    <Position X="2" Y="5.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAEAAAAAAAAAAAAAAAAAAAAAAAQgIAAAAAAAAEAAAAA=</HashCode>
+      <HashCode>AAIAAAAAAAAAAAAAAAAAAAAAAABAKAAAAAAgAEAAAAA=</HashCode>
       <FileName>MonteurPartie.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="SmallWorld.MonteurPartieNormale">
-    <Position X="7.5" Y="3.5" Width="1.5" />
+    <Position X="7.75" Y="5.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAEAAAAAAAAAAAAAAAAAAAAAAAQgIAAAAAAAAEAAAAA=</HashCode>
+      <HashCode>AAIAAAAAAAAAAAAAAAAAAAAAAABAKAAAAAAgAEAAAAA=</HashCode>
       <FileName>MonteurPartie.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="SmallWorld.MonteurPartiePetite">
-    <Position X="5.25" Y="3.5" Width="1.5" />
+    <Position X="4.75" Y="5.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAEAAAAAAAAAAAAAAAAAAAAAAAQgIAAAAAAAAEAAAAA=</HashCode>
+      <HashCode>AAIAAAAAAAAAAAAAAAAAAAAAAABAKAAAAAAgAEAAAAA=</HashCode>
       <FileName>MonteurPartie.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />

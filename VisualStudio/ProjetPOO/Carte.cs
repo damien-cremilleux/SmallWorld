@@ -7,7 +7,7 @@
  * @author <a href="mailto:damien.cremilleux@insa-rennes.fr">Damien Crémilleux</a>
  * @author <a href="mailto:lauriane.holy@insa-rennes.fr">Lauriane Holy</a>
  * 
- * @date 16/12/2013
+ * @date 31/12/2013
  * @version 0.1
  */
 
@@ -100,6 +100,7 @@ namespace SmallWorld
             }
             set
             {
+                listeCases = value;
             }
         }
 
@@ -127,8 +128,8 @@ namespace SmallWorld
          */
         public Carte()
         {
-            fabriqueCase = FabriqueCase.Instance_FabCase;
-            listeCases = new List<List<Case>>();
+            FabriqueCase = FabriqueCase.Instance_FabCase;
+            ListeCases = new List<List<Case>>();
         }
 
         /**
@@ -142,8 +143,8 @@ namespace SmallWorld
          */
         public Carte(List<List<Case>> listeC)
         {
-            fabriqueCase = FabriqueCase.Instance_FabCase;
-            listeCases = listeC;
+            FabriqueCase = FabriqueCase.Instance_FabCase;
+            ListeCases = listeC;
         }
 
         /**
@@ -156,7 +157,7 @@ namespace SmallWorld
          */
         public void creerCarte()
         {
-            strategieCarte.construire();
+           StrategieCarte.construire();
         }
 
         /**
@@ -168,7 +169,7 @@ namespace SmallWorld
          */
         public void definirStrategie(StrategieCarte strat)
         {
-            strategieCarte = strat;
+            StrategieCarte = strat;
         }
     }
 

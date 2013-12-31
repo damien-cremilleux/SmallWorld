@@ -76,16 +76,16 @@
     <Position X="13" Y="7.25" Width="1.5" />
     <AssociationLine Name="Partie" Type="SmallWorld.Partie" FixedFromPoint="true" FixedToPoint="true">
       <Path>
-        <Point X="13" Y="7.529" />
-        <Point X="12.76" Y="7.529" />
-        <Point X="12.76" Y="9.059" />
-        <Point X="9.01" Y="9.059" />
+        <Point X="13" Y="7.614" />
+        <Point X="12.76" Y="7.614" />
+        <Point X="12.76" Y="8.862" />
+        <Point X="9.01" Y="8.862" />
         <Point X="9.01" Y="7.136" />
         <Point X="9.25" Y="7.136" />
       </Path>
     </AssociationLine>
     <TypeIdentifier>
-      <HashCode>IAMAAAACAEAAAABAAAAAAAAAAAAgIAAAAAAAAGAAAAA=</HashCode>
+      <HashCode>IAMAAAACEEAAABBAAAAAAAAAAABgKAAAAAAgAGAAAAA=</HashCode>
       <FileName>MonteurPartie.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -97,7 +97,7 @@
   <Class Name="SmallWorld.MonteurPartiePetite">
     <Position X="12.75" Y="10.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAIAAAAAAAAAAAAAAAAAAAAAAABAKAAAAAAgAEAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAABACAAAAAAgAEAAAAA=</HashCode>
       <FileName>MonteurPartie.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -105,7 +105,7 @@
   <Class Name="SmallWorld.MonteurPartieDemo">
     <Position X="10.75" Y="10.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAIAAAAAAAAAAAAAAAAAAAAAAABAKAAAAAAgAEAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAABACAAAAAAgAEAAAAA=</HashCode>
       <FileName>MonteurPartie.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -264,7 +264,7 @@
   <Class Name="SmallWorld.StrategieCarte">
     <Position X="4.25" Y="6" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAABAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Strategie.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -344,7 +344,7 @@
   <Class Name="SmallWorld.MonteurPartieNormale">
     <Position X="15" Y="10.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAIAAAAAAAAAAAAAAAAAAAAAAABAKAAAAAAgAEAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAABACAAAAAAgAEAAAAA=</HashCode>
       <FileName>MonteurPartie.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
