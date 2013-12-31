@@ -4,29 +4,58 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       mc:Ignorable="d" 
-      d:DesignHeight="300" d:DesignWidth="300"
+      d:DesignHeight="600" d:DesignWidth="900"
 	  Title="PageJeu"
-      Loaded="Window_Loaded" Background="#FFF3F3B5">
+      Loaded="Window_Loaded">
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="70"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="auto"/>
+        </Grid.ColumnDefinitions>
 
-    <DockPanel Background="#FFF3F3B5">
-        <!-- <Grid DockPanel.Dock="top" Height="200" Name="Carte" Background="BlanchedAlmond"/>  -->
-        <Grid ShowGridLines="true" DockPanel.Dock="Bottom">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-            </Grid.ColumnDefinitions>
-
-            <Label Grid.Column="0"  Name="infolabel" Content="fjhfdkdfhguio"/>
-            <Button Grid.Column="1" Width="100" Height="40" HorizontalAlignment="Center" Content="Fin de tour"/>
-            <Label Grid.Column="2"  Name="infolabel2" Content="fjhfdkdfhguio"/>
-        </Grid>
-        <Grid Name="Carte" Background="Azure" HorizontalAlignment="Center" VerticalAlignment="Center">
+        <Grid Grid.Row="0" Name="Carte" HorizontalAlignment="Center" VerticalAlignment="Center" >
             <!-- Définition du rectangle matérialisant la selection -->
             <Rectangle Style="{StaticResource selectionStyle}" Name="selectionRectangle" />
             <!-- Chaque case de la grille contient potentiellement un rectangle de selection + une unité (qui ne sera pas sensible aux evts)-->
-            <Ellipse Fill="White" Width="10" Height="10" Name="unitEllipse" Panel.ZIndex="444" IsHitTestVisible="False" />
+            <Ellipse Fill="Gold" Width="10" Height="10" Name="unitj1" Panel.ZIndex="444" IsHitTestVisible="False" />
+            <Ellipse Fill="Pink" Width="10" Height="10" Name="unitj2" Panel.ZIndex="444" IsHitTestVisible="False" />
+        </Grid>
+        
+        <!-- Données joueurs -->
+        <Grid Grid.Row="1">
+            <StackPanel Name="InfoJoueurs"/>
+        </Grid>
+        
+        <Grid Grid.Column="1">
+            <StackPanel DataContext="{Binding Tag, ElementName=selectionRectangle}" Visibility="Visible">
+                    <!-- on associe le contenu du label (Content) par binding : à la tuile selectionnée (Tag) de la source : le rectangle de selection (selectionRectangle) -->
+                    <!-- une variante = Factorisation du Binding par le DataContext-->
+                <StackPanel Name="InfoCases" Orientation="Horizontal" >
+                        <Rectangle Fill="Blue" Name="RectSelect" />
+                        <Label Foreground="Purple" Content="{Binding}"/>
+                </StackPanel>
+                <!-- Liste des unités présentes sur la case -->
+                <ListBox Name="InfoUnite" DisplayMemberPath="Name" Background="Transparent"/>
+            </StackPanel>
 
         </Grid>
-    </DockPanel>
+        
+        
+        <Grid Grid.Column="1" Grid.Row="1">
+            <Button Grid.Column="2" Height="40" HorizontalAlignment="Center" Click="TourSuivant">
+                <StackPanel>
+                    <TextBlock HorizontalAlignment="Center" >Fin de tour</TextBlock>
+                    <TextBlock Name="NbTour" HorizontalAlignment="Center">Nombre de tour restant : </TextBlock>
+                </StackPanel>
+                
+            </Button>
+        </Grid>
+        
+      
+    </Grid>
 </Page>

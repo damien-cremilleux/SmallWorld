@@ -22,7 +22,7 @@ namespace Wpf_SmallWorld
     /// </summary>
     public partial class Carte : UserControl
     {
-        private string TailleCarte;
+        private string TailleCarte="";
 
         public Carte()
         {

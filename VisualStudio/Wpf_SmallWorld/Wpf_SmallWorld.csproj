@@ -59,6 +59,12 @@
     <Compile Include="Carte.xaml.cs">
       <DependentUpon>Carte.xaml</DependentUpon>
     </Compile>
+    <Compile Include="InfoCase.xaml.cs">
+      <DependentUpon>InfoCase.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="InfoJoueur.xaml.cs">
+      <DependentUpon>InfoJoueur.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Joueurs.xaml.cs">
       <DependentUpon>Joueurs.xaml</DependentUpon>
     </Compile>
@@ -74,20 +80,20 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="InfoCase.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="InfoJoueur.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Joueurs.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Jeu.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Jeu.xaml.cs">
-      <DependentUpon>Jeu.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
     <Page Include="MainWindow.xaml">

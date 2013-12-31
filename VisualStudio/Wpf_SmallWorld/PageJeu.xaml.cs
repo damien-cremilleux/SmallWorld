@@ -24,14 +24,16 @@ namespace Wpf_SmallWorld
     public partial class PageJeu : Page
     {
         WrapperAlgo w;
+        Partie partie;
 
         unsafe public PageJeu()
         {
             InitializeComponent();
-            InitializeComponent();
             w = new WrapperAlgo();
+            partie = new Partie();
 
 
+            /*
             int taille = 10;
             int** test = w.genererCarte(taille);
             int* placeJoueur = w.placerJoueur(test, taille);
@@ -55,47 +57,67 @@ namespace Wpf_SmallWorld
                 res2 += placeJoueur[k] + "\t";
             }
             MessageBox.Show(res2);
+            */
+            
         }
+
         /// <summary>
-        /// Définit les actions à réaliser lors du chargement de la fenêtre : initialisation de la carte et des unités
+        /// Définit les actions à réaliser lors du chargement de la fenêtre : initialisation des données et de la carte
         /// </summary>
         unsafe private void Window_Loaded(object sender, RoutedEventArgs e)
         {
+            //Initialisation des données joueurs
+            foreach (Joueur joueur in partie.ListeJoueurs)
+            {
+                InfoJoueur j = new InfoJoueur(joueur);
+                InfoJoueurs.Children.Add(j);
+            }
+
+            //Initialisation du nombre de tour
+            NbTour.Text += " " + partie.NbTourRestant;
+
             // Initialisation de la carte
-
-            // Récuperer taille carte
-            int taille = 10;
-
-            // Récuperer une liste plutôt pour éviter l'allocation dynamique
+            int taille = 10; // TODO : partie.CartePartie.TailleCarte;
+           
             int** TCarte = w.genererCarte(taille);
 
             for (int c = 0; c < taille; c++)
             {
-                Carte.ColumnDefinitions.Add(new ColumnDefinition() { Width = new GridLength(20, GridUnitType.Pixel) });
+                Carte.ColumnDefinitions.Add(new ColumnDefinition() { Width = new GridLength(40, GridUnitType.Pixel) });
             }
 
             for (int l = 0; l < taille; l++)
             {
 
-                Carte.RowDefinitions.Add(new RowDefinition() { Height = new GridLength(20, GridUnitType.Pixel) });
+                Carte.RowDefinitions.Add(new RowDefinition() { Height = new GridLength(40, GridUnitType.Pixel) });
                 for (int c = 0; c < taille; c++)
                 {
                     // dans chaque case de la grille on ajoute une tuile (logique) matérialisée par un rectangle (physique)
                     // On récupère le numéro correspondant au type de la case
-
                     var NumCase = TCarte[c][l];
                     Case Case = FabriqueCase.Instance_FabCase.obtenirCase(NumCase);
                     var element = createRectangle(c, l, Case);
 
-                    // Aout de la case dans la carte
+                    // Ajout de la case dans la carte
                     Carte.Children.Add(element);
-
                 }
-
             }
+
             // Initilisaton des unités
-            // TODO  : POUR CHAQUE UNITES
-            updateUnit();
+                    // Mettre une image spéciale quand plusieurs unités sur la même case ?
+            int* Coord = w.placerJoueur(TCarte, taille);
+
+            Grid.SetColumn(unitj1, Coord[0]);
+            Grid.SetRow(unitj1, Coord[1]);
+            Grid.SetColumn(unitj2, Coord[2]);
+            Grid.SetRow(unitj2, Coord[3]);
+
+            // de façon dynamique  ... 
+            //foreach (Joueur j in partie.ListeJoueurs)
+            //{
+            //    Carte.Children.Add(unit);
+            //}
+
         }
 
 
@@ -106,11 +128,10 @@ namespace Wpf_SmallWorld
         /// <param name="l"> Row </param>
         /// <param name="tile"> Tuile logique</param>
         /// <returns> Rectangle créé</returns>
-        private Rectangle createRectangle(int c, int l, Case Case)
+        private unsafe Rectangle createRectangle(int c, int l, Case Case)
         {
             var rectangle = new Rectangle();
-
-            // Test la classe de l'objet 
+         
             if (Case is InterEau)
                 rectangle.Fill = Brushes.Brown;
             if (Case is InterForet)
@@ -118,27 +139,24 @@ namespace Wpf_SmallWorld
             if (Case is InterMontagne)
                 rectangle.Fill = Brushes.SlateBlue;
             if (Case is InterPlaine)
-                rectangle.Fill = Brushes.Green;
+                rectangle.Fill = Brushes.Orange;             // Ne marche pas  PB DE NUMEROTATION eau/montagne
             if (Case is InterDesert)
             {
-                // A mettre avant avec chaque variable
                 BitmapSource img = System.Windows.Interop.Imaging.CreateBitmapSourceFromHBitmap(Wpf_SmallWorld.Properties.Resources.Sable.GetHbitmap(), IntPtr.Zero, Int32Rect.Empty, BitmapSizeOptions.FromEmptyOptions());
                 rectangle.Fill = new ImageBrush(img);
             }
 
-            //  Panel.SetZIndex(rectangle, 50);
+            Panel.SetZIndex(rectangle, 50);
 
             // mise à jour des attributs (column et Row) référencant la position dans la grille à rectangle
             Grid.SetColumn(rectangle, c);
             Grid.SetRow(rectangle, l);
-            //   rectangle.Tag = TCarte[c][l]; // Tag : ref par defaut sur la tuile logique
+            rectangle.Tag = Case; // Récupère le type de la case mais : SmallWorld.montagne ....
 
-            rectangle.Stroke = Brushes.Red;
-            rectangle.StrokeThickness = 1;
-            /*           // enregistrement d'un écouteur d'evt sur le rectangle : 
-                       // source = rectangle / evt = MouseLeftButtonDown / délégué = rectangle_MouseLeftButtonDown
-                       rectangle.MouseLeftButtonDown += new MouseButtonEventHandler(rectangle_MouseLeftButtonDown);
-               */
+              // enregistrement d'un écouteur d'evt sur le rectangle : 
+              // source = rectangle / evt = MouseLeftButtonDown / délégué = rectangle_MouseLeftButtonDown
+            rectangle.MouseLeftButtonDown += new MouseButtonEventHandler(rectangle_MouseLeftButtonDown);
+
             return rectangle;
 
         }
@@ -152,8 +170,47 @@ namespace Wpf_SmallWorld
 
             // ajout des attributs (column et Row) référencant la position dans la grille à unitEllipse
 
-            Grid.SetColumn(unitEllipse, 1);
-            Grid.SetRow(unitEllipse, 1);
+            Grid.SetColumn(unitj1, 1);
+            Grid.SetRow(unitj1, 1);
+            //Grid.SetColumn(unitEllipse, unit.Column);
+            //Grid.SetRow(unitEllipse, unit.Row);
+        }
+
+        /// <summary>
+        /// Délégué : réponse à l'evt click gauche sur le rectangle, affichage des informations de la case (type case et unités présentes)
+        /// </summary>
+        /// <param name="sender"> le rectangle (la source) </param>
+        /// <param name="e"> l'evt </param>
+        private void rectangle_MouseLeftButtonDown(object sender, RoutedEventArgs e)
+        {
+            var rectangle = sender as Rectangle;
+            var cas = rectangle.Tag as Case;
+
+            int column = Grid.GetColumn(rectangle);
+            int row = Grid.GetRow(rectangle);
+
+            Grid.SetColumn(selectionRectangle, column);
+            Grid.SetRow(selectionRectangle, row);
+            selectionRectangle.Tag = cas;
+            selectionRectangle.Visibility = System.Windows.Visibility.Visible;
+
+            // récuperer la liste des unités présentes sur la case 
+          //  InfoUnite.ItemsSource = ;
+            
+            e.Handled = true;
+
+        }
+
+
+        /// <summary>
+        /// Délégué : réaction à l'evt : clic sur le bouton "Tour Suivant"
+        /// </summary>
+        /// <param name="sender"> le bouton "tour suivant" </param>
+        /// <param name="e"></param>
+        private void TourSuivant(object sender, RoutedEventArgs e)
+        {
+            updateUnit();
+            // changement de joueur en cours
         }
     }
 }

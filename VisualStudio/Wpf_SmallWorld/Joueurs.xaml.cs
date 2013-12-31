@@ -22,10 +22,10 @@ namespace Wpf_SmallWorld
     /// </summary>
     public partial class Joueurs : UserControl
     {
-        private string joueur1;
-        private string peuplej1;
-        private string joueur2;
-        private string peuplej2;
+        private string joueur1 ="";
+        private string peuplej1 = "";
+        private string joueur2 = "";
+        private string peuplej2 = "";
 
         public Joueurs()
         {
