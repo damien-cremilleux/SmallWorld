@@ -66,7 +66,6 @@
     <Compile Include="Unite.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="CreateurPartie_construire.sequencediagram" />
     <None Include="fabrique.cd" />
     <None Include="Global.cd" />
     <None Include="Monteur.cd" />
@@ -77,11 +76,6 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <None Include="Strategie.cd" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="CreateurPartie_construire.sequencediagram.layout">
-      <DependentUpon>CreateurPartie_construire.sequencediagram</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

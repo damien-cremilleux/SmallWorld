@@ -59,9 +59,6 @@
     <Compile Include="Carte.xaml.cs">
       <DependentUpon>Carte.xaml</DependentUpon>
     </Compile>
-    <Compile Include="InfoCase.xaml.cs">
-      <DependentUpon>InfoCase.xaml</DependentUpon>
-    </Compile>
     <Compile Include="InfoJoueur.xaml.cs">
       <DependentUpon>InfoJoueur.xaml</DependentUpon>
     </Compile>
@@ -77,10 +74,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Page Include="Carte.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="InfoCase.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

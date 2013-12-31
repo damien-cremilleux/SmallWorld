@@ -11,7 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
-using System.Windows.Shapes;
+using System.Windows.Shapes
 
 using Wrapper;
 using SmallWorld;
@@ -133,13 +133,13 @@ namespace Wpf_SmallWorld
             var rectangle = new Rectangle();
          
             if (Case is InterEau)
-                rectangle.Fill = Brushes.Brown;
+                rectangle.Fill = Brushes.SlateBlue;
             if (Case is InterForet)
                 rectangle.Fill = Brushes.DarkGreen;
             if (Case is InterMontagne)
-                rectangle.Fill = Brushes.SlateBlue;
+                rectangle.Fill = Brushes.Brown;
             if (Case is InterPlaine)
-                rectangle.Fill = Brushes.Orange;             // Ne marche pas  PB DE NUMEROTATION eau/montagne
+                rectangle.Fill = Brushes.Green;
             if (Case is InterDesert)
             {
                 BitmapSource img = System.Windows.Interop.Imaging.CreateBitmapSourceFromHBitmap(Wpf_SmallWorld.Properties.Resources.Sable.GetHbitmap(), IntPtr.Zero, Int32Rect.Empty, BitmapSizeOptions.FromEmptyOptions());

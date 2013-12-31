@@ -125,12 +125,10 @@ namespace SmallWorld
             return Foret;
         }
 
-
         public Case obtenirMontagne()
         {
             return Montagne;
         }
-
 
         public Case obtenirPlaine()
         {
@@ -146,19 +144,19 @@ namespace SmallWorld
         {
             switch (typeCase)
             {
-                case 1:
+                case 0:
                     return Desert;
        
-                case 2:
-                    return Eau;
+                case 1:
+                    return Montagne;
           
-                case 3:
+                case 2:
                     return Foret;
      
-                case 4:
-                    return Montagne;
+                case 3:
+                    return Eau;
          
-                case 5:
+                case 4:
                     return Plaine;
               
                 default:
