@@ -58,6 +58,14 @@ namespace SmallWorld
          * @return void
          */
         void placerUnites();
+
+        /**
+     * @fn initialiserNombreTour
+     * @brief initialise le nombre de tour d'un partie
+     * 
+     * @return void
+     */
+        void initialiserNombreTour();
     }
 
     /**
@@ -93,6 +101,21 @@ namespace SmallWorld
     public abstract class MonteurPartie : InterMonteurPartie
     {
         /**
+         * @brief constante <b>NB_CASE</b> le nombre de case en largeur et longueur de la carte
+         */
+        private int NB_CASE;
+
+        /**
+         * @brief constante <b>NB_TOUR</b> le nombre initial de tour
+         */
+        private int NB_TOUR;
+
+        /**
+         * @brief constante <b>NB_UNITE</b> le nombre initial d'unité par joueur
+         */
+        private int NB_UNITE;
+
+        /**
          * @brief Attribut <b>fabriquePeuple</b> la fabrique de peuple
          */
         private FabriquePeuple fabriquePeuple;
@@ -106,6 +129,11 @@ namespace SmallWorld
          * @brief Attribut <b>carte</b> la carte associée à la partie
          */
         private Carte carte;
+
+        /**
+         * @brief Attribut <b>strategie</b> la strategie à adopter
+         */
+        private StrategieCarte strategie;
 
         /**
          * @fn FabriquePeuple
@@ -156,12 +184,33 @@ namespace SmallWorld
         }
 
         /**
+         * @fn Strategie
+         * @brief Properties pour l'attribut strategie
+         */
+        public StrategieCarte Strategie
+        {
+            get
+            {
+                return strategie;
+            }
+            set
+            {
+                strategie = value;
+            }
+        }
+        /**
          * @fn ajouterCarte()
          * @brief Ajout de la carte pour la construction d'une partie.
          * 
          * @return void
          */
-        public abstract void ajouterCarte();
+        public void ajouterCarte()
+        {
+            List<List<Case>> listeCases;
+            listeCases = Strategie.construire();
+
+            Partie.CartePartie.ListeCases = listeCases;
+        }
 
         /**
          * @fn ajouterJoueur(string nomJoueur, string peuple)
@@ -202,7 +251,10 @@ namespace SmallWorld
          * 
          * @return void
          */
-        public abstract void initialiserNombreTour();
+        public void initialiserNombreTour()
+        {
+            Partie.NbTourRestant = NB_TOUR;
+        }
 
         /**
          * @fn placerUnites()
@@ -243,6 +295,7 @@ namespace SmallWorld
             FabriquePeuple = new FabriquePeuple(); //TODO singleton
             Carte = new Carte();
             Partie = new Partie();
+            Strategie = new StrategieDemo();
         }
 
         /**
@@ -251,23 +304,24 @@ namespace SmallWorld
          * 
          * @return void
          */
-        public override void ajouterCarte()
-        {
-            int i;
-            int j;
-            List<List<Case>> listeCases = new List<List<Case>>();
-            // TODO passer par carte -> strategie.construire
-            for (i = 0; i < NB_CASE; i++)
-            {
-                for (j = 0; j < NB_CASE; j++)
-                {
-                    listeCases[i][j] = new Desert();
-                }
-            }
+        /* public override void ajouterCarte()
+         {
+             int i;
+             int j;
+             List<List<Case>> listeCases = new List<List<Case>>();
+             // TODO passer par carte -> strategie.construire
+             for (i = 0; i < NB_CASE; i++)
+             {
+                 for (j = 0; j < NB_CASE; j++)
+                 {
+                     listeCases[i][j] = new Desert();
+                 }
+             }
 
-            Partie.CartePartie.ListeCases = listeCases;
+             Partie.CartePartie.ListeCases = listeCases;
 
-        }
+         }*/
+        //TODO effacer si besoin
 
         /**
          * @fn initialiserNombreTour
@@ -275,10 +329,11 @@ namespace SmallWorld
          * 
          * @return void
          */
-        public override void initialiserNombreTour()
-        {
-            Partie.NbTourRestant = NB_TOUR;
-        }
+        /* public override void initialiserNombreTour()
+         {
+             Partie.NbTourRestant = NB_TOUR;
+         }*/
+        //TODO effacer si besoin
 
         /**
          * @fn placerUnites()
@@ -322,6 +377,7 @@ namespace SmallWorld
             FabriquePeuple = new FabriquePeuple(); //TODO singleton
             Carte = new Carte();
             Partie = new Partie();
+            Strategie = new StrategiePetite();
         }
 
         /**
@@ -330,23 +386,24 @@ namespace SmallWorld
          * 
          * @return void
          */
-        public override void ajouterCarte()
-        {
-            int i;
-            int j;
-            List<List<Case>> listeCases = new List<List<Case>>();
-            // TODO passer par carte -> strategie.construire
-            for (i = 0; i < NB_CASE; i++)
-            {
-                for (j = 0; j < NB_CASE; j++)
-                {
-                    listeCases[i][j] = new Desert();
-                }
-            }
+        /* public override void ajouterCarte()
+         {
+             int i;
+             int j;
+             List<List<Case>> listeCases = new List<List<Case>>();
+             // TODO passer par carte -> strategie.construire
+             for (i = 0; i < NB_CASE; i++)
+             {
+                 for (j = 0; j < NB_CASE; j++)
+                 {
+                     listeCases[i][j] = new Desert();
+                 }
+             }
 
-            Partie.CartePartie.ListeCases = listeCases;
+             Partie.CartePartie.ListeCases = listeCases;
 
-        }
+         }*/
+        //TODO effacer si besoin
 
         /**
          * @fn initialiserNombreTour
@@ -354,10 +411,11 @@ namespace SmallWorld
          * 
          * @return void
          */
-        public override void initialiserNombreTour()
-        {
-            Partie.NbTourRestant = NB_TOUR;
-        }
+        /* public override void initialiserNombreTour()
+         {
+             Partie.NbTourRestant = NB_TOUR;
+         }*/
+        //TODO effacer si besoin
 
         /**
          * @fn placerUnites()
@@ -401,6 +459,7 @@ namespace SmallWorld
             FabriquePeuple = new FabriquePeuple(); //TODO singleton
             Carte = new Carte();
             Partie = new Partie();
+            Strategie = new StrategieNormale();
         }
 
         /**
@@ -409,23 +468,24 @@ namespace SmallWorld
           * 
           * @return void
           */
-        public override void ajouterCarte()
-        {
-            int i;
-            int j;
-            List<List<Case>> listeCases = new List<List<Case>>();
-            // TODO passer par carte -> strategie.construire
-            for (i = 0; i < NB_CASE; i++)
-            {
-                for (j = 0; j < NB_CASE; j++)
-                {
-                    listeCases[i][j] = new Desert();
-                }
-            }
+        /* public override void ajouterCarte()
+         {
+             int i;
+             int j;
+             List<List<Case>> listeCases = new List<List<Case>>();
+             // TODO passer par carte -> strategie.construire
+             for (i = 0; i < NB_CASE; i++)
+             {
+                 for (j = 0; j < NB_CASE; j++)
+                 {
+                     listeCases[i][j] = new Desert();
+                 }
+             }
 
-            Partie.CartePartie.ListeCases = listeCases;
+             Partie.CartePartie.ListeCases = listeCases;
 
-        }
+         }*/
+        //TODO effacer si besoin
 
         /**
          * @fn initialiserNombreTour
@@ -433,10 +493,11 @@ namespace SmallWorld
          * 
          * @return void
          */
-        public override void initialiserNombreTour()
+        /*public override void initialiserNombreTour()
         {
             Partie.NbTourRestant = NB_TOUR;
-        }
+        }*/
+        //TODO effacer si besoin
 
         /**
          * @fn placerUnites()
