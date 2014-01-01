@@ -22,39 +22,18 @@ namespace Wpf_SmallWorld
     /// </summary>
     public partial class Joueurs : UserControl
     {
-        private string joueur1 ="";
-        private string peuplej1 = "";
-        private string joueur2 = "";
-        private string peuplej2 = "";
+        private string joueur1;
+        private string peuplej1;
+        private string joueur2;
+        private string peuplej2;
 
         public Joueurs()
         {
             InitializeComponent();
-        }
-
-        /// <summary>
-        /// Vérification et création des joueurs passage au choix de la carte
-        /// </summary>
-        private void joueurSuivant(object sender, RoutedEventArgs e)
-        {
-            CreateurPartie createur = new CreateurPartie();
-
-            joueur1 = NomJ1.Text;
-            joueur2 = NomJ2.Text;
-
-            if (joueur1 == "" || peuplej1 == "" || joueur2=="" || peuplej2=="")
-            {
-                MessageBox.Show("Vous n'avez pas donné tous les paramètres");
-            }
-            else
-            {
-                createur.ajoutJoueur(joueur1,peuplej1);
-                createur.ajoutJoueur(joueur2,peuplej2);
-                // voir si pas mieux, ex : parent.
-                MainWindow parent = (Application.Current.MainWindow as MainWindow);
-                parent.joueurs.Visibility = Visibility.Hidden;
-                parent.carte.Visibility = Visibility.Visible;
-            }
+            joueur1 = "";
+            peuplej1 = "";
+            joueur2 = "";
+            peuplej2 = "";
         }
 
         /// <summary>
@@ -66,7 +45,7 @@ namespace Wpf_SmallWorld
             peuplej1 = peuple.Content.ToString();
             Error1.Visibility = Visibility.Hidden;
 
-// voir si autrement
+            // TODO : voir si autrement ex : enable
             if (peuplej1 == peuplej2)
             {
                 peuple.IsChecked = false;
@@ -88,6 +67,31 @@ namespace Wpf_SmallWorld
                 peuple.IsChecked = false;
                 peuplej2 = "";
                 Error2.Visibility = Visibility.Visible;
+            }
+        }
+
+        /// <summary>
+        /// Vérification et création des joueurs et passage au choix de la carte
+        /// </summary>
+        private void joueurSuivant(object sender, RoutedEventArgs e)
+        {
+            CreateurPartie createur = new CreateurPartie();
+
+            joueur1 = NomJ1.Text;
+            joueur2 = NomJ2.Text;
+
+            if (joueur1 == "" || peuplej1 == "" || joueur2 == "" || peuplej2 == "")
+            {
+                MessageBox.Show("Vous n'avez pas donné tous les paramètres");
+            }
+            else
+            {
+                createur.ajoutJoueur(joueur1, peuplej1);
+                createur.ajoutJoueur(joueur2, peuplej2);
+                // TODO : voir si pas mieux, ex : parent.
+                MainWindow parent = (Application.Current.MainWindow as MainWindow);
+                parent.joueurs.Visibility = Visibility.Hidden;
+                parent.carte.Visibility = Visibility.Visible;
             }
         }
     }

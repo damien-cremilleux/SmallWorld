@@ -22,35 +22,11 @@ namespace Wpf_SmallWorld
     /// </summary>
     public partial class Carte : UserControl
     {
-        private string TailleCarte="";
+        private string TailleCarte = "";
 
         public Carte()
         {
             InitializeComponent();
-        }
-
-        /// <summary>
-        /// Lancement de la partie, creation de la carte et de la partie
-        /// </summary>
-        private void LancerPartie(object sender, RoutedEventArgs e)
-        {
-            CreateurPartie createur = new CreateurPartie();
-
-            if (TailleCarte == "")
-            {
-                MessageBox.Show("Vous n'avez pas donné tous les paramètres");
-            }
-            else
-            {
-                // Création de la carte
-                createur.TypePartie = TailleCarte; // ok ? 
-             //   createur.construire();
-
-                // Lancement du jeu 
-                MainWindow parent = (Application.Current.MainWindow as MainWindow);
-                PageJeu jeu = new PageJeu();
-                parent.Content = jeu;
-            }
         }
 
         /// <summary>
@@ -70,6 +46,31 @@ namespace Wpf_SmallWorld
             MainWindow parent = (Application.Current.MainWindow as MainWindow);
             parent.joueurs.Visibility = Visibility.Visible;
             parent.carte.Visibility = Visibility.Hidden;
+        }
+
+        /// <summary>
+        /// Lancement de la partie, creation de la carte et de la partie
+        /// </summary>
+        private void LancerPartie(object sender, RoutedEventArgs e)
+        {
+            CreateurPartie createur = new CreateurPartie();
+            Partie partie = new Partie();
+
+            if (TailleCarte == "")
+            {
+                MessageBox.Show("Vous n'avez pas donné tous les paramètres");
+            }
+            else
+            {
+                // Création de la partie
+                createur.TypePartie = TailleCarte;
+                partie = createur.construire();
+
+                // Lancement du jeu 
+                MainWindow parent = (Application.Current.MainWindow as MainWindow);
+                PageJeu jeu = new PageJeu(partie);
+                parent.Content = jeu;
+            }
         }
 
     }

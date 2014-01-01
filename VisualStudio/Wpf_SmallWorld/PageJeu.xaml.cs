@@ -11,7 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
-using System.Windows.Shapes
+using System.Windows.Shapes;
 
 using Wrapper;
 using SmallWorld;
@@ -23,15 +23,14 @@ namespace Wpf_SmallWorld
     /// </summary>
     public partial class PageJeu : Page
     {
-        WrapperAlgo w;
-        Partie partie;
+        private WrapperAlgo w;
+        private Partie partie;
 
-        unsafe public PageJeu()
+        unsafe public PageJeu(Partie partie)
         {
             InitializeComponent();
             w = new WrapperAlgo();
-            partie = new Partie();
-
+            this.partie = partie;
 
             /*
             int taille = 10;
@@ -58,7 +57,7 @@ namespace Wpf_SmallWorld
             }
             MessageBox.Show(res2);
             */
-            
+
         }
 
         /// <summary>
@@ -66,19 +65,35 @@ namespace Wpf_SmallWorld
         /// </summary>
         unsafe private void Window_Loaded(object sender, RoutedEventArgs e)
         {
+            //Test
+            string nom1 = "Damien";
+            string p1 = "peup1";
+
+            string nom2 = "lau";
+            string p2 = "peup2";
+            Joueur j1 = new Joueur(nom1, p1);
+            Joueur j2 = new Joueur(nom2, p2);
+
+            List<Joueur> joueurs = new List<Joueur>();
+            joueurs.Add(j1);
+            joueurs.Add(j2);
             //Initialisation des données joueurs
-            foreach (Joueur joueur in partie.ListeJoueurs)
+           
+            //foreach (Joueur joueur in partie.ListeJoueurs)
+            foreach (Joueur joueur in joueurs)
             {
                 InfoJoueur j = new InfoJoueur(joueur);
                 InfoJoueurs.Children.Add(j);
             }
+             // \test
+
 
             //Initialisation du nombre de tour
             NbTour.Text += " " + partie.NbTourRestant;
 
             // Initialisation de la carte
             int taille = 10; // TODO : partie.CartePartie.TailleCarte;
-           
+
             int** TCarte = w.genererCarte(taille);
 
             for (int c = 0; c < taille; c++)
@@ -104,7 +119,7 @@ namespace Wpf_SmallWorld
             }
 
             // Initilisaton des unités
-                    // Mettre une image spéciale quand plusieurs unités sur la même case ?
+            // Mettre une image spéciale quand plusieurs unités sur la même case ?
             int* Coord = w.placerJoueur(TCarte, taille);
 
             Grid.SetColumn(unitj1, Coord[0]);
@@ -131,7 +146,7 @@ namespace Wpf_SmallWorld
         private unsafe Rectangle createRectangle(int c, int l, Case Case)
         {
             var rectangle = new Rectangle();
-         
+
             if (Case is InterEau)
                 rectangle.Fill = Brushes.SlateBlue;
             if (Case is InterForet)
@@ -153,9 +168,12 @@ namespace Wpf_SmallWorld
             Grid.SetRow(rectangle, l);
             rectangle.Tag = Case; // Récupère le type de la case mais : SmallWorld.montagne ....
 
-              // enregistrement d'un écouteur d'evt sur le rectangle : 
-              // source = rectangle / evt = MouseLeftButtonDown / délégué = rectangle_MouseLeftButtonDown
+            // enregistrement d'écouteurs d'evt sur le rectangle : 
+            // source = rectangle / evt = MouseLeftButtonDown / délégué = rectangle_MouseLeftButtonDown
             rectangle.MouseLeftButtonDown += new MouseButtonEventHandler(rectangle_MouseLeftButtonDown);
+
+            // source = rectangle / evt = MouseRightButtonDown / délégué = rectangle_MouseRightButtonDown
+            rectangle.MouseRightButtonDown += new MouseButtonEventHandler(rectangle_MouseRightButtonDown);
 
             return rectangle;
 
@@ -183,22 +201,84 @@ namespace Wpf_SmallWorld
         /// <param name="e"> l'evt </param>
         private void rectangle_MouseLeftButtonDown(object sender, RoutedEventArgs e)
         {
+
+            // Récuperation des données du rectangle selectionné
             var rectangle = sender as Rectangle;
             var cas = rectangle.Tag as Case;
-
             int column = Grid.GetColumn(rectangle);
             int row = Grid.GetRow(rectangle);
 
+            // Maj de la selection sur le rectangle selectionné
             Grid.SetColumn(selectionRectangle, column);
             Grid.SetRow(selectionRectangle, row);
             selectionRectangle.Tag = cas;
             selectionRectangle.Visibility = System.Windows.Visibility.Visible;
 
-            // récuperer la liste des unités présentes sur la case 
-          //  InfoUnite.ItemsSource = ;
-            
-            e.Handled = true;
+            InfoUnites.Children.Clear();
+            ListBox a = new ListBox();
+            a.SelectionChanged += SelectUnite;
 
+            // TODO : tester avec la creation d'une unité mais impossible pour le moment
+            string nom1 = "Damien";
+            string p1 = "peup1";
+
+            string nom2 = "lau";
+            string p2 = "peup2";
+            Joueur j1 = new Joueur(nom1, p1);
+            Joueur j2 = new Joueur(nom2, p2);
+
+            List<Joueur> joueurs = new List<Joueur>();
+            joueurs.Add(j1);
+            joueurs.Add(j2);
+
+            List<InfoJoueur> r = new List<InfoJoueur>();
+
+            foreach (Joueur joueur in joueurs)
+            {
+                InfoJoueur j = new InfoJoueur(joueur);
+                r.Add(j);
+            }
+
+            a.ItemsSource = r;
+            InfoUnites.Children.Add(a);
+
+            e.Handled = true;
+        }
+
+        /// <summary>
+        /// Délégué : réponse à l'evt selection d'une unité
+        /// </summary>
+        /// <param name="sender"> le User Control de l'unité </param>
+        /// <param name="args"> l'evt </param>
+        void SelectUnite(object sender, SelectionChangedEventArgs args)
+        {
+            var lbi = ((sender as ListBox).SelectedItem as InfoJoueur);
+            tb.Text = "   You selected " + lbi.Test + ".";
+        }
+
+
+        /// <summary>
+        /// Délégué : réponse à l'evt click droit sur le rectangle, déplacement d'une unité si elle est selectionnée
+        /// </summary>
+        /// <param name="sender"> le rectangle (la source) </param>
+        /// <param name="e"> l'evt </param>
+        private void rectangle_MouseRightButtonDown(object sender, RoutedEventArgs e)
+        {
+
+            // Récuperation des données du rectangle selectionné
+            var rectangle = sender as Rectangle;
+            var cas = rectangle.Tag as Case;
+            int column = Grid.GetColumn(rectangle);
+            int row = Grid.GetRow(rectangle);
+
+            // Maj de la selection sur le rectangle selectionné
+            Grid.SetColumn(selectionRectangle, column);
+            Grid.SetRow(selectionRectangle, row);
+            selectionRectangle.Tag = cas;
+
+            // TODO
+
+            e.Handled = true;
         }
 
 
@@ -211,6 +291,39 @@ namespace Wpf_SmallWorld
         {
             updateUnit();
             // changement de joueur en cours
+        }
+
+
+
+
+        //Interaction du menu
+
+        /// <summary>
+        /// Rejouer une partie
+        /// </summary>
+        private void Recharger(object sender, RoutedEventArgs e)
+        {
+            MainWindow parent = (Application.Current.MainWindow as MainWindow);
+            PageJeu jeu = new PageJeu(partie);
+            parent.Content = jeu;
+        }
+
+        /// <summary>
+        /// Rejouer une partie
+        /// </summary>
+        private void Sauvegarder(object sender, RoutedEventArgs e)
+        {
+        }
+
+
+        /// <summary>
+        /// Quitter l'application
+        /// </summary>
+        private void Quitter(object sender, RoutedEventArgs e)
+        {
+            // vérification, enregistrement
+            MainWindow parent = (Application.Current.MainWindow as MainWindow);
+            parent.Close();
         }
     }
 }
