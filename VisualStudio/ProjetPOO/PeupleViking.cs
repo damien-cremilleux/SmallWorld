@@ -13,12 +13,12 @@ namespace SmallWorld
     {
         public PeupleViking()
         {
-            throw new System.NotImplementedException();
+           // throw new System.NotImplementedException();
         }
     
-        new public InterUnite creerUnite()
+        /*new public InterUnite creerUnite()
         {
-            throw new NotImplementedException();
-        }
+            //throw new NotImplementedException();
+        }*/
     }
 }

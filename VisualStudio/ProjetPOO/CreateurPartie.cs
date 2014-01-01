@@ -105,7 +105,7 @@ namespace SmallWorld
                 if (value == "normale")
                 {
                     typePartie = value;
-                    MonteurPartie = new MonteurPartiePetite();
+                    MonteurPartie = new MonteurPartieNormale();
                 }
             }
         }

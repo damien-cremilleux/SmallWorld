@@ -85,6 +85,22 @@ namespace SmallWorld
         }
 
         /**
+        * @fn NomJ
+        * @brief Properties pour l'attribut nomJ
+        */
+        public string NomJ
+        {
+            get
+            {
+                return nomJ;
+            }
+            set
+            {
+                nomJ = value;
+            }
+        }
+
+        /**
          * @fn ListeUnites
          * @brief Properties pour l'attribut listeUnites
          */

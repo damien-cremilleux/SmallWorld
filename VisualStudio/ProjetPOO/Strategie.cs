@@ -5,7 +5,7 @@
  * @author <a href="mailto:damien.cremilleux@insa-rennes.fr">Damien Crémilleux</a>
  * @author <a href="mailto:lauriane.holy@insa-rennes.fr">Lauriane Holy</a>
  * 
- * @date 31/12/2013
+ * @date 01/01/2014
  * @version 0.1
  */
 using System;
@@ -13,6 +13,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+
+using Wrapper;
 
 namespace SmallWorld
 {
@@ -33,14 +35,70 @@ namespace SmallWorld
      * @class StrategieCarte
      * @brief classe abstraite pour la stratégie
      */
-    public abstract class StrategieCarte : InterStrategieCarte
+    public unsafe abstract class StrategieCarte : InterStrategieCarte
     {
 
-    /**
-     * @fn construire()
-     * @brief Construit une nouvelle Carte
-     */
-        public abstract List<List<Case>> construire();
+        /**
+         * @brief Attribut <b>TAILLE</b> indiquant la taille de la carte
+         */
+        private int taille;
+
+        /**
+         * @fn Taille
+         * @brief Properties pour l'attribut taille
+         */
+        public abstract int Taille
+        {
+            get;
+        }
+
+        /**
+         * @fn construire()
+         * @brief Construit une nouvelle Carte
+         */
+        public unsafe List<List<Case>> construire()
+        {
+            int i, j, k;
+
+            WrapperAlgo wrapperAlgo = new WrapperAlgo();
+            int** carte;
+            carte = wrapperAlgo.genererCarte(Taille);
+
+            List<List<Case>> carteRes = new List<List<Case>>();
+
+            for (i = 0; i < Taille; i++)
+            {
+                carteRes.Add(new List<Case>());
+
+                for (j = 0; j < Taille; j++)
+                {
+                    k = carte[i][j];
+
+                    switch (k)
+                    {
+                        case 0:
+                            carteRes[i].Add(FabriqueCase.Instance_FabCase.obtenirDesert());
+                            break;
+                        case 1:
+                            carteRes[i].Add(FabriqueCase.Instance_FabCase.obtenirEau());
+                            break;
+                        case 2:
+                            carteRes[i].Add(FabriqueCase.Instance_FabCase.obtenirForet());
+                            break;
+                        case 3:
+                            carteRes[i].Add(FabriqueCase.Instance_FabCase.obtenirMontagne());
+                            break;
+                        case 4:
+                            carteRes[i].Add(FabriqueCase.Instance_FabCase.obtenirPlaine());
+                            break;
+                        default:
+                            break;
+                    }
+                }
+            }
+
+            return carteRes;
+        }
     }
 
     /**
@@ -48,7 +106,7 @@ namespace SmallWorld
      * @brief interface pour une stratégie démo
      */
     public interface InterStrategieDemo : InterStrategieCarte
-    {    
+    {
         /**
          * @fn construire
          * @brief contruit une carte de taille démo
@@ -57,7 +115,7 @@ namespace SmallWorld
          */
         new List<List<Case>> construire();
     }
-    
+
     /**
      * @interface InterStrategiePetite
      * @brief interface pour une stratégie petite
@@ -72,7 +130,7 @@ namespace SmallWorld
          */
         new List<List<Case>> construire();
     }
-    
+
     /**
      * @interface InterStrategieNormale
      * @brief interface pour une stratégie normale
@@ -92,8 +150,26 @@ namespace SmallWorld
      * @class StrategieDemo
      * @brief classe pour une stratégie démo
      */
-    public class StrategieDemo : StrategieCarte, SmallWorld.InterStrategieDemo
+    public class StrategieDemo : StrategieCarte, InterStrategieDemo
     {
+
+        /**
+         * @brief Attribut <b>TAILLE</b> indiquant la taille de la carte
+         */
+        private int taille = 5;
+
+        /**
+         * @fn Taille
+         * @brief Properties pour l'attribut taille
+         */
+        public override int Taille
+        {
+            get
+            {
+                return taille;
+            }
+        }
+
         /**
          * @fn StrategieDemo()
          * @brief Constructeur d'une stratégie de type démo
@@ -101,7 +177,7 @@ namespace SmallWorld
          * @return une nouvelle stratégie
          */
         public StrategieDemo()
-        {      
+        {
         }
 
         /**
@@ -110,18 +186,75 @@ namespace SmallWorld
          * 
          * @return la carte demandée
          */
-        public override List<List<Case>> construire()
-        {
-            throw new NotImplementedException();
-        }
+        /* public unsafe override List<List<Case>> construire()
+         {
+             int taille = 5;
+             int i, j, k;
+
+             WrapperAlgo wrapperAlgo = new WrapperAlgo();
+             int** carte;
+             carte = wrapperAlgo.genererCarte(5);
+
+             List<List<Case>> carteRes = new List<List<Case>>();
+
+             for (i = 0; i < taille; i++)
+             {
+                 for (j = 0; j < taille; j++)
+                 {
+                     k = carte[i][j];
+
+                     switch (k)
+                     {
+                         case 0:
+                             carteRes[i][j] = FabriqueCase.Instance_FabCase.obtenirDesert();
+                             break;
+                         case 1:
+                             carteRes[i][j] = FabriqueCase.Instance_FabCase.obtenirEau();
+                             break;
+                         case 2:
+                             carteRes[i][j] = FabriqueCase.Instance_FabCase.obtenirForet();
+                             break;
+                         case 3:
+                             carteRes[i][j] = FabriqueCase.Instance_FabCase.obtenirMontagne();
+                             break;
+                         case 4:
+                             carteRes[i][j] = FabriqueCase.Instance_FabCase.obtenirPlaine();
+                             break;
+                         default:
+                             break;
+                     }
+                 }
+             }
+
+             return carteRes;
+         }*/
+        //TODO Supprimer si nécessaire
     }
 
     /**
      * @class StrategiePetite
      * @brief classe pour une stratégie petite
      */
-    public class StrategiePetite : StrategieCarte, SmallWorld.InterStrategiePetite
+    public class StrategiePetite : StrategieCarte, InterStrategiePetite
     {
+
+        /**
+         * @brief Attribut <b>taille</b> indiquant la taille de la carte
+         */
+        private int taille = 10;
+
+        /**
+       * @fn Taille
+       * @brief Properties pour l'attribut taille
+       */
+        public override int Taille
+        {
+            get
+            {
+                return taille;
+            }
+        }
+
         /**
          * @fn StrategiePetite()
          * @brief Constructeur d'une stratégie de type petite
@@ -138,18 +271,74 @@ namespace SmallWorld
          * 
          * @return la carte demandée
          */
-        public override List<List<Case>> construire()
+        /*public unsafe override List<List<Case>> construire()
         {
-            throw new NotImplementedException();
-        }
+            int taille = 10;
+            int i, j, k;
+
+            WrapperAlgo wrapperAlgo = new WrapperAlgo();
+            int** carte;
+            carte = wrapperAlgo.genererCarte(taille);
+
+            List<List<Case>> carteRes = new List<List<Case>>();
+
+            for (i = 0; i < taille; i++)
+            {
+                for (j = 0; j < taille; j++)
+                {
+                    k = carte[i][j];
+
+                    switch (k)
+                    {
+                        case 0:
+                            carteRes[i][j] = FabriqueCase.Instance_FabCase.obtenirDesert();
+                            break;
+                        case 1:
+                            carteRes[i][j] = FabriqueCase.Instance_FabCase.obtenirEau();
+                            break;
+                        case 2:
+                            carteRes[i][j] = FabriqueCase.Instance_FabCase.obtenirForet();
+                            break;
+                        case 3:
+                            carteRes[i][j] = FabriqueCase.Instance_FabCase.obtenirMontagne();
+                            break;
+                        case 4:
+                            carteRes[i][j] = FabriqueCase.Instance_FabCase.obtenirPlaine();
+                            break;
+                        default:
+                            break;
+                    }
+                }
+            }
+
+            return carteRes;
+        }*/
+        //TODO Supprimer si besoin
     }
 
     /**
      * @class StrategieNormale
      * @brief classe pour une stratégie normale
      */
-    public class StrategieNormale : StrategieCarte, SmallWorld.InterStrategieNormale
+    public class StrategieNormale : StrategieCarte, InterStrategieNormale
     {
+
+        /**
+         * @brief Attribut <b>taille</b> indiquant la taille de la carte
+         */
+        private int taille = 15;
+
+        /**
+       * @fn Taille
+       * @brief Properties pour l'attribut taille
+       */
+        public override int Taille
+        {
+            get
+            {
+                return taille;
+            }
+        }
         /**
          * @fn StrategieNormale()
          * @brief Constructeur d'une stratégie de type normale
@@ -166,10 +355,10 @@ namespace SmallWorld
          * 
          * @return la carte demandée
          */
-        public override List<List<Case>> construire()
-        {
-            throw new NotImplementedException();
-        }
+        /*   public override List<List<Case>> construire()
+           {
+               throw new NotImplementedException();
+           }*/
     }
 
 }

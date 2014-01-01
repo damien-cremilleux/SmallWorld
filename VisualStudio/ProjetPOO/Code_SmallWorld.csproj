@@ -20,6 +20,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -28,6 +29,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -44,7 +46,6 @@
     <Compile Include="Coordonnees.cs" />
     <Compile Include="CreateurPartie.cs" />
     <Compile Include="FabriqueCase.cs" />
-    <Compile Include="FabriqueJeu.cs" />
     <Compile Include="FabriqueNain.cs" />
     <Compile Include="FabriquePeuple.cs" />
     <Compile Include="FabriqueViking.cs" />
@@ -66,6 +67,7 @@
     <Compile Include="Unite.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="CreateurPartie_construire_1.sequencediagram" />
     <None Include="fabrique.cd" />
     <None Include="Global.cd" />
     <None Include="Monteur.cd" />
@@ -76,6 +78,17 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <None Include="Strategie.cd" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Wrapper_SmallWorld\Wrapper_SmallWorld.vcxproj">
+      <Project>{4ccf6e63-00d6-479d-a393-6ad600917dfd}</Project>
+      <Name>Wrapper_SmallWorld</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="CreateurPartie_construire_1.sequencediagram.layout">
+      <DependentUpon>CreateurPartie_construire_1.sequencediagram</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
