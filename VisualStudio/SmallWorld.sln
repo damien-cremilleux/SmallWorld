@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wpf_SmallWorld", "Wpf_Small
 		{F89C3FAF-2529-4189-BD90-D8B5ED0324BD} = {F89C3FAF-2529-4189-BD90-D8B5ED0324BD}
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTest_SmallWorld", "UnitTest_SmallWorld\UnitTest_SmallWorld.csproj", "{E35BDFA8-FED8-4884-9ABA-1C8932ACB22A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -81,6 +83,16 @@ Global
 		{9F74D121-7917-49B5-91A1-F9AD9D4FF627}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{9F74D121-7917-49B5-91A1-F9AD9D4FF627}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{9F74D121-7917-49B5-91A1-F9AD9D4FF627}.Release|Win32.ActiveCfg = Release|Any CPU
+		{E35BDFA8-FED8-4884-9ABA-1C8932ACB22A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E35BDFA8-FED8-4884-9ABA-1C8932ACB22A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E35BDFA8-FED8-4884-9ABA-1C8932ACB22A}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{E35BDFA8-FED8-4884-9ABA-1C8932ACB22A}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{E35BDFA8-FED8-4884-9ABA-1C8932ACB22A}.Debug|Win32.ActiveCfg = Debug|Any CPU
+		{E35BDFA8-FED8-4884-9ABA-1C8932ACB22A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E35BDFA8-FED8-4884-9ABA-1C8932ACB22A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E35BDFA8-FED8-4884-9ABA-1C8932ACB22A}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{E35BDFA8-FED8-4884-9ABA-1C8932ACB22A}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{E35BDFA8-FED8-4884-9ABA-1C8932ACB22A}.Release|Win32.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
