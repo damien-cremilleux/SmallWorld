@@ -38,9 +38,12 @@ namespace Wpf_SmallWorld
             this.test = 1;
             InitializeComponent();
             // Récuperation des données joueur
-         // Nom.Text += joueur.nomJ;  // TODO
+            Nom.Text += joueur.NomJ;
             Points.Text += joueur.PointVictoire;
-         // Unite.Text += joueur.NbUnite; // TODO
+            //joueur.ListeUnite.Count();
+            //MessageBox.Show("" + joueur.ListeUnite.Count());
+            //Unite.Text += joueur.ListeUnite.Count();
+
         }
 
 

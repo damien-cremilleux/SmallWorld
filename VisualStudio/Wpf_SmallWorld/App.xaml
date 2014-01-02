@@ -207,9 +207,8 @@
                     <ControlTemplate TargetType="{x:Type RadioButton}">
                         <Border Name="Button" Background="{TemplateBinding Background}">
                             <DockPanel Width="100" Height="80">
-                                <Image DockPanel.Dock="Top" Source="Resources/smallWorld.png" Width="50" Height="30"/>
-                                <!-- <Image DockPanel.Dock="Top" Source="{TemplateBinding Tag}" Width="50" Height="30"/> -->
-                                <ContentPresenter Content="{TemplateBinding Tag}" Height="20" DockPanel.Dock="Bottom" VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
+                                <!--<Image DockPanel.Dock="Top" Source="{Binding Tag}" Width="50" Height="30"/>-->
+                                <ContentPresenter Content="{TemplateBinding Content}" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                             </DockPanel>
                         </Border>
                         <ControlTemplate.Triggers>

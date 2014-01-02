@@ -40,10 +40,9 @@
                         <StackPanel>
                             <Label Content="Choix du peuple :" Margin="5,0,0,0"/>
                             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                            <RadioButton Style="{StaticResource Radio}" Tag="Resources/smallWorld.png" Name="peupleNain" Checked="peuple1">Nains</RadioButton>
-                                <!--    TODO : <Expander Header="Nains" ></Expander>-->
-                            <RadioButton Name="peupleGaulois" Tag="Resources/smallWorld.png" Style="{StaticResource Radio}" Checked="peuple1">Gaulois</RadioButton>
-                            <RadioButton Name="puepleVikings" Style="{StaticResource RadioVikings}" Checked="peuple1">Vikings</RadioButton>
+                            <RadioButton Name="peupleNain" Style="{StaticResource Radio}" FontSize="20" Checked="peuple1">Nains</RadioButton>
+                            <RadioButton Name="peupleGaulois" Style="{StaticResource Radio}" FontSize="20" Checked="peuple1">Gaulois</RadioButton>
+                            <RadioButton Name="puepleVikings" Style="{StaticResource Radio}" FontSize="20" Checked="peuple1">Vikings</RadioButton>
                         </StackPanel>
                         <TextBlock Name="Error1" HorizontalAlignment="Center" Foreground="Red" FontSize="16" Visibility="Hidden" >Ce peuple a déjà été pris</TextBlock>
                     </StackPanel>
@@ -71,9 +70,9 @@
                             <Label Content="Choix du peuple :" Margin="5,0,0,0"/>
                             <StackPanel Margin="20,0,0,5" Orientation="Horizontal" HorizontalAlignment="Center">
                                 <!-- binding pour isenable ? -->
-                            <RadioButton Style="{StaticResource RadioNains}" Name="peupleNain2" Checked="peuple2">Nains</RadioButton>
-                            <RadioButton Name="pepleGaulois" Style="{StaticResource RadioGaulois}" Checked="peuple2">Gaulois</RadioButton>
-                            <RadioButton Name="peupleVickings" Style="{StaticResource RadioVikings}" Checked="peuple2">Vikings</RadioButton>
+                            <RadioButton Name="peupleNains" Style="{StaticResource Radio}" FontSize="20" Checked="peuple2">Nains</RadioButton>
+                            <RadioButton Name="pepleGaulois" Style="{StaticResource Radio}" FontSize="20" Checked="peuple2">Gaulois</RadioButton>
+                            <RadioButton Name="peupleVickings" Style="{StaticResource Radio}" FontSize="20" Checked="peuple2">Vikings</RadioButton>
                             </StackPanel>
                         <TextBlock Name="Error2" HorizontalAlignment="Center" Foreground="Red" FontSize="16" Visibility="Hidden" >Ce peuple a déjà été pris</TextBlock>
                     </StackPanel>

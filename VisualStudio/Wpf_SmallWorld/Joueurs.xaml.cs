@@ -75,8 +75,6 @@ namespace Wpf_SmallWorld
         /// </summary>
         private void joueurSuivant(object sender, RoutedEventArgs e)
         {
-            CreateurPartie createur = new CreateurPartie();
-
             joueur1 = NomJ1.Text;
             joueur2 = NomJ2.Text;
 
@@ -86,10 +84,10 @@ namespace Wpf_SmallWorld
             }
             else
             {
-                createur.ajoutJoueur(joueur1, peuplej1);
-                createur.ajoutJoueur(joueur2, peuplej2);
                 // TODO : voir si pas mieux, ex : parent.
                 MainWindow parent = (Application.Current.MainWindow as MainWindow);
+                parent.ajoutJoueur(joueur1, peuplej1);
+                parent.ajoutJoueur(joueur2, peuplej2);
                 parent.joueurs.Visibility = Visibility.Hidden;
                 parent.carte.Visibility = Visibility.Visible;
             }

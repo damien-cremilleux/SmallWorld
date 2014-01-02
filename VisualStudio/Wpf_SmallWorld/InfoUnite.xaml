@@ -8,7 +8,7 @@
 
     <StackPanel>
         <TextBlock Name="PointVie">
-            Nombre de point de vie :
+            Point de vie :
         </TextBlock>
         <TextBlock Name="PointDeplacement">
                 Point de déplacement :

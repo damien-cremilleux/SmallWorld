@@ -90,19 +90,19 @@ namespace SmallWorld
             }
             set //le monteur partie est automatiquement mis à jour
             {
-                if (value == "demo")
+                if (value == "Démo")
                 {
                     typePartie = value;
                     MonteurPartie = new MonteurPartieDemo();
                 }
 
-                if (value == "petite")
+                if (value == "Petite")
                 {
                     typePartie = value;
                     MonteurPartie = new MonteurPartiePetite();
                 }
 
-                if (value == "normale")
+                if (value == "Normale")
                 {
                     typePartie = value;
                     MonteurPartie = new MonteurPartieNormale();

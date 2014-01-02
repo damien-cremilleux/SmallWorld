@@ -12,6 +12,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+using SmallWorld;
+
 namespace Wpf_SmallWorld
 {
     /// <summary>
@@ -19,9 +21,14 @@ namespace Wpf_SmallWorld
     /// </summary>
     public partial class MainWindow : Window
     {
+        private CreateurPartie createur;
+        private Partie partie;
+
         public MainWindow()
         {
             InitializeComponent();
+            createur = new CreateurPartie();
+            partie = new Partie();
         }
 
         private void CreerPartie(object sender, RoutedEventArgs e)
@@ -34,6 +41,23 @@ namespace Wpf_SmallWorld
         {
             this.joueurs.Visibility = Visibility.Collapsed;
             this.carte.Visibility = Visibility.Collapsed;
+            
+            //TODO
+            // Configure open file dialog box
+            Microsoft.Win32.OpenFileDialog dlg = new Microsoft.Win32.OpenFileDialog();
+            dlg.FileName = "Sauvegarde"; // Default file name
+            dlg.DefaultExt = ".txt"; // Default file extension
+            dlg.Filter = "Text documents (.txt)|*.txt"; // Filter files by extension
+
+            // Show open file dialog box
+            Nullable<bool> result = dlg.ShowDialog();
+
+            // Process open file dialog box results
+            if (result == true)
+            {
+                // Open document
+                string filename = dlg.FileName;
+            }
         }
 
         private void Quit(object sender, RoutedEventArgs e)
@@ -41,5 +65,20 @@ namespace Wpf_SmallWorld
             this.Close();
         }
 
+        public void ajoutJoueur(string nom, string peuple)
+        {
+            createur.ajoutJoueur(nom, peuple);
+        }
+
+        public void ajoutCarte(string taille)
+        {
+            createur.TypePartie = taille;
+        }
+
+        public Partie construirePartie()
+        {
+            partie = createur.construire();
+            return partie;
+        }
     }
 }

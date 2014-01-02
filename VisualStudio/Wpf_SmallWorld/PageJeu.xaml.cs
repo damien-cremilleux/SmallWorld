@@ -31,7 +31,6 @@ namespace Wpf_SmallWorld
             InitializeComponent();
             w = new WrapperAlgo();
             this.partie = partie;
-
             /*
             int taille = 10;
             int** test = w.genererCarte(taille);
@@ -65,34 +64,19 @@ namespace Wpf_SmallWorld
         /// </summary>
         unsafe private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            //Test
-            string nom1 = "Damien";
-            string p1 = "peup1";
 
-            string nom2 = "lau";
-            string p2 = "peup2";
-            Joueur j1 = new Joueur(nom1, p1);
-            Joueur j2 = new Joueur(nom2, p2);
-
-            List<Joueur> joueurs = new List<Joueur>();
-            joueurs.Add(j1);
-            joueurs.Add(j2);
             //Initialisation des données joueurs
-           
-            //foreach (Joueur joueur in partie.ListeJoueurs)
-            foreach (Joueur joueur in joueurs)
+            foreach (Joueur joueur in partie.ListeJoueurs)
             {
                 InfoJoueur j = new InfoJoueur(joueur);
                 InfoJoueurs.Children.Add(j);
             }
-             // \test
-
 
             //Initialisation du nombre de tour
             NbTour.Text += " " + partie.NbTourRestant;
 
             // Initialisation de la carte
-            int taille = 10; // TODO : partie.CartePartie.TailleCarte;
+            int taille = partie.CartePartie.TailleCarte;
 
             int** TCarte = w.genererCarte(taille);
 
@@ -215,25 +199,15 @@ namespace Wpf_SmallWorld
             selectionRectangle.Visibility = System.Windows.Visibility.Visible;
 
             InfoUnites.Children.Clear();
+            InfoCase.Visibility = Visibility.Visible;
             ListBox a = new ListBox();
             a.SelectionChanged += SelectUnite;
 
             // TODO : tester avec la creation d'une unité mais impossible pour le moment
-            string nom1 = "Damien";
-            string p1 = "peup1";
-
-            string nom2 = "lau";
-            string p2 = "peup2";
-            Joueur j1 = new Joueur(nom1, p1);
-            Joueur j2 = new Joueur(nom2, p2);
-
-            List<Joueur> joueurs = new List<Joueur>();
-            joueurs.Add(j1);
-            joueurs.Add(j2);
 
             List<InfoJoueur> r = new List<InfoJoueur>();
 
-            foreach (Joueur joueur in joueurs)
+            foreach (Joueur joueur in partie.ListeJoueurs)
             {
                 InfoJoueur j = new InfoJoueur(joueur);
                 r.Add(j);
@@ -313,6 +287,24 @@ namespace Wpf_SmallWorld
         /// </summary>
         private void Sauvegarder(object sender, RoutedEventArgs e)
         {
+            //TODO 
+
+            // Configure save file dialog box
+            Microsoft.Win32.SaveFileDialog dlg = new Microsoft.Win32.SaveFileDialog();
+            dlg.FileName = "Sauvegarde"; // Default file name
+            dlg.DefaultExt = ".text"; // Default file extension
+            dlg.Filter = "Text documents (.txt)|*.txt"; // Filter files by extension
+
+            // Show save file dialog box
+            Nullable<bool> result = dlg.ShowDialog();
+
+            // Process save file dialog box results
+            if (result == true)
+            {
+                // Save document
+                string filename = dlg.FileName;
+            }
+
         }
 
 
@@ -322,8 +314,29 @@ namespace Wpf_SmallWorld
         private void Quitter(object sender, RoutedEventArgs e)
         {
             // vérification, enregistrement
+            string messageBoxText = "Voulez-vous enregistrer la partie ?";
+            string caption = "Small World";
+            MessageBoxButton button = MessageBoxButton.YesNoCancel;
+            MessageBoxImage icon = MessageBoxImage.Warning;
+            MessageBoxResult result = MessageBox.Show(messageBoxText, caption, button, icon);
+
             MainWindow parent = (Application.Current.MainWindow as MainWindow);
-            parent.Close();
+            // Process message box results
+            switch (result)
+            {   
+                case MessageBoxResult.Cancel:
+                    break;
+                case MessageBoxResult.Yes:
+                    Sauvegarder(sender, e);
+                    parent.Close();
+                    break;
+                case MessageBoxResult.No:
+                    parent.Close();
+                    break;
+                
+            }
+
+
         }
     }
 }

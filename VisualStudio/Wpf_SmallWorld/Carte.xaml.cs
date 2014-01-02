@@ -23,6 +23,7 @@ namespace Wpf_SmallWorld
     public partial class Carte : UserControl
     {
         private string TailleCarte = "";
+        private Partie partie;
 
         public Carte()
         {
@@ -53,8 +54,6 @@ namespace Wpf_SmallWorld
         /// </summary>
         private void LancerPartie(object sender, RoutedEventArgs e)
         {
-            CreateurPartie createur = new CreateurPartie();
-            Partie partie = new Partie();
 
             if (TailleCarte == "")
             {
@@ -62,12 +61,12 @@ namespace Wpf_SmallWorld
             }
             else
             {
+                MainWindow parent = (Application.Current.MainWindow as MainWindow);
                 // Création de la partie
-                createur.TypePartie = TailleCarte;
-                partie = createur.construire();
+                parent.ajoutCarte(TailleCarte);
+                partie = parent.construirePartie();
 
                 // Lancement du jeu 
-                MainWindow parent = (Application.Current.MainWindow as MainWindow);
                 PageJeu jeu = new PageJeu(partie);
                 parent.Content = jeu;
             }

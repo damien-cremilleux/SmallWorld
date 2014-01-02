@@ -6,13 +6,15 @@
       mc:Ignorable="d" 
       d:DesignHeight="600" d:DesignWidth="900"
 	  Title="PageJeu"
-      Loaded="Window_Loaded">
+      Loaded="Window_Loaded"
+      FontFamily="Segoe UI Light"
+      FontSize="14">
     
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="20"/>
+            <RowDefinition Height="30"/>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="70"/>
+            <RowDefinition Height="auto"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
@@ -21,41 +23,50 @@
 
         <Grid Grid.Row="0" Grid.ColumnSpan="2" Background="#272A3D" >
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-                <Button Width="130" Click="Recharger">Recharger</Button>
-                <Button Width="130" Click="Sauvegarder">Sauvergarder</Button>
-                <Button Width="130" Click="Quitter">Quitter</Button>
+                <Button Width="130" Click="Recharger" Background="Transparent" Foreground="White">Recharger</Button>
+                <Button Width="130" Click="Sauvegarder" Background="Transparent" Foreground="White">Sauvergarder</Button>
+                <Button Width="130" Click="Quitter" Background="Transparent" Foreground="White">Quitter</Button>
             </StackPanel>
         </Grid>
+
+        <!-- Carte -->
+        <ScrollViewer Grid.Column="0" Grid.Row="1" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+            <Grid Grid.Row="1" Name="Carte" HorizontalAlignment="Center" VerticalAlignment="Center" Cursor="Hand">
+                <!-- Définition du rectangle matérialisant la selection -->
+                <Rectangle Style="{StaticResource selectionStyle}" Name="selectionRectangle" />
+                <!-- Chaque case de la grille contient potentiellement un rectangle de selection + une unité (qui ne sera pas sensible aux evts)-->
+                <Ellipse Fill="Gold" Width="10" Height="10" Name="unitj1" Panel.ZIndex="444" IsHitTestVisible="False" />
+                <Ellipse Fill="Pink" Width="10" Height="10" Name="unitj2" Panel.ZIndex="444" IsHitTestVisible="False" />
+            </Grid>
+        </ScrollViewer>
         
-        <Grid Grid.Row="1" Name="Carte" HorizontalAlignment="Center" VerticalAlignment="Center" >
-            <!-- Définition du rectangle matérialisant la selection -->
-            <Rectangle Style="{StaticResource selectionStyle}" Name="selectionRectangle" />
-            <!-- Chaque case de la grille contient potentiellement un rectangle de selection + une unité (qui ne sera pas sensible aux evts)-->
-            <Ellipse Fill="Gold" Width="10" Height="10" Name="unitj1" Panel.ZIndex="444" IsHitTestVisible="False" />
-            <Ellipse Fill="Pink" Width="10" Height="10" Name="unitj2" Panel.ZIndex="444" IsHitTestVisible="False" />
-        </Grid>
-        
-        <!-- Données joueurs -->
-        <Grid Grid.Row="2">
-            <StackPanel Name="InfoJoueurs" Orientation="Horizontal"/>
-        </Grid>
-        
+            <!-- Données joueurs -->
+            <Grid Grid.Row="2">
+                <StackPanel Name="InfoJoueurs" Orientation="Horizontal"/>
+            </Grid>
+
+
+        <!-- Données case -->
+        <ScrollViewer Grid.Column="1" Grid.Row="1" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
         <Grid Grid.Column="1" Grid.Row="1">
-            <StackPanel DataContext="{Binding Tag, ElementName=selectionRectangle}" Visibility="Visible">
+            <StackPanel Margin="0,40" Name="InfoCase" DataContext="{Binding Tag, ElementName=selectionRectangle}" Visibility="Visible">
                     <!-- on associe le contenu du label (Content) par binding : à la tuile selectionnée (Tag) de la source : le rectangle de selection (selectionRectangle) -->
                     <!-- une variante = Factorisation du Binding par le DataContext-->
-                <StackPanel Name="InfoCases" Orientation="Horizontal" Visibility="Visible">
-                    <Border Name="CaseSelect" Background="Red" Width="40" Height="40"/>
-                    <Label Foreground="Purple" Content="{Binding}"/>
+                <StackPanel Orientation="Horizontal">
+                    <Border Name="CaseSelect" CornerRadius="8" Background="Red" Width="40" Height="40"/>
+                    <Label Foreground="red" Content="{Binding}"/>
                 </StackPanel>
                 
-                <StackPanel Name="InfoUnites"></StackPanel>
                 <!-- Liste des unités présentes sur la case -->
+                <StackPanel Name="InfoUnites" Cursor="Hand"></StackPanel>
+       
+                <!--test-->
                 <TextBlock Name="tb"/>
              
             </StackPanel>
 
         </Grid>
+            </ScrollViewer>
         
         
         <Grid Grid.Column="1" Grid.Row="2">
