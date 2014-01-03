@@ -101,13 +101,13 @@ namespace SmallWorld
         {
             switch (peuple)
             {
-                case "gaulois":
+                case Constantes.PEUPLE_GAULOIS:
                     return new PeupleGaulois();
 
-                case "nain":
+                case Constantes.PEUPLE_NAIN:
                     return new PeupleNain();
 
-                case "viking":
+                case Constantes.PEUPLE_VIKING:
                     return new PeupleViking();
 
                 default:

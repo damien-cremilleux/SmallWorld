@@ -73,8 +73,8 @@
     <Position X="13" Y="7.25" Width="1.5" />
     <AssociationLine Name="Partie" Type="SmallWorld.Partie" FixedFromPoint="true" FixedToPoint="true">
       <Path>
-        <Point X="13" Y="7.614" />
-        <Point X="12.76" Y="7.614" />
+        <Point X="13" Y="7.646" />
+        <Point X="12.76" Y="7.646" />
         <Point X="12.76" Y="8.862" />
         <Point X="9.01" Y="8.862" />
         <Point X="9.01" Y="7.136" />
@@ -82,7 +82,7 @@
       </Path>
     </AssociationLine>
     <TypeIdentifier>
-      <HashCode>IAMAAAACMEAAADBAAAAAAAAAAABgIAAAQAAAAGAAAAA=</HashCode>
+      <HashCode>IAMAAAACMEAAADBAAAAAAAAAIABgICAAQAAAAGAAAAA=</HashCode>
       <FileName>MonteurPartie.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -94,7 +94,7 @@
   <Class Name="SmallWorld.MonteurPartiePetite">
     <Position X="12.75" Y="10.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAIAAAACAAAAAAAAAAAABAAAAAQAAAAEAAAAA=</HashCode>
+      <HashCode>AAAAAAAAIAAAACAAAAAAAAAAIABAACAAQAAAAAAAAAA=</HashCode>
       <FileName>MonteurPartie.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -102,7 +102,7 @@
   <Class Name="SmallWorld.MonteurPartieDemo">
     <Position X="10.75" Y="10.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAIAAAACAAAAAAAAAAAABAAAAAQAAAAEAAAAA=</HashCode>
+      <HashCode>AAAAAAAAIAAAACAAAAAAAAAAIABAACAAQAAAAAAAAAA=</HashCode>
       <FileName>MonteurPartie.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -341,7 +341,7 @@
   <Class Name="SmallWorld.MonteurPartieNormale">
     <Position X="15" Y="10.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAIAAAACAAAAAAAAAAAABAAAAAQAAAAEAAAAA=</HashCode>
+      <HashCode>AAAAAAAAIAAAACAAAAAAAAAAIABAACAAQAAAAAAAAAA=</HashCode>
       <FileName>MonteurPartie.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />

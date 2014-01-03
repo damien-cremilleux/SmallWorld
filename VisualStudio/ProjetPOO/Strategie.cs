@@ -76,19 +76,19 @@ namespace SmallWorld
 
                     switch (k)
                     {
-                        case 0:
+                        case Constantes.CASE_DESERT:
                             carteRes[i].Add(FabriqueCase.Instance_FabCase.obtenirDesert());
                             break;
-                        case 1:
+                        case Constantes.CASE_EAU:
                             carteRes[i].Add(FabriqueCase.Instance_FabCase.obtenirEau());
                             break;
-                        case 2:
+                        case Constantes.CASE_FORET:
                             carteRes[i].Add(FabriqueCase.Instance_FabCase.obtenirForet());
                             break;
-                        case 3:
+                        case Constantes.CASE_MONTAGNE:
                             carteRes[i].Add(FabriqueCase.Instance_FabCase.obtenirMontagne());
                             break;
-                        case 4:
+                        case Constantes.CASE_PLAINE:
                             carteRes[i].Add(FabriqueCase.Instance_FabCase.obtenirPlaine());
                             break;
                         default:

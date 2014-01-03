@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="Carte.cs" />
     <Compile Include="Case.cs" />
+    <Compile Include="Constantes.cs" />
     <Compile Include="Coordonnees.cs" />
     <Compile Include="CreateurPartie.cs" />
     <Compile Include="FabriqueCase.cs" />

@@ -127,8 +127,9 @@ namespace SmallWorld
          */
         public Joueur(string nom, Peuple nomPeuple)
         {
-            nomJ = nom;
+            NomJ = nom;
             PeupleJ = nomPeuple;
+            ListeUnite = new List<Unite>();
         }
 
         /**

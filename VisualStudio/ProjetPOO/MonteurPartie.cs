@@ -13,6 +13,8 @@
  */
 using System;
 using System.Collections.Generic;
+using Wrapper;
+
 namespace SmallWorld
 {
     /**
@@ -101,6 +103,11 @@ namespace SmallWorld
     public abstract class MonteurPartie : InterMonteurPartie
     {
         /**
+         * @brief constante <b>nb_case</b> le nombre initial de tour
+         */
+        private int nb_case;
+
+        /**
          * @brief constante <b>nb_tour</b> le nombre initial de tour
          */
         private int nb_tour;
@@ -129,6 +136,15 @@ namespace SmallWorld
          * @brief Attribut <b>strategie</b> la strategie à adopter
          */
         private StrategieCarte strategie;
+
+        /**
+         * @fn Nb_tour
+         * @brief Properties pour l'attribut nb_tour
+         */
+        public abstract int Nb_case
+        {
+            get;
+        }
 
         /**
          * @fn Nb_tour
@@ -256,6 +272,7 @@ namespace SmallWorld
             this.ajouterJoueur(nomJoueurA, peupleA);
             this.ajouterJoueur(nomJoueurB, peupleB);
             this.ajouterCarte();
+            this.placerUnites();
             this.initialiserNombreTour();
             return Partie;
         }
@@ -277,7 +294,57 @@ namespace SmallWorld
          * 
          * @return void
          */
-        public abstract void placerUnites();
+        public unsafe void placerUnites()
+        {
+            int i, j;
+            for (i = 0; i < Nb_unite; i++)
+            {
+                Partie.ListeJoueurs[0].ListeUnite.Add(Partie.ListeJoueurs[0].PeupleJ.creerUnite());
+                Partie.ListeJoueurs[1].ListeUnite.Add(Partie.ListeJoueurs[1].PeupleJ.creerUnite());
+            }
+
+            WrapperAlgo wrapperAlgo = new WrapperAlgo();
+            int* position;
+
+            //On transforme le tableau de case en int
+            int* tabCase = wrapperAlgo.creerTab(Nb_case);
+
+            for (i = 0; i < Nb_case; i++)
+            {
+                for (j = 0; j < Nb_case; j++)
+                {
+                    if (Partie.CartePartie.ListeCases[i][j].GetType() == new Desert().GetType())
+                        tabCase[i * Nb_case + j] = Constantes.CASE_DESERT;
+
+                    if (Partie.CartePartie.ListeCases[i][j].GetType() == new Eau().GetType())
+                        tabCase[i * Nb_case + j] = Constantes.CASE_DESERT;
+
+                    if (Partie.CartePartie.ListeCases[i][j].GetType() == new Foret().GetType())
+                        tabCase[i * Nb_case + j] = Constantes.CASE_DESERT;
+
+                    if (Partie.CartePartie.ListeCases[i][j].GetType() == new Montagne().GetType())
+                        tabCase[i * Nb_case + j] = Constantes.CASE_DESERT;
+
+                    if (Partie.CartePartie.ListeCases[i][j].GetType() == new Plaine().GetType())
+                        tabCase[i * Nb_case + j] = Constantes.CASE_DESERT;
+                }
+            }
+
+            position = wrapperAlgo.placerJoueur(tabCase, Nb_case);
+
+            Coordonnees coordJ1 = new Coordonnees(position[0], position[1]);
+            Coordonnees coordJ2 = new Coordonnees(position[2], position[3]);
+
+            for (i = 0; i < Partie.ListeJoueurs[0].ListeUnite.Count; i++)
+            {
+                Partie.ListeJoueurs[0].ListeUnite[i].Position = coordJ1;
+            }
+
+            for (i = 0; i < Partie.ListeJoueurs[1].ListeUnite.Count; i++)
+            {
+                Partie.ListeJoueurs[1].ListeUnite[i].Position = coordJ2;
+            }
+        }
     }
 
     /**
@@ -286,15 +353,33 @@ namespace SmallWorld
      */
     public class MonteurPartieDemo : MonteurPartie, InterMonteurPartieDemo
     {
+
+        /**
+         * @brief constante <b>nb_case</b> le nombre de case
+         */
+        private const int nb_case = Constantes.NB_CASE_DEMO;
+
         /**
          * @brief constante <b>nb_tour</b> le nombre initial de tour
          */
-        private const int nb_tour = 5;
+        private const int nb_tour = Constantes.NB_TOUR_DEMO;
 
         /**
          * @brief constante <b>nb_unite</b> le nombre initial d'unité par joueur
          */
-        private const int nb_unite = 4;
+        private const int nb_unite = Constantes.NB_UNITE_DEMO;
+
+        /**
+         * @fn Nb_case
+         * @brief Properties pour l'attribut nb_case
+         */
+        public override int Nb_case
+        {
+            get
+            {
+                return nb_case;
+            }
+        }
 
         /**
          * @fn Nb_tour
@@ -326,7 +411,7 @@ namespace SmallWorld
          */
         public MonteurPartieDemo()
         {
-            FabriquePeuple = new FabriquePeuple(); //TODO singleton
+            FabriquePeuple = new FabriquePeuple();
             Carte = new Carte();
             Partie = new Partie();
             Strategie = new StrategieDemo();
@@ -338,10 +423,11 @@ namespace SmallWorld
          * 
          * @return void
          */
-        public override void placerUnites()
-        {
-            //TODO
-        }
+        /*  public override void placerUnites()
+          {
+              //TODO
+          }*/
+        //TODO SUpprimer si besoin
     }
 
     /**
@@ -351,14 +437,31 @@ namespace SmallWorld
     public class MonteurPartiePetite : MonteurPartie, InterMonteurPartiePetite
     {
         /**
+         * @brief constante <b>nb_case</b> le nombre de case
+         */
+        private const int nb_case = Constantes.NB_CASE_PETITE;
+
+        /**
          * @brief constante <b>nb_tour</b> le nombre initial de tour
          */
-        private const int nb_tour = 20;
+        private const int nb_tour = Constantes.NB_TOUR_PETITE;
 
         /**
          * @brief constante <b>nb_unite</b> le nombre initial d'unité par joueur
          */
-        private const int nb_unite = 6;
+        private const int nb_unite = Constantes.NB_UNITE_PETITE;
+
+        /**
+         * @fn Nb_case
+         * @brief Properties pour l'attribut nb_case
+         */
+        public override int Nb_case
+        {
+            get
+            {
+                return nb_case;
+            }
+        }
 
         /**
          * @fn Nb_tour
@@ -371,7 +474,6 @@ namespace SmallWorld
                 return nb_tour;
             }
         }
-
         /**
          * @fn Nb_unite
          * @brief Properties pour l'attribut nb_unite
@@ -390,7 +492,7 @@ namespace SmallWorld
          */
         public MonteurPartiePetite()
         {
-            FabriquePeuple = new FabriquePeuple(); //TODO singleton
+            FabriquePeuple = new FabriquePeuple();
             Carte = new Carte();
             Partie = new Partie();
             Strategie = new StrategiePetite();
@@ -402,10 +504,11 @@ namespace SmallWorld
          * 
          * @return void
          */
-        public override void placerUnites()
-        {
-            //TODO
-        }
+        /* public override void placerUnites()
+         {
+             //TODO
+         }*/
+        //TODO Supprimer si besoin
     }
 
     /**
@@ -415,14 +518,31 @@ namespace SmallWorld
     public class MonteurPartieNormale : MonteurPartie, InterMonteurPartieNormale
     {
         /**
+         * @brief constante <b>nb_case</b> le nombre de case
+         */
+        private const int nb_case = Constantes.NB_CASE_NORMALE;
+
+        /**
          * @brief constante <b>nb_tour</b> le nombre initial de tour
          */
-        private const int nb_tour = 30;
+        private const int nb_tour = Constantes.NB_TOUR_NORMALE;
 
         /**
          * @brief constante <b>nb_unite</b> le nombre initial d'unité par joueur
          */
-        private const int nb_unite = 8;
+        private const int nb_unite = Constantes.NB_UNITE_NORMALE;
+
+        /**
+          * @fn Nb_case
+          * @brief Properties pour l'attribut nb_case
+          */
+        public override int Nb_case
+        {
+            get
+            {
+                return nb_case;
+            }
+        }
 
         /**
          * @fn Nb_tour
@@ -466,10 +586,11 @@ namespace SmallWorld
          * 
          * @return void
          */
-        public override void placerUnites()
-        {
-            //TODO
-        }
+        /*   public override void placerUnites()
+           {
+               //TODO
+           }*/
+        //TODO Supprimer si besoin
 
     }
 }
