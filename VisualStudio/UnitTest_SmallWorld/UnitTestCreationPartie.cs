@@ -1,9 +1,4 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using SmallWorld;
-using System.Collections.Generic;
-
-/**
+﻿/**
  * @file UnitTestCreationPartie.cs
  * @brief Tests unitaires pour la création de partie
  *
@@ -13,6 +8,10 @@ using System.Collections.Generic;
  * @date 03/01/2014
  * @version 0.1
  */
+using System;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using SmallWorld;
+using System.Collections.Generic;
 namespace UnitTest_SmallWorld
 {
     [TestClass]
@@ -26,7 +25,7 @@ namespace UnitTest_SmallWorld
         public void TestNomJoueur()
         {
             CreateurPartie c = new CreateurPartie();
-            c.TypePartie = "normale";
+            c.TypePartie = "Normale";
             c.ajoutJoueur("Damien", "viking");
             c.ajoutJoueur("Lauriane", "gaulois");
 
@@ -45,17 +44,15 @@ namespace UnitTest_SmallWorld
         [TestMethod]
         public void TestPeupleJoueur()
         {
-            /*     CreateurPartie c = new CreateurPartie();
-                 c.TypePartie = "normale";
-                 c.ajoutJoueur("Damien", "viking");
-                 c.ajoutJoueur("Lauriane", "gaulois");
-
-                 Partie p;
-
-                 p = c.construire();
-
-                 Assert.AreEqual("Damien", p.ListeJoueurs[0].NomJ);
-                 Assert.AreEqual("Lauriane", p.ListeJoueurs[1].NomJ);*/
+            CreateurPartie c = new CreateurPartie();
+            c.TypePartie = "Normale";
+            c.ajoutJoueur("Damien", "viking");
+            c.ajoutJoueur("Lauriane", "gaulois");
+            Partie p;
+            p = c.construire();
+            
+           Assert.AreEqual(new PeupleViking().GetType(), p.ListeJoueurs[0].PeupleJ.GetType());
+           Assert.AreEqual(new PeupleGaulois().GetType(), p.ListeJoueurs[1].PeupleJ.GetType());
         }
 
         /**
@@ -67,7 +64,7 @@ namespace UnitTest_SmallWorld
         {
             //Carte démo
             CreateurPartie c1 = new CreateurPartie();
-            c1.TypePartie = "demo";
+            c1.TypePartie = "Démo";
             c1.ajoutJoueur("Damien", "viking");
             c1.ajoutJoueur("Lauriane", "gaulois");
             Partie p1;
@@ -77,7 +74,7 @@ namespace UnitTest_SmallWorld
 
             //Carte petite
             CreateurPartie c2 = new CreateurPartie();
-            c2.TypePartie = "petite";
+            c2.TypePartie = "Petite";
             c2.ajoutJoueur("Damien", "viking");
             c2.ajoutJoueur("Lauriane", "gaulois");
             Partie p2;
@@ -87,7 +84,7 @@ namespace UnitTest_SmallWorld
 
             //Carte normale
             CreateurPartie c3 = new CreateurPartie();
-            c3.TypePartie = "normale";
+            c3.TypePartie = "Normale";
             c3.ajoutJoueur("Damien", "viking");
             c3.ajoutJoueur("Lauriane", "gaulois");
             Partie p3;
@@ -105,7 +102,7 @@ namespace UnitTest_SmallWorld
         {
             //Carte démo
             CreateurPartie c1 = new CreateurPartie();
-            c1.TypePartie = "demo";
+            c1.TypePartie = "Démo";
             c1.ajoutJoueur("Damien", "viking");
             c1.ajoutJoueur("Lauriane", "gaulois");
             Partie p1;
@@ -115,7 +112,7 @@ namespace UnitTest_SmallWorld
 
             //Carte petite
             CreateurPartie c2 = new CreateurPartie();
-            c2.TypePartie = "petite";
+            c2.TypePartie = "Petite";
             c2.ajoutJoueur("Damien", "viking");
             c2.ajoutJoueur("Lauriane", "gaulois");
             Partie p2;
@@ -124,7 +121,7 @@ namespace UnitTest_SmallWorld
 
             //Carte normale
             CreateurPartie c3 = new CreateurPartie();
-            c3.TypePartie = "normale";
+            c3.TypePartie = "Normale";
             c3.ajoutJoueur("Damien", "viking");
             c3.ajoutJoueur("Lauriane", "gaulois");
             Partie p3;

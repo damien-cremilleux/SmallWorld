@@ -23,7 +23,7 @@
   <Class Name="SmallWorld.FabriquePeuple">
     <Position X="17" Y="7" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAEAAAABAAAAAACAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>FabriquePeuple.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -31,16 +31,16 @@
   <Class Name="SmallWorld.PeupleGaulois">
     <Position X="12.75" Y="4.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>PeupleGaulois.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Peuple.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="SmallWorld.PeupleViking">
     <Position X="14.75" Y="4.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>PeupleViking.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Peuple.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
@@ -48,7 +48,7 @@
     <Position X="16.5" Y="4.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>PeupleNain.cs</FileName>
+      <FileName>Peuple.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
@@ -82,19 +82,19 @@
       </Path>
     </AssociationLine>
     <TypeIdentifier>
-      <HashCode>IAMAAAACEEAAABBAAAAAAAAAAABgKAAAAAAgAGAAAAA=</HashCode>
+      <HashCode>IAMAAAACMEAAADBAAAAAAAAAAABgIAAAQAAAAGAAAAA=</HashCode>
       <FileName>MonteurPartie.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
-      <Property Name="FabriquePeuple" />
       <Property Name="Partie" />
+      <Property Name="FabriquePeuple" />
     </ShowAsAssociation>
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="SmallWorld.MonteurPartiePetite">
     <Position X="12.75" Y="10.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAABACAAAAAAgAEAAAAA=</HashCode>
+      <HashCode>AAAAAAAAIAAAACAAAAAAAAAAAABAAAAAQAAAAEAAAAA=</HashCode>
       <FileName>MonteurPartie.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -102,7 +102,7 @@
   <Class Name="SmallWorld.MonteurPartieDemo">
     <Position X="10.75" Y="10.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAABACAAAAAAgAEAAAAA=</HashCode>
+      <HashCode>AAAAAAAAIAAAACAAAAAAAAAAAABAAAAAQAAAAEAAAAA=</HashCode>
       <FileName>MonteurPartie.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -341,7 +341,7 @@
   <Class Name="SmallWorld.MonteurPartieNormale">
     <Position X="15" Y="10.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAABACAAAAAAgAEAAAAA=</HashCode>
+      <HashCode>AAAAAAAAIAAAACAAAAAAAAAAAABAAAAAQAAAAEAAAAA=</HashCode>
       <FileName>MonteurPartie.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />

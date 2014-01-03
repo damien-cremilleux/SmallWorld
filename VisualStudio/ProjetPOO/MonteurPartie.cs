@@ -236,7 +236,8 @@ namespace SmallWorld
          */
         public void ajouterJoueur(string nomJoueur, string peuple)
         {
-            Joueur j = new Joueur(nomJoueur, peuple);
+            Peuple p = FabriquePeuple.Instance_FabPeuple.fabriquerPeuple(peuple);
+            Joueur j = new Joueur(nomJoueur, p);
             Partie.ListeJoueurs.Add(j);
         }
 
@@ -453,7 +454,7 @@ namespace SmallWorld
          */
         public MonteurPartieNormale()
         {
-            FabriquePeuple = new FabriquePeuple(); //TODO singleton
+            FabriquePeuple = new FabriquePeuple();
             Carte = new Carte();
             Partie = new Partie();
             Strategie = new StrategieNormale();
