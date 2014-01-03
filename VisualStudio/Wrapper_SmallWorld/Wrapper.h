@@ -15,7 +15,8 @@ namespace Wrapper {
 		~WrapperAlgo(){ Algo_delete(algo); }
 		int computeFoo() { return algo->computeFoo(); }
 		int ** genererCarte(int taille) { return algo->genererCarte(taille);}
-		int * placerJoueur(int ** tabCarte, int taille) { return algo->placerJoueur(tabCarte,taille);}
+		int * placerJoueur(int * tabCarte, int taille) { return algo->placerJoueur(tabCarte,taille);}
+		int * creerTab(int taille) {return algo->creerTab(taille);}
 	};
 }
 #endif

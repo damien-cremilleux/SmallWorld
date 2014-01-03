@@ -1,8 +1,8 @@
 ﻿/**
  * @file FabriquePeuple.cs
- * @brief Interfaces et classes pour la fabrique des peuoles
+ * @brief Interfaces et classes pour la fabrique des peuples
  * 
- * Fabrique des différents peuples : gaulois, nain, viking
+ * Fabrique des différents peuples : gaulois, nain, viking.
  * 
  * @author <a href="mailto:damien.cremilleux@insa-rennes.fr">Damien Crémilleux</a>
  * @author <a href="mailto:lauriane.holy@insa-rennes.fr">Lauriane Holy</a>
@@ -23,37 +23,96 @@ namespace SmallWorld
      */
     public interface InterFabriquePeuple
     {
-        void fabriquerPeuple();
+        /**
+         * @fn fabriquerPeuple(string peuple)
+         * @brief Récupération d'un peuple
+         * 
+         * @param string <b>peuple</b> le peuple demandé
+         * @return Peuple Le peuple
+         */
+        Peuple fabriquerPeuple(string peuple);
     }
 
     /**
      * @interface FabriqueUniteGaulois
      */
-    public interface Fabrique_Unite_Gaulois : InterFabriquePeuple
-    {
-    }
+    /* public interface Fabrique_Unite_Gaulois : InterFabriquePeuple
+     {
+     }*/
+    //TODO Supprimer si besoin
 
+    /**
+     * @class FabriquePeuple
+     * @brief classe pour la fabrique d'un peuple
+     * 
+     * FabriquePeuple est un singleton
+     */
     public class FabriquePeuple : InterFabriquePeuple
     {
-        public FabriquePeuple()
-        {
-           // throw new System.NotImplementedException();
-        }
+        /**
+         * @brief Attribut <b>instance_FabPeuple</b> Singleton de la classe
+         */
+        private static FabriquePeuple instance_FabPeuple;
 
-      /*  public Peuple Peuple
+        /**
+         * @fn Instance_FabPeuple
+         * @brief Properties pour l'attribut instance_FabPeuple
+         */
+        public static FabriquePeuple Instance_FabPeuple
         {
             get
             {
-              //  throw new System.NotImplementedException();
+                if (instance_FabPeuple == null)
+                {
+                    instance_FabPeuple = new FabriquePeuple();
+                }
+                return instance_FabPeuple;
             }
-            set
-            {
-            }
-        */
+        }
 
-        public void fabriquerPeuple()
+        /**
+         * @fn FabriquePeuple
+         * @brief Constructeur d'une fabrique de peuple
+         */
+        public FabriquePeuple()
         {
-            //throw new NotImplementedException();
+        }
+
+        /* public Peuple Peuple
+         {
+             get
+             {
+               //  throw new System.NotImplementedException();
+             }
+             set
+             {
+             }
+         */
+        //TODO Supprimer si besoin
+
+        /**
+        * @fn fabriquerPeuple(string peuple)
+        * @brief Récupération d'un peuple
+        * 
+        * @param string <b>peuple</b> le peuple demandé
+        * @return Peuple Le peuple
+        */
+        public Peuple fabriquerPeuple(string peuple)
+        {
+            switch (peuple)
+            {
+                case Constantes.PEUPLE_GAULOIS:
+                    return new PeupleGaulois();
+
+                case Constantes.PEUPLE_NAIN:
+                    return new PeupleNain();
+
+                case Constantes.PEUPLE_VIKING:
+                    return new PeupleViking();
+
+                default:
+                    return null; /* TODO */
+            }
         }
     }
 }

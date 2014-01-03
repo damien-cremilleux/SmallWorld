@@ -117,31 +117,19 @@ namespace SmallWorld
         }
 
         /**
-         * @fn Joueur(string nom, string nomPeuple)
+         * @fn Joueur(string nom, Peuple nomPeuple)
          * @brief Constructeur d'un joueur
          * 
          * Crée le joueur à partir de son nom et de son peuple
          * 
          * @param string <b>nom</b> le nom du joueur
-         * @param string <b>nomPeuple</b> le peuple sélectionné par le joueur
+         * @param Peuple <b>nomPeuple</b> le peuple sélectionné par le joueur
          */
-        public Joueur(string nom, string nomPeuple)
+        public Joueur(string nom, Peuple nomPeuple)
         {
-            nomJ = nom;
-            if (nomPeuple == "gaulois")
-            {
-                peupleJ = new PeupleGaulois();
-            }
-
-            if (nomPeuple == "nain")
-            {
-                peupleJ = new PeupleNain();
-            }
-
-            if (nomPeuple == "viking")
-            {
-                peupleJ = new PeupleViking();
-            }
+            NomJ = nom;
+            PeupleJ = nomPeuple;
+            ListeUnite = new List<Unite>();
         }
 
         /**

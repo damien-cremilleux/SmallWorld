@@ -32,7 +32,7 @@
                 <GroupBox Header="Nom" Margin="5,0,0,5">
                     <StackPanel Orientation="Horizontal">
                         <Label  Content="Nom du joueur 1 :"/>
-                        <TextBox Width="100" Name="NomJ1"/>
+                        <TextBox Padding="0,4" Width="100" Name="NomJ1"/>
                     </StackPanel>
                 </GroupBox>
                 <!-- Peuple du joueur 1-->
@@ -60,7 +60,7 @@
                     <GroupBox Header="Nom" Margin="5,0,0,0">
                         <StackPanel Orientation="Horizontal">
                             <Label  Content="Nom du joueur 2 :"/>
-                            <TextBox Width="100" Name="NomJ2"/>
+                            <TextBox Padding="0,4" Width="100" Name="NomJ2"/>
                         </StackPanel>
                     </GroupBox>
 

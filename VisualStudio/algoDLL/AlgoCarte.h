@@ -12,7 +12,8 @@ public:
 	~AlgoCarte() {}
 	int computeFoo();
 	int** genererCarte(int taille);
-	int * placerJoueur(int ** tabCarte, int taille);
+	int * placerJoueur(int * tabCarte, int taille);
+	int * creerTab(int taille);
 };
 
 // A ne pas implémenter dans le .h !
@@ -21,3 +22,4 @@ EXTERNC DLL void Algo_delete(AlgoCarte* algo);
 EXTERNC DLL int Algo_computeAlgo(AlgoCarte* algo);
 EXTERNC DLL int Algo_genererCarte(AlgoCarte * algo);
 EXTERNC DLL int Algo_placerJoueur(AlgoCarte * algo);
+EXTERNC DLL int Algo_creerTab(AlgoCarte * algo);

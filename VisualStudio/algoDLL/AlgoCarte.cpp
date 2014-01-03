@@ -57,12 +57,12 @@ int** AlgoCarte::genererCarte(int taille)
 	return tabCase;
 }
 
-int * AlgoCarte::placerJoueur(int ** tabCarte, int taille) {
+int * AlgoCarte::placerJoueur(int * tabCarte, int taille) {
 	int  * tabCoordonnee = (int*) malloc(4 * sizeof(int));;
 	int i=0, j=0 ,k, l;
 
 
-	while(tabCarte[i][j] == 1){
+	while(tabCarte[i*taille+j] == 1){
 		i = i + (rand() % 2);
 		j = j + (rand() % 2);
 	}
@@ -74,7 +74,7 @@ int * AlgoCarte::placerJoueur(int ** tabCarte, int taille) {
 	k = taille-1;
 	l = taille-1;
 
-	while(tabCarte[k][l] == 1){
+	while(tabCarte[k*taille + l] == 1){
 		k = k - (rand() % 2);
 		l = l - (rand() % 2);
 	}
@@ -83,4 +83,9 @@ int * AlgoCarte::placerJoueur(int ** tabCarte, int taille) {
 	tabCoordonnee[3] = l;
 
 	return tabCoordonnee;
+}
+
+int * AlgoCarte::creerTab(int taille) {
+	int  * tab = (int*) malloc(taille * taille * sizeof(int));;
+	return tab;
 }

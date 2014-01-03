@@ -90,19 +90,19 @@ namespace SmallWorld
             }
             set //le monteur partie est automatiquement mis à jour
             {
-                if (value == "Démo")
+                if (value == Constantes.CARTE_DEMO)
                 {
                     typePartie = value;
                     MonteurPartie = new MonteurPartieDemo();
                 }
 
-                if (value == "Petite")
+                if (value == Constantes.CARTE_PETITE)
                 {
                     typePartie = value;
                     MonteurPartie = new MonteurPartiePetite();
                 }
 
-                if (value == "Normale")
+                if (value == Constantes.CARTE_NORMALE)
                 {
                     typePartie = value;
                     MonteurPartie = new MonteurPartieNormale();
