@@ -7,7 +7,7 @@
  * @author <a href="mailto:damien.cremilleux@insa-rennes.fr">Damien Crémilleux</a>
  * @author <a href="mailto:lauriane.holy@insa-rennes.fr">Lauriane Holy</a>
  * 
- * @date 26/12/2013
+ * @date 03/01/2014
  * @version 0.1
  */
 using System;
@@ -297,7 +297,6 @@ namespace SmallWorld
     {
         public UniteGauloise()
         {
-            throw new System.NotImplementedException();
         }
 
     }
@@ -310,7 +309,6 @@ namespace SmallWorld
     {
         public UniteNaine()
         {
-            throw new System.NotImplementedException();
         }
 
     }
@@ -323,7 +321,6 @@ namespace SmallWorld
     {
         public UniteViking()
         {
-            throw new System.NotImplementedException();
         }
 
     }

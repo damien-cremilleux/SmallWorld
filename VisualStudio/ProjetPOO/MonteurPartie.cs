@@ -8,7 +8,7 @@
  * @author <a href="mailto:damien.cremilleux@insa-rennes.fr">Damien Crémilleux</a>
  * @author <a href="mailto:lauriane.holy@insa-rennes.fr">Lauriane Holy</a>
  * 
- * @date 20/12/2013
+ * @date 03/01/2014
  * @version 0.1
  */
 using System;
@@ -101,19 +101,14 @@ namespace SmallWorld
     public abstract class MonteurPartie : InterMonteurPartie
     {
         /**
-         * @brief constante <b>NB_CASE</b> le nombre de case en largeur et longueur de la carte
+         * @brief constante <b>nb_tour</b> le nombre initial de tour
          */
-        private int NB_CASE;
+        private int nb_tour;
 
         /**
-         * @brief constante <b>NB_TOUR</b> le nombre initial de tour
+         * @brief constante <b>nb_unite</b> le nombre initial d'unité par joueur
          */
-        private int NB_TOUR;
-
-        /**
-         * @brief constante <b>NB_UNITE</b> le nombre initial d'unité par joueur
-         */
-        private int NB_UNITE;
+        private int nb_unite;
 
         /**
          * @brief Attribut <b>fabriquePeuple</b> la fabrique de peuple
@@ -134,6 +129,24 @@ namespace SmallWorld
          * @brief Attribut <b>strategie</b> la strategie à adopter
          */
         private StrategieCarte strategie;
+
+        /**
+         * @fn Nb_tour
+         * @brief Properties pour l'attribut nb_tour
+         */
+        public abstract int Nb_tour
+        {
+            get;
+        }
+
+        /**
+         * @fn Nb_unite
+         * @brief Properties pour l'attribut nb_unite
+         */
+        public abstract int Nb_unite
+        {
+            get;
+        }
 
         /**
          * @fn FabriquePeuple
@@ -198,6 +211,7 @@ namespace SmallWorld
                 strategie = value;
             }
         }
+
         /**
          * @fn ajouterCarte()
          * @brief Ajout de la carte pour la construction d'une partie.
@@ -253,7 +267,7 @@ namespace SmallWorld
          */
         public void initialiserNombreTour()
         {
-            Partie.NbTourRestant = NB_TOUR;
+            Partie.NbTourRestant = Nb_tour;
         }
 
         /**
@@ -272,19 +286,38 @@ namespace SmallWorld
     public class MonteurPartieDemo : MonteurPartie, InterMonteurPartieDemo
     {
         /**
-         * @brief constante <b>NB_CASE</b> le nombre de case en largeur et longueur de la carte
+         * @brief constante <b>nb_tour</b> le nombre initial de tour
          */
-        private const int NB_CASE = 5;
+        private const int nb_tour = 5;
 
         /**
-         * @brief constante <b>NB_TOUR</b> le nombre initial de tour
+         * @brief constante <b>nb_unite</b> le nombre initial d'unité par joueur
          */
-        private const int NB_TOUR = 5;
+        private const int nb_unite = 4;
 
         /**
-         * @brief constante <b>NB_UNITE</b> le nombre initial d'unité par joueur
+         * @fn Nb_tour
+         * @brief Properties pour l'attribut nb_tour
          */
-        private const int NB_UNITE = 4;
+        public override int Nb_tour
+        {
+            get
+            {
+                return nb_tour;
+            }
+        }
+
+        /**
+         * @fn Nb_unite
+         * @brief Properties pour l'attribut nb_unite
+         */
+        public override int Nb_unite
+        {
+            get
+            {
+                return nb_unite;
+            }
+        }
 
         /**
          * @fn MonteurPartieDemo
@@ -297,43 +330,6 @@ namespace SmallWorld
             Partie = new Partie();
             Strategie = new StrategieDemo();
         }
-
-        /**
-         * @fn ajouterCarte()
-         * @brief Ajout d'une carte de taille Démo
-         * 
-         * @return void
-         */
-        /* public override void ajouterCarte()
-         {
-             int i;
-             int j;
-             List<List<Case>> listeCases = new List<List<Case>>();
-             // TODO passer par carte -> strategie.construire
-             for (i = 0; i < NB_CASE; i++)
-             {
-                 for (j = 0; j < NB_CASE; j++)
-                 {
-                     listeCases[i][j] = new Desert();
-                 }
-             }
-
-             Partie.CartePartie.ListeCases = listeCases;
-
-         }*/
-        //TODO effacer si besoin
-
-        /**
-         * @fn initialiserNombreTour
-         * @brief initialise le nombre de tour d'un partie
-         * 
-         * @return void
-         */
-        /* public override void initialiserNombreTour()
-         {
-             Partie.NbTourRestant = NB_TOUR;
-         }*/
-        //TODO effacer si besoin
 
         /**
          * @fn placerUnites()
@@ -354,19 +350,38 @@ namespace SmallWorld
     public class MonteurPartiePetite : MonteurPartie, InterMonteurPartiePetite
     {
         /**
-          * @brief constante <b>NB_CASE</b> le nombre de case en largeur et longueur de la carte
-          */
-        private const int NB_CASE = 10;
+         * @brief constante <b>nb_tour</b> le nombre initial de tour
+         */
+        private const int nb_tour = 20;
 
         /**
-         * @brief constante <b>NB_TOUR</b> le nombre initial de tour
+         * @brief constante <b>nb_unite</b> le nombre initial d'unité par joueur
          */
-        private const int NB_TOUR = 20;
+        private const int nb_unite = 6;
 
         /**
-         * @brief constante <b>NB_UNITE</b> le nombre initial d'unité par joueur
+         * @fn Nb_tour
+         * @brief Properties pour l'attribut nb_tour
          */
-        private const int NB_UNITE = 6;
+        public override int Nb_tour
+        {
+            get
+            {
+                return nb_tour;
+            }
+        }
+
+        /**
+         * @fn Nb_unite
+         * @brief Properties pour l'attribut nb_unite
+         */
+        public override int Nb_unite
+        {
+            get
+            {
+                return nb_unite;
+            }
+        }
 
         /**
          * @fn MonteurPartiePetite
@@ -379,43 +394,6 @@ namespace SmallWorld
             Partie = new Partie();
             Strategie = new StrategiePetite();
         }
-
-        /**
-         * @fn ajouterCarte()
-         * @brief Ajout d'une carte de taille Démo
-         * 
-         * @return void
-         */
-        /* public override void ajouterCarte()
-         {
-             int i;
-             int j;
-             List<List<Case>> listeCases = new List<List<Case>>();
-             // TODO passer par carte -> strategie.construire
-             for (i = 0; i < NB_CASE; i++)
-             {
-                 for (j = 0; j < NB_CASE; j++)
-                 {
-                     listeCases[i][j] = new Desert();
-                 }
-             }
-
-             Partie.CartePartie.ListeCases = listeCases;
-
-         }*/
-        //TODO effacer si besoin
-
-        /**
-         * @fn initialiserNombreTour
-         * @brief initialise le nombre de tour d'un partie
-         * 
-         * @return void
-         */
-        /* public override void initialiserNombreTour()
-         {
-             Partie.NbTourRestant = NB_TOUR;
-         }*/
-        //TODO effacer si besoin
 
         /**
          * @fn placerUnites()
@@ -436,19 +414,38 @@ namespace SmallWorld
     public class MonteurPartieNormale : MonteurPartie, InterMonteurPartieNormale
     {
         /**
-        * @brief constante <b>NB_CASE</b> le nombre de case en largeur et longueur de la carte
-        */
-        private const int NB_CASE = 15;
+         * @brief constante <b>nb_tour</b> le nombre initial de tour
+         */
+        private const int nb_tour = 30;
 
         /**
-         * @brief constante <b>NB_TOUR</b> le nombre initial de tour
+         * @brief constante <b>nb_unite</b> le nombre initial d'unité par joueur
          */
-        private const int NB_TOUR = 30;
+        private const int nb_unite = 8;
 
         /**
-         * @brief constante <b>NB_UNITE</b> le nombre initial d'unité par joueur
+         * @fn Nb_tour
+         * @brief Properties pour l'attribut nb_tour
          */
-        private const int NB_UNITE = 8;
+        public override int Nb_tour
+        {
+            get
+            {
+                return nb_tour;
+            }
+        }
+
+        /**
+         * @fn Nb_unite
+         * @brief Properties pour l'attribut nb_unite
+         */
+        public override int Nb_unite
+        {
+            get
+            {
+                return nb_unite;
+            }
+        }
 
         /**
          * @fn MonteurPartieNormale
@@ -461,43 +458,6 @@ namespace SmallWorld
             Partie = new Partie();
             Strategie = new StrategieNormale();
         }
-
-        /**
-          * @fn ajouterCarte()
-          * @brief Ajout d'une carte de taille Démo
-          * 
-          * @return void
-          */
-        /* public override void ajouterCarte()
-         {
-             int i;
-             int j;
-             List<List<Case>> listeCases = new List<List<Case>>();
-             // TODO passer par carte -> strategie.construire
-             for (i = 0; i < NB_CASE; i++)
-             {
-                 for (j = 0; j < NB_CASE; j++)
-                 {
-                     listeCases[i][j] = new Desert();
-                 }
-             }
-
-             Partie.CartePartie.ListeCases = listeCases;
-
-         }*/
-        //TODO effacer si besoin
-
-        /**
-         * @fn initialiserNombreTour
-         * @brief initialise le nombre de tour d'un partie
-         * 
-         * @return void
-         */
-        /*public override void initialiserNombreTour()
-        {
-            Partie.NbTourRestant = NB_TOUR;
-        }*/
-        //TODO effacer si besoin
 
         /**
          * @fn placerUnites()

@@ -5,7 +5,7 @@
  * @author <a href="mailto:damien.cremilleux@insa-rennes.fr">Damien Crémilleux</a>
  * @author <a href="mailto:lauriane.holy@insa-rennes.fr">Lauriane Holy</a>
  * 
- * @date 01/01/2014
+ * @date 03/01/2014
  * @version 0.1
  */
 using System;
@@ -179,56 +179,6 @@ namespace SmallWorld
         public StrategieDemo()
         {
         }
-
-        /**
-         * @fn construire
-         * @brief contruit une carte de taille démo
-         * 
-         * @return la carte demandée
-         */
-        /* public unsafe override List<List<Case>> construire()
-         {
-             int taille = 5;
-             int i, j, k;
-
-             WrapperAlgo wrapperAlgo = new WrapperAlgo();
-             int** carte;
-             carte = wrapperAlgo.genererCarte(5);
-
-             List<List<Case>> carteRes = new List<List<Case>>();
-
-             for (i = 0; i < taille; i++)
-             {
-                 for (j = 0; j < taille; j++)
-                 {
-                     k = carte[i][j];
-
-                     switch (k)
-                     {
-                         case 0:
-                             carteRes[i][j] = FabriqueCase.Instance_FabCase.obtenirDesert();
-                             break;
-                         case 1:
-                             carteRes[i][j] = FabriqueCase.Instance_FabCase.obtenirEau();
-                             break;
-                         case 2:
-                             carteRes[i][j] = FabriqueCase.Instance_FabCase.obtenirForet();
-                             break;
-                         case 3:
-                             carteRes[i][j] = FabriqueCase.Instance_FabCase.obtenirMontagne();
-                             break;
-                         case 4:
-                             carteRes[i][j] = FabriqueCase.Instance_FabCase.obtenirPlaine();
-                             break;
-                         default:
-                             break;
-                     }
-                 }
-             }
-
-             return carteRes;
-         }*/
-        //TODO Supprimer si nécessaire
     }
 
     /**
@@ -264,56 +214,6 @@ namespace SmallWorld
         public StrategiePetite()
         {
         }
-
-        /**
-         * @fn construire
-         * @brief contruit une carte de taille petite
-         * 
-         * @return la carte demandée
-         */
-        /*public unsafe override List<List<Case>> construire()
-        {
-            int taille = 10;
-            int i, j, k;
-
-            WrapperAlgo wrapperAlgo = new WrapperAlgo();
-            int** carte;
-            carte = wrapperAlgo.genererCarte(taille);
-
-            List<List<Case>> carteRes = new List<List<Case>>();
-
-            for (i = 0; i < taille; i++)
-            {
-                for (j = 0; j < taille; j++)
-                {
-                    k = carte[i][j];
-
-                    switch (k)
-                    {
-                        case 0:
-                            carteRes[i][j] = FabriqueCase.Instance_FabCase.obtenirDesert();
-                            break;
-                        case 1:
-                            carteRes[i][j] = FabriqueCase.Instance_FabCase.obtenirEau();
-                            break;
-                        case 2:
-                            carteRes[i][j] = FabriqueCase.Instance_FabCase.obtenirForet();
-                            break;
-                        case 3:
-                            carteRes[i][j] = FabriqueCase.Instance_FabCase.obtenirMontagne();
-                            break;
-                        case 4:
-                            carteRes[i][j] = FabriqueCase.Instance_FabCase.obtenirPlaine();
-                            break;
-                        default:
-                            break;
-                    }
-                }
-            }
-
-            return carteRes;
-        }*/
-        //TODO Supprimer si besoin
     }
 
     /**
