@@ -105,17 +105,17 @@ namespace SmallWorld
         /**
          * @brief constante <b>nb_case</b> le nombre initial de tour
          */
-        private int nb_case;
+        protected int nb_case;
 
         /**
          * @brief constante <b>nb_tour</b> le nombre initial de tour
          */
-        private int nb_tour;
+        protected int nb_tour;
 
         /**
          * @brief constante <b>nb_unite</b> le nombre initial d'unité par joueur
          */
-        private int nb_unite;
+        protected int nb_unite;
 
         /**
          * @brief Attribut <b>fabriquePeuple</b> la fabrique de peuple
@@ -141,27 +141,36 @@ namespace SmallWorld
          * @fn Nb_tour
          * @brief Properties pour l'attribut nb_tour
          */
-        public abstract int Nb_case
+        public int Nb_case
         {
-            get;
+            get
+            {
+                return nb_case;
+            }
         }
 
         /**
          * @fn Nb_tour
          * @brief Properties pour l'attribut nb_tour
          */
-        public abstract int Nb_tour
+        public int Nb_tour
         {
-            get;
+            get
+            {
+                return nb_tour;
+            }
         }
 
         /**
          * @fn Nb_unite
          * @brief Properties pour l'attribut nb_unite
          */
-        public abstract int Nb_unite
+        public int Nb_unite
         {
-            get;
+            get
+            {
+                return nb_unite;
+            }
         }
 
         /**
@@ -332,17 +341,26 @@ namespace SmallWorld
 
             position = wrapperAlgo.placerJoueur(tabCase, Nb_case);
 
-            Coordonnees coordJ1 = new Coordonnees(position[0], position[1]);
-            Coordonnees coordJ2 = new Coordonnees(position[2], position[3]);
+            int x1,y1,x2,y2;
+
+            x1 = position[0];
+            y1 = position[1];
+            x2 = position[2];
+            y2 = position[3];
+
+            Coordonnees coordJ1 = new Coordonnees(x1, y1);
+            Coordonnees coordJ2 = new Coordonnees(x2, y2);
 
             for (i = 0; i < Partie.ListeJoueurs[0].ListeUnite.Count; i++)
             {
                 Partie.ListeJoueurs[0].ListeUnite[i].Position = coordJ1;
+                Partie.ListeJoueurs[0].ListeUnite[i].CaseUnite = Partie.CartePartie.ListeCases[x1][y1];
             }
 
             for (i = 0; i < Partie.ListeJoueurs[1].ListeUnite.Count; i++)
             {
                 Partie.ListeJoueurs[1].ListeUnite[i].Position = coordJ2;
+                Partie.ListeJoueurs[1].ListeUnite[i].CaseUnite = Partie.CartePartie.ListeCases[x2][y2];
             }
         }
     }
@@ -353,81 +371,21 @@ namespace SmallWorld
      */
     public class MonteurPartieDemo : MonteurPartie, InterMonteurPartieDemo
     {
-
-        /**
-         * @brief constante <b>nb_case</b> le nombre de case
-         */
-        private const int nb_case = Constantes.NB_CASE_DEMO;
-
-        /**
-         * @brief constante <b>nb_tour</b> le nombre initial de tour
-         */
-        private const int nb_tour = Constantes.NB_TOUR_DEMO;
-
-        /**
-         * @brief constante <b>nb_unite</b> le nombre initial d'unité par joueur
-         */
-        private const int nb_unite = Constantes.NB_UNITE_DEMO;
-
-        /**
-         * @fn Nb_case
-         * @brief Properties pour l'attribut nb_case
-         */
-        public override int Nb_case
-        {
-            get
-            {
-                return nb_case;
-            }
-        }
-
-        /**
-         * @fn Nb_tour
-         * @brief Properties pour l'attribut nb_tour
-         */
-        public override int Nb_tour
-        {
-            get
-            {
-                return nb_tour;
-            }
-        }
-
-        /**
-         * @fn Nb_unite
-         * @brief Properties pour l'attribut nb_unite
-         */
-        public override int Nb_unite
-        {
-            get
-            {
-                return nb_unite;
-            }
-        }
-
         /**
          * @fn MonteurPartieDemo
          * @brief Constructeur d'un MonteurPartieDemo
          */
         public MonteurPartieDemo()
         {
+            nb_case = Constantes.NB_CASE_DEMO;
+            nb_tour = Constantes.NB_TOUR_DEMO;
+            nb_unite = Constantes.NB_UNITE_DEMO;
+
             FabriquePeuple = new FabriquePeuple();
             Carte = new Carte();
             Partie = new Partie();
             Strategie = new StrategieDemo();
         }
-
-        /**
-         * @fn placerUnites()
-         * @brief Place le nombre d'unité nécessaire au début de la partie
-         * 
-         * @return void
-         */
-        /*  public override void placerUnites()
-          {
-              //TODO
-          }*/
-        //TODO SUpprimer si besoin
     }
 
     /**
@@ -437,78 +395,20 @@ namespace SmallWorld
     public class MonteurPartiePetite : MonteurPartie, InterMonteurPartiePetite
     {
         /**
-         * @brief constante <b>nb_case</b> le nombre de case
-         */
-        private const int nb_case = Constantes.NB_CASE_PETITE;
-
-        /**
-         * @brief constante <b>nb_tour</b> le nombre initial de tour
-         */
-        private const int nb_tour = Constantes.NB_TOUR_PETITE;
-
-        /**
-         * @brief constante <b>nb_unite</b> le nombre initial d'unité par joueur
-         */
-        private const int nb_unite = Constantes.NB_UNITE_PETITE;
-
-        /**
-         * @fn Nb_case
-         * @brief Properties pour l'attribut nb_case
-         */
-        public override int Nb_case
-        {
-            get
-            {
-                return nb_case;
-            }
-        }
-
-        /**
-         * @fn Nb_tour
-         * @brief Properties pour l'attribut nb_tour
-         */
-        public override int Nb_tour
-        {
-            get
-            {
-                return nb_tour;
-            }
-        }
-        /**
-         * @fn Nb_unite
-         * @brief Properties pour l'attribut nb_unite
-         */
-        public override int Nb_unite
-        {
-            get
-            {
-                return nb_unite;
-            }
-        }
-
-        /**
          * @fn MonteurPartiePetite
          * @brief Constructeur d'un MonteurPartiePetite
          */
         public MonteurPartiePetite()
         {
+            nb_case = Constantes.NB_CASE_PETITE;
+            nb_tour = Constantes.NB_TOUR_PETITE;
+            nb_unite = Constantes.NB_UNITE_PETITE;
+
             FabriquePeuple = new FabriquePeuple();
             Carte = new Carte();
             Partie = new Partie();
             Strategie = new StrategiePetite();
         }
-
-        /**
-         * @fn placerUnites()
-         * @brief Place le nombre d'unité nécessaire au début de la partie
-         * 
-         * @return void
-         */
-        /* public override void placerUnites()
-         {
-             //TODO
-         }*/
-        //TODO Supprimer si besoin
     }
 
     /**
@@ -518,79 +418,19 @@ namespace SmallWorld
     public class MonteurPartieNormale : MonteurPartie, InterMonteurPartieNormale
     {
         /**
-         * @brief constante <b>nb_case</b> le nombre de case
-         */
-        private const int nb_case = Constantes.NB_CASE_NORMALE;
-
-        /**
-         * @brief constante <b>nb_tour</b> le nombre initial de tour
-         */
-        private const int nb_tour = Constantes.NB_TOUR_NORMALE;
-
-        /**
-         * @brief constante <b>nb_unite</b> le nombre initial d'unité par joueur
-         */
-        private const int nb_unite = Constantes.NB_UNITE_NORMALE;
-
-        /**
-          * @fn Nb_case
-          * @brief Properties pour l'attribut nb_case
-          */
-        public override int Nb_case
-        {
-            get
-            {
-                return nb_case;
-            }
-        }
-
-        /**
-         * @fn Nb_tour
-         * @brief Properties pour l'attribut nb_tour
-         */
-        public override int Nb_tour
-        {
-            get
-            {
-                return nb_tour;
-            }
-        }
-
-        /**
-         * @fn Nb_unite
-         * @brief Properties pour l'attribut nb_unite
-         */
-        public override int Nb_unite
-        {
-            get
-            {
-                return nb_unite;
-            }
-        }
-
-        /**
          * @fn MonteurPartieNormale
          * @brief Constructeur d'un MonteurPartieNormale
          */
         public MonteurPartieNormale()
         {
+            nb_case = Constantes.NB_CASE_NORMALE;
+            nb_tour = Constantes.NB_TOUR_NORMALE;
+            nb_unite = Constantes.NB_UNITE_NORMALE;
+
             FabriquePeuple = new FabriquePeuple();
             Carte = new Carte();
             Partie = new Partie();
             Strategie = new StrategieNormale();
         }
-
-        /**
-         * @fn placerUnites()
-         * @brief Place le nombre d'unité nécessaire au début de la partie
-         * 
-         * @return void
-         */
-        /*   public override void placerUnites()
-           {
-               //TODO
-           }*/
-        //TODO Supprimer si besoin
-
     }
 }

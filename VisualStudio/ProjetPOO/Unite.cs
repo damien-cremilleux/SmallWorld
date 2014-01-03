@@ -80,6 +80,11 @@ namespace SmallWorld
         private Coordonnees position;
 
         /**
+         * @brief Attribut <b>case</b>, contient le type de case sur laquelle est l'unité
+         */
+        private Case caseUnite;
+
+        /**
          * @brief Attribut <b>pointDeVie</b>, contient le nombre de point de vie restant de l'unité
          */
         private int pointDeVie;
@@ -110,11 +115,11 @@ namespace SmallWorld
           * @brief Attribut <b>passeSonTour</b>, indique si l'unité passe son tour
           */
         private bool passeSonTour;
-        
+
         /**
          * @fn Position
          * @brief Properties pour l'attribut position
-         */
+        */
         public Coordonnees Position
         {
             get
@@ -124,6 +129,22 @@ namespace SmallWorld
             set
             {
                 position = value;
+            }
+        }
+
+        /**
+         * @fn TypeCase
+         * @brief Properties pour l'attribut typeCase
+         */
+        public Case CaseUnite
+        {
+            get
+            {
+                return caseUnite;
+            }
+            set
+            {
+                caseUnite = value;
             }
         }
 
@@ -167,6 +188,7 @@ namespace SmallWorld
         {
             get
             {
+                this.calculPointVictoire();
                 return pointDeVictoire;
             }
             set
@@ -241,6 +263,11 @@ namespace SmallWorld
             PasseSonTour = false;
         }
 
+        /**
+         * @fn calculPointVictoire()
+         * @brief Met à jour les points de victoire du joueur
+         */
+        public abstract void calculPointVictoire();
 
         /**
          * @fn attaquer()
@@ -295,10 +322,37 @@ namespace SmallWorld
      */
     public class UniteGauloise : Unite, InterUniteGauloise
     {
+        /**
+         * @fn UniteGauloise
+         * @brief Constructeur d'une unité gauloise
+         *
+         * @return la nouvelle unité gauloise
+         */
         public UniteGauloise()
         {
         }
 
+        /**
+         * @fn calculPointVictoire()
+         * @brief Met à jour les points de victoire apportés par l'unité
+         */
+        public override void calculPointVictoire()
+        {
+            if (CaseUnite.GetType() == new Desert().GetType())
+                PointDeVictoire = 1;
+
+            if (CaseUnite.GetType() == new Eau().GetType())
+                PointDeVictoire = 0;
+
+            if (CaseUnite.GetType() == new Foret().GetType())
+                PointDeVictoire = 1;
+
+            if (CaseUnite.GetType() == new Montagne().GetType())
+                PointDeVictoire = 1;
+
+            if (CaseUnite.GetType() == new Plaine().GetType())
+                PointDeVictoire = 2;
+        }
     }
 
     /**
@@ -307,10 +361,37 @@ namespace SmallWorld
      */
     public class UniteNaine : Unite, InterUniteNaine
     {
+        /**
+         * @fn UniteNaine()
+         * @brief Constructeur d'une unité naine
+         * 
+         * @return une unité naine
+         */
         public UniteNaine()
         {
         }
 
+        /**
+         * @fn calculPointVictoire()
+         * @brief Met à jour les points de victoire apportés par l'unité
+         */
+        public override void calculPointVictoire()
+        {
+            if (CaseUnite.GetType() == new Desert().GetType())
+                PointDeVictoire = 1;
+
+            if (CaseUnite.GetType() == new Eau().GetType())
+                PointDeVictoire = 0;
+
+            if (CaseUnite.GetType() == new Foret().GetType())
+                PointDeVictoire = 2;
+
+            if (CaseUnite.GetType() == new Montagne().GetType())
+                PointDeVictoire = 1;
+
+            if (CaseUnite.GetType() == new Plaine().GetType())
+                PointDeVictoire = 0;
+        }
     }
 
     /**
@@ -319,11 +400,63 @@ namespace SmallWorld
      */
     public class UniteViking : Unite, InterUniteViking
     {
+        /**
+         * @brief Attribut <b>bordEau</b> indique si l'unité occupe une case au bord de l'eau
+         */
+        private bool bordEau;
+
+        /**
+         * @fn BordEau
+         * @brief Properties pour l'attribut BordEau
+         */
+        public bool BordEau
+        {
+            get
+            {
+                return bordEau;
+            }
+            set
+            {
+                bordEau = value;
+            }
+        }
+
+        /**
+         * @fn UniteViking()
+         * @brief Constructeur d'une unité viking
+         * 
+         * @return une unité viking
+         */
         public UniteViking()
         {
         }
 
+        /**
+         * @fn calculPointVictoire()
+         * @brief Met à jour les points de victoire apportés par l'unité
+         */
+        public override void calculPointVictoire()
+        {
+            if (CaseUnite.GetType() == new Desert().GetType())
+                PointDeVictoire = 0;
+
+            if (CaseUnite.GetType() == new Eau().GetType())
+                PointDeVictoire = 0;
+
+            if (CaseUnite.GetType() == new Foret().GetType())
+                PointDeVictoire = 1;
+
+            if (CaseUnite.GetType() == new Montagne().GetType())
+                PointDeVictoire = 1;
+
+            if (CaseUnite.GetType() == new Plaine().GetType())
+                PointDeVictoire = 1;
+            
+            if (BordEau)
+            {
+                PointDeVictoire++;
+            }
+        }
+
     }
-
-
 }

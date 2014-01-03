@@ -41,15 +41,18 @@ namespace SmallWorld
         /**
          * @brief Attribut <b>TAILLE</b> indiquant la taille de la carte
          */
-        private int taille;
-
+        protected int taille;
+      
         /**
          * @fn Taille
          * @brief Properties pour l'attribut taille
          */
-        public abstract int Taille
+        public int Taille
         {
-            get;
+            get
+            {
+                return taille;
+            }
         }
 
         /**
@@ -152,24 +155,6 @@ namespace SmallWorld
      */
     public class StrategieDemo : StrategieCarte, InterStrategieDemo
     {
-
-        /**
-         * @brief Attribut <b>TAILLE</b> indiquant la taille de la carte
-         */
-        private int taille = 5;
-
-        /**
-         * @fn Taille
-         * @brief Properties pour l'attribut taille
-         */
-        public override int Taille
-        {
-            get
-            {
-                return taille;
-            }
-        }
-
         /**
          * @fn StrategieDemo()
          * @brief Constructeur d'une stratégie de type démo
@@ -178,6 +163,7 @@ namespace SmallWorld
          */
         public StrategieDemo()
         {
+            taille = Constantes.NB_CASE_DEMO;
         }
     }
 
@@ -187,24 +173,6 @@ namespace SmallWorld
      */
     public class StrategiePetite : StrategieCarte, InterStrategiePetite
     {
-
-        /**
-         * @brief Attribut <b>taille</b> indiquant la taille de la carte
-         */
-        private int taille = 10;
-
-        /**
-       * @fn Taille
-       * @brief Properties pour l'attribut taille
-       */
-        public override int Taille
-        {
-            get
-            {
-                return taille;
-            }
-        }
-
         /**
          * @fn StrategiePetite()
          * @brief Constructeur d'une stratégie de type petite
@@ -213,6 +181,7 @@ namespace SmallWorld
          */
         public StrategiePetite()
         {
+            taille = Constantes.NB_CASE_PETITE;
         }
     }
 
@@ -222,23 +191,6 @@ namespace SmallWorld
      */
     public class StrategieNormale : StrategieCarte, InterStrategieNormale
     {
-
-        /**
-         * @brief Attribut <b>taille</b> indiquant la taille de la carte
-         */
-        private int taille = 15;
-
-        /**
-       * @fn Taille
-       * @brief Properties pour l'attribut taille
-       */
-        public override int Taille
-        {
-            get
-            {
-                return taille;
-            }
-        }
         /**
          * @fn StrategieNormale()
          * @brief Constructeur d'une stratégie de type normale
@@ -247,6 +199,7 @@ namespace SmallWorld
          */
         public StrategieNormale()
         {
+            taille = Constantes.NB_CASE_NORMALE;
         }
 
         /**

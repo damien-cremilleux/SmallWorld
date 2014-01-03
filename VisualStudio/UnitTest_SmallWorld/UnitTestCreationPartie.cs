@@ -175,7 +175,7 @@ namespace UnitTest_SmallWorld
        * @fn TestPlacementUnite()
        * @brief Vérification du placement des unités
        */
-       /* [TestMethod]
+     /*   [TestMethod]
         public void TestPlacementUnite()
         {
             //Carte démo
@@ -185,6 +185,8 @@ namespace UnitTest_SmallWorld
             c1.ajoutJoueur("Lauriane", "gaulois");
             Partie p1;
             p1 = c1.construire();
+
+            Assert.AreEqual(0, p1.ListeJoueurs[0].ListeUnite[0].CaseUnite);
 
             Assert.AreEqual(0, p1.ListeJoueurs[0].ListeUnite[0].Position.Abscisse);
             Assert.AreEqual(0, p1.ListeJoueurs[0].ListeUnite[0].Position.Ordonnee);
@@ -212,7 +214,7 @@ namespace UnitTest_SmallWorld
             p3 = c3.construire();
 
             Assert.AreEqual(Constantes.NB_UNITE_NORMALE, p3.ListeJoueurs[0].ListeUnite.Count);
-            Assert.AreEqual(Constantes.NB_UNITE_NORMALE, p3.ListeJoueurs[1].ListeUnite.Count);*/
-        }
+            Assert.AreEqual(Constantes.NB_UNITE_NORMALE, p3.ListeJoueurs[1].ListeUnite.Count);
+        }*/
     }
 }
