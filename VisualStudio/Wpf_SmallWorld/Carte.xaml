@@ -29,9 +29,9 @@
                     <StackPanel>
                         <Label Content="Choix de la taille de la carte :" Margin="5,0,0,0"/>
                         <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Margin="20,0,0,0">
-                            <RadioButton Checked="carte" Style="{StaticResource RadioTaille}" Width="60" Height="60" >Démo</RadioButton>
-                            <RadioButton Checked="carte" Style="{StaticResource RadioTaille}" Width="80" Height="80"  >Petite</RadioButton>
-                            <RadioButton Checked="carte" Style="{StaticResource RadioTaille}" Width="100" Height="100" >Normale</RadioButton>
+                        <RadioButton Checked="carte" Style="{StaticResource RadioTaille}" FontSize="20" Width="60" Height="60" >Démo</RadioButton>
+                        <RadioButton Checked="carte" Style="{StaticResource RadioTaille}" FontSize="20" Width="80" Height="80"  >Petite</RadioButton>
+                        <RadioButton Checked="carte" Style="{StaticResource RadioTaille}" FontSize="20" Width="100" Height="100" >Normale</RadioButton>
                         </StackPanel>
                     </StackPanel>
                 </GroupBox>

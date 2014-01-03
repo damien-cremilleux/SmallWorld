@@ -42,7 +42,7 @@
         
             <!-- Données joueurs -->
             <Grid Grid.Row="2">
-                <StackPanel Name="InfoJoueurs" Orientation="Horizontal"/>
+                <StackPanel Name="InfoJoueurs" Orientation="Horizontal" Margin="0,0,0,10"/>
             </Grid>
 
 
@@ -73,7 +73,7 @@
             <Button Grid.Column="2" Height="40" HorizontalAlignment="Center" Click="TourSuivant">
                 <StackPanel>
                     <TextBlock HorizontalAlignment="Center" >Fin de tour</TextBlock>
-                    <TextBlock Name="NbTour" HorizontalAlignment="Center">Nombre de tour restant : </TextBlock>
+                    <TextBlock Name="NbTour" HorizontalAlignment="Center">Nombre de tour restants : </TextBlock>
                 </StackPanel>
                 
             </Button>

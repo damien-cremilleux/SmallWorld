@@ -8,15 +8,15 @@
              FontFamily="Segoe UI Light"
              FontSize="16">
     <Grid>
-        <Border BorderThickness="1"  CornerRadius="20" BorderBrush="Black">
-            <StackPanel Margin="5,0,0,10"  Name="infoJoueur2">
-                <TextBlock Margin="10" Name="Nom"/>
+        <Border BorderThickness="1" BorderBrush="#272A3D" Margin="10,0,10,0">
+            <StackPanel Margin="0,0,0,10"  Name="infoJoueur2">
+                <TextBlock Margin="0,0,0,7" Name="Nom" Padding="10,5,10,5" Background="#DE2A2A" Foreground="White" FontSize="16"/>
                 <StackPanel Margin="0,0,0,10" Orientation="Horizontal">
-                    <!--<Image Source="Resources\Vie.png" Width="30" Margin="0,0,10,0"/>-->
+                    <Image Source="Resources\Vie.png" Width="20" Margin="0,0,5,0"/>
                     <TextBlock Name="Points">Points :</TextBlock>
                 </StackPanel>
                 <StackPanel Margin="0,0,0,10" Orientation="Horizontal">
-                    <!--<Image Source="Resources\UnitRest.png" Width="30" Margin="0,0,10,0"/>-->
+                    <Image Source="Resources\UnitRest.png" Width="20" Margin="0,0,5,0"/>
                     <TextBlock Name="Unite">Unités restantes :</TextBlock>
                 </StackPanel>
             </StackPanel>

@@ -149,22 +149,34 @@
     <None Include="Resources\free-paper-texture-2.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\suiv.png" />
+    <Resource Include="Resources\suiv.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\suivOver.png" />
+    <Resource Include="Resources\suivOver.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\prec.png" />
+    <Resource Include="Resources\prec.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\precOver.png" />
+    <Resource Include="Resources\precOver.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\UnitRest.png" />
+    <Resource Include="Resources\UnitRest.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Vie.png" />
+    <Resource Include="Resources\Vie.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
