@@ -23,39 +23,13 @@ namespace Wpf_SmallWorld
     /// </summary>
     public partial class PageJeu : Page
     {
-        private WrapperAlgo w;
         private Partie partie;
+        private bool SelectedUnite;
 
         unsafe public PageJeu(Partie partie)
         {
             InitializeComponent();
-            w = new WrapperAlgo();
             this.partie = partie;
-            /*
-            int taille = 10;
-            int** test = w.genererCarte(taille);
-            int* placeJoueur = w.placerJoueur(test, taille);
-            int i, j, k;
-            string res;
-            res = "Map : \n";
-            for (i = 0; i < taille; i++)
-            {
-                for (j = 0; j < taille; j++)
-                {
-                    res += test[i][j] + "  ";
-                }
-                res += "\n";
-            }
-            MessageBox.Show(res);
-
-            string res2;
-            res2 = "Joueurs : ";
-            for (k = 0; k < 4; k++)
-            {
-                res2 += placeJoueur[k] + "\t";
-            }
-            MessageBox.Show(res2);
-            */
 
         }
 
@@ -78,7 +52,6 @@ namespace Wpf_SmallWorld
             // Initialisation de la carte
             int taille = partie.CartePartie.TailleCarte;
 
-            int** TCarte = w.genererCarte(taille);
 
             for (int c = 0; c < taille; c++)
             {
@@ -92,10 +65,8 @@ namespace Wpf_SmallWorld
                 for (int c = 0; c < taille; c++)
                 {
                     // dans chaque case de la grille on ajoute une tuile (logique) matérialisée par un rectangle (physique)
-                    // On récupère le numéro correspondant au type de la case
-                    var NumCase = TCarte[c][l];
-                    Case Case = FabriqueCase.Instance_FabCase.obtenirCase(NumCase);
-                    var element = createRectangle(c, l, Case);
+                    Case numCase = partie.CartePartie.ListeCases[c][l];
+                    var element = createRectangle(c, l, numCase);
 
                     // Ajout de la case dans la carte
                     Carte.Children.Add(element);
@@ -103,13 +74,19 @@ namespace Wpf_SmallWorld
             }
 
             // Initilisaton des unités
-            // Mettre une image spéciale quand plusieurs unités sur la même case ?
-            int* Coord = w.placerJoueur(TCarte, taille);
+            // Mettre une image spéciale quand plusieurs unités sur la même case
 
-            Grid.SetColumn(unitj1, Coord[0]);
-            Grid.SetRow(unitj1, Coord[1]);
-            Grid.SetColumn(unitj2, Coord[2]);
-            Grid.SetRow(unitj2, Coord[3]);
+            foreach (Joueur joueur in partie.ListeJoueurs)
+            {
+                //joueur. TODO : get position de départ
+            }
+
+
+
+            //Grid.SetColumn(unitj1, Coord[0]);
+            //Grid.SetRow(unitj1, Coord[1]);
+            //Grid.SetColumn(unitj2, Coord[2]);
+            //Grid.SetRow(unitj2, Coord[3]);
 
             // de façon dynamique  ... 
             //foreach (Joueur j in partie.ListeJoueurs)
@@ -226,6 +203,7 @@ namespace Wpf_SmallWorld
         /// <param name="args"> l'evt </param>
         void SelectUnite(object sender, SelectionChangedEventArgs args)
         {
+            SelectedUnite = true;
             var lbi = ((sender as ListBox).SelectedItem as InfoJoueur);
             tb.Text = "   You selected " + lbi.Test + ".";
         }
@@ -249,8 +227,11 @@ namespace Wpf_SmallWorld
             Grid.SetColumn(selectionRectangle, column);
             Grid.SetRow(selectionRectangle, row);
             selectionRectangle.Tag = cas;
-
-            // TODO
+           
+            if (SelectedUnite)
+            {
+                // TODO
+            }
 
             e.Handled = true;
         }
@@ -263,8 +244,7 @@ namespace Wpf_SmallWorld
         /// <param name="e"></param>
         private void TourSuivant(object sender, RoutedEventArgs e)
         {
-            updateUnit();
-            // changement de joueur en cours
+          //  updateUnit();
         }
 
 
@@ -323,7 +303,7 @@ namespace Wpf_SmallWorld
             MainWindow parent = (Application.Current.MainWindow as MainWindow);
             // Process message box results
             switch (result)
-            {   
+            {
                 case MessageBoxResult.Cancel:
                     break;
                 case MessageBoxResult.Yes:
@@ -333,7 +313,7 @@ namespace Wpf_SmallWorld
                 case MessageBoxResult.No:
                     parent.Close();
                     break;
-                
+
             }
 
 
