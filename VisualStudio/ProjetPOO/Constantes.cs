@@ -30,9 +30,9 @@ namespace SmallWorld
         public const int CASE_PLAINE = 4;
 
         //Peuple
-        public const string PEUPLE_GAULOIS = "gaulois";
-        public const string PEUPLE_NAIN = "nain";
-        public const string PEUPLE_VIKING = "viking";
+        public const string PEUPLE_GAULOIS = "Gaulois";
+        public const string PEUPLE_NAIN = "Nains";
+        public const string PEUPLE_VIKING = "Vikings";
 
         //Carte
         public const string CARTE_DEMO = "Démo";

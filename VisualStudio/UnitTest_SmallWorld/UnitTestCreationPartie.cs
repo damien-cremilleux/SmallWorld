@@ -26,8 +26,8 @@ namespace UnitTest_SmallWorld
         {
             CreateurPartie c = new CreateurPartie();
             c.TypePartie = Constantes.CARTE_DEMO;
-            c.ajoutJoueur("Damien", "viking");
-            c.ajoutJoueur("Lauriane", "gaulois");
+            c.ajoutJoueur("Damien", Constantes.PEUPLE_VIKING);
+            c.ajoutJoueur("Lauriane", Constantes.PEUPLE_GAULOIS);
 
             Partie p;
 
@@ -46,8 +46,8 @@ namespace UnitTest_SmallWorld
         {
             CreateurPartie c = new CreateurPartie();
             c.TypePartie = Constantes.CARTE_PETITE;
-            c.ajoutJoueur("Damien", "viking");
-            c.ajoutJoueur("Lauriane", "gaulois");
+            c.ajoutJoueur("Damien", Constantes.PEUPLE_VIKING);
+            c.ajoutJoueur("Lauriane", Constantes.PEUPLE_GAULOIS);
             Partie p;
             p = c.construire();
 
@@ -65,8 +65,8 @@ namespace UnitTest_SmallWorld
             //Carte démo
             CreateurPartie c1 = new CreateurPartie();
             c1.TypePartie = Constantes.CARTE_DEMO;
-            c1.ajoutJoueur("Damien", "viking");
-            c1.ajoutJoueur("Lauriane", "gaulois");
+            c1.ajoutJoueur("Damien", Constantes.PEUPLE_VIKING);
+            c1.ajoutJoueur("Lauriane", Constantes.PEUPLE_GAULOIS);
             Partie p1;
             p1 = c1.construire();
 
@@ -75,8 +75,8 @@ namespace UnitTest_SmallWorld
             //Carte petite
             CreateurPartie c2 = new CreateurPartie();
             c2.TypePartie = Constantes.CARTE_PETITE;
-            c2.ajoutJoueur("Damien", "viking");
-            c2.ajoutJoueur("Lauriane", "gaulois");
+            c2.ajoutJoueur("Damien", Constantes.PEUPLE_VIKING);
+            c2.ajoutJoueur("Lauriane", Constantes.PEUPLE_GAULOIS);
             Partie p2;
             p2 = c2.construire();
 
@@ -85,8 +85,8 @@ namespace UnitTest_SmallWorld
             //Carte normale
             CreateurPartie c3 = new CreateurPartie();
             c3.TypePartie = Constantes.CARTE_NORMALE;
-            c3.ajoutJoueur("Damien", "viking");
-            c3.ajoutJoueur("Lauriane", "gaulois");
+            c3.ajoutJoueur("Damien", Constantes.PEUPLE_VIKING);
+            c3.ajoutJoueur("Lauriane", Constantes.PEUPLE_GAULOIS);
             Partie p3;
             p3 = c3.construire();
 
@@ -103,8 +103,8 @@ namespace UnitTest_SmallWorld
             //Carte démo
             CreateurPartie c1 = new CreateurPartie();
             c1.TypePartie = Constantes.CARTE_DEMO;
-            c1.ajoutJoueur("Damien", "viking");
-            c1.ajoutJoueur("Lauriane", "gaulois");
+            c1.ajoutJoueur("Damien", Constantes.PEUPLE_VIKING);
+            c1.ajoutJoueur("Lauriane", Constantes.PEUPLE_GAULOIS);
             Partie p1;
             p1 = c1.construire();
 
@@ -113,8 +113,8 @@ namespace UnitTest_SmallWorld
             //Carte petite
             CreateurPartie c2 = new CreateurPartie();
             c2.TypePartie = Constantes.CARTE_PETITE;
-            c2.ajoutJoueur("Damien", "viking");
-            c2.ajoutJoueur("Lauriane", "gaulois");
+            c2.ajoutJoueur("Damien", Constantes.PEUPLE_VIKING);
+            c2.ajoutJoueur("Lauriane", Constantes.PEUPLE_GAULOIS);
             Partie p2;
             p2 = c2.construire();
             Assert.AreEqual(Constantes.NB_TOUR_PETITE, p2.NbTourRestant);
@@ -122,8 +122,8 @@ namespace UnitTest_SmallWorld
             //Carte normale
             CreateurPartie c3 = new CreateurPartie();
             c3.TypePartie = Constantes.CARTE_NORMALE;
-            c3.ajoutJoueur("Damien", "viking");
-            c3.ajoutJoueur("Lauriane", "gaulois");
+            c3.ajoutJoueur("Damien", Constantes.PEUPLE_VIKING);
+            c3.ajoutJoueur("Lauriane", Constantes.PEUPLE_GAULOIS);
             Partie p3;
             p3 = c3.construire();
 
@@ -140,8 +140,8 @@ namespace UnitTest_SmallWorld
             //Carte démo
             CreateurPartie c1 = new CreateurPartie();
             c1.TypePartie = Constantes.CARTE_DEMO;
-            c1.ajoutJoueur("Damien", "viking");
-            c1.ajoutJoueur("Lauriane", "gaulois");
+            c1.ajoutJoueur("Damien", Constantes.PEUPLE_VIKING);
+            c1.ajoutJoueur("Lauriane", Constantes.PEUPLE_GAULOIS);
             Partie p1;
             p1 = c1.construire();
 
@@ -151,8 +151,8 @@ namespace UnitTest_SmallWorld
             //Carte petite
             CreateurPartie c2 = new CreateurPartie();
             c2.TypePartie = Constantes.CARTE_PETITE;
-            c2.ajoutJoueur("Damien", "viking");
-            c2.ajoutJoueur("Lauriane", "gaulois");
+            c2.ajoutJoueur("Damien", Constantes.PEUPLE_VIKING);
+            c2.ajoutJoueur("Lauriane", Constantes.PEUPLE_GAULOIS);
             Partie p2;
             p2 = c2.construire();
 
@@ -162,8 +162,8 @@ namespace UnitTest_SmallWorld
             //Carte normale
             CreateurPartie c3 = new CreateurPartie();
             c3.TypePartie = Constantes.CARTE_NORMALE;
-            c3.ajoutJoueur("Damien", "viking");
-            c3.ajoutJoueur("Lauriane", "gaulois");
+            c3.ajoutJoueur("Damien", Constantes.PEUPLE_VIKING);
+            c3.ajoutJoueur("Lauriane", Constantes.PEUPLE_GAULOIS);
             Partie p3;
             p3 = c3.construire();
 
