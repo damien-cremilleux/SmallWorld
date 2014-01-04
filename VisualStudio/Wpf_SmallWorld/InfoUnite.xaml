@@ -6,22 +6,64 @@
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
 
-    <StackPanel>
-        <TextBlock Name="PointVie">
-            Point de vie :
-        </TextBlock>
-        <TextBlock Name="PointDeplacement">
-                Point de déplacement :
-        </TextBlock>
-        <TextBlock Name="PointVictoire">
-            Point de victoire :
-        </TextBlock>
-        <TextBlock Name="PointAttaque">
-            Point d'attaque :
-        </TextBlock>
-        <TextBlock Name="PointDefense">
-            Point de défense :
-        </TextBlock>
-    </StackPanel>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0" Grid.Column="0">
+            <Rectangle Name="ImgPeuple" Width="50" Height="50" Fill="red"/>
+        </Grid>
+
+        <Grid Grid.Row="0" Grid.Column="1">
+            <StackPanel>
+                <TextBlock Name="NomPeuple" />
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="Resources\Vie.png" Width="20" Margin="0,0,5,0"/>
+                    <TextBlock Name="PointVie"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="Resources\déplacement.png" Width="20" Margin="0,0,5,0"/>
+                    <TextBlock Name="PointDeplacement"/>
+                </StackPanel>
+            </StackPanel>
+        </Grid>
+        <Grid Grid.Row="0" Grid.Column="2">
+            <StackPanel>
+
+            </StackPanel>
+
+            <StackPanel>
+
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="Resources\victoire.png" Width="20" Margin="0,0,5,0"/>
+                    <TextBlock Name="PointVictoire" />
+                </StackPanel>
+
+
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="Resources\Attaque.png" Width="20" Margin="0,0,5,0"/>
+                    <TextBlock Name="PointAttaque"/>
+                </StackPanel>
+
+
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="Resources\Defence.png" Width="20" Margin="0,0,5,0"/>
+                    <TextBlock Name="PointDefense"/>
+                </StackPanel>
+            </StackPanel>
+
+        </Grid>
+    </Grid>
+
+    
+
 
 </UserControl>

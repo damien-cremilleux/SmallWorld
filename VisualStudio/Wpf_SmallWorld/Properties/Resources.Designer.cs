@@ -63,6 +63,36 @@ namespace Wpf_SmallWorld.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Attaque {
+            get {
+                object obj = ResourceManager.GetObject("Attaque", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Defence {
+            get {
+                object obj = ResourceManager.GetObject("Defence", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap déplacement {
+            get {
+                object obj = ResourceManager.GetObject("déplacement", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap prec {
             get {
                 object obj = ResourceManager.GetObject("prec", resourceCulture);
@@ -116,6 +146,16 @@ namespace Wpf_SmallWorld.Properties {
         internal static System.Drawing.Bitmap UnitRest {
             get {
                 object obj = ResourceManager.GetObject("UnitRest", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap victoire {
+            get {
+                object obj = ResourceManager.GetObject("victoire", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

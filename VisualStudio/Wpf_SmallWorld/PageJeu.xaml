@@ -23,9 +23,9 @@
 
         <Grid Grid.Row="0" Grid.ColumnSpan="2" Background="#272A3D" >
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-                <Button Width="130" Click="Recharger" Background="Transparent" Foreground="White">Recharger</Button>
-                <Button Width="130" Click="Sauvegarder" Background="Transparent" Foreground="White">Sauvergarder</Button>
-                <Button Width="130" Click="Quitter" Background="Transparent" Foreground="White">Quitter</Button>
+                <Button Width="130" Click="Recharger" BorderThickness="1,0,0,0" Background="Transparent" Foreground="White">Recharger</Button>
+                <Button Width="130" Click="Sauvegarder" BorderThickness="1,0,0,0" Background="Transparent" Foreground="White">Sauvergarder</Button>
+                <Button Width="130" Click="Quitter" BorderThickness="1,0,0,0" Background="Transparent" Foreground="White">Quitter</Button>
             </StackPanel>
         </Grid>
 
