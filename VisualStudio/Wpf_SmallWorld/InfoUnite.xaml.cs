@@ -31,6 +31,7 @@ namespace Wpf_SmallWorld
             get { return unite; }
         }
 
+
         public InfoUnite(Unite unit)
         {
           

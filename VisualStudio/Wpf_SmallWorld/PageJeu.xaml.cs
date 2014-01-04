@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+
 using Wrapper;
 using SmallWorld;
 
@@ -24,14 +25,18 @@ namespace Wpf_SmallWorld
     public partial class PageJeu : Page
     {
         private Partie partie;
-        private bool SelectedUnite;
+        private bool Selected;
+        InfoUnite SelectedUnit;
 
         unsafe public PageJeu(Partie partie)
         {
             InitializeComponent();
             this.partie = partie;
 
+            // Ajout d'un évenement pour permettre au joueur de passer au tour suivant en appuyant sur la touche espace
+            this.KeyDown += new KeyEventHandler(TourSuivantEspace);
         }
+
 
         /// <summary>
         /// Définit les actions à réaliser lors du chargement de la fenêtre : initialisation des données et de la carte
@@ -52,7 +57,6 @@ namespace Wpf_SmallWorld
             // Initialisation de la carte
             int taille = partie.CartePartie.TailleCarte;
 
-
             for (int c = 0; c < taille; c++)
             {
                 Carte.ColumnDefinitions.Add(new ColumnDefinition() { Width = new GridLength(40, GridUnitType.Pixel) });
@@ -64,7 +68,7 @@ namespace Wpf_SmallWorld
                 Carte.RowDefinitions.Add(new RowDefinition() { Height = new GridLength(40, GridUnitType.Pixel) });
                 for (int c = 0; c < taille; c++)
                 {
-                    // dans chaque case de la grille on ajoute une tuile (logique) matérialisée par un rectangle (physique)
+                    // Dans chaque case de la grille on ajoute une tuile (logique) matérialisée par un rectangle (physique)
                     Case numCase = partie.CartePartie.ListeCases[c][l];
                     var element = createRectangle(c, l, numCase);
 
@@ -74,26 +78,58 @@ namespace Wpf_SmallWorld
             }
 
             // Initilisaton des unités
-            // Mettre une image spéciale quand plusieurs unités sur la même case
 
+            // TODO : trouver autre solution
+
+           
             foreach (Joueur joueur in partie.ListeJoueurs)
             {
-                //joueur. TODO : get position de départ
+                // TODO : get position de départ plus élégante
+                int column = joueur.ListeUnite[0].Position.Abscisse;
+                int row = joueur.ListeUnite[0].Position.Ordonnee;
+
+                Rectangle rect = new Rectangle();
+                rect.Fill = Brushes.Red; // TODO : Pour la position initiale on crée une image globale des unités pour chaque joueurs
+                Panel.SetZIndex(rect, 50);
+
+                // mise à jour des attributs (column et Row) référencant la position dans la grille à rectangle
+                Grid.SetColumn(rect, column);
+                Grid.SetRow(rect, row);
+
+                // récuperation du type de la case 
+                rect.Tag = partie.CartePartie.ListeCases[column][row] as Case;
+                
+                // Même évenements que les autres cases 
+                rect.MouseLeftButtonDown += new MouseButtonEventHandler(rectangle_MouseLeftButtonDown);
+                rect.MouseRightButtonDown += new MouseButtonEventHandler(rectangle_MouseRightButtonDown);
+
+                Carte.Children.Add(rect);
             }
+        }
 
 
 
-            //Grid.SetColumn(unitj1, Coord[0]);
-            //Grid.SetRow(unitj1, Coord[1]);
-            //Grid.SetColumn(unitj2, Coord[2]);
-            //Grid.SetRow(unitj2, Coord[3]);
-
-            // de façon dynamique  ... 
-            //foreach (Joueur j in partie.ListeJoueurs)
-            //{
-            //    Carte.Children.Add(unit);
-            //}
-
+        /// <summary>
+        /// Permet de mettre la case à la texture de son type
+        /// </summary>
+        /// <param name="cas"> La Case </param>
+        /// <param name="rec"> Le rectange </param>
+        /// <returns></returns>
+        private void RecColor(Case cas, Rectangle rec)
+        {
+            if (cas is InterEau)
+                rec.Fill = Brushes.SlateBlue;
+            if (cas is InterForet)
+                rec.Fill = Brushes.DarkGreen;
+            if (cas is InterMontagne)
+                rec.Fill = Brushes.Brown;
+            if (cas is InterPlaine)
+                rec.Fill = Brushes.Green;
+            if (cas is InterDesert)
+            {
+                BitmapSource img = System.Windows.Interop.Imaging.CreateBitmapSourceFromHBitmap(Wpf_SmallWorld.Properties.Resources.Sable.GetHbitmap(), IntPtr.Zero, Int32Rect.Empty, BitmapSizeOptions.FromEmptyOptions());
+                rec.Fill = new ImageBrush(img);
+            }
         }
 
 
@@ -108,19 +144,7 @@ namespace Wpf_SmallWorld
         {
             var rectangle = new Rectangle();
 
-            if (Case is InterEau)
-                rectangle.Fill = Brushes.SlateBlue;
-            if (Case is InterForet)
-                rectangle.Fill = Brushes.DarkGreen;
-            if (Case is InterMontagne)
-                rectangle.Fill = Brushes.Brown;
-            if (Case is InterPlaine)
-                rectangle.Fill = Brushes.Green;
-            if (Case is InterDesert)
-            {
-                BitmapSource img = System.Windows.Interop.Imaging.CreateBitmapSourceFromHBitmap(Wpf_SmallWorld.Properties.Resources.Sable.GetHbitmap(), IntPtr.Zero, Int32Rect.Empty, BitmapSizeOptions.FromEmptyOptions());
-                rectangle.Fill = new ImageBrush(img);
-            }
+            RecColor(Case, rectangle);
 
             Panel.SetZIndex(rectangle, 50);
 
@@ -162,7 +186,6 @@ namespace Wpf_SmallWorld
         /// <param name="e"> l'evt </param>
         private void rectangle_MouseLeftButtonDown(object sender, RoutedEventArgs e)
         {
-
             // Récuperation des données du rectangle selectionné
             var rectangle = sender as Rectangle;
             var cas = rectangle.Tag as Case;
@@ -176,12 +199,14 @@ namespace Wpf_SmallWorld
             selectionRectangle.Visibility = System.Windows.Visibility.Visible;
 
             InfoUnites.Children.Clear();
+
+            RecColor(cas, CaseSelect);
             InfoCase.Visibility = Visibility.Visible;
             ListBox a = new ListBox();
             a.SelectionChanged += SelectUnite;
 
-            // TODO : tester avec la creation d'une unité mais impossible pour le moment
 
+            // TODO : tester avec la creation d'une unité mais impossible pour le moment
             List<InfoJoueur> r = new List<InfoJoueur>();
 
             foreach (Joueur joueur in partie.ListeJoueurs)
@@ -196,6 +221,8 @@ namespace Wpf_SmallWorld
             e.Handled = true;
         }
 
+
+
         /// <summary>
         /// Délégué : réponse à l'evt selection d'une unité
         /// </summary>
@@ -203,9 +230,10 @@ namespace Wpf_SmallWorld
         /// <param name="args"> l'evt </param>
         void SelectUnite(object sender, SelectionChangedEventArgs args)
         {
-            SelectedUnite = true;
+            Selected = true;
             var lbi = ((sender as ListBox).SelectedItem as InfoJoueur);
             tb.Text = "   You selected " + lbi.Test + ".";
+            // SelectedUnit = lbi.Unit;
         }
 
 
@@ -216,7 +244,9 @@ namespace Wpf_SmallWorld
         /// <param name="e"> l'evt </param>
         private void rectangle_MouseRightButtonDown(object sender, RoutedEventArgs e)
         {
-
+            // Voir si maj de la selection même si pas l'unité selectionnée
+            if (Selected)
+            {
             // Récuperation des données du rectangle selectionné
             var rectangle = sender as Rectangle;
             var cas = rectangle.Tag as Case;
@@ -227,10 +257,9 @@ namespace Wpf_SmallWorld
             Grid.SetColumn(selectionRectangle, column);
             Grid.SetRow(selectionRectangle, row);
             selectionRectangle.Tag = cas;
-           
-            if (SelectedUnite)
-            {
-                // TODO
+
+                // TODO 
+            //partie.demanderDeplacement(colunm, row, SelectedUnit);
             }
 
             e.Handled = true;
@@ -244,9 +273,64 @@ namespace Wpf_SmallWorld
         /// <param name="e"></param>
         private void TourSuivant(object sender, RoutedEventArgs e)
         {
-          //  updateUnit();
+            partie.changerJoueur();
+
+            if (!partie.PartieFinie)
+            {
+                //  updateUnit();
+                //maj des données joueurs
+                //foreach (Joueur joueur in partie.ListeJoueurs)
+                //{
+                //    InfoJoueur j = new InfoJoueur(joueur);
+                //    InfoJoueurs.Children.Add(j);
+                //}
+
+                ////maj du nombre de tour
+                //
+                //NbTour.Text += " " + partie.NbTourRestant;
+            }
+            else
+            {
+                string vainqueurs = "";
+
+                foreach (Joueur vainqueur in partie.vainqueurs())
+                {
+                    vainqueurs += vainqueur.NomJ;
+                }
+
+                string messageBoxText = "Partie terminée ! Vainqueur(s) : " +vainqueurs+ " ! Nouvelle partie ?";
+                string caption = "Small World";
+                MessageBoxButton button = MessageBoxButton.YesNo;
+                MessageBoxImage icon = MessageBoxImage.Question;
+                MessageBoxResult result = MessageBox.Show(messageBoxText, caption, button, icon);
+
+                // Relancer sur une nouvelle partie ou menu principal ?
+                switch (result)
+                {
+                    case MessageBoxResult.Yes:
+                        Recharger(sender, e);
+                        break;
+                    case MessageBoxResult.No:
+                        MainWindow parent = (Application.Current.MainWindow as MainWindow);
+                        parent.Close();
+                        break;
+                }
+            }
         }
 
+        /// <summary>
+        /// Délégué : réaction à l'evt : touche espace correspondant au bouton "Tour Suivant"
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e">e, la touche préssée</param>
+        private void TourSuivantEspace(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Space)
+            {
+                TourSuivant(sender, e); // ok ?
+            }
+
+        }
 
 
 
@@ -269,7 +353,7 @@ namespace Wpf_SmallWorld
         {
             //TODO 
 
-            // Configure save file dialog box
+            // Configuration de la boite de dialogue
             Microsoft.Win32.SaveFileDialog dlg = new Microsoft.Win32.SaveFileDialog();
             dlg.FileName = "Sauvegarde"; // Default file name
             dlg.DefaultExt = ".text"; // Default file extension
@@ -293,7 +377,7 @@ namespace Wpf_SmallWorld
         /// </summary>
         private void Quitter(object sender, RoutedEventArgs e)
         {
-            // vérification, enregistrement
+            // Vérification et enregistrement
             string messageBoxText = "Voulez-vous enregistrer la partie ?";
             string caption = "Small World";
             MessageBoxButton button = MessageBoxButton.YesNoCancel;
@@ -301,7 +385,7 @@ namespace Wpf_SmallWorld
             MessageBoxResult result = MessageBox.Show(messageBoxText, caption, button, icon);
 
             MainWindow parent = (Application.Current.MainWindow as MainWindow);
-            // Process message box results
+
             switch (result)
             {
                 case MessageBoxResult.Cancel:
@@ -315,8 +399,6 @@ namespace Wpf_SmallWorld
                     break;
 
             }
-
-
         }
     }
 }
