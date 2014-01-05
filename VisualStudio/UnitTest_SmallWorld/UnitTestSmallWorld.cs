@@ -1,11 +1,11 @@
 ﻿/**
- * @file UnitTestCreationPartie.cs
- * @brief Tests unitaires pour la création de partie
+ * @file UnitTestSmallWorld.cs
+ * @brief Tests unitaires pour SmallWorld
  *
  * @author <a href="mailto:damien.cremilleux@insa-rennes.fr">Damien Crémilleux</a>
  * @author <a href="mailto:lauriane.holy@insa-rennes.fr">Lauriane Holy</a>
  * 
- * @date 03/01/2014
+ * @date 05/01/2014
  * @version 0.1
  */
 using System;
@@ -15,7 +15,7 @@ using System.Collections.Generic;
 namespace UnitTest_SmallWorld
 {
     [TestClass]
-    public class UnitTestCreationPartie
+    public class UnitTestSmallWorld
     {
         /**
          * @fn TestNomJoueur()
@@ -26,7 +26,7 @@ namespace UnitTest_SmallWorld
         {
             CreateurPartie c = new CreateurPartie();
             c.TypePartie = Constantes.CARTE_DEMO;
-            c.ajoutJoueur("Damien", Constantes.PEUPLE_VIKING);
+            c.ajoutJoueur("Damien", Constantes.PEUPLE_GAULOIS);
             c.ajoutJoueur("Lauriane", Constantes.PEUPLE_GAULOIS);
 
             Partie p;
@@ -65,8 +65,8 @@ namespace UnitTest_SmallWorld
             //Carte démo
             CreateurPartie c1 = new CreateurPartie();
             c1.TypePartie = Constantes.CARTE_DEMO;
-            c1.ajoutJoueur("Damien", Constantes.PEUPLE_VIKING);
-            c1.ajoutJoueur("Lauriane", Constantes.PEUPLE_GAULOIS);
+            c1.ajoutJoueur("Damien", Constantes.PEUPLE_NAIN);
+            c1.ajoutJoueur("Lauriane", Constantes.PEUPLE_NAIN);
             Partie p1;
             p1 = c1.construire();
 
@@ -175,7 +175,7 @@ namespace UnitTest_SmallWorld
        * @fn TestPlacementUnite()
        * @brief Vérification du placement des unités
        */
-     /*   [TestMethod]
+        [TestMethod]
         public void TestPlacementUnite()
         {
             //Carte démo
@@ -215,6 +215,28 @@ namespace UnitTest_SmallWorld
 
             Assert.AreEqual(Constantes.NB_UNITE_NORMALE, p3.ListeJoueurs[0].ListeUnite.Count);
             Assert.AreEqual(Constantes.NB_UNITE_NORMALE, p3.ListeJoueurs[1].ListeUnite.Count);
-        }*/
+        }
+    }
+
+    [TestClass]
+    public class UnitTestCoordonnees
+    {
+        /**
+         * @fn TestCoordonnees()
+         * @brief Vérification du comportement des coordonnées
+         */
+        [TestMethod]
+        public void TestCoordonnees()
+        {
+            Coordonnees c1 = new Coordonnees(1, 2);
+            Coordonnees c2 = new Coordonnees(2, 1);
+            Coordonnees c3 = new Coordonnees(1, 2);
+
+            Assert.IsTrue(c1.Equals(c3));
+            Assert.IsFalse(c3.Equals(c2));
+
+            Assert.AreEqual(1, c1.Abscisse);
+            Assert.AreEqual(2, c1.Ordonnee);
+        }
     }
 }

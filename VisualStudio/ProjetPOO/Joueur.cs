@@ -7,7 +7,7 @@
  * @author <a href="mailto:damien.cremilleux@insa-rennes.fr">Damien Crémilleux</a>
  * @author <a href="mailto:lauriane.holy@insa-rennes.fr">Lauriane Holy</a>
  * 
- * @date 17/12/2013
+ * @date 04/01/2014
  * @version 0.1
  */
 using System;
@@ -146,12 +146,5 @@ namespace SmallWorld
             }
             PointVictoire = cptPt;
         }
-
-
-        /* TODO enlever si inutile
-        public void creerJoueur()
-        {
-            throw new System.NotImplementedException();
-        }*/
     }
 }

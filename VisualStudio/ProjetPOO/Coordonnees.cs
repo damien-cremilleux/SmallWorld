@@ -84,5 +84,21 @@ namespace SmallWorld
             this.abscisse = abs;
             this.ordonnee = ord;
         }
+
+        /**
+         * @fn Equals(Object obj)
+         * @brief Test d'égalité pour deux coordonnées
+         * 
+         * @param Object <b>obj</b> la coordonnée à comparer
+         * @return vrai si les deux coordonnées sont égales, faux sinon
+         */
+        public override bool Equals(Object obj)
+        {
+            Coordonnees coord = obj as Coordonnees;
+            if (coord == null)
+                return false;
+            else
+                return Abscisse.Equals(coord.Abscisse) && Ordonnee.Equals(coord.Ordonnee);
+        }
     }
 }

@@ -14,6 +14,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Wrapper;
 
 namespace SmallWorld
 {
@@ -22,7 +23,7 @@ namespace SmallWorld
      * @interface InterUnite
      * @brief interface pour les unités
      */
-    public interface InterUnite
+    public unsafe interface InterUnite
     {
         /**
          * @fn attaquer
@@ -33,8 +34,12 @@ namespace SmallWorld
         /**
          * @fn seDeplacer
          * @brief se déplacer sur une case
+         * 
+         * @param int <b>x</b> l'abscisse demandée
+         * @param int <b>y</b> l'ordinnée demandée
+         * @return void
          */
-        void seDeplacer();
+        void seDeplacer(int x, int y);
 
         /**
          * @fn passerSonTour
@@ -71,7 +76,7 @@ namespace SmallWorld
      * @class Unite
      * @brief Classe abstraite pour les unités
      */
-    public abstract class Unite : InterUnite
+    public unsafe abstract class Unite : InterUnite
     {
 
         /**
@@ -85,6 +90,26 @@ namespace SmallWorld
         private Case caseUnite;
 
         /**
+        * @brief Attribut <b>tabCarte</b>, contient la carte sous forme d'un tableau d'int
+        */
+        private int * tabCarte;
+
+        /**
+        * @brief Attribut <b>tabDeplacement</b>, contient le tableau des déplacements possibles
+        */
+        private int * tabDeplacement;
+
+        /**
+         * @brief Attribut <b>tabCout</b>, contient le tableau des couts de déplacements
+         */
+        private double * tabCout;
+
+        /**
+         * @brief Attribut <b>taillCarteJeu</b>, contient la taille de la carte du jeu
+         */
+        private int tailleCarteJeu;
+
+        /**
          * @brief Attribut <b>pointDeVie</b>, contient le nombre de point de vie restant de l'unité
          */
         private int pointDeVie;
@@ -94,7 +119,7 @@ namespace SmallWorld
          * 
          * Le nombre de point de déplacement est réinitialisé à chaque début de tour.
          */
-        private int pointDeDeplacement;
+        private double pointDeDeplacement;
 
         /**
          * @brief Attribut <b>pointDeVictoire</b>, contient le nombre de victoire apporté par de l'unité
@@ -149,6 +174,70 @@ namespace SmallWorld
         }
 
         /**
+         * @fn TabCarte
+         * @brief Properties pour l'attribut tabCarte
+         */
+        public int* TabCarte
+        {
+            get
+            {
+                return tabCarte;
+            }
+            set
+            {
+                tabCarte = value;
+            }
+        }
+
+        /**
+         * @fn CartePartie
+         * @brief Properties pour l'attribut tabDeplacement
+         */
+        public int* TabDeplacement
+        {
+            get
+            {
+                return tabDeplacement;
+            }
+            set
+            {
+                tabDeplacement = value;
+            }
+        }
+
+        /**
+         * @fn TabCout
+         * @brief Properties pour l'attribut tabCout
+         */
+        public double * TabCout
+        {
+            get
+            {
+                return tabCout;
+            }
+            set
+            {
+                tabCout = value;
+            }
+        }
+
+        /**
+         * @fn TailleCarteJeu
+         * @brief Properties pour l'attribut tailleCarteJeu
+         */
+        public int TailleCarteJeu
+        {
+            get
+            {
+                return tailleCarteJeu;
+            }
+            set
+            {
+                tailleCarteJeu = value;
+            }
+        }
+
+        /**
          * @fn PointDeVie
          * @brief Properties pour l'attribut pointDeVie
          */
@@ -168,7 +257,7 @@ namespace SmallWorld
          * @fn PointDeDeplacement
          * @brief Properties pour l'attribut pointDeDeplacement
          */
-        public int PointDeDeplacement
+        public double PointDeDeplacement
         {
             get
             {
@@ -279,13 +368,36 @@ namespace SmallWorld
         }
 
         /**
-         * @fn seDeplacer()
+         * @fn seDeplacer
          * @brief se déplacer sur une case
+         * 
+         * @param int <b>x</b> l'abscisse demandée
+         * @param int <b>y>/b> l'ordonnée demandée
+         * @param int* <b>carte</b> la carte
+         * @param int <b>tailleCarte</b> la taille de la carte
+         * @return void
          */
-        public void seDeplacer()
+        public void seDeplacer(int x, int y)
         {
-            throw new NotImplementedException();
+            if (TabDeplacement[x * TailleCarteJeu + y] > 1)
+            {
+                //On met à jour l'unité
+                PointDeDeplacement = TabCout[x * TailleCarteJeu + y];
+                Position.Abscisse = x;
+                Position.Ordonnee = y;
+
+                //On met à jour les matrices de déplacements
+                calculerDeplacement();
+            }
         }
+
+        /**
+        * @fn calculerDeplacement
+        * @brief calculer les déplacements possibles
+        * 
+        * @return void
+        */
+        public abstract void calculerDeplacement();
 
         /**
          * @fn passerSonTour()
@@ -320,7 +432,7 @@ namespace SmallWorld
      * @class UniteGauloise
      * @brief Classe pour les unités gauloises
      */
-    public class UniteGauloise : Unite, InterUniteGauloise
+    public unsafe class UniteGauloise : Unite, InterUniteGauloise
     {
         /**
          * @fn UniteGauloise
@@ -353,13 +465,26 @@ namespace SmallWorld
             if (CaseUnite.GetType() == new Plaine().GetType())
                 PointDeVictoire = 2;
         }
+
+        /**
+         * @fn calculerDeplacement
+         * @brief met à jour les déplacements possibles
+         * 
+         * @return void
+         */
+        public override void calculerDeplacement()
+        {
+            WrapperAlgo w = new WrapperAlgo();
+            w.deplacementGauloisInitial(TabCarte, TailleCarteJeu, Position.Abscisse, Position.Ordonnee, TabCout, TabDeplacement);
+        }
+    
     }
 
     /**
      * @class UniteNaine
      * @brief Classe pour les unités naines
      */
-    public class UniteNaine : Unite, InterUniteNaine
+    public unsafe class UniteNaine : Unite, InterUniteNaine
     {
         /**
          * @fn UniteNaine()
@@ -392,13 +517,25 @@ namespace SmallWorld
             if (CaseUnite.GetType() == new Plaine().GetType())
                 PointDeVictoire = 0;
         }
+
+        /**
+         * @fn calculerDeplacement
+         * @brief met à jour les déplacements possibles
+         * 
+         * @return void
+         */
+        public override void calculerDeplacement()
+        {
+            WrapperAlgo w = new WrapperAlgo();
+            w.deplacementNainInitial(TabCarte, TailleCarteJeu, Position.Abscisse, Position.Ordonnee, TabCout, TabDeplacement);
+        }
     }
 
     /**
      * @class UniteViking
      * @brief Classe pour les unités viking
      */
-    public class UniteViking : Unite, InterUniteViking
+    public unsafe class UniteViking : Unite, InterUniteViking
     {
         /**
          * @brief Attribut <b>bordEau</b> indique si l'unité occupe une case au bord de l'eau
@@ -451,12 +588,23 @@ namespace SmallWorld
 
             if (CaseUnite.GetType() == new Plaine().GetType())
                 PointDeVictoire = 1;
-            
+
             if (BordEau)
             {
                 PointDeVictoire++;
             }
         }
 
+        /**
+         * @fn calculerDeplacement
+         * @brief met à jour les déplacements possibles
+         * 
+         * @return void
+         */
+        public override void calculerDeplacement()
+        {
+            WrapperAlgo w = new WrapperAlgo();
+             w.deplacementVikingInitial(TabCarte, TailleCarteJeu, Position.Abscisse, Position.Ordonnee, TabCout, TabDeplacement);
+        }
     }
 }

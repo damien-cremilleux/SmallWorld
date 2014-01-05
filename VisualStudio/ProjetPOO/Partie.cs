@@ -5,7 +5,7 @@
  * @author <a href="mailto:damien.cremilleux@insa-rennes.fr">Damien Crémilleux</a>
  * @author <a href="mailto:lauriane.holy@insa-rennes.fr">Lauriane Holy</a>
  * 
- * @date 16/12/2013
+ * @date 04/01/2014
  * @version 0.1
  */
 using System;
@@ -27,7 +27,7 @@ namespace SmallWorld
      * @class Partie
      * @brief classe pour les parties
      */
-    public class Partie : InterPartie
+    public unsafe class Partie : InterPartie
     {
         /**
          * @brief Attribut <b>indiceJoueurInitiale</b> indice du joueur ayant commencé
@@ -63,6 +63,11 @@ namespace SmallWorld
          * @brief Attribut <b>cartePartie</b> carte de la partie
          */
         private Carte cartePartie;
+
+        /**
+         * @brief Attibut <b>tabCarte</b> la carte sous forme d'un tableau d'int
+         */
+        private int* tabCarte;
 
         /**
          * @fn IndiceJoueurEnCours
@@ -163,6 +168,22 @@ namespace SmallWorld
         }
 
         /**
+         * @fn TabCarte
+         * @brief Properties pour l'attribut tabCarte
+         */
+        public int * TabCarte
+        {
+            get
+            {
+                return tabCarte;
+            }
+            set
+            {
+                tabCarte = value;
+            }
+        }
+
+        /**
          * @fn Partie()
          * @brief Constructeur d'une partie vide
          * 
@@ -259,19 +280,35 @@ namespace SmallWorld
          * @param int <b>y</b> l'ordonnée de la case demandée
          * @return List<int> la liste des indices des unités présentes sur la cases, pour le joueur courant
          */
-        public List<int> selectionnerUnite()
+        public List<int> selectionnerUnite(int x, int y)
         {
-            throw new System.NotImplementedException();
+            int indice;
+            List<int> listeUnite = new List<int>();
+            Coordonnees coord = new Coordonnees(x,y);
+
+            for (indice = 0; indice < ListeJoueurs[IndiceJoueurEnCours].ListeUnite.Count; indice++)
+            {
+                if (ListeJoueurs[IndiceJoueurEnCours].ListeUnite[indice].Position.Equals(coord))
+                {
+                    listeUnite.Add(indice);
+                }
+            }
+            return listeUnite;
         }
 
-        public void demanderDeplacement()
+        /**
+         * @fn demanderDeplacement(int indiceUnite, int x, int y)
+         * @brief Déplacer, si possible, l'unité sur la case (x,y)
+         * 
+         * @param int <b>indiceUnite</b> l'indice de l'unité à déplacer, dans le tableau des unités du joueurs en cours
+         * @param int <b>x</b> l'abscisse de la case destination
+         * @param int <b>y</b> l'ordonnée de la case destination
+         * @return void
+         */
+        public void demanderDeplacement(int indiceUnite, int x, int y)
         {
-            throw new System.NotImplementedException();
+            //TODO faire une implémentation correcte
+            ListeJoueurs[IndiceJoueurEnCours].ListeUnite[indiceUnite].Position = new Coordonnees(x, y);
         }
-
-       /* public void validerTour()
-        {
-            throw new System.NotImplementedException();
-        }*/ //TODO SUpprimer si besoin
     }
 }

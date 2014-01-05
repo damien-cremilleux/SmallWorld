@@ -8,7 +8,7 @@
  * @author <a href="mailto:damien.cremilleux@insa-rennes.fr">Damien Crémilleux</a>
  * @author <a href="mailto:lauriane.holy@insa-rennes.fr">Lauriane Holy</a>
  * 
- * @date 03/01/2014
+ * @date 05/01/2014
  * @version 0.1
  */
 using System;
@@ -341,7 +341,9 @@ namespace SmallWorld
 
             position = wrapperAlgo.placerJoueur(tabCase, Nb_case);
 
-            int x1,y1,x2,y2;
+            Partie.TabCarte = tabCase;
+
+            int x1, y1, x2, y2;
 
             x1 = position[0];
             y1 = position[1];
@@ -351,16 +353,19 @@ namespace SmallWorld
             Coordonnees coordJ1 = new Coordonnees(x1, y1);
             Coordonnees coordJ2 = new Coordonnees(x2, y2);
 
-            for (i = 0; i < Partie.ListeJoueurs[0].ListeUnite.Count; i++)
+            //On initialise chaque unité
+            for (i = 0; i < Partie.ListeJoueurs.Count; i++)
             {
-                Partie.ListeJoueurs[0].ListeUnite[i].Position = coordJ1;
-                Partie.ListeJoueurs[0].ListeUnite[i].CaseUnite = Partie.CartePartie.ListeCases[x1][y1];
-            }
-
-            for (i = 0; i < Partie.ListeJoueurs[1].ListeUnite.Count; i++)
-            {
-                Partie.ListeJoueurs[1].ListeUnite[i].Position = coordJ2;
-                Partie.ListeJoueurs[1].ListeUnite[i].CaseUnite = Partie.CartePartie.ListeCases[x2][y2];
+                for (j = 0; j < Partie.ListeJoueurs[i].ListeUnite.Count; j++)
+                {
+                    Partie.ListeJoueurs[i].ListeUnite[j].Position = coordJ1;
+                    Partie.ListeJoueurs[i].ListeUnite[j].CaseUnite = Partie.CartePartie.ListeCases[x1][y1];
+                    Partie.ListeJoueurs[i].ListeUnite[j].TabCarte = tabCase;
+                    Partie.ListeJoueurs[i].ListeUnite[j].TailleCarteJeu = Nb_case;
+                    Partie.ListeJoueurs[i].ListeUnite[j].TabDeplacement = wrapperAlgo.creerTab(Nb_case);
+                    Partie.ListeJoueurs[i].ListeUnite[j].TabCout = wrapperAlgo.creerTabDouble(Nb_case);
+                    Partie.ListeJoueurs[i].ListeUnite[j].calculerDeplacement();
+                }
             }
         }
     }
