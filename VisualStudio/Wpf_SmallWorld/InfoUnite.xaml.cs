@@ -46,5 +46,7 @@ namespace Wpf_SmallWorld
             PointDefense.Text += unite.PointDefense;  
 
         }
+
+
     }
 }

@@ -21,13 +21,6 @@ namespace Wpf_SmallWorld
     /// </summary>
     public partial class InfoJoueur : UserControl
     {
-        private int test;
-
-        public int Test
-        {
-            get { return test; }
-        }
-
 
         /// <summary>
         /// Logique d'interaction pour InfoJoueur.xaml
@@ -35,14 +28,12 @@ namespace Wpf_SmallWorld
         /// <param name="joueur">Le joueur</param>
         public InfoJoueur(Joueur joueur)
         {
-            this.test = 1;
             InitializeComponent();
             // Récuperation des données joueur
             Nom.Text += joueur.NomJ;
             Points.Text += joueur.PointVictoire;
-            //joueur.ListeUnite.Count();
-            //MessageBox.Show("" + joueur.ListeUnite.Count());
-            //Unite.Text += joueur.ListeUnite.Count();
+            joueur.ListeUnite.Count();
+            Unite.Text += joueur.ListeUnite.Count();
 
         }
 

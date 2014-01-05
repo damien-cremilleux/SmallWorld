@@ -25,8 +25,8 @@ namespace Wpf_SmallWorld
     public partial class PageJeu : Page
     {
         private Partie partie;
-        private bool Selected;
-        InfoUnite SelectedUnit;
+        private bool selected;
+        Unite selectedUnit;
 
         unsafe public PageJeu(Partie partie)
         {
@@ -79,17 +79,16 @@ namespace Wpf_SmallWorld
 
             // Initilisaton des unités
 
-            // TODO : trouver autre solution
+            // TODO : trouver autre solution ?
 
-           
             foreach (Joueur joueur in partie.ListeJoueurs)
             {
-                // TODO : get position de départ plus élégante
+                // TODO : get position de départ plus élégante ?
                 int column = joueur.ListeUnite[0].Position.Abscisse;
                 int row = joueur.ListeUnite[0].Position.Ordonnee;
 
                 Rectangle rect = new Rectangle();
-                rect.Fill = Brushes.Red; // TODO : Pour la position initiale on crée une image globale des unités pour chaque joueurs
+                RecColorUnite(joueur.PeupleJ, rect);
                 Panel.SetZIndex(rect, 50);
 
                 // mise à jour des attributs (column et Row) référencant la position dans la grille à rectangle
@@ -106,8 +105,6 @@ namespace Wpf_SmallWorld
                 Carte.Children.Add(rect);
             }
         }
-
-
 
         /// <summary>
         /// Permet de mettre la case à la texture de son type
@@ -132,6 +129,32 @@ namespace Wpf_SmallWorld
             }
         }
 
+        /// <summary>
+        /// Permet de mettre la case à la l'image du peuple present dessus
+        /// </summary>
+        /// <param name="cas"> La Case </param>
+        /// <param name="rec"> Le rectange </param>
+        /// <returns></returns>
+        private void RecColorUnite(Peuple peuple, Rectangle rec)
+        {
+            // TODO : Pour la position initiale on crée une image globale des unités pour chaque joueurs
+            BitmapSource img;
+            if (peuple is InterPeupleViking)
+            {
+                img = System.Windows.Interop.Imaging.CreateBitmapSourceFromHBitmap(Wpf_SmallWorld.Properties.Resources.UnitRest.GetHbitmap(), IntPtr.Zero, Int32Rect.Empty, BitmapSizeOptions.FromEmptyOptions());
+                rec.Fill = new ImageBrush(img);
+            }
+            if (peuple is InterPeupleNain)
+            {
+                img = System.Windows.Interop.Imaging.CreateBitmapSourceFromHBitmap(Wpf_SmallWorld.Properties.Resources.UnitRest.GetHbitmap(), IntPtr.Zero, Int32Rect.Empty, BitmapSizeOptions.FromEmptyOptions());
+                rec.Fill = new ImageBrush(img);
+            }
+            if (peuple is InterPeupleGaulois)
+            {
+                img = System.Windows.Interop.Imaging.CreateBitmapSourceFromHBitmap(Wpf_SmallWorld.Properties.Resources.UnitRest.GetHbitmap(), IntPtr.Zero, Int32Rect.Empty, BitmapSizeOptions.FromEmptyOptions());
+                rec.Fill = new ImageBrush(img);
+            }
+        }
 
         /// <summary>
         /// Création du rectangle matérialisant une tuile
@@ -161,22 +184,6 @@ namespace Wpf_SmallWorld
             rectangle.MouseRightButtonDown += new MouseButtonEventHandler(rectangle_MouseRightButtonDown);
 
             return rectangle;
-
-        }
-
-        /// <summary>
-        /// Récupération de la position de l'unité , mise à jour de l'ellipse (physique) matérialisant l'unité
-        /// </summary>
-        unsafe private void updateUnit()
-        {
-            // passer une unité en paramètre ? pour ne mettre à jour qu'elle ?
-
-            // ajout des attributs (column et Row) référencant la position dans la grille à unitEllipse
-
-            Grid.SetColumn(unitj1, 1);
-            Grid.SetRow(unitj1, 1);
-            //Grid.SetColumn(unitEllipse, unit.Column);
-            //Grid.SetRow(unitEllipse, unit.Row);
         }
 
         /// <summary>
@@ -198,29 +205,30 @@ namespace Wpf_SmallWorld
             selectionRectangle.Tag = cas;
             selectionRectangle.Visibility = System.Windows.Visibility.Visible;
 
-            InfoUnites.Children.Clear();
-
+            // Maj des données de la case d'information
             RecColor(cas, CaseSelect);
             InfoCase.Visibility = Visibility.Visible;
-            ListBox a = new ListBox();
-            a.SelectionChanged += SelectUnite;
+            InfoUnites.Children.Clear();
 
+            // Liste des unités présentes sur la case (on crée une listbox contenant les usercontrols (InfoUnite)
+            // de chaque unités presentent sur la case
+            ListBox listeUniteCase = new ListBox();
+            listeUniteCase.SelectionChanged += SelectUnite;
 
-            // TODO : tester avec la creation d'une unité mais impossible pour le moment
-            List<InfoJoueur> r = new List<InfoJoueur>();
+            List<Unite> uniteCase = partie.selectionnerUnite(column, row);
+            List<InfoUnite> listeInfoUnite = new List<InfoUnite>();
 
-            foreach (Joueur joueur in partie.ListeJoueurs)
+            foreach( Unite unite in uniteCase)
             {
-                InfoJoueur j = new InfoJoueur(joueur);
-                r.Add(j);
+                InfoUnite infoUnite = new InfoUnite(unite);
+                listeInfoUnite.Add(infoUnite);
             }
 
-            a.ItemsSource = r;
-            InfoUnites.Children.Add(a);
+            listeUniteCase.ItemsSource = listeInfoUnite;
+            InfoUnites.Children.Add(listeUniteCase);
 
             e.Handled = true;
         }
-
 
 
         /// <summary>
@@ -230,10 +238,9 @@ namespace Wpf_SmallWorld
         /// <param name="args"> l'evt </param>
         void SelectUnite(object sender, SelectionChangedEventArgs args)
         {
-            Selected = true;
-            var lbi = ((sender as ListBox).SelectedItem as InfoJoueur);
-            tb.Text = "   You selected " + lbi.Test + ".";
-            // SelectedUnit = lbi.Unit;
+            var unite = ((sender as ListBox).SelectedItem as InfoUnite);
+            selectedUnit = unite.Unite;
+            selected = true;
         }
 
 
@@ -245,7 +252,7 @@ namespace Wpf_SmallWorld
         private void rectangle_MouseRightButtonDown(object sender, RoutedEventArgs e)
         {
             // Voir si maj de la selection même si pas l'unité selectionnée
-            if (Selected)
+            if (selected)
             {
             // Récuperation des données du rectangle selectionné
             var rectangle = sender as Rectangle;
@@ -254,12 +261,19 @@ namespace Wpf_SmallWorld
             int row = Grid.GetRow(rectangle);
 
             // Maj de la selection sur le rectangle selectionné
-            Grid.SetColumn(selectionRectangle, column);
-            Grid.SetRow(selectionRectangle, row);
-            selectionRectangle.Tag = cas;
+            Grid.SetColumn(selectionRectangleDeplacement, column);
+            Grid.SetRow(selectionRectangleDeplacement, row);
+            selectionRectangleDeplacement.Tag = cas;
+            selectionRectangleDeplacement.Visibility = System.Windows.Visibility.Visible;
 
                 // TODO 
-            //partie.demanderDeplacement(colunm, row, SelectedUnit);
+                // partie.demanderDeplacement(SelectedUnit, column, row, ); 
+                // NB de point de déplacement fait dans le code ? ou dynamiquement aussi dans InfoUnite ? 
+
+                // le joueur ne peut décider qu'une seule fois de la case de déplacement de l'unité ; l'affichage se fait à la fin du tour.
+            selectionRectangleDeplacement.Visibility = System.Windows.Visibility.Hidden;
+            selected = false;
+  
             }
 
             e.Handled = true;
@@ -316,6 +330,21 @@ namespace Wpf_SmallWorld
                         break;
                 }
             }
+        }
+
+        /// <summary>
+        /// Récupération de la position de l'unité , mise à jour de l'ellipse (physique) matérialisant l'unité
+        /// </summary>
+        unsafe private void updateUnit()
+        {
+            // passer une unité en paramètre ? pour ne mettre à jour qu'elle ?
+
+            // ajout des attributs (column et Row) référencant la position dans la grille à unitEllipse
+
+            //Grid.SetColumn(unitj1, 1);
+            //Grid.SetRow(unitj1, 1);
+            //Grid.SetColumn(unitEllipse, unit.Column);
+            //Grid.SetRow(unitEllipse, unit.Row);
         }
 
         /// <summary>

@@ -8,7 +8,7 @@
              FontFamily="Segoe UI Light"
              FontSize="16">
     <Grid>
-        <Border BorderThickness="1" BorderBrush="#272A3D" Margin="10,0,10,0">
+        <Border BorderThickness="1" BorderBrush="#272A3D" Margin="10,0,10,0" Padding="5">
             <StackPanel Margin="0,0,0,10"  Name="infoJoueur2">
                 <TextBlock Margin="0,0,0,7" Name="Nom" Padding="10,5,10,5" Background="#DE2A2A" Foreground="White" FontSize="16"/>
                 <StackPanel Margin="0,0,0,10" Orientation="Horizontal">

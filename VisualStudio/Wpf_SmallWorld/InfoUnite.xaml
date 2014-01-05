@@ -9,7 +9,7 @@
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="auto"/>
-            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="70"/>
             <ColumnDefinition Width="auto"/>
             <ColumnDefinition Width="auto"/>
         </Grid.ColumnDefinitions>
@@ -18,7 +18,7 @@
         </Grid.RowDefinitions>
 
         <Grid Grid.Row="0" Grid.Column="0">
-            <Rectangle Name="ImgPeuple" Width="50" Height="50" Fill="red"/>
+            <Rectangle Name="ImgPeuple" Width="40" Height="40" Fill="red"/>
         </Grid>
 
         <Grid Grid.Row="0" Grid.Column="1">

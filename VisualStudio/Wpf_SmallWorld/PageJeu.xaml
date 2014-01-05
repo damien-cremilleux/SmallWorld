@@ -35,9 +35,10 @@
             <Grid Grid.Row="1" Name="Carte" HorizontalAlignment="Center" VerticalAlignment="Center" Cursor="Hand">
                 <!-- Définition du rectangle matérialisant la selection -->
                 <Rectangle Style="{StaticResource selectionStyle}" Name="selectionRectangle" />
+                <Rectangle Style="{StaticResource selectionStyleDeplacement}" Name="selectionRectangleDeplacement" />
                 <!-- Chaque case de la grille contient potentiellement un rectangle de selection + une unité (qui ne sera pas sensible aux evts)-->
-                <Ellipse Fill="Gold" Width="10" Height="10" Name="unitj1" Panel.ZIndex="444" IsHitTestVisible="False" />
-                <Ellipse Fill="Pink" Width="10" Height="10" Name="unitj2" Panel.ZIndex="444" IsHitTestVisible="False" />
+                <!--<Ellipse Fill="Gold" Width="10" Height="10" Name="unitj1" Panel.ZIndex="444" IsHitTestVisible="False" />
+                <Ellipse Fill="Pink" Width="10" Height="10" Name="unitj2" Panel.ZIndex="444" IsHitTestVisible="False" />-->
             </Grid>
         </ScrollViewer>
 

@@ -5,7 +5,7 @@
  * @author <a href="mailto:damien.cremilleux@insa-rennes.fr">Damien Crémilleux</a>
  * @author <a href="mailto:lauriane.holy@insa-rennes.fr">Lauriane Holy</a>
  * 
- * @date 04/01/2014
+ * @date 05/01/2014
  * @version 0.1
  */
 using System;
@@ -274,23 +274,23 @@ namespace SmallWorld
 
         /**
          * @fn selectionnerUnite(int x, int y)
-         * @brief Obtenir l'ensemble des indices des unités du joueur en cours se situant sur la case demandée
+         * @brief Obtenir l'ensemble des unités du joueur en cours se situant sur la case demandée
          * 
          * @param int <b>x</b> l'abcsisse de la case demandée
          * @param int <b>y</b> l'ordonnée de la case demandée
-         * @return List<int> la liste des indices des unités présentes sur la cases, pour le joueur courant
+         * @return List<Unite> la liste des unités présentes sur la cases, pour le joueur courant
          */
-        public List<int> selectionnerUnite(int x, int y)
+        public List<Unite> selectionnerUnite(int x, int y)
         {
             int indice;
-            List<int> listeUnite = new List<int>();
+            List<Unite> listeUnite = new List<Unite>();
             Coordonnees coord = new Coordonnees(x,y);
 
             for (indice = 0; indice < ListeJoueurs[IndiceJoueurEnCours].ListeUnite.Count; indice++)
             {
                 if (ListeJoueurs[IndiceJoueurEnCours].ListeUnite[indice].Position.Equals(coord))
                 {
-                    listeUnite.Add(indice);
+                    listeUnite.Add(ListeJoueurs[IndiceJoueurEnCours].ListeUnite[indice]);
                 }
             }
             return listeUnite;
