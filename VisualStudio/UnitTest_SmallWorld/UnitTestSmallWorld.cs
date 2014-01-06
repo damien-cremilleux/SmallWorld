@@ -12,6 +12,8 @@ using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using SmallWorld;
 using System.Collections.Generic;
+using Wrapper;
+
 namespace UnitTest_SmallWorld
 {
     [TestClass]
@@ -237,6 +239,46 @@ namespace UnitTest_SmallWorld
 
             Assert.AreEqual(1, c1.Abscisse);
             Assert.AreEqual(2, c1.Ordonnee);
+        }
+
+    }
+     
+    [TestClass]
+    public unsafe class UnitTestDeplacement
+    {
+        /**
+         * @fn TestDeplacementBasique()
+         * @brief Vérification du déplacement sur un cas simple
+         */
+        [TestMethod]
+        public void TestDeplacementBasique()
+        {
+        /*    WrapperAlgo w = new WrapperAlgo();
+            int nbCase = 5;
+            int* tabCarte = w.creerTab(nbCase);
+
+            int i, j;
+
+            //On fait une carte de plaine
+            for (i = 0; i < nbCase; i++)
+            {
+                for (j = 0; j < nbCase; j++)
+                {
+                    tabCarte[i * nbCase + j] = Constantes.CASE_PLAINE;
+                }
+            }
+
+            //On initialise une unité
+            UniteViking uniteV = new UniteViking();
+            Partie.ListeJoueurs[i].ListeUnite[j].Position = tabCoord[i];
+            Partie.ListeJoueurs[i].ListeUnite[j].CaseUnite = Partie.CartePartie.ListeCases[x1][y1];
+            Partie.ListeJoueurs[i].ListeUnite[j].TabCarte = tabCase;
+            Partie.ListeJoueurs[i].ListeUnite[j].TailleCarteJeu = Nb_case;
+            Partie.ListeJoueurs[i].ListeUnite[j].TabDeplacement = wrapperAlgo.creerTab(Nb_case);
+            Partie.ListeJoueurs[i].ListeUnite[j].TabCout = wrapperAlgo.creerTabDouble(Nb_case);
+            Partie.ListeJoueurs[i].ListeUnite[j].calculerDeplacement();
+            */
+
         }
     }
 }

@@ -326,16 +326,16 @@ namespace SmallWorld
                         tabCase[i * Nb_case + j] = Constantes.CASE_DESERT;
 
                     if (Partie.CartePartie.ListeCases[i][j].GetType() == new Eau().GetType())
-                        tabCase[i * Nb_case + j] = Constantes.CASE_DESERT;
+                        tabCase[i * Nb_case + j] = Constantes.CASE_EAU;
 
                     if (Partie.CartePartie.ListeCases[i][j].GetType() == new Foret().GetType())
-                        tabCase[i * Nb_case + j] = Constantes.CASE_DESERT;
+                        tabCase[i * Nb_case + j] = Constantes.CASE_FORET;
 
                     if (Partie.CartePartie.ListeCases[i][j].GetType() == new Montagne().GetType())
-                        tabCase[i * Nb_case + j] = Constantes.CASE_DESERT;
+                        tabCase[i * Nb_case + j] = Constantes.CASE_MONTAGNE;
 
                     if (Partie.CartePartie.ListeCases[i][j].GetType() == new Plaine().GetType())
-                        tabCase[i * Nb_case + j] = Constantes.CASE_DESERT;
+                        tabCase[i * Nb_case + j] = Constantes.CASE_PLAINE;
                 }
             }
 
@@ -359,7 +359,7 @@ namespace SmallWorld
             {
                 for (j = 0; j < Partie.ListeJoueurs[i].ListeUnite.Count; j++)
                 {
-                    Partie.ListeJoueurs[i].ListeUnite[j].Position = tabCoord[i];
+                    Partie.ListeJoueurs[i].ListeUnite[j].Position = new Coordonnees(tabCoord[i].Abscisse, tabCoord[i].Ordonnee);
                     Partie.ListeJoueurs[i].ListeUnite[j].CaseUnite = Partie.CartePartie.ListeCases[x1][y1];
                     Partie.ListeJoueurs[i].ListeUnite[j].TabCarte = tabCase;
                     Partie.ListeJoueurs[i].ListeUnite[j].TailleCarteJeu = Nb_case;

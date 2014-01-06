@@ -98,7 +98,7 @@ int * AlgoCarte::placerJoueur(int * tabCarte, int taille) {
 	int i=0, j=0 ,k, l;
 
 	//On vérifie  que le joueur 1 ne commence pas sur de l'eau
-	while(tabCarte[i*taille+j] == 1){
+	while(tabCarte[i*taille+j] == CASE_EAU){
 		i = i + (rand() % 2);
 		j = j + (rand() % 2);
 	}
