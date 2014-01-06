@@ -78,6 +78,10 @@ namespace Wpf_SmallWorld
             joueur1 = NomJ1.Text;
             joueur2 = NomJ2.Text;
 
+            if (joueur1 == joueur2)
+            {
+                ErrorNom.Visibility = Visibility.Visible;
+            }
             if (joueur1 == "" || peuplej1 == "" || joueur2 == "" || peuplej2 == "")
             {
                 MessageBox.Show("Vous n'avez pas donné tous les paramètres");

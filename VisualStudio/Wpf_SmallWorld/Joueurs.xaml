@@ -61,7 +61,8 @@
                         <StackPanel Orientation="Horizontal">
                             <Label  Content="Nom du joueur 2 :"/>
                             <TextBox Padding="0,4" Width="100" Name="NomJ2"/>
-                        </StackPanel>
+                        <TextBlock Name="ErrorNom" HorizontalAlignment="Center" Foreground="Red" FontSize="16" Margin="10,0,0,0" Visibility="Hidden">Ce nom est déjà pris</TextBlock>
+                    </StackPanel>
                     </GroupBox>
 
                     <!-- Peuple du joueur 2-->

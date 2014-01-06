@@ -27,6 +27,7 @@ namespace Wpf_SmallWorld
         private Partie partie;
         private bool selected;
         Unite selectedUnit;
+        private int i = 0;
 
         unsafe public PageJeu(Partie partie)
         {
@@ -52,20 +53,20 @@ namespace Wpf_SmallWorld
             }
 
             //Initialisation du nombre de tour
-            NbTour.Text += " " + partie.NbTourRestant;
+            NbTour.Text = "Nombre de tour restants :  " + partie.NbTourRestant;
 
             // Initialisation de la carte
             int taille = partie.CartePartie.TailleCarte;
 
             for (int c = 0; c < taille; c++)
             {
-                Carte.ColumnDefinitions.Add(new ColumnDefinition() { Width = new GridLength(40, GridUnitType.Pixel) });
+                Carte.ColumnDefinitions.Add(new ColumnDefinition() { Width = new GridLength(50, GridUnitType.Pixel) });
             }
 
             for (int l = 0; l < taille; l++)
             {
 
-                Carte.RowDefinitions.Add(new RowDefinition() { Height = new GridLength(40, GridUnitType.Pixel) });
+                Carte.RowDefinitions.Add(new RowDefinition() { Height = new GridLength(50, GridUnitType.Pixel) });
                 for (int c = 0; c < taille; c++)
                 {
                     // Dans chaque case de la grille on ajoute une tuile (logique) matérialisée par un rectangle (physique)
@@ -83,7 +84,6 @@ namespace Wpf_SmallWorld
 
             foreach (Joueur joueur in partie.ListeJoueurs)
             {
-                // TODO : get position de départ plus élégante ?
                 int column = joueur.ListeUnite[0].Position.Abscisse;
                 int row = joueur.ListeUnite[0].Position.Ordonnee;
 
@@ -240,6 +240,10 @@ namespace Wpf_SmallWorld
         {
             var unite = ((sender as ListBox).SelectedItem as InfoUnite);
             selectedUnit = unite.Unite;
+            Grid.SetColumn(selectionRectangleDeplacement, selectedUnit.Position.Abscisse);
+            Grid.SetRow(selectionRectangleDeplacement, selectedUnit.Position.Ordonnee);
+           // selectionRectangleDeplacement.Tag = cas;
+            selectionRectangleDeplacement.Visibility = System.Windows.Visibility.Visible;
             selected = true;
         }
 
@@ -261,18 +265,19 @@ namespace Wpf_SmallWorld
             int row = Grid.GetRow(rectangle);
 
             // Maj de la selection sur le rectangle selectionné
-            Grid.SetColumn(selectionRectangleDeplacement, column);
-            Grid.SetRow(selectionRectangleDeplacement, row);
-            selectionRectangleDeplacement.Tag = cas;
-            selectionRectangleDeplacement.Visibility = System.Windows.Visibility.Visible;
+            //Grid.SetColumn(selectionRectangleDeplacement, column);
+            //Grid.SetRow(selectionRectangleDeplacement, row);
+            //selectionRectangleDeplacement.Tag = cas;
+            //selectionRectangleDeplacement.Visibility = System.Windows.Visibility.Visible;
 
                 // TODO 
-                // partie.demanderDeplacement(SelectedUnit, column, row, ); 
+            selectedUnit.seDeplacer(column, row);
+            refreshUnite();
                 // NB de point de déplacement fait dans le code ? ou dynamiquement aussi dans InfoUnite ? 
 
                 // le joueur ne peut décider qu'une seule fois de la case de déplacement de l'unité ; l'affichage se fait à la fin du tour.
-            selectionRectangleDeplacement.Visibility = System.Windows.Visibility.Hidden;
-            selected = false;
+            //selectionRectangleDeplacement.Visibility = System.Windows.Visibility.Hidden;
+           selected = false;
   
             }
 
@@ -291,7 +296,7 @@ namespace Wpf_SmallWorld
 
             if (!partie.PartieFinie)
             {
-                //  updateUnit();
+                NbTour.Text = "Nombre de tour restants :  " + partie.NbTourRestant;
                 //maj des données joueurs
                 //foreach (Joueur joueur in partie.ListeJoueurs)
                 //{
@@ -335,9 +340,33 @@ namespace Wpf_SmallWorld
         /// <summary>
         /// Récupération de la position de l'unité , mise à jour de l'ellipse (physique) matérialisant l'unité
         /// </summary>
-        unsafe private void updateUnit()
+        unsafe private void refreshUnite()
         {
-            // passer une unité en paramètre ? pour ne mettre à jour qu'elle ?
+            //foreach (Joueur joueur in partie.ListeJoueurs)
+            //{
+            //    foreach (Unite unite in joueur.ListeUnite)
+            //    {
+            //        int column = unite.Position.Abscisse;
+            //        int row = unite.Position.Ordonnee;
+
+            //        Rectangle rect = new Rectangle();
+            //        RecColorUnite(joueur.PeupleJ, rect);
+            //        Panel.SetZIndex(rect, 50);
+
+            //        // mise à jour des attributs (column et Row) référencant la position dans la grille à rectangle
+            //        Grid.SetColumn(rect, column);
+            //        Grid.SetRow(rect, row);
+
+            //        // récuperation du type de la case 
+            //        rect.Tag = partie.CartePartie.ListeCases[column][row] as Case;
+
+            //        // Même évenements que les autres cases 
+            //        rect.MouseLeftButtonDown += new MouseButtonEventHandler(rectangle_MouseLeftButtonDown);
+            //        rect.MouseRightButtonDown += new MouseButtonEventHandler(rectangle_MouseRightButtonDown);
+
+            //        Carte.Children.Add(rect);
+            //    }
+           // }
 
             // ajout des attributs (column et Row) référencant la position dans la grille à unitEllipse
 

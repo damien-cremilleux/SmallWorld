@@ -72,7 +72,7 @@
             <Button Grid.Column="2" Height="40" HorizontalAlignment="Center" Click="TourSuivant">
                 <StackPanel>
                     <TextBlock HorizontalAlignment="Center" >Fin de tour</TextBlock>
-                    <TextBlock Name="NbTour" HorizontalAlignment="Center">Nombre de tour restants : </TextBlock>
+                    <TextBlock Name="NbTour" HorizontalAlignment="Center"></TextBlock>
                 </StackPanel>
                 
             </Button>
