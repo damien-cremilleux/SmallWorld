@@ -13,8 +13,6 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-
-using Wrapper;
 using SmallWorld;
 
 namespace Wpf_SmallWorld
@@ -27,17 +25,17 @@ namespace Wpf_SmallWorld
         private Partie partie;
         private bool selected;
         Unite selectedUnit;
-        private int i = 0;
+        Coordonnees currentUnite;
+      
 
         unsafe public PageJeu(Partie partie)
         {
             InitializeComponent();
             this.partie = partie;
-
+            currentUnite = new Coordonnees(0,0);
             // Ajout d'un évenement pour permettre au joueur de passer au tour suivant en appuyant sur la touche espace
             this.KeyDown += new KeyEventHandler(TourSuivantEspace);
         }
-
 
         /// <summary>
         /// Définit les actions à réaliser lors du chargement de la fenêtre : initialisation des données et de la carte
@@ -46,27 +44,25 @@ namespace Wpf_SmallWorld
         {
 
             //Initialisation des données joueurs
-            foreach (Joueur joueur in partie.ListeJoueurs)
-            {
-                InfoJoueur j = new InfoJoueur(joueur);
-                InfoJoueurs.Children.Add(j);
-            }
+            listejoueur();
 
             //Initialisation du nombre de tour
             NbTour.Text = "Nombre de tour restants :  " + partie.NbTourRestant;
 
-            // Initialisation de la carte
+            // Initialisation de la carte et des unités
             int taille = partie.CartePartie.TailleCarte;
 
             for (int c = 0; c < taille; c++)
             {
                 Carte.ColumnDefinitions.Add(new ColumnDefinition() { Width = new GridLength(50, GridUnitType.Pixel) });
+                Unite.ColumnDefinitions.Add(new ColumnDefinition() { Width = new GridLength(50, GridUnitType.Pixel) });
             }
 
             for (int l = 0; l < taille; l++)
             {
 
                 Carte.RowDefinitions.Add(new RowDefinition() { Height = new GridLength(50, GridUnitType.Pixel) });
+                Unite.RowDefinitions.Add(new RowDefinition() { Height = new GridLength(50, GridUnitType.Pixel) });
                 for (int c = 0; c < taille; c++)
                 {
                     // Dans chaque case de la grille on ajoute une tuile (logique) matérialisée par un rectangle (physique)
@@ -81,7 +77,6 @@ namespace Wpf_SmallWorld
             // Initilisaton des unités
 
             // TODO : trouver autre solution ?
-
             foreach (Joueur joueur in partie.ListeJoueurs)
             {
                 int column = joueur.ListeUnite[0].Position.Abscisse;
@@ -89,7 +84,7 @@ namespace Wpf_SmallWorld
 
                 Rectangle rect = new Rectangle();
                 RecColorUnite(joueur.PeupleJ, rect);
-                Panel.SetZIndex(rect, 50);
+                Panel.SetZIndex(rect, 10);
 
                 // mise à jour des attributs (column et Row) référencant la position dans la grille à rectangle
                 Grid.SetColumn(rect, column);
@@ -101,8 +96,7 @@ namespace Wpf_SmallWorld
                 // Même évenements que les autres cases 
                 rect.MouseLeftButtonDown += new MouseButtonEventHandler(rectangle_MouseLeftButtonDown);
                 rect.MouseRightButtonDown += new MouseButtonEventHandler(rectangle_MouseRightButtonDown);
-
-                Carte.Children.Add(rect);
+                Unite.Children.Add(rect);
             }
         }
 
@@ -198,6 +192,11 @@ namespace Wpf_SmallWorld
             var cas = rectangle.Tag as Case;
             int column = Grid.GetColumn(rectangle);
             int row = Grid.GetRow(rectangle);
+            
+            //enregistrement des coordonnées de la case selectionnée
+            currentUnite.Abscisse = column;
+            currentUnite.Ordonnee = row;
+            
 
             // Maj de la selection sur le rectangle selectionné
             Grid.SetColumn(selectionRectangle, column);
@@ -209,7 +208,15 @@ namespace Wpf_SmallWorld
             RecColor(cas, CaseSelect);
             InfoCase.Visibility = Visibility.Visible;
             InfoUnites.Children.Clear();
+            listeUnite(column, row);
+            e.Handled = true;
+        }
 
+
+        /// <summary>
+        /// Affichages des unités présentent sur la case selectionnée
+        /// </summary>
+        private void listeUnite(int column, int row){
             // Liste des unités présentes sur la case (on crée une listbox contenant les usercontrols (InfoUnite)
             // de chaque unités presentent sur la case
             ListBox listeUniteCase = new ListBox();
@@ -226,24 +233,20 @@ namespace Wpf_SmallWorld
 
             listeUniteCase.ItemsSource = listeInfoUnite;
             InfoUnites.Children.Add(listeUniteCase);
-
-            e.Handled = true;
         }
-
 
         /// <summary>
         /// Délégué : réponse à l'evt selection d'une unité
         /// </summary>
         /// <param name="sender"> le User Control de l'unité </param>
         /// <param name="args"> l'evt </param>
-        void SelectUnite(object sender, SelectionChangedEventArgs args)
+        private void SelectUnite(object sender, SelectionChangedEventArgs args)
         {
             var unite = ((sender as ListBox).SelectedItem as InfoUnite);
             selectedUnit = unite.Unite;
-            Grid.SetColumn(selectionRectangleDeplacement, selectedUnit.Position.Abscisse);
-            Grid.SetRow(selectionRectangleDeplacement, selectedUnit.Position.Ordonnee);
-           // selectionRectangleDeplacement.Tag = cas;
-            selectionRectangleDeplacement.Visibility = System.Windows.Visibility.Visible;
+            Grid.SetColumn(UniteSelectionnee, selectedUnit.Position.Abscisse);
+            Grid.SetRow(UniteSelectionnee, selectedUnit.Position.Ordonnee);
+            UniteSelectionnee.Visibility = System.Windows.Visibility.Visible;
             selected = true;
         }
 
@@ -255,7 +258,6 @@ namespace Wpf_SmallWorld
         /// <param name="e"> l'evt </param>
         private void rectangle_MouseRightButtonDown(object sender, RoutedEventArgs e)
         {
-            // Voir si maj de la selection même si pas l'unité selectionnée
             if (selected)
             {
             // Récuperation des données du rectangle selectionné
@@ -264,18 +266,19 @@ namespace Wpf_SmallWorld
             int column = Grid.GetColumn(rectangle);
             int row = Grid.GetRow(rectangle);
 
-            // Maj de la selection sur le rectangle selectionné
-            //Grid.SetColumn(selectionRectangleDeplacement, column);
-            //Grid.SetRow(selectionRectangleDeplacement, row);
-            //selectionRectangleDeplacement.Tag = cas;
-            //selectionRectangleDeplacement.Visibility = System.Windows.Visibility.Visible;
+            UniteSelectionnee.Visibility = System.Windows.Visibility.Hidden;
 
-                // TODO 
             selectedUnit.seDeplacer(column, row);
+            Unite.Children.Clear();
             refreshUnite();
-                // NB de point de déplacement fait dans le code ? ou dynamiquement aussi dans InfoUnite ? 
 
-                // le joueur ne peut décider qu'une seule fois de la case de déplacement de l'unité ; l'affichage se fait à la fin du tour.
+            //regénération des éléments unités et joueurs pour mettre à jour
+            InfoUnites.Children.Clear();
+            listeUnite(currentUnite.Ordonnee, currentUnite.Abscisse);
+
+            InfoJoueurs.Children.Clear();
+            listejoueur();
+            // le joueur ne peut décider qu'une seule fois de la case de déplacement de l'unité ; l'affichage se fait à la fin du tour.
             //selectionRectangleDeplacement.Visibility = System.Windows.Visibility.Hidden;
            selected = false;
   
@@ -284,6 +287,18 @@ namespace Wpf_SmallWorld
             e.Handled = true;
         }
 
+
+        /// <summary>
+        /// Affichage de la liste des joueurs et de ses informations
+        /// </summary>
+        private void listejoueur(){
+           foreach (Joueur joueur in partie.ListeJoueurs)
+                {
+                  InfoJoueur j = new InfoJoueur(joueur, partie.ListeJoueurs[partie.IndiceJoueurEnCours]);
+                  InfoJoueurs.Children.Add(j);
+                }
+        }
+                     
 
         /// <summary>
         /// Délégué : réaction à l'evt : clic sur le bouton "Tour Suivant"
@@ -298,27 +313,28 @@ namespace Wpf_SmallWorld
             {
                 NbTour.Text = "Nombre de tour restants :  " + partie.NbTourRestant;
                 //maj des données joueurs
-                //foreach (Joueur joueur in partie.ListeJoueurs)
-                //{
-                //    InfoJoueur j = new InfoJoueur(joueur);
-                //    InfoJoueurs.Children.Add(j);
-                //}
-
-                ////maj du nombre de tour
-                //
-                //NbTour.Text += " " + partie.NbTourRestant;
+                InfoUnites.Children.Clear();
+                InfoJoueurs.Children.Clear();
+                listejoueur();
             }
             else
             {
                 string vainqueurs = "";
+                string messageBoxText = "";
+                string caption = "Small World";
 
                 foreach (Joueur vainqueur in partie.vainqueurs())
                 {
                     vainqueurs += vainqueur.NomJ;
                 }
 
-                string messageBoxText = "Partie terminée ! Vainqueur(s) : " +vainqueurs+ " ! Nouvelle partie ?";
-                string caption = "Small World";
+                // S'il y a égalité
+                if (partie.vainqueurs().Count() == 1)
+                {
+                    messageBoxText = "Partie terminée ! Bravo " + partie.vainqueurs()[0] + " ! Revanche ?";
+                }else{
+                    messageBoxText = "Partie terminée ! Match nul entre " + partie.vainqueurs()[0] + " et " + partie.vainqueurs()[1] + "! Revanche ?";
+                }
                 MessageBoxButton button = MessageBoxButton.YesNo;
                 MessageBoxImage icon = MessageBoxImage.Question;
                 MessageBoxResult result = MessageBox.Show(messageBoxText, caption, button, icon);
@@ -342,31 +358,31 @@ namespace Wpf_SmallWorld
         /// </summary>
         unsafe private void refreshUnite()
         {
-            //foreach (Joueur joueur in partie.ListeJoueurs)
-            //{
-            //    foreach (Unite unite in joueur.ListeUnite)
-            //    {
-            //        int column = unite.Position.Abscisse;
-            //        int row = unite.Position.Ordonnee;
+            foreach (Joueur joueur in partie.ListeJoueurs)
+            {
+                foreach (Unite unite in joueur.ListeUnite)
+                {
+                    int column = unite.Position.Abscisse;
+                    int row = unite.Position.Ordonnee;
 
-            //        Rectangle rect = new Rectangle();
-            //        RecColorUnite(joueur.PeupleJ, rect);
-            //        Panel.SetZIndex(rect, 50);
+                    Rectangle rect = new Rectangle();
+                    RecColorUnite(joueur.PeupleJ, rect);
+                    Panel.SetZIndex(rect, 50);
 
-            //        // mise à jour des attributs (column et Row) référencant la position dans la grille à rectangle
-            //        Grid.SetColumn(rect, column);
-            //        Grid.SetRow(rect, row);
+                    // mise à jour des attributs (column et Row) référencant la position dans la grille à rectangle
+                    Grid.SetColumn(rect, column);
+                    Grid.SetRow(rect, row);
 
-            //        // récuperation du type de la case 
-            //        rect.Tag = partie.CartePartie.ListeCases[column][row] as Case;
+                    // récuperation du type de la case 
+                    rect.Tag = partie.CartePartie.ListeCases[column][row] as Case;
 
-            //        // Même évenements que les autres cases 
-            //        rect.MouseLeftButtonDown += new MouseButtonEventHandler(rectangle_MouseLeftButtonDown);
-            //        rect.MouseRightButtonDown += new MouseButtonEventHandler(rectangle_MouseRightButtonDown);
+                    // Même évenements que les autres cases 
+                    rect.MouseLeftButtonDown += new MouseButtonEventHandler(rectangle_MouseLeftButtonDown);
+                    rect.MouseRightButtonDown += new MouseButtonEventHandler(rectangle_MouseRightButtonDown);
 
-            //        Carte.Children.Add(rect);
-            //    }
-           // }
+                    Unite.Children.Add(rect);
+                }
+            }
 
             // ajout des attributs (column et Row) référencant la position dans la grille à unitEllipse
 

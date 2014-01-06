@@ -254,8 +254,8 @@
 
         <!-- style du rectangle lorsqu'il est selectionné-->
         <Style TargetType="Rectangle" x:Key="selectionStyle" >
-            <Setter Property="Width" Value="40"/>
-            <Setter Property="Height" Value="40"/>
+            <Setter Property="Width" Value="50"/>
+            <Setter Property="Height" Value="50"/>
             <Setter Property="Stroke" Value="Red"/>
             <Setter Property="StrokeThickness" Value="3"/>
             <Setter Property="Panel.ZIndex" Value="333"/>
@@ -265,15 +265,32 @@
         </Style>
 
         <!-- style du rectangle lorsqu'une unité est selectionnée et qu'elle demande un déplacement-->
-        <Style TargetType="Rectangle" x:Key="selectionStyleDeplacement" >
-            <Setter Property="Width" Value="40"/>
-            <Setter Property="Height" Value="40"/>
+        <Style TargetType="Rectangle" x:Key="UniteSelectionnee" >
+            <Setter Property="Width" Value="50"/>
+            <Setter Property="Height" Value="50"/>
             <Setter Property="Stroke" Value="Blue"/>
             <Setter Property="StrokeThickness" Value="3"/>
             <Setter Property="Panel.ZIndex" Value="333"/>
             <!-- pour avoir un affichage au premier plan -->
             <Setter Property="Visibility" Value= "Collapsed"/>
             <!-- visibilité par défaut = cachée -->
+        </Style>
+
+        <Style x:Key="{x:Type ListBox}" TargetType="ListBox">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ListBox">
+                        <Border Name="Border" BorderThickness="0" CornerRadius="2">
+                            <Border.BorderBrush>
+                                <SolidColorBrush Color="Black" />
+                            </Border.BorderBrush>
+                            <ScrollViewer Margin="0" Focusable="false">
+                                <StackPanel Margin="2" IsItemsHost="True" />
+                            </ScrollViewer>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
         </Style>
 
     </Application.Resources>

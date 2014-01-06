@@ -26,15 +26,20 @@ namespace Wpf_SmallWorld
         /// Logique d'interaction pour InfoJoueur.xaml
         /// </summary>
         /// <param name="joueur">Le joueur</param>
-        public InfoJoueur(Joueur joueur)
+        public InfoJoueur(Joueur joueur, Joueur joueurEnCours)
         {
             InitializeComponent();
             // Récuperation des données joueur
             Nom.Text += joueur.NomJ;
-            Points.Text += joueur.PointVictoire;
+            Points.Text += " "+ joueur.PointVictoire;
             joueur.ListeUnite.Count();
-            Unite.Text += joueur.ListeUnite.Count();
+            Unite.Text += " " + joueur.ListeUnite.Count();
 
+            // Indication sur le joueur en cours
+            if (joueur != joueurEnCours)
+            {
+                Container.Opacity = 0.2;
+            }
         }
 
 
