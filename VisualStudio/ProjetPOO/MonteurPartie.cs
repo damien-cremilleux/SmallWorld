@@ -8,7 +8,7 @@
  * @author <a href="mailto:damien.cremilleux@insa-rennes.fr">Damien Crémilleux</a>
  * @author <a href="mailto:lauriane.holy@insa-rennes.fr">Lauriane Holy</a>
  * 
- * @date 05/01/2014
+ * @date 06/01/2014
  * @version 0.1
  */
 using System;
@@ -352,13 +352,14 @@ namespace SmallWorld
 
             Coordonnees coordJ1 = new Coordonnees(x1, y1);
             Coordonnees coordJ2 = new Coordonnees(x2, y2);
+            Coordonnees[] tabCoord = {coordJ1, coordJ2};
 
             //On initialise chaque unité
             for (i = 0; i < Partie.ListeJoueurs.Count; i++)
             {
                 for (j = 0; j < Partie.ListeJoueurs[i].ListeUnite.Count; j++)
                 {
-                    Partie.ListeJoueurs[i].ListeUnite[j].Position = coordJ1;
+                    Partie.ListeJoueurs[i].ListeUnite[j].Position = tabCoord[i];
                     Partie.ListeJoueurs[i].ListeUnite[j].CaseUnite = Partie.CartePartie.ListeCases[x1][y1];
                     Partie.ListeJoueurs[i].ListeUnite[j].TabCarte = tabCase;
                     Partie.ListeJoueurs[i].ListeUnite[j].TailleCarteJeu = Nb_case;

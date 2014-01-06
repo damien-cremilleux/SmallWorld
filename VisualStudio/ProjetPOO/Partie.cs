@@ -5,7 +5,7 @@
  * @author <a href="mailto:damien.cremilleux@insa-rennes.fr">Damien Crémilleux</a>
  * @author <a href="mailto:lauriane.holy@insa-rennes.fr">Lauriane Holy</a>
  * 
- * @date 05/01/2014
+ * @date 06/01/2014
  * @version 0.1
  */
 using System;
@@ -254,7 +254,7 @@ namespace SmallWorld
             //On met les points du joueur précédent à jour
             this.ListeJoueurs[IndiceJoueurEnCours].calculerPointVictoire();
 
-            IndiceJoueurEnCours++;
+            IndiceJoueurEnCours = (IndiceJoueurEnCours + 1) % ListeJoueurs.Count;
 
             foreach (Unite unite in ListeJoueurs[IndiceJoueurEnCours].ListeUnite)
             {
