@@ -534,9 +534,10 @@ void AlgoCarte::deplacementNainCase(int * carte, int taille, int x, int y, int *
 * @param int <b>y</b> l'ordonnée de l'unité
 * @param double * <b>tabCout</b> le tableau des couts de déplacement
 * @param int * <b>tabRes</b> la carte des déplacements possibles
+* @param double <b>pointDepl</b> les points de déplacement initial
 * @return void
 */
-void AlgoCarte::deplacementVikingInitial(int * carte, int taille, int x, int y, double * tabCout, int * tabRes)
+void AlgoCarte::deplacementVikingInitial(int * carte, int taille, int x, int y, double * tabCout, int * tabRes, double pointDepl)
 {
 	//Par défaut toute les cases sont inacessibles
 	int i, j;
@@ -559,7 +560,7 @@ void AlgoCarte::deplacementVikingInitial(int * carte, int taille, int x, int y, 
 
 	//On autorise la case initiale
 	tabRes[x*taille+y] = CASE_POSSIBLE;
-	tabCout[x*taille+y] = 1;
+	tabCout[x*taille+y] = pointDepl;
 
 	deplacementViking(carte, taille, x, y, tabRes, tabCout);
 }
@@ -584,7 +585,7 @@ void AlgoCarte::deplacementViking(int * carte, int taille, int x, int y, int * t
 		if (tabRes[(x-1)*taille+y] == CASE_NONCALCULEE)
 		{
 			deplacementVikingCase(carte,taille, x-1, y, tabRes, tabDepl, tabDepl[x*taille+y]);
-			deplacementViking(carte, taille, x-1, y, tabRes, tabDepl);
+			//deplacementViking(carte, taille, x-1, y, tabRes, tabDepl);
 		}
 	}
 
@@ -594,7 +595,7 @@ void AlgoCarte::deplacementViking(int * carte, int taille, int x, int y, int * t
 		if (tabRes[x*taille+y+1] == CASE_NONCALCULEE)
 		{
 			deplacementVikingCase(carte,taille, x, y+1, tabRes, tabDepl, tabDepl[x*taille+y]);
-			deplacementViking(carte, taille, x, y+1, tabRes, tabDepl);
+			//deplacementViking(carte, taille, x, y+1, tabRes, tabDepl);
 		}
 	}
 
@@ -604,7 +605,7 @@ void AlgoCarte::deplacementViking(int * carte, int taille, int x, int y, int * t
 		if (tabRes[(x+1)*taille+y] == CASE_NONCALCULEE)
 		{
 			deplacementVikingCase(carte,taille, x+1, y, tabRes, tabDepl, tabDepl[x*taille+y]);
-			deplacementViking(carte, taille, x+1, y, tabRes, tabDepl);
+			//deplacementViking(carte, taille, x+1, y, tabRes, tabDepl);
 		}
 	}
 
@@ -614,7 +615,7 @@ void AlgoCarte::deplacementViking(int * carte, int taille, int x, int y, int * t
 		if (tabRes[x*taille+y-1] == CASE_NONCALCULEE)
 		{
 			deplacementVikingCase(carte,taille, x, y-1, tabRes, tabDepl, tabDepl[x*taille+y]);
-			deplacementViking(carte, taille, x, y-1, tabRes, tabDepl);
+			//deplacementViking(carte, taille, x, y-1, tabRes, tabDepl);
 		}
 	}
 }

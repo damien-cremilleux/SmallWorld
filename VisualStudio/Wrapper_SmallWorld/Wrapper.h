@@ -20,7 +20,7 @@ namespace Wrapper {
 		double * creerTabDouble(int taille) {return algo->creerTabDouble(taille);}
 		void deplacementGauloisInitial(int * carte, int taille, int x, int y, double * tabCout, int * tabRes) {return algo->deplacementGauloisInitial(carte, taille, x,y, tabCout, tabRes);}
 		void deplacementNainInitial(int * carte, int taille, int x, int y, double * tabCout, int * tabRes, double pointDepl) {return algo->deplacementNainInitial(carte, taille, x,y, tabCout, tabRes, pointDepl);}
-		void deplacementVikingInitial(int * carte, int taille, int x, int y, double * tabCout, int * tabRes) {return algo->deplacementVikingInitial(carte, taille, x,y, tabCout, tabRes);}
+		void deplacementVikingInitial(int * carte, int taille, int x, int y, double * tabCout, int * tabRes, double pointDepl) {return algo->deplacementVikingInitial(carte, taille, x,y, tabCout, tabRes, pointDepl);}
 	};
 }
 #endif

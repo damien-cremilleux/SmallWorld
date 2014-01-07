@@ -177,47 +177,47 @@ namespace UnitTest_SmallWorld
        * @fn TestPlacementUnite()
        * @brief Vérification du placement des unités
        */
-    /*    [TestMethod]
-        public void TestPlacementUnite()
-        {
-            //Carte démo
-            CreateurPartie c1 = new CreateurPartie();
-            c1.TypePartie = Constantes.CARTE_DEMO;
-            c1.ajoutJoueur("Damien", Constantes.PEUPLE_GAULOIS);
-            c1.ajoutJoueur("Lauriane", Constantes.PEUPLE_VIKING);
-            Partie p1;
-            p1 = c1.construire();
+        /*    [TestMethod]
+            public void TestPlacementUnite()
+            {
+                //Carte démo
+                CreateurPartie c1 = new CreateurPartie();
+                c1.TypePartie = Constantes.CARTE_DEMO;
+                c1.ajoutJoueur("Damien", Constantes.PEUPLE_GAULOIS);
+                c1.ajoutJoueur("Lauriane", Constantes.PEUPLE_VIKING);
+                Partie p1;
+                p1 = c1.construire();
 
-            Assert.AreEqual(0, p1.ListeJoueurs[0].ListeUnite[0].CaseUnite);
+                Assert.AreEqual(0, p1.ListeJoueurs[0].ListeUnite[0].CaseUnite);
 
-            Assert.AreEqual(0, p1.ListeJoueurs[0].ListeUnite[0].Position.Abscisse);
-            Assert.AreEqual(0, p1.ListeJoueurs[0].ListeUnite[0].Position.Ordonnee);
-            Assert.AreEqual(0, p1.ListeJoueurs[1].ListeUnite[0].Position.Abscisse);
-            Assert.AreEqual(0, p1.ListeJoueurs[1].ListeUnite[0].Position.Ordonnee);
-            Assert.AreEqual(0, p1.ListeJoueurs[1].ListeUnite.Count);
+                Assert.AreEqual(0, p1.ListeJoueurs[0].ListeUnite[0].Position.Abscisse);
+                Assert.AreEqual(0, p1.ListeJoueurs[0].ListeUnite[0].Position.Ordonnee);
+                Assert.AreEqual(0, p1.ListeJoueurs[1].ListeUnite[0].Position.Abscisse);
+                Assert.AreEqual(0, p1.ListeJoueurs[1].ListeUnite[0].Position.Ordonnee);
+                Assert.AreEqual(0, p1.ListeJoueurs[1].ListeUnite.Count);
 
-            //Carte petite
-            CreateurPartie c2 = new CreateurPartie();
-            c2.TypePartie = Constantes.CARTE_PETITE;
-            c2.ajoutJoueur("Damien", "viking");
-            c2.ajoutJoueur("Lauriane", "gaulois");
-            Partie p2;
-            p2 = c2.construire();
+                //Carte petite
+                CreateurPartie c2 = new CreateurPartie();
+                c2.TypePartie = Constantes.CARTE_PETITE;
+                c2.ajoutJoueur("Damien", "viking");
+                c2.ajoutJoueur("Lauriane", "gaulois");
+                Partie p2;
+                p2 = c2.construire();
 
-            Assert.AreEqual(Constantes.NB_UNITE_PETITE, p2.ListeJoueurs[0].ListeUnite.Count);
-            Assert.AreEqual(Constantes.NB_UNITE_PETITE, p2.ListeJoueurs[1].ListeUnite.Count);
+                Assert.AreEqual(Constantes.NB_UNITE_PETITE, p2.ListeJoueurs[0].ListeUnite.Count);
+                Assert.AreEqual(Constantes.NB_UNITE_PETITE, p2.ListeJoueurs[1].ListeUnite.Count);
 
-            //Carte normale
-            CreateurPartie c3 = new CreateurPartie();
-            c3.TypePartie = Constantes.CARTE_NORMALE;
-            c3.ajoutJoueur("Damien", "viking");
-            c3.ajoutJoueur("Lauriane", "gaulois");
-            Partie p3;
-            p3 = c3.construire();
+                //Carte normale
+                CreateurPartie c3 = new CreateurPartie();
+                c3.TypePartie = Constantes.CARTE_NORMALE;
+                c3.ajoutJoueur("Damien", "viking");
+                c3.ajoutJoueur("Lauriane", "gaulois");
+                Partie p3;
+                p3 = c3.construire();
 
-            Assert.AreEqual(Constantes.NB_UNITE_NORMALE, p3.ListeJoueurs[0].ListeUnite.Count);
-            Assert.AreEqual(Constantes.NB_UNITE_NORMALE, p3.ListeJoueurs[1].ListeUnite.Count);
-        }*/
+                Assert.AreEqual(Constantes.NB_UNITE_NORMALE, p3.ListeJoueurs[0].ListeUnite.Count);
+                Assert.AreEqual(Constantes.NB_UNITE_NORMALE, p3.ListeJoueurs[1].ListeUnite.Count);
+            }*/
     }
 
     [TestClass]
@@ -242,7 +242,7 @@ namespace UnitTest_SmallWorld
         }
 
     }
-     
+
     [TestClass]
     public unsafe class UnitTestDeplacement
     {
@@ -301,8 +301,8 @@ namespace UnitTest_SmallWorld
             {
                 for (j = 0; j < nbCase; j++)
                 {
-               //     string res = "i : "+i+" / j : "+j+ " - " + tabRef[i * nbCase + j] +" " + uniteG.TabDeplacement[i * nbCase + j];
-                 //   Assert.AreEqual(tabRef[i * nbCase + j], uniteG.TabDeplacement[i * nbCase + j],res);
+                    //     string res = "i : "+i+" / j : "+j+ " - " + tabRef[i * nbCase + j] +" " + uniteG.TabDeplacement[i * nbCase + j];
+                    //   Assert.AreEqual(tabRef[i * nbCase + j], uniteG.TabDeplacement[i * nbCase + j],res);
                 }
             }
             Assert.AreEqual(3, uniteG.TabDeplacement[0]);
@@ -317,17 +317,17 @@ namespace UnitTest_SmallWorld
             Assert.AreEqual(0, uniteG.TabCout[3]);
             Assert.AreEqual(0, uniteG.TabCout[4]);
 
-         //   Assert.AreEqual(3, uniteG.TabDeplacement[5]);
-        //    Assert.AreEqual(0.5, uniteG.TabCout[5]);
-           /* Assert.AreEqual(1, uniteN.TabDeplacement[6]);
-            Assert.AreEqual(1, uniteN.TabDeplacement[7]);
-            Assert.AreEqual(1, uniteN.TabDeplacement[8]);
-            Assert.AreEqual(1, uniteN.TabDeplacement[9]);
+            //   Assert.AreEqual(3, uniteG.TabDeplacement[5]);
+            //    Assert.AreEqual(0.5, uniteG.TabCout[5]);
+            /* Assert.AreEqual(1, uniteN.TabDeplacement[6]);
+             Assert.AreEqual(1, uniteN.TabDeplacement[7]);
+             Assert.AreEqual(1, uniteN.TabDeplacement[8]);
+             Assert.AreEqual(1, uniteN.TabDeplacement[9]);
 
-            Assert.AreEqual(0, uniteN.TabCout[5]);*/
-            
-            
-          //  Assert.AreEqual(2, uniteN.TabDeplacement[5]);
+             Assert.AreEqual(0, uniteN.TabCout[5]);*/
+
+
+            //  Assert.AreEqual(2, uniteN.TabDeplacement[5]);
 
 
 
@@ -388,11 +388,11 @@ namespace UnitTest_SmallWorld
             {
                 for (j = 0; j < nbCase; j++)
                 {
-                        string res = "i : "+i+" / j : "+j+ " - " + tabRef[i * nbCase + j] +" " + uniteN.TabDeplacement[i * nbCase + j];
-                       Assert.AreEqual(tabRef[i * nbCase + j], uniteN.TabDeplacement[i * nbCase + j],res);
+                    string res = "i : " + i + " / j : " + j + " - " + tabRef[i * nbCase + j] + " " + uniteN.TabDeplacement[i * nbCase + j];
+                    Assert.AreEqual(tabRef[i * nbCase + j], uniteN.TabDeplacement[i * nbCase + j], res);
                 }
             }
-   
+
 
             Assert.AreEqual(1, uniteN.TabCout[0]);
             for (i = 0; i < nbCase; i++)
@@ -409,7 +409,7 @@ namespace UnitTest_SmallWorld
                         Assert.AreEqual(0, uniteN.TabCout[i * nbCase + j], res);
                     }
                 }
-            }            
+            }
         }
 
         /**
@@ -479,7 +479,7 @@ namespace UnitTest_SmallWorld
                 {
                     if ((i == 1) && (j == 1))
                     {
-                       Assert.AreEqual(1, uniteN.TabCout[i * nbCase + j]);
+                        Assert.AreEqual(1, uniteN.TabCout[i * nbCase + j]);
                     }
                     else
                     {
@@ -531,7 +531,7 @@ namespace UnitTest_SmallWorld
                     tabRef[i * nbCase + j] = 2;
                 }
             }
-                      
+
             //Test
             for (i = 0; i < nbCase; i++)
             {
@@ -560,11 +560,11 @@ namespace UnitTest_SmallWorld
         }
 
         /**
-       * @fn TestDeplacementNain()
-       * @brief Vérification du déplacement d'une unité naine
+       * @fn TestDeplacementNainMixte()
+       * @brief Vérification du déplacement d'une unité naine sur différents terrains
        */
         [TestMethod]
-        public void TestDeplacementNain()
+        public void TestDeplacementNainMixte()
         {
             WrapperAlgo w = new WrapperAlgo();
             int nbCase = 3;
@@ -632,11 +632,11 @@ namespace UnitTest_SmallWorld
         }
 
         /**
-        * @fn TestDeplacementBasique()
-        * @brief Vérification du déplacement sur un cas simple
-        */
+       * @fn TestDeplacementVikingPlaine()
+       * @brief Vérification du déplacement d'une unité viking sur de la plaine
+       */
         [TestMethod]
-        public void TestDeplacementBasique2()
+        public void TestDeplacementVikingPlaine()
         {
             WrapperAlgo w = new WrapperAlgo();
             int nbCase = 5;
@@ -669,46 +669,266 @@ namespace UnitTest_SmallWorld
             {
                 for (j = 0; j < nbCase; j++)
                 {
-                    tabRef[i * nbCase + j] = 1;
+                    tabRef[i * nbCase + j] = 0;
                 }
             }
             tabRef[0 * nbCase + 0] = 2;
             tabRef[0 * nbCase + 1] = 2;
+            tabRef[0 * nbCase + 2] = 0;
             tabRef[1 * nbCase + 0] = 2;
-             //Test
-          for (i = 0; i < nbCase; i++)
+            tabRef[1 * nbCase + 1] = 0;
+            tabRef[2 * nbCase + 0] = 0;
+
+            //tabRef[0 * nbCase + 3] = 1;
+
+            //Test
+            for (i = 0; i < nbCase; i++)
             {
                 for (j = 0; j < nbCase; j++)
                 {
-                  string res = "i" +i + "/j" + j+ " " + tabRef[i * nbCase + j] +" " + uniteV.TabDeplacement[i * nbCase + j];
-                    Assert.AreEqual(tabRef[i * nbCase + j], uniteV.TabDeplacement[i * nbCase + j],res);
+                    string res = "i : " + i + " / j : " + j + " - " + tabRef[i * nbCase + j] + " " + uniteV.TabDeplacement[i * nbCase + j];
+                    Assert.AreEqual(tabRef[i * nbCase + j], uniteV.TabDeplacement[i * nbCase + j], res);
                 }
             }
-          /*  Assert.AreEqual(2, uniteN.TabDeplacement[0]);
-            Assert.AreEqual(2, uniteN.TabDeplacement[1]);
-            Assert.AreEqual(1, uniteN.TabDeplacement[2]);
-            Assert.AreEqual(1, uniteN.TabDeplacement[3]);
-            Assert.AreEqual(1, uniteN.TabDeplacement[4]);
 
-            Assert.AreEqual(1, uniteN.TabCout[0]);
-            Assert.AreEqual(0, uniteN.TabCout[1]);
-            Assert.AreEqual(0, uniteN.TabCout[2]);
-            Assert.AreEqual(0, uniteN.TabCout[3]);
-            Assert.AreEqual(0, uniteN.TabCout[4]);
+            Assert.AreEqual(1, uniteV.TabCout[0]);
+            for (i = 0; i < nbCase; i++)
+            {
+                for (j = 0; j < nbCase; j++)
+                {
+                    if ((i == 0) && (j == 0))
+                    {
+                        Assert.AreEqual(1, uniteV.TabCout[i * nbCase + j]);
+                    }
+                    else
+                    {
+                        string res = "i : " + i + " / j : " + j + " - " + tabRef[i * nbCase + j] + " " + uniteV.TabCout[i * nbCase + j];
+                        Assert.AreEqual(0, uniteV.TabCout[i * nbCase + j], res);
+                    }
+                }
+            }
+        }
 
-            Assert.AreEqual(2, uniteN.TabDeplacement[5]);
-            Assert.AreEqual(1, uniteN.TabDeplacement[6]);
-            Assert.AreEqual(1, uniteN.TabDeplacement[7]);
-            Assert.AreEqual(1, uniteN.TabDeplacement[8]);
-            Assert.AreEqual(1, uniteN.TabDeplacement[9]);
+        /**
+         * @fn TestDeplacementVikingForet()
+         * @brief Vérification du déplacement d'une unité viking sur de la foret
+         */
+        [TestMethod]
+        public void TestDeplacementVikingForet()
+        {
+            WrapperAlgo w = new WrapperAlgo();
+            int nbCase = 5;
+            int* tabCarte = w.creerTab(nbCase);
 
-            Assert.AreEqual(0, uniteN.TabCout[5]);
+            int i, j;
 
+            //On fait une carte de plaine
+            for (i = 0; i < nbCase; i++)
+            {
+                for (j = 0; j < nbCase; j++)
+                {
+                    tabCarte[i * nbCase + j] = Constantes.CASE_FORET;
+                }
+            }
 
-            //  Assert.AreEqual(2, uniteN.TabDeplacement[5]);*/
+            //On initialise une unité
+            UniteViking uniteV = new UniteViking();
+            uniteV.Position = new Coordonnees(1, 1);
+            uniteV.CaseUnite = FabriqueCase.Instance_FabCase.obtenirForet();
+            uniteV.TabCarte = tabCarte;
+            uniteV.TailleCarteJeu = nbCase;
+            uniteV.TabDeplacement = w.creerTab(nbCase);
+            uniteV.TabCout = w.creerTabDouble(nbCase);
+            uniteV.calculerDeplacement();
 
+            //Tableau référence
+            int* tabRef = w.creerTab(nbCase);
+            for (i = 0; i < nbCase; i++)
+            {
+                for (j = 0; j < nbCase; j++)
+                {
+                    tabRef[i * nbCase + j] = 0;
+                }
+            }
+            tabRef[0 * nbCase + 0] = 0;
+            tabRef[0 * nbCase + 1] = 2;
+            tabRef[0 * nbCase + 2] = 0;
+            tabRef[1 * nbCase + 0] = 2;
+            tabRef[1 * nbCase + 1] = 2;
+            tabRef[1 * nbCase + 2] = 2;
+            tabRef[2 * nbCase + 1] = 2;
 
+            //Test
+            for (i = 0; i < nbCase; i++)
+            {
+                for (j = 0; j < nbCase; j++)
+                {
+                    string res = "i : " + i + " / j : " + j + " - " + tabRef[i * nbCase + j] + " " + uniteV.TabDeplacement[i * nbCase + j];
+                    Assert.AreEqual(tabRef[i * nbCase + j], uniteV.TabDeplacement[i * nbCase + j], res);
+                }
+            }
 
+            for (i = 0; i < nbCase; i++)
+            {
+                for (j = 0; j < nbCase; j++)
+                {
+                    if ((i == 1) && (j == 1))
+                    {
+                        Assert.AreEqual(1, uniteV.TabCout[i * nbCase + j]);
+                    }
+                    else
+                    {
+                        string res = "i : " + i + " / j : " + j + " - " + tabRef[i * nbCase + j] + " " + uniteV.TabCout[i * nbCase + j];
+                        Assert.AreEqual(0, uniteV.TabCout[i * nbCase + j], res);
+                    }
+                }
+            }
+        }
+
+        /**
+        * @fn TestDeplacementVikingEau()
+        * @brief Vérification du déplacement d'une unité naine sur de l'eau
+        */
+        [TestMethod]
+        public void TestDeplacementVikingEau()
+        {
+            WrapperAlgo w = new WrapperAlgo();
+            int nbCase = 5;
+            int* tabCarte = w.creerTab(nbCase);
+
+            int i, j;
+
+            //On fait une carte de plaine
+            for (i = 0; i < nbCase; i++)
+            {
+                for (j = 0; j < nbCase; j++)
+                {
+                    tabCarte[i * nbCase + j] = Constantes.CASE_EAU;
+                }
+            }
+
+            //On initialise une unité
+            UniteViking uniteV = new UniteViking();
+            uniteV.Position = new Coordonnees(3, 2);
+            uniteV.CaseUnite = FabriqueCase.Instance_FabCase.obtenirEau();
+            uniteV.TabCarte = tabCarte;
+            uniteV.TailleCarteJeu = nbCase;
+            uniteV.TabDeplacement = w.creerTab(nbCase);
+            uniteV.TabCout = w.creerTabDouble(nbCase);
+            uniteV.calculerDeplacement();
+
+            //Tableau référence
+            int* tabRef = w.creerTab(nbCase);
+            for (i = 0; i < nbCase; i++)
+            {
+                for (j = 0; j < nbCase; j++)
+                {                
+                    tabRef[i * nbCase + j] = 0;
+                }
+            }
+            tabRef[2 * nbCase + 2] = 2;
+            tabRef[3 * nbCase + 1] = 2;
+            tabRef[3 * nbCase + 2] = 2;
+            tabRef[3 * nbCase + 3] = 2;
+            tabRef[4 * nbCase + 2] = 2;
+
+            //Test
+            for (i = 0; i < nbCase; i++)
+            {
+                for (j = 0; j < nbCase; j++)
+                {
+                    string res = "i : " + i + " / j : " + j + " - " + tabRef[i * nbCase + j] + " " + uniteV.TabDeplacement[i * nbCase + j];
+                    Assert.AreEqual(tabRef[i * nbCase + j], uniteV.TabDeplacement[i * nbCase + j], res);
+                }
+            }
+
+            for (i = 0; i < nbCase; i++)
+            {
+                for (j = 0; j < nbCase; j++)
+                {
+                    if ((i == 3) && (j == 2))
+                    {
+                        Assert.AreEqual(1, uniteV.TabCout[i * nbCase + j]);
+                    }
+                    else
+                    {
+                        string res = "i : " + i + " / j : " + j + " - " + tabRef[i * nbCase + j] + " " + uniteV.TabCout[i * nbCase + j];
+                        Assert.AreEqual(0, uniteV.TabCout[i * nbCase + j], res);
+                    }
+                }
+            }
+        }
+
+        /**
+       * @fn TestDeplacementVikingMixte()
+       * @brief Vérification du déplacement d'une unité viking sur différents terrains
+       */
+        [TestMethod]
+        public void TestDeplacementVikingMixte()
+        {
+            WrapperAlgo w = new WrapperAlgo();
+            int nbCase = 3;
+            int* tabCarte = w.creerTab(nbCase);
+
+            int i, j;
+
+            tabCarte[0] = Constantes.CASE_DESERT;
+            tabCarte[1] = Constantes.CASE_EAU;
+            tabCarte[2] = Constantes.CASE_PLAINE;
+            tabCarte[3] = Constantes.CASE_PLAINE;
+            tabCarte[4] = Constantes.CASE_PLAINE;
+            tabCarte[5] = Constantes.CASE_FORET;
+            tabCarte[6] = Constantes.CASE_EAU;
+            tabCarte[7] = Constantes.CASE_DESERT;
+            tabCarte[8] = Constantes.CASE_DESERT;
+
+            //On initialise une unité
+            UniteViking uniteV = new UniteViking();
+            uniteV.Position = new Coordonnees(1, 1);
+            uniteV.CaseUnite = FabriqueCase.Instance_FabCase.obtenirPlaine();
+            uniteV.TabCarte = tabCarte;
+            uniteV.TailleCarteJeu = nbCase;
+            uniteV.TabDeplacement = w.creerTab(nbCase);
+            uniteV.TabCout = w.creerTabDouble(nbCase);
+            uniteV.calculerDeplacement();
+
+            //Tableau référence
+            int* tabRef = w.creerTab(nbCase);
+            tabRef[0] = 0;
+            tabRef[1] = 2;
+            tabRef[2] = 0;
+            tabRef[3] = 2;
+            tabRef[4] = 2;
+            tabRef[5] = 2;
+            tabRef[6] = 0;
+            tabRef[7] = 2;
+            tabRef[8] = 0;
+
+            //Test
+            for (i = 0; i < nbCase; i++)
+            {
+                for (j = 0; j < nbCase; j++)
+                {
+                    string res = "i : " + i + " / j : " + j + " - " + tabRef[i * nbCase + j] + " " + uniteV.TabDeplacement[i * nbCase + j];
+                    Assert.AreEqual(tabRef[i * nbCase + j], uniteV.TabDeplacement[i * nbCase + j], res);
+                }
+            }
+
+            for (i = 0; i < nbCase; i++)
+            {
+                for (j = 0; j < nbCase; j++)
+                {
+                    if ((i == 1) && (j == 1))
+                    {
+                        Assert.AreEqual(1, uniteV.TabCout[i * nbCase + j]);
+                    }
+                    else
+                    {
+                        string res = "i : " + i + " / j : " + j + " - " + tabRef[i * nbCase + j] + " " + uniteV.TabCout[i * nbCase + j];
+                        Assert.AreEqual(0, uniteV.TabCout[i * nbCase + j], res);
+                    }
+                }
+            }
         }
     }
 }

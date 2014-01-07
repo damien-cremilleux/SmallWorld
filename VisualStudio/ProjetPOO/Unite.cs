@@ -616,7 +616,7 @@ namespace SmallWorld
         public override void calculerDeplacement()
         {
             WrapperAlgo w = new WrapperAlgo();
-            w.deplacementVikingInitial(TabCarte, TailleCarteJeu, Position.Abscisse, Position.Ordonnee, TabCout, TabDeplacement);
+            w.deplacementVikingInitial(TabCarte, TailleCarteJeu, Position.Abscisse, Position.Ordonnee, TabCout, TabDeplacement, PointDeDeplacement);
         }
     }
 }

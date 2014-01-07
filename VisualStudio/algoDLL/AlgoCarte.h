@@ -21,7 +21,7 @@ public:
     void deplacementNainInitial(int * carte, int taille, int x, int y, double * tabCout, int * tabRes, double pointDepl);
 	void deplacementNain(int * carte, int taille, int x, int y, int * tabRes, double * tabDepl);
 	void deplacementNainCase(int * carte, int taille, int x, int y, int * tabRes, double * tabDepl, double pointDepl);
-    void deplacementVikingInitial(int * carte, int taille, int x, int y, double * tabCout, int * tabRes);
+    void deplacementVikingInitial(int * carte, int taille, int x, int y, double * tabCout, int * tabRes, double pointDepl);
 	void deplacementViking(int * carte, int taille, int x, int y, int * tabRes, double * tabDepl);
 	void deplacementVikingCase(int * carte, int taille, int x, int y, int * tabRes, double * tabDepl, double pointDepl);
 };
