@@ -28,6 +28,7 @@ namespace Wpf_SmallWorld
         /// <param name="joueur">Le joueur</param>
         public InfoJoueur(Joueur joueur, Joueur joueurEnCours)
         {
+
             InitializeComponent();
             // Récuperation des données joueur
             Nom.Text += joueur.NomJ;
@@ -38,7 +39,7 @@ namespace Wpf_SmallWorld
             // Indication sur le joueur en cours
             if (joueur != joueurEnCours)
             {
-                Container.Opacity = 0.2;
+                Container.Opacity = 0.4;
             }
         }
 

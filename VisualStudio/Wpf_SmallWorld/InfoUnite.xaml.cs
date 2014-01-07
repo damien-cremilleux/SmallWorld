@@ -37,16 +37,49 @@ namespace Wpf_SmallWorld
           
             this.unite = unit;
             InitializeComponent();
+            this.KeyDown += new KeyEventHandler(passerSonTour);
 
             // Récuperation des données de l'unité
-            PointVie.Text += unite.PointDeVie;
-            PointDeplacement.Text += unite.PointDeDeplacement;
-            PointVictoire.Text += unite.PointDeVictoire;  
-            PointAttaque.Text += unite.PointAttaque;  
-            PointDefense.Text += unite.PointDefense;  
+            PointVie.Text = "" +unite.PointDeVie;
+            PointDeplacement.Text = "" + unite.PointDeDeplacement;
+            PointVictoire.Text = "" + unite.PointDeVictoire;
+            PointAttaque.Text = "" + unite.PointAttaque;
+            PointDefense.Text = "" + unite.PointDefense;
 
+            BitmapSource img;
+            if (unite is InterUniteNaine)
+            {
+                img = System.Windows.Interop.Imaging.CreateBitmapSourceFromHBitmap(Wpf_SmallWorld.Properties.Resources.Vie.GetHbitmap(), IntPtr.Zero, Int32Rect.Empty, BitmapSizeOptions.FromEmptyOptions());
+                ImgPeuple.Fill = new ImageBrush(img);
+                ImgPeuple.Tag = "Unité Naine";
+            }
+            if (unite is InterUniteViking)
+            {
+                img = System.Windows.Interop.Imaging.CreateBitmapSourceFromHBitmap(Wpf_SmallWorld.Properties.Resources.victoire.GetHbitmap(), IntPtr.Zero, Int32Rect.Empty, BitmapSizeOptions.FromEmptyOptions());
+                ImgPeuple.Fill = new ImageBrush(img);
+                ImgPeuple.Tag = "Unité Vicking";
+
+            }
+            if (unite is InterUniteGauloise)
+            {
+                img = System.Windows.Interop.Imaging.CreateBitmapSourceFromHBitmap(Wpf_SmallWorld.Properties.Resources.UnitRest.GetHbitmap(), IntPtr.Zero, Int32Rect.Empty, BitmapSizeOptions.FromEmptyOptions());
+                ImgPeuple.Fill = new ImageBrush(img);
+                ImgPeuple.Tag = "Unité Gauloise";
+            }
+
+            if (unite.PasseSonTour)
+            {
+                Container.Opacity = 0.3;
+            }
         }
 
+
+        private void passerSonTour(object sender, RoutedEventArgs e)
+        {
+                unite.PasseSonTour = true;
+                Container.Opacity = 0.3;
+                PointDeplacement.Text = "" + unite.PointDeDeplacement;
+        }
 
     }
 }

@@ -9,16 +9,16 @@
       Loaded="Window_Loaded"
       FontFamily="Segoe UI Light"
       FontSize="14">
-    
-    <Grid>
+
+    <Grid KeyDown="passerSonTour"  >
         <Grid.RowDefinitions>
             <RowDefinition Height="30"/>
             <RowDefinition/>
             <RowDefinition Height="auto"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2.5*"/>
             <ColumnDefinition/>
-            <ColumnDefinition Width="200"/>
         </Grid.ColumnDefinitions>
 
         <!--Menu-->
@@ -48,8 +48,8 @@
 
         <!-- Données case -->
         <ScrollViewer Grid.Column="1" Grid.Row="1" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
-        <Grid Grid.Column="1" Grid.Row="1">
-            <StackPanel Margin="0,40" Name="InfoCase" DataContext="{Binding Tag, ElementName=selectionRectangle}" Visibility="Visible">
+            <Grid Grid.Column="1" Grid.Row="1" VerticalAlignment="center">
+                <StackPanel Margin="0,40" Name="InfoCase" DataContext="{Binding Tag, ElementName=selectionRectangle}" Visibility="Visible" VerticalAlignment="center">
                     <!-- on associe le contenu du label (Content) par binding : à la tuile selectionnée (Tag) de la source : le rectangle de selection (selectionRectangle) -->
                     <!-- une variante = Factorisation du Binding par le DataContext-->
                 <StackPanel Orientation="Horizontal">
@@ -59,10 +59,7 @@
                 
                 <!-- Liste des unités présentes sur la case -->
                 <StackPanel Name="InfoUnites" Cursor="Hand"></StackPanel>
-       
-                <!--test-->
-                <TextBlock Name="tb"/>
-            </StackPanel>
+                </StackPanel>
         </Grid>
         </ScrollViewer>
 

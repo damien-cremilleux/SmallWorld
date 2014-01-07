@@ -6,10 +6,11 @@
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
 
-    <Grid>
+    <Grid Name="Container">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="auto"/>
-            <ColumnDefinition Width="70"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
             <ColumnDefinition Width="auto"/>
             <ColumnDefinition Width="auto"/>
         </Grid.ColumnDefinitions>
@@ -18,12 +19,12 @@
         </Grid.RowDefinitions>
 
         <Grid Grid.Row="0" Grid.Column="0">
-            <Rectangle Name="ImgPeuple" Width="40" Height="40" Fill="red"/>
+            <Rectangle Name="ImgPeuple" Width="40" Height="40"/>
         </Grid>
 
         <Grid Grid.Row="0" Grid.Column="1">
             <StackPanel>
-                <TextBlock Name="NomPeuple" />
+                <Label Foreground="red" Content="{Binding Tag, ElementName=ImgPeuple}"/>
                 <StackPanel Orientation="Horizontal">
                     <Image Source="Resources\Vie.png" Width="20" Margin="0,0,5,0"/>
                     <TextBlock Name="PointVie"/>
@@ -35,11 +36,7 @@
                 </StackPanel>
             </StackPanel>
         </Grid>
-        <Grid Grid.Row="0" Grid.Column="2">
-            <StackPanel>
-
-            </StackPanel>
-
+        <Grid Grid.Row="1" Grid.Column="2">
             <StackPanel>
 
                 <StackPanel Orientation="Horizontal">
@@ -59,9 +56,14 @@
                     <TextBlock Name="PointDefense"/>
                 </StackPanel>
             </StackPanel>
+        </Grid>
+
+        <Grid Grid.Row="1" Grid.Column="3">
+            <Button Height="20" Width="40" VerticalAlignment="Top" Click="passerSonTour">Passer</Button>
+        </Grid>
+
 
         </Grid>
-    </Grid>
 
     
 

@@ -5,7 +5,8 @@
         MinHeight="600" MinWidth="900"
         xmlns:local="clr-namespace:Wpf_SmallWorld"
         WindowStartupLocation="CenterScreen"
-        FontFamily="Segoe UI Light">
+        FontFamily="Segoe UI Light"
+         SizeToContent="WidthAndHeight">
 
     <Grid>
 
