@@ -7,7 +7,7 @@
  * @author <a href="mailto:damien.cremilleux@insa-rennes.fr">Damien Crémilleux</a>
  * @author <a href="mailto:lauriane.holy@insa-rennes.fr">Lauriane Holy</a>
  * 
- * @date 03/01/2014
+ * @date 07/01/2014
  * @version 0.1
  */
 using System;
@@ -92,17 +92,17 @@ namespace SmallWorld
         /**
         * @brief Attribut <b>tabCarte</b>, contient la carte sous forme d'un tableau d'int
         */
-        private int * tabCarte;
+        private int* tabCarte;
 
         /**
         * @brief Attribut <b>tabDeplacement</b>, contient le tableau des déplacements possibles
         */
-        private int * tabDeplacement;
+        private int* tabDeplacement;
 
         /**
          * @brief Attribut <b>tabCout</b>, contient le tableau des couts de déplacements
          */
-        private double * tabCout;
+        private double* tabCout;
 
         /**
          * @brief Attribut <b>taillCarteJeu</b>, contient la taille de la carte du jeu
@@ -209,7 +209,7 @@ namespace SmallWorld
          * @fn TabCout
          * @brief Properties pour l'attribut tabCout
          */
-        public double * TabCout
+        public double* TabCout
         {
             get
             {
@@ -386,8 +386,8 @@ namespace SmallWorld
                 Position.Abscisse = x;
                 Position.Ordonnee = y;
 
-                //On met à jour les matrices de déplacements
-                calculerDeplacement();
+                //on met à jour les déplcements
+                this.calculerDeplacement();
             }
         }
 
@@ -424,6 +424,18 @@ namespace SmallWorld
         public void mourir()
         {
             throw new System.NotImplementedException();
+        }
+
+        /**
+        * @fn nouveauTour()
+        * @brief Les attributs de l'unité sont mis à jour pour le nouveau tour
+        */
+        public void nouveauTour()
+        {
+            PasseSonTour = false;
+            PointDeDeplacement = 1;
+            //On met à jour les matrices de déplacements
+            calculerDeplacement();
         }
     }
 
@@ -477,7 +489,7 @@ namespace SmallWorld
             WrapperAlgo w = new WrapperAlgo();
             w.deplacementGauloisInitial(TabCarte, TailleCarteJeu, Position.Abscisse, Position.Ordonnee, TabCout, TabDeplacement);
         }
-    
+
     }
 
     /**
@@ -527,7 +539,7 @@ namespace SmallWorld
         public override void calculerDeplacement()
         {
             WrapperAlgo w = new WrapperAlgo();
-            w.deplacementNainInitial(TabCarte, TailleCarteJeu, Position.Abscisse, Position.Ordonnee, TabCout, TabDeplacement);
+            w.deplacementNainInitial(TabCarte, TailleCarteJeu, Position.Abscisse, Position.Ordonnee, TabCout, TabDeplacement, PointDeDeplacement);
         }
     }
 
@@ -604,7 +616,7 @@ namespace SmallWorld
         public override void calculerDeplacement()
         {
             WrapperAlgo w = new WrapperAlgo();
-             w.deplacementVikingInitial(TabCarte, TailleCarteJeu, Position.Abscisse, Position.Ordonnee, TabCout, TabDeplacement);
+            w.deplacementVikingInitial(TabCarte, TailleCarteJeu, Position.Abscisse, Position.Ordonnee, TabCout, TabDeplacement);
         }
     }
 }

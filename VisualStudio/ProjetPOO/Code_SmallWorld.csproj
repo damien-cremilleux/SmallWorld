@@ -48,9 +48,7 @@
     <Compile Include="Coordonnees.cs" />
     <Compile Include="CreateurPartie.cs" />
     <Compile Include="FabriqueCase.cs" />
-    <Compile Include="FabriqueNain.cs" />
     <Compile Include="FabriquePeuple.cs" />
-    <Compile Include="FabriqueViking.cs" />
     <Compile Include="Joueur.cs" />
     <Compile Include="MonteurPartie.cs" />
     <Compile Include="Partie.cs" />
@@ -88,6 +86,9 @@
     <EmbeddedResource Include="CreateurPartie_construire_1.sequencediagram.layout">
       <DependentUpon>CreateurPartie_construire_1.sequencediagram</DependentUpon>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AlgoCarte.cpp" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

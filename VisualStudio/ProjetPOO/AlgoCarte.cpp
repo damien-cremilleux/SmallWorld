@@ -220,17 +220,6 @@ void AlgoCarte::deplacementGaulois(int * carte, int taille, int x, int y, int * 
 		}
 	}
 
-    //case au dessous
-	if (x != (taille-1)) 
-	{
-		if (tabRes[(x+1)*taille+y] == CASE_NONCALCULEE)
-		{
-			deplacementGauloisCase(carte,taille, x+1, y, tabRes, tabDepl, tabDepl[x*taille+y]);
-			deplacementGaulois(carte, taille, x+1, y, tabRes, tabDepl);
-		}
-	}
-
-
 	//case à droite
 	if (y != (taille-1)) 
 	{
@@ -241,6 +230,15 @@ void AlgoCarte::deplacementGaulois(int * carte, int taille, int x, int y, int * 
 		}
 	}
 
+	//case au dessous
+	if (x != (taille-1)) 
+	{
+		if (tabRes[(x+1)*taille+y] == CASE_NONCALCULEE)
+		{
+			deplacementGauloisCase(carte,taille, x+1, y, tabRes, tabDepl, tabDepl[x*taille+y]);
+			deplacementGaulois(carte, taille, x+1, y, tabRes, tabDepl);
+		}
+	}
 
 	//case à gauche
 	if (y != 0) 
@@ -343,10 +341,9 @@ void AlgoCarte::deplacementGauloisCase(int * carte, int taille, int x, int y, in
 * @param int <b>y</b> l'ordonnée de l'unité
 * @param int <b>tabCout</b> le tableau des couts de déplacement
 * @param int * <b>tabRes</b> la carte des déplacements possibles
-* @param double c*<b>pointDepl</b> le nombre de déplacement actuel
 * @return void
 */
-void AlgoCarte::deplacementNainInitial(int * carte, int taille, int x, int y, double * tabCout, int * tabRes, double pointDepl)
+void AlgoCarte::deplacementNainInitial(int * carte, int taille, int x, int y, double * tabCout, int * tabRes)
 {
 	//Par défaut toute les cases sont inacessibles, sauf les cases montagnes
 	int i, j;
@@ -354,8 +351,8 @@ void AlgoCarte::deplacementNainInitial(int * carte, int taille, int x, int y, do
 	{
 		for (j = 0; j < taille; j++)
 		{
-			//Un nain peut se déplacer sur n'importe quelle case montagne s'il est déjà sur une case montagne et qu'il a un point déplacement
-			if ((carte[i*taille + j] == CASE_MONTAGNE) && (carte[x*taille + y] == CASE_MONTAGNE) && (pointDepl >= 1))
+			//Un nain peut se déplacer sur n'importe quelle case montagne s'il est déjà sur une case montagne
+			if (carte[i*taille + j] == CASE_MONTAGNE && carte[x*taille + y] == CASE_MONTAGNE)
 			{
 				tabRes[i*taille + j] = CASE_POSSIBLE;
 			}
@@ -384,7 +381,7 @@ void AlgoCarte::deplacementNainInitial(int * carte, int taille, int x, int y, do
 	{
 		tabRes[x*taille+y] = CASE_POSSIBLE;
 	}
-	tabCout[x*taille+y] = pointDepl;
+	tabCout[x*taille+y] = 1;
 
 	deplacementNain(carte, taille, x, y, tabRes, tabCout);
 }
@@ -408,7 +405,7 @@ void AlgoCarte::deplacementNain(int * carte, int taille, int x, int y, int * tab
 		if (tabRes[(x-1)*taille + y] == CASE_NONCALCULEE)
 		{
 			deplacementNainCase(carte,taille, x-1, y, tabRes, tabDepl, tabDepl[x*taille+y]);
-		//	deplacementNain(carte, taille, x-1, y, tabRes, tabDepl);
+			deplacementNain(carte, taille, x-1, y, tabRes, tabDepl);
 		}
 	}
 
@@ -418,7 +415,7 @@ void AlgoCarte::deplacementNain(int * carte, int taille, int x, int y, int * tab
 		if (tabRes[x*taille+y+1] == CASE_NONCALCULEE)
 		{
 			deplacementNainCase(carte,taille, x, y+1, tabRes, tabDepl, tabDepl[x*taille+y]);
-		//	deplacementNain(carte, taille, x, y+1, tabRes, tabDepl);
+			deplacementNain(carte, taille, x, y+1, tabRes, tabDepl);
 		}
 	}
 
@@ -428,7 +425,7 @@ void AlgoCarte::deplacementNain(int * carte, int taille, int x, int y, int * tab
 		if (tabRes[(x+1)*taille+y] == CASE_NONCALCULEE)
 		{
 			deplacementNainCase(carte,taille, x+1, y, tabRes, tabDepl, tabDepl[x*taille+y]);
-			//deplacementNain(carte, taille, x+1, y, tabRes, tabDepl);
+			deplacementNain(carte, taille, x+1, y, tabRes, tabDepl);
 		}
 	}
 
@@ -438,7 +435,7 @@ void AlgoCarte::deplacementNain(int * carte, int taille, int x, int y, int * tab
 		if (tabRes[x*taille+y-1] == CASE_NONCALCULEE)
 		{
 			deplacementNainCase(carte,taille, x, y-1, tabRes, tabDepl, tabDepl[x*taille+y]);
-		//	deplacementNain(carte, taille, x, y-1, tabRes, tabDepl);
+			deplacementNain(carte, taille, x, y-1, tabRes, tabDepl);
 		}
 	}
 }

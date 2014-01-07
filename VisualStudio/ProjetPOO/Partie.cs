@@ -258,7 +258,7 @@ namespace SmallWorld
 
             foreach (Unite unite in ListeJoueurs[IndiceJoueurEnCours].ListeUnite)
             {
-                unite.PasseSonTour = false;
+                unite.nouveauTour();
             }
 
             if (IndiceJoueurEnCours == indiceJoueurInitial)
