@@ -271,7 +271,6 @@ namespace UnitTest_SmallWorld
             //On initialise une unité
             UniteNaine uniteN = new UniteNaine();
             uniteN.Position = new Coordonnees(0, 0);
-            uniteN.CaseUnite = FabriqueCase.Instance_FabCase.obtenirPlaine();
             uniteN.TabCarte = tabCarte;
             uniteN.TailleCarteJeu = nbCase;
             uniteN.TabDeplacement = w.creerTab(nbCase);
@@ -350,7 +349,6 @@ namespace UnitTest_SmallWorld
             //On initialise une unité
             UniteNaine uniteN = new UniteNaine();
             uniteN.Position = new Coordonnees(1, 1);
-            uniteN.CaseUnite = FabriqueCase.Instance_FabCase.obtenirForet();
             uniteN.TabCarte = tabCarte;
             uniteN.TailleCarteJeu = nbCase;
             uniteN.TabDeplacement = w.creerTab(nbCase);
@@ -428,7 +426,6 @@ namespace UnitTest_SmallWorld
             //On initialise une unité
             UniteNaine uniteN = new UniteNaine();
             uniteN.Position = new Coordonnees(3, 2);
-            uniteN.CaseUnite = FabriqueCase.Instance_FabCase.obtenirMontagne();
             uniteN.TabCarte = tabCarte;
             uniteN.TailleCarteJeu = nbCase;
             uniteN.TabDeplacement = w.creerTab(nbCase);
@@ -497,8 +494,7 @@ namespace UnitTest_SmallWorld
 
             //On initialise une unité
             UniteNaine uniteN = new UniteNaine();
-            uniteN.Position = new Coordonnees(1, 1);
-            uniteN.CaseUnite = FabriqueCase.Instance_FabCase.obtenirPlaine();
+            uniteN.Position = new Coordonnees(1, 1);        
             uniteN.TabCarte = tabCarte;
             uniteN.TailleCarteJeu = nbCase;
             uniteN.TabDeplacement = w.creerTab(nbCase);
@@ -569,7 +565,6 @@ namespace UnitTest_SmallWorld
             //On initialise une unité
             UniteViking uniteV = new UniteViking();
             uniteV.Position = new Coordonnees(0, 0);
-            uniteV.CaseUnite = FabriqueCase.Instance_FabCase.obtenirPlaine();
             uniteV.TabCarte = tabCarte;
             uniteV.TailleCarteJeu = nbCase;
             uniteV.TabDeplacement = w.creerTab(nbCase);
@@ -646,8 +641,7 @@ namespace UnitTest_SmallWorld
 
             //On initialise une unité
             UniteViking uniteV = new UniteViking();
-            uniteV.Position = new Coordonnees(1, 1);
-            uniteV.CaseUnite = FabriqueCase.Instance_FabCase.obtenirForet();
+            uniteV.Position = new Coordonnees(1, 1);        
             uniteV.TabCarte = tabCarte;
             uniteV.TailleCarteJeu = nbCase;
             uniteV.TabDeplacement = w.creerTab(nbCase);
@@ -723,7 +717,6 @@ namespace UnitTest_SmallWorld
             //On initialise une unité
             UniteViking uniteV = new UniteViking();
             uniteV.Position = new Coordonnees(3, 2);
-            uniteV.CaseUnite = FabriqueCase.Instance_FabCase.obtenirEau();
             uniteV.TabCarte = tabCarte;
             uniteV.TailleCarteJeu = nbCase;
             uniteV.TabDeplacement = w.creerTab(nbCase);
@@ -798,7 +791,6 @@ namespace UnitTest_SmallWorld
             //On initialise une unité
             UniteViking uniteV = new UniteViking();
             uniteV.Position = new Coordonnees(1, 1);
-            uniteV.CaseUnite = FabriqueCase.Instance_FabCase.obtenirPlaine();
             uniteV.TabCarte = tabCarte;
             uniteV.TailleCarteJeu = nbCase;
             uniteV.TabDeplacement = w.creerTab(nbCase);
@@ -869,7 +861,6 @@ namespace UnitTest_SmallWorld
             //On initialise une unité
             UniteGauloise uniteG = new UniteGauloise();
             uniteG.Position = new Coordonnees(0, 0);
-            uniteG.CaseUnite = FabriqueCase.Instance_FabCase.obtenirPlaine();
             uniteG.TabCarte = tabCarte;
             uniteG.TailleCarteJeu = nbCase;
             uniteG.TabDeplacement = w.creerTab(nbCase);
@@ -952,7 +943,6 @@ namespace UnitTest_SmallWorld
             //On initialise une unité
             UniteGauloise uniteG = new UniteGauloise();
             uniteG.Position = new Coordonnees(1, 1);
-            uniteG.CaseUnite = FabriqueCase.Instance_FabCase.obtenirForet();
             uniteG.TabCarte = tabCarte;
             uniteG.TailleCarteJeu = nbCase;
             uniteG.TabDeplacement = w.creerTab(nbCase);
@@ -1028,7 +1018,6 @@ namespace UnitTest_SmallWorld
             //On initialise une unité
             UniteGauloise uniteG = new UniteGauloise();
             uniteG.Position = new Coordonnees(3, 2);
-            uniteG.CaseUnite = FabriqueCase.Instance_FabCase.obtenirMontagne();
             uniteG.TabCarte = tabCarte;
             uniteG.TailleCarteJeu = nbCase;
             uniteG.TabDeplacement = w.creerTab(nbCase);
@@ -1103,7 +1092,6 @@ namespace UnitTest_SmallWorld
             //On initialise une unité
             UniteGauloise uniteG = new UniteGauloise();
             uniteG.Position = new Coordonnees(1, 1);
-            uniteG.CaseUnite = FabriqueCase.Instance_FabCase.obtenirPlaine();
             uniteG.TabCarte = tabCarte;
             uniteG.TailleCarteJeu = nbCase;
             uniteG.TabDeplacement = w.creerTab(nbCase);

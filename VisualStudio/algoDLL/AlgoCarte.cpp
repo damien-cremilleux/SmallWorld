@@ -148,7 +148,7 @@ double * AlgoCarte::creerTabDouble(int taille) {
 }
 
 /*****************************************************************************/
-/* Algorithme gaulois */
+/* Algorithmes gaulois */
 /*****************************************************************************/
 
 /**
@@ -382,7 +382,7 @@ void AlgoCarte::deplacementGauloisCase(int * carte, int taille, int x, int y, in
 
 
 /*****************************************************************************/
-/* Algorithme nain */
+/* Algorithmes nain */
 /*****************************************************************************/
 
 /**
@@ -573,7 +573,7 @@ void AlgoCarte::deplacementNainCase(int * carte, int taille, int x, int y, int *
 
 
 /*****************************************************************************/
-/* Algorithme viking */
+/* Algorithmes viking */
 /*****************************************************************************/
 
 /**
@@ -755,4 +755,56 @@ void AlgoCarte::deplacementVikingCase(int * carte, int taille, int x, int y, int
 	default:
 		break;
 	}
+}
+
+/**
+ * @fn caseBordEau(int * crate, int taille, int x, int y)
+ * @brief Indique si une case est au bord de l'eau
+ * 
+ * @param int * <b>carte</b> la carte du jeu
+ * @param int <b>taille</b> la taille du jeu
+ * @param int <b>x</b> l'abscisse de la case
+ * @param int <b>y</b> l'ordonnée de la case
+ * @return int 1 si la case est au bord de l'eau, 0 sinon
+ */
+int AlgoCarte::caseBordEau(int * carte, int taille, int x, int y)
+{
+//case au dessus
+	if (x != 0) 
+	{
+		if (carte[(x -1) * taille + y] == CASE_EAU)
+		{
+			return 1;
+		}
+	}
+
+	//case à droite
+	if (y != (taille-1)) 
+	{
+		if (carte[x*taille+y+1] == CASE_EAU)
+		{
+			return 1;
+		}
+	}
+
+	//case au dessous
+	if (x != (taille-1)) 
+	{
+		if (carte[(x+1)*taille+y] == CASE_EAU)
+		{
+			return 1;
+		}
+	}
+
+	//case à gauche
+	if (y != 0) 
+	{
+		if (carte[x*taille+y-1] == CASE_EAU)
+		{
+			return 1;
+		}
+	}
+
+	return 0;
+
 }

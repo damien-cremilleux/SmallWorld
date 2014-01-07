@@ -18,6 +18,7 @@ namespace Wrapper {
 		int * placerJoueur(int * tabCarte, int taille) { return algo->placerJoueur(tabCarte,taille);}
 		int * creerTab(int taille) {return algo->creerTab(taille);}
 		double * creerTabDouble(int taille) {return algo->creerTabDouble(taille);}
+		int caseBordEau(int * carte, int taille, int x, int y) {return algo->caseBordEau(carte, taille, x, y);}
 		void deplacementGauloisInitial(int * carte, int taille, int x, int y, double * tabCout, int * tabRes, double pointDepl) {return algo->deplacementGauloisInitial(carte, taille, x,y, tabCout, tabRes, pointDepl);}
 		void deplacementNainInitial(int * carte, int taille, int x, int y, double * tabCout, int * tabRes, double pointDepl) {return algo->deplacementNainInitial(carte, taille, x,y, tabCout, tabRes, pointDepl);}
 		void deplacementVikingInitial(int * carte, int taille, int x, int y, double * tabCout, int * tabRes, double pointDepl) {return algo->deplacementVikingInitial(carte, taille, x,y, tabCout, tabRes, pointDepl);}

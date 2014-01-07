@@ -297,18 +297,92 @@ namespace SmallWorld
         }
 
         /**
+        * @fn selectionnerUniteAdverse(int x, int y)
+        * @brief Obtenir l'ensemble des unités des joueurs adverses du joueur en cours se situant sur la case demandée
+        * 
+        * @param int <b>x</b> l'abcsisse de la case demandée
+        * @param int <b>y</b> l'ordonnée de la case demandée
+        * @return List<Unite> la liste des unités présentes sur la cases, pour les adversaires du joueur courant
+        */
+        public List<Unite> selectionnerUniteAdverse(int x, int y)
+        {
+            int indiceJ;
+            int indiceU;
+            List<Unite> listeUnite = new List<Unite>();
+            Coordonnees coord = new Coordonnees(x, y);
+
+            for (indiceJ = 0; indiceJ < ListeJoueurs.Count; indiceJ++)
+            {
+                if (indiceJ != IndiceJoueurEnCours)
+                {
+                    for (indiceU = 0; indiceU < ListeJoueurs[IndiceJoueurEnCours].ListeUnite.Count; indiceU++)
+                    {
+                        if (ListeJoueurs[IndiceJoueurEnCours].ListeUnite[indiceU].Position.Equals(coord))
+                        {
+                            listeUnite.Add(ListeJoueurs[IndiceJoueurEnCours].ListeUnite[indiceU]);
+                        }
+                    }
+                }
+            }
+            return listeUnite;
+        }
+
+        /**
+        * @fn peutSeDeplacer(int indiceUnite, int x, int y)
+        * @brief Indique si l'unité peut se déposer sur la case(x,y)
+        * 
+        * @param int <b>Unite</b> l'unité à déplacer
+        * @param int <b>x</b> l'abscisse de la case destination
+        * @param int <b>y</b> l'ordonnée de la case destination
+        * @return bool, vrai si le déplacement est possible, faux sinon
+        */
+        public bool peutSeDeplacer(Unite unite, int x, int y)
+        {
+            //On gère le cas des nains se déplacant de montagne en montagne
+            if ((unite.GetType() == new UniteNaine().GetType()) && (selectionnerUniteAdverse(x,y).Count != 0) && ((Math.Abs(x - unite.Position.Abscisse) + Math.Abs(y - unite.Position.Ordonnee)) > 1))
+            {
+                return false;
+            }
+            else
+            {
+            return unite.peutSeDeplacer(x, y);
+            }
+        }
+
+        /**
          * @fn demanderDeplacement(int indiceUnite, int x, int y)
-         * @brief Déplacer, si possible, l'unité sur la case (x,y)
+         * @brief Déplacer, si possible, l'unité sur la case (x,y). En cas d'unités adverses, il y a combat.
          * 
          * @param int <b>indiceUnite</b> l'indice de l'unité à déplacer, dans le tableau des unités du joueurs en cours
          * @param int <b>x</b> l'abscisse de la case destination
          * @param int <b>y</b> l'ordonnée de la case destination
          * @return void
          */
-        public void demanderDeplacement(int indiceUnite, int x, int y)
+        public bool demanderDeplacement(Unite unite, int x, int y)
         {
-            //TODO faire une implémentation correcte
-            ListeJoueurs[IndiceJoueurEnCours].ListeUnite[indiceUnite].Position = new Coordonnees(x, y);
+            if (peutSeDeplacer(unite, x, y))
+            {
+                //On regarde si un combat est nécessaire
+                List<Unite> listUnite = selectionnerUniteAdverse(x, y);
+               // if (listUnite.Count == 0)
+               // {
+                    unite.seDeplacer(x, y);
+                    return true;
+               // }
+                /*else
+                {
+                    //On sélectionne la meilleur unité adverse
+                    Unite meilleurUnite = listUnite[0];
+                    foreach (Unite u in listUnite)
+                    {
+                        if (u.PointDefense + u.PointDeVie > m
+                    }
+                }*/
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }

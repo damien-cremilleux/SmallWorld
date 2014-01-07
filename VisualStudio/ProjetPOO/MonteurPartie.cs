@@ -360,13 +360,15 @@ namespace SmallWorld
                 for (j = 0; j < Partie.ListeJoueurs[i].ListeUnite.Count; j++)
                 {
                     Partie.ListeJoueurs[i].ListeUnite[j].Position = new Coordonnees(tabCoord[i].Abscisse, tabCoord[i].Ordonnee);
-                    Partie.ListeJoueurs[i].ListeUnite[j].CaseUnite = Partie.CartePartie.ListeCases[x1][y1];
                     Partie.ListeJoueurs[i].ListeUnite[j].TabCarte = tabCase;
                     Partie.ListeJoueurs[i].ListeUnite[j].TailleCarteJeu = Nb_case;
                     Partie.ListeJoueurs[i].ListeUnite[j].TabDeplacement = wrapperAlgo.creerTab(Nb_case);
                     Partie.ListeJoueurs[i].ListeUnite[j].TabCout = wrapperAlgo.creerTabDouble(Nb_case);
                     Partie.ListeJoueurs[i].ListeUnite[j].calculerDeplacement();
                 }
+
+                //On met à jour les points de victoire du joueur
+                Partie.ListeJoueurs[i].calculerPointVictoire();
             }
         }
     }

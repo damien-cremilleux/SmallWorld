@@ -15,6 +15,7 @@ public:
 	int * placerJoueur(int * tabCarte, int taille);
 	int * creerTab(int taille);
 	double * creerTabDouble(int taille);
+	int caseBordEau(int * carte, int taille, int x, int y);
 	void deplacementGauloisInitial(int * carte, int taille, int x, int y, double * tabCout, int * tabRes, double pointDepl);
 	void deplacementGaulois(int * carte, int taille, int x, int y, int * tabRes, double * tabDepl);
 	void deplacementGaulois2(int * carte, int taille, int x, int y, int * tabRes, double * tabDepl);
@@ -35,6 +36,7 @@ EXTERNC DLL int Algo_genererCarte(AlgoCarte * algo);
 EXTERNC DLL int Algo_placerJoueur(AlgoCarte * algo);
 EXTERNC DLL int Algo_creerTab(AlgoCarte * algo);
 EXTERNC DLL double Algo_creerTabDouble(AlgoCarte * algo);
+EXTERNC DLL int Algo_caseBordEau(AlgoCarte * algo);
 EXTERNC DLL void Algo_deplacementGauloisInitial(AlgoCarte * algo);
 EXTERNC DLL void Algo_deplacementNainInitial(AlgoCarte * algo);
 EXTERNC DLL void Algo_deplacementVikingInitial(AlgoCarte * algo);

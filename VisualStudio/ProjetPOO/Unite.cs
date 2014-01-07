@@ -39,7 +39,7 @@ namespace SmallWorld
          * @param int <b>y</b> l'ordinnée demandée
          * @return void
          */
-        void seDeplacer(int x, int y);
+        bool seDeplacer(int x, int y);
 
         /**
          * @fn passerSonTour
@@ -85,14 +85,9 @@ namespace SmallWorld
         private Coordonnees position;
 
         /**
-         * @brief Attribut <b>case</b>, contient le type de case sur laquelle est l'unité
+         * @brief Attribut <b>tabCarte</b>, contient la carte sous forme d'un tableau d'int
          */
-        private Case caseUnite;
-
-        /**
-        * @brief Attribut <b>tabCarte</b>, contient la carte sous forme d'un tableau d'int
-        */
-        private int* tabCarte;
+        protected int* tabCarte;
 
         /**
         * @brief Attribut <b>tabDeplacement</b>, contient le tableau des déplacements possibles
@@ -124,7 +119,7 @@ namespace SmallWorld
         /**
          * @brief Attribut <b>pointDeVictoire</b>, contient le nombre de victoire apporté par de l'unité
          */
-        private int pointDeVictoire;
+        protected int pointDeVictoire;
 
         /**
          * @brief Attribut <b>pointAttaque</b>, contient le nombre de point d'attaque de l'unité
@@ -142,6 +137,11 @@ namespace SmallWorld
         private bool passeSonTour;
 
         /**
+         * @brief Attribut <b>wrapperAlgo</b>, le wrapper pour l'unité
+         */
+        protected WrapperAlgo wrapperAlgo;
+
+        /**
          * @fn Position
          * @brief Properties pour l'attribut position
         */
@@ -154,22 +154,6 @@ namespace SmallWorld
             set
             {
                 position = value;
-            }
-        }
-
-        /**
-         * @fn TypeCase
-         * @brief Properties pour l'attribut typeCase
-         */
-        public Case CaseUnite
-        {
-            get
-            {
-                return caseUnite;
-            }
-            set
-            {
-                caseUnite = value;
             }
         }
 
@@ -350,6 +334,7 @@ namespace SmallWorld
             PointDefense = 1;
             PointDeDeplacement = 1;
             PasseSonTour = false;
+            wrapperAlgo = new WrapperAlgo();
         }
 
         /**
@@ -369,26 +354,47 @@ namespace SmallWorld
 
         /**
          * @fn seDeplacer
-         * @brief se déplacer sur une case
+         * @brief se déplacer sur une case, uniquement si le déplacement est possible
          * 
          * @param int <b>x</b> l'abscisse demandée
          * @param int <b>y>/b> l'ordonnée demandée
-         * @param int* <b>carte</b> la carte
-         * @param int <b>tailleCarte</b> la taille de la carte
-         * @return void
+         * @return bool vrai si l'unité peut se déplacer, faux sinon
          */
-        public void seDeplacer(int x, int y)
+        public bool seDeplacer(int x, int y)
         {
-            if (TabDeplacement[x * TailleCarteJeu + y] > 1)
+            if (peutSeDeplacer(x, y))
             {
                 //On met à jour l'unité
                 PointDeDeplacement = TabCout[x * TailleCarteJeu + y];
                 Position.Abscisse = x;
                 Position.Ordonnee = y;
 
-                //on met à jour les déplcements
+                //on met à jour les déplacements, si l'unité n'a plus de point de déplacement, elle passe son tour
                 this.calculerDeplacement();
+                if (PointDeDeplacement == 0)
+                {
+                    PasseSonTour = true;
+                }
+
+                return true;
             }
+            else
+            {
+                return false;
+            }
+        }
+
+        /**
+         * @fn peutSeDeplacer(int x, int y)
+         * @brief Indique si l'unité peut se déplacer sur une case
+         * 
+         * @param int <b>x</b> l'abscisse demandée
+         * @param int <b>y</b> l'ordonnée demandée
+         * @return bool vrai si l'unité peut se déplacer, faux sinon
+         */
+        public bool peutSeDeplacer(int x, int y)
+        {
+            return TabDeplacement[x * TailleCarteJeu + y] > 1;
         }
 
         /**
@@ -462,20 +468,20 @@ namespace SmallWorld
          */
         public override void calculPointVictoire()
         {
-            if (CaseUnite.GetType() == new Desert().GetType())
-                PointDeVictoire = 1;
+            if (TabCarte[Position.Abscisse * TailleCarteJeu + Position.Ordonnee] == Constantes.CASE_DESERT)
+                pointDeVictoire = Constantes.POINT_CASE;
 
-            if (CaseUnite.GetType() == new Eau().GetType())
-                PointDeVictoire = 0;
+            if (TabCarte[Position.Abscisse * TailleCarteJeu + Position.Ordonnee] == Constantes.CASE_EAU)
+                pointDeVictoire = 0;
 
-            if (CaseUnite.GetType() == new Foret().GetType())
-                PointDeVictoire = 1;
+            if (TabCarte[Position.Abscisse * TailleCarteJeu + Position.Ordonnee] == Constantes.CASE_FORET)
+                pointDeVictoire = Constantes.POINT_CASE;
 
-            if (CaseUnite.GetType() == new Montagne().GetType())
-                PointDeVictoire = 1;
+            if (TabCarte[Position.Abscisse * TailleCarteJeu + Position.Ordonnee] == Constantes.CASE_MONTAGNE)
+                pointDeVictoire = Constantes.POINT_CASE;
 
-            if (CaseUnite.GetType() == new Plaine().GetType())
-                PointDeVictoire = 2;
+            if (TabCarte[Position.Abscisse * TailleCarteJeu + Position.Ordonnee] == Constantes.CASE_PLAINE)
+                pointDeVictoire = Constantes.POINT_CASE + 1;
         }
 
         /**
@@ -486,8 +492,7 @@ namespace SmallWorld
          */
         public override void calculerDeplacement()
         {
-            WrapperAlgo w = new WrapperAlgo();
-            w.deplacementGauloisInitial(TabCarte, TailleCarteJeu, Position.Abscisse, Position.Ordonnee, TabCout, TabDeplacement, PointDeDeplacement);
+            wrapperAlgo.deplacementGauloisInitial(TabCarte, TailleCarteJeu, Position.Abscisse, Position.Ordonnee, TabCout, TabDeplacement, PointDeDeplacement);
         }
 
     }
@@ -514,20 +519,20 @@ namespace SmallWorld
          */
         public override void calculPointVictoire()
         {
-            if (CaseUnite.GetType() == new Desert().GetType())
-                PointDeVictoire = 1;
+            if (TabCarte[Position.Abscisse * TailleCarteJeu + Position.Ordonnee] == Constantes.CASE_DESERT)
+                pointDeVictoire = Constantes.POINT_CASE;
 
-            if (CaseUnite.GetType() == new Eau().GetType())
-                PointDeVictoire = 0;
+            if (TabCarte[Position.Abscisse * TailleCarteJeu + Position.Ordonnee] == Constantes.CASE_EAU)
+                pointDeVictoire = 0;
 
-            if (CaseUnite.GetType() == new Foret().GetType())
-                PointDeVictoire = 2;
+            if (TabCarte[Position.Abscisse * TailleCarteJeu + Position.Ordonnee] == Constantes.CASE_FORET)
+                pointDeVictoire = Constantes.POINT_CASE + 1;
 
-            if (CaseUnite.GetType() == new Montagne().GetType())
-                PointDeVictoire = 1;
+            if (TabCarte[Position.Abscisse * TailleCarteJeu + Position.Ordonnee] == Constantes.CASE_MONTAGNE)
+                pointDeVictoire = Constantes.POINT_CASE;
 
-            if (CaseUnite.GetType() == new Plaine().GetType())
-                PointDeVictoire = 0;
+            if (TabCarte[Position.Abscisse * TailleCarteJeu + Position.Ordonnee] == Constantes.CASE_PLAINE)
+                pointDeVictoire = 0;
         }
 
         /**
@@ -538,8 +543,7 @@ namespace SmallWorld
          */
         public override void calculerDeplacement()
         {
-            WrapperAlgo w = new WrapperAlgo();
-            w.deplacementNainInitial(TabCarte, TailleCarteJeu, Position.Abscisse, Position.Ordonnee, TabCout, TabDeplacement, PointDeDeplacement);
+            wrapperAlgo.deplacementNainInitial(TabCarte, TailleCarteJeu, Position.Abscisse, Position.Ordonnee, TabCout, TabDeplacement, PointDeDeplacement);
         }
     }
 
@@ -549,26 +553,7 @@ namespace SmallWorld
      */
     public unsafe class UniteViking : Unite, InterUniteViking
     {
-        /**
-         * @brief Attribut <b>bordEau</b> indique si l'unité occupe une case au bord de l'eau
-         */
-        private bool bordEau;
 
-        /**
-         * @fn BordEau
-         * @brief Properties pour l'attribut BordEau
-         */
-        public bool BordEau
-        {
-            get
-            {
-                return bordEau;
-            }
-            set
-            {
-                bordEau = value;
-            }
-        }
 
         /**
          * @fn UniteViking()
@@ -586,24 +571,24 @@ namespace SmallWorld
          */
         public override void calculPointVictoire()
         {
-            if (CaseUnite.GetType() == new Desert().GetType())
-                PointDeVictoire = 0;
+            if (TabCarte[Position.Abscisse * TailleCarteJeu + Position.Ordonnee] == Constantes.CASE_DESERT)
+                pointDeVictoire = 0;
 
-            if (CaseUnite.GetType() == new Eau().GetType())
-                PointDeVictoire = 0;
+            if (TabCarte[Position.Abscisse * TailleCarteJeu + Position.Ordonnee] == Constantes.CASE_EAU)
+                pointDeVictoire = 0;
 
-            if (CaseUnite.GetType() == new Foret().GetType())
-                PointDeVictoire = 1;
+            if (TabCarte[Position.Abscisse * TailleCarteJeu + Position.Ordonnee] == Constantes.CASE_FORET)
+                pointDeVictoire = Constantes.POINT_CASE;
 
-            if (CaseUnite.GetType() == new Montagne().GetType())
-                PointDeVictoire = 1;
+            if (TabCarte[Position.Abscisse * TailleCarteJeu + Position.Ordonnee] == Constantes.CASE_MONTAGNE)
+                pointDeVictoire = Constantes.POINT_CASE;
 
-            if (CaseUnite.GetType() == new Plaine().GetType())
-                PointDeVictoire = 1;
+            if (TabCarte[Position.Abscisse * TailleCarteJeu + Position.Ordonnee] == Constantes.CASE_PLAINE)
+                pointDeVictoire = Constantes.POINT_CASE;
 
-            if (BordEau)
+            if (this.surCaseBordEau())
             {
-                PointDeVictoire++;
+                pointDeVictoire++;
             }
         }
 
@@ -615,8 +600,25 @@ namespace SmallWorld
          */
         public override void calculerDeplacement()
         {
-            WrapperAlgo w = new WrapperAlgo();
-            w.deplacementVikingInitial(TabCarte, TailleCarteJeu, Position.Abscisse, Position.Ordonnee, TabCout, TabDeplacement, PointDeDeplacement);
+            wrapperAlgo.deplacementVikingInitial(TabCarte, TailleCarteJeu, Position.Abscisse, Position.Ordonnee, TabCout, TabDeplacement, PointDeDeplacement);
+        }
+
+        /**
+       * @fn surCaseBordEau()
+       * @brief Test si l'unité est sur une case au bord de l'eau
+       * 
+       * @return bool, vrai si l'unité est sur une case au bord de l'eau, faux sinon
+       */
+        public bool surCaseBordEau()
+        {
+            if (wrapperAlgo.caseBordEau(TabCarte, TailleCarteJeu, Position.Abscisse, Position.Ordonnee) == 1)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }

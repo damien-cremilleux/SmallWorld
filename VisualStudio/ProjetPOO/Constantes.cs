@@ -54,5 +54,7 @@ namespace SmallWorld
         public const int NB_CASE_PETITE = 10;
         public const int NB_CASE_NORMALE = 15;
 
+        //Point d'une case
+        public const int POINT_CASE = 1;
     }
 }
