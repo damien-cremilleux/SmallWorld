@@ -15,8 +15,9 @@ public:
 	int * placerJoueur(int * tabCarte, int taille);
 	int * creerTab(int taille);
 	double * creerTabDouble(int taille);
-	void deplacementGauloisInitial(int * carte, int taille, int x, int y, double * tabCout, int * tabRes);
+	void deplacementGauloisInitial(int * carte, int taille, int x, int y, double * tabCout, int * tabRes, double pointDepl);
 	void deplacementGaulois(int * carte, int taille, int x, int y, int * tabRes, double * tabDepl);
+	void deplacementGaulois2(int * carte, int taille, int x, int y, int * tabRes, double * tabDepl);
 	void deplacementGauloisCase(int * carte, int taille, int x, int y, int * tabRes, double * tabDepl, double pointDepl);
     void deplacementNainInitial(int * carte, int taille, int x, int y, double * tabCout, int * tabRes, double pointDepl);
 	void deplacementNain(int * carte, int taille, int x, int y, int * tabRes, double * tabDepl);

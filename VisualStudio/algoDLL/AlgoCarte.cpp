@@ -15,6 +15,7 @@
 #include <stdlib.h> 
 #include <stdlib.h>     /* srand, rand */
 #include <time.h>       /* time */
+#include <algorithm>    /* std::max */
 
 #define CASE_DESERT 0
 #define CASE_EAU 1
@@ -160,9 +161,10 @@ double * AlgoCarte::creerTabDouble(int taille) {
 * @param int <b>y</b> l'ordonnée de l'unité
 * @param int <b>tabCout</b> le tableau des couts de déplacement
 * @param int * <b>tabRes</b> la carte des déplacements possibles
+* @param double <b>pointDepl</b> les points de déplacement actuel
 * @return void
 */
-void AlgoCarte::deplacementGauloisInitial(int * carte, int taille, int x, int y, double * tabCout, int * tabRes)
+void AlgoCarte::deplacementGauloisInitial(int * carte, int taille, int x, int y, double * tabCout, int * tabRes, double pointDepl)
 {
 	//Par défaut toute les cases sont inacessibles
 	int i, j;
@@ -192,7 +194,7 @@ void AlgoCarte::deplacementGauloisInitial(int * carte, int taille, int x, int y,
 	{
 		tabRes[x*taille+y] = CASE_POSSIBLE;
 	}
-	tabCout[x*taille+y] = 1;
+	tabCout[x*taille+y] = pointDepl;
 
 	deplacementGaulois(carte, taille, x, y, tabRes, tabCout);
 }
@@ -216,7 +218,7 @@ void AlgoCarte::deplacementGaulois(int * carte, int taille, int x, int y, int * 
 		if (tabRes[(x-1)*taille+y] == CASE_NONCALCULEE)
 		{
 			deplacementGauloisCase(carte,taille, x-1, y, tabRes, tabDepl, tabDepl[x*taille+y]);
-			deplacementGaulois(carte, taille, x-1, y, tabRes, tabDepl);
+		    deplacementGaulois2(carte, taille, x-1, y, tabRes, tabDepl);
 		}
 	}
 
@@ -226,7 +228,7 @@ void AlgoCarte::deplacementGaulois(int * carte, int taille, int x, int y, int * 
 		if (tabRes[(x+1)*taille+y] == CASE_NONCALCULEE)
 		{
 			deplacementGauloisCase(carte,taille, x+1, y, tabRes, tabDepl, tabDepl[x*taille+y]);
-			deplacementGaulois(carte, taille, x+1, y, tabRes, tabDepl);
+			deplacementGaulois2(carte, taille, x+1, y, tabRes, tabDepl);
 		}
 	}
 
@@ -237,7 +239,7 @@ void AlgoCarte::deplacementGaulois(int * carte, int taille, int x, int y, int * 
 		if (tabRes[x*taille+y+1] == CASE_NONCALCULEE)
 		{
 			deplacementGauloisCase(carte,taille, x, y+1, tabRes, tabDepl, tabDepl[x*taille+y]);
-			deplacementGaulois(carte, taille, x, y+1, tabRes, tabDepl);
+			deplacementGaulois2(carte, taille, x, y+1, tabRes, tabDepl);
 		}
 	}
 
@@ -248,7 +250,57 @@ void AlgoCarte::deplacementGaulois(int * carte, int taille, int x, int y, int * 
 		if (tabRes[x*taille+y-1] == CASE_NONCALCULEE)
 		{
 			deplacementGauloisCase(carte,taille, x, y-1, tabRes, tabDepl, tabDepl[x*taille+y]);
-			deplacementGaulois(carte, taille, x, y-1, tabRes, tabDepl);
+			deplacementGaulois2(carte, taille, x, y-1, tabRes, tabDepl);
+		}
+	}
+}
+
+/**
+* @fn deplacementGaulois2(int * carte, int taille, int x, int y)
+* @brief Regarde les cases alentours pour les déplacements, puis s'appelle récursivement pour parcourir toute la carte
+*
+* @param int * <b>carte</b> la carte du jeu
+* @param int <b>taille</b> la taille de la carte
+* @param int <b>x</b> l'abscisse de l'unité
+* @param int <b>y</b> l'ordonnée de l'unité
+* @param int * <b>tabRes</b> la carte des déplacements possibles
+* @param double * <b>tabDepl</b> la table des points de déplacement
+*/
+void AlgoCarte::deplacementGaulois2(int * carte, int taille, int x, int y, int * tabRes, double * tabDepl)
+{
+	//case au dessus
+	if (x != 0) 
+	{
+		if (tabRes[(x-1)*taille+y] == CASE_NONCALCULEE)
+		{
+			deplacementGauloisCase(carte,taille, x-1, y, tabRes, tabDepl, tabDepl[x*taille+y]);
+		}
+	}
+
+    //case au dessous
+	if (x != (taille-1)) 
+	{
+		if (tabRes[(x+1)*taille+y] == CASE_NONCALCULEE)
+		{
+			deplacementGauloisCase(carte,taille, x+1, y, tabRes, tabDepl, tabDepl[x*taille+y]);
+		}
+	}
+	
+	//case à droite
+	if (y != (taille-1)) 
+	{
+		if (tabRes[x*taille+y+1] == CASE_NONCALCULEE)
+		{
+			deplacementGauloisCase(carte,taille, x, y+1, tabRes, tabDepl, tabDepl[x*taille+y]);
+		}
+	}
+	
+	//case à gauche
+	if (y != 0) 
+	{
+		if (tabRes[x*taille+y-1] == CASE_NONCALCULEE)
+		{
+			deplacementGauloisCase(carte,taille, x, y-1, tabRes, tabDepl, tabDepl[x*taille+y]);
 		}
 	}
 }
@@ -277,11 +329,11 @@ void AlgoCarte::deplacementGauloisCase(int * carte, int taille, int x, int y, in
 		{
 			pointDeplacement--;
 			tabRes[x*taille + y] = CASE_POSSIBLE;
-			tabDepl[x*taille + y] = pointDeplacement;
+			tabDepl[x*taille + y] = std::max(pointDeplacement, tabDepl[x*taille+y]); //on garde le meilleur chemin
 		}
 		else
 		{
-			tabRes[x*taille + y] = CASE_IMPOSSIBLE;
+			tabRes[x*taille + y] = CASE_NONCALCULEE; //On met non calculé pour permettre à un meilleur chemin d'aboutir
 		}
 		break;
 	case CASE_EAU:
@@ -292,11 +344,11 @@ void AlgoCarte::deplacementGauloisCase(int * carte, int taille, int x, int y, in
 		{
 			pointDeplacement--;
 			tabRes[x*taille + y] = CASE_POSSIBLE;
-			tabDepl[x*taille + y] = pointDeplacement;
+			tabDepl[x*taille + y] = std::max(pointDeplacement, tabDepl[x*taille+y]);
 		}
 		else
 		{
-			tabRes[x*taille + y] = CASE_IMPOSSIBLE;
+			tabRes[x*taille + y] = CASE_NONCALCULEE;
 		}
 		break;
 	case CASE_MONTAGNE:
@@ -304,11 +356,11 @@ void AlgoCarte::deplacementGauloisCase(int * carte, int taille, int x, int y, in
 		{
 			pointDeplacement--;
 			tabRes[x*taille + y] = CASE_POSSIBLE;
-			tabDepl[x*taille + y] = pointDeplacement;
+			tabDepl[x*taille + y] = std::max(pointDeplacement, tabDepl[x*taille+y]);
 		}
 		else
 		{
-			tabRes[x*taille + y ] = CASE_IMPOSSIBLE;
+			tabRes[x*taille + y ] = CASE_NONCALCULEE;
 		}
 		break;
 	case CASE_PLAINE:
@@ -316,11 +368,11 @@ void AlgoCarte::deplacementGauloisCase(int * carte, int taille, int x, int y, in
 		{
 			pointDeplacement -= 0.5;
 			tabRes[x*taille + y] = CASE_OPTIMALE;
-			tabDepl[x*taille + y] = pointDeplacement;
+			tabDepl[x*taille + y] = std::max(pointDeplacement, tabDepl[x*taille+y]);
 		}
 		else
 		{
-			tabRes[x*taille + y] = CASE_IMPOSSIBLE;
+			tabRes[x*taille + y] = CASE_NONCALCULEE;
 		}
 		break;
 	default:

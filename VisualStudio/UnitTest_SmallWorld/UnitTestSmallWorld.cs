@@ -247,93 +247,6 @@ namespace UnitTest_SmallWorld
     public unsafe class UnitTestDeplacement
     {
         /**
-         * @fn TestDeplacementGauloisPlaine()
-         * @brief Vérification du déplacement d'une unité gauloise sur de la plaine
-         */
-        [TestMethod]
-        public void TestDeplacementGauloisPlaine()
-        {
-            WrapperAlgo w = new WrapperAlgo();
-            int nbCase = 5;
-            int* tabCarte = w.creerTab(nbCase);
-
-            int i, j;
-
-            //On fait une carte de plaine
-            for (i = 0; i < nbCase; i++)
-            {
-                for (j = 0; j < nbCase; j++)
-                {
-                    tabCarte[i * nbCase + j] = Constantes.CASE_PLAINE;
-                }
-            }
-
-            //On initialise une unité
-            UniteGauloise uniteG = new UniteGauloise();
-            uniteG.Position = new Coordonnees(0, 0);
-            uniteG.CaseUnite = FabriqueCase.Instance_FabCase.obtenirPlaine();
-            uniteG.TabCarte = tabCarte;
-            uniteG.TailleCarteJeu = nbCase;
-            uniteG.TabDeplacement = w.creerTab(nbCase);
-            uniteG.TabCout = w.creerTabDouble(nbCase);
-            uniteG.calculerDeplacement();
-
-            //Tableau référence
-            int* tabRef = w.creerTab(nbCase);
-            for (i = 0; i < nbCase; i++)
-            {
-                for (j = 0; j < nbCase; j++)
-                {
-                    tabRef[i * nbCase + j] = 1;
-                }
-            }
-            tabRef[0 * nbCase + 0] = 3;
-            tabRef[0 * nbCase + 1] = 3;
-            tabRef[0 * nbCase + 2] = 3;
-            tabRef[1 * nbCase + 0] = 3;
-            tabRef[1 * nbCase + 1] = 3;
-            tabRef[2 * nbCase + 0] = 3;
-
-            //tabRef[0 * nbCase + 3] = 1;
-
-            //Test
-            for (i = 0; i < nbCase; i++)
-            {
-                for (j = 0; j < nbCase; j++)
-                {
-                    //     string res = "i : "+i+" / j : "+j+ " - " + tabRef[i * nbCase + j] +" " + uniteG.TabDeplacement[i * nbCase + j];
-                    //   Assert.AreEqual(tabRef[i * nbCase + j], uniteG.TabDeplacement[i * nbCase + j],res);
-                }
-            }
-            Assert.AreEqual(3, uniteG.TabDeplacement[0]);
-            Assert.AreEqual(3, uniteG.TabDeplacement[1]);
-            Assert.AreEqual(3, uniteG.TabDeplacement[2]);
-            Assert.AreEqual(1, uniteG.TabDeplacement[3]);
-            Assert.AreEqual(1, uniteG.TabDeplacement[4]);
-
-            Assert.AreEqual(1, uniteG.TabCout[0]);
-            Assert.AreEqual(0.5, uniteG.TabCout[1]);
-            Assert.AreEqual(0, uniteG.TabCout[2]);
-            Assert.AreEqual(0, uniteG.TabCout[3]);
-            Assert.AreEqual(0, uniteG.TabCout[4]);
-
-            //   Assert.AreEqual(3, uniteG.TabDeplacement[5]);
-            //    Assert.AreEqual(0.5, uniteG.TabCout[5]);
-            /* Assert.AreEqual(1, uniteN.TabDeplacement[6]);
-             Assert.AreEqual(1, uniteN.TabDeplacement[7]);
-             Assert.AreEqual(1, uniteN.TabDeplacement[8]);
-             Assert.AreEqual(1, uniteN.TabDeplacement[9]);
-
-             Assert.AreEqual(0, uniteN.TabCout[5]);*/
-
-
-            //  Assert.AreEqual(2, uniteN.TabDeplacement[5]);
-
-
-
-        }
-
-        /**
          * @fn TestDeplacementNainPlaine()
          * @brief Vérification du déplacement d'une unité naine sur de la plaine
          */
@@ -822,7 +735,7 @@ namespace UnitTest_SmallWorld
             for (i = 0; i < nbCase; i++)
             {
                 for (j = 0; j < nbCase; j++)
-                {                
+                {
                     tabRef[i * nbCase + j] = 0;
                 }
             }
@@ -926,6 +839,318 @@ namespace UnitTest_SmallWorld
                     {
                         string res = "i : " + i + " / j : " + j + " - " + tabRef[i * nbCase + j] + " " + uniteV.TabCout[i * nbCase + j];
                         Assert.AreEqual(0, uniteV.TabCout[i * nbCase + j], res);
+                    }
+                }
+            }
+        }
+
+        /**
+         * @fn TestDeplacementGauloisPlaine()
+         * @brief Vérification du déplacement d'une unité gauloise sur de la plaine
+         */
+        [TestMethod]
+        public void TestDeplacementGauloiPlaine()
+        {
+            WrapperAlgo w = new WrapperAlgo();
+            int nbCase = 5;
+            int* tabCarte = w.creerTab(nbCase);
+
+            int i, j;
+
+            //On fait une carte de plaine
+            for (i = 0; i < nbCase; i++)
+            {
+                for (j = 0; j < nbCase; j++)
+                {
+                    tabCarte[i * nbCase + j] = Constantes.CASE_PLAINE;
+                }
+            }
+
+            //On initialise une unité
+            UniteGauloise uniteG = new UniteGauloise();
+            uniteG.Position = new Coordonnees(0, 0);
+            uniteG.CaseUnite = FabriqueCase.Instance_FabCase.obtenirPlaine();
+            uniteG.TabCarte = tabCarte;
+            uniteG.TailleCarteJeu = nbCase;
+            uniteG.TabDeplacement = w.creerTab(nbCase);
+            uniteG.TabCout = w.creerTabDouble(nbCase);
+            uniteG.calculerDeplacement();
+
+            //Tableau référence
+            int* tabRef = w.creerTab(nbCase);
+            for (i = 0; i < nbCase; i++)
+            {
+                for (j = 0; j < nbCase; j++)
+                {
+                    tabRef[i * nbCase + j] = 0;
+                }
+            }
+            tabRef[0 * nbCase + 0] = 3;
+            tabRef[0 * nbCase + 1] = 3;
+            tabRef[0 * nbCase + 2] = 3;
+            tabRef[1 * nbCase + 0] = 3;
+            tabRef[1 * nbCase + 1] = 3;
+            tabRef[2 * nbCase + 0] = 3;
+
+            //Test
+            for (i = 0; i < nbCase; i++)
+            {
+                for (j = 0; j < nbCase; j++)
+                {
+                    string res = "i : " + i + " / j : " + j + " - " + tabRef[i * nbCase + j] + " " + uniteG.TabDeplacement[i * nbCase + j];
+                    Assert.AreEqual(tabRef[i * nbCase + j], uniteG.TabDeplacement[i * nbCase + j], res);
+                }
+            }
+
+            Assert.AreEqual(1, uniteG.TabCout[0]);
+            for (i = 0; i < nbCase; i++)
+            {
+                for (j = 0; j < nbCase; j++)
+                {
+                    if ((i == 0) && (j == 0))
+                    {
+                        Assert.AreEqual(1, uniteG.TabCout[i * nbCase + j]);
+                    }
+                    else
+                    {
+                        if ((i == 0 && j == 1) || (i == 1 && j == 0))
+                        {
+                            Assert.AreEqual(0.5, uniteG.TabCout[i * nbCase + j]);
+                        }
+                        else
+                        {
+                            string res = "i : " + i + " / j : " + j + " - " + tabRef[i * nbCase + j] + " " + uniteG.TabCout[i * nbCase + j];
+                            Assert.AreEqual(0, uniteG.TabCout[i * nbCase + j], res);
+                        }
+                    }
+                }
+            }
+        }
+
+        /**
+         * @fn TestDeplacementGauloisForet()
+         * @brief Vérification du déplacement d'une unité gauloise sur de la foret
+         */
+        [TestMethod]
+        public void TestDeplacementGauloisForet()
+        {
+            WrapperAlgo w = new WrapperAlgo();
+            int nbCase = 5;
+            int* tabCarte = w.creerTab(nbCase);
+
+            int i, j;
+
+            //On fait une carte de plaine
+            for (i = 0; i < nbCase; i++)
+            {
+                for (j = 0; j < nbCase; j++)
+                {
+                    tabCarte[i * nbCase + j] = Constantes.CASE_FORET;
+                }
+            }
+
+            //On initialise une unité
+            UniteGauloise uniteG = new UniteGauloise();
+            uniteG.Position = new Coordonnees(1, 1);
+            uniteG.CaseUnite = FabriqueCase.Instance_FabCase.obtenirForet();
+            uniteG.TabCarte = tabCarte;
+            uniteG.TailleCarteJeu = nbCase;
+            uniteG.TabDeplacement = w.creerTab(nbCase);
+            uniteG.TabCout = w.creerTabDouble(nbCase);
+            uniteG.calculerDeplacement();
+
+            //Tableau référence
+            int* tabRef = w.creerTab(nbCase);
+            for (i = 0; i < nbCase; i++)
+            {
+                for (j = 0; j < nbCase; j++)
+                {
+                    tabRef[i * nbCase + j] = 0;
+                }
+            }
+            tabRef[0 * nbCase + 0] = 0;
+            tabRef[0 * nbCase + 1] = 2;
+            tabRef[0 * nbCase + 2] = 0;
+            tabRef[1 * nbCase + 0] = 2;
+            tabRef[1 * nbCase + 1] = 2;
+            tabRef[1 * nbCase + 2] = 2;
+            tabRef[2 * nbCase + 1] = 2;
+
+            //Test
+            for (i = 0; i < nbCase; i++)
+            {
+                for (j = 0; j < nbCase; j++)
+                {
+                    string res = "i : " + i + " / j : " + j + " - " + tabRef[i * nbCase + j] + " " + uniteG.TabDeplacement[i * nbCase + j];
+                    Assert.AreEqual(tabRef[i * nbCase + j], uniteG.TabDeplacement[i * nbCase + j], res);
+                }
+            }
+
+            for (i = 0; i < nbCase; i++)
+            {
+                for (j = 0; j < nbCase; j++)
+                {
+                    if ((i == 1) && (j == 1))
+                    {
+                        Assert.AreEqual(1, uniteG.TabCout[i * nbCase + j]);
+                    }
+                    else
+                    {
+                        string res = "i : " + i + " / j : " + j + " - " + tabRef[i * nbCase + j] + " " + uniteG.TabCout[i * nbCase + j];
+                        Assert.AreEqual(0, uniteG.TabCout[i * nbCase + j], res);
+                    }
+                }
+            }
+        }
+
+        /**
+        * @fn TestDeplacementGauloisMontagne()
+        * @brief Vérification du déplacement d'une unité gauuloise sur de la montagne
+        */
+        [TestMethod]
+        public void TestDeplacementGauloisMontagne()
+        {
+            WrapperAlgo w = new WrapperAlgo();
+            int nbCase = 5;
+            int* tabCarte = w.creerTab(nbCase);
+
+            int i, j;
+
+            //On fait une carte de plaine
+            for (i = 0; i < nbCase; i++)
+            {
+                for (j = 0; j < nbCase; j++)
+                {
+                    tabCarte[i * nbCase + j] = Constantes.CASE_MONTAGNE;
+                }
+            }
+
+            //On initialise une unité
+            UniteGauloise uniteG = new UniteGauloise();
+            uniteG.Position = new Coordonnees(3, 2);
+            uniteG.CaseUnite = FabriqueCase.Instance_FabCase.obtenirMontagne();
+            uniteG.TabCarte = tabCarte;
+            uniteG.TailleCarteJeu = nbCase;
+            uniteG.TabDeplacement = w.creerTab(nbCase);
+            uniteG.TabCout = w.creerTabDouble(nbCase);
+            uniteG.calculerDeplacement();
+
+            //Tableau référence
+            int* tabRef = w.creerTab(nbCase);
+            for (i = 0; i < nbCase; i++)
+            {
+                for (j = 0; j < nbCase; j++)
+                {
+                    tabRef[i * nbCase + j] = 0;
+                }
+            }
+            tabRef[2 * nbCase + 2] = 2;
+            tabRef[3 * nbCase + 1] = 2;
+            tabRef[3 * nbCase + 2] = 2;
+            tabRef[3 * nbCase + 3] = 2;
+            tabRef[4 * nbCase + 2] = 2;
+
+            //Test
+            for (i = 0; i < nbCase; i++)
+            {
+                for (j = 0; j < nbCase; j++)
+                {
+                    string res = "i : " + i + " / j : " + j + " - " + tabRef[i * nbCase + j] + " " + uniteG.TabDeplacement[i * nbCase + j];
+                    Assert.AreEqual(tabRef[i * nbCase + j], uniteG.TabDeplacement[i * nbCase + j], res);
+                }
+            }
+
+            for (i = 0; i < nbCase; i++)
+            {
+                for (j = 0; j < nbCase; j++)
+                {
+                    if ((i == 3) && (j == 2))
+                    {
+                        Assert.AreEqual(1, uniteG.TabCout[i * nbCase + j]);
+                    }
+                    else
+                    {
+                        string res = "i : " + i + " / j : " + j + " - " + tabRef[i * nbCase + j] + " " + uniteG.TabCout[i * nbCase + j];
+                        Assert.AreEqual(0, uniteG.TabCout[i * nbCase + j], res);
+                    }
+                }
+            }
+        }
+
+        /**
+       * @fn TestDeplacementGauloisMixte()
+       * @brief Vérification du déplacement d'une unité gauloise sur différents terrains
+       */
+        [TestMethod]
+        public void TestDeplacementGauloisMixte()
+        {
+            WrapperAlgo w = new WrapperAlgo();
+            int nbCase = 3;
+            int* tabCarte = w.creerTab(nbCase);
+
+            int i, j;
+
+            tabCarte[0] = Constantes.CASE_DESERT;
+            tabCarte[1] = Constantes.CASE_EAU;
+            tabCarte[2] = Constantes.CASE_PLAINE;
+            tabCarte[3] = Constantes.CASE_PLAINE;
+            tabCarte[4] = Constantes.CASE_PLAINE;
+            tabCarte[5] = Constantes.CASE_FORET;
+            tabCarte[6] = Constantes.CASE_PLAINE;
+            tabCarte[7] = Constantes.CASE_MONTAGNE;
+            tabCarte[8] = Constantes.CASE_FORET;
+
+            //On initialise une unité
+            UniteGauloise uniteG = new UniteGauloise();
+            uniteG.Position = new Coordonnees(1, 1);
+            uniteG.CaseUnite = FabriqueCase.Instance_FabCase.obtenirPlaine();
+            uniteG.TabCarte = tabCarte;
+            uniteG.TailleCarteJeu = nbCase;
+            uniteG.TabDeplacement = w.creerTab(nbCase);
+            uniteG.TabCout = w.creerTabDouble(nbCase);
+            uniteG.calculerDeplacement();
+
+            //Tableau référence
+            int* tabRef = w.creerTab(nbCase);
+            tabRef[0] = 0;
+            tabRef[1] = 1;
+            tabRef[2] = 0;
+            tabRef[3] = 3;
+            tabRef[4] = 3;
+            tabRef[5] = 2;
+            tabRef[6] = 3;
+            tabRef[7] = 2;
+            tabRef[8] = 0;
+
+            //Test
+            for (i = 0; i < nbCase; i++)
+            {
+                for (j = 0; j < nbCase; j++)
+                {
+                    string res = "i : " + i + " / j : " + j + " - " + tabRef[i * nbCase + j] + " " + uniteG.TabDeplacement[i * nbCase + j];
+                    Assert.AreEqual(tabRef[i * nbCase + j], uniteG.TabDeplacement[i * nbCase + j], res);
+                }
+            }
+
+            for (i = 0; i < nbCase; i++)
+            {
+                for (j = 0; j < nbCase; j++)
+                {
+                    if ((i == 1) && (j == 1))
+                    {
+                        Assert.AreEqual(1, uniteG.TabCout[i * nbCase + j]);
+                    }
+                    else
+                    {
+                        if ((i == 1) && (j == 0))
+                        {
+                            Assert.AreEqual(0.5, uniteG.TabCout[i * nbCase + j]);
+                        }
+                        else
+                        {
+                            string res = "i : " + i + " / j : " + j + " - " + tabRef[i * nbCase + j] + " " + uniteG.TabCout[i * nbCase + j];
+                            Assert.AreEqual(0, uniteG.TabCout[i * nbCase + j], res);
+                        }
                     }
                 }
             }
