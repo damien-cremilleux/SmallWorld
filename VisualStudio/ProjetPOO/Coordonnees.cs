@@ -21,6 +21,7 @@ namespace SmallWorld
      * @class Coordonnees
      * @brief Rprésentation des coordonnées
       */
+    [Serializable]
     public class Coordonnees
     {
         /**

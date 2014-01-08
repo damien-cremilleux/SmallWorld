@@ -35,6 +35,7 @@ namespace SmallWorld
      * @class StrategieCarte
      * @brief classe abstraite pour la stratégie
      */
+    [Serializable]
     public unsafe abstract class StrategieCarte : InterStrategieCarte
     {
 
@@ -153,6 +154,7 @@ namespace SmallWorld
      * @class StrategieDemo
      * @brief classe pour une stratégie démo
      */
+    [Serializable]
     public class StrategieDemo : StrategieCarte, InterStrategieDemo
     {
         /**
@@ -171,6 +173,7 @@ namespace SmallWorld
      * @class StrategiePetite
      * @brief classe pour une stratégie petite
      */
+    [Serializable]
     public class StrategiePetite : StrategieCarte, InterStrategiePetite
     {
         /**
@@ -189,6 +192,7 @@ namespace SmallWorld
      * @class StrategieNormale
      * @brief classe pour une stratégie normale
      */
+    [Serializable]
     public class StrategieNormale : StrategieCarte, InterStrategieNormale
     {
         /**

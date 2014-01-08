@@ -12,8 +12,10 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Xml.Serialization;
+using Wrapper;
 
 namespace SmallWorld
 {
@@ -29,6 +31,7 @@ namespace SmallWorld
      * @class Partie
      * @brief classe pour les parties
      */
+    [Serializable]
     public unsafe class Partie : InterPartie
     {
         /**
@@ -216,6 +219,7 @@ namespace SmallWorld
         {
             ListeJoueurs = listeJ;
             CartePartie = carte;
+            nomSauvegarde = "";
 
             //Le premier joueur est sélectionné au hasard
             Random r = new Random();
@@ -472,11 +476,11 @@ namespace SmallWorld
          * 
          * @return bool, vrai si le nom de fichier est connu, faux sinon
          */
-   /*     public bool Enregistrer()
+        public bool enregistrer()
         {
             if (nomSauvegarde != "")
             {
-               this.EnregistrerSous(nomSauvegarde);
+               this.enregistrerSous(nomSauvegarde);
                 return true;
             }
             else
@@ -484,7 +488,7 @@ namespace SmallWorld
                 return false;
             }
         }
-        */
+        
 
         /**
          * @fn EnregistrerSous(string nomFichier)
@@ -493,15 +497,14 @@ namespace SmallWorld
          * @param string<b>nomFichier</b> le nom du fichier
          * @return void
          */
-    /*    public void EnregistrerSous(string nomFichier)
+        public void enregistrerSous(string nomFichier)
         {
-
-            FileStream file = File.Open(nomFichier+".smallworld", FileMode.OpenOrCreate);
-            BinaryWriter serializer = new BinaryWriter(typeof(Partie));
-          //  XmlSerializer serializer = new XmlSerializer(typeof(Partie));
-            serializer.Serialize(file, this);
-            file.Close();  
-        }*/
+            FileStream stream = File.Create(nomFichier+".smallworld");
+            BinaryFormatter formatter = new BinaryFormatter();
+            Console.WriteLine("Serializing");
+            formatter.Serialize(stream, this);
+            stream.Close();
+        }
 
         /**
          * @fn Charger(string nomFichier)
@@ -510,14 +513,59 @@ namespace SmallWorld
          * @param string<b>nomFichier</b> le nom du fichier à charger
          * @return Partie la partie à restaurer
          */
-      /*  public Partie Charger(string nomFichier)
+        public Partie charger(string nomFichier)
         {
+            FileStream stream = File.OpenRead(nomFichier);
+            BinaryFormatter formatter = new BinaryFormatter();
+            Console.WriteLine("Deserializing");
+            Partie p = (Partie)formatter.Deserialize(stream);
+            stream.Close();
 
-            FileStream file = File.Open(nomFichier, FileMode.Open);
-            XmlSerializer serializer = new XmlSerializer(typeof(Partie));
-            Partie p = (Partie)serializer.Deserialize(file);
-            file.Close();
+
             return p;
-        }*/
+        }
+
+        /**
+         * @fn restaurer()
+         * @brief Restaure les unités suite à une désérialisation
+         */
+        public void restaurer()
+        {
+            WrapperAlgo wrapperAlgo = new WrapperAlgo();
+
+            //On transforme le tableau de case en int
+            int tailleCarte = this.CartePartie.TailleCarte;
+            int* tabCase = wrapperAlgo.creerTab(tailleCarte);
+            int i, j;
+            for (i = 0; i < tailleCarte; i++)
+            {
+                for (j = 0; j < tailleCarte; j++)
+                {
+                    if (CartePartie.ListeCases[i][j].GetType() == new Desert().GetType())
+                        tabCase[i * tailleCarte + j] = Constantes.CASE_DESERT;
+
+                    if (CartePartie.ListeCases[i][j].GetType() == new Eau().GetType())
+                        tabCase[i * tailleCarte + j] = Constantes.CASE_EAU;
+
+                    if (CartePartie.ListeCases[i][j].GetType() == new Foret().GetType())
+                        tabCase[i * tailleCarte + j] = Constantes.CASE_FORET;
+
+                    if (CartePartie.ListeCases[i][j].GetType() == new Montagne().GetType())
+                        tabCase[i * tailleCarte + j] = Constantes.CASE_MONTAGNE;
+
+                    if (CartePartie.ListeCases[i][j].GetType() == new Plaine().GetType())
+                        tabCase[i * tailleCarte + j] = Constantes.CASE_PLAINE;
+                }
+            }
+
+            //on restaure chaque unité
+            foreach(Joueur joueur in ListeJoueurs)
+            {
+                foreach(Unite unite in joueur.ListeUnite)
+                {
+                    unite.restaurer(tabCase);
+                }
+            }
+        }
     }
 }

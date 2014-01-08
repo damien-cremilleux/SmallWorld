@@ -70,6 +70,7 @@ namespace SmallWorld
      * @class Case
      * @brief classe abstraite Case
      */
+    [Serializable]
     public abstract class Case : InterCase
     {
         //TODO à supprimer après test
@@ -83,6 +84,7 @@ namespace SmallWorld
      * @class Desert
      * @brief class pour Case de type desert
      */
+    [Serializable]
     public class Desert : Case, InterDesert
     {
         public Desert()
@@ -95,6 +97,7 @@ namespace SmallWorld
      * @class Eau
      * @brief class pour Case de type eau
      */
+    [Serializable]
     public class Eau : Case, InterEau
     {
         public Eau()
@@ -107,6 +110,7 @@ namespace SmallWorld
      * @class Foret
      * @brief class pour Case de type foret
      */
+    [Serializable]
     public class Foret : Case, InterForet
     {
         public Foret()
@@ -119,6 +123,7 @@ namespace SmallWorld
      * @class Montagne
      * @brief class pour Case de type montagne
      */
+    [Serializable]
     public class Montagne : Case, InterMontagne
     {
         public Montagne()
@@ -131,6 +136,7 @@ namespace SmallWorld
      * @class Plaine
      * @brief class pour Case de type plaine
      */
+    [Serializable]
     public class Plaine : Case, InterPlaine
     {
         public Plaine()

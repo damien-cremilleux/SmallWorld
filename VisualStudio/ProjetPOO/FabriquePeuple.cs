@@ -34,19 +34,12 @@ namespace SmallWorld
     }
 
     /**
-     * @interface FabriqueUniteGaulois
-     */
-    /* public interface Fabrique_Unite_Gaulois : InterFabriquePeuple
-     {
-     }*/
-    //TODO Supprimer si besoin
-
-    /**
      * @class FabriquePeuple
      * @brief classe pour la fabrique d'un peuple
      * 
      * FabriquePeuple est un singleton
      */
+    [Serializable]
     public class FabriquePeuple : InterFabriquePeuple
     {
         /**
@@ -78,19 +71,7 @@ namespace SmallWorld
         {
         }
 
-        /* public Peuple Peuple
-         {
-             get
-             {
-               //  throw new System.NotImplementedException();
-             }
-             set
-             {
-             }
-         */
-        //TODO Supprimer si besoin
-
-        /**
+       /**
         * @fn fabriquerPeuple(string peuple)
         * @brief Récupération d'un peuple
         * 

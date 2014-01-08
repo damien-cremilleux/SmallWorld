@@ -29,6 +29,7 @@ namespace SmallWorld
      * @class Joueur
      * @brief classe pour un joueur
      */
+    [Serializable]
     public class Joueur : InterJoueur
     {
 

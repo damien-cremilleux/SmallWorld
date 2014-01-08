@@ -33,6 +33,7 @@ namespace SmallWorld
      * @brief Classe Carte
      * Représente la carte du monde
      */
+    [Serializable]
     public class Carte : InterCarte
     {
         /**

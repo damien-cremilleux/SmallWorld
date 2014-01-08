@@ -20,6 +20,7 @@ namespace SmallWorld
         Case obtenirCase(int typeCase);
     }
 
+    [Serializable]
     public class FabriqueCase : InterFabriqueCase
     {
         private static FabriqueCase instance_FabCase;

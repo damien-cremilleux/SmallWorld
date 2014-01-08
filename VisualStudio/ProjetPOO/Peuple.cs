@@ -37,6 +37,7 @@ namespace SmallWorld
      * @class Peuple
      * @brief classe abstraite pour les peuples
      */
+    [Serializable]
     public abstract class Peuple : InterPeuple
     {
         /**
@@ -76,6 +77,7 @@ namespace SmallWorld
      * @class PeupleGaulois
      * @brief classe pour le peuple Gaulois
      */
+    [Serializable]
     public class PeupleGaulois : Peuple, InterPeupleGaulois
     {
         /**
@@ -104,6 +106,7 @@ namespace SmallWorld
      * @class PeupleNain
      * @brief classe pour le peuple nain
      */
+    [Serializable]
     public class PeupleNain : Peuple, InterPeupleNain
     {
         /**
@@ -132,6 +135,7 @@ namespace SmallWorld
      * @class PeupleViking
      * @brief classe pour le peuple viking
      */
+    [Serializable]
     public class PeupleViking : Peuple, InterPeupleViking
     {
         /**

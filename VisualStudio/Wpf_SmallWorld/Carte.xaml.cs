@@ -65,7 +65,7 @@ namespace Wpf_SmallWorld
                 // Création de la partie
                 parent.ajoutCarte(TailleCarte);
                 partie = parent.construirePartie();
-
+               
                 // Lancement du jeu 
                 PageJeu jeu = new PageJeu(partie);
                 parent.Content = jeu;

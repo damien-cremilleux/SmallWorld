@@ -79,6 +79,7 @@ namespace SmallWorld
      * @class Unite
      * @brief Classe abstraite pour les unités
      */
+    [Serializable]
     public unsafe abstract class Unite : InterUnite
     {
 
@@ -90,17 +91,17 @@ namespace SmallWorld
         /**
          * @brief Attribut <b>tabCarte</b>, contient la carte sous forme d'un tableau d'int
          */
-        protected int* tabCarte;
+        [NonSerialized] protected int* tabCarte;
 
         /**
         * @brief Attribut <b>tabDeplacement</b>, contient le tableau des déplacements possibles
         */
-        private int* tabDeplacement;
+        [NonSerialized] private int* tabDeplacement;
 
         /**
          * @brief Attribut <b>tabCout</b>, contient le tableau des couts de déplacements
          */
-        private double* tabCout;
+        [NonSerialized] private double* tabCout;
 
         /**
          * @brief Attribut <b>taillCarteJeu</b>, contient la taille de la carte du jeu
@@ -142,7 +143,7 @@ namespace SmallWorld
         /**
          * @brief Attribut <b>wrapperAlgo</b>, le wrapper pour l'unité
          */
-        protected WrapperAlgo wrapperAlgo;
+        [NonSerialized] protected WrapperAlgo wrapperAlgo;
 
         /**
          * @fn Position
@@ -474,6 +475,22 @@ namespace SmallWorld
             //On met à jour les matrices de déplacements
             calculerDeplacement();
         }
+
+        /**
+        * @fn restaurer()
+        * @brief Restaure l'unité suite à une désérialisation
+        */
+        public void restaurer(int * carte)
+        {
+            wrapperAlgo = new WrapperAlgo();
+                   
+            TabCarte = carte;
+            TabDeplacement = wrapperAlgo.creerTab(TailleCarteJeu);
+            TabCout = wrapperAlgo.creerTabDouble(TailleCarteJeu);
+                    
+            //On met à jour les matrices de déplacements
+            calculerDeplacement();
+        }
     }
 
 
@@ -481,6 +498,7 @@ namespace SmallWorld
      * @class UniteGauloise
      * @brief Classe pour les unités gauloises
      */
+    [Serializable]
     public unsafe class UniteGauloise : Unite, InterUniteGauloise
     {
         /**
@@ -532,6 +550,7 @@ namespace SmallWorld
      * @class UniteNaine
      * @brief Classe pour les unités naines
      */
+    [Serializable]
     public unsafe class UniteNaine : Unite, InterUniteNaine
     {
         /**
@@ -582,10 +601,9 @@ namespace SmallWorld
      * @class UniteViking
      * @brief Classe pour les unités viking
      */
+    [Serializable]
     public unsafe class UniteViking : Unite, InterUniteViking
     {
-
-
         /**
          * @fn UniteViking()
          * @brief Constructeur d'une unité viking
