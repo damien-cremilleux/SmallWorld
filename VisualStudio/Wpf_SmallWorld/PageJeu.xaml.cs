@@ -28,14 +28,14 @@ namespace Wpf_SmallWorld
         Coordonnees positionInitiale;
         bool deplacementautorise;
 
-        unsafe public PageJeu(Partie partie)
+        unsafe public PageJeu(Partie parti)
         {
             InitializeComponent();
-            this.partie = partie;
+            this.partie = parti;
             selected = false;
             positionInitiale = new Coordonnees(0, 0);
             deplacementautorise = false;
-
+            Partie.Tag = partie;
 
          // Ajout d'un évenement pour permettre au joueur de passer au tour suivant en appuyant sur la touche espace
          //  this.KeyDown += new KeyEventHandler(passerSonTour);
@@ -69,7 +69,7 @@ namespace Wpf_SmallWorld
                 Unite.RowDefinitions.Add(new RowDefinition() { Height = new GridLength(50, GridUnitType.Pixel) });
                 for (int c = 0; c < taille; c++)
                 {
-                    // Dans chaque case de la grille on ajoute une tuile (logique) matérialisée par un rectangle (physique)
+                    // Dans chaque case de la grille Carte on ajoute une tuile (logique) matérialisée par un rectangle (physique)
                     Case numCase = partie.CartePartie.ListeCases[c][l];
                     var element = createRectangle(c, l, numCase);
 
@@ -139,17 +139,17 @@ namespace Wpf_SmallWorld
             BitmapSource img;
             if (peuple is InterPeupleViking)
             {
-                img = System.Windows.Interop.Imaging.CreateBitmapSourceFromHBitmap(Wpf_SmallWorld.Properties.Resources.UnitRest.GetHbitmap(), IntPtr.Zero, Int32Rect.Empty, BitmapSizeOptions.FromEmptyOptions());
+                img = System.Windows.Interop.Imaging.CreateBitmapSourceFromHBitmap(Wpf_SmallWorld.Properties.Resources.viking.GetHbitmap(), IntPtr.Zero, Int32Rect.Empty, BitmapSizeOptions.FromEmptyOptions());
                 rec.Fill = new ImageBrush(img);
             }
             if (peuple is InterPeupleNain)
             {
-                img = System.Windows.Interop.Imaging.CreateBitmapSourceFromHBitmap(Wpf_SmallWorld.Properties.Resources.UnitRest.GetHbitmap(), IntPtr.Zero, Int32Rect.Empty, BitmapSizeOptions.FromEmptyOptions());
+                img = System.Windows.Interop.Imaging.CreateBitmapSourceFromHBitmap(Wpf_SmallWorld.Properties.Resources.dwarf.GetHbitmap(), IntPtr.Zero, Int32Rect.Empty, BitmapSizeOptions.FromEmptyOptions());
                 rec.Fill = new ImageBrush(img);
             }
             if (peuple is InterPeupleGaulois)
             {
-                img = System.Windows.Interop.Imaging.CreateBitmapSourceFromHBitmap(Wpf_SmallWorld.Properties.Resources.UnitRest.GetHbitmap(), IntPtr.Zero, Int32Rect.Empty, BitmapSizeOptions.FromEmptyOptions());
+                img = System.Windows.Interop.Imaging.CreateBitmapSourceFromHBitmap(Wpf_SmallWorld.Properties.Resources.Gaulois.GetHbitmap(), IntPtr.Zero, Int32Rect.Empty, BitmapSizeOptions.FromEmptyOptions());
                 rec.Fill = new ImageBrush(img);
             }
                                
@@ -224,9 +224,9 @@ namespace Wpf_SmallWorld
         /// </summary>
         private void listeUnite(int column, int row){
             // Liste des unités présentes sur la case (on crée une listbox contenant les usercontrols (InfoUnite)
-            // de chaque unités presentent sur la case
+            // de chaque unités presentent sur la case pour le joueur courant (les cases sont cliquables)
             ListBox listeUniteCase = new ListBox();
-            listeUniteCase.SelectedIndex = 0; 
+         
             listeUniteCase.SelectionChanged += SelectUnite;
 
             List<Unite> uniteCase = partie.selectionnerUnite(column, row);
@@ -239,7 +239,25 @@ namespace Wpf_SmallWorld
             }
 
             listeUniteCase.ItemsSource = listeInfoUnite;
+          //  listeUniteCase.SelectedIndex = 0; fait planter
             InfoUnites.Children.Add(listeUniteCase);
+
+         //   // A commenter et faire MIEUX
+         //   ListView listeUniteCaseAdverse = new ListView();
+         //   //listeUniteCaseAdverse.IsEnabled = false;
+         ////   List<Unite> uniteCaseAdverse = partie.selectionnerUnite(column, row);
+
+         //   List<InfoUnite> listeInfoUniteAdverse = new List<InfoUnite>();
+         //   foreach (Unite unite in uniteCase)
+         //   {
+         //       InfoUnite infoUniteAdverse = new InfoUnite(unite);
+         //       listeInfoUniteAdverse.Add(infoUniteAdverse);
+         //   }
+         //   listeUniteCaseAdverse.ItemsSource = listeInfoUnite;
+
+
+         //   InfoUnites.Children.Add(listeUniteCaseAdverse);
+
         }
 
         /// <summary>
@@ -269,7 +287,6 @@ namespace Wpf_SmallWorld
         /// <param name="args"> l'evt de selection</param>
         private void SelectUnite(object sender, SelectionChangedEventArgs args)
         {
-            
             var unite = ((sender as ListBox).SelectedItem as InfoUnite);
             selectedUnit = unite.Unite;
             Grid.SetColumn(UniteSelectionnee, selectedUnit.Position.Abscisse);
@@ -422,9 +439,7 @@ namespace Wpf_SmallWorld
         /// </summary>
         private void Recharger(object sender, RoutedEventArgs e)
         {
-            MainWindow parent = (Application.Current.MainWindow as MainWindow);
-            PageJeu jeu = new PageJeu(partie);
-            parent.Content = jeu;
+            // sTODO
         }
 
         /// <summary>
@@ -435,8 +450,8 @@ namespace Wpf_SmallWorld
             // Configuration de la boite de dialogue
             Microsoft.Win32.SaveFileDialog dlg = new Microsoft.Win32.SaveFileDialog();
             dlg.FileName = "Sauvegarde"; // Default file name
-            dlg.DefaultExt = ".text"; // Default file extension
-            dlg.Filter = "Text documents (.txt)|*.txt"; // Filter files by extension
+            dlg.DefaultExt = ".sw"; // Default file extension
+            dlg.Filter = "Sauvegarde Small World (.sw)|*.smallWorld"; // Filter files by extension
 
             // Show save file dialog box
             Nullable<bool> result = dlg.ShowDialog();

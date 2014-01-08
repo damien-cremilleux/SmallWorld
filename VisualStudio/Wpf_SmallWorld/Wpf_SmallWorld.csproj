@@ -198,6 +198,18 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dwarf.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dwarf.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Gaulois.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\viking.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
