@@ -59,6 +59,10 @@ namespace Wpf_SmallWorld
             {
                 // Open document
                 string filename = dlg.FileName;
+                Partie sauv = partie.charger(filename);
+                // Lancement du jeu 
+                PageJeu jeu = new PageJeu(partie);
+                this.Content = jeu;
             }
         }
 

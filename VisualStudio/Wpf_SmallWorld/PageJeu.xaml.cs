@@ -27,6 +27,7 @@ namespace Wpf_SmallWorld
         Unite selectedUnit;
         Coordonnees positionInitiale;
         int deplacementautorise;
+        bool testsauvegarder;
 
         unsafe public PageJeu(Partie parti)
         {
@@ -34,19 +35,13 @@ namespace Wpf_SmallWorld
             this.partie = parti;
             selected = false;
             positionInitiale = new Coordonnees(0, 0);
-<<<<<<< HEAD
-<<<<<<< HEAD
-            deplacementautorise = false;
-            Partie.Tag = partie;
-=======
-=======
->>>>>>> 607b6998ebc6ad2377f035603d8a82c53de0de8c
+
             deplacementautorise = 0;
+            Partie.Tag = partie;
+            testsauvegarder = false;
 
->>>>>>> 607b6998ebc6ad2377f035603d8a82c53de0de8c
-
-         // Ajout d'un évenement pour permettre au joueur de passer au tour suivant en appuyant sur la touche espace
-         //  this.KeyDown += new KeyEventHandler(passerSonTour);
+            // Ajout d'un évenement pour permettre au joueur de passer au tour suivant en appuyant sur la touche espace
+            //  this.KeyDown += new KeyEventHandler(passerSonTour);
         }
 
         /// <summary>
@@ -94,21 +89,33 @@ namespace Wpf_SmallWorld
                 int column = joueur.ListeUnite[0].Position.Abscisse;
                 int row = joueur.ListeUnite[0].Position.Ordonnee;
 
-                Rectangle rect = new Rectangle();
-                RecColorUnite(joueur.PeupleJ, rect);
-                Panel.SetZIndex(rect, 10);
+                //Rectangle rect = new Rectangle();
+                //RecColorUnite(joueur.PeupleJ, rect);
+                //Panel.SetZIndex(rect, 10);
 
-                //mise à jour des attributs (column et Row) référencant la position dans la grille à rectangle
-                Grid.SetColumn(rect, column);
-                Grid.SetRow(rect, row);
+                ////mise à jour des attributs (column et Row) référencant la position dans la grille à rectangle
+                //Grid.SetColumn(rect, column);
+                //Grid.SetRow(rect, row);
 
-                // récuperation du type de la case 
-                rect.Tag = partie.CartePartie.ListeCases[column][row] as Case;
-                
-                // Même évenements que les autres cases 
-                rect.MouseLeftButtonDown += new MouseButtonEventHandler(rectangle_MouseLeftButtonDown);
-                rect.MouseRightButtonDown += new MouseButtonEventHandler(rectangle_MouseRightButtonDown);
-                Unite.Children.Add(rect);
+                //// récuperation du type de la case 
+                //rect.Tag = partie.CartePartie.ListeCases[column][row] as Case;
+
+                //// Même évenements que les autres cases 
+                //rect.MouseLeftButtonDown += new MouseButtonEventHandler(rectangle_MouseLeftButtonDown);
+                //rect.MouseRightButtonDown += new MouseButtonEventHandler(rectangle_MouseRightButtonDown);
+
+                //TextBlock test = new TextBlock();
+                //test.Text = "" + partie.selectionnerUnite(column, row).Count(); ;
+
+                //Panel.SetZIndex(test, 5);
+                //Grid.SetColumn(test, column);
+                //Grid.SetRow(test, row);
+
+                //Unite.Children.Add(test);
+                //Unite.Children.Add(rect);
+
+                refreshUnite();
+
             }
         }
 
@@ -160,7 +167,7 @@ namespace Wpf_SmallWorld
                 img = System.Windows.Interop.Imaging.CreateBitmapSourceFromHBitmap(Wpf_SmallWorld.Properties.Resources.Gaulois.GetHbitmap(), IntPtr.Zero, Int32Rect.Empty, BitmapSizeOptions.FromEmptyOptions());
                 rec.Fill = new ImageBrush(img);
             }
-                               
+
         }
 
         /// <summary>
@@ -230,41 +237,44 @@ namespace Wpf_SmallWorld
         /// <summary>
         /// Affichages des unités présentent sur la case selectionnée
         /// </summary>
-        private void listeUnite(int column, int row){
-            // Liste des unités présentes sur la case (on crée une listbox contenant les usercontrols (InfoUnite)
-            // de chaque unités presentent sur la case pour le joueur courant (les cases sont cliquables)
-            ListBox listeUniteCase = new ListBox();
-         
-            listeUniteCase.SelectionChanged += SelectUnite;
+        private void listeUnite(int column, int row)
+        {
 
-            List<Unite> uniteCase = partie.selectionnerUnite(column, row);
-           
-            List<InfoUnite> listeInfoUnite = new List<InfoUnite>();
-            foreach( Unite unite in uniteCase)
+            if (partie.selectionnerUniteAdverse(column, row).Count() == 0)
             {
-               InfoUnite infoUnite = new InfoUnite(unite);
-               listeInfoUnite.Add(infoUnite);
+                // Liste des unités du joueur en cours présentes sur la case (on crée une listbox contenant les usercontrols (InfoUnite)
+                // de chaque unités presentent sur la case pour le joueur courant (les cases sont cliquables)
+                ListBox listeUniteCase = new ListBox();
+
+                listeUniteCase.SelectionChanged += SelectUnite;
+
+                List<Unite> uniteCase = partie.selectionnerUnite(column, row);
+
+                List<InfoUnite> listeInfoUnite = new List<InfoUnite>();
+                foreach (Unite unite in uniteCase)
+                {
+                    InfoUnite infoUnite = new InfoUnite(unite);
+                    listeInfoUnite.Add(infoUnite);
+                }
+
+                listeUniteCase.ItemsSource = listeInfoUnite;
+                InfoUnites.Children.Add(listeUniteCase); 
             }
+            else
+            {
+                // Affiche les unités du joueur adverse 
+                List<Unite> uniteCaseAdverse = partie.selectionnerUniteAdverse(column, row);
+                List<InfoUnite> listeInfoUniteAdverse = new List<InfoUnite>();
+                ListView listeUniteCaseAdverse = new ListView();
+                foreach (Unite unite in uniteCaseAdverse)
+                {
+                    InfoUnite infoUniteAdverse = new InfoUnite(unite);
+                    listeInfoUniteAdverse.Add(infoUniteAdverse);
+                }
 
-            listeUniteCase.ItemsSource = listeInfoUnite;
-          //  listeUniteCase.SelectedIndex = 0; fait planter
-            InfoUnites.Children.Add(listeUniteCase);
-
-         //   // A commenter et faire MIEUX
-         //   ListView listeUniteCaseAdverse = new ListView();
-         //   //listeUniteCaseAdverse.IsEnabled = false;
-         ////   List<Unite> uniteCaseAdverse = partie.selectionnerUnite(column, row);
-
-         //   List<InfoUnite> listeInfoUniteAdverse = new List<InfoUnite>();
-         //   foreach (Unite unite in uniteCase)
-         //   {
-         //       InfoUnite infoUniteAdverse = new InfoUnite(unite);
-         //       listeInfoUniteAdverse.Add(infoUniteAdverse);
-         //   }
-         //   listeUniteCaseAdverse.ItemsSource = listeInfoUnite;
-
-
-         //   InfoUnites.Children.Add(listeUniteCaseAdverse);
+                listeUniteCaseAdverse.ItemsSource = listeInfoUniteAdverse;
+                InfoUnites.Children.Add(listeUniteCaseAdverse);
+            }
 
         }
 
@@ -313,28 +323,60 @@ namespace Wpf_SmallWorld
         {
             if (selected)
             {
-            // Récuperation des données du rectangle selectionné
-            var rectangle = sender as Rectangle;
-            var cas = rectangle.Tag as Case;
-            int column = Grid.GetColumn(rectangle);
-            int row = Grid.GetRow(rectangle);
+                // Récuperation des données du rectangle selectionné
+                var rectangle = sender as Rectangle;
+                var cas = rectangle.Tag as Case;
+                int column = Grid.GetColumn(rectangle);
+                int row = Grid.GetRow(rectangle);
 
-            UniteSelectionnee.Visibility = System.Windows.Visibility.Hidden;
+                UniteSelectionnee.Visibility = System.Windows.Visibility.Hidden;
 
-             deplacementautorise = partie.demanderDeplacement(selectedUnit,column, row);
-            Unite.Children.Clear();
-            refreshUnite();
+                deplacementautorise = partie.demanderDeplacement(selectedUnit, column, row);
 
-            //regénération des éléments unités et joueurs pour mettre à jour
-            InfoUnites.Children.Clear();
-            listeUnite(positionInitiale.Abscisse, positionInitiale.Ordonnee);
-            InfoJoueurs.Children.Clear();
-            listejoueur();
 
-           // le joueur ne peut décider qu'une seule fois de la case de déplacement de l'unité
-           // selectionRectangleDeplacement.Visibility = System.Windows.Visibility.Hidden;
-           selected = false;
-  
+                //TODO label indiquant l'action
+                switch (deplacementautorise)
+                {
+                    //l'unité de ne peut pas se déplacer
+                    case 0:
+                        ;
+                        break;
+
+                    //l'unité se déplace sans combat
+                    case 1:
+                        ;
+                        break;
+
+                    //l'unité combat et meurt 
+                    case 2:
+                        ;
+                        break;
+
+                    //l'unité combat et se déplace
+                    case 3:
+                        ;
+                        break;
+
+                    //l'unité combat mais ne se déplace pas (aucune des deux unités ne meurt)
+                    case 4:
+                        ;
+                        break;
+                }
+
+
+                Unite.Children.Clear();
+                refreshUnite();
+
+                //regénération des éléments unités et joueurs pour mettre à jour
+                InfoUnites.Children.Clear();
+                listeUnite(positionInitiale.Abscisse, positionInitiale.Ordonnee);
+                InfoJoueurs.Children.Clear();
+                listejoueur();
+
+                // le joueur ne peut décider qu'une seule fois de la case de déplacement de l'unité
+                // selectionRectangleDeplacement.Visibility = System.Windows.Visibility.Hidden;
+                selected = false;
+
             }
 
             e.Handled = true;
@@ -344,15 +386,16 @@ namespace Wpf_SmallWorld
         /// <summary>
         /// Affichage de la liste des joueurs et de ses informations
         /// </summary>
-        private void listejoueur(){
-           foreach (Joueur joueur in partie.ListeJoueurs)
-                {
-                  joueur.calculerPointVictoire();
-                  InfoJoueur j = new InfoJoueur(joueur, partie.ListeJoueurs[partie.IndiceJoueurEnCours]);
-                  InfoJoueurs.Children.Add(j);
-                }
+        private void listejoueur()
+        {
+            foreach (Joueur joueur in partie.ListeJoueurs)
+            {
+                joueur.calculerPointVictoire();
+                InfoJoueur j = new InfoJoueur(joueur, partie.ListeJoueurs[partie.IndiceJoueurEnCours]);
+                InfoJoueurs.Children.Add(j);
+            }
         }
-                     
+
 
         /// <summary>
         /// Délégué : réaction à l'evt : clic sur le bouton "Tour Suivant"
@@ -386,7 +429,9 @@ namespace Wpf_SmallWorld
                 if (partie.vainqueurs().Count() == 1)
                 {
                     messageBoxText = "Partie terminée ! Bravo " + partie.vainqueurs()[0].NomJ + " ! Revanche ?";
-                }else{
+                }
+                else
+                {
                     messageBoxText = "Partie terminée ! Match nul entre " + partie.vainqueurs()[0].NomJ + " et " + partie.vainqueurs()[1].NomJ + " ! Revanche ?";
                 }
                 MessageBoxButton button = MessageBoxButton.YesNo;
@@ -427,6 +472,16 @@ namespace Wpf_SmallWorld
                     Grid.SetColumn(rect, column);
                     Grid.SetRow(rect, row);
 
+                    TextBlock test = new TextBlock();
+                    if (partie.selectionnerUnite(column, row).Count() == 0)
+                        test.Text = ""+partie.selectionnerUniteAdverse(column,row).Count();
+                    else
+                        test.Text = "" + partie.selectionnerUnite(column, row).Count();
+
+                    Panel.SetZIndex(test, 40);
+                    Grid.SetColumn(test, column);
+                    Grid.SetRow(test, row);
+
                     // récuperation du type de la case 
                     rect.Tag = partie.CartePartie.ListeCases[column][row] as Case;
 
@@ -435,6 +490,7 @@ namespace Wpf_SmallWorld
                     rect.MouseRightButtonDown += new MouseButtonEventHandler(rectangle_MouseRightButtonDown);
 
                     Unite.Children.Add(rect);
+                    Unite.Children.Add(test);
                 }
             }
         }
@@ -447,7 +503,7 @@ namespace Wpf_SmallWorld
         /// </summary>
         private void Recharger(object sender, RoutedEventArgs e)
         {
-            // sTODO
+            // TODO
         }
 
         /// <summary>
@@ -455,20 +511,25 @@ namespace Wpf_SmallWorld
         /// </summary>
         private void Sauvegarder(object sender, RoutedEventArgs e)
         {
-            // Configuration de la boite de dialogue
-            Microsoft.Win32.SaveFileDialog dlg = new Microsoft.Win32.SaveFileDialog();
-            dlg.FileName = "Sauvegarde"; // Default file name
-            dlg.DefaultExt = ".sw"; // Default file extension
-            dlg.Filter = "Sauvegarde Small World (.sw)|*.smallWorld"; // Filter files by extension
-
-            // Show save file dialog box
-            Nullable<bool> result = dlg.ShowDialog();
-
-            // Process save file dialog box results
-            if (result == true)
+            testsauvegarder = partie.enregistrer();
+            if (!testsauvegarder)
             {
-                // Save document
-                string filename = dlg.FileName;
+                // Configuration de la boite de dialogue
+                Microsoft.Win32.SaveFileDialog dlg = new Microsoft.Win32.SaveFileDialog();
+                dlg.FileName = "Sauvegarde"; // Default file name
+                dlg.DefaultExt = ".sw"; // Default file extension
+                dlg.Filter = "Sauvegarde Small World (.sw)|*.smallWorld"; // Filter files by extension
+
+                // Show save file dialog box
+                Nullable<bool> result = dlg.ShowDialog();
+
+                // Process save file dialog box results
+                if (result == true)
+                {
+                    // Save document
+                    string filename = dlg.FileName;
+                    partie.enregistrerSous(filename);
+                }
             }
 
         }
