@@ -35,9 +35,12 @@ namespace Wpf_SmallWorld
             selected = false;
             positionInitiale = new Coordonnees(0, 0);
 <<<<<<< HEAD
+<<<<<<< HEAD
             deplacementautorise = false;
             Partie.Tag = partie;
 =======
+=======
+>>>>>>> 607b6998ebc6ad2377f035603d8a82c53de0de8c
             deplacementautorise = 0;
 
 >>>>>>> 607b6998ebc6ad2377f035603d8a82c53de0de8c
