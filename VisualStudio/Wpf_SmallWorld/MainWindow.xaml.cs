@@ -29,6 +29,8 @@ namespace Wpf_SmallWorld
             InitializeComponent();
             createur = new CreateurPartie();
             partie = new Partie();
+            this.joueurs.Visibility = Visibility.Collapsed;
+            this.carte.Visibility = Visibility.Collapsed;
         }
 
         private void CreerPartie(object sender, RoutedEventArgs e)
@@ -46,8 +48,8 @@ namespace Wpf_SmallWorld
             // Configure open file dialog box
             Microsoft.Win32.OpenFileDialog dlg = new Microsoft.Win32.OpenFileDialog();
             dlg.FileName = "Sauvegarde"; // Default file name
-            dlg.DefaultExt = ".txt"; // Default file extension
-            dlg.Filter = "Text documents (.txt)|*.txt"; // Filter files by extension
+            dlg.DefaultExt = ".sw"; // Default file extension
+            dlg.Filter = "Sauvegarder SmallWorld (.sw)|*.smallWorld"; // Filter files by extension
 
             // Show open file dialog box
             Nullable<bool> result = dlg.ShowDialog();

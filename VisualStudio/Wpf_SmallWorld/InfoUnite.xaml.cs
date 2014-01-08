@@ -33,11 +33,11 @@ namespace Wpf_SmallWorld
 
 
         public InfoUnite(Unite unit)
-        {
-          
-            this.unite = unit;
+        {   
             InitializeComponent();
-            this.KeyDown += new KeyEventHandler(passerSonTour);
+            this.unite = unit;
+
+           // this.KeyDown += new KeyEventHandler(passerSonTour);
 
             // Récuperation des données de l'unité
             PointVie.Text = "" +unite.PointDeVie;
@@ -49,20 +49,20 @@ namespace Wpf_SmallWorld
             BitmapSource img;
             if (unite is InterUniteNaine)
             {
-                img = System.Windows.Interop.Imaging.CreateBitmapSourceFromHBitmap(Wpf_SmallWorld.Properties.Resources.Vie.GetHbitmap(), IntPtr.Zero, Int32Rect.Empty, BitmapSizeOptions.FromEmptyOptions());
+                img = System.Windows.Interop.Imaging.CreateBitmapSourceFromHBitmap(Wpf_SmallWorld.Properties.Resources.dwarf.GetHbitmap(), IntPtr.Zero, Int32Rect.Empty, BitmapSizeOptions.FromEmptyOptions());
                 ImgPeuple.Fill = new ImageBrush(img);
                 ImgPeuple.Tag = "Unité Naine";
             }
             if (unite is InterUniteViking)
             {
-                img = System.Windows.Interop.Imaging.CreateBitmapSourceFromHBitmap(Wpf_SmallWorld.Properties.Resources.victoire.GetHbitmap(), IntPtr.Zero, Int32Rect.Empty, BitmapSizeOptions.FromEmptyOptions());
+                img = System.Windows.Interop.Imaging.CreateBitmapSourceFromHBitmap(Wpf_SmallWorld.Properties.Resources.viking.GetHbitmap(), IntPtr.Zero, Int32Rect.Empty, BitmapSizeOptions.FromEmptyOptions());
                 ImgPeuple.Fill = new ImageBrush(img);
                 ImgPeuple.Tag = "Unité Vicking";
 
             }
             if (unite is InterUniteGauloise)
             {
-                img = System.Windows.Interop.Imaging.CreateBitmapSourceFromHBitmap(Wpf_SmallWorld.Properties.Resources.UnitRest.GetHbitmap(), IntPtr.Zero, Int32Rect.Empty, BitmapSizeOptions.FromEmptyOptions());
+                img = System.Windows.Interop.Imaging.CreateBitmapSourceFromHBitmap(Wpf_SmallWorld.Properties.Resources.Gaulois.GetHbitmap(), IntPtr.Zero, Int32Rect.Empty, BitmapSizeOptions.FromEmptyOptions());
                 ImgPeuple.Fill = new ImageBrush(img);
                 ImgPeuple.Tag = "Unité Gauloise";
             }

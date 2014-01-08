@@ -13,6 +13,7 @@
     <Grid KeyDown="passerSonTour"  >
         <Grid.RowDefinitions>
             <RowDefinition Height="30"/>
+            <RowDefinition Height="auto"/>
             <RowDefinition/>
             <RowDefinition Height="auto"/>
         </Grid.RowDefinitions>
@@ -30,8 +31,16 @@
             </StackPanel>
         </Grid>
 
+        <!--Information sur la partie-->
+        <Grid Grid.Row="1" Grid.ColumnSpan="2">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <Label>Tour :</Label>
+                <Label Name="Partie" Content="{Binding Tag.NbTourRestant , ElementName=Partie}"/>
+            </StackPanel>
+        </Grid>
+
         <!-- Carte -->
-        <ScrollViewer Grid.Column="0" Grid.Row="1" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+        <ScrollViewer Grid.Column="0" Grid.Row="2" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
             <Grid>
 
                 <Grid Grid.Column="0" Grid.Row="0" Name="Carte" HorizontalAlignment="Center" VerticalAlignment="Center" Cursor="Hand">
@@ -47,7 +56,7 @@
         </ScrollViewer>
 
         <!-- Données case -->
-        <ScrollViewer Grid.Column="1" Grid.Row="1" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+        <ScrollViewer Grid.Column="1" Grid.Row="2" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
             <Grid Grid.Column="1" Grid.Row="1" VerticalAlignment="center">
                 <StackPanel Margin="0,40" Name="InfoCase" DataContext="{Binding Tag, ElementName=selectionRectangle}" Visibility="Visible" VerticalAlignment="center">
                     <!-- on associe le contenu du label (Content) par binding : à la tuile selectionnée (Tag) de la source : le rectangle de selection (selectionRectangle) -->
@@ -58,18 +67,18 @@
                 </StackPanel>
                 
                 <!-- Liste des unités présentes sur la case -->
-                <StackPanel Name="InfoUnites" Cursor="Hand"></StackPanel>
+                <StackPanel Name="InfoUnites" Cursor="Hand"/>
                 </StackPanel>
         </Grid>
         </ScrollViewer>
 
         <!-- Données joueurs -->
-        <Grid Grid.Row="2">
+        <Grid Grid.Row="3">
             <StackPanel Name="InfoJoueurs" Orientation="Horizontal" Margin="0,0,0,10"/>
         </Grid>
 
         <!--Bouton fin de tour-->
-        <Grid Grid.Column="1" Grid.Row="2">
+        <Grid Grid.Column="1" Grid.Row="3">
             <Button Grid.Column="2" Height="40" HorizontalAlignment="Center" Click="TourSuivant">
                 <StackPanel>
                     <TextBlock HorizontalAlignment="Center" >Fin de tour</TextBlock>

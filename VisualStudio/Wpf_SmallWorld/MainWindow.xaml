@@ -6,10 +6,10 @@
         xmlns:local="clr-namespace:Wpf_SmallWorld"
         WindowStartupLocation="CenterScreen"
         FontFamily="Segoe UI Light"
-         SizeToContent="WidthAndHeight">
+        SizeToContent="WidthAndHeight"
+        Icon="./Resources/smallWorld.png">
 
     <Grid>
-
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="200"/>
             <ColumnDefinition />
@@ -38,10 +38,8 @@
             </Grid>
         </Grid>
         <Grid Grid.Column="1" Name="UserControl">
-            <!-- regarder pour du binding -->
             <local:Joueurs x:Name="joueurs" Visibility="Collapsed"/>
             <local:Carte x:Name="carte" Visibility="Collapsed"/>
-
         </Grid>
     </Grid>
 </Window>

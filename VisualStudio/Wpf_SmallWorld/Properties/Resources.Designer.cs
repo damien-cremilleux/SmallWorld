@@ -93,6 +93,26 @@ namespace Wpf_SmallWorld.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap dwarf {
+            get {
+                object obj = ResourceManager.GetObject("dwarf", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Gaulois {
+            get {
+                object obj = ResourceManager.GetObject("Gaulois", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap prec {
             get {
                 object obj = ResourceManager.GetObject("prec", resourceCulture);
@@ -166,6 +186,16 @@ namespace Wpf_SmallWorld.Properties {
         internal static System.Drawing.Bitmap Vie {
             get {
                 object obj = ResourceManager.GetObject("Vie", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap viking {
+            get {
+                object obj = ResourceManager.GetObject("viking", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
