@@ -19,6 +19,61 @@ namespace UnitTest_SmallWorld
     [TestClass]
     public class UnitTestSmallWorld
     {
+       /* [TestMethod]
+        public void TestList()
+        {
+            List<Unite> lu1 = new List<Unite>();
+            UniteGauloise g1 = new UniteGauloise();
+            UniteGauloise g2 = new UniteGauloise();
+            UniteGauloise g3 = new UniteGauloise();
+
+            List<Unite> lu2 = new List<Unite>();
+            UniteNaine n1 = new UniteNaine();
+            UniteNaine n2 = new UniteNaine();
+            UniteNaine n3 = new UniteNaine();
+
+            lu1.Add(g1);
+            lu1.Add(g2);
+            lu1.Add(g3);
+
+            lu2.Add(n1);
+            lu2.Add(n2);
+            lu2.Add(n3);
+
+            Assert.AreEqual(3, lu1.Count);
+            Assert.AreEqual(3, lu2.Count);
+
+            lu1.Remove(n1);
+            lu2.Remove(n1);
+
+            Assert.AreEqual(3, lu1.Count);
+            Assert.AreEqual(2, lu2.Count);
+
+            g2 = null;
+
+            Assert.AreEqual(2, lu1.Count);
+            Assert.AreEqual(2, lu2.Count);
+        }*/
+      /*   [TestMethod]
+        public unsafe  void TestPointeur()
+        {
+            List<Unite> lu1 = new List<Unite>();
+            UniteGauloise g1 = new UniteGauloise();
+            UniteGauloise g2 = new UniteGauloise();
+            UniteGauloise g3 = new UniteGauloise();
+            g1.PointAttaque = 2;
+            int* test = &(g1.PointAttaque);
+
+            Assert.AreEqual(2, lu2.Count);
+        }*/
+
+        /* [TestMethod]
+        public unsafe  void TestPointeur()
+        {
+            string s = "";
+            Assert.AreEqual(s,null);
+        }*/
+
         /**
          * @fn TestNomJoueur()
          * @brief Tests unitaire vérifiant la bonne récupération du nom des joueurs
@@ -37,6 +92,7 @@ namespace UnitTest_SmallWorld
 
             Assert.AreEqual("Damien", p.ListeJoueurs[0].NomJ);
             Assert.AreEqual("Lauriane", p.ListeJoueurs[1].NomJ);
+
         }
 
         /**

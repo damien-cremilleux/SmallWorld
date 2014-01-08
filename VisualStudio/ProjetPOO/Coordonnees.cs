@@ -86,6 +86,16 @@ namespace SmallWorld
         }
 
         /**
+         * @fn Coordonnees()
+         * @brief Constructeur de coordonnees
+         * 
+         * @return les nouvelles coordonnées
+         */
+        public Coordonnees()
+        {
+        }
+
+        /**
          * @fn Equals(Object obj)
          * @brief Test d'égalité pour deux coordonnées
          * 

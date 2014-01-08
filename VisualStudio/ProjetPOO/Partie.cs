@@ -10,8 +10,10 @@
  */
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
+using System.Xml.Serialization;
 
 namespace SmallWorld
 {
@@ -68,6 +70,11 @@ namespace SmallWorld
          * @brief Attibut <b>tabCarte</b> la carte sous forme d'un tableau d'int
          */
         private int* tabCarte;
+
+         /**
+         * @brief Attibut <b>nomSauvegarde</b> le nom de la sauvegarde
+         */
+        private string nomSauvegarde;
 
         /**
          * @fn IndiceJoueurEnCours
@@ -171,7 +178,7 @@ namespace SmallWorld
          * @fn TabCarte
          * @brief Properties pour l'attribut tabCarte
          */
-        public int * TabCarte
+        public int* TabCarte
         {
             get
             {
@@ -212,7 +219,7 @@ namespace SmallWorld
 
             //Le premier joueur est sélectionné au hasard
             Random r = new Random();
-            indiceJoueurInitial = r.Next(ListeJoueurs.Count);
+            indiceJoueurInitial = r.Next(ListeJoueurs.Count + 1);
             IndiceJoueurEnCours = indiceJoueurInitial;
         }
 
@@ -284,7 +291,7 @@ namespace SmallWorld
         {
             int indice;
             List<Unite> listeUnite = new List<Unite>();
-            Coordonnees coord = new Coordonnees(x,y);
+            Coordonnees coord = new Coordonnees(x, y);
 
             for (indice = 0; indice < ListeJoueurs[IndiceJoueurEnCours].ListeUnite.Count; indice++)
             {
@@ -315,11 +322,11 @@ namespace SmallWorld
             {
                 if (indiceJ != IndiceJoueurEnCours)
                 {
-                    for (indiceU = 0; indiceU < ListeJoueurs[IndiceJoueurEnCours].ListeUnite.Count; indiceU++)
+                    for (indiceU = 0; indiceU < ListeJoueurs[indiceJ].ListeUnite.Count; indiceU++)
                     {
-                        if (ListeJoueurs[IndiceJoueurEnCours].ListeUnite[indiceU].Position.Equals(coord))
+                        if (ListeJoueurs[indiceJ].ListeUnite[indiceU].Position.Equals(coord))
                         {
-                            listeUnite.Add(ListeJoueurs[IndiceJoueurEnCours].ListeUnite[indiceU]);
+                            listeUnite.Add(ListeJoueurs[indiceJ].ListeUnite[indiceU]);
                         }
                     }
                 }
@@ -339,13 +346,13 @@ namespace SmallWorld
         public bool peutSeDeplacer(Unite unite, int x, int y)
         {
             //On gère le cas des nains se déplacant de montagne en montagne
-            if ((unite.GetType() == new UniteNaine().GetType()) && (selectionnerUniteAdverse(x,y).Count != 0) && ((Math.Abs(x - unite.Position.Abscisse) + Math.Abs(y - unite.Position.Ordonnee)) > 1))
+            if ((unite.GetType() == new UniteNaine().GetType()) && (selectionnerUniteAdverse(x, y).Count != 0) && ((Math.Abs(x - unite.Position.Abscisse) + Math.Abs(y - unite.Position.Ordonnee)) > 1))
             {
                 return false;
             }
             else
             {
-            return unite.peutSeDeplacer(x, y);
+                return unite.peutSeDeplacer(x, y);
             }
         }
 
@@ -356,33 +363,161 @@ namespace SmallWorld
          * @param int <b>indiceUnite</b> l'indice de l'unité à déplacer, dans le tableau des unités du joueurs en cours
          * @param int <b>x</b> l'abscisse de la case destination
          * @param int <b>y</b> l'ordonnée de la case destination
-         * @return void
+         * @return int, 0 si l'unité ne peut pas se déplacer, 1, si elle se déplace sans combat, 2 s'il y a combat et qu'elle meurt,  3 si combat et déplacement possible, 4 si combat et déplacement non possible
          */
-        public bool demanderDeplacement(Unite unite, int x, int y)
+        public int demanderDeplacement(Unite unite, int x, int y)
         {
             if (peutSeDeplacer(unite, x, y))
             {
                 //On regarde si un combat est nécessaire
                 List<Unite> listUnite = selectionnerUniteAdverse(x, y);
-               // if (listUnite.Count == 0)
-               // {
+                if (listUnite.Count == 0)
+                {
                     unite.seDeplacer(x, y);
-                    return true;
-               // }
-                /*else
+                    return 1;
+                }
+                else
                 {
                     //On sélectionne la meilleur unité adverse
-                    Unite meilleurUnite = listUnite[0];
-                    foreach (Unite u in listUnite)
+                    Unite meilleureU = meilleureUnite(listUnite);
+
+                    //Si elle n'a pas de défense elle meurt et on redemande le déplacement
+                    if (meilleureU.PointDefense == 0)
                     {
-                        if (u.PointDefense + u.PointDeVie > m
+                        foreach (Joueur j in ListeJoueurs)
+                        {
+                            j.ListeUnite.Remove(meilleureU);
+                            j.calculerPointVictoire();
+                        }
                     }
-                }*/
+                    else
+                    //Combat
+                    {
+                        //on génère un nombre de combat aléatoire
+                        int nbRoundCombat;
+                        Random r = new Random();
+                        nbRoundCombat = 3 + r.Next(Math.Max(unite.PointDeVie, meilleureU.PointDeVie));
+                        unite.attaquer(meilleureU, nbRoundCombat);
+
+                        //L'unité attaquante est morte
+                        if (unite.PointDeVie == 0) //l'attaquant a perdu, son unité meurt
+                        {
+                            foreach (Joueur j in ListeJoueurs)
+                            {
+                                j.ListeUnite.Remove(unite);
+                                j.calculerPointVictoire();
+                            }
+                            return 2;
+                        }
+
+                        //L'unité en défense est morte
+                        if (meilleureU.PointDeVie == 0)
+                        {
+                            foreach (Joueur j in ListeJoueurs)
+                            {
+                                j.ListeUnite.Remove(meilleureU);
+                                j.calculerPointVictoire();
+                            }
+
+                            if (selectionnerUniteAdverse(x, y).Count == 0)
+                            {
+                                unite.seDeplacer(x, y);
+                                return 3;
+                            }
+                        }
+
+                        return 4;
+                    }
+                }
+
+                return 4;
+            }
+            else
+            {
+                return 0;
+            }
+        }
+
+        /**
+        * @fn meilleureUnite(List<Unite> listeUnite)
+        * @brief Récupère la meilleure unité défensive de la list
+        * 
+        * @param List<Unite> <b>listeUnite</b> la liste d'unité
+        * @return Unite la meilleure unité défensive
+        */
+        public Unite meilleureUnite(List<Unite> listeUnite)
+        {
+            if (listeUnite.Count == 0)
+            {
+                return null;
+           }
+            else
+            {
+                Unite meilleureU = listeUnite[0];
+                foreach (Unite u in listeUnite)
+                {
+                    if ((u.PointDefense + u.PointDeVie) > (meilleureU.PointDefense + meilleureU.PointDeVie))
+                    {
+                        meilleureU = u;
+                    }
+                }
+                return meilleureU;
+            }
+
+        }
+
+        /**
+         * @fn Enregistrer()
+         * @brief Enregistre une partie
+         * 
+         * @return bool, vrai si le nom de fichier est connu, faux sinon
+         */
+   /*     public bool Enregistrer()
+        {
+            if (nomSauvegarde != "")
+            {
+               this.EnregistrerSous(nomSauvegarde);
+                return true;
             }
             else
             {
                 return false;
             }
         }
+        */
+
+        /**
+         * @fn EnregistrerSous(string nomFichier)
+         * @brief Enregistre la partie sous le nom passer en paramètre
+         * 
+         * @param string<b>nomFichier</b> le nom du fichier
+         * @return void
+         */
+    /*    public void EnregistrerSous(string nomFichier)
+        {
+
+            FileStream file = File.Open(nomFichier+".smallworld", FileMode.OpenOrCreate);
+            BinaryWriter serializer = new BinaryWriter(typeof(Partie));
+          //  XmlSerializer serializer = new XmlSerializer(typeof(Partie));
+            serializer.Serialize(file, this);
+            file.Close();  
+        }*/
+
+        /**
+         * @fn Charger(string nomFichier)
+         * @brief Charge la partie
+         * 
+         * @param string<b>nomFichier</b> le nom du fichier à charger
+         * @return Partie la partie à restaurer
+         */
+      /*  public Partie Charger(string nomFichier)
+        {
+
+            FileStream file = File.Open(nomFichier, FileMode.Open);
+            XmlSerializer serializer = new XmlSerializer(typeof(Partie));
+            Partie p = (Partie)serializer.Deserialize(file);
+            file.Close();
+            return p;
+        }*/
     }
 }

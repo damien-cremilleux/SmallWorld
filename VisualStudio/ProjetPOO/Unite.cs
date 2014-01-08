@@ -26,10 +26,13 @@ namespace SmallWorld
     public unsafe interface InterUnite
     {
         /**
-         * @fn attaquer
-         * @brief attaquer une case contenant des unités ennemies
+         * @fn attaquer(Unite uniteAdverse, int nbRoundCombat)
+         * @brief attaquer une unité adverse, sachant le nombre de rounds
+         * 
+         * @param Unite <b>uniteAdverse</b> l'unité à combattre
+         * @param int <b>nbRoundCombat</b> le nombre de round
          */
-        void attaquer();
+        void attaquer(Unite uniteAdverse, int nbRoundCombat);
 
         /**
          * @fn seDeplacer
@@ -344,12 +347,40 @@ namespace SmallWorld
         public abstract void calculPointVictoire();
 
         /**
-         * @fn attaquer()
-         * @brief attaquer une case contenant des unités ennemies
+         * @fn attaquer(Unite uniteAdverse, int nbRoundCombat)
+         * @brief attaquer une unité adverse, sachant le nombre de rounds
+         * 
+         * @param Unite <b>uniteAdverse</b> l'unité à combattre
+         * @param int <b>nbRoundCombat</b> le nombre de round
          */
-        public void attaquer()
+        public void attaquer(Unite uniteAdverse, int nbRoundCombat)
         {
-            throw new NotImplementedException();
+            while ((nbRoundCombat > 0) && (PointDeVie > 0) && (uniteAdverse.PointDeVie > 0))
+            {
+                double probaAttaquantPerd = 0.5; //Par défaut on est à 50%
+                if (PointAttaque != uniteAdverse.PointDefense)
+                {
+                    double coefficient = (Math.Abs(PointAttaque - uniteAdverse.PointDefense) / Math.Max(PointAttaque, uniteAdverse.PointDefense));
+                    double ponderation = coefficient * 0.5;
+
+                    if (PointAttaque > uniteAdverse.PointDefense)
+                        probaAttaquantPerd = 0.5 - ponderation;
+
+                    if (PointAttaque < uniteAdverse.PointDefense)
+                        probaAttaquantPerd = 0.5 + ponderation;
+                }
+
+                Random r = new Random();
+                if ((r.Next(100) * probaAttaquantPerd) > 50)
+                {
+                    PointDeVie--;
+                }
+                else
+                {
+                    uniteAdverse.PointDeVie--;
+                }
+                 nbRoundCombat--;
+            }
         }
 
         /**

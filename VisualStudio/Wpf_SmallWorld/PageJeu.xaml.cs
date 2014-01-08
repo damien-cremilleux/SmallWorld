@@ -26,7 +26,7 @@ namespace Wpf_SmallWorld
         private bool selected;
         Unite selectedUnit;
         Coordonnees positionInitiale;
-        bool deplacementautorise;
+        int deplacementautorise;
 
         unsafe public PageJeu(Partie parti)
         {
@@ -34,8 +34,13 @@ namespace Wpf_SmallWorld
             this.partie = parti;
             selected = false;
             positionInitiale = new Coordonnees(0, 0);
+<<<<<<< HEAD
             deplacementautorise = false;
             Partie.Tag = partie;
+=======
+            deplacementautorise = 0;
+
+>>>>>>> 607b6998ebc6ad2377f035603d8a82c53de0de8c
 
          // Ajout d'un évenement pour permettre au joueur de passer au tour suivant en appuyant sur la touche espace
          //  this.KeyDown += new KeyEventHandler(passerSonTour);

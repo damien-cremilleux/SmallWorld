@@ -133,6 +133,15 @@ namespace SmallWorld
         }
 
         /**
+        * @fn Joueur()
+        * @brief Constructeur d'un joueur par défaut
+        * @return Joueur un nouveau joueur
+        */
+        public Joueur()
+        {
+        }
+
+        /**
          * @fn calculerPointVictoire()
          * @brief Met à jour les points de victoire du joueur
          * @return void
