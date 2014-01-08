@@ -67,6 +67,12 @@ namespace UnitTest_SmallWorld
             Assert.AreEqual(2, lu2.Count);
         }*/
 
+        /* [TestMethod]
+        public unsafe  void TestPointeur()
+        {
+            string s = "";
+            Assert.AreEqual(s,null);
+        }*/
 
         /**
          * @fn TestNomJoueur()
@@ -86,6 +92,7 @@ namespace UnitTest_SmallWorld
 
             Assert.AreEqual("Damien", p.ListeJoueurs[0].NomJ);
             Assert.AreEqual("Lauriane", p.ListeJoueurs[1].NomJ);
+
         }
 
         /**

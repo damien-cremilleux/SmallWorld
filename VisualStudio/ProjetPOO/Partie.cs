@@ -10,8 +10,10 @@
  */
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
+using System.Xml.Serialization;
 
 namespace SmallWorld
 {
@@ -68,6 +70,11 @@ namespace SmallWorld
          * @brief Attibut <b>tabCarte</b> la carte sous forme d'un tableau d'int
          */
         private int* tabCarte;
+
+         /**
+         * @brief Attibut <b>nomSauvegarde</b> le nom de la sauvegarde
+         */
+        private string nomSauvegarde;
 
         /**
          * @fn IndiceJoueurEnCours
@@ -443,7 +450,7 @@ namespace SmallWorld
             if (listeUnite.Count == 0)
             {
                 return null;
-            }
+           }
             else
             {
                 Unite meilleureU = listeUnite[0];
@@ -459,5 +466,58 @@ namespace SmallWorld
 
         }
 
+        /**
+         * @fn Enregistrer()
+         * @brief Enregistre une partie
+         * 
+         * @return bool, vrai si le nom de fichier est connu, faux sinon
+         */
+   /*     public bool Enregistrer()
+        {
+            if (nomSauvegarde != "")
+            {
+               this.EnregistrerSous(nomSauvegarde);
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        */
+
+        /**
+         * @fn EnregistrerSous(string nomFichier)
+         * @brief Enregistre la partie sous le nom passer en paramètre
+         * 
+         * @param string<b>nomFichier</b> le nom du fichier
+         * @return void
+         */
+    /*    public void EnregistrerSous(string nomFichier)
+        {
+
+            FileStream file = File.Open(nomFichier+".smallworld", FileMode.OpenOrCreate);
+            BinaryWriter serializer = new BinaryWriter(typeof(Partie));
+          //  XmlSerializer serializer = new XmlSerializer(typeof(Partie));
+            serializer.Serialize(file, this);
+            file.Close();  
+        }*/
+
+        /**
+         * @fn Charger(string nomFichier)
+         * @brief Charge la partie
+         * 
+         * @param string<b>nomFichier</b> le nom du fichier à charger
+         * @return Partie la partie à restaurer
+         */
+      /*  public Partie Charger(string nomFichier)
+        {
+
+            FileStream file = File.Open(nomFichier, FileMode.Open);
+            XmlSerializer serializer = new XmlSerializer(typeof(Partie));
+            Partie p = (Partie)serializer.Deserialize(file);
+            file.Close();
+            return p;
+        }*/
     }
 }
