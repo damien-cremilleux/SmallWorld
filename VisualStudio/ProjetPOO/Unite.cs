@@ -91,17 +91,20 @@ namespace SmallWorld
         /**
          * @brief Attribut <b>tabCarte</b>, contient la carte sous forme d'un tableau d'int
          */
-        [NonSerialized] protected int* tabCarte;
+        [NonSerialized]
+        protected int* tabCarte;
 
         /**
         * @brief Attribut <b>tabDeplacement</b>, contient le tableau des déplacements possibles
         */
-        [NonSerialized] private int* tabDeplacement;
+        [NonSerialized]
+        private int* tabDeplacement;
 
         /**
          * @brief Attribut <b>tabCout</b>, contient le tableau des couts de déplacements
          */
-        [NonSerialized] private double* tabCout;
+        [NonSerialized]
+        private double* tabCout;
 
         /**
          * @brief Attribut <b>taillCarteJeu</b>, contient la taille de la carte du jeu
@@ -143,7 +146,8 @@ namespace SmallWorld
         /**
          * @brief Attribut <b>wrapperAlgo</b>, le wrapper pour l'unité
          */
-        [NonSerialized] protected WrapperAlgo wrapperAlgo;
+        [NonSerialized]
+        protected WrapperAlgo wrapperAlgo;
 
         /**
          * @fn Position
@@ -380,7 +384,7 @@ namespace SmallWorld
                 {
                     uniteAdverse.PointDeVie--;
                 }
-                 nbRoundCombat--;
+                nbRoundCombat--;
             }
         }
 
@@ -477,19 +481,67 @@ namespace SmallWorld
         }
 
         /**
-        * @fn restaurer()
-        * @brief Restaure l'unité suite à une désérialisation
-        */
-        public void restaurer(int * carte)
+         * @fn restaurer()
+         * @brief Restaure l'unité suite à une désérialisation
+         * 
+         * @return void
+         */
+        public void restaurer(int* carte)
         {
             wrapperAlgo = new WrapperAlgo();
-                   
+
             TabCarte = carte;
             TabDeplacement = wrapperAlgo.creerTab(TailleCarteJeu);
             TabCout = wrapperAlgo.creerTabDouble(TailleCarteJeu);
-                    
+
             //On met à jour les matrices de déplacements
             calculerDeplacement();
+        }
+
+        /**
+         * @fn suggererCase()
+         * @brief Suggère les cases de déplacement pour une unité
+         * 
+         * @return List<Coordonnee> la liste des coordonnées possibles
+         */
+        public List<Coordonnees> suggererCase()
+        {
+            List<Coordonnees> listeRes = new List<Coordonnees>();
+            int i, j;
+            for (i = 0; i < TailleCarteJeu; i++)
+            {
+                for (j = 0; j < TailleCarteJeu; j++)
+                {
+    
+                    if(TabDeplacement[i* TailleCarteJeu + j] > 1)
+                        listeRes.Add(new Coordonnees(i,j);
+                }
+            }
+            
+            return listeRes;
+        }
+        
+        /**
+         * @fn suggererCaseOptimele()
+         * @brief Suggère les cases de déplacement pour une unité qui sont optimales
+         * 
+         * @return List<Coordonnee> la liste des coordonnées possibles
+         */
+        public List<Coordonnees> suggererCaseOptimale()
+        {
+            List<Coordonnees> listeRes = new List<Coordonnees>();
+            int i, j;
+            for (i = 0; i < TailleCarteJeu; i++)
+            {
+                for (j = 0; j < TailleCarteJeu; j++)
+                {
+    
+                    if(TabDeplacement[i* TailleCarteJeu + j] > 2)
+                        listeRes.Add(new Coordonnees(i,j);
+                }
+            }
+            
+            return listeRes;
         }
     }
 
