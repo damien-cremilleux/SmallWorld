@@ -41,6 +41,7 @@ namespace Wpf_SmallWorld
 
         private void ChargerPartie(object sender, RoutedEventArgs e)
         {
+            
             this.joueurs.Visibility = Visibility.Collapsed;
             this.carte.Visibility = Visibility.Collapsed;
             
@@ -61,7 +62,7 @@ namespace Wpf_SmallWorld
                 string filename = dlg.FileName;
                 Partie sauv = partie.charger(filename);
                 // Lancement du jeu 
-                PageJeu jeu = new PageJeu(partie);
+                PageJeu jeu = new PageJeu(sauv);
                 this.Content = jeu;
             }
         }

@@ -499,12 +499,12 @@ namespace SmallWorld
         }
 
         /**
-         * @fn suggererCase()
-         * @brief Suggère les cases de déplacement pour une unité
+         * @fn suggererCaseNonPossible()
+         * @brief Suggère les cases de déplacement impossible pour une unité
          * 
-         * @return List<Coordonnee> la liste des coordonnées possibles
+         * @return List<Coordonnee> la liste des coordonnées impossibles
          */
-        public List<Coordonnees> suggererCase()
+        public List<Coordonnees> suggererCaseNonPossible()
         {
             List<Coordonnees> listeRes = new List<Coordonnees>();
             int i, j;
@@ -513,8 +513,8 @@ namespace SmallWorld
                 for (j = 0; j < TailleCarteJeu; j++)
                 {
     
-                    if(TabDeplacement[i* TailleCarteJeu + j] > 1)
-                        listeRes.Add(new Coordonnees(i,j);
+                    if(TabDeplacement[i* TailleCarteJeu + j] < 2)
+                        listeRes.Add(new Coordonnees(i,j));
                 }
             }
             
@@ -537,7 +537,7 @@ namespace SmallWorld
                 {
     
                     if(TabDeplacement[i* TailleCarteJeu + j] > 2)
-                        listeRes.Add(new Coordonnees(i,j);
+                        listeRes.Add(new Coordonnees(i,j));
                 }
             }
             
