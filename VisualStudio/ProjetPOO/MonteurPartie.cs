@@ -371,10 +371,17 @@ namespace SmallWorld
                     Partie.ListeJoueurs[i].ListeUnite[j].TabDeplacement = wrapperAlgo.creerTab(Nb_case);
                     Partie.ListeJoueurs[i].ListeUnite[j].TabCout = wrapperAlgo.creerTabDouble(Nb_case);
                     Partie.ListeJoueurs[i].ListeUnite[j].calculerDeplacement();
+                    Partie.ListeJoueurs[i].ListeUnite[j].passerSonTour();
                 }
 
                 //On met à jour les points de victoire du joueur
                 Partie.ListeJoueurs[i].calculerPointVictoire();
+            }
+
+            //Les unités du joueur en cours peuvent se déplacer
+            foreach (Unite u in Partie.ListeJoueurs[Partie.IndiceJoueurEnCours].ListeUnite)
+            {
+                u.nouveauTour();
             }
         }
     }

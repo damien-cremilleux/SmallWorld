@@ -1,7 +1,14 @@
 var searchData=
 [
+  ['indicejoueurencours',['IndiceJoueurEnCours',['../class_small_world_1_1_partie.html#ad122f7f50be9c63dc86670c0776c7207',1,'SmallWorld::Partie']]],
+  ['indicejoueurinitial',['IndiceJoueurInitial',['../class_small_world_1_1_partie.html#a90980cb948b814d74f05f97695e222f7',1,'SmallWorld::Partie']]],
+  ['initialisernombretour',['initialiserNombreTour',['../interface_small_world_1_1_inter_monteur_partie.html#afa1b718338a15b4dd0deb5d817f3484c',1,'SmallWorld.InterMonteurPartie.initialiserNombreTour()'],['../class_small_world_1_1_monteur_partie.html#a8bfe459f9efcb0561a7612e720e0a373',1,'SmallWorld.MonteurPartie.initialiserNombreTour()']]],
+  ['instance_5ffabcase',['Instance_FabCase',['../class_small_world_1_1_fabrique_case.html#aede9c2f05ad6f6568af7ee8752b62438',1,'SmallWorld::FabriqueCase']]],
+  ['instance_5ffabpeuple',['Instance_FabPeuple',['../class_small_world_1_1_fabrique_peuple.html#a2d46d0022cccca8e6fa8a44c097aea6a',1,'SmallWorld::FabriquePeuple']]],
   ['intercarte',['InterCarte',['../interface_small_world_1_1_inter_carte.html',1,'SmallWorld']]],
   ['intercase',['InterCase',['../interface_small_world_1_1_inter_case.html',1,'SmallWorld']]],
+  ['intercoordonnees',['InterCoordonnees',['../interface_inter_coordonnees.html',1,'']]],
+  ['intercordonnees',['InterCordonnees',['../interface_small_world_1_1_inter_cordonnees.html',1,'SmallWorld']]],
   ['intercreateurpartie',['InterCreateurPartie',['../interface_small_world_1_1_inter_createur_partie.html',1,'SmallWorld']]],
   ['interdesert',['InterDesert',['../interface_small_world_1_1_inter_desert.html',1,'SmallWorld']]],
   ['intereau',['InterEau',['../interface_small_world_1_1_inter_eau.html',1,'SmallWorld']]],

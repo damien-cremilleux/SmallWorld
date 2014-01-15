@@ -94,7 +94,7 @@ $(document).ready(function(){initNavTree('interface_small_world_1_1_inter_unite.
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Properties</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Properties</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -111,39 +111,267 @@ $(document).ready(function(){initNavTree('interface_small_world_1_1_inter_unite.
 <div class="title">SmallWorld.InterUnite Interface Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>interface pour les unités  
+ <a href="interface_small_world_1_1_inter_unite.html#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for SmallWorld.InterUnite:</div>
 <div class="dyncontent">
  <div class="center">
   <img src="interface_small_world_1_1_inter_unite.png" usemap="#SmallWorld.InterUnite_map" alt=""/>
   <map id="SmallWorld.InterUnite_map" name="SmallWorld.InterUnite_map">
-<area href="interface_small_world_1_1_inter_unite_gauloise.html" alt="SmallWorld.InterUniteGauloise" shape="rect" coords="0,56,181,80"/>
-<area href="interface_small_world_1_1_inter_unite_naine.html" alt="SmallWorld.InterUniteNaine" shape="rect" coords="191,56,372,80"/>
-<area href="interface_small_world_1_1_inter_unite_viking.html" alt="SmallWorld.InterUniteViking" shape="rect" coords="382,56,563,80"/>
-<area href="class_small_world_1_1_unite.html" alt="SmallWorld.Unite" shape="rect" coords="764,56,945,80"/>
-<area href="class_small_world_1_1_unite_gauloise.html" alt="SmallWorld.UniteGauloise" shape="rect" coords="0,112,181,136"/>
-<area href="class_small_world_1_1_unite_naine.html" alt="SmallWorld.UniteNaine" shape="rect" coords="191,112,372,136"/>
-<area href="class_small_world_1_1_unite_viking.html" alt="SmallWorld.UniteViking" shape="rect" coords="382,112,563,136"/>
-<area href="class_small_world_1_1_unite_gauloise.html" alt="SmallWorld.UniteGauloise" shape="rect" coords="573,112,754,136"/>
-<area href="class_small_world_1_1_unite_naine.html" alt="SmallWorld.UniteNaine" shape="rect" coords="764,112,945,136"/>
-<area href="class_small_world_1_1_unite_viking.html" alt="SmallWorld.UniteViking" shape="rect" coords="955,112,1136,136"/>
+<area href="interface_small_world_1_1_inter_unite_gauloise.html" title="Interface pour les unités gauloises. " alt="SmallWorld.InterUniteGauloise" shape="rect" coords="0,56,181,80"/>
+<area href="interface_small_world_1_1_inter_unite_naine.html" title="Interface pour les unités naines. " alt="SmallWorld.InterUniteNaine" shape="rect" coords="191,56,372,80"/>
+<area href="interface_small_world_1_1_inter_unite_viking.html" title="Interface pour les unités viking. " alt="SmallWorld.InterUniteViking" shape="rect" coords="382,56,563,80"/>
+<area href="class_small_world_1_1_unite.html" title="Classe abstraite pour les unités. " alt="SmallWorld.Unite" shape="rect" coords="764,56,945,80"/>
+<area href="class_small_world_1_1_unite_gauloise.html" title="Classe pour les unités gauloises. " alt="SmallWorld.UniteGauloise" shape="rect" coords="0,112,181,136"/>
+<area href="class_small_world_1_1_unite_naine.html" title="Classe pour les unités naines. " alt="SmallWorld.UniteNaine" shape="rect" coords="191,112,372,136"/>
+<area href="class_small_world_1_1_unite_viking.html" title="Classe pour les unités viking. " alt="SmallWorld.UniteViking" shape="rect" coords="382,112,563,136"/>
+<area href="class_small_world_1_1_unite_gauloise.html" title="Classe pour les unités gauloises. " alt="SmallWorld.UniteGauloise" shape="rect" coords="573,112,754,136"/>
+<area href="class_small_world_1_1_unite_naine.html" title="Classe pour les unités naines. " alt="SmallWorld.UniteNaine" shape="rect" coords="764,112,945,136"/>
+<area href="class_small_world_1_1_unite_viking.html" title="Classe pour les unités viking. " alt="SmallWorld.UniteViking" shape="rect" coords="955,112,1136,136"/>
 </map>
  </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a1a5d372f4b0e3df0729649ea0ffef763"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1a5d372f4b0e3df0729649ea0ffef763"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>attaquer</b> ()</td></tr>
-<tr class="separator:a1a5d372f4b0e3df0729649ea0ffef763"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae1da4b8c1f3b73e7a24485681466eae7"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae1da4b8c1f3b73e7a24485681466eae7"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>seDeplacer</b> ()</td></tr>
-<tr class="separator:ae1da4b8c1f3b73e7a24485681466eae7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a85f255866facbcac8eadf00c228f2835"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a85f255866facbcac8eadf00c228f2835"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>passerSonTour</b> ()</td></tr>
-<tr class="separator:a85f255866facbcac8eadf00c228f2835"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a729d769c596c3df5e0f8d1d460de4d5e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a729d769c596c3df5e0f8d1d460de4d5e"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_small_world_1_1_inter_unite.html#a729d769c596c3df5e0f8d1d460de4d5e">calculPointVictoire</a> ()</td></tr>
+<tr class="memdesc:a729d769c596c3df5e0f8d1d460de4d5e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Met à jour les points de victoire du joueur. <br/></td></tr>
+<tr class="separator:a729d769c596c3df5e0f8d1d460de4d5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9bce76356ba4531ed90ca35cc659af5f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_small_world_1_1_inter_unite.html#a9bce76356ba4531ed90ca35cc659af5f">attaquer</a> (<a class="el" href="class_small_world_1_1_unite.html">Unite</a> uniteAdverse, int nbRoundCombat)</td></tr>
+<tr class="memdesc:a9bce76356ba4531ed90ca35cc659af5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">attaquer une unité adverse, sachant le nombre de rounds  <a href="#a9bce76356ba4531ed90ca35cc659af5f">More...</a><br/></td></tr>
+<tr class="separator:a9bce76356ba4531ed90ca35cc659af5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aac3a60f40b315d1f3c1299e906ebb384"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_small_world_1_1_inter_unite.html#aac3a60f40b315d1f3c1299e906ebb384">seDeplacer</a> (int x, int y)</td></tr>
+<tr class="memdesc:aac3a60f40b315d1f3c1299e906ebb384"><td class="mdescLeft">&#160;</td><td class="mdescRight">se déplacer sur une case  <a href="#aac3a60f40b315d1f3c1299e906ebb384">More...</a><br/></td></tr>
+<tr class="separator:aac3a60f40b315d1f3c1299e906ebb384"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a28644be4f50b3370dd276a2aa274413f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_small_world_1_1_inter_unite.html#a28644be4f50b3370dd276a2aa274413f">peutSeDeplacer</a> (int x, int y)</td></tr>
+<tr class="memdesc:a28644be4f50b3370dd276a2aa274413f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indique si l'unité peut se déplacer sur une case.  <a href="#a28644be4f50b3370dd276a2aa274413f">More...</a><br/></td></tr>
+<tr class="separator:a28644be4f50b3370dd276a2aa274413f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaf0cbd85facc23d866aac19dad7f3e66"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_small_world_1_1_inter_unite.html#aaf0cbd85facc23d866aac19dad7f3e66">calculerDeplacement</a> ()</td></tr>
+<tr class="memdesc:aaf0cbd85facc23d866aac19dad7f3e66"><td class="mdescLeft">&#160;</td><td class="mdescRight">calculer les déplacements possibles  <a href="#aaf0cbd85facc23d866aac19dad7f3e66">More...</a><br/></td></tr>
+<tr class="separator:aaf0cbd85facc23d866aac19dad7f3e66"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ada8a39324c90c82eb25a978fa81b43f1"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ada8a39324c90c82eb25a978fa81b43f1"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_small_world_1_1_inter_unite.html#ada8a39324c90c82eb25a978fa81b43f1">passerSonTour</a> ()</td></tr>
+<tr class="memdesc:ada8a39324c90c82eb25a978fa81b43f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">l'unité passe son tour <br/></td></tr>
+<tr class="separator:ada8a39324c90c82eb25a978fa81b43f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a106ab0a27d4a228dbcf18c0b26f680b3"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a106ab0a27d4a228dbcf18c0b26f680b3"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_small_world_1_1_inter_unite.html#a106ab0a27d4a228dbcf18c0b26f680b3">perdreVie</a> ()</td></tr>
+<tr class="memdesc:a106ab0a27d4a228dbcf18c0b26f680b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">l'unité perd une vie <br/></td></tr>
+<tr class="separator:a106ab0a27d4a228dbcf18c0b26f680b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2c19b9dc612ee1ec4716f9993b78908d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2c19b9dc612ee1ec4716f9993b78908d"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_small_world_1_1_inter_unite.html#a2c19b9dc612ee1ec4716f9993b78908d">nouveauTour</a> ()</td></tr>
+<tr class="memdesc:a2c19b9dc612ee1ec4716f9993b78908d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Les attributs de l'unité sont mis à jour pour le nouveau tour. <br/></td></tr>
+<tr class="separator:a2c19b9dc612ee1ec4716f9993b78908d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a554b5ca4373b37e6e5ad29f3a3a381dc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_small_world_1_1_inter_unite.html#a554b5ca4373b37e6e5ad29f3a3a381dc">restaurer</a> (int *carte)</td></tr>
+<tr class="memdesc:a554b5ca4373b37e6e5ad29f3a3a381dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Restaure l'unité suite à une désérialisation.  <a href="#a554b5ca4373b37e6e5ad29f3a3a381dc">More...</a><br/></td></tr>
+<tr class="separator:a554b5ca4373b37e6e5ad29f3a3a381dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1c5011629159c486f68c015dc940406e"><td class="memItemLeft" align="right" valign="top">List&lt; <a class="el" href="class_small_world_1_1_coordonnees.html">Coordonnees</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_small_world_1_1_inter_unite.html#a1c5011629159c486f68c015dc940406e">suggererCaseNonPossible</a> ()</td></tr>
+<tr class="memdesc:a1c5011629159c486f68c015dc940406e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Suggère les cases de déplacement impossible pour une unité  <a href="#a1c5011629159c486f68c015dc940406e">More...</a><br/></td></tr>
+<tr class="separator:a1c5011629159c486f68c015dc940406e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac0016b4cfb075557c4e2bcc6a1b1876e"><td class="memItemLeft" align="right" valign="top">List&lt; <a class="el" href="class_small_world_1_1_coordonnees.html">Coordonnees</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_small_world_1_1_inter_unite.html#ac0016b4cfb075557c4e2bcc6a1b1876e">suggererCaseOptimale</a> ()</td></tr>
+<tr class="memdesc:ac0016b4cfb075557c4e2bcc6a1b1876e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Suggère les cases de déplacement pour une unité qui sont optimales.  <a href="#ac0016b4cfb075557c4e2bcc6a1b1876e">More...</a><br/></td></tr>
+<tr class="separator:ac0016b4cfb075557c4e2bcc6a1b1876e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>interface pour les unités </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a9bce76356ba4531ed90ca35cc659af5f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">SmallWorld.InterUnite.attaquer </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_small_world_1_1_unite.html">Unite</a>&#160;</td>
+          <td class="paramname"><em>uniteAdverse</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>nbRoundCombat</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>attaquer une unité adverse, sachant le nombre de rounds </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname"><a class="el" href="class_small_world_1_1_unite.html" title="Classe abstraite pour les unités. ">Unite</a></td><td><b>uniteAdverse</b> l'unité à combattre </td></tr>
+    <tr><td class="paramname">int</td><td><b>nbRoundCombat</b> le nombre de round </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implemented in <a class="el" href="class_small_world_1_1_unite.html#af370920ab6c2b9478f0c12d7f1d22638">SmallWorld.Unite</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aaf0cbd85facc23d866aac19dad7f3e66"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">SmallWorld.InterUnite.calculerDeplacement </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>calculer les déplacements possibles </p>
+<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
+
+<p>Implemented in <a class="el" href="class_small_world_1_1_unite_viking.html#a7df92edec9b221dc96be2cf60d19f06f">SmallWorld.UniteViking</a>, <a class="el" href="class_small_world_1_1_unite_naine.html#a487e42750e74fbf551d1e55b48101c72">SmallWorld.UniteNaine</a>, <a class="el" href="class_small_world_1_1_unite_gauloise.html#a2fce92f8a4957a46efae89b63277b073">SmallWorld.UniteGauloise</a>, and <a class="el" href="class_small_world_1_1_unite.html#a88ea1d2d5962c08ffc15422a2f2c7bbf">SmallWorld.Unite</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a28644be4f50b3370dd276a2aa274413f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">SmallWorld.InterUnite.peutSeDeplacer </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Indique si l'unité peut se déplacer sur une case. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">int</td><td><b>x</b> l'abscisse demandée </td></tr>
+    <tr><td class="paramname">int</td><td><b>y</b> l'ordonnée demandée </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>bool vrai si l'unité peut se déplacer, faux sinon </dd></dl>
+
+<p>Implemented in <a class="el" href="class_small_world_1_1_unite.html#a26f648e9ca7776ade3e8c335644ed8f1">SmallWorld.Unite</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a554b5ca4373b37e6e5ad29f3a3a381dc"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">SmallWorld.InterUnite.restaurer </td>
+          <td>(</td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>carte</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Restaure l'unité suite à une désérialisation. </p>
+<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
+
+<p>Implemented in <a class="el" href="class_small_world_1_1_unite.html#a6b703c7f442f922c6742f17d96bd2bb3">SmallWorld.Unite</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aac3a60f40b315d1f3c1299e906ebb384"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">SmallWorld.InterUnite.seDeplacer </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>se déplacer sur une case </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">int</td><td><b>x</b> l'abscisse demandée </td></tr>
+    <tr><td class="paramname">int</td><td><b>y</b> l'ordinnée demandée </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
+
+<p>Implemented in <a class="el" href="class_small_world_1_1_unite.html#abc3a49225b122d3dc3579883d433d300">SmallWorld.Unite</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a1c5011629159c486f68c015dc940406e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">SmallWorld.InterUnite.suggererCaseNonPossible </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Suggère les cases de déplacement impossible pour une unité </p>
+<dl class="section return"><dt>Returns</dt><dd>List&lt;Coordonnee&gt; la liste des coordonnées impossibles </dd></dl>
+
+<p>Implemented in <a class="el" href="class_small_world_1_1_unite.html#a79b7bc972bf0b76647be702cf94965fc">SmallWorld.Unite</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ac0016b4cfb075557c4e2bcc6a1b1876e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">SmallWorld.InterUnite.suggererCaseOptimale </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Suggère les cases de déplacement pour une unité qui sont optimales. </p>
+<dl class="section return"><dt>Returns</dt><dd>List&lt;Coordonnee&gt; la liste des coordonnées possibles </dd></dl>
+
+<p>Implemented in <a class="el" href="class_small_world_1_1_unite.html#a2da8fe0e076dbfccf553b6ecb6c9fc04">SmallWorld.Unite</a>.</p>
+
+</div>
+</div>
 <hr/>The documentation for this interface was generated from the following file:<ul>
-<li>C:/Users/damienc/Documents/GitHub/SmallWorld/VisualStudio/ProjetPOO/Unite.cs</li>
+<li>C:/Users/damienc/Documents/GitHub/SmallWorld/VisualStudio/ProjetPOO/<a class="el" href="_unite_8cs.html">Unite.cs</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -151,7 +379,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>passerSonTour</b> ()<
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_small_world.html">SmallWorld</a></li><li class="navelem"><a class="el" href="interface_small_world_1_1_inter_unite.html">InterUnite</a></li>
-    <li class="footer">Generated on Sun Dec 15 2013 17:32:55 for SmallWorld by
+    <li class="footer">Generated on Wed Jan 15 2014 15:23:44 for SmallWorld by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.5 </li>
   </ul>

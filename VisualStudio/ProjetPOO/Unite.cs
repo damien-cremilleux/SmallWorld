@@ -79,18 +79,18 @@ namespace SmallWorld
          */
         void perdreVie();
 
-       /**
-        * @fn nouveauTour()
-        * @brief Les attributs de l'unité sont mis à jour pour le nouveau tour
-        */
+        /**
+         * @fn nouveauTour()
+         * @brief Les attributs de l'unité sont mis à jour pour le nouveau tour
+         */
         void nouveauTour();
 
-         /**
-         * @fn restaurer()
-         * @brief Restaure l'unité suite à une désérialisation
-         * 
-         * @return void
-         */
+        /**
+        * @fn restaurer()
+        * @brief Restaure l'unité suite à une désérialisation
+        * 
+        * @return void
+        */
         void restaurer(int* carte);
 
         /**
@@ -381,6 +381,10 @@ namespace SmallWorld
             set
             {
                 passeSonTour = value;
+                if (PasseSonTour)
+                {
+                    PointDeDeplacement = 0;
+                }
             }
         }
 
@@ -401,6 +405,19 @@ namespace SmallWorld
             PointDeDeplacement = Constantes.UNITE_POINT_DEPL;
             PasseSonTour = false;
             wrapperAlgo = new WrapperAlgo();
+        }
+
+        /**
+         * @fn ~Unite() 
+         * @brief Destructeur d'une unité
+         * 
+         * @return void
+         */
+        ~Unite()
+        {
+            wrapperAlgo.libererTab(TabCarte);
+            wrapperAlgo.libererTabDouble(TabCout);
+            wrapperAlgo.libererTab(TabDeplacement);
         }
 
         /**
@@ -567,7 +584,7 @@ namespace SmallWorld
                 for (j = 0; j < TailleCarteJeu; j++)
                 {
                     if (TabDeplacement[i * TailleCarteJeu + j] < 2)
-                            listeRes.Add(new Coordonnees(i, j));
+                        listeRes.Add(new Coordonnees(i, j));
                 }
             }
 

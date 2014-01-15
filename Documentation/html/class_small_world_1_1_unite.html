@@ -94,7 +94,7 @@ $(document).ready(function(){initNavTree('class_small_world_1_1_unite.html','');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Properties</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Properties</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -106,69 +106,362 @@ $(document).ready(function(){initNavTree('class_small_world_1_1_unite.html','');
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pro-attribs">Protected Attributes</a> &#124;
 <a href="#properties">Properties</a> &#124;
 <a href="class_small_world_1_1_unite-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">SmallWorld.Unite Class Reference</div>  </div>
+<div class="title">SmallWorld.Unite Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Classe abstraite pour les unités.  
+ <a href="class_small_world_1_1_unite.html#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for SmallWorld.Unite:</div>
 <div class="dyncontent">
  <div class="center">
   <img src="class_small_world_1_1_unite.png" usemap="#SmallWorld.Unite_map" alt=""/>
   <map id="SmallWorld.Unite_map" name="SmallWorld.Unite_map">
-<area href="interface_small_world_1_1_inter_unite.html" alt="SmallWorld.InterUnite" shape="rect" coords="166,0,322,24"/>
-<area href="class_small_world_1_1_unite_gauloise.html" alt="SmallWorld.UniteGauloise" shape="rect" coords="0,112,156,136"/>
-<area href="class_small_world_1_1_unite_naine.html" alt="SmallWorld.UniteNaine" shape="rect" coords="166,112,322,136"/>
-<area href="class_small_world_1_1_unite_viking.html" alt="SmallWorld.UniteViking" shape="rect" coords="332,112,488,136"/>
+<area href="interface_small_world_1_1_inter_unite.html" title="interface pour les unités " alt="SmallWorld.InterUnite" shape="rect" coords="166,0,322,24"/>
+<area href="class_small_world_1_1_unite_gauloise.html" title="Classe pour les unités gauloises. " alt="SmallWorld.UniteGauloise" shape="rect" coords="0,112,156,136"/>
+<area href="class_small_world_1_1_unite_naine.html" title="Classe pour les unités naines. " alt="SmallWorld.UniteNaine" shape="rect" coords="166,112,322,136"/>
+<area href="class_small_world_1_1_unite_viking.html" title="Classe pour les unités viking. " alt="SmallWorld.UniteViking" shape="rect" coords="332,112,488,136"/>
 </map>
  </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a5e792891c8194bd5344cf1d3a897226a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5e792891c8194bd5344cf1d3a897226a"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>attaquer</b> ()</td></tr>
-<tr class="separator:a5e792891c8194bd5344cf1d3a897226a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1875521bf39ac2aff471f22d36dc232a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1875521bf39ac2aff471f22d36dc232a"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>seDeplacer</b> ()</td></tr>
-<tr class="separator:a1875521bf39ac2aff471f22d36dc232a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac29b97bf257cf976f9bfa7cc10db5d10"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac29b97bf257cf976f9bfa7cc10db5d10"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>passerSonTour</b> ()</td></tr>
-<tr class="separator:ac29b97bf257cf976f9bfa7cc10db5d10"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a42531987ed9bb51d96727f2b066b53fa"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a42531987ed9bb51d96727f2b066b53fa"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>perdreVie</b> ()</td></tr>
-<tr class="separator:a42531987ed9bb51d96727f2b066b53fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aeb8d0a0147899c02dd175a80b7e227e6"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aeb8d0a0147899c02dd175a80b7e227e6"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>mourir</b> ()</td></tr>
-<tr class="separator:aeb8d0a0147899c02dd175a80b7e227e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aba2c2f3a6b478fc56ecd87c508691898"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_small_world_1_1_unite.html#aba2c2f3a6b478fc56ecd87c508691898">Unite</a> ()</td></tr>
+<tr class="memdesc:aba2c2f3a6b478fc56ecd87c508691898"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructeur d'une nouvelle unité  <a href="#aba2c2f3a6b478fc56ecd87c508691898">More...</a><br/></td></tr>
+<tr class="separator:aba2c2f3a6b478fc56ecd87c508691898"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6031713608e138c55f064935f8b47e22"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6031713608e138c55f064935f8b47e22"></a>
+abstract void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_small_world_1_1_unite.html#a6031713608e138c55f064935f8b47e22">calculPointVictoire</a> ()</td></tr>
+<tr class="memdesc:a6031713608e138c55f064935f8b47e22"><td class="mdescLeft">&#160;</td><td class="mdescRight">Met à jour les points de victoire du joueur. <br/></td></tr>
+<tr class="separator:a6031713608e138c55f064935f8b47e22"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af370920ab6c2b9478f0c12d7f1d22638"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_small_world_1_1_unite.html#af370920ab6c2b9478f0c12d7f1d22638">attaquer</a> (<a class="el" href="class_small_world_1_1_unite.html">Unite</a> uniteAdverse, int nbRoundCombat)</td></tr>
+<tr class="memdesc:af370920ab6c2b9478f0c12d7f1d22638"><td class="mdescLeft">&#160;</td><td class="mdescRight">attaquer une unité adverse, sachant le nombre de rounds  <a href="#af370920ab6c2b9478f0c12d7f1d22638">More...</a><br/></td></tr>
+<tr class="separator:af370920ab6c2b9478f0c12d7f1d22638"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abc3a49225b122d3dc3579883d433d300"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_small_world_1_1_unite.html#abc3a49225b122d3dc3579883d433d300">seDeplacer</a> (int x, int y)</td></tr>
+<tr class="memdesc:abc3a49225b122d3dc3579883d433d300"><td class="mdescLeft">&#160;</td><td class="mdescRight">se déplacer sur une case, uniquement si le déplacement est possible  <a href="#abc3a49225b122d3dc3579883d433d300">More...</a><br/></td></tr>
+<tr class="separator:abc3a49225b122d3dc3579883d433d300"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a26f648e9ca7776ade3e8c335644ed8f1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_small_world_1_1_unite.html#a26f648e9ca7776ade3e8c335644ed8f1">peutSeDeplacer</a> (int x, int y)</td></tr>
+<tr class="memdesc:a26f648e9ca7776ade3e8c335644ed8f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indique si l'unité peut se déplacer sur une case.  <a href="#a26f648e9ca7776ade3e8c335644ed8f1">More...</a><br/></td></tr>
+<tr class="separator:a26f648e9ca7776ade3e8c335644ed8f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a88ea1d2d5962c08ffc15422a2f2c7bbf"><td class="memItemLeft" align="right" valign="top">abstract void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_small_world_1_1_unite.html#a88ea1d2d5962c08ffc15422a2f2c7bbf">calculerDeplacement</a> ()</td></tr>
+<tr class="memdesc:a88ea1d2d5962c08ffc15422a2f2c7bbf"><td class="mdescLeft">&#160;</td><td class="mdescRight">calculer les déplacements possibles  <a href="#a88ea1d2d5962c08ffc15422a2f2c7bbf">More...</a><br/></td></tr>
+<tr class="separator:a88ea1d2d5962c08ffc15422a2f2c7bbf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a56cc6f226c95d7510748dd4c3a948076"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a56cc6f226c95d7510748dd4c3a948076"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_small_world_1_1_unite.html#a56cc6f226c95d7510748dd4c3a948076">passerSonTour</a> ()</td></tr>
+<tr class="memdesc:a56cc6f226c95d7510748dd4c3a948076"><td class="mdescLeft">&#160;</td><td class="mdescRight">l'unité passe son tour <br/></td></tr>
+<tr class="separator:a56cc6f226c95d7510748dd4c3a948076"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2a1197337d396419de11c69692bf446c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2a1197337d396419de11c69692bf446c"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_small_world_1_1_unite.html#a2a1197337d396419de11c69692bf446c">perdreVie</a> ()</td></tr>
+<tr class="memdesc:a2a1197337d396419de11c69692bf446c"><td class="mdescLeft">&#160;</td><td class="mdescRight">l'unité perd une vie <br/></td></tr>
+<tr class="separator:a2a1197337d396419de11c69692bf446c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aab501a61112d2876a1065ebf2e99db2c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aab501a61112d2876a1065ebf2e99db2c"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_small_world_1_1_unite.html#aab501a61112d2876a1065ebf2e99db2c">nouveauTour</a> ()</td></tr>
+<tr class="memdesc:aab501a61112d2876a1065ebf2e99db2c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Les attributs de l'unité sont mis à jour pour le nouveau tour. <br/></td></tr>
+<tr class="separator:aab501a61112d2876a1065ebf2e99db2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6b703c7f442f922c6742f17d96bd2bb3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_small_world_1_1_unite.html#a6b703c7f442f922c6742f17d96bd2bb3">restaurer</a> (int *carte)</td></tr>
+<tr class="memdesc:a6b703c7f442f922c6742f17d96bd2bb3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Restaure l'unité suite à une désérialisation.  <a href="#a6b703c7f442f922c6742f17d96bd2bb3">More...</a><br/></td></tr>
+<tr class="separator:a6b703c7f442f922c6742f17d96bd2bb3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a79b7bc972bf0b76647be702cf94965fc"><td class="memItemLeft" align="right" valign="top">List&lt; <a class="el" href="class_small_world_1_1_coordonnees.html">Coordonnees</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_small_world_1_1_unite.html#a79b7bc972bf0b76647be702cf94965fc">suggererCaseNonPossible</a> ()</td></tr>
+<tr class="memdesc:a79b7bc972bf0b76647be702cf94965fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Suggère les cases de déplacement impossible pour une unité  <a href="#a79b7bc972bf0b76647be702cf94965fc">More...</a><br/></td></tr>
+<tr class="separator:a79b7bc972bf0b76647be702cf94965fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2da8fe0e076dbfccf553b6ecb6c9fc04"><td class="memItemLeft" align="right" valign="top">List&lt; <a class="el" href="class_small_world_1_1_coordonnees.html">Coordonnees</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_small_world_1_1_unite.html#a2da8fe0e076dbfccf553b6ecb6c9fc04">suggererCaseOptimale</a> ()</td></tr>
+<tr class="memdesc:a2da8fe0e076dbfccf553b6ecb6c9fc04"><td class="mdescLeft">&#160;</td><td class="mdescRight">Suggère les cases de déplacement pour une unité qui sont optimales.  <a href="#a2da8fe0e076dbfccf553b6ecb6c9fc04">More...</a><br/></td></tr>
+<tr class="separator:a2da8fe0e076dbfccf553b6ecb6c9fc04"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
+Protected Attributes</h2></td></tr>
+<tr class="memitem:aa61e8641b297e41d476c208b1167f5af"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa61e8641b297e41d476c208b1167f5af"></a>
+int *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_small_world_1_1_unite.html#aa61e8641b297e41d476c208b1167f5af">tabCarte</a></td></tr>
+<tr class="memdesc:aa61e8641b297e41d476c208b1167f5af"><td class="mdescLeft">&#160;</td><td class="mdescRight">Attribut <b>tabCarte</b>, contient la carte sous forme d'un tableau d'int. <br/></td></tr>
+<tr class="separator:aa61e8641b297e41d476c208b1167f5af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a81c19be68e5ba1ced9da2807ff6d8b1d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a81c19be68e5ba1ced9da2807ff6d8b1d"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_small_world_1_1_unite.html#a81c19be68e5ba1ced9da2807ff6d8b1d">pointDeVictoire</a></td></tr>
+<tr class="memdesc:a81c19be68e5ba1ced9da2807ff6d8b1d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Attribut <b>pointDeVictoire</b>, contient le nombre de victoire apporté par de l'unité <br/></td></tr>
+<tr class="separator:a81c19be68e5ba1ced9da2807ff6d8b1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae31420a2b11cfa8c18458c1b74a3362f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae31420a2b11cfa8c18458c1b74a3362f"></a>
+WrapperAlgo&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_small_world_1_1_unite.html#ae31420a2b11cfa8c18458c1b74a3362f">wrapperAlgo</a></td></tr>
+<tr class="memdesc:ae31420a2b11cfa8c18458c1b74a3362f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Attribut <b>wrapperAlgo</b>, le wrapper pour l'unité <br/></td></tr>
+<tr class="separator:ae31420a2b11cfa8c18458c1b74a3362f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
 Properties</h2></td></tr>
-<tr class="memitem:a5026a95644f7ad6ba98da19b630f8c4c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5026a95644f7ad6ba98da19b630f8c4c"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>position</b><code> [get, set]</code></td></tr>
-<tr class="separator:a5026a95644f7ad6ba98da19b630f8c4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a43272b5b15924e0c4ed97d015da1ad3f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a43272b5b15924e0c4ed97d015da1ad3f"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>pointDeVie</b><code> [get, set]</code></td></tr>
-<tr class="separator:a43272b5b15924e0c4ed97d015da1ad3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0d8d8e328ff57a6b0b996619b4741a20"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0d8d8e328ff57a6b0b996619b4741a20"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>pointDeDeplacement</b><code> [get, set]</code></td></tr>
-<tr class="separator:a0d8d8e328ff57a6b0b996619b4741a20"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a81c19be68e5ba1ced9da2807ff6d8b1d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a81c19be68e5ba1ced9da2807ff6d8b1d"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>pointDeVictoire</b><code> [get, set]</code></td></tr>
-<tr class="separator:a81c19be68e5ba1ced9da2807ff6d8b1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afbb0da9c7ffe9df0ee6752d1b0c46737"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="afbb0da9c7ffe9df0ee6752d1b0c46737"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>pointAttaque</b><code> [get, set]</code></td></tr>
-<tr class="separator:afbb0da9c7ffe9df0ee6752d1b0c46737"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad6f9b4f0416b0f7b2c441ea08a2e1bdf"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad6f9b4f0416b0f7b2c441ea08a2e1bdf"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>pointDefense</b><code> [get, set]</code></td></tr>
-<tr class="separator:ad6f9b4f0416b0f7b2c441ea08a2e1bdf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0b805719ab3e147e8a0229323ae3b96e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0b805719ab3e147e8a0229323ae3b96e"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>passeSonTour</b><code> [get, set]</code></td></tr>
-<tr class="separator:a0b805719ab3e147e8a0229323ae3b96e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3b12779dff29ce85e35967fae5f4d93e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3b12779dff29ce85e35967fae5f4d93e"></a>
+<a class="el" href="class_small_world_1_1_coordonnees.html">Coordonnees</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_small_world_1_1_unite.html#a3b12779dff29ce85e35967fae5f4d93e">Position</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a3b12779dff29ce85e35967fae5f4d93e"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="namespace_small_world_1_1_properties.html">Properties</a> pour l'attribut position. <br/></td></tr>
+<tr class="separator:a3b12779dff29ce85e35967fae5f4d93e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a744556057d849296cc840267a48e45e1"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a744556057d849296cc840267a48e45e1"></a>
+int *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_small_world_1_1_unite.html#a744556057d849296cc840267a48e45e1">TabCarte</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a744556057d849296cc840267a48e45e1"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="namespace_small_world_1_1_properties.html">Properties</a> pour l'attribut tabCarte. <br/></td></tr>
+<tr class="separator:a744556057d849296cc840267a48e45e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8b7d8afdea363bd7e6ee1a4cee977888"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8b7d8afdea363bd7e6ee1a4cee977888"></a>
+int *&#160;</td><td class="memItemRight" valign="bottom"><b>TabDeplacement</b><code> [get, set]</code></td></tr>
+<tr class="separator:a8b7d8afdea363bd7e6ee1a4cee977888"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a46e4829875af400b2d7aceab10c2011d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a46e4829875af400b2d7aceab10c2011d"></a>
+double *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_small_world_1_1_unite.html#a46e4829875af400b2d7aceab10c2011d">TabCout</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a46e4829875af400b2d7aceab10c2011d"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="namespace_small_world_1_1_properties.html">Properties</a> pour l'attribut tabCout. <br/></td></tr>
+<tr class="separator:a46e4829875af400b2d7aceab10c2011d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a61de8ce92b5d7e2ff64e360b86f25cd1"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a61de8ce92b5d7e2ff64e360b86f25cd1"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_small_world_1_1_unite.html#a61de8ce92b5d7e2ff64e360b86f25cd1">TailleCarteJeu</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a61de8ce92b5d7e2ff64e360b86f25cd1"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="namespace_small_world_1_1_properties.html">Properties</a> pour l'attribut tailleCarteJeu. <br/></td></tr>
+<tr class="separator:a61de8ce92b5d7e2ff64e360b86f25cd1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5c1545b2134dd0b7e9a7e6e1d710dfd2"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5c1545b2134dd0b7e9a7e6e1d710dfd2"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_small_world_1_1_unite.html#a5c1545b2134dd0b7e9a7e6e1d710dfd2">PointDeVie</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a5c1545b2134dd0b7e9a7e6e1d710dfd2"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="namespace_small_world_1_1_properties.html">Properties</a> pour l'attribut pointDeVie. <br/></td></tr>
+<tr class="separator:a5c1545b2134dd0b7e9a7e6e1d710dfd2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af101d0b5d3ac4a1eaf958c1be731d085"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af101d0b5d3ac4a1eaf958c1be731d085"></a>
+double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_small_world_1_1_unite.html#af101d0b5d3ac4a1eaf958c1be731d085">PointDeDeplacement</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:af101d0b5d3ac4a1eaf958c1be731d085"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="namespace_small_world_1_1_properties.html">Properties</a> pour l'attribut pointDeDeplacement. <br/></td></tr>
+<tr class="separator:af101d0b5d3ac4a1eaf958c1be731d085"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aea299fd0962772d5418e6ec8b359b544"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aea299fd0962772d5418e6ec8b359b544"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_small_world_1_1_unite.html#aea299fd0962772d5418e6ec8b359b544">PointDeVictoire</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:aea299fd0962772d5418e6ec8b359b544"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="namespace_small_world_1_1_properties.html">Properties</a> pour l'attribut pointDeVictoire. <br/></td></tr>
+<tr class="separator:aea299fd0962772d5418e6ec8b359b544"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afed0ebd09d1a0f37b6f01bf7acbb384a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="afed0ebd09d1a0f37b6f01bf7acbb384a"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_small_world_1_1_unite.html#afed0ebd09d1a0f37b6f01bf7acbb384a">PointAttaque</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:afed0ebd09d1a0f37b6f01bf7acbb384a"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="namespace_small_world_1_1_properties.html">Properties</a> pour l'attribut pointAttaque. <br/></td></tr>
+<tr class="separator:afed0ebd09d1a0f37b6f01bf7acbb384a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2e6e785241b1a07e79ff2a256bf1bf28"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2e6e785241b1a07e79ff2a256bf1bf28"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_small_world_1_1_unite.html#a2e6e785241b1a07e79ff2a256bf1bf28">PointDefense</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a2e6e785241b1a07e79ff2a256bf1bf28"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="namespace_small_world_1_1_properties.html">Properties</a> pour l'attribut pointDefense. <br/></td></tr>
+<tr class="separator:a2e6e785241b1a07e79ff2a256bf1bf28"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9d7091508a922ab252852f943e728006"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9d7091508a922ab252852f943e728006"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_small_world_1_1_unite.html#a9d7091508a922ab252852f943e728006">PasseSonTour</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a9d7091508a922ab252852f943e728006"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="namespace_small_world_1_1_properties.html">Properties</a> pour l'attribut passeSonTour. <br/></td></tr>
+<tr class="separator:a9d7091508a922ab252852f943e728006"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Classe abstraite pour les unités. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="aba2c2f3a6b478fc56ecd87c508691898"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">SmallWorld.Unite.Unite </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Constructeur d'une nouvelle unité </p>
+<p>Créé une nouvelle unité et initialise les différentes caractéristiques de celle-ci</p>
+<dl class="section return"><dt>Returns</dt><dd>la nouvelle unité </dd></dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="af370920ab6c2b9478f0c12d7f1d22638"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">SmallWorld.Unite.attaquer </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_small_world_1_1_unite.html">Unite</a>&#160;</td>
+          <td class="paramname"><em>uniteAdverse</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>nbRoundCombat</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>attaquer une unité adverse, sachant le nombre de rounds </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname"><a class="el" href="class_small_world_1_1_unite.html" title="Classe abstraite pour les unités. ">Unite</a></td><td><b>uniteAdverse</b> l'unité à combattre </td></tr>
+    <tr><td class="paramname">int</td><td><b>nbRoundCombat</b> le nombre de round </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implements <a class="el" href="interface_small_world_1_1_inter_unite.html#a9bce76356ba4531ed90ca35cc659af5f">SmallWorld.InterUnite</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a88ea1d2d5962c08ffc15422a2f2c7bbf"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">SmallWorld.Unite.calculerDeplacement </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>calculer les déplacements possibles </p>
+<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
+
+<p>Implements <a class="el" href="interface_small_world_1_1_inter_unite.html#aaf0cbd85facc23d866aac19dad7f3e66">SmallWorld.InterUnite</a>.</p>
+
+<p>Implemented in <a class="el" href="class_small_world_1_1_unite_viking.html#a7df92edec9b221dc96be2cf60d19f06f">SmallWorld.UniteViking</a>, <a class="el" href="class_small_world_1_1_unite_naine.html#a487e42750e74fbf551d1e55b48101c72">SmallWorld.UniteNaine</a>, and <a class="el" href="class_small_world_1_1_unite_gauloise.html#a2fce92f8a4957a46efae89b63277b073">SmallWorld.UniteGauloise</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a26f648e9ca7776ade3e8c335644ed8f1"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">SmallWorld.Unite.peutSeDeplacer </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Indique si l'unité peut se déplacer sur une case. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">int</td><td><b>x</b> l'abscisse demandée </td></tr>
+    <tr><td class="paramname">int</td><td><b>y</b> l'ordonnée demandée </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>bool vrai si l'unité peut se déplacer, faux sinon </dd></dl>
+
+<p>Implements <a class="el" href="interface_small_world_1_1_inter_unite.html#a28644be4f50b3370dd276a2aa274413f">SmallWorld.InterUnite</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a6b703c7f442f922c6742f17d96bd2bb3"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">SmallWorld.Unite.restaurer </td>
+          <td>(</td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>carte</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Restaure l'unité suite à une désérialisation. </p>
+<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
+
+<p>Implements <a class="el" href="interface_small_world_1_1_inter_unite.html#a554b5ca4373b37e6e5ad29f3a3a381dc">SmallWorld.InterUnite</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="abc3a49225b122d3dc3579883d433d300"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">SmallWorld.Unite.seDeplacer </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>se déplacer sur une case, uniquement si le déplacement est possible </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">int</td><td><b>x</b> l'abscisse demandée </td></tr>
+    <tr><td class="paramname">int</td><td><b>y&gt;/b&gt; l'ordonnée demandée </b></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><b> bool vrai si l'unité peut se déplacer, faux sinon </b></dd></dl>
+
+<p>Implements <a class="el" href="interface_small_world_1_1_inter_unite.html#aac3a60f40b315d1f3c1299e906ebb384">SmallWorld.InterUnite</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a79b7bc972bf0b76647be702cf94965fc"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">SmallWorld.Unite.suggererCaseNonPossible </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Suggère les cases de déplacement impossible pour une unité </p>
+<dl class="section return"><dt>Returns</dt><dd>List&lt;Coordonnee&gt; la liste des coordonnées impossibles </dd></dl>
+
+<p>Implements <a class="el" href="interface_small_world_1_1_inter_unite.html#a1c5011629159c486f68c015dc940406e">SmallWorld.InterUnite</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a2da8fe0e076dbfccf553b6ecb6c9fc04"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">SmallWorld.Unite.suggererCaseOptimale </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Suggère les cases de déplacement pour une unité qui sont optimales. </p>
+<dl class="section return"><dt>Returns</dt><dd>List&lt;Coordonnee&gt; la liste des coordonnées possibles </dd></dl>
+
+<p>Implements <a class="el" href="interface_small_world_1_1_inter_unite.html#ac0016b4cfb075557c4e2bcc6a1b1876e">SmallWorld.InterUnite</a>.</p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>C:/Users/damienc/Documents/GitHub/SmallWorld/VisualStudio/ProjetPOO/Unite.cs</li>
+<li>C:/Users/damienc/Documents/GitHub/SmallWorld/VisualStudio/ProjetPOO/<a class="el" href="_unite_8cs.html">Unite.cs</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -176,7 +469,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>passeSonTour</b><code>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_small_world.html">SmallWorld</a></li><li class="navelem"><a class="el" href="class_small_world_1_1_unite.html">Unite</a></li>
-    <li class="footer">Generated on Sun Dec 15 2013 17:32:55 for SmallWorld by
+    <li class="footer">Generated on Wed Jan 15 2014 15:23:46 for SmallWorld by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.5 </li>
   </ul>

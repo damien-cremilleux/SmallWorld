@@ -1,6 +1,11 @@
 \hypertarget{interface_small_world_1_1_inter_unite}{\section{Small\-World.\-Inter\-Unite Interface Reference}
 \label{interface_small_world_1_1_inter_unite}\index{Small\-World.\-Inter\-Unite@{Small\-World.\-Inter\-Unite}}
 }
+
+
+interface pour les unités  
+
+
 Inheritance diagram for Small\-World.\-Inter\-Unite\-:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -10,17 +15,187 @@ Inheritance diagram for Small\-World.\-Inter\-Unite\-:\begin{figure}[H]
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{interface_small_world_1_1_inter_unite_a1a5d372f4b0e3df0729649ea0ffef763}{void {\bfseries attaquer} ()}\label{interface_small_world_1_1_inter_unite_a1a5d372f4b0e3df0729649ea0ffef763}
+\hypertarget{interface_small_world_1_1_inter_unite_a729d769c596c3df5e0f8d1d460de4d5e}{void \hyperlink{interface_small_world_1_1_inter_unite_a729d769c596c3df5e0f8d1d460de4d5e}{calcul\-Point\-Victoire} ()}\label{interface_small_world_1_1_inter_unite_a729d769c596c3df5e0f8d1d460de4d5e}
 
-\item 
-\hypertarget{interface_small_world_1_1_inter_unite_ae1da4b8c1f3b73e7a24485681466eae7}{void {\bfseries se\-Deplacer} ()}\label{interface_small_world_1_1_inter_unite_ae1da4b8c1f3b73e7a24485681466eae7}
+\begin{DoxyCompactList}\small\item\em Met à jour les points de victoire du joueur. \end{DoxyCompactList}\item 
+void \hyperlink{interface_small_world_1_1_inter_unite_a9bce76356ba4531ed90ca35cc659af5f}{attaquer} (\hyperlink{class_small_world_1_1_unite}{Unite} unite\-Adverse, int nb\-Round\-Combat)
+\begin{DoxyCompactList}\small\item\em attaquer une unité adverse, sachant le nombre de rounds \end{DoxyCompactList}\item 
+bool \hyperlink{interface_small_world_1_1_inter_unite_aac3a60f40b315d1f3c1299e906ebb384}{se\-Deplacer} (int x, int y)
+\begin{DoxyCompactList}\small\item\em se déplacer sur une case \end{DoxyCompactList}\item 
+bool \hyperlink{interface_small_world_1_1_inter_unite_a28644be4f50b3370dd276a2aa274413f}{peut\-Se\-Deplacer} (int x, int y)
+\begin{DoxyCompactList}\small\item\em Indique si l'unité peut se déplacer sur une case. \end{DoxyCompactList}\item 
+void \hyperlink{interface_small_world_1_1_inter_unite_aaf0cbd85facc23d866aac19dad7f3e66}{calculer\-Deplacement} ()
+\begin{DoxyCompactList}\small\item\em calculer les déplacements possibles \end{DoxyCompactList}\item 
+\hypertarget{interface_small_world_1_1_inter_unite_ada8a39324c90c82eb25a978fa81b43f1}{void \hyperlink{interface_small_world_1_1_inter_unite_ada8a39324c90c82eb25a978fa81b43f1}{passer\-Son\-Tour} ()}\label{interface_small_world_1_1_inter_unite_ada8a39324c90c82eb25a978fa81b43f1}
 
-\item 
-\hypertarget{interface_small_world_1_1_inter_unite_a85f255866facbcac8eadf00c228f2835}{void {\bfseries passer\-Son\-Tour} ()}\label{interface_small_world_1_1_inter_unite_a85f255866facbcac8eadf00c228f2835}
+\begin{DoxyCompactList}\small\item\em l'unité passe son tour \end{DoxyCompactList}\item 
+\hypertarget{interface_small_world_1_1_inter_unite_a106ab0a27d4a228dbcf18c0b26f680b3}{void \hyperlink{interface_small_world_1_1_inter_unite_a106ab0a27d4a228dbcf18c0b26f680b3}{perdre\-Vie} ()}\label{interface_small_world_1_1_inter_unite_a106ab0a27d4a228dbcf18c0b26f680b3}
 
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em l'unité perd une vie \end{DoxyCompactList}\item 
+\hypertarget{interface_small_world_1_1_inter_unite_a2c19b9dc612ee1ec4716f9993b78908d}{void \hyperlink{interface_small_world_1_1_inter_unite_a2c19b9dc612ee1ec4716f9993b78908d}{nouveau\-Tour} ()}\label{interface_small_world_1_1_inter_unite_a2c19b9dc612ee1ec4716f9993b78908d}
+
+\begin{DoxyCompactList}\small\item\em Les attributs de l'unité sont mis à jour pour le nouveau tour. \end{DoxyCompactList}\item 
+void \hyperlink{interface_small_world_1_1_inter_unite_a554b5ca4373b37e6e5ad29f3a3a381dc}{restaurer} (int $\ast$carte)
+\begin{DoxyCompactList}\small\item\em Restaure l'unité suite à une désérialisation. \end{DoxyCompactList}\item 
+List$<$ \hyperlink{class_small_world_1_1_coordonnees}{Coordonnees} $>$ \hyperlink{interface_small_world_1_1_inter_unite_a1c5011629159c486f68c015dc940406e}{suggerer\-Case\-Non\-Possible} ()
+\begin{DoxyCompactList}\small\item\em Suggère les cases de déplacement impossible pour une unité \end{DoxyCompactList}\item 
+List$<$ \hyperlink{class_small_world_1_1_coordonnees}{Coordonnees} $>$ \hyperlink{interface_small_world_1_1_inter_unite_ac0016b4cfb075557c4e2bcc6a1b1876e}{suggerer\-Case\-Optimale} ()
+\begin{DoxyCompactList}\small\item\em Suggère les cases de déplacement pour une unité qui sont optimales. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+interface pour les unités 
+
+\subsection{Member Function Documentation}
+\hypertarget{interface_small_world_1_1_inter_unite_a9bce76356ba4531ed90ca35cc659af5f}{\index{Small\-World\-::\-Inter\-Unite@{Small\-World\-::\-Inter\-Unite}!attaquer@{attaquer}}
+\index{attaquer@{attaquer}!SmallWorld::InterUnite@{Small\-World\-::\-Inter\-Unite}}
+\subsubsection[{attaquer}]{\setlength{\rightskip}{0pt plus 5cm}Small\-World.\-Inter\-Unite.\-attaquer (
+\begin{DoxyParamCaption}
+\item[{{\bf Unite}}]{unite\-Adverse, }
+\item[{int}]{nb\-Round\-Combat}
+\end{DoxyParamCaption}
+)}}\label{interface_small_world_1_1_inter_unite_a9bce76356ba4531ed90ca35cc659af5f}
+
+
+attaquer une unité adverse, sachant le nombre de rounds 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \hyperlink{class_small_world_1_1_unite}{Unite}} & {\bfseries unite\-Adverse} l'unité à combattre \\
+\hline
+{\em int} & {\bfseries nb\-Round\-Combat} le nombre de round \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \hyperlink{class_small_world_1_1_unite_af370920ab6c2b9478f0c12d7f1d22638}{Small\-World.\-Unite}.
+
+\hypertarget{interface_small_world_1_1_inter_unite_aaf0cbd85facc23d866aac19dad7f3e66}{\index{Small\-World\-::\-Inter\-Unite@{Small\-World\-::\-Inter\-Unite}!calculer\-Deplacement@{calculer\-Deplacement}}
+\index{calculer\-Deplacement@{calculer\-Deplacement}!SmallWorld::InterUnite@{Small\-World\-::\-Inter\-Unite}}
+\subsubsection[{calculer\-Deplacement}]{\setlength{\rightskip}{0pt plus 5cm}Small\-World.\-Inter\-Unite.\-calculer\-Deplacement (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{interface_small_world_1_1_inter_unite_aaf0cbd85facc23d866aac19dad7f3e66}
+
+
+calculer les déplacements possibles 
+
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{class_small_world_1_1_unite_viking_a7df92edec9b221dc96be2cf60d19f06f}{Small\-World.\-Unite\-Viking}, \hyperlink{class_small_world_1_1_unite_naine_a487e42750e74fbf551d1e55b48101c72}{Small\-World.\-Unite\-Naine}, \hyperlink{class_small_world_1_1_unite_gauloise_a2fce92f8a4957a46efae89b63277b073}{Small\-World.\-Unite\-Gauloise}, and \hyperlink{class_small_world_1_1_unite_a88ea1d2d5962c08ffc15422a2f2c7bbf}{Small\-World.\-Unite}.
+
+\hypertarget{interface_small_world_1_1_inter_unite_a28644be4f50b3370dd276a2aa274413f}{\index{Small\-World\-::\-Inter\-Unite@{Small\-World\-::\-Inter\-Unite}!peut\-Se\-Deplacer@{peut\-Se\-Deplacer}}
+\index{peut\-Se\-Deplacer@{peut\-Se\-Deplacer}!SmallWorld::InterUnite@{Small\-World\-::\-Inter\-Unite}}
+\subsubsection[{peut\-Se\-Deplacer}]{\setlength{\rightskip}{0pt plus 5cm}Small\-World.\-Inter\-Unite.\-peut\-Se\-Deplacer (
+\begin{DoxyParamCaption}
+\item[{int}]{x, }
+\item[{int}]{y}
+\end{DoxyParamCaption}
+)}}\label{interface_small_world_1_1_inter_unite_a28644be4f50b3370dd276a2aa274413f}
+
+
+Indique si l'unité peut se déplacer sur une case. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em int} & {\bfseries x} l'abscisse demandée \\
+\hline
+{\em int} & {\bfseries y} l'ordonnée demandée \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool vrai si l'unité peut se déplacer, faux sinon 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{class_small_world_1_1_unite_a26f648e9ca7776ade3e8c335644ed8f1}{Small\-World.\-Unite}.
+
+\hypertarget{interface_small_world_1_1_inter_unite_a554b5ca4373b37e6e5ad29f3a3a381dc}{\index{Small\-World\-::\-Inter\-Unite@{Small\-World\-::\-Inter\-Unite}!restaurer@{restaurer}}
+\index{restaurer@{restaurer}!SmallWorld::InterUnite@{Small\-World\-::\-Inter\-Unite}}
+\subsubsection[{restaurer}]{\setlength{\rightskip}{0pt plus 5cm}Small\-World.\-Inter\-Unite.\-restaurer (
+\begin{DoxyParamCaption}
+\item[{int $\ast$}]{carte}
+\end{DoxyParamCaption}
+)}}\label{interface_small_world_1_1_inter_unite_a554b5ca4373b37e6e5ad29f3a3a381dc}
+
+
+Restaure l'unité suite à une désérialisation. 
+
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{class_small_world_1_1_unite_a6b703c7f442f922c6742f17d96bd2bb3}{Small\-World.\-Unite}.
+
+\hypertarget{interface_small_world_1_1_inter_unite_aac3a60f40b315d1f3c1299e906ebb384}{\index{Small\-World\-::\-Inter\-Unite@{Small\-World\-::\-Inter\-Unite}!se\-Deplacer@{se\-Deplacer}}
+\index{se\-Deplacer@{se\-Deplacer}!SmallWorld::InterUnite@{Small\-World\-::\-Inter\-Unite}}
+\subsubsection[{se\-Deplacer}]{\setlength{\rightskip}{0pt plus 5cm}Small\-World.\-Inter\-Unite.\-se\-Deplacer (
+\begin{DoxyParamCaption}
+\item[{int}]{x, }
+\item[{int}]{y}
+\end{DoxyParamCaption}
+)}}\label{interface_small_world_1_1_inter_unite_aac3a60f40b315d1f3c1299e906ebb384}
+
+
+se déplacer sur une case 
+
+
+\begin{DoxyParams}{Parameters}
+{\em int} & {\bfseries x} l'abscisse demandée \\
+\hline
+{\em int} & {\bfseries y} l'ordinnée demandée \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{class_small_world_1_1_unite_abc3a49225b122d3dc3579883d433d300}{Small\-World.\-Unite}.
+
+\hypertarget{interface_small_world_1_1_inter_unite_a1c5011629159c486f68c015dc940406e}{\index{Small\-World\-::\-Inter\-Unite@{Small\-World\-::\-Inter\-Unite}!suggerer\-Case\-Non\-Possible@{suggerer\-Case\-Non\-Possible}}
+\index{suggerer\-Case\-Non\-Possible@{suggerer\-Case\-Non\-Possible}!SmallWorld::InterUnite@{Small\-World\-::\-Inter\-Unite}}
+\subsubsection[{suggerer\-Case\-Non\-Possible}]{\setlength{\rightskip}{0pt plus 5cm}Small\-World.\-Inter\-Unite.\-suggerer\-Case\-Non\-Possible (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{interface_small_world_1_1_inter_unite_a1c5011629159c486f68c015dc940406e}
+
+
+Suggère les cases de déplacement impossible pour une unité 
+
+\begin{DoxyReturn}{Returns}
+List$<$\-Coordonnee$>$ la liste des coordonnées impossibles 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{class_small_world_1_1_unite_a79b7bc972bf0b76647be702cf94965fc}{Small\-World.\-Unite}.
+
+\hypertarget{interface_small_world_1_1_inter_unite_ac0016b4cfb075557c4e2bcc6a1b1876e}{\index{Small\-World\-::\-Inter\-Unite@{Small\-World\-::\-Inter\-Unite}!suggerer\-Case\-Optimale@{suggerer\-Case\-Optimale}}
+\index{suggerer\-Case\-Optimale@{suggerer\-Case\-Optimale}!SmallWorld::InterUnite@{Small\-World\-::\-Inter\-Unite}}
+\subsubsection[{suggerer\-Case\-Optimale}]{\setlength{\rightskip}{0pt plus 5cm}Small\-World.\-Inter\-Unite.\-suggerer\-Case\-Optimale (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{interface_small_world_1_1_inter_unite_ac0016b4cfb075557c4e2bcc6a1b1876e}
+
+
+Suggère les cases de déplacement pour une unité qui sont optimales. 
+
+\begin{DoxyReturn}{Returns}
+List$<$\-Coordonnee$>$ la liste des coordonnées possibles 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{class_small_world_1_1_unite_a2da8fe0e076dbfccf553b6ecb6c9fc04}{Small\-World.\-Unite}.
+
 
 
 The documentation for this interface was generated from the following file\-:\begin{DoxyCompactItemize}
 \item 
-C\-:/\-Users/damienc/\-Documents/\-Git\-Hub/\-Small\-World/\-Visual\-Studio/\-Projet\-P\-O\-O/Unite.\-cs\end{DoxyCompactItemize}
+C\-:/\-Users/damienc/\-Documents/\-Git\-Hub/\-Small\-World/\-Visual\-Studio/\-Projet\-P\-O\-O/\hyperlink{_unite_8cs}{Unite.\-cs}\end{DoxyCompactItemize}

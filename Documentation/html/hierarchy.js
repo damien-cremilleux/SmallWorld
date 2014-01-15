@@ -1,7 +1,6 @@
 var hierarchy =
 [
-    [ "SmallWorld.Coordonnees", "class_small_world_1_1_coordonnees.html", null ],
-    [ "SmallWorld.FabriqueJeu", "interface_small_world_1_1_fabrique_jeu.html", null ],
+    [ "SmallWorld.Constantes", "class_small_world_1_1_constantes.html", null ],
     [ "SmallWorld.InterCarte", "interface_small_world_1_1_inter_carte.html", [
       [ "SmallWorld.Carte", "class_small_world_1_1_carte.html", null ]
     ] ],
@@ -29,6 +28,10 @@ var hierarchy =
         [ "SmallWorld.Plaine", "class_small_world_1_1_plaine.html", null ]
       ] ]
     ] ],
+    [ "InterCoordonnees", "interface_inter_coordonnees.html", null ],
+    [ "SmallWorld.InterCordonnees", "interface_small_world_1_1_inter_cordonnees.html", [
+      [ "SmallWorld.Coordonnees", "class_small_world_1_1_coordonnees.html", null ]
+    ] ],
     [ "SmallWorld.InterCreateurPartie", "interface_small_world_1_1_inter_createur_partie.html", [
       [ "SmallWorld.CreateurPartie", "class_small_world_1_1_createur_partie.html", null ]
     ] ],
@@ -36,9 +39,6 @@ var hierarchy =
       [ "SmallWorld.FabriqueCase", "class_small_world_1_1_fabrique_case.html", null ]
     ] ],
     [ "SmallWorld.InterFabriquePeuple", "interface_small_world_1_1_inter_fabrique_peuple.html", [
-      [ "SmallWorld.Fabrique_Unite_Gaulois", "interface_small_world_1_1_fabrique___unite___gaulois.html", null ],
-      [ "SmallWorld.Fabrique_Unite_Nain", "interface_small_world_1_1_fabrique___unite___nain.html", null ],
-      [ "SmallWorld.Fabrique_Unite_Viking", "interface_small_world_1_1_fabrique___unite___viking.html", null ],
       [ "SmallWorld.FabriquePeuple", "class_small_world_1_1_fabrique_peuple.html", null ]
     ] ],
     [ "SmallWorld.InterJoueur", "interface_small_world_1_1_inter_joueur.html", [
@@ -110,8 +110,5 @@ var hierarchy =
         [ "SmallWorld.UniteNaine", "class_small_world_1_1_unite_naine.html", null ],
         [ "SmallWorld.UniteViking", "class_small_world_1_1_unite_viking.html", null ]
       ] ]
-    ] ],
-    [ "SmallWorld.Nain", "interface_small_world_1_1_nain.html", null ],
-    [ "SmallWorld.Sauvegarde", "interface_small_world_1_1_sauvegarde.html", null ],
-    [ "SmallWorld.Viking", "interface_small_world_1_1_viking.html", null ]
+    ] ]
 ];

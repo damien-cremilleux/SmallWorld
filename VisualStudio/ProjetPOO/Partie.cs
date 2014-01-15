@@ -314,7 +314,7 @@ namespace SmallWorld
             CartePartie = carte;
             nomSauvegarde = "";
 
-            //Le premier joueur est sélectionné au hasard
+           //Le premier joueur est sélectionné au hasard
             Random r = new Random();
             int premier = r.Next(ListeJoueurs.Count);
             indiceJoueurInitial = premier;
@@ -361,7 +361,6 @@ namespace SmallWorld
             foreach (Unite unite in ListeJoueurs[IndiceJoueurEnCours].ListeUnite)
             {
                 unite.passerSonTour();
-                unite.PointDeDeplacement = 0;
             }
 
             //On passe au joueur suivant

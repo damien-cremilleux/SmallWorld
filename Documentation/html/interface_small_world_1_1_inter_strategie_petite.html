@@ -94,7 +94,7 @@ $(document).ready(function(){initNavTree('interface_small_world_1_1_inter_strate
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Properties</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Properties</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -111,29 +111,35 @@ $(document).ready(function(){initNavTree('interface_small_world_1_1_inter_strate
 <div class="title">SmallWorld.InterStrategiePetite Interface Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>interface pour une stratégie petite  
+ <a href="interface_small_world_1_1_inter_strategie_petite.html#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for SmallWorld.InterStrategiePetite:</div>
 <div class="dyncontent">
  <div class="center">
   <img src="interface_small_world_1_1_inter_strategie_petite.png" usemap="#SmallWorld.InterStrategiePetite_map" alt=""/>
   <map id="SmallWorld.InterStrategiePetite_map" name="SmallWorld.InterStrategiePetite_map">
-<area href="interface_small_world_1_1_inter_strategie_carte.html" alt="SmallWorld.InterStrategieCarte" shape="rect" coords="0,0,185,24"/>
-<area href="class_small_world_1_1_strategie_petite.html" alt="SmallWorld.StrategiePetite" shape="rect" coords="0,112,185,136"/>
+<area href="interface_small_world_1_1_inter_strategie_carte.html" title="interface globale pour la stratégie " alt="SmallWorld.InterStrategieCarte" shape="rect" coords="0,0,185,24"/>
+<area href="class_small_world_1_1_strategie_petite.html" title="classe pour une stratégie petite " alt="SmallWorld.StrategiePetite" shape="rect" coords="0,112,185,136"/>
 </map>
  </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a0f21705a853b281aec9140107d1e37d4"><td class="memItemLeft" align="right" valign="top">new void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_small_world_1_1_inter_strategie_petite.html#a0f21705a853b281aec9140107d1e37d4">construire</a> ()</td></tr>
-<tr class="separator:a0f21705a853b281aec9140107d1e37d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adb06e8f32bcbb5d9f491f86f5ea34a0e"><td class="memItemLeft" align="right" valign="top">new List&lt; List&lt; <a class="el" href="class_small_world_1_1_case.html">Case</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_small_world_1_1_inter_strategie_petite.html#adb06e8f32bcbb5d9f491f86f5ea34a0e">construire</a> ()</td></tr>
+<tr class="memdesc:adb06e8f32bcbb5d9f491f86f5ea34a0e"><td class="mdescLeft">&#160;</td><td class="mdescRight">contruit une carte de taille petite  <a href="#adb06e8f32bcbb5d9f491f86f5ea34a0e">More...</a><br/></td></tr>
+<tr class="separator:adb06e8f32bcbb5d9f491f86f5ea34a0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a0f21705a853b281aec9140107d1e37d4"></a>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>interface pour une stratégie petite </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="adb06e8f32bcbb5d9f491f86f5ea34a0e"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">new void SmallWorld.InterStrategiePetite.construire </td>
+          <td class="memname">SmallWorld.InterStrategiePetite.construire </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -141,14 +147,15 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Implements <a class="el" href="interface_small_world_1_1_inter_strategie_carte.html#aa3f0d1267ad71756dc3b134d13733085">SmallWorld.InterStrategieCarte</a>.</p>
+<p>contruit une carte de taille petite </p>
+<dl class="section return"><dt>Returns</dt><dd>la carte demandée </dd></dl>
 
-<p>Implemented in <a class="el" href="class_small_world_1_1_strategie_petite.html#a19e5824d046b8dc0e982465195458192">SmallWorld.StrategiePetite</a>.</p>
+<p>Implements <a class="el" href="interface_small_world_1_1_inter_strategie_carte.html#aef481b6ecc1f7976bd197147709998b0">SmallWorld.InterStrategieCarte</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this interface was generated from the following file:<ul>
-<li>C:/Users/damienc/Documents/GitHub/SmallWorld/VisualStudio/ProjetPOO/Strategie.cs</li>
+<li>C:/Users/damienc/Documents/GitHub/SmallWorld/VisualStudio/ProjetPOO/<a class="el" href="_strategie_8cs.html">Strategie.cs</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -156,7 +163,7 @@ Public Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_small_world.html">SmallWorld</a></li><li class="navelem"><a class="el" href="interface_small_world_1_1_inter_strategie_petite.html">InterStrategiePetite</a></li>
-    <li class="footer">Generated on Sun Dec 15 2013 17:32:52 for SmallWorld by
+    <li class="footer">Generated on Wed Jan 15 2014 15:23:42 for SmallWorld by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.5 </li>
   </ul>
