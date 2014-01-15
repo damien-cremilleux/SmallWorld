@@ -18,11 +18,20 @@ using System.Text;
 namespace SmallWorld
 {
     /**
+     * @interface InterCoordonnees
+     * @brief Interface pour Coordonnees
+     */
+    public interface InterCordonnees
+    {
+    }
+
+
+    /**
      * @class Coordonnees
      * @brief Rprésentation des coordonnées
       */
     [Serializable]
-    public class Coordonnees
+    public class Coordonnees : InterCordonnees
     {
         /**
          * @brief Attribut <b>abscisse</b>
@@ -101,7 +110,7 @@ namespace SmallWorld
          * @brief Test d'égalité pour deux coordonnées
          * 
          * @param Object <b>obj</b> la coordonnée à comparer
-         * @return vrai si les deux coordonnées sont égales, faux sinon
+         * @return bool vrai si les deux coordonnées sont égales, faux sinon
          */
         public override bool Equals(Object obj)
         {
@@ -119,8 +128,8 @@ namespace SmallWorld
          * @return int la clef de hash
          */
         public override int GetHashCode()
-        {         
-            return (Abscisse+1) ^ (Ordonnee+1);        
-        }         
+        {
+            return (Abscisse + 1) ^ (Ordonnee + 1);
+        }
     }
 }

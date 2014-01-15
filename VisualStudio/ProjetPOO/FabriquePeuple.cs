@@ -7,7 +7,7 @@
  * @author <a href="mailto:damien.cremilleux@insa-rennes.fr">Damien Crémilleux</a>
  * @author <a href="mailto:lauriane.holy@insa-rennes.fr">Lauriane Holy</a>
  * 
- * @date 03/01/2014
+ * @date 15/01/2014
  * @version 0.1
  */
 using System;
@@ -55,7 +55,7 @@ namespace SmallWorld
         {
             get
             {
-                if (instance_FabPeuple == null)
+                if (instance_FabPeuple == null) //C'est un singleton
                 {
                     instance_FabPeuple = new FabriquePeuple();
                 }
@@ -92,7 +92,7 @@ namespace SmallWorld
                     return new PeupleViking();
 
                 default:
-                    return null; /* TODO */
+                    return null;
             }
         }
     }

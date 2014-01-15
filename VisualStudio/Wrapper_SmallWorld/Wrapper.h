@@ -1,3 +1,13 @@
+/**
+* @file Wrapper.h
+* @brief Wrapper pour les algo
+* 
+* @author <a href="mailto:damien.cremilleux@insa-rennes.fr">Damien Crémilleux</a>
+* @author <a href="mailto:lauriane.holy@insa-rennes.fr">Lauriane Holy</a>
+* 
+* @date 15/01/2014
+* @version 0.1
+*/
 #ifndef __WRAPPER__
 #define __WRAPPER__
 
