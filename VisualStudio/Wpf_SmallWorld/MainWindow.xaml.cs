@@ -25,58 +25,24 @@ namespace Wpf_SmallWorld
         private CreateurPartie createur;
         private Partie partie;
 
+        /// <summary>
+        /// Accès à la partie
+        /// </summary>
+        public Partie Partie
+        {
+            get { return partie; }
+            set { partie = value; }
+        }
+
+
         public MainWindow()
         {
             InitializeComponent();
             createur = new CreateurPartie();
             partie = new Partie();
-            this.joueurs.Visibility = Visibility.Collapsed;
-            this.carte.Visibility = Visibility.Collapsed;
         }
 
-        private void CreerPartie(object sender, RoutedEventArgs e)
-        {
-            this.joueurs.Visibility = Visibility.Visible;
-            this.carte.Visibility = Visibility.Collapsed;
-        }
 
-        private void ChargerPartie(object sender, RoutedEventArgs e)
-        {
-            
-            this.joueurs.Visibility = Visibility.Collapsed;
-            this.carte.Visibility = Visibility.Collapsed;
-            
-            //TODO
-            // Configure open file dialog box
-            Microsoft.Win32.OpenFileDialog dlg = new Microsoft.Win32.OpenFileDialog();
-            dlg.FileName = "Sauvegarde"; // Default file name
-            dlg.DefaultExt = ".sw"; // Default file extension
-            dlg.Filter = "Sauvegarder SmallWorld (.sw)|*.smallWorld"; // Filter files by extension
-
-            // Show open file dialog box
-            Nullable<bool> result = dlg.ShowDialog();
-
-            // Process open file dialog box results
-            if (result == true)
-            {
-                // Open document
-                string filename = dlg.FileName;
-                Partie sauv = partie.charger(filename);
-                // Lancement du jeu 
-                PageJeu jeu = new PageJeu(sauv);
-                this.Content = jeu;
-            }
-        }
-
-        private void Aide(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void Quit(object sender, RoutedEventArgs e)
-        {
-            this.Close();
-        }
 
         public void ajoutJoueur(string nom, string peuple)
         {
@@ -92,6 +58,12 @@ namespace Wpf_SmallWorld
         {
             partie = createur.construire();
             return partie;
+        }
+
+        public void construireNouvellePartie()
+        {
+            partie = createur.construire();
+            PagePrincipale.Source = new Uri("PageJeu.xaml", UriKind.Relative);
         }
     }
 }

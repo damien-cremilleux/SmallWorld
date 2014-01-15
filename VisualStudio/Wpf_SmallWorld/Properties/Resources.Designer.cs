@@ -191,15 +191,6 @@ namespace Wpf_SmallWorld.Properties {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à ezfsddddddddddddgfdg.
-        /// </summary>
-        internal static string TestFile {
-            get {
-                return ResourceManager.GetString("TestFile", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap UnitRest {

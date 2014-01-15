@@ -30,10 +30,6 @@ namespace Wpf_SmallWorld
         public Joueurs()
         {
             InitializeComponent();
-            joueur1 = "";
-            peuplej1 = "";
-            joueur2 = "";
-            peuplej2 = "";
         }
 
         /// <summary>
@@ -92,8 +88,7 @@ namespace Wpf_SmallWorld
                 MainWindow parent = (Application.Current.MainWindow as MainWindow);
                 parent.ajoutJoueur(joueur1, peuplej1);
                 parent.ajoutJoueur(joueur2, peuplej2);
-                parent.joueurs.Visibility = Visibility.Hidden;
-                parent.carte.Visibility = Visibility.Visible;
+                parent.PageSelection.Source = new Uri("Carte.xaml", UriKind.Relative);
             }
         }
     }

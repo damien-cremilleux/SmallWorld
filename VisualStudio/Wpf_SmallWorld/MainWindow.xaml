@@ -5,8 +5,6 @@
         MinHeight="600" MinWidth="900"
         xmlns:local="clr-namespace:Wpf_SmallWorld"
         WindowStartupLocation="CenterScreen"
-        FontFamily="Segoe UI Light"
-        SizeToContent="WidthAndHeight"
         Icon="./Resources/smallWorld.png">
 
     <Grid>
@@ -17,30 +15,15 @@
         <Grid.RowDefinitions>
             <RowDefinition />
         </Grid.RowDefinitions>
-
-        <Grid Grid.Column="0" Background="#272A3D"></Grid>
-        <Grid Grid.Row="0">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition />
-            </Grid.ColumnDefinitions>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="200" />
-                <RowDefinition />
-            </Grid.RowDefinitions>
-
-
-            <Grid Grid.Row="1">
-                <StackPanel>
-                    <RadioButton Style="{DynamicResource ButtonMenu}" Click="CreerPartie">Nouvelle partie</RadioButton>
-                    <RadioButton Style="{DynamicResource ButtonMenu}" Click="ChargerPartie">Charger une partie</RadioButton>
-                    <RadioButton Style="{DynamicResource ButtonMenu}" Click="Aide">Aide</RadioButton>
-                    <RadioButton Style="{DynamicResource ButtonMenu}" Click="Quit">Quitter</RadioButton>
-                </StackPanel>
-            </Grid>
+        
+        <Grid Grid.ColumnSpan="2">
+                <Frame Name="PagePrincipale" Source="PagePrincipale.xaml" NavigationUIVisibility="Hidden"/>
         </Grid>
+ 
         <Grid Grid.Column="1" Name="UserControl">
-            <local:Joueurs x:Name="joueurs" Visibility="Collapsed"/>
-            <local:Carte x:Name="carte" Visibility="Collapsed"/>
+            <Frame Name="PageSelection" NavigationUIVisibility="Hidden"/>
         </Grid>
     </Grid>
+   
+
 </Window>

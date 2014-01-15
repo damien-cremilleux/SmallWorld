@@ -1,0 +1,51 @@
+﻿<Page x:Class="Wpf_SmallWorld.ReglesJeu2"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d" 
+      d:DesignHeight="300" d:DesignWidth="300"
+	Title="ReglesJeu2">
+
+    <Grid>
+        <FlowDocumentPageViewer >
+            <FlowDocument FontFamily="Segoe UI Light">
+                <Paragraph >
+                    <Label>SMALL WORLD</Label>
+
+Une fois le jeu lancé, vous arrivez au menu de sélection.
+  Vous pouvez alors : 
+                    - Créer une nouvelle partie,
+                    - Charger une partie 
+                    
+           I Creer une nouvelle partie
+  
+Lorsque vous créez nouvelle partie, un écran vous invite à entrer vos noms de joueurs ainsi que les peuples choisis.
+
+Deux joueurs ne peuvent pas avoir le même nom ou le même peuple.
+
+                   
+Si la sauvegarde que vous avez choisi est 
+vide, un écran vous invite à entrer votre nom 
+de joueur. 
+                    
+Pour valider vos joueurs, sélectionnez 
+"OK".
+                    
+
+Pour annuler et revenir à l'écran du 
+choix des sauvegardes, sélectionnez 
+la flèche d'annulation (à droite du 
+"OK") puis appuyez sur C ou Espace.
+Vous pouvez également effacer un 
+fichier ou quitter le jeu en 
+sélectionnant les options 
+correspondantes et en appuyant sur 
+Espace.
+
+
+                </Paragraph>
+            </FlowDocument>
+        </FlowDocumentPageViewer>
+    </Grid>
+</Page>
