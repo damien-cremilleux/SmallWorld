@@ -1,14 +1,237 @@
 \hypertarget{interface_small_world_1_1_inter_partie}{\section{Small\-World.\-Inter\-Partie Interface Reference}
 \label{interface_small_world_1_1_inter_partie}\index{Small\-World.\-Inter\-Partie@{Small\-World.\-Inter\-Partie}}
 }
+
+
+interface pour les partie  
+
+
 Inheritance diagram for Small\-World.\-Inter\-Partie\-:\begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[height=2.000000cm]{interface_small_world_1_1_inter_partie}
 \end{center}
 \end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+List$<$ \hyperlink{class_small_world_1_1_joueur}{Joueur} $>$ \hyperlink{interface_small_world_1_1_inter_partie_a854e4e9df304af71203a90ebea6dd5aa}{vainqueurs} ()
+\begin{DoxyCompactList}\small\item\em Rend la liste des joueurs disposant du plus de points. \end{DoxyCompactList}\item 
+void \hyperlink{interface_small_world_1_1_inter_partie_a9d379ea16f666ff33913f4c4bb0ac148}{changer\-Joueur} ()
+\begin{DoxyCompactList}\small\item\em Change le joueur en cours, quand le joueur précédent a fini son tour. \end{DoxyCompactList}\item 
+List$<$ \hyperlink{class_small_world_1_1_unite}{Unite} $>$ \hyperlink{interface_small_world_1_1_inter_partie_aa29e03573a21b6d366bfb8dfb7bd50c3}{selectionner\-Unite} (int x, int y)
+\begin{DoxyCompactList}\small\item\em Obtenir l'ensemble des unités du joueur en cours se situant sur la case demandée. \end{DoxyCompactList}\item 
+List$<$ \hyperlink{class_small_world_1_1_unite}{Unite} $>$ \hyperlink{interface_small_world_1_1_inter_partie_a3ee997cdbcf1402c3aed3fbad6ff8c56}{selectionner\-Unite\-Adverse} (int x, int y)
+\begin{DoxyCompactList}\small\item\em Obtenir l'ensemble des unités des joueurs adverses du joueur en cours se situant sur la case demandée. \end{DoxyCompactList}\item 
+bool \hyperlink{interface_small_world_1_1_inter_partie_a1bebb4f8184527d91080a537c759da7b}{peut\-Se\-Deplacer} (\hyperlink{class_small_world_1_1_unite}{Unite} unite, int x, int y)
+\begin{DoxyCompactList}\small\item\em Indique si l'unité peut se déposer sur la case(x,y) \end{DoxyCompactList}\item 
+int \hyperlink{interface_small_world_1_1_inter_partie_a532da197c321c61ba9c075e00d02bde9}{demander\-Deplacement} (\hyperlink{class_small_world_1_1_unite}{Unite} unite, int x, int y)
+\begin{DoxyCompactList}\small\item\em Déplacer, si possible, l'unité sur la case (x,y). En cas d'unités adverses, il y a combat. \end{DoxyCompactList}\item 
+void \hyperlink{interface_small_world_1_1_inter_partie_abefef771c059be341130c37dc98876b5}{verifier\-Fin\-Partie} ()
+\begin{DoxyCompactList}\small\item\em Vérifier si la partie est finie (les joueurs adverses n'ont plus d'unité) \end{DoxyCompactList}\item 
+bool \hyperlink{interface_small_world_1_1_inter_partie_ac1b18e80224dba7e8cb96ae386ed46e3}{enregistrer} ()
+\begin{DoxyCompactList}\small\item\em Enregistre une partie. \end{DoxyCompactList}\item 
+\hypertarget{interface_small_world_1_1_inter_partie_a04902e267272973c6eec147a87cb2a19}{void {\bfseries enregistrer\-Sous} (string nom\-Fichier)}\label{interface_small_world_1_1_inter_partie_a04902e267272973c6eec147a87cb2a19}
+
+\item 
+\hypertarget{interface_small_world_1_1_inter_partie_abb90ffa0496dd58c5333afc32973d28e}{\hyperlink{class_small_world_1_1_partie}{Partie} {\bfseries charger} (string nom\-Fichier)}\label{interface_small_world_1_1_inter_partie_abb90ffa0496dd58c5333afc32973d28e}
+
+\item 
+\hypertarget{interface_small_world_1_1_inter_partie_ad80fd5b6fe66be8ac409325e9a15ff33}{void \hyperlink{interface_small_world_1_1_inter_partie_ad80fd5b6fe66be8ac409325e9a15ff33}{restaurer} ()}\label{interface_small_world_1_1_inter_partie_ad80fd5b6fe66be8ac409325e9a15ff33}
+
+\begin{DoxyCompactList}\small\item\em Restaure les unités suite à une désérialisation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+interface pour les partie 
+
+\subsection{Member Function Documentation}
+\hypertarget{interface_small_world_1_1_inter_partie_a9d379ea16f666ff33913f4c4bb0ac148}{\index{Small\-World\-::\-Inter\-Partie@{Small\-World\-::\-Inter\-Partie}!changer\-Joueur@{changer\-Joueur}}
+\index{changer\-Joueur@{changer\-Joueur}!SmallWorld::InterPartie@{Small\-World\-::\-Inter\-Partie}}
+\subsubsection[{changer\-Joueur}]{\setlength{\rightskip}{0pt plus 5cm}Small\-World.\-Inter\-Partie.\-changer\-Joueur (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{interface_small_world_1_1_inter_partie_a9d379ea16f666ff33913f4c4bb0ac148}
+
+
+Change le joueur en cours, quand le joueur précédent a fini son tour. 
+
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{class_small_world_1_1_partie_a3598df0afeeaa4b0cbf16c5ff8631264}{Small\-World.\-Partie}.
+
+\hypertarget{interface_small_world_1_1_inter_partie_a532da197c321c61ba9c075e00d02bde9}{\index{Small\-World\-::\-Inter\-Partie@{Small\-World\-::\-Inter\-Partie}!demander\-Deplacement@{demander\-Deplacement}}
+\index{demander\-Deplacement@{demander\-Deplacement}!SmallWorld::InterPartie@{Small\-World\-::\-Inter\-Partie}}
+\subsubsection[{demander\-Deplacement}]{\setlength{\rightskip}{0pt plus 5cm}Small\-World.\-Inter\-Partie.\-demander\-Deplacement (
+\begin{DoxyParamCaption}
+\item[{{\bf Unite}}]{unite, }
+\item[{int}]{x, }
+\item[{int}]{y}
+\end{DoxyParamCaption}
+)}}\label{interface_small_world_1_1_inter_partie_a532da197c321c61ba9c075e00d02bde9}
+
+
+Déplacer, si possible, l'unité sur la case (x,y). En cas d'unités adverses, il y a combat. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em int} & {\bfseries indice\-Unite} l'indice de l'unité à déplacer, dans le tableau des unités du joueurs en cours \\
+\hline
+{\em int} & {\bfseries x} l'abscisse de la case destination \\
+\hline
+{\em int} & {\bfseries y} l'ordonnée de la case destination \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int, 0 si l'unité ne peut pas se déplacer, 1, si elle se déplace sans combat, 2 s'il y a combat et qu'elle meurt, 3 si combat et déplacement possible, 4 si combat et déplacement non possible 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{class_small_world_1_1_partie_a6496b6d4bf683541164126855524897b}{Small\-World.\-Partie}.
+
+\hypertarget{interface_small_world_1_1_inter_partie_ac1b18e80224dba7e8cb96ae386ed46e3}{\index{Small\-World\-::\-Inter\-Partie@{Small\-World\-::\-Inter\-Partie}!enregistrer@{enregistrer}}
+\index{enregistrer@{enregistrer}!SmallWorld::InterPartie@{Small\-World\-::\-Inter\-Partie}}
+\subsubsection[{enregistrer}]{\setlength{\rightskip}{0pt plus 5cm}Small\-World.\-Inter\-Partie.\-enregistrer (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{interface_small_world_1_1_inter_partie_ac1b18e80224dba7e8cb96ae386ed46e3}
+
+
+Enregistre une partie. 
+
+\begin{DoxyReturn}{Returns}
+bool, vrai si le nom de fichier est connu, faux sinon 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{class_small_world_1_1_partie_a823548e00d1af08c961e0667645d90a9}{Small\-World.\-Partie}.
+
+\hypertarget{interface_small_world_1_1_inter_partie_a1bebb4f8184527d91080a537c759da7b}{\index{Small\-World\-::\-Inter\-Partie@{Small\-World\-::\-Inter\-Partie}!peut\-Se\-Deplacer@{peut\-Se\-Deplacer}}
+\index{peut\-Se\-Deplacer@{peut\-Se\-Deplacer}!SmallWorld::InterPartie@{Small\-World\-::\-Inter\-Partie}}
+\subsubsection[{peut\-Se\-Deplacer}]{\setlength{\rightskip}{0pt plus 5cm}Small\-World.\-Inter\-Partie.\-peut\-Se\-Deplacer (
+\begin{DoxyParamCaption}
+\item[{{\bf Unite}}]{unite, }
+\item[{int}]{x, }
+\item[{int}]{y}
+\end{DoxyParamCaption}
+)}}\label{interface_small_world_1_1_inter_partie_a1bebb4f8184527d91080a537c759da7b}
+
+
+Indique si l'unité peut se déposer sur la case(x,y) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em int} & {\bfseries \hyperlink{class_small_world_1_1_unite}{Unite}} l'unité à déplacer \\
+\hline
+{\em int} & {\bfseries x} l'abscisse de la case destination \\
+\hline
+{\em int} & {\bfseries y} l'ordonnée de la case destination \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool, vrai si le déplacement est possible, faux sinon 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{class_small_world_1_1_partie_a8e2f3f866023c8a0e7b817cd6cd42552}{Small\-World.\-Partie}.
+
+\hypertarget{interface_small_world_1_1_inter_partie_aa29e03573a21b6d366bfb8dfb7bd50c3}{\index{Small\-World\-::\-Inter\-Partie@{Small\-World\-::\-Inter\-Partie}!selectionner\-Unite@{selectionner\-Unite}}
+\index{selectionner\-Unite@{selectionner\-Unite}!SmallWorld::InterPartie@{Small\-World\-::\-Inter\-Partie}}
+\subsubsection[{selectionner\-Unite}]{\setlength{\rightskip}{0pt plus 5cm}Small\-World.\-Inter\-Partie.\-selectionner\-Unite (
+\begin{DoxyParamCaption}
+\item[{int}]{x, }
+\item[{int}]{y}
+\end{DoxyParamCaption}
+)}}\label{interface_small_world_1_1_inter_partie_aa29e03573a21b6d366bfb8dfb7bd50c3}
+
+
+Obtenir l'ensemble des unités du joueur en cours se situant sur la case demandée. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em int} & {\bfseries x} l'abcsisse de la case demandée \\
+\hline
+{\em int} & {\bfseries y} l'ordonnée de la case demandée \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+List$<$\-Unite$>$ la liste des unités présentes sur la cases, pour le joueur courant 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{class_small_world_1_1_partie_ab652fc37c8e56f0b1d47d9b12878a04b}{Small\-World.\-Partie}.
+
+\hypertarget{interface_small_world_1_1_inter_partie_a3ee997cdbcf1402c3aed3fbad6ff8c56}{\index{Small\-World\-::\-Inter\-Partie@{Small\-World\-::\-Inter\-Partie}!selectionner\-Unite\-Adverse@{selectionner\-Unite\-Adverse}}
+\index{selectionner\-Unite\-Adverse@{selectionner\-Unite\-Adverse}!SmallWorld::InterPartie@{Small\-World\-::\-Inter\-Partie}}
+\subsubsection[{selectionner\-Unite\-Adverse}]{\setlength{\rightskip}{0pt plus 5cm}Small\-World.\-Inter\-Partie.\-selectionner\-Unite\-Adverse (
+\begin{DoxyParamCaption}
+\item[{int}]{x, }
+\item[{int}]{y}
+\end{DoxyParamCaption}
+)}}\label{interface_small_world_1_1_inter_partie_a3ee997cdbcf1402c3aed3fbad6ff8c56}
+
+
+Obtenir l'ensemble des unités des joueurs adverses du joueur en cours se situant sur la case demandée. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em int} & {\bfseries x} l'abcsisse de la case demandée \\
+\hline
+{\em int} & {\bfseries y} l'ordonnée de la case demandée \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+List$<$\-Unite$>$ la liste des unités présentes sur la cases, pour les adversaires du joueur courant 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{class_small_world_1_1_partie_a78b2a635ab41467c0458172d465bd00a}{Small\-World.\-Partie}.
+
+\hypertarget{interface_small_world_1_1_inter_partie_a854e4e9df304af71203a90ebea6dd5aa}{\index{Small\-World\-::\-Inter\-Partie@{Small\-World\-::\-Inter\-Partie}!vainqueurs@{vainqueurs}}
+\index{vainqueurs@{vainqueurs}!SmallWorld::InterPartie@{Small\-World\-::\-Inter\-Partie}}
+\subsubsection[{vainqueurs}]{\setlength{\rightskip}{0pt plus 5cm}Small\-World.\-Inter\-Partie.\-vainqueurs (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{interface_small_world_1_1_inter_partie_a854e4e9df304af71203a90ebea6dd5aa}
+
+
+Rend la liste des joueurs disposant du plus de points. 
+
+\begin{DoxyReturn}{Returns}
+Liste$<$\-Joueur$>$ la liste des gagnants 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{class_small_world_1_1_partie_aaf0f50bb8fc7f2841a073f9536579561}{Small\-World.\-Partie}.
+
+\hypertarget{interface_small_world_1_1_inter_partie_abefef771c059be341130c37dc98876b5}{\index{Small\-World\-::\-Inter\-Partie@{Small\-World\-::\-Inter\-Partie}!verifier\-Fin\-Partie@{verifier\-Fin\-Partie}}
+\index{verifier\-Fin\-Partie@{verifier\-Fin\-Partie}!SmallWorld::InterPartie@{Small\-World\-::\-Inter\-Partie}}
+\subsubsection[{verifier\-Fin\-Partie}]{\setlength{\rightskip}{0pt plus 5cm}Small\-World.\-Inter\-Partie.\-verifier\-Fin\-Partie (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{interface_small_world_1_1_inter_partie_abefef771c059be341130c37dc98876b5}
+
+
+Vérifier si la partie est finie (les joueurs adverses n'ont plus d'unité) 
+
+Met la variable Partie\-Finie à vraie si besoin
+
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{class_small_world_1_1_partie_a64b2d8fa9405d2a1f588dfa5536bd7a4}{Small\-World.\-Partie}.
+
 
 
 The documentation for this interface was generated from the following file\-:\begin{DoxyCompactItemize}
 \item 
-C\-:/\-Users/damienc/\-Documents/\-Git\-Hub/\-Small\-World/\-Visual\-Studio/\-Projet\-P\-O\-O/Partie.\-cs\end{DoxyCompactItemize}
+C\-:/\-Users/damienc/\-Documents/\-Git\-Hub/\-Small\-World/\-Visual\-Studio/\-Projet\-P\-O\-O/\hyperlink{_partie_8cs}{Partie.\-cs}\end{DoxyCompactItemize}

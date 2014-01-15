@@ -15,76 +15,169 @@ Inheritance diagram for Small\-World.\-Monteur\-Partie\-:\begin{figure}[H]
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \hyperlink{class_small_world_1_1_monteur_partie_a5d8bf6c04f12b46961962f5cff455b77}{ajouter\-Carte} (string taille\-Carte)
+void \hyperlink{class_small_world_1_1_monteur_partie_ad8cedb326193c0f0ff5f2d6705867156}{ajouter\-Carte} ()
 \begin{DoxyCompactList}\small\item\em Ajout de la carte pour la construction d'une partie. \end{DoxyCompactList}\item 
-void \hyperlink{class_small_world_1_1_monteur_partie_a4b08bbb3c398ac0f1e1fa49510df20bc}{ajouter\-Joueur} (string nom\-Joueur\-A, string nom\-Joueur\-B)
-\begin{DoxyCompactList}\small\item\em Ajout d'un joueur à la partie. \end{DoxyCompactList}\item 
-\hypertarget{class_small_world_1_1_monteur_partie_a851827aafea56d71083ee189d5743fa9}{\hyperlink{interface_small_world_1_1_inter_partie}{Small\-World.\-Inter\-Partie} \hyperlink{class_small_world_1_1_monteur_partie_a851827aafea56d71083ee189d5743fa9}{creer\-Partie} ()}\label{class_small_world_1_1_monteur_partie_a851827aafea56d71083ee189d5743fa9}
+void \hyperlink{class_small_world_1_1_monteur_partie_ac1e20f04d1ca796c1aa0ab504ecb1d2a}{ajouter\-Joueur} (string nom\-Joueur, string peuple)
+\begin{DoxyCompactList}\small\item\em Ajout d'un joueur. \end{DoxyCompactList}\item 
+\hyperlink{class_small_world_1_1_partie}{Partie} \hyperlink{class_small_world_1_1_monteur_partie_a76b953c2a45b0c3355d764355d85e225}{creer\-Partie} (string nom\-Joueur\-A, string peuple\-A, string nom\-Joueur\-B, string peuple\-B)
+\begin{DoxyCompactList}\small\item\em Création de la partie. \end{DoxyCompactList}\item 
+void \hyperlink{class_small_world_1_1_monteur_partie_a8bfe459f9efcb0561a7612e720e0a373}{initialiser\-Nombre\-Tour} ()
+\begin{DoxyCompactList}\small\item\em initialise le nombre de tour d'un partie \end{DoxyCompactList}\item 
+unsafe void \hyperlink{class_small_world_1_1_monteur_partie_a5cba1ab3dd04f490331bf22e540cc80e}{placer\-Unites} ()
+\begin{DoxyCompactList}\small\item\em Place le nombre d'unité nécessaire au début de la partie. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_small_world_1_1_monteur_partie_a44a0c5d06ba0529da7ded15eeae110b0}{int \hyperlink{class_small_world_1_1_monteur_partie_a44a0c5d06ba0529da7ded15eeae110b0}{nb\-\_\-case}}\label{class_small_world_1_1_monteur_partie_a44a0c5d06ba0529da7ded15eeae110b0}
 
-\begin{DoxyCompactList}\small\item\em Création la partie. \end{DoxyCompactList}\item 
-\hypertarget{class_small_world_1_1_monteur_partie_a0f15d1583b4289efb1ed7e9bba11d897}{void \hyperlink{class_small_world_1_1_monteur_partie_a0f15d1583b4289efb1ed7e9bba11d897}{placer\-Unites} ()}\label{class_small_world_1_1_monteur_partie_a0f15d1583b4289efb1ed7e9bba11d897}
+\begin{DoxyCompactList}\small\item\em constante {\bfseries nb\-\_\-case} le nombre initial de tour \end{DoxyCompactList}\item 
+\hypertarget{class_small_world_1_1_monteur_partie_a063951c1b42071c88f4354541ac31dfc}{int \hyperlink{class_small_world_1_1_monteur_partie_a063951c1b42071c88f4354541ac31dfc}{nb\-\_\-tour}}\label{class_small_world_1_1_monteur_partie_a063951c1b42071c88f4354541ac31dfc}
 
-\begin{DoxyCompactList}\small\item\em Placement des unités avant le début de la partie. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em constante {\bfseries nb\-\_\-tour} le nombre initial de tour \end{DoxyCompactList}\item 
+\hypertarget{class_small_world_1_1_monteur_partie_a051496e5be6c5f21de6519605ea4c5a7}{int \hyperlink{class_small_world_1_1_monteur_partie_a051496e5be6c5f21de6519605ea4c5a7}{nb\-\_\-unite}}\label{class_small_world_1_1_monteur_partie_a051496e5be6c5f21de6519605ea4c5a7}
+
+\begin{DoxyCompactList}\small\item\em constante {\bfseries nb\-\_\-unite} le nombre initial d'unité par joueur \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Properties}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{class_small_world_1_1_monteur_partie_a0dee378cc5a9a7d00319059a34fb59cb}{\hyperlink{class_small_world_1_1_fabrique_peuple}{Fabrique\-Peuple} {\bfseries Fabrique\-Peuple}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}}\label{class_small_world_1_1_monteur_partie_a0dee378cc5a9a7d00319059a34fb59cb}
+\hypertarget{class_small_world_1_1_monteur_partie_a1ec639225ca9a5bb10cd3ea3d76820c7}{int {\bfseries Nb\-\_\-case}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}}\label{class_small_world_1_1_monteur_partie_a1ec639225ca9a5bb10cd3ea3d76820c7}
 
 \item 
-\hypertarget{class_small_world_1_1_monteur_partie_a55882394ef6b99bfb4a00169f1d236af}{\hyperlink{class_small_world_1_1_partie}{Partie} {\bfseries Partie}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}}\label{class_small_world_1_1_monteur_partie_a55882394ef6b99bfb4a00169f1d236af}
+\hypertarget{class_small_world_1_1_monteur_partie_af44a6f3594947ce5647ecb63991e1088}{int \hyperlink{class_small_world_1_1_monteur_partie_af44a6f3594947ce5647ecb63991e1088}{Nb\-\_\-tour}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}}\label{class_small_world_1_1_monteur_partie_af44a6f3594947ce5647ecb63991e1088}
 
-\item 
-\hypertarget{class_small_world_1_1_monteur_partie_a50090a3827ada484da6fb19b1990a927}{\hyperlink{class_small_world_1_1_carte}{Carte} {\bfseries Carte}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}}\label{class_small_world_1_1_monteur_partie_a50090a3827ada484da6fb19b1990a927}
+\begin{DoxyCompactList}\small\item\em \hyperlink{namespace_small_world_1_1_properties}{Properties} pour l'attribut nb\-\_\-tour. \end{DoxyCompactList}\item 
+\hypertarget{class_small_world_1_1_monteur_partie_a5469de7a7a7e109b9ef8d2663d2f1f04}{int \hyperlink{class_small_world_1_1_monteur_partie_a5469de7a7a7e109b9ef8d2663d2f1f04}{Nb\-\_\-unite}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}}\label{class_small_world_1_1_monteur_partie_a5469de7a7a7e109b9ef8d2663d2f1f04}
 
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em \hyperlink{namespace_small_world_1_1_properties}{Properties} pour l'attribut nb\-\_\-unite. \end{DoxyCompactList}\item 
+\hypertarget{class_small_world_1_1_monteur_partie_abf37bc99734d517060ee5a86f41abc96}{\hyperlink{class_small_world_1_1_fabrique_peuple}{Fabrique\-Peuple} \hyperlink{class_small_world_1_1_monteur_partie_abf37bc99734d517060ee5a86f41abc96}{Fabrique\-Peuple}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}}\label{class_small_world_1_1_monteur_partie_abf37bc99734d517060ee5a86f41abc96}
+
+\begin{DoxyCompactList}\small\item\em \hyperlink{namespace_small_world_1_1_properties}{Properties} pour l'attribut fabrique\-Peuple. \end{DoxyCompactList}\item 
+\hypertarget{class_small_world_1_1_monteur_partie_a9591641b71bf77ba0c67110989202da0}{\hyperlink{class_small_world_1_1_partie}{Partie} \hyperlink{class_small_world_1_1_monteur_partie_a9591641b71bf77ba0c67110989202da0}{Partie}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}}\label{class_small_world_1_1_monteur_partie_a9591641b71bf77ba0c67110989202da0}
+
+\begin{DoxyCompactList}\small\item\em \hyperlink{namespace_small_world_1_1_properties}{Properties} pour l'attribut partie. \end{DoxyCompactList}\item 
+\hypertarget{class_small_world_1_1_monteur_partie_a4fa6b0de5f3b2ff1e10756300e6b1654}{\hyperlink{class_small_world_1_1_carte}{Carte} \hyperlink{class_small_world_1_1_monteur_partie_a4fa6b0de5f3b2ff1e10756300e6b1654}{Carte}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}}\label{class_small_world_1_1_monteur_partie_a4fa6b0de5f3b2ff1e10756300e6b1654}
+
+\begin{DoxyCompactList}\small\item\em \hyperlink{namespace_small_world_1_1_properties}{Properties} pour l'attribut carte. \end{DoxyCompactList}\item 
+\hypertarget{class_small_world_1_1_monteur_partie_ac7f1bc160be378d8dcae1cb00d86f312}{\hyperlink{class_small_world_1_1_strategie_carte}{Strategie\-Carte} \hyperlink{class_small_world_1_1_monteur_partie_ac7f1bc160be378d8dcae1cb00d86f312}{Strategie}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}}\label{class_small_world_1_1_monteur_partie_ac7f1bc160be378d8dcae1cb00d86f312}
+
+\begin{DoxyCompactList}\small\item\em \hyperlink{namespace_small_world_1_1_properties}{Properties} pour l'attribut strategie. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
 Classe abstraite implémentant Inter\-Monteur \hyperlink{interface_small_world_1_1_inter_partie}{Inter\-Partie}. 
 
 \subsection{Member Function Documentation}
-\hypertarget{class_small_world_1_1_monteur_partie_a5d8bf6c04f12b46961962f5cff455b77}{\index{Small\-World\-::\-Monteur\-Partie@{Small\-World\-::\-Monteur\-Partie}!ajouter\-Carte@{ajouter\-Carte}}
+\hypertarget{class_small_world_1_1_monteur_partie_ad8cedb326193c0f0ff5f2d6705867156}{\index{Small\-World\-::\-Monteur\-Partie@{Small\-World\-::\-Monteur\-Partie}!ajouter\-Carte@{ajouter\-Carte}}
 \index{ajouter\-Carte@{ajouter\-Carte}!SmallWorld::MonteurPartie@{Small\-World\-::\-Monteur\-Partie}}
-\subsubsection[{ajouter\-Carte}]{\setlength{\rightskip}{0pt plus 5cm}void Small\-World.\-Monteur\-Partie.\-ajouter\-Carte (
+\subsubsection[{ajouter\-Carte}]{\setlength{\rightskip}{0pt plus 5cm}Small\-World.\-Monteur\-Partie.\-ajouter\-Carte (
 \begin{DoxyParamCaption}
-\item[{string}]{taille\-Carte}
+{}
 \end{DoxyParamCaption}
-)}}\label{class_small_world_1_1_monteur_partie_a5d8bf6c04f12b46961962f5cff455b77}
+)}}\label{class_small_world_1_1_monteur_partie_ad8cedb326193c0f0ff5f2d6705867156}
 
 
 Ajout de la carte pour la construction d'une partie. 
 
-
-\begin{DoxyParams}{Parameters}
-{\em string} & {\bfseries taille\-Carte} La taille de la carte à créer. \\
-\hline
-\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
 
 
-Implements \hyperlink{interface_small_world_1_1_inter_monteur_partie_a7b74e28c71d27a249cf2fd37dac6ea50}{Small\-World.\-Inter\-Monteur\-Partie}.
+Implements \hyperlink{interface_small_world_1_1_inter_monteur_partie_a473c91ad26ee485f07261df1fcae0e8b}{Small\-World.\-Inter\-Monteur\-Partie}.
 
-\hypertarget{class_small_world_1_1_monteur_partie_a4b08bbb3c398ac0f1e1fa49510df20bc}{\index{Small\-World\-::\-Monteur\-Partie@{Small\-World\-::\-Monteur\-Partie}!ajouter\-Joueur@{ajouter\-Joueur}}
+\hypertarget{class_small_world_1_1_monteur_partie_ac1e20f04d1ca796c1aa0ab504ecb1d2a}{\index{Small\-World\-::\-Monteur\-Partie@{Small\-World\-::\-Monteur\-Partie}!ajouter\-Joueur@{ajouter\-Joueur}}
 \index{ajouter\-Joueur@{ajouter\-Joueur}!SmallWorld::MonteurPartie@{Small\-World\-::\-Monteur\-Partie}}
-\subsubsection[{ajouter\-Joueur}]{\setlength{\rightskip}{0pt plus 5cm}void Small\-World.\-Monteur\-Partie.\-ajouter\-Joueur (
+\subsubsection[{ajouter\-Joueur}]{\setlength{\rightskip}{0pt plus 5cm}Small\-World.\-Monteur\-Partie.\-ajouter\-Joueur (
 \begin{DoxyParamCaption}
 \item[{string}]{nom\-Joueur, }
 \item[{string}]{peuple}
 \end{DoxyParamCaption}
-)}}\label{class_small_world_1_1_monteur_partie_a4b08bbb3c398ac0f1e1fa49510df20bc}
+)}}\label{class_small_world_1_1_monteur_partie_ac1e20f04d1ca796c1aa0ab504ecb1d2a}
 
 
-Ajout d'un joueur à la partie. 
+Ajout d'un joueur. 
 
 
 \begin{DoxyParams}{Parameters}
-{\em string} & {\bfseries nom\-Joueur} Le nom du joueur à ajouter. \\
+{\em string} & {\bfseries nom\-Joueur} le nom du joueur \\
 \hline
-{\em string} & {\bfseries peuple} Le peuple joué par le joueur. \\
+{\em string} & {\bfseries peuple} le type de peuple \\
 \hline
 \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
 
 
-Implements \hyperlink{interface_small_world_1_1_inter_monteur_partie_a331382da196f9c2deb9deb3e19086be1}{Small\-World.\-Inter\-Monteur\-Partie}.
+Implements \hyperlink{interface_small_world_1_1_inter_monteur_partie_ae52498262dd36230b0c0d090cb59ff07}{Small\-World.\-Inter\-Monteur\-Partie}.
+
+\hypertarget{class_small_world_1_1_monteur_partie_a76b953c2a45b0c3355d764355d85e225}{\index{Small\-World\-::\-Monteur\-Partie@{Small\-World\-::\-Monteur\-Partie}!creer\-Partie@{creer\-Partie}}
+\index{creer\-Partie@{creer\-Partie}!SmallWorld::MonteurPartie@{Small\-World\-::\-Monteur\-Partie}}
+\subsubsection[{creer\-Partie}]{\setlength{\rightskip}{0pt plus 5cm}Small\-World.\-Monteur\-Partie.\-creer\-Partie (
+\begin{DoxyParamCaption}
+\item[{string}]{nom\-Joueur\-A, }
+\item[{string}]{peuple\-A, }
+\item[{string}]{nom\-Joueur\-B, }
+\item[{string}]{peuple\-B}
+\end{DoxyParamCaption}
+)}}\label{class_small_world_1_1_monteur_partie_a76b953c2a45b0c3355d764355d85e225}
+
+
+Création de la partie. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em string} & {\bfseries nom\-Joueur\-A} le nom du premier joueur \\
+\hline
+{\em string} & {\bfseries peuple\-A} le peuple du premier joueur \\
+\hline
+{\em string} & {\bfseries nom\-Joueur\-B} le nom du deuxième joueur \\
+\hline
+{\em string} & {\bfseries peuple\-B} le peuple du deuxième joueur \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{class_small_world_1_1_partie}{Partie} la nouvelle partie 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{interface_small_world_1_1_inter_monteur_partie_ad471ab6610aaa1664fb3d0bd93f00be3}{Small\-World.\-Inter\-Monteur\-Partie}.
+
+\hypertarget{class_small_world_1_1_monteur_partie_a8bfe459f9efcb0561a7612e720e0a373}{\index{Small\-World\-::\-Monteur\-Partie@{Small\-World\-::\-Monteur\-Partie}!initialiser\-Nombre\-Tour@{initialiser\-Nombre\-Tour}}
+\index{initialiser\-Nombre\-Tour@{initialiser\-Nombre\-Tour}!SmallWorld::MonteurPartie@{Small\-World\-::\-Monteur\-Partie}}
+\subsubsection[{initialiser\-Nombre\-Tour}]{\setlength{\rightskip}{0pt plus 5cm}Small\-World.\-Monteur\-Partie.\-initialiser\-Nombre\-Tour (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_small_world_1_1_monteur_partie_a8bfe459f9efcb0561a7612e720e0a373}
+
+
+initialise le nombre de tour d'un partie 
+
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{interface_small_world_1_1_inter_monteur_partie_afa1b718338a15b4dd0deb5d817f3484c}{Small\-World.\-Inter\-Monteur\-Partie}.
+
+\hypertarget{class_small_world_1_1_monteur_partie_a5cba1ab3dd04f490331bf22e540cc80e}{\index{Small\-World\-::\-Monteur\-Partie@{Small\-World\-::\-Monteur\-Partie}!placer\-Unites@{placer\-Unites}}
+\index{placer\-Unites@{placer\-Unites}!SmallWorld::MonteurPartie@{Small\-World\-::\-Monteur\-Partie}}
+\subsubsection[{placer\-Unites}]{\setlength{\rightskip}{0pt plus 5cm}Small\-World.\-Monteur\-Partie.\-placer\-Unites (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_small_world_1_1_monteur_partie_a5cba1ab3dd04f490331bf22e540cc80e}
+
+
+Place le nombre d'unité nécessaire au début de la partie. 
+
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{interface_small_world_1_1_inter_monteur_partie_a4ea7442b592d23a0f31e0d0020f124de}{Small\-World.\-Inter\-Monteur\-Partie}.
 
 
 

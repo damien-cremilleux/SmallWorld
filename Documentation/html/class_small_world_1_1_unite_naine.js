@@ -1,4 +1,6 @@
 var class_small_world_1_1_unite_naine =
 [
-    [ "UniteNaine", "class_small_world_1_1_unite_naine.html#ae0d60263f75b5e32b4fd9fe0f9aa7b4c", null ]
+    [ "UniteNaine", "class_small_world_1_1_unite_naine.html#ae032047791cee62b77c1b7aed2e6f3da", null ],
+    [ "calculerDeplacement", "class_small_world_1_1_unite_naine.html#a487e42750e74fbf551d1e55b48101c72", null ],
+    [ "calculPointVictoire", "class_small_world_1_1_unite_naine.html#aceabdf1ae46c14b18a9acfebe821a07b", null ]
 ];

@@ -94,7 +94,7 @@ $(document).ready(function(){initNavTree('interface_small_world_1_1_inter_partie
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Properties</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Properties</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -104,21 +104,315 @@ $(document).ready(function(){initNavTree('interface_small_world_1_1_inter_partie
 </div>
 
 <div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="interface_small_world_1_1_inter_partie-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">SmallWorld.InterPartie Interface Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>interface pour les partie  
+ <a href="interface_small_world_1_1_inter_partie.html#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for SmallWorld.InterPartie:</div>
 <div class="dyncontent">
  <div class="center">
   <img src="interface_small_world_1_1_inter_partie.png" usemap="#SmallWorld.InterPartie_map" alt=""/>
   <map id="SmallWorld.InterPartie_map" name="SmallWorld.InterPartie_map">
-<area href="class_small_world_1_1_partie.html" alt="SmallWorld.Partie" shape="rect" coords="0,56,137,80"/>
+<area href="class_small_world_1_1_partie.html" title="classe pour les parties " alt="SmallWorld.Partie" shape="rect" coords="0,56,137,80"/>
 </map>
  </div></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:a854e4e9df304af71203a90ebea6dd5aa"><td class="memItemLeft" align="right" valign="top">List&lt; <a class="el" href="class_small_world_1_1_joueur.html">Joueur</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_small_world_1_1_inter_partie.html#a854e4e9df304af71203a90ebea6dd5aa">vainqueurs</a> ()</td></tr>
+<tr class="memdesc:a854e4e9df304af71203a90ebea6dd5aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rend la liste des joueurs disposant du plus de points.  <a href="#a854e4e9df304af71203a90ebea6dd5aa">More...</a><br/></td></tr>
+<tr class="separator:a854e4e9df304af71203a90ebea6dd5aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9d379ea16f666ff33913f4c4bb0ac148"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_small_world_1_1_inter_partie.html#a9d379ea16f666ff33913f4c4bb0ac148">changerJoueur</a> ()</td></tr>
+<tr class="memdesc:a9d379ea16f666ff33913f4c4bb0ac148"><td class="mdescLeft">&#160;</td><td class="mdescRight">Change le joueur en cours, quand le joueur précédent a fini son tour.  <a href="#a9d379ea16f666ff33913f4c4bb0ac148">More...</a><br/></td></tr>
+<tr class="separator:a9d379ea16f666ff33913f4c4bb0ac148"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa29e03573a21b6d366bfb8dfb7bd50c3"><td class="memItemLeft" align="right" valign="top">List&lt; <a class="el" href="class_small_world_1_1_unite.html">Unite</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_small_world_1_1_inter_partie.html#aa29e03573a21b6d366bfb8dfb7bd50c3">selectionnerUnite</a> (int x, int y)</td></tr>
+<tr class="memdesc:aa29e03573a21b6d366bfb8dfb7bd50c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtenir l'ensemble des unités du joueur en cours se situant sur la case demandée.  <a href="#aa29e03573a21b6d366bfb8dfb7bd50c3">More...</a><br/></td></tr>
+<tr class="separator:aa29e03573a21b6d366bfb8dfb7bd50c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3ee997cdbcf1402c3aed3fbad6ff8c56"><td class="memItemLeft" align="right" valign="top">List&lt; <a class="el" href="class_small_world_1_1_unite.html">Unite</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_small_world_1_1_inter_partie.html#a3ee997cdbcf1402c3aed3fbad6ff8c56">selectionnerUniteAdverse</a> (int x, int y)</td></tr>
+<tr class="memdesc:a3ee997cdbcf1402c3aed3fbad6ff8c56"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtenir l'ensemble des unités des joueurs adverses du joueur en cours se situant sur la case demandée.  <a href="#a3ee997cdbcf1402c3aed3fbad6ff8c56">More...</a><br/></td></tr>
+<tr class="separator:a3ee997cdbcf1402c3aed3fbad6ff8c56"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1bebb4f8184527d91080a537c759da7b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_small_world_1_1_inter_partie.html#a1bebb4f8184527d91080a537c759da7b">peutSeDeplacer</a> (<a class="el" href="class_small_world_1_1_unite.html">Unite</a> unite, int x, int y)</td></tr>
+<tr class="memdesc:a1bebb4f8184527d91080a537c759da7b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indique si l'unité peut se déposer sur la case(x,y)  <a href="#a1bebb4f8184527d91080a537c759da7b">More...</a><br/></td></tr>
+<tr class="separator:a1bebb4f8184527d91080a537c759da7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a532da197c321c61ba9c075e00d02bde9"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_small_world_1_1_inter_partie.html#a532da197c321c61ba9c075e00d02bde9">demanderDeplacement</a> (<a class="el" href="class_small_world_1_1_unite.html">Unite</a> unite, int x, int y)</td></tr>
+<tr class="memdesc:a532da197c321c61ba9c075e00d02bde9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Déplacer, si possible, l'unité sur la case (x,y). En cas d'unités adverses, il y a combat.  <a href="#a532da197c321c61ba9c075e00d02bde9">More...</a><br/></td></tr>
+<tr class="separator:a532da197c321c61ba9c075e00d02bde9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abefef771c059be341130c37dc98876b5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_small_world_1_1_inter_partie.html#abefef771c059be341130c37dc98876b5">verifierFinPartie</a> ()</td></tr>
+<tr class="memdesc:abefef771c059be341130c37dc98876b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vérifier si la partie est finie (les joueurs adverses n'ont plus d'unité)  <a href="#abefef771c059be341130c37dc98876b5">More...</a><br/></td></tr>
+<tr class="separator:abefef771c059be341130c37dc98876b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac1b18e80224dba7e8cb96ae386ed46e3"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_small_world_1_1_inter_partie.html#ac1b18e80224dba7e8cb96ae386ed46e3">enregistrer</a> ()</td></tr>
+<tr class="memdesc:ac1b18e80224dba7e8cb96ae386ed46e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enregistre une partie.  <a href="#ac1b18e80224dba7e8cb96ae386ed46e3">More...</a><br/></td></tr>
+<tr class="separator:ac1b18e80224dba7e8cb96ae386ed46e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a04902e267272973c6eec147a87cb2a19"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a04902e267272973c6eec147a87cb2a19"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>enregistrerSous</b> (string nomFichier)</td></tr>
+<tr class="separator:a04902e267272973c6eec147a87cb2a19"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abb90ffa0496dd58c5333afc32973d28e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="abb90ffa0496dd58c5333afc32973d28e"></a>
+<a class="el" href="class_small_world_1_1_partie.html">Partie</a>&#160;</td><td class="memItemRight" valign="bottom"><b>charger</b> (string nomFichier)</td></tr>
+<tr class="separator:abb90ffa0496dd58c5333afc32973d28e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad80fd5b6fe66be8ac409325e9a15ff33"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad80fd5b6fe66be8ac409325e9a15ff33"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_small_world_1_1_inter_partie.html#ad80fd5b6fe66be8ac409325e9a15ff33">restaurer</a> ()</td></tr>
+<tr class="memdesc:ad80fd5b6fe66be8ac409325e9a15ff33"><td class="mdescLeft">&#160;</td><td class="mdescRight">Restaure les unités suite à une désérialisation. <br/></td></tr>
+<tr class="separator:ad80fd5b6fe66be8ac409325e9a15ff33"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>interface pour les partie </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a9d379ea16f666ff33913f4c4bb0ac148"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">SmallWorld.InterPartie.changerJoueur </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Change le joueur en cours, quand le joueur précédent a fini son tour. </p>
+<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
+
+<p>Implemented in <a class="el" href="class_small_world_1_1_partie.html#a3598df0afeeaa4b0cbf16c5ff8631264">SmallWorld.Partie</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a532da197c321c61ba9c075e00d02bde9"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">SmallWorld.InterPartie.demanderDeplacement </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_small_world_1_1_unite.html">Unite</a>&#160;</td>
+          <td class="paramname"><em>unite</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Déplacer, si possible, l'unité sur la case (x,y). En cas d'unités adverses, il y a combat. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">int</td><td><b>indiceUnite</b> l'indice de l'unité à déplacer, dans le tableau des unités du joueurs en cours </td></tr>
+    <tr><td class="paramname">int</td><td><b>x</b> l'abscisse de la case destination </td></tr>
+    <tr><td class="paramname">int</td><td><b>y</b> l'ordonnée de la case destination </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>int, 0 si l'unité ne peut pas se déplacer, 1, si elle se déplace sans combat, 2 s'il y a combat et qu'elle meurt, 3 si combat et déplacement possible, 4 si combat et déplacement non possible </dd></dl>
+
+<p>Implemented in <a class="el" href="class_small_world_1_1_partie.html#a6496b6d4bf683541164126855524897b">SmallWorld.Partie</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ac1b18e80224dba7e8cb96ae386ed46e3"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">SmallWorld.InterPartie.enregistrer </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Enregistre une partie. </p>
+<dl class="section return"><dt>Returns</dt><dd>bool, vrai si le nom de fichier est connu, faux sinon </dd></dl>
+
+<p>Implemented in <a class="el" href="class_small_world_1_1_partie.html#a823548e00d1af08c961e0667645d90a9">SmallWorld.Partie</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a1bebb4f8184527d91080a537c759da7b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">SmallWorld.InterPartie.peutSeDeplacer </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_small_world_1_1_unite.html">Unite</a>&#160;</td>
+          <td class="paramname"><em>unite</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Indique si l'unité peut se déposer sur la case(x,y) </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">int</td><td><b><a class="el" href="class_small_world_1_1_unite.html" title="Classe abstraite pour les unités. ">Unite</a></b> l'unité à déplacer </td></tr>
+    <tr><td class="paramname">int</td><td><b>x</b> l'abscisse de la case destination </td></tr>
+    <tr><td class="paramname">int</td><td><b>y</b> l'ordonnée de la case destination </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>bool, vrai si le déplacement est possible, faux sinon </dd></dl>
+
+<p>Implemented in <a class="el" href="class_small_world_1_1_partie.html#a8e2f3f866023c8a0e7b817cd6cd42552">SmallWorld.Partie</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aa29e03573a21b6d366bfb8dfb7bd50c3"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">SmallWorld.InterPartie.selectionnerUnite </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Obtenir l'ensemble des unités du joueur en cours se situant sur la case demandée. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">int</td><td><b>x</b> l'abcsisse de la case demandée </td></tr>
+    <tr><td class="paramname">int</td><td><b>y</b> l'ordonnée de la case demandée </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>List&lt;Unite&gt; la liste des unités présentes sur la cases, pour le joueur courant </dd></dl>
+
+<p>Implemented in <a class="el" href="class_small_world_1_1_partie.html#ab652fc37c8e56f0b1d47d9b12878a04b">SmallWorld.Partie</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a3ee997cdbcf1402c3aed3fbad6ff8c56"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">SmallWorld.InterPartie.selectionnerUniteAdverse </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Obtenir l'ensemble des unités des joueurs adverses du joueur en cours se situant sur la case demandée. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">int</td><td><b>x</b> l'abcsisse de la case demandée </td></tr>
+    <tr><td class="paramname">int</td><td><b>y</b> l'ordonnée de la case demandée </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>List&lt;Unite&gt; la liste des unités présentes sur la cases, pour les adversaires du joueur courant </dd></dl>
+
+<p>Implemented in <a class="el" href="class_small_world_1_1_partie.html#a78b2a635ab41467c0458172d465bd00a">SmallWorld.Partie</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a854e4e9df304af71203a90ebea6dd5aa"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">SmallWorld.InterPartie.vainqueurs </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Rend la liste des joueurs disposant du plus de points. </p>
+<dl class="section return"><dt>Returns</dt><dd>Liste&lt;Joueur&gt; la liste des gagnants </dd></dl>
+
+<p>Implemented in <a class="el" href="class_small_world_1_1_partie.html#aaf0f50bb8fc7f2841a073f9536579561">SmallWorld.Partie</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="abefef771c059be341130c37dc98876b5"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">SmallWorld.InterPartie.verifierFinPartie </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Vérifier si la partie est finie (les joueurs adverses n'ont plus d'unité) </p>
+<p>Met la variable PartieFinie à vraie si besoin</p>
+<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
+
+<p>Implemented in <a class="el" href="class_small_world_1_1_partie.html#a64b2d8fa9405d2a1f588dfa5536bd7a4">SmallWorld.Partie</a>.</p>
+
+</div>
+</div>
 <hr/>The documentation for this interface was generated from the following file:<ul>
-<li>C:/Users/damienc/Documents/GitHub/SmallWorld/VisualStudio/ProjetPOO/Partie.cs</li>
+<li>C:/Users/damienc/Documents/GitHub/SmallWorld/VisualStudio/ProjetPOO/<a class="el" href="_partie_8cs.html">Partie.cs</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -126,7 +420,7 @@ Inheritance diagram for SmallWorld.InterPartie:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_small_world.html">SmallWorld</a></li><li class="navelem"><a class="el" href="interface_small_world_1_1_inter_partie.html">InterPartie</a></li>
-    <li class="footer">Generated on Sun Dec 15 2013 17:32:47 for SmallWorld by
+    <li class="footer">Generated on Wed Jan 15 2014 15:23:36 for SmallWorld by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.5 </li>
   </ul>

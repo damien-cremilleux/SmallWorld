@@ -94,7 +94,7 @@ $(document).ready(function(){initNavTree('class_small_world_1_1_strategie_carte.
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Properties</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Properties</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -106,66 +106,54 @@ $(document).ready(function(){initNavTree('class_small_world_1_1_strategie_carte.
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pro-attribs">Protected Attributes</a> &#124;
 <a href="#properties">Properties</a> &#124;
 <a href="class_small_world_1_1_strategie_carte-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">SmallWorld.StrategieCarte Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
+<div class="title">SmallWorld.StrategieCarte Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>classe abstraite pour la stratégie  
+ <a href="class_small_world_1_1_strategie_carte.html#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for SmallWorld.StrategieCarte:</div>
 <div class="dyncontent">
  <div class="center">
   <img src="class_small_world_1_1_strategie_carte.png" usemap="#SmallWorld.StrategieCarte_map" alt=""/>
   <map id="SmallWorld.StrategieCarte_map" name="SmallWorld.StrategieCarte_map">
-<area href="interface_small_world_1_1_inter_strategie_carte.html" alt="SmallWorld.InterStrategieCarte" shape="rect" coords="195,0,380,24"/>
-<area href="class_small_world_1_1_strategie_demo.html" alt="SmallWorld.StrategieDemo" shape="rect" coords="0,112,185,136"/>
-<area href="class_small_world_1_1_strategie_normale.html" alt="SmallWorld.StrategieNormale" shape="rect" coords="195,112,380,136"/>
-<area href="class_small_world_1_1_strategie_petite.html" alt="SmallWorld.StrategiePetite" shape="rect" coords="390,112,575,136"/>
+<area href="interface_small_world_1_1_inter_strategie_carte.html" title="interface globale pour la stratégie " alt="SmallWorld.InterStrategieCarte" shape="rect" coords="195,0,380,24"/>
+<area href="class_small_world_1_1_strategie_demo.html" title="classe pour une stratégie démo " alt="SmallWorld.StrategieDemo" shape="rect" coords="0,112,185,136"/>
+<area href="class_small_world_1_1_strategie_normale.html" title="classe pour une stratégie normale " alt="SmallWorld.StrategieNormale" shape="rect" coords="195,112,380,136"/>
+<area href="class_small_world_1_1_strategie_petite.html" title="classe pour une stratégie petite " alt="SmallWorld.StrategiePetite" shape="rect" coords="390,112,575,136"/>
 </map>
  </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a705ec27550d4dd65ec9295a851580c63"><td class="memItemLeft" align="right" valign="top">abstract void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_small_world_1_1_strategie_carte.html#a705ec27550d4dd65ec9295a851580c63">construire</a> ()</td></tr>
-<tr class="separator:a705ec27550d4dd65ec9295a851580c63"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aafe89809c98196f4b1d48436d02bcbed"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aafe89809c98196f4b1d48436d02bcbed"></a>
+unsafe List&lt; List&lt; <a class="el" href="class_small_world_1_1_case.html">Case</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_small_world_1_1_strategie_carte.html#aafe89809c98196f4b1d48436d02bcbed">construire</a> ()</td></tr>
+<tr class="memdesc:aafe89809c98196f4b1d48436d02bcbed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construit une nouvelle <a class="el" href="class_small_world_1_1_carte.html" title="Classe Carte Représente la carte du monde. ">Carte</a>. <br/></td></tr>
+<tr class="separator:aafe89809c98196f4b1d48436d02bcbed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
+Protected Attributes</h2></td></tr>
+<tr class="memitem:a04a14a2cc7b170caec54ff2d87f70724"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a04a14a2cc7b170caec54ff2d87f70724"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_small_world_1_1_strategie_carte.html#a04a14a2cc7b170caec54ff2d87f70724">taille</a></td></tr>
+<tr class="memdesc:a04a14a2cc7b170caec54ff2d87f70724"><td class="mdescLeft">&#160;</td><td class="mdescRight">Attribut <b>TAILLE</b> indiquant la taille de la carte. <br/></td></tr>
+<tr class="separator:a04a14a2cc7b170caec54ff2d87f70724"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
 Properties</h2></td></tr>
-<tr class="memitem:a146ad39467e6dd3209997f0ceff95fd4"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a146ad39467e6dd3209997f0ceff95fd4"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>position</b><code> [get, set]</code></td></tr>
-<tr class="separator:a146ad39467e6dd3209997f0ceff95fd4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac0c543aa988e3c669cf5d9b17ea3cd31"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac0c543aa988e3c669cf5d9b17ea3cd31"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_small_world_1_1_strategie_carte.html#ac0c543aa988e3c669cf5d9b17ea3cd31">Taille</a><code> [get]</code></td></tr>
+<tr class="memdesc:ac0c543aa988e3c669cf5d9b17ea3cd31"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="namespace_small_world_1_1_properties.html">Properties</a> pour l'attribut taille. <br/></td></tr>
+<tr class="separator:ac0c543aa988e3c669cf5d9b17ea3cd31"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a705ec27550d4dd65ec9295a851580c63"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">abstract void SmallWorld.StrategieCarte.construire </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Implements <a class="el" href="interface_small_world_1_1_inter_strategie_carte.html#aa3f0d1267ad71756dc3b134d13733085">SmallWorld.InterStrategieCarte</a>.</p>
-
-<p>Implemented in <a class="el" href="class_small_world_1_1_strategie_normale.html#a8b9231f4b96f063008eeb670f8f09db6">SmallWorld.StrategieNormale</a>, <a class="el" href="class_small_world_1_1_strategie_petite.html#a19e5824d046b8dc0e982465195458192">SmallWorld.StrategiePetite</a>, and <a class="el" href="class_small_world_1_1_strategie_demo.html#afc2d6c69d19a33fa894c3193d7244200">SmallWorld.StrategieDemo</a>.</p>
-
-</div>
-</div>
-<hr/>The documentation for this class was generated from the following file:<ul>
-<li>C:/Users/damienc/Documents/GitHub/SmallWorld/VisualStudio/ProjetPOO/Strategie.cs</li>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>classe abstraite pour la stratégie </p>
+</div><hr/>The documentation for this class was generated from the following file:<ul>
+<li>C:/Users/damienc/Documents/GitHub/SmallWorld/VisualStudio/ProjetPOO/<a class="el" href="_strategie_8cs.html">Strategie.cs</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -173,7 +161,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>position</b><code> [ge
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_small_world.html">SmallWorld</a></li><li class="navelem"><a class="el" href="class_small_world_1_1_strategie_carte.html">StrategieCarte</a></li>
-    <li class="footer">Generated on Sun Dec 15 2013 17:32:51 for SmallWorld by
+    <li class="footer">Generated on Wed Jan 15 2014 15:23:41 for SmallWorld by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.5 </li>
   </ul>

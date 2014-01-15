@@ -94,7 +94,7 @@ $(document).ready(function(){initNavTree('class_small_world_1_1_monteur_partie.h
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Properties</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Properties</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -106,6 +106,7 @@ $(document).ready(function(){initNavTree('class_small_world_1_1_monteur_partie.h
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pro-attribs">Protected Attributes</a> &#124;
 <a href="#properties">Properties</a> &#124;
 <a href="class_small_world_1_1_monteur_partie-members.html">List of all members</a>  </div>
   <div class="headertitle">
@@ -113,7 +114,7 @@ $(document).ready(function(){initNavTree('class_small_world_1_1_monteur_partie.h
 </div><!--header-->
 <div class="contents">
 
-<p>Classe abstraite implémentant InterMonteur <a class="el" href="interface_small_world_1_1_inter_partie.html">InterPartie</a>.  
+<p>Classe abstraite implémentant InterMonteur <a class="el" href="interface_small_world_1_1_inter_partie.html" title="interface pour les partie ">InterPartie</a>.  
  <a href="class_small_world_1_1_monteur_partie.html#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for SmallWorld.MonteurPartie:</div>
@@ -122,76 +123,104 @@ Inheritance diagram for SmallWorld.MonteurPartie:</div>
   <img src="class_small_world_1_1_monteur_partie.png" usemap="#SmallWorld.MonteurPartie_map" alt=""/>
   <map id="SmallWorld.MonteurPartie_map" name="SmallWorld.MonteurPartie_map">
 <area href="interface_small_world_1_1_inter_monteur_partie.html" title="Interface globale du monteur. " alt="SmallWorld.InterMonteurPartie" shape="rect" coords="216,0,422,24"/>
-<area href="class_small_world_1_1_monteur_partie_demo.html" alt="SmallWorld.MonteurPartieDemo" shape="rect" coords="0,112,206,136"/>
-<area href="class_small_world_1_1_monteur_partie_normale.html" alt="SmallWorld.MonteurPartieNormale" shape="rect" coords="216,112,422,136"/>
-<area href="class_small_world_1_1_monteur_partie_petite.html" alt="SmallWorld.MonteurPartiePetite" shape="rect" coords="432,112,638,136"/>
+<area href="class_small_world_1_1_monteur_partie_demo.html" title="classe pour un monteur d&#39;une partie démo " alt="SmallWorld.MonteurPartieDemo" shape="rect" coords="0,112,206,136"/>
+<area href="class_small_world_1_1_monteur_partie_normale.html" title="classe pour un monteur d&#39;une partie normale " alt="SmallWorld.MonteurPartieNormale" shape="rect" coords="216,112,422,136"/>
+<area href="class_small_world_1_1_monteur_partie_petite.html" title="classe pour un monteur d&#39;une partie petite " alt="SmallWorld.MonteurPartiePetite" shape="rect" coords="432,112,638,136"/>
 </map>
  </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a5d8bf6c04f12b46961962f5cff455b77"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_small_world_1_1_monteur_partie.html#a5d8bf6c04f12b46961962f5cff455b77">ajouterCarte</a> (string tailleCarte)</td></tr>
-<tr class="memdesc:a5d8bf6c04f12b46961962f5cff455b77"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ajout de la carte pour la construction d'une partie.  <a href="#a5d8bf6c04f12b46961962f5cff455b77">More...</a><br/></td></tr>
-<tr class="separator:a5d8bf6c04f12b46961962f5cff455b77"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4b08bbb3c398ac0f1e1fa49510df20bc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_small_world_1_1_monteur_partie.html#a4b08bbb3c398ac0f1e1fa49510df20bc">ajouterJoueur</a> (string nomJoueurA, string nomJoueurB)</td></tr>
-<tr class="memdesc:a4b08bbb3c398ac0f1e1fa49510df20bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ajout d'un joueur à la partie.  <a href="#a4b08bbb3c398ac0f1e1fa49510df20bc">More...</a><br/></td></tr>
-<tr class="separator:a4b08bbb3c398ac0f1e1fa49510df20bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a851827aafea56d71083ee189d5743fa9"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a851827aafea56d71083ee189d5743fa9"></a>
-<a class="el" href="interface_small_world_1_1_inter_partie.html">SmallWorld.InterPartie</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_small_world_1_1_monteur_partie.html#a851827aafea56d71083ee189d5743fa9">creerPartie</a> ()</td></tr>
-<tr class="memdesc:a851827aafea56d71083ee189d5743fa9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Création la partie. <br/></td></tr>
-<tr class="separator:a851827aafea56d71083ee189d5743fa9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0f15d1583b4289efb1ed7e9bba11d897"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0f15d1583b4289efb1ed7e9bba11d897"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_small_world_1_1_monteur_partie.html#a0f15d1583b4289efb1ed7e9bba11d897">placerUnites</a> ()</td></tr>
-<tr class="memdesc:a0f15d1583b4289efb1ed7e9bba11d897"><td class="mdescLeft">&#160;</td><td class="mdescRight">Placement des unités avant le début de la partie. <br/></td></tr>
-<tr class="separator:a0f15d1583b4289efb1ed7e9bba11d897"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad8cedb326193c0f0ff5f2d6705867156"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_small_world_1_1_monteur_partie.html#ad8cedb326193c0f0ff5f2d6705867156">ajouterCarte</a> ()</td></tr>
+<tr class="memdesc:ad8cedb326193c0f0ff5f2d6705867156"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ajout de la carte pour la construction d'une partie.  <a href="#ad8cedb326193c0f0ff5f2d6705867156">More...</a><br/></td></tr>
+<tr class="separator:ad8cedb326193c0f0ff5f2d6705867156"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac1e20f04d1ca796c1aa0ab504ecb1d2a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_small_world_1_1_monteur_partie.html#ac1e20f04d1ca796c1aa0ab504ecb1d2a">ajouterJoueur</a> (string nomJoueur, string peuple)</td></tr>
+<tr class="memdesc:ac1e20f04d1ca796c1aa0ab504ecb1d2a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ajout d'un joueur.  <a href="#ac1e20f04d1ca796c1aa0ab504ecb1d2a">More...</a><br/></td></tr>
+<tr class="separator:ac1e20f04d1ca796c1aa0ab504ecb1d2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a76b953c2a45b0c3355d764355d85e225"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_small_world_1_1_partie.html">Partie</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_small_world_1_1_monteur_partie.html#a76b953c2a45b0c3355d764355d85e225">creerPartie</a> (string nomJoueurA, string peupleA, string nomJoueurB, string peupleB)</td></tr>
+<tr class="memdesc:a76b953c2a45b0c3355d764355d85e225"><td class="mdescLeft">&#160;</td><td class="mdescRight">Création de la partie.  <a href="#a76b953c2a45b0c3355d764355d85e225">More...</a><br/></td></tr>
+<tr class="separator:a76b953c2a45b0c3355d764355d85e225"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8bfe459f9efcb0561a7612e720e0a373"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_small_world_1_1_monteur_partie.html#a8bfe459f9efcb0561a7612e720e0a373">initialiserNombreTour</a> ()</td></tr>
+<tr class="memdesc:a8bfe459f9efcb0561a7612e720e0a373"><td class="mdescLeft">&#160;</td><td class="mdescRight">initialise le nombre de tour d'un partie  <a href="#a8bfe459f9efcb0561a7612e720e0a373">More...</a><br/></td></tr>
+<tr class="separator:a8bfe459f9efcb0561a7612e720e0a373"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5cba1ab3dd04f490331bf22e540cc80e"><td class="memItemLeft" align="right" valign="top">unsafe void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_small_world_1_1_monteur_partie.html#a5cba1ab3dd04f490331bf22e540cc80e">placerUnites</a> ()</td></tr>
+<tr class="memdesc:a5cba1ab3dd04f490331bf22e540cc80e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Place le nombre d'unité nécessaire au début de la partie.  <a href="#a5cba1ab3dd04f490331bf22e540cc80e">More...</a><br/></td></tr>
+<tr class="separator:a5cba1ab3dd04f490331bf22e540cc80e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
+Protected Attributes</h2></td></tr>
+<tr class="memitem:a44a0c5d06ba0529da7ded15eeae110b0"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a44a0c5d06ba0529da7ded15eeae110b0"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_small_world_1_1_monteur_partie.html#a44a0c5d06ba0529da7ded15eeae110b0">nb_case</a></td></tr>
+<tr class="memdesc:a44a0c5d06ba0529da7ded15eeae110b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">constante <b>nb_case</b> le nombre initial de tour <br/></td></tr>
+<tr class="separator:a44a0c5d06ba0529da7ded15eeae110b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a063951c1b42071c88f4354541ac31dfc"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a063951c1b42071c88f4354541ac31dfc"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_small_world_1_1_monteur_partie.html#a063951c1b42071c88f4354541ac31dfc">nb_tour</a></td></tr>
+<tr class="memdesc:a063951c1b42071c88f4354541ac31dfc"><td class="mdescLeft">&#160;</td><td class="mdescRight">constante <b>nb_tour</b> le nombre initial de tour <br/></td></tr>
+<tr class="separator:a063951c1b42071c88f4354541ac31dfc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a051496e5be6c5f21de6519605ea4c5a7"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a051496e5be6c5f21de6519605ea4c5a7"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_small_world_1_1_monteur_partie.html#a051496e5be6c5f21de6519605ea4c5a7">nb_unite</a></td></tr>
+<tr class="memdesc:a051496e5be6c5f21de6519605ea4c5a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">constante <b>nb_unite</b> le nombre initial d'unité par joueur <br/></td></tr>
+<tr class="separator:a051496e5be6c5f21de6519605ea4c5a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
 Properties</h2></td></tr>
-<tr class="memitem:a0dee378cc5a9a7d00319059a34fb59cb"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0dee378cc5a9a7d00319059a34fb59cb"></a>
-<a class="el" href="class_small_world_1_1_fabrique_peuple.html">FabriquePeuple</a>&#160;</td><td class="memItemRight" valign="bottom"><b>FabriquePeuple</b><code> [get, set]</code></td></tr>
-<tr class="separator:a0dee378cc5a9a7d00319059a34fb59cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a55882394ef6b99bfb4a00169f1d236af"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a55882394ef6b99bfb4a00169f1d236af"></a>
-<a class="el" href="class_small_world_1_1_partie.html">Partie</a>&#160;</td><td class="memItemRight" valign="bottom"><b>Partie</b><code> [get, set]</code></td></tr>
-<tr class="separator:a55882394ef6b99bfb4a00169f1d236af"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a50090a3827ada484da6fb19b1990a927"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a50090a3827ada484da6fb19b1990a927"></a>
-<a class="el" href="class_small_world_1_1_carte.html">Carte</a>&#160;</td><td class="memItemRight" valign="bottom"><b>Carte</b><code> [get, set]</code></td></tr>
-<tr class="separator:a50090a3827ada484da6fb19b1990a927"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1ec639225ca9a5bb10cd3ea3d76820c7"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1ec639225ca9a5bb10cd3ea3d76820c7"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>Nb_case</b><code> [get]</code></td></tr>
+<tr class="separator:a1ec639225ca9a5bb10cd3ea3d76820c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af44a6f3594947ce5647ecb63991e1088"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af44a6f3594947ce5647ecb63991e1088"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_small_world_1_1_monteur_partie.html#af44a6f3594947ce5647ecb63991e1088">Nb_tour</a><code> [get]</code></td></tr>
+<tr class="memdesc:af44a6f3594947ce5647ecb63991e1088"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="namespace_small_world_1_1_properties.html">Properties</a> pour l'attribut nb_tour. <br/></td></tr>
+<tr class="separator:af44a6f3594947ce5647ecb63991e1088"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5469de7a7a7e109b9ef8d2663d2f1f04"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5469de7a7a7e109b9ef8d2663d2f1f04"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_small_world_1_1_monteur_partie.html#a5469de7a7a7e109b9ef8d2663d2f1f04">Nb_unite</a><code> [get]</code></td></tr>
+<tr class="memdesc:a5469de7a7a7e109b9ef8d2663d2f1f04"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="namespace_small_world_1_1_properties.html">Properties</a> pour l'attribut nb_unite. <br/></td></tr>
+<tr class="separator:a5469de7a7a7e109b9ef8d2663d2f1f04"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf37bc99734d517060ee5a86f41abc96"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="abf37bc99734d517060ee5a86f41abc96"></a>
+<a class="el" href="class_small_world_1_1_fabrique_peuple.html">FabriquePeuple</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_small_world_1_1_monteur_partie.html#abf37bc99734d517060ee5a86f41abc96">FabriquePeuple</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:abf37bc99734d517060ee5a86f41abc96"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="namespace_small_world_1_1_properties.html">Properties</a> pour l'attribut fabriquePeuple. <br/></td></tr>
+<tr class="separator:abf37bc99734d517060ee5a86f41abc96"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9591641b71bf77ba0c67110989202da0"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9591641b71bf77ba0c67110989202da0"></a>
+<a class="el" href="class_small_world_1_1_partie.html">Partie</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_small_world_1_1_monteur_partie.html#a9591641b71bf77ba0c67110989202da0">Partie</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a9591641b71bf77ba0c67110989202da0"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="namespace_small_world_1_1_properties.html">Properties</a> pour l'attribut partie. <br/></td></tr>
+<tr class="separator:a9591641b71bf77ba0c67110989202da0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4fa6b0de5f3b2ff1e10756300e6b1654"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4fa6b0de5f3b2ff1e10756300e6b1654"></a>
+<a class="el" href="class_small_world_1_1_carte.html">Carte</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_small_world_1_1_monteur_partie.html#a4fa6b0de5f3b2ff1e10756300e6b1654">Carte</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a4fa6b0de5f3b2ff1e10756300e6b1654"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="namespace_small_world_1_1_properties.html">Properties</a> pour l'attribut carte. <br/></td></tr>
+<tr class="separator:a4fa6b0de5f3b2ff1e10756300e6b1654"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac7f1bc160be378d8dcae1cb00d86f312"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac7f1bc160be378d8dcae1cb00d86f312"></a>
+<a class="el" href="class_small_world_1_1_strategie_carte.html">StrategieCarte</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_small_world_1_1_monteur_partie.html#ac7f1bc160be378d8dcae1cb00d86f312">Strategie</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:ac7f1bc160be378d8dcae1cb00d86f312"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="namespace_small_world_1_1_properties.html">Properties</a> pour l'attribut strategie. <br/></td></tr>
+<tr class="separator:ac7f1bc160be378d8dcae1cb00d86f312"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Classe abstraite implémentant InterMonteur <a class="el" href="interface_small_world_1_1_inter_partie.html">InterPartie</a>. </p>
+<div class="textblock"><p>Classe abstraite implémentant InterMonteur <a class="el" href="interface_small_world_1_1_inter_partie.html" title="interface pour les partie ">InterPartie</a>. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a5d8bf6c04f12b46961962f5cff455b77"></a>
+<a class="anchor" id="ad8cedb326193c0f0ff5f2d6705867156"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void SmallWorld.MonteurPartie.ajouterCarte </td>
+          <td class="memname">SmallWorld.MonteurPartie.ajouterCarte </td>
           <td>(</td>
-          <td class="paramtype">string&#160;</td>
-          <td class="paramname"><em>tailleCarte</em></td><td>)</td>
+          <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>Ajout de la carte pour la construction d'une partie. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">string</td><td><b>tailleCarte</b> La taille de la carte à créer. </td></tr>
-  </table>
-  </dd>
-</dl>
+<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
 
-<p>Implements <a class="el" href="interface_small_world_1_1_inter_monteur_partie.html#a7b74e28c71d27a249cf2fd37dac6ea50">SmallWorld.InterMonteurPartie</a>.</p>
+<p>Implements <a class="el" href="interface_small_world_1_1_inter_monteur_partie.html#a473c91ad26ee485f07261df1fcae0e8b">SmallWorld.InterMonteurPartie</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a4b08bbb3c398ac0f1e1fa49510df20bc"></a>
+<a class="anchor" id="ac1e20f04d1ca796c1aa0ab504ecb1d2a"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void SmallWorld.MonteurPartie.ajouterJoueur </td>
+          <td class="memname">SmallWorld.MonteurPartie.ajouterJoueur </td>
           <td>(</td>
           <td class="paramtype">string&#160;</td>
           <td class="paramname"><em>nomJoueur</em>, </td>
@@ -210,16 +239,109 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Ajout d'un joueur à la partie. </p>
+<p>Ajout d'un joueur. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">string</td><td><b>nomJoueur</b> Le nom du joueur à ajouter. </td></tr>
-    <tr><td class="paramname">string</td><td><b>peuple</b> Le peuple joué par le joueur. </td></tr>
+    <tr><td class="paramname">string</td><td><b>nomJoueur</b> le nom du joueur </td></tr>
+    <tr><td class="paramname">string</td><td><b>peuple</b> le type de peuple </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
 
-<p>Implements <a class="el" href="interface_small_world_1_1_inter_monteur_partie.html#a331382da196f9c2deb9deb3e19086be1">SmallWorld.InterMonteurPartie</a>.</p>
+<p>Implements <a class="el" href="interface_small_world_1_1_inter_monteur_partie.html#ae52498262dd36230b0c0d090cb59ff07">SmallWorld.InterMonteurPartie</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a76b953c2a45b0c3355d764355d85e225"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">SmallWorld.MonteurPartie.creerPartie </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>nomJoueurA</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>peupleA</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>nomJoueurB</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>peupleB</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Création de la partie. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">string</td><td><b>nomJoueurA</b> le nom du premier joueur </td></tr>
+    <tr><td class="paramname">string</td><td><b>peupleA</b> le peuple du premier joueur </td></tr>
+    <tr><td class="paramname">string</td><td><b>nomJoueurB</b> le nom du deuxième joueur </td></tr>
+    <tr><td class="paramname">string</td><td><b>peupleB</b> le peuple du deuxième joueur </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="class_small_world_1_1_partie.html" title="classe pour les parties ">Partie</a> la nouvelle partie </dd></dl>
+
+<p>Implements <a class="el" href="interface_small_world_1_1_inter_monteur_partie.html#ad471ab6610aaa1664fb3d0bd93f00be3">SmallWorld.InterMonteurPartie</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a8bfe459f9efcb0561a7612e720e0a373"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">SmallWorld.MonteurPartie.initialiserNombreTour </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>initialise le nombre de tour d'un partie </p>
+<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
+
+<p>Implements <a class="el" href="interface_small_world_1_1_inter_monteur_partie.html#afa1b718338a15b4dd0deb5d817f3484c">SmallWorld.InterMonteurPartie</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a5cba1ab3dd04f490331bf22e540cc80e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">SmallWorld.MonteurPartie.placerUnites </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Place le nombre d'unité nécessaire au début de la partie. </p>
+<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
+
+<p>Implements <a class="el" href="interface_small_world_1_1_inter_monteur_partie.html#a4ea7442b592d23a0f31e0d0020f124de">SmallWorld.InterMonteurPartie</a>.</p>
 
 </div>
 </div>
@@ -232,7 +354,7 @@ Properties</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_small_world.html">SmallWorld</a></li><li class="navelem"><a class="el" href="class_small_world_1_1_monteur_partie.html">MonteurPartie</a></li>
-    <li class="footer">Generated on Sun Dec 15 2013 17:32:45 for SmallWorld by
+    <li class="footer">Generated on Wed Jan 15 2014 15:23:35 for SmallWorld by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.5 </li>
   </ul>

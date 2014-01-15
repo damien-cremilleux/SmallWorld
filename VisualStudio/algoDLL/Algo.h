@@ -237,6 +237,8 @@ EXTERNC DLL int Algo_genererCarte(Algo * algo);
 EXTERNC DLL int Algo_placerJoueur(Algo * algo);
 EXTERNC DLL int Algo_creerTab(Algo * algo);
 EXTERNC DLL double Algo_creerTabDouble(Algo * algo);
+EXTERNC DLL int Algo_libererTab(Algo * algo);
+EXTERNC DLL double Algo_libererTabDouble(Algo * algo);
 EXTERNC DLL int Algo_caseBordEau(Algo * algo);
 EXTERNC DLL void Algo_deplacementGauloisInitial(Algo * algo);
 EXTERNC DLL void Algo_deplacementNainInitial(Algo * algo);

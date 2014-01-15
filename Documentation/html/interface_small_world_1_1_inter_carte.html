@@ -94,7 +94,7 @@ $(document).ready(function(){initNavTree('interface_small_world_1_1_inter_carte.
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Properties</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Properties</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -126,16 +126,65 @@ Inheritance diagram for SmallWorld.InterCarte:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:aa74e8d2a86277fdd29fcf2529020f205"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa74e8d2a86277fdd29fcf2529020f205"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>creerCarte</b> ()</td></tr>
-<tr class="separator:aa74e8d2a86277fdd29fcf2529020f205"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8815584cd7ccacfb3e91436189606830"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8815584cd7ccacfb3e91436189606830"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>definirStrategie</b> (<a class="el" href="class_small_world_1_1_strategie_carte.html">StrategieCarte</a> strat)</td></tr>
-<tr class="separator:a8815584cd7ccacfb3e91436189606830"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a825e1748eb1a8f93dfe8aecdfc661064"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_small_world_1_1_inter_carte.html#a825e1748eb1a8f93dfe8aecdfc661064">creerCarte</a> ()</td></tr>
+<tr class="memdesc:a825e1748eb1a8f93dfe8aecdfc661064"><td class="mdescLeft">&#160;</td><td class="mdescRight">Génération d'une nouvelle <a class="el" href="class_small_world_1_1_carte.html" title="Classe Carte Représente la carte du monde. ">Carte</a>.  <a href="#a825e1748eb1a8f93dfe8aecdfc661064">More...</a><br/></td></tr>
+<tr class="separator:a825e1748eb1a8f93dfe8aecdfc661064"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a23c669cb523f222f53e8ab91a8944472"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_small_world_1_1_inter_carte.html#a23c669cb523f222f53e8ab91a8944472">definirStrategie</a> (<a class="el" href="class_small_world_1_1_strategie_carte.html">StrategieCarte</a> strat)</td></tr>
+<tr class="memdesc:a23c669cb523f222f53e8ab91a8944472"><td class="mdescLeft">&#160;</td><td class="mdescRight">Définit la stratégie à adopter pour la génération d'une nouvelle carte.  <a href="#a23c669cb523f222f53e8ab91a8944472">More...</a><br/></td></tr>
+<tr class="separator:a23c669cb523f222f53e8ab91a8944472"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Interface pour <a class="el" href="class_small_world_1_1_carte.html" title="Classe Carte Représente la carte du monde. ">Carte</a>. </p>
-</div><hr/>The documentation for this interface was generated from the following file:<ul>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a825e1748eb1a8f93dfe8aecdfc661064"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">SmallWorld.InterCarte.creerCarte </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Génération d'une nouvelle <a class="el" href="class_small_world_1_1_carte.html" title="Classe Carte Représente la carte du monde. ">Carte</a>. </p>
+<p>Génère une nouvelle <a class="el" href="class_small_world_1_1_carte.html" title="Classe Carte Représente la carte du monde. ">Carte</a>, suivant la stratégie demandée</p>
+<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
+
+<p>Implemented in <a class="el" href="class_small_world_1_1_carte.html#a412690bcb32264b5282913660c5e38f8">SmallWorld.Carte</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a23c669cb523f222f53e8ab91a8944472"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">SmallWorld.InterCarte.definirStrategie </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_small_world_1_1_strategie_carte.html">StrategieCarte</a>&#160;</td>
+          <td class="paramname"><em>strat</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définit la stratégie à adopter pour la génération d'une nouvelle carte. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname"><a class="el" href="class_small_world_1_1_strategie_carte.html" title="classe abstraite pour la stratégie ">StrategieCarte</a></td><td><b>strat</b> La nouvelle stratégie à adopter </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
+
+<p>Implemented in <a class="el" href="class_small_world_1_1_carte.html#aad692a68904925a11d5307181ca83c5f">SmallWorld.Carte</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this interface was generated from the following file:<ul>
 <li>C:/Users/damienc/Documents/GitHub/SmallWorld/VisualStudio/ProjetPOO/<a class="el" href="_carte_8cs.html">Carte.cs</a></li>
 </ul>
 </div><!-- contents -->
@@ -144,7 +193,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>definirStrategie</b> 
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_small_world.html">SmallWorld</a></li><li class="navelem"><a class="el" href="interface_small_world_1_1_inter_carte.html">InterCarte</a></li>
-    <li class="footer">Generated on Sun Dec 15 2013 17:32:32 for SmallWorld by
+    <li class="footer">Generated on Wed Jan 15 2014 15:23:22 for SmallWorld by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.5 </li>
   </ul>

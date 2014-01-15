@@ -2,6 +2,8 @@ var searchData=
 [
   ['intercarte',['InterCarte',['../interface_small_world_1_1_inter_carte.html',1,'SmallWorld']]],
   ['intercase',['InterCase',['../interface_small_world_1_1_inter_case.html',1,'SmallWorld']]],
+  ['intercoordonnees',['InterCoordonnees',['../interface_inter_coordonnees.html',1,'']]],
+  ['intercordonnees',['InterCordonnees',['../interface_small_world_1_1_inter_cordonnees.html',1,'SmallWorld']]],
   ['intercreateurpartie',['InterCreateurPartie',['../interface_small_world_1_1_inter_createur_partie.html',1,'SmallWorld']]],
   ['interdesert',['InterDesert',['../interface_small_world_1_1_inter_desert.html',1,'SmallWorld']]],
   ['intereau',['InterEau',['../interface_small_world_1_1_inter_eau.html',1,'SmallWorld']]],

@@ -94,7 +94,7 @@ $(document).ready(function(){initNavTree('class_small_world_1_1_peuple.html','')
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Properties</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Properties</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -108,30 +108,66 @@ $(document).ready(function(){initNavTree('class_small_world_1_1_peuple.html','')
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="class_small_world_1_1_peuple-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">SmallWorld.Peuple Class Reference</div>  </div>
+<div class="title">SmallWorld.Peuple Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>classe abstraite pour les peuples  
+ <a href="class_small_world_1_1_peuple.html#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for SmallWorld.Peuple:</div>
 <div class="dyncontent">
  <div class="center">
   <img src="class_small_world_1_1_peuple.png" usemap="#SmallWorld.Peuple_map" alt=""/>
   <map id="SmallWorld.Peuple_map" name="SmallWorld.Peuple_map">
-<area href="interface_small_world_1_1_inter_peuple.html" alt="SmallWorld.InterPeuple" shape="rect" coords="170,0,330,24"/>
-<area href="class_small_world_1_1_peuple_gaulois.html" alt="SmallWorld.PeupleGaulois" shape="rect" coords="0,112,160,136"/>
-<area href="class_small_world_1_1_peuple_nain.html" alt="SmallWorld.PeupleNain" shape="rect" coords="170,112,330,136"/>
-<area href="class_small_world_1_1_peuple_viking.html" alt="SmallWorld.PeupleViking" shape="rect" coords="340,112,500,136"/>
+<area href="interface_small_world_1_1_inter_peuple.html" title="interface globale pour les peuples " alt="SmallWorld.InterPeuple" shape="rect" coords="170,0,330,24"/>
+<area href="class_small_world_1_1_peuple_gaulois.html" title="classe pour le peuple Gaulois " alt="SmallWorld.PeupleGaulois" shape="rect" coords="0,112,160,136"/>
+<area href="class_small_world_1_1_peuple_nain.html" title="classe pour le peuple nain " alt="SmallWorld.PeupleNain" shape="rect" coords="170,112,330,136"/>
+<area href="class_small_world_1_1_peuple_viking.html" title="classe pour le peuple viking " alt="SmallWorld.PeupleViking" shape="rect" coords="340,112,500,136"/>
 </map>
  </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ae780348f6362ec2b371f58f0a2f696a1"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae780348f6362ec2b371f58f0a2f696a1"></a>
-<a class="el" href="interface_small_world_1_1_inter_unite.html">InterUnite</a>&#160;</td><td class="memItemRight" valign="bottom"><b>creerUnite</b> ()</td></tr>
-<tr class="separator:ae780348f6362ec2b371f58f0a2f696a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9d7edd46744bf12c7592b93342835a9b"><td class="memItemLeft" align="right" valign="top">abstract <a class="el" href="class_small_world_1_1_unite.html">Unite</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_small_world_1_1_peuple.html#a9d7edd46744bf12c7592b93342835a9b">creerUnite</a> ()</td></tr>
+<tr class="memdesc:a9d7edd46744bf12c7592b93342835a9b"><td class="mdescLeft">&#160;</td><td class="mdescRight">créer une unité  <a href="#a9d7edd46744bf12c7592b93342835a9b">More...</a><br/></td></tr>
+<tr class="separator:a9d7edd46744bf12c7592b93342835a9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>classe abstraite pour les peuples </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a9d7edd46744bf12c7592b93342835a9b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">SmallWorld.Peuple.creerUnite </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>créer une unité </p>
+<dl class="section return"><dt>Returns</dt><dd>l'unité </dd></dl>
+
+<p>Implements <a class="el" href="interface_small_world_1_1_inter_peuple.html#affaf908f250e1feb40b90598124dbb56">SmallWorld.InterPeuple</a>.</p>
+
+<p>Implemented in <a class="el" href="class_small_world_1_1_peuple_viking.html#a28216d67245dc1c8db45b4c9d763923f">SmallWorld.PeupleViking</a>, <a class="el" href="class_small_world_1_1_peuple_nain.html#a31cf5c32229c6f88acf69de84a8c6ebf">SmallWorld.PeupleNain</a>, and <a class="el" href="class_small_world_1_1_peuple_gaulois.html#aac9e86d3354a8c4e588a942c705539ee">SmallWorld.PeupleGaulois</a>.</p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>C:/Users/damienc/Documents/GitHub/SmallWorld/VisualStudio/ProjetPOO/Peuple.cs</li>
+<li>C:/Users/damienc/Documents/GitHub/SmallWorld/VisualStudio/ProjetPOO/<a class="el" href="_peuple_8cs.html">Peuple.cs</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -139,7 +175,7 @@ Public Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_small_world.html">SmallWorld</a></li><li class="navelem"><a class="el" href="class_small_world_1_1_peuple.html">Peuple</a></li>
-    <li class="footer">Generated on Sun Dec 15 2013 17:32:48 for SmallWorld by
+    <li class="footer">Generated on Wed Jan 15 2014 15:23:38 for SmallWorld by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.5 </li>
   </ul>

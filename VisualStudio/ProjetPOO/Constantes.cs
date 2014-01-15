@@ -58,7 +58,7 @@ namespace SmallWorld
         public const int POINT_CASE = 1;
 
         //Caractéristiques unités
-        public const int UNITE_POINT_DEPL = 2;
+        public const int UNITE_POINT_DEPL = 1;
         public const int UNITE_POINT_ATT = 2;
         public const int UNITE_POINT_DEF = 1;
         public const int UNITE_POINT_VIE = 5;

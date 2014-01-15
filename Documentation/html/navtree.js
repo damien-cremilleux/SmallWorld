@@ -11,6 +11,7 @@ var NAVTREE =
       [ "Class Members", "functions.html", [
         [ "All", "functions.html", null ],
         [ "Functions", "functions_func.html", null ],
+        [ "Variables", "functions_vars.html", null ],
         [ "Properties", "functions_prop.html", null ]
       ] ]
     ] ],
@@ -22,7 +23,8 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"_carte_8cs.html"
+"_carte_8cs.html",
+"interface_small_world_1_1_inter_peuple_gaulois.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

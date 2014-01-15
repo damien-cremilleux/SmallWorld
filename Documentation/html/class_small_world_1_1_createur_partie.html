@@ -94,7 +94,7 @@ $(document).ready(function(){initNavTree('class_small_world_1_1_createur_partie.
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Properties</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Properties</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -113,7 +113,7 @@ $(document).ready(function(){initNavTree('class_small_world_1_1_createur_partie.
 </div><!--header-->
 <div class="contents">
 
-<p>Class du créateur de partie.  
+<p>Classe du créateur de partie.  
  <a href="class_small_world_1_1_createur_partie.html#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for SmallWorld.CreateurPartie:</div>
@@ -127,27 +127,108 @@ Inheritance diagram for SmallWorld.CreateurPartie:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a6c808936d929f91fa222ec40dde0105a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6c808936d929f91fa222ec40dde0105a"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_small_world_1_1_createur_partie.html#a6c808936d929f91fa222ec40dde0105a">construire</a> ()</td></tr>
-<tr class="memdesc:a6c808936d929f91fa222ec40dde0105a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construction d'une nouvelle partie. <br/></td></tr>
-<tr class="separator:a6c808936d929f91fa222ec40dde0105a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9e8071dc3842e4389624728e84907008"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9e8071dc3842e4389624728e84907008"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>ajouterJoueur</b> (string nom, string peuple)</td></tr>
-<tr class="separator:a9e8071dc3842e4389624728e84907008"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab8bc779d1ffd06f5715e43876e68aabf"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab8bc779d1ffd06f5715e43876e68aabf"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>ajouterCarte</b> ()</td></tr>
-<tr class="separator:ab8bc779d1ffd06f5715e43876e68aabf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6b32ea8a3b1daeb8530dd882b3791838"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_small_world_1_1_createur_partie.html#a6b32ea8a3b1daeb8530dd882b3791838">CreateurPartie</a> ()</td></tr>
+<tr class="memdesc:a6b32ea8a3b1daeb8530dd882b3791838"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructeur du créateur de partie.  <a href="#a6b32ea8a3b1daeb8530dd882b3791838">More...</a><br/></td></tr>
+<tr class="separator:a6b32ea8a3b1daeb8530dd882b3791838"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1388144440304d2d82879a15e0e58e1f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_small_world_1_1_createur_partie.html#a1388144440304d2d82879a15e0e58e1f">ajoutJoueur</a> (string nom, string peuple)</td></tr>
+<tr class="memdesc:a1388144440304d2d82879a15e0e58e1f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ajouter un joueur à la partie.  <a href="#a1388144440304d2d82879a15e0e58e1f">More...</a><br/></td></tr>
+<tr class="separator:a1388144440304d2d82879a15e0e58e1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a434764cadcd4b11f8b171ed8becfdc6d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_small_world_1_1_partie.html">Partie</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_small_world_1_1_createur_partie.html#a434764cadcd4b11f8b171ed8becfdc6d">construire</a> ()</td></tr>
+<tr class="memdesc:a434764cadcd4b11f8b171ed8becfdc6d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construction d'une nouvelle partie.  <a href="#a434764cadcd4b11f8b171ed8becfdc6d">More...</a><br/></td></tr>
+<tr class="separator:a434764cadcd4b11f8b171ed8becfdc6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
 Properties</h2></td></tr>
-<tr class="memitem:a9e93618a0b35e91b328df64ba8816164"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9e93618a0b35e91b328df64ba8816164"></a>
-<a class="el" href="class_small_world_1_1_monteur_partie.html">MonteurPartie</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_small_world_1_1_createur_partie.html#a9e93618a0b35e91b328df64ba8816164">MonteurPartie</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a9e93618a0b35e91b328df64ba8816164"><td class="mdescLeft">&#160;</td><td class="mdescRight">Attribut permettant de monter une partie. <br/></td></tr>
-<tr class="separator:a9e93618a0b35e91b328df64ba8816164"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8046b4b5283f857d49038aa5f83a5613"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8046b4b5283f857d49038aa5f83a5613"></a>
+<a class="el" href="class_small_world_1_1_monteur_partie.html">MonteurPartie</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_small_world_1_1_createur_partie.html#a8046b4b5283f857d49038aa5f83a5613">MonteurPartie</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a8046b4b5283f857d49038aa5f83a5613"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="namespace_small_world_1_1_properties.html">Properties</a> pour l'attribut <a class="el" href="class_small_world_1_1_monteur_partie.html" title="Classe abstraite implémentant InterMonteur InterPartie. ">MonteurPartie</a>. <br/></td></tr>
+<tr class="separator:a8046b4b5283f857d49038aa5f83a5613"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4c4b3643c25110388e77e3a5ab18c50b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4c4b3643c25110388e77e3a5ab18c50b"></a>
+string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_small_world_1_1_createur_partie.html#a4c4b3643c25110388e77e3a5ab18c50b">TypePartie</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a4c4b3643c25110388e77e3a5ab18c50b"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="namespace_small_world_1_1_properties.html">Properties</a> pour l'attribut typePartie. <br/></td></tr>
+<tr class="separator:a4c4b3643c25110388e77e3a5ab18c50b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Class du créateur de partie. </p>
-</div><hr/>The documentation for this class was generated from the following file:<ul>
+<div class="textblock"><p>Classe du créateur de partie. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="a6b32ea8a3b1daeb8530dd882b3791838"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">SmallWorld.CreateurPartie.CreateurPartie </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Constructeur du créateur de partie. </p>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="class_small_world_1_1_createur_partie.html" title="Classe du créateur de partie. ">CreateurPartie</a> </dd></dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a1388144440304d2d82879a15e0e58e1f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">SmallWorld.CreateurPartie.ajoutJoueur </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>nom</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>peuple</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Ajouter un joueur à la partie. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">string</td><td><b>nom</b> le nom du joueur </td></tr>
+    <tr><td class="paramname">string</td><td><b>peuple</b> le type de peuple </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
+
+<p>Implements <a class="el" href="interface_small_world_1_1_inter_createur_partie.html#af3fa5aaff01c6709b99eff93b6252da5">SmallWorld.InterCreateurPartie</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a434764cadcd4b11f8b171ed8becfdc6d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">SmallWorld.CreateurPartie.construire </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Construction d'une nouvelle partie. </p>
+<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
+
+<p>Implements <a class="el" href="interface_small_world_1_1_inter_createur_partie.html#a84bc048d2a71699fef54ef531477c917">SmallWorld.InterCreateurPartie</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following file:<ul>
 <li>C:/Users/damienc/Documents/GitHub/SmallWorld/VisualStudio/ProjetPOO/<a class="el" href="_createur_partie_8cs.html">CreateurPartie.cs</a></li>
 </ul>
 </div><!-- contents -->
@@ -156,7 +237,7 @@ Properties</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_small_world.html">SmallWorld</a></li><li class="navelem"><a class="el" href="class_small_world_1_1_createur_partie.html">CreateurPartie</a></li>
-    <li class="footer">Generated on Sun Dec 15 2013 17:32:39 for SmallWorld by
+    <li class="footer">Generated on Wed Jan 15 2014 15:23:30 for SmallWorld by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.5 </li>
   </ul>

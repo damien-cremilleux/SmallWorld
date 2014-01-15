@@ -150,7 +150,7 @@ double * Algo::creerTabDouble(int taille) {
 }
 
 /**
-* @fn libererTab()
+* @fn libererTab(int * tab)
 * @brief Libération du pointeur d'int
 *
 * @return void
@@ -160,7 +160,7 @@ void Algo::libererTab(int * tab) {
 }
 
 /**
-* @fn libererTab()
+* @fn libererTab(double * tab)
 * @brief Libération du pointeur d'int
 *
 * @return void
