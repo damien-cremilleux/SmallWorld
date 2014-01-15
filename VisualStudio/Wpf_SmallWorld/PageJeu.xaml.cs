@@ -37,7 +37,8 @@ namespace Wpf_SmallWorld
             positionInitiale = new Coordonnees(0, 0);
 
             deplacementautorise = 0;
-            Partie.Tag = partie;
+            Partie.Tag = partie.NbTourRestant;
+            JoueurEnCours.Tag = partie.ListeJoueurs[partie.IndiceJoueurEnCours].NomJ;
             testsauvegarder = false;
 
             // Ajout d'un évenement pour permettre au joueur de passer au tour suivant en appuyant sur la touche espace
@@ -52,9 +53,6 @@ namespace Wpf_SmallWorld
 
             //Initialisation des données joueurs
             listejoueur();
-
-            //Initialisation du nombre de tour
-            NbTour.Text = "Nombre de tour restants :  " + partie.NbTourRestant;
 
             // Initialisation de la carte et des unités
             int taille = partie.CartePartie.TailleCarte;
@@ -132,17 +130,30 @@ namespace Wpf_SmallWorld
         /// <returns></returns>
         private void RecColor(Case cas, Rectangle rec)
         {
+            BitmapSource img;
             if (cas is InterEau)
-                rec.Fill = Brushes.DarkBlue;
+            {
+                img = System.Windows.Interop.Imaging.CreateBitmapSourceFromHBitmap(Wpf_SmallWorld.Properties.Resources.water.GetHbitmap(), IntPtr.Zero, Int32Rect.Empty, BitmapSizeOptions.FromEmptyOptions());
+                rec.Fill = new ImageBrush(img);
+            }
             if (cas is InterForet)
-                rec.Fill = Brushes.DarkGreen;
+            {
+                img = System.Windows.Interop.Imaging.CreateBitmapSourceFromHBitmap(Wpf_SmallWorld.Properties.Resources.forest.GetHbitmap(), IntPtr.Zero, Int32Rect.Empty, BitmapSizeOptions.FromEmptyOptions());
+                rec.Fill = new ImageBrush(img);
+            }
             if (cas is InterMontagne)
-                rec.Fill = Brushes.Brown;
+            {
+                img = System.Windows.Interop.Imaging.CreateBitmapSourceFromHBitmap(Wpf_SmallWorld.Properties.Resources.mountain.GetHbitmap(), IntPtr.Zero, Int32Rect.Empty, BitmapSizeOptions.FromEmptyOptions());
+                rec.Fill = new ImageBrush(img);
+            }
             if (cas is InterPlaine)
-                rec.Fill = Brushes.Green;
+            {
+                img = System.Windows.Interop.Imaging.CreateBitmapSourceFromHBitmap(Wpf_SmallWorld.Properties.Resources.plain.GetHbitmap(), IntPtr.Zero, Int32Rect.Empty, BitmapSizeOptions.FromEmptyOptions());
+                rec.Fill = new ImageBrush(img);
+            }
             if (cas is InterDesert)
             {
-                BitmapSource img = System.Windows.Interop.Imaging.CreateBitmapSourceFromHBitmap(Wpf_SmallWorld.Properties.Resources.Sable.GetHbitmap(), IntPtr.Zero, Int32Rect.Empty, BitmapSizeOptions.FromEmptyOptions());
+                img = System.Windows.Interop.Imaging.CreateBitmapSourceFromHBitmap(Wpf_SmallWorld.Properties.Resources.Sable.GetHbitmap(), IntPtr.Zero, Int32Rect.Empty, BitmapSizeOptions.FromEmptyOptions());
                 rec.Fill = new ImageBrush(img);
             }
         }
@@ -217,6 +228,7 @@ namespace Wpf_SmallWorld
         {
             // Ne plus affiché de cases de suggestion
             CarteSuggestion.Children.Clear();
+            InfoAction.Visibility = Visibility.Hidden;
 
             // Récuperation des données du rectangle selectionné
             var rectangle = sender as Rectangle;
@@ -224,9 +236,9 @@ namespace Wpf_SmallWorld
             int column = Grid.GetColumn(rectangle);
             int row = Grid.GetRow(rectangle);
 
-            //enregistrement des coordonnées de la case selectionnée
-            positionInitiale.Abscisse = column;
-            positionInitiale.Ordonnee = row;
+            ////enregistrement des coordonnées de la case selectionnée
+            //positionInitiale.Abscisse = column;
+            //positionInitiale.Ordonnee = row;
 
             // Maj de la selection sur le rectangle selectionné
             Grid.SetColumn(selectionRectangle, column);
@@ -251,6 +263,10 @@ namespace Wpf_SmallWorld
         {
             var unite = ((sender as ListBox).SelectedItem as InfoUnite);
             selectedUnit = unite.Unite;
+
+            positionInitiale.Abscisse = selectedUnit.Position.Abscisse;
+            positionInitiale.Ordonnee = selectedUnit.Position.Ordonnee;
+
             Grid.SetColumn(UniteSelectionnee, selectedUnit.Position.Abscisse);
             Grid.SetRow(UniteSelectionnee, selectedUnit.Position.Ordonnee);
             UniteSelectionnee.Visibility = System.Windows.Visibility.Visible;
@@ -279,38 +295,35 @@ namespace Wpf_SmallWorld
 
                 deplacementautorise = partie.demanderDeplacement(selectedUnit, column, row);
 
-
-                //TODO label indiquant l'action
+                //TODO : trouver d'autres messages
                 switch (deplacementautorise)
                 {
-                    //l'unité de ne peut pas se déplacer
-                    case 0:
-                        ;
-                        break;
-
-                    //l'unité se déplace sans combat
-                    case 1:
-                        ;
-                        break;
-
                     //l'unité combat et meurt 
                     case 2:
-                        ;
+                        InfoAction.Content = "Vous avez perdu la bataille !";
+                        InfoAction.Visibility = Visibility.Visible;
                         break;
 
                     //l'unité combat et se déplace
                     case 3:
-                        ;
+                        InfoAction.Content = "Vous avez gagné la bataille !";
+                        InfoAction.Visibility = Visibility.Visible;
                         break;
 
                     //l'unité combat mais ne se déplace pas (aucune des deux unités ne meurt)
                     case 4:
-                        ;
+                        InfoAction.Content = "Personne n'est sorti vainqueur";
+                        InfoAction.Visibility = Visibility.Visible;
+                        break;
+                    default :
                         break;
                 }
 
                 //regénération des éléments unités et joueurs pour mettre à jour
                 InfoUnites.Children.Clear();
+
+             //   MessageBox.Show("" + positionInitiale.Abscisse + "" + positionInitiale.Ordonnee);
+
                 listeUnite(positionInitiale.Abscisse, positionInitiale.Ordonnee);
                 InfoJoueurs.Children.Clear();
                 listejoueur();
@@ -348,13 +361,17 @@ namespace Wpf_SmallWorld
         /// </summary>
         private void listeUnite(int column, int row)
         {
+            // Ne plus affiché a qui appartiennent les unités
+            AppartientUnite.Content = "";
 
-            if (partie.selectionnerUniteAdverse(column, row).Count() == 0)
+            if (partie.selectionnerUniteAdverse(column, row).Count() == 0 && partie.selectionnerUnite(column, row).Count() != 0)
             {
                 // Liste des unités du joueur en cours présentes sur la case (on crée une listbox contenant les usercontrols (InfoUnite)
                 // de chaque unités presentent sur la case pour le joueur courant (les cases sont cliquables)
+                AppartientUnite.Content = "Vos unités";
                 ListBox listeUniteCase = new ListBox();
-
+                listeUniteCase.Width = 275;
+                listeUniteCase.HorizontalAlignment = HorizontalAlignment.Center;
                 listeUniteCase.SelectionChanged += SelectUnite;
 
                 List<Unite> uniteCase = partie.selectionnerUnite(column, row);
@@ -369,12 +386,17 @@ namespace Wpf_SmallWorld
                 listeUniteCase.ItemsSource = listeInfoUnite;
                 InfoUnites.Children.Add(listeUniteCase);
             }
-            else
+            else if (partie.selectionnerUniteAdverse(column, row).Count() != 0 && partie.selectionnerUnite(column, row).Count() == 0)
             {
                 // Affiche les unités du joueur adverse 
+                AppartientUnite.Content = "Unités adverses";
                 List<Unite> uniteCaseAdverse = partie.selectionnerUniteAdverse(column, row);
                 List<InfoUnite> listeInfoUniteAdverse = new List<InfoUnite>();
-                ListView listeUniteCaseAdverse = new ListView();
+                
+                ItemsControl listeUniteCaseAdverse = new ItemsControl();
+                listeUniteCaseAdverse.Width = 275;
+
+                listeUniteCaseAdverse.HorizontalAlignment = HorizontalAlignment.Center;
                 foreach (Unite unite in uniteCaseAdverse)
                 {
                     InfoUnite infoUniteAdverse = new InfoUnite(unite);
@@ -392,42 +414,48 @@ namespace Wpf_SmallWorld
         /// </summary>
         unsafe private void refreshUnite()
         {
-            foreach (Joueur joueur in partie.ListeJoueurs)
+            if (!partie.PartieFinie)
             {
-                foreach (Unite unite in joueur.ListeUnite)
+                foreach (Joueur joueur in partie.ListeJoueurs)
                 {
-                    int column = unite.Position.Abscisse;
-                    int row = unite.Position.Ordonnee;
+                    foreach (Unite unite in joueur.ListeUnite)
+                    {
+                        int column = unite.Position.Abscisse;
+                        int row = unite.Position.Ordonnee;
 
-                    Rectangle rect = new Rectangle();
-                    RecColorUnite(joueur.PeupleJ, rect);
-                    Panel.SetZIndex(rect, 50);
+                        Rectangle rect = new Rectangle();
+                        RecColorUnite(joueur.PeupleJ, rect);
+                        Panel.SetZIndex(rect, 50);
 
-                    // mise à jour des attributs (column et Row) référencant la position dans la grille à rectangle
-                    Grid.SetColumn(rect, column);
-                    Grid.SetRow(rect, row);
+                        // mise à jour des attributs (column et Row) référencant la position dans la grille à rectangle
+                        Grid.SetColumn(rect, column);
+                        Grid.SetRow(rect, row);
 
-                    TextBlock test = new TextBlock();
-                    if (partie.selectionnerUnite(column, row).Count() == 0)
-                        test.Text = "" + partie.selectionnerUniteAdverse(column, row).Count();
-                    else
-                        test.Text = "" + partie.selectionnerUnite(column, row).Count();
+                        TextBlock test = new TextBlock();
+                        if (partie.selectionnerUnite(column, row).Count() == 0)
+                            test.Text = "" + partie.selectionnerUniteAdverse(column, row).Count();
+                        else
+                            test.Text = "" + partie.selectionnerUnite(column, row).Count();
 
-                    Panel.SetZIndex(test, 40);
-                    Grid.SetColumn(test, column);
-                    Grid.SetRow(test, row);
+                        Panel.SetZIndex(test, 40);
+                        Grid.SetColumn(test, column);
+                        Grid.SetRow(test, row);
 
-                    // récuperation du type de la case 
-                    rect.Tag = partie.CartePartie.ListeCases[column][row] as Case;
+                        // récuperation du type de la case 
+                        rect.Tag = partie.CartePartie.ListeCases[column][row] as Case;
 
-                    // Même évenements que les autres cases 
-                    rect.MouseLeftButtonDown += new MouseButtonEventHandler(rectangle_MouseLeftButtonDown);
-                    rect.MouseRightButtonDown += new MouseButtonEventHandler(rectangle_MouseRightButtonDown);
+                        // Même évenements que les autres cases 
+                        rect.MouseLeftButtonDown += new MouseButtonEventHandler(rectangle_MouseLeftButtonDown);
+                        rect.MouseRightButtonDown += new MouseButtonEventHandler(rectangle_MouseRightButtonDown);
 
-                    Unite.Children.Add(rect);
-                    Unite.Children.Add(test);
+                        Unite.Children.Add(rect);
+                        Unite.Children.Add(test);
+                    }
                 }
             }
+            else
+                partieFini();
+
         }
 
         /// <summary>
@@ -518,15 +546,27 @@ namespace Wpf_SmallWorld
 
             if (!partie.PartieFinie)
             {
-                NbTour.Text = "Nombre de tour restants :  " + partie.NbTourRestant;
-                Partie.Tag = partie;
+                Partie.Tag = partie.NbTourRestant;
+                JoueurEnCours.Tag = partie.ListeJoueurs[partie.IndiceJoueurEnCours].NomJ;
                 //maj des données joueurs
                 InfoUnites.Children.Clear();
                 InfoJoueurs.Children.Clear();
                 listejoueur();
             }
-            else
-            {
+            else 
+                partieFini();
+          
+        }
+
+
+        /// <summary>
+        /// Fin de la partie : affichage du gagnant et divers choix
+        /// </summary>
+        /// <param name="sender"> le bouton "tour suivant" </param>
+        /// <param name="e"></param>
+        /// 
+        private void partieFini()
+        {
                 string vainqueurs = "";
                 string messageBoxText = "";
                 string caption = "Small World";
@@ -553,17 +593,13 @@ namespace Wpf_SmallWorld
                 switch (result)
                 {
                     case MessageBoxResult.Yes:
-                        Recharger(sender, e);
                         break;
                     case MessageBoxResult.No:
                         MainWindow parent = (Application.Current.MainWindow as MainWindow);
                         parent.Close();
                         break;
                 }
-            }
         }
-
-
 
 
         //Interaction du menu

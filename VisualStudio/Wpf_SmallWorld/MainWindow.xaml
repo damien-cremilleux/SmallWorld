@@ -33,6 +33,7 @@
                 <StackPanel>
                     <RadioButton Style="{DynamicResource ButtonMenu}" Click="CreerPartie">Nouvelle partie</RadioButton>
                     <RadioButton Style="{DynamicResource ButtonMenu}" Click="ChargerPartie">Charger une partie</RadioButton>
+                    <RadioButton Style="{DynamicResource ButtonMenu}" Click="Aide">Aide</RadioButton>
                     <RadioButton Style="{DynamicResource ButtonMenu}" Click="Quit">Quitter</RadioButton>
                 </StackPanel>
             </Grid>

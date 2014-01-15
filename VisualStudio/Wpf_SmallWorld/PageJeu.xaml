@@ -8,7 +8,7 @@
 	  Title="PageJeu"
       Loaded="Window_Loaded"
       FontFamily="Segoe UI Light"
-      FontSize="14">
+      FontSize="16">
 
     <Grid KeyDown="passerSonTour"  >
         <Grid.RowDefinitions>
@@ -18,12 +18,13 @@
             <RowDefinition Height="auto"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="2.5*"/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
 
         <!--Menu-->
-        <Grid Grid.Row="0" Grid.ColumnSpan="2" Background="#272A3D" >
+        <Grid Grid.Row="0" Grid.ColumnSpan="3" Background="#272A3D" >
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
                 <Button Width="130" Click="Recharger" BorderThickness="1,0,0,0" Background="Transparent" Foreground="White">Recharger</Button>
                 <Button Width="130" Click="Sauvegarder" BorderThickness="1,0,0,0" Background="Transparent" Foreground="White">Sauvergarder</Button>
@@ -32,18 +33,23 @@
         </Grid>
 
         <!--Information sur la partie-->
-        <Grid Grid.Row="1" Grid.ColumnSpan="2">
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                <Label>Tour :</Label>
-                <Label Name="Partie" Content="{Binding Tag.NbTourRestant , ElementName=Partie}"/>
+        <Grid Grid.Row="1" Grid.ColumnSpan="3">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" >
+                <Label FontSize="30">Tours restants :</Label>
+                <Label Name="Partie" Content="{Binding Tag, ElementName=Partie}" FontSize="30"/>
             </StackPanel>
         </Grid>
 
+        <!-- Données joueurs -->
+        <Grid Grid.Row="2" Grid.Column="0">
+            <StackPanel Name="InfoJoueurs" Margin="0,0,0,10" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        </Grid>
+        
         <!-- Carte -->
-        <ScrollViewer Grid.Column="0" Grid.Row="2" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+        <ScrollViewer Grid.Column="1" Grid.Row="2" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
             <Grid>
 
-                <Grid Grid.Column="0" Grid.Row="0" Name="Carte" HorizontalAlignment="Center" VerticalAlignment="Center" Cursor="Hand">
+                <Grid Grid.Column="1" Grid.Row="0" Name="Carte" HorizontalAlignment="Center" VerticalAlignment="Center" Cursor="Hand">
                 <!-- Définition du rectangle matérialisant la selection -->
                 <Rectangle Style="{StaticResource selectionStyle}" Name="selectionRectangle" />
                 <Rectangle Style="{StaticResource UniteSelectionnee}" Name="UniteSelectionnee" />
@@ -51,39 +57,41 @@
                 <!--<Ellipse Fill="Gold" Width="10" Height="10" Name="unitj1" Panel.ZIndex="444" IsHitTestVisible="False" />
                 <Ellipse Fill="Pink" Width="10" Height="10" Name="unitj2" Panel.ZIndex="444" IsHitTestVisible="False" />-->
                 </Grid>
-                <Grid Grid.Column="0" Grid.Row="0" Name="CarteSuggestion" HorizontalAlignment="Center" VerticalAlignment="Center" Cursor="Hand"/>
-                <Grid Grid.Column="0" Grid.Row="0" Name="Unite" HorizontalAlignment="Center" VerticalAlignment="Center" Cursor="Hand"/>
+                <Grid Grid.Column="1" Grid.Row="0" Name="CarteSuggestion" HorizontalAlignment="Center" VerticalAlignment="Center" Cursor="Hand"/>
+                <Grid Grid.Column="1" Grid.Row="0" Name="Unite" HorizontalAlignment="Center" VerticalAlignment="Center" Cursor="Hand"/>
             </Grid>
         </ScrollViewer>
 
         <!-- Données case -->
-        <ScrollViewer Grid.Column="1" Grid.Row="2" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
-            <Grid Grid.Column="1" Grid.Row="1" VerticalAlignment="center">
+        <ScrollViewer Grid.Column="2" Grid.Row="2" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+            <Grid Grid.Column="2" Grid.Row="1" VerticalAlignment="center" >
                 <StackPanel Margin="0,40" Name="InfoCase" DataContext="{Binding Tag, ElementName=selectionRectangle}" Visibility="Visible" VerticalAlignment="center">
                     <!-- on associe le contenu du label (Content) par binding : à la tuile selectionnée (Tag) de la source : le rectangle de selection (selectionRectangle) -->
                     <!-- une variante = Factorisation du Binding par le DataContext-->
-                <StackPanel Orientation="Horizontal">
+                <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
                     <Rectangle Name="CaseSelect" Width="40" Height="40"/>
                     <Label Foreground="red" Content="{Binding}"/>
                 </StackPanel>
                 
                 <!-- Liste des unités présentes sur la case -->
-                <StackPanel Name="InfoUnites" Cursor="Hand"/>
+                    <Label FontSize="30" Name="AppartientUnite"/>
+                    <StackPanel Name="InfoUnites" Cursor="Hand"/>
                 </StackPanel>
         </Grid>
         </ScrollViewer>
 
-        <!-- Données joueurs -->
-        <Grid Grid.Row="3">
-            <StackPanel Name="InfoJoueurs" Orientation="Horizontal" Margin="0,0,0,10"/>
-        </Grid>
-
-        <!--Bouton fin de tour-->
+        <!--Information sur l'action que veut effectuer le joueur-->
         <Grid Grid.Column="1" Grid.Row="3">
-            <Button Grid.Column="2" Height="40" HorizontalAlignment="Center" Click="TourSuivant">
-                <StackPanel>
-                    <TextBlock HorizontalAlignment="Center" >Fin de tour</TextBlock>
-                    <TextBlock Name="NbTour" HorizontalAlignment="Center"></TextBlock>
+            <Label Name="InfoAction" HorizontalAlignment="Center" VerticalAlignment="Top" Foreground="Red"/>
+        </Grid>
+            
+
+            <!--Bouton fin de tour-->
+        <Grid Grid.Column="1" Grid.Row="3">
+            <Button Grid.Column="2" Height="auto" HorizontalAlignment="Center" Click="TourSuivant">
+                <StackPanel Orientation="Horizontal">
+                    <Label HorizontalAlignment="Center">Fin de tour pour :</Label>
+                    <Label Name="JoueurEnCours" Content="{Binding Tag, ElementName=JoueurEnCours}" VerticalAlignment="center"/>
                 </StackPanel>
                 
             </Button>
