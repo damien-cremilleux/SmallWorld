@@ -34,6 +34,9 @@ namespace Wpf_SmallWorld
             set { partie = value; }
         }
 
+        /// <summary>
+        /// Accès au créateur
+        /// </summary>
         public CreateurPartie Createur
         {
             get { return createur; }
@@ -48,27 +51,43 @@ namespace Wpf_SmallWorld
         }
 
 
-
+        /// <summary>
+        /// Ajout d'un joueur
+        /// </summary>
+        /// <param name="nom"> le nom du joueur </param>
+        /// <param name="peuple">le peuple du joueur</param>
         public void ajoutJoueur(string nom, string peuple)
         {
             createur.ajoutJoueur(nom, peuple);
         }
 
+        /// <summary>
+        /// Ajout de la taille de la carte
+        /// </summary>
+        /// <param name="taille"> La taille de la carte</param>
         public void ajoutCarte(string taille)
         {
             createur.TypePartie = taille;
         }
 
+        /// <summary>
+        /// Construction de la partie
+        /// </summary>
         public Partie construirePartie()
         {
             partie = createur.construire();
             return partie;
         }
 
-        public void construireNouvellePartie()
-        {
-            partie = createur.construire();
-            PagePrincipale.Source = new Uri("PageJeu.xaml", UriKind.Relative);
-        }
+        ///// <summary>
+        ///// Ajout d'un joueur
+        ///// </summary>
+        ///// <param name="nom"> le nom du joueur </param>
+        ///// <param name="peuple">le peuple du joueur</param>
+        //public void construireNouvellePartie()
+        //{
+        //    partie = createur.construire();
+        //    PagePrincipale.Source = new Uri("PageJeu.xaml", UriKind.Relative);
+        //}
     }
 }

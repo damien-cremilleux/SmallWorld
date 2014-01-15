@@ -386,6 +386,8 @@ namespace Wpf_SmallWorld
 
                         TextBlock NbUnite = new TextBlock();
                         NbUnite.FontSize = 10;
+                        NbUnite.Foreground = Brushes.White;
+                        NbUnite.Margin = new Thickness(50);
                         if (partie.selectionnerUnite(column, row).Count() == 0)
                             NbUnite.Text = "" + partie.selectionnerUniteAdverse(column, row).Count();
                         else
@@ -500,7 +502,6 @@ namespace Wpf_SmallWorld
         /// </summary>
         /// <param name="sender"> le bouton "tour suivant" </param>
         /// <param name="e"></param>
-        /// 
         private void partieFini()
         {
                 string vainqueurs = "";
@@ -514,11 +515,11 @@ namespace Wpf_SmallWorld
 
                 if (partie.vainqueurs().Count() == 1)
                 {
-                    messageBoxText = "Partie terminée ! Bravo " + partie.vainqueurs()[0].NomJ + " ! Revanche ?";
+                    messageBoxText = "Partie terminée ! Bravo " + partie.vainqueurs()[0].NomJ + " ! Menu principal ?";
                 }
                 else
                 {
-                    messageBoxText = "Partie terminée ! Match nul entre " + partie.vainqueurs()[0].NomJ + " et " + partie.vainqueurs()[1].NomJ + " ! Revanche ?";
+                    messageBoxText = "Partie terminée ! Match nul entre " + partie.vainqueurs()[0].NomJ + " et " + partie.vainqueurs()[1].NomJ + " ! Menu principal?";
                 }
                 MessageBoxButton button = MessageBoxButton.YesNo;
                 MessageBoxImage icon = MessageBoxImage.Question;
@@ -528,8 +529,7 @@ namespace Wpf_SmallWorld
                 switch (result)
                 {
                     case MessageBoxResult.Yes:
-                        parent.construireNouvellePartie();
-                        parent.PagePrincipale.Source = new Uri("PageJeu.xaml", UriKind.Relative);
+                        parent.PagePrincipale.Source = new Uri("PagePrincipale.xaml", UriKind.Relative);
                         break;
                     case MessageBoxResult.No:
                         parent.Close();
@@ -543,7 +543,7 @@ namespace Wpf_SmallWorld
         /// <summary>
         /// Rejouer une partie
         /// </summary>
-        private void NouvellePartie(object sender, RoutedEventArgs e)
+        private void Menu(object sender, RoutedEventArgs e)
         {
             MainWindow parent = (Application.Current.MainWindow as MainWindow);
             parent.PagePrincipale.Source = new Uri("PagePrincipale.xaml", UriKind.Relative);

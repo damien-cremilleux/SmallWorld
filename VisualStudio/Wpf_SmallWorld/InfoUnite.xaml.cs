@@ -37,8 +37,6 @@ namespace Wpf_SmallWorld
             InitializeComponent();
             unite = unit;
 
-           // this.KeyDown += new KeyEventHandler(passerSonTour);
-
             // Récuperation des données de l'unité
             PointVie.Text = "" +unite.PointDeVie;
             PointDeplacement.Text = "" + unite.PointDeDeplacement;

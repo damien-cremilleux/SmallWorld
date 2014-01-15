@@ -164,7 +164,7 @@ Une unité Viking fournit 1 point de plus lorsqu’elle occupe une case au bord 
                     <Paragraph>
                         <Image Width="400" Height="400" Source="/Resources/PageInfoJoueur.png"/>
                     </Paragraph>
-                    <Paragraph>
+                    <Paragraph FontSize="14">
                         Enfin, il faudra choisir la taille de la carte avant de commencer. Plus la taille de la carte est élevée, plus le nombre de tour à jouer sera grand. Sur l'exemple ci-dessus, Damien et Lauriane ont décidé de jouer sur une carte petite.
                     </Paragraph>
                     <Paragraph>
@@ -191,13 +191,13 @@ Une unité Viking fournit 1 point de plus lorsqu’elle occupe une case au bord 
 
                                 <Image Grid.Row="0" Grid.Column="0" Width="200" Height="200" Source="/Resources/PageJoueur.png"/>
 
-                                <TextBlock FontSize="14" Grid.Column="1" Grid.Row="0" TextWrapping="Wrap">L'interface se compose autour d'un plateau de jeux. Les caractéristiques des différents joueurs sont indiqués à gauche. Le nombre de point de victoire et le nombre d'unité sont indiqués. Le joueur dont c'est le tour apparaît en surbrillance. C'est donc à Damien de jouer !
+                                <TextBlock FontSize="14" Grid.Column="1" Grid.Row="0" TextWrapping="Wrap" VerticalAlignment="Center" HorizontalAlignment="Center">L'interface se compose autour d'un plateau de jeux. Les caractéristiques des différents joueurs sont indiqués à gauche. Le nombre de point de victoire et le nombre d'unité sont indiqués. Le joueur dont c'est le tour apparaît en surbrillance. C'est donc à Damien de jouer !
                                 </TextBlock>
 
 
                                 <Image Grid.Column="0" Grid.Row="1" Width="240" Height="240" Source="/Resources/PageUnite.png"/>
 
-                                <TextBlock Grid.Row="1" FontSize="14" Grid.Column="1" TextWrapping="Wrap">En cliquant sur une case du plateau de jeu, les unités positionnées sur cette case sont visibles à droite de l'interface.</TextBlock>
+                                <TextBlock Grid.Row="1" FontSize="14" Grid.Column="1" TextWrapping="Wrap" VerticalAlignment="Center" HorizontalAlignment="Center">En cliquant sur une case du plateau de jeu, les unités positionnées sur cette case sont visibles à droite de l'interface.</TextBlock>
                             </Grid>
                         </InlineUIContainer>
                     </Paragraph>
@@ -208,7 +208,7 @@ Une unité Viking fournit 1 point de plus lorsqu’elle occupe une case au bord 
                     <Paragraph FontSize="18">
                         Se déplacer
                     </Paragraph>
-                  
+
                     <Paragraph>
                         <InlineUIContainer>
                             <Grid>
@@ -223,23 +223,87 @@ Une unité Viking fournit 1 point de plus lorsqu’elle occupe une case au bord 
 
                                 <Image Grid.Row="0" Grid.Column="0" Width="200" Height="200" Source="/Resources/PageCarte.png"/>
 
-                                <TextBlock FontSize="14" Grid.Column="1" Grid.Row="0" TextWrapping="Wrap">Sur la carte, les déplacements possibles d'une unité sélectionnée sont mis en surbrillance. Les vikings pouvant aller sur l'eau, les 4 cases autour sont possibles.
+                                <TextBlock FontSize="14" Grid.Column="1" Grid.Row="0" TextWrapping="Wrap" VerticalAlignment="Center" HorizontalAlignment="Center">Sur la carte, les déplacements possibles d'une unité sélectionnée sont mis en surbrillance. Les vikings pouvant aller sur l'eau, les 4 cases autour sont possibles.
                                 </TextBlock>
 
                                 <Image Grid.Column="0" Grid.Row="1" Width="200" Height="200" Source="/Resources/PageSugg.png"/>
 
-                                <TextBlock Grid.Row="1" FontSize="14" Grid.Column="1" TextWrapping="Wrap">  On décide donc de déplacer une unité sur la plaine à droite. Pour cela, une fois l'unité sélectionnée, un clic droit sur la case désirée permet de demander le déplacement. Une unité sélectionnée est encadrée d'un cadre bleue.
+                                <TextBlock Grid.Row="1" FontSize="14" Grid.Column="1" TextWrapping="Wrap" VerticalAlignment="Center" HorizontalAlignment="Center">  On décide donc de déplacer une unité sur la plaine à droite. Pour cela, une fois l'unité sélectionnée, un clic droit sur la case désirée permet de demander le déplacement. Une unité sélectionnée est encadrée d'un cadre bleue.
 Si un déplacement permet de gagner plus de points, la case destination est encadrée en orange. Sur l'image ci dessous, l'unité naine permet de gagner plus de points si elle se déplace sur la forêt située au dessus d'elle.
                                 </TextBlock>
                             </Grid>
                         </InlineUIContainer>
                     </Paragraph>
-                    
-                    
+
                 </Section>
 
+                <Section>
+                    <Paragraph FontSize="18">
+                        Les combats
+                    </Paragraph>
 
+                    <Paragraph>
+                        <InlineUIContainer>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
 
+                                <Image Grid.Row="0" Grid.Column="0" Width="200" Height="200" Source="/Resources/PageCombat.png"/>
+
+                                <TextBlock FontSize="14" Grid.Column="1" Grid.Row="0" TextWrapping="Wrap" VerticalAlignment="Center" HorizontalAlignment="Center">Lorsqu'une unité est à proximité d'une unité adverse, elle peut l'attaquer. Sur l'image ci dessous, les unités naines peuvent attaquer les unités gauloises à gauche, La réussite d'une attaque dépend des points d'attaque et de défense, mais aussi des points de vie restants. Plus une unité a des points de vie élevée, plus ses chances de gagner sont grandes.
+                                </TextBlock>
+
+                                <Image Grid.Column="0" Grid.Row="1" Width="200" Height="200" Source="/Resources/PageCombat2.png"/>
+
+                                <TextBlock Grid.Row="1" FontSize="14" Grid.Column="1" TextWrapping="Wrap" VerticalAlignment="Center" HorizontalAlignment="Center">Nous allons donc attaquer les nains à gauche. Pour cela c'est le même geste que pour le déplacement. On sélectionne l'unité, puis on effectue un clic droit sur la case à attaquer. Un combat peut s'achever sur l'élimination de l'ennemi, la mort de l'attaquant ou un statut quo. Le résultat du combat s'affiche en bas à droite de l'interface.
+                                </TextBlock>
+                            </Grid>
+                        </InlineUIContainer>
+                    </Paragraph>
+
+                </Section>
+
+                <Section>
+                    <Paragraph FontSize="18">
+                        Fin du tour
+                    </Paragraph>
+
+                    <Paragraph>
+                        <InlineUIContainer>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+
+                                <Image Grid.Row="0" Grid.Column="0" Width="200" Height="200" Source="/Resources/PageUniteFin.png"/>
+
+                                <TextBlock FontSize="14" Grid.Column="1" Grid.Row="0" TextWrapping="Wrap" VerticalAlignment="Center" HorizontalAlignment="Center">Le joueur peut décider de passer son tour en appuyant sur le bouton fin de tour, situé en bas de la carte. Il est également possible pour une unité de passer son tour. Pour cela il faut cliquer sur le bouton passer, à droite d'une unité.
+
+                                </TextBlock>
+                            </Grid>
+                        </InlineUIContainer>
+                    </Paragraph>
+
+                </Section>
+
+                <Section>
+                    <Paragraph FontSize="18">
+                        Fin de la partie
+                    </Paragraph>
+                    <Paragraph FontSize="14">
+                        Le joueur peut décider de passer son tour en appuyant sur le bouton fin de tour, situé en bas de la carte. Il est également possible pour une unité de passer son tour. Pour cela il faut cliquer sur le bouton passer, à droite d'une unité.
+                    </Paragraph>
+                </Section>
             </FlowDocument>
         </FlowDocumentPageViewer>
     </Grid>

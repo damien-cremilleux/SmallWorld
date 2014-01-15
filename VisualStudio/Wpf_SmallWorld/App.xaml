@@ -44,6 +44,35 @@
             </Setter>
         </Style>
 
+        <!-- Bouton radio pour le menu -->
+        <Style x:Key="ButtonMenuJeu" TargetType="Button">
+            <Setter Property="Background" Value="#272A3D"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="Height" Value="40"/>
+
+            <Setter Property="Control.Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border Name="Border"
+                            Background="{TemplateBinding Background}">
+                            <ContentPresenter Name="Content" Margin="10,0,0,0" VerticalAlignment="Center" HorizontalAlignment="Left" />
+                        </Border>
+
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="Button.IsMouseOver" Value="True">
+                                <Setter Property="Button.Background" Value="White"/>
+                                <Setter Property="Foreground" Value="Gray"/>
+                                <Setter TargetName="Border" Property="Button.BorderBrush" Value="#DE2A2A"/>
+                                <Setter TargetName="Border" Property="Button.BorderThickness" Value="6,0,0,0"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        
+        
         <!-- Bouton pour acceder à la page suivante-->
         <Style x:Key="ButtonNext" TargetType="Button">
             <Setter Property="Foreground" Value="#272A3D"/>

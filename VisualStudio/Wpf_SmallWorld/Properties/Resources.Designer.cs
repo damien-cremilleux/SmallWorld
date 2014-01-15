@@ -143,6 +143,26 @@ namespace Wpf_SmallWorld.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap PageCombat {
+            get {
+                object obj = ResourceManager.GetObject("PageCombat", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap PageCombat2 {
+            get {
+                object obj = ResourceManager.GetObject("PageCombat2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap PageInfoCarte {
             get {
                 object obj = ResourceManager.GetObject("PageInfoCarte", resourceCulture);
@@ -196,6 +216,16 @@ namespace Wpf_SmallWorld.Properties {
         internal static System.Drawing.Bitmap PageUnite {
             get {
                 object obj = ResourceManager.GetObject("PageUnite", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap PageUniteFin {
+            get {
+                object obj = ResourceManager.GetObject("PageUniteFin", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

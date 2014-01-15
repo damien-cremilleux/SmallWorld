@@ -193,4 +193,13 @@
   <data name="PageUnite" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\PageUnite.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="PageCombat" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PageCombat.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PageCombat2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PageCombat2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PageUniteFin" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PageUniteFin.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

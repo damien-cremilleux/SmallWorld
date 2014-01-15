@@ -6,7 +6,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
 
-    <Grid Name="Container" Width="250"  Height="70" Background="LightGray">
+    <Grid Name="Container" Width="250"  Height="80" Background="LightGray">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="auto"/>
             <ColumnDefinition Width="auto"/>
@@ -59,7 +59,7 @@
         </Grid>
 
         <Grid Grid.Row="1" Grid.Column="3" VerticalAlignment="Center">
-            <Button Name="PasserSonTour" Height="20" Width="40" Click="passerSonTour" Visibility="Collapsed">Passer</Button>
+            <Button Name="PasserSonTour" Height="30" Width="50" Margin="5,0,0,0" Click="passerSonTour" Visibility="Hidden">Passer</Button>
         </Grid>
 
 
