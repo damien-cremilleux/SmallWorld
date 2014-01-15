@@ -59,7 +59,6 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
-    <Compile Include="Sauvegarder.cs" />
     <Compile Include="Strategie.cs" />
     <Compile Include="Unite.cs" />
   </ItemGroup>

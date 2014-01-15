@@ -365,8 +365,10 @@ namespace SmallWorld
                 double probaAttaquantPerd = 0.5; //Par défaut on est à 50%
                 if (PointAttaque != uniteAdverse.PointDefense)
                 {
-                    double coefficient = (Math.Abs(PointAttaque - uniteAdverse.PointDefense) / Math.Max(PointAttaque, uniteAdverse.PointDefense));
+                    double coefficient = ((double)Math.Abs(PointAttaque - uniteAdverse.PointDefense) / (double)Math.Max(PointAttaque, uniteAdverse.PointDefense));
+                    Console.WriteLine("Coefficient du combat" + coefficient);
                     double ponderation = coefficient * 0.5;
+                    Console.WriteLine("Pondération du combat" + ponderation);
 
                     if (PointAttaque > uniteAdverse.PointDefense)
                         probaAttaquantPerd = 0.5 - ponderation;
@@ -376,13 +378,16 @@ namespace SmallWorld
                 }
 
                 Random r = new Random();
-                if ((r.Next(100) * probaAttaquantPerd) > 50)
+                double random = r.Next(100);
+                if (random < (probaAttaquantPerd*100))
                 {
                     PointDeVie--;
+                    Console.WriteLine("L'unité A perd une vie");
                 }
                 else
                 {
                     uniteAdverse.PointDeVie--;
+                    Console.WriteLine("L'unité B perd une vie");
                 }
                 nbRoundCombat--;
             }
@@ -514,7 +519,7 @@ namespace SmallWorld
                 {
     
                     if(TabDeplacement[i* TailleCarteJeu + j] > 1)
-                        listeRes.Add(new Coordonnees(i,j);
+                        listeRes.Add(new Coordonnees(i,j));
                 }
             }
             
@@ -537,7 +542,7 @@ namespace SmallWorld
                 {
     
                     if(TabDeplacement[i* TailleCarteJeu + j] > 2)
-                        listeRes.Add(new Coordonnees(i,j);
+                        listeRes.Add(new Coordonnees(i,j));
                 }
             }
             

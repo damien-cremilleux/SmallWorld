@@ -205,17 +205,6 @@ namespace SmallWorld
         {
             taille = Constantes.NB_CASE_NORMALE;
         }
-
-        /**
-         * @fn construire
-         * @brief contruit une carte de taille normale
-         * 
-         * @return la carte demandée
-         */
-        /*   public override List<List<Case>> construire()
-           {
-               throw new NotImplementedException();
-           }*/
     }
 
 }

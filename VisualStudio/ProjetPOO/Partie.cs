@@ -80,6 +80,22 @@ namespace SmallWorld
         private string nomSauvegarde;
 
         /**
+         * @fn IndiceJoueurInitial
+         * @brief Properties pour l'attribut indiceJoueurInitial
+         */
+        public int IndiceJoueurInitial
+        {
+            get
+            {
+                return indiceJoueurInitial;
+            }
+            set
+            {
+                indiceJoueurInitial = value;
+            }
+        }
+
+        /**
          * @fn IndiceJoueurEnCours
          * @brief Properties pour l'attribut indiceJoueurEnCours
          */
@@ -223,7 +239,8 @@ namespace SmallWorld
 
             //Le premier joueur est sélectionné au hasard
             Random r = new Random();
-            indiceJoueurInitial = r.Next(ListeJoueurs.Count + 1);
+            int premier = r.Next(ListeJoueurs.Count + 1);
+            indiceJoueurInitial = premier;
             IndiceJoueurEnCours = indiceJoueurInitial;
         }
 
@@ -401,11 +418,13 @@ namespace SmallWorld
                         int nbRoundCombat;
                         Random r = new Random();
                         nbRoundCombat = 3 + r.Next(Math.Max(unite.PointDeVie, meilleureU.PointDeVie));
+                        Console.WriteLine("Il y a " + nbRoundCombat + " rouds");
                         unite.attaquer(meilleureU, nbRoundCombat);
 
                         //L'unité attaquante est morte
                         if (unite.PointDeVie == 0) //l'attaquant a perdu, son unité meurt
                         {
+                            Console.WriteLine("L'unité A a perdu, elle meurt");
                             foreach (Joueur j in ListeJoueurs)
                             {
                                 j.ListeUnite.Remove(unite);
@@ -417,6 +436,7 @@ namespace SmallWorld
                         //L'unité en défense est morte
                         if (meilleureU.PointDeVie == 0)
                         {
+                            Console.WriteLine("L'unité B meurt");
                             foreach (Joueur j in ListeJoueurs)
                             {
                                 j.ListeUnite.Remove(meilleureU);

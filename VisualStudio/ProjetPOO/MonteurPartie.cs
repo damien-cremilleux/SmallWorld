@@ -264,6 +264,12 @@ namespace SmallWorld
             Peuple p = FabriquePeuple.Instance_FabPeuple.fabriquerPeuple(peuple);
             Joueur j = new Joueur(nomJoueur, p);
             Partie.ListeJoueurs.Add(j);
+
+            //Le premier joueur est sélectionné au hasard
+            Random r = new Random();
+            int premier = r.Next(Partie.ListeJoueurs.Count + 1);
+            Partie.IndiceJoueurInitial = premier;
+           Partie.IndiceJoueurEnCours = Partie.IndiceJoueurInitial;
         }
 
         /**
