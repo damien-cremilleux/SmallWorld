@@ -46,7 +46,7 @@ namespace SmallWorld
             }
             set
             {
-                if (value > 0) //Les coordonnées démarrent à (0,0) et ne peuvent pas être négatives
+                if (value >= 0) //Les coordonnées démarrent à (0,0) et ne peuvent pas être négatives
                 {
                     abscisse = value;
                 }
@@ -65,7 +65,7 @@ namespace SmallWorld
             }
             set
             {
-                if (value > 0) //Les coordonnées démarrent à (0,0) et ne peuvent pas être négatives
+                if (value >= 0) //Les coordonnées démarrent à (0,0) et ne peuvent pas être négatives
                 {
                     ordonnee = value;
                 }
@@ -111,5 +111,16 @@ namespace SmallWorld
             else
                 return Abscisse.Equals(coord.Abscisse) && Ordonnee.Equals(coord.Ordonnee);
         }
+
+        /**
+         * @fn GetHashCode
+         * @brief return la clef de hash de l'objet
+         * 
+         * @return int la clef de hash
+         */
+        public override int GetHashCode()
+        {         
+            return (Abscisse+1) ^ (Ordonnee+1);        
+        }         
     }
 }

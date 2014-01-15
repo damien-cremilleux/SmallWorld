@@ -1,5 +1,5 @@
 /**
-* @file AlgoCarte.cpp
+* @file Algo.cpp
 * @brief Librairie CPP pour SmallWorld
 * 
 * Ce fichier contient les différents algorithmes nécessaire au jeu SmallWorld
@@ -7,10 +7,10 @@
 * @author <a href="mailto:damien.cremilleux@insa-rennes.fr">Damien Crémilleux</a>
 * @author <a href="mailto:lauriane.holy@insa-rennes.fr">Lauriane Holy</a>
 * 
-* @date 05/01/2014
+* @date 15/01/2014
 * @version 0.1
 */
-#include "AlgoCarte.h"
+#include "Algo.h"
 #include <stdio.h>
 #include <stdlib.h> 
 #include <stdlib.h>     /* srand, rand */
@@ -28,23 +28,25 @@
 #define CASE_POSSIBLE 2
 #define CASE_OPTIMALE 3 //Une case optimale est une case qui rapporte plus de point au joueur
 
-//TODO Supprimer si besoin
-int AlgoCarte::computeFoo() {
-	return 56;
-}
 
-//TODO supprimer si besoin
-AlgoCarte* Algo_new() { return new AlgoCarte(); }
-void Algo_delete(AlgoCarte* algo) { delete algo; }
-int Algo_computeAlgo(AlgoCarte* algo) { return algo->computeFoo(); } 
+/**
+* Constructeur
+*/
+Algo* Algo_new() { return new Algo(); }
+
+/**
+* Destructeur
+*/
+void Algo_delete(Algo* algo) { delete algo; }
+
 
 /**
 * @fn genererCarte(int taille)
-* @brief génére une carte de la taille demandée
+* @brief génère une carte de la taille demandée
 *
 * @return int** la carte sous forme d'une matrice d'int
 */
-int** AlgoCarte::genererCarte(int taille) 
+int** Algo::genererCarte(int taille) 
 {
 	/* initialize random seed: */
 	srand((unsigned int)time(NULL));
@@ -94,7 +96,7 @@ int** AlgoCarte::genererCarte(int taille)
 * @param int <b>taille</b> la taille de la carte
 * @return int *, un tableau contenant les coordonnées des deux joueurs
 */
-int * AlgoCarte::placerJoueur(int * tabCarte, int taille) {
+int * Algo::placerJoueur(int * tabCarte, int taille) {
 	int  * tabCoordonnee = (int*) malloc(4 * sizeof(int));;
 	int i=0, j=0 ,k, l;
 
@@ -130,7 +132,7 @@ int * AlgoCarte::placerJoueur(int * tabCarte, int taille) {
 * @param int <b>taille</b> le taille du tableau
 * @return int *, le tableau
 */
-int * AlgoCarte::creerTab(int taille) {
+int * Algo::creerTab(int taille) {
 	int  * tab = (int*) malloc(taille * taille * sizeof(int));;
 	return tab;
 }
@@ -142,17 +144,38 @@ int * AlgoCarte::creerTab(int taille) {
 * @param int <b>taille</b> le taille du tableau
 * @return double *, le tableau
 */
-double * AlgoCarte::creerTabDouble(int taille) {
+double * Algo::creerTabDouble(int taille) {
 	double * tab = (double*) malloc(taille * taille * sizeof(double));;
 	return tab;
 }
+
+/**
+* @fn libererTab()
+* @brief Libération du pointeur d'int
+*
+* @return void
+*/
+void Algo::libererTab(int * tab) {
+	free(tab);
+}
+
+/**
+* @fn libererTab()
+* @brief Libération du pointeur d'int
+*
+* @return void
+*/
+void Algo::libererTabDouble(double * tab) {
+	free(tab);
+}
+
 
 /*****************************************************************************/
 /* Algorithmes gaulois */
 /*****************************************************************************/
 
 /**
-* @fn deplacementGauloisInitial(int * carte, int taille, int x, int y)
+* @fn deplacementGauloisInitial(int * carte, int taille, int x, int y, double * tabCout, int * tabRes, double pointDepl)
 * @brief Suggère les déplacements pour une unité gauloise
 *
 * @param int * <b>carte</b> la carte du jeu
@@ -164,7 +187,7 @@ double * AlgoCarte::creerTabDouble(int taille) {
 * @param double <b>pointDepl</b> les points de déplacement actuel
 * @return void
 */
-void AlgoCarte::deplacementGauloisInitial(int * carte, int taille, int x, int y, double * tabCout, int * tabRes, double pointDepl)
+void Algo::deplacementGauloisInitial(int * carte, int taille, int x, int y, double * tabCout, int * tabRes, double pointDepl)
 {
 	//Par défaut toute les cases sont inacessibles
 	int i, j;
@@ -200,8 +223,8 @@ void AlgoCarte::deplacementGauloisInitial(int * carte, int taille, int x, int y,
 }
 
 /**
-* @fn deplacementGaulois(int * carte, int taille, int x, int y)
-* @brief Regarde les cases alentours pour les déplacements, puis s'appelle récursivement pour parcourir toute la carte
+* @fn deplacementGaulois(int * carte, int taille, int x, int y, int * tabRes, double * tabDepl)
+* @brief Regarde les cases alentours pour les déplacements
 *
 * @param int * <b>carte</b> la carte du jeu
 * @param int <b>taille</b> la taille de la carte
@@ -210,7 +233,7 @@ void AlgoCarte::deplacementGauloisInitial(int * carte, int taille, int x, int y,
 * @param int * <b>tabRes</b> la carte des déplacements possibles
 * @param double * <b>tabDepl</b> la table des points de déplacement
 */
-void AlgoCarte::deplacementGaulois(int * carte, int taille, int x, int y, int * tabRes, double * tabDepl)
+void Algo::deplacementGaulois(int * carte, int taille, int x, int y, int * tabRes, double * tabDepl)
 {
 	//case au dessus
 	if (x != 0) 
@@ -218,11 +241,11 @@ void AlgoCarte::deplacementGaulois(int * carte, int taille, int x, int y, int * 
 		if (tabRes[(x-1)*taille+y] == CASE_NONCALCULEE)
 		{
 			deplacementGauloisCase(carte,taille, x-1, y, tabRes, tabDepl, tabDepl[x*taille+y]);
-		    deplacementGaulois2(carte, taille, x-1, y, tabRes, tabDepl);
+			deplacementGaulois2(carte, taille, x-1, y, tabRes, tabDepl);
 		}
 	}
 
-    //case au dessous
+	//case au dessous
 	if (x != (taille-1)) 
 	{
 		if (tabRes[(x+1)*taille+y] == CASE_NONCALCULEE)
@@ -257,7 +280,7 @@ void AlgoCarte::deplacementGaulois(int * carte, int taille, int x, int y, int * 
 
 /**
 * @fn deplacementGaulois2(int * carte, int taille, int x, int y)
-* @brief Regarde les cases alentours pour les déplacements, puis s'appelle récursivement pour parcourir toute la carte
+* @brief Regarde les cases alentours pour les déplacements
 *
 * @param int * <b>carte</b> la carte du jeu
 * @param int <b>taille</b> la taille de la carte
@@ -266,7 +289,7 @@ void AlgoCarte::deplacementGaulois(int * carte, int taille, int x, int y, int * 
 * @param int * <b>tabRes</b> la carte des déplacements possibles
 * @param double * <b>tabDepl</b> la table des points de déplacement
 */
-void AlgoCarte::deplacementGaulois2(int * carte, int taille, int x, int y, int * tabRes, double * tabDepl)
+void Algo::deplacementGaulois2(int * carte, int taille, int x, int y, int * tabRes, double * tabDepl)
 {
 	//case au dessus
 	if (x != 0) 
@@ -277,7 +300,7 @@ void AlgoCarte::deplacementGaulois2(int * carte, int taille, int x, int y, int *
 		}
 	}
 
-    //case au dessous
+	//case au dessous
 	if (x != (taille-1)) 
 	{
 		if (tabRes[(x+1)*taille+y] == CASE_NONCALCULEE)
@@ -285,7 +308,7 @@ void AlgoCarte::deplacementGaulois2(int * carte, int taille, int x, int y, int *
 			deplacementGauloisCase(carte,taille, x+1, y, tabRes, tabDepl, tabDepl[x*taille+y]);
 		}
 	}
-	
+
 	//case à droite
 	if (y != (taille-1)) 
 	{
@@ -294,7 +317,7 @@ void AlgoCarte::deplacementGaulois2(int * carte, int taille, int x, int y, int *
 			deplacementGauloisCase(carte,taille, x, y+1, tabRes, tabDepl, tabDepl[x*taille+y]);
 		}
 	}
-	
+
 	//case à gauche
 	if (y != 0) 
 	{
@@ -306,7 +329,7 @@ void AlgoCarte::deplacementGaulois2(int * carte, int taille, int x, int y, int *
 }
 
 /**
-* @fn deplacementGauloisCase(int * carte, int taille, int x, int y, int * tabRes, double * pointDepl)
+* @fn deplacementGauloisCase(int * carte, int taille, int x, int y, int * tabRes, double * tabDepl, double pointDepl)
 * @brief Regarde si le déplacement sur la case est possible
 *
 * @param int * <b>carte</b> la carte du jeu
@@ -314,10 +337,11 @@ void AlgoCarte::deplacementGaulois2(int * carte, int taille, int x, int y, int *
 * @param int <b>x</b> l'abscisse de la case
 * @param int <b>y</b> l'ordonnée de la case
 * @param int * <b>tabRes</b> le tableau résultat
-* @param double * <b>pointDepl</b> le nombre de point de déplacement
+* @param double * <b>tabDepl</b> le tableau de point de déplacement
+* @param double <b>pointDepl</b> le nombre de point de déplacement
 * @return void
 */
-void AlgoCarte::deplacementGauloisCase(int * carte, int taille, int x, int y, int * tabRes, double * tabDepl, double pointDepl)
+void Algo::deplacementGauloisCase(int * carte, int taille, int x, int y, int * tabRes, double * tabDepl, double pointDepl)
 {
 	double pointDeplacement;
 	pointDeplacement = pointDepl;
@@ -386,8 +410,8 @@ void AlgoCarte::deplacementGauloisCase(int * carte, int taille, int x, int y, in
 /*****************************************************************************/
 
 /**
-* @fn deplacementNainInitial(int * carte, int taille, int x, int y, double * tabCout, int * tabRes)
-* @brief Suggère les déplacements pour une unité gauloise
+* @fn deplacementNainInitial(int * carte, int taille, int x, int y, double * tabCout, int * tabRes, double pointDepl)
+* @brief Suggère les déplacements pour une unité naine
 *
 * @param int * <b>carte</b> la carte du jeu
 * @param int <b>taille</b> la taille de la carte
@@ -395,10 +419,10 @@ void AlgoCarte::deplacementGauloisCase(int * carte, int taille, int x, int y, in
 * @param int <b>y</b> l'ordonnée de l'unité
 * @param int <b>tabCout</b> le tableau des couts de déplacement
 * @param int * <b>tabRes</b> la carte des déplacements possibles
-* @param double c*<b>pointDepl</b> le nombre de déplacement actuel
+* @param double <b>pointDepl</b> le nombre de point de déplacement actuel
 * @return void
 */
-void AlgoCarte::deplacementNainInitial(int * carte, int taille, int x, int y, double * tabCout, int * tabRes, double pointDepl)
+void Algo::deplacementNainInitial(int * carte, int taille, int x, int y, double * tabCout, int * tabRes, double pointDepl)
 {
 	//Par défaut toute les cases sont inacessibles, sauf les cases montagnes
 	int i, j;
@@ -443,7 +467,7 @@ void AlgoCarte::deplacementNainInitial(int * carte, int taille, int x, int y, do
 
 /**
 * @fn deplacementNain(int * carte, int taille, int x, int y, int * tabRes, double * tabDepl)
-* @brief Regarde les cases alentours pour les déplacements, puis s'appelle récursivement pour parcourir toute la carte
+* @brief Regarde les cases alentours pour les déplacements
 *
 * @param int * <b>carte</b> la carte du jeu
 * @param int <b>taille</b> la taille de la carte
@@ -452,7 +476,7 @@ void AlgoCarte::deplacementNainInitial(int * carte, int taille, int x, int y, do
 * @param int * <b>tabRes</b> la carte des déplacements possibles
 * @param double * <b>tabDepl</b> la table des points de déplacement
 */
-void AlgoCarte::deplacementNain(int * carte, int taille, int x, int y, int * tabRes, double * tabDepl)
+void Algo::deplacementNain(int * carte, int taille, int x, int y, int * tabRes, double * tabDepl)
 {
 	//case au dessus
 	if (x != 0) 
@@ -460,7 +484,6 @@ void AlgoCarte::deplacementNain(int * carte, int taille, int x, int y, int * tab
 		if (tabRes[(x-1)*taille + y] == CASE_NONCALCULEE)
 		{
 			deplacementNainCase(carte,taille, x-1, y, tabRes, tabDepl, tabDepl[x*taille+y]);
-		//	deplacementNain(carte, taille, x-1, y, tabRes, tabDepl);
 		}
 	}
 
@@ -470,7 +493,6 @@ void AlgoCarte::deplacementNain(int * carte, int taille, int x, int y, int * tab
 		if (tabRes[x*taille+y+1] == CASE_NONCALCULEE)
 		{
 			deplacementNainCase(carte,taille, x, y+1, tabRes, tabDepl, tabDepl[x*taille+y]);
-		//	deplacementNain(carte, taille, x, y+1, tabRes, tabDepl);
 		}
 	}
 
@@ -480,7 +502,6 @@ void AlgoCarte::deplacementNain(int * carte, int taille, int x, int y, int * tab
 		if (tabRes[(x+1)*taille+y] == CASE_NONCALCULEE)
 		{
 			deplacementNainCase(carte,taille, x+1, y, tabRes, tabDepl, tabDepl[x*taille+y]);
-			//deplacementNain(carte, taille, x+1, y, tabRes, tabDepl);
 		}
 	}
 
@@ -490,7 +511,6 @@ void AlgoCarte::deplacementNain(int * carte, int taille, int x, int y, int * tab
 		if (tabRes[x*taille+y-1] == CASE_NONCALCULEE)
 		{
 			deplacementNainCase(carte,taille, x, y-1, tabRes, tabDepl, tabDepl[x*taille+y]);
-		//	deplacementNain(carte, taille, x, y-1, tabRes, tabDepl);
 		}
 	}
 }
@@ -508,7 +528,7 @@ void AlgoCarte::deplacementNain(int * carte, int taille, int x, int y, int * tab
 * @param double <b>pointDepl </b> le nombre de point de déplacement actuel
 * @return void
 */
-void AlgoCarte::deplacementNainCase(int * carte, int taille, int x, int y, int * tabRes, double * tabDepl, double pointDepl)
+void Algo::deplacementNainCase(int * carte, int taille, int x, int y, int * tabRes, double * tabDepl, double pointDepl)
 {
 	double pointDeplacement;
 	pointDeplacement = pointDepl;
@@ -577,8 +597,8 @@ void AlgoCarte::deplacementNainCase(int * carte, int taille, int x, int y, int *
 /*****************************************************************************/
 
 /**
-* @fn deplacementVikingInitial(int * carte, int taille, int x, int y, double * tabCout, int * tabRes)
-* @brief Suggère les déplacements pour une unité gauloise
+* @fn deplacementVikingInitial(int * carte, int taille, int x, int y, double * tabCout, int * tabRes, double pointDepl)
+* @brief Suggère les déplacements pour une unité viking
 *
 * @param int * <b>carte</b> la carte du jeu
 * @param int <b>taille</b> la taille de la carte
@@ -589,7 +609,7 @@ void AlgoCarte::deplacementNainCase(int * carte, int taille, int x, int y, int *
 * @param double <b>pointDepl</b> les points de déplacement initial
 * @return void
 */
-void AlgoCarte::deplacementVikingInitial(int * carte, int taille, int x, int y, double * tabCout, int * tabRes, double pointDepl)
+void Algo::deplacementVikingInitial(int * carte, int taille, int x, int y, double * tabCout, int * tabRes, double pointDepl)
 {
 	//Par défaut toute les cases sont inacessibles
 	int i, j;
@@ -619,7 +639,7 @@ void AlgoCarte::deplacementVikingInitial(int * carte, int taille, int x, int y, 
 
 /**
 * @fn deplacementViking(int * carte, int taille, int x, int y, int * tabRes, double * tabDepl)
-* @brief Regarde les cases alentours pour les déplacements, puis s'appelle récursivement pour parcourir toute la carte
+* @brief Regarde les cases alentours pour les déplacements
 *
 * @param int * <b>carte</b> la carte du jeu
 * @param int <b>taille</b> la taille de la carte
@@ -629,7 +649,7 @@ void AlgoCarte::deplacementVikingInitial(int * carte, int taille, int x, int y, 
 * @param double * <b>tabDepl</b> la table des points de déplacement
 * @return void
 */
-void AlgoCarte::deplacementViking(int * carte, int taille, int x, int y, int * tabRes, double * tabDepl)
+void Algo::deplacementViking(int * carte, int taille, int x, int y, int * tabRes, double * tabDepl)
 {
 	//case au dessus
 	if (x != 0) 
@@ -637,7 +657,6 @@ void AlgoCarte::deplacementViking(int * carte, int taille, int x, int y, int * t
 		if (tabRes[(x-1)*taille+y] == CASE_NONCALCULEE)
 		{
 			deplacementVikingCase(carte,taille, x-1, y, tabRes, tabDepl, tabDepl[x*taille+y]);
-			//deplacementViking(carte, taille, x-1, y, tabRes, tabDepl);
 		}
 	}
 
@@ -647,7 +666,6 @@ void AlgoCarte::deplacementViking(int * carte, int taille, int x, int y, int * t
 		if (tabRes[x*taille+y+1] == CASE_NONCALCULEE)
 		{
 			deplacementVikingCase(carte,taille, x, y+1, tabRes, tabDepl, tabDepl[x*taille+y]);
-			//deplacementViking(carte, taille, x, y+1, tabRes, tabDepl);
 		}
 	}
 
@@ -657,7 +675,6 @@ void AlgoCarte::deplacementViking(int * carte, int taille, int x, int y, int * t
 		if (tabRes[(x+1)*taille+y] == CASE_NONCALCULEE)
 		{
 			deplacementVikingCase(carte,taille, x+1, y, tabRes, tabDepl, tabDepl[x*taille+y]);
-			//deplacementViking(carte, taille, x+1, y, tabRes, tabDepl);
 		}
 	}
 
@@ -667,7 +684,6 @@ void AlgoCarte::deplacementViking(int * carte, int taille, int x, int y, int * t
 		if (tabRes[x*taille+y-1] == CASE_NONCALCULEE)
 		{
 			deplacementVikingCase(carte,taille, x, y-1, tabRes, tabDepl, tabDepl[x*taille+y]);
-			//deplacementViking(carte, taille, x, y-1, tabRes, tabDepl);
 		}
 	}
 }
@@ -685,7 +701,7 @@ void AlgoCarte::deplacementViking(int * carte, int taille, int x, int y, int * t
 * @param double <b>pointDepl</b> les points de déplacement actuels
 * @return void
 */
-void AlgoCarte::deplacementVikingCase(int * carte, int taille, int x, int y, int * tabRes, double * tabDepl, double pointDepl)
+void Algo::deplacementVikingCase(int * carte, int taille, int x, int y, int * tabRes, double * tabDepl, double pointDepl)
 {
 	double pointDeplacement;
 	pointDeplacement = pointDepl;
@@ -758,18 +774,18 @@ void AlgoCarte::deplacementVikingCase(int * carte, int taille, int x, int y, int
 }
 
 /**
- * @fn caseBordEau(int * crate, int taille, int x, int y)
- * @brief Indique si une case est au bord de l'eau
- * 
- * @param int * <b>carte</b> la carte du jeu
- * @param int <b>taille</b> la taille du jeu
- * @param int <b>x</b> l'abscisse de la case
- * @param int <b>y</b> l'ordonnée de la case
- * @return int 1 si la case est au bord de l'eau, 0 sinon
- */
-int AlgoCarte::caseBordEau(int * carte, int taille, int x, int y)
+* @fn caseBordEau(int * crate, int taille, int x, int y)
+* @brief Indique si une case est au bord de l'eau
+* 
+* @param int * <b>carte</b> la carte du jeu
+* @param int <b>taille</b> la taille du jeu
+* @param int <b>x</b> l'abscisse de la case
+* @param int <b>y</b> l'ordonnée de la case
+* @return int 1 si la case est au bord de l'eau, 0 sinon
+*/
+int Algo::caseBordEau(int * carte, int taille, int x, int y)
 {
-//case au dessus
+	//case au dessus
 	if (x != 0) 
 	{
 		if (carte[(x -1) * taille + y] == CASE_EAU)
@@ -806,5 +822,4 @@ int AlgoCarte::caseBordEau(int * carte, int taille, int x, int y)
 	}
 
 	return 0;
-
 }

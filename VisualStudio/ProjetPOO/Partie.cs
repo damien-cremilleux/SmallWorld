@@ -548,7 +548,7 @@ namespace SmallWorld
          */
         public void enregistrerSous(string nomFichier)
         {
-            FileStream stream = File.Create(nomFichier + ".smallworld");
+            FileStream stream = File.Create(nomFichier);
             BinaryFormatter formatter = new BinaryFormatter();
             Console.WriteLine("Serializing");
             formatter.Serialize(stream, this);
