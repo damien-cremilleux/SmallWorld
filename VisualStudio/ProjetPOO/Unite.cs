@@ -441,15 +441,17 @@ namespace SmallWorld
                 double probaAttaquantPerd = 0.5; //Par défaut on est à 50%
                 if (PointAttaque != uniteAdverse.PointDefense)
                 {
-                    double coefficient = ((double)Math.Abs(PointAttaque - uniteAdverse.PointDefense) / (double)Math.Max(PointAttaque, uniteAdverse.PointDefense));
+                    int attaq = PointAttaque * PointDeVie;
+                    int def = uniteAdverse.PointDefense * uniteAdverse.PointDeVie;
+                    double coefficient = ((double)Math.Abs(attaq - def) / (double)Math.Max(attaq, def));
                     Console.WriteLine("Coefficient du combat" + coefficient);
                     double ponderation = coefficient * 0.5;
                     Console.WriteLine("Pondération du combat" + ponderation);
 
-                    if (PointAttaque > uniteAdverse.PointDefense)
+                    if (attaq > def)
                         probaAttaquantPerd = 0.5 - ponderation;
 
-                    if (PointAttaque < uniteAdverse.PointDefense)
+                    if (attaq < def)
                         probaAttaquantPerd = 0.5 + ponderation;
                 }
 

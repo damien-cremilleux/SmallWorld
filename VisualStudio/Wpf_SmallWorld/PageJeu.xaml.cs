@@ -385,9 +385,8 @@ namespace Wpf_SmallWorld
                         Grid.SetRow(rect, row);
 
                         TextBlock NbUnite = new TextBlock();
-                        NbUnite.FontSize = 10;
+                        NbUnite.FontSize = 14;
                         NbUnite.Foreground = Brushes.White;
-                        NbUnite.Margin = new Thickness(50);
                         if (partie.selectionnerUnite(column, row).Count() == 0)
                             NbUnite.Text = "" + partie.selectionnerUniteAdverse(column, row).Count();
                         else
