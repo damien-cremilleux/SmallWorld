@@ -11,6 +11,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.IO;
 
 using SmallWorld;
 
@@ -65,6 +66,11 @@ namespace Wpf_SmallWorld
                 PageJeu jeu = new PageJeu(sauv);
                 this.Content = jeu;
             }
+        }
+
+        private void Aide(object sender, RoutedEventArgs e)
+        {
+
         }
 
         private void Quit(object sender, RoutedEventArgs e)

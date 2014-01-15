@@ -46,7 +46,7 @@ namespace SmallWorld
             }
             set
             {
-                if (value > 0) //Les coordonnées démarrent à (0,0) et ne peuvent pas être négatives
+                if (value >= 0) //Les coordonnées démarrent à (0,0) et ne peuvent pas être négatives
                 {
                     abscisse = value;
                 }
@@ -65,7 +65,7 @@ namespace SmallWorld
             }
             set
             {
-                if (value > 0) //Les coordonnées démarrent à (0,0) et ne peuvent pas être négatives
+                if (value >= 0) //Les coordonnées démarrent à (0,0) et ne peuvent pas être négatives
                 {
                     ordonnee = value;
                 }

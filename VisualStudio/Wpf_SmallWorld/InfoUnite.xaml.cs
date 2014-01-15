@@ -33,9 +33,9 @@ namespace Wpf_SmallWorld
 
 
         public InfoUnite(Unite unit)
-        {   
+        {
             InitializeComponent();
-            this.unite = unit;
+            unite = unit;
 
            // this.KeyDown += new KeyEventHandler(passerSonTour);
 
@@ -68,9 +68,9 @@ namespace Wpf_SmallWorld
             }
 
             if (unite.PasseSonTour)
-            {
                 Container.Opacity = 0.3;
-            }
+            else
+              PasserSonTour.Visibility = Visibility.Visible;
         }
 
 
@@ -79,6 +79,7 @@ namespace Wpf_SmallWorld
                 unite.PasseSonTour = true;
                 Container.Opacity = 0.3;
                 PointDeplacement.Text = "" + unite.PointDeDeplacement;
+                PasserSonTour.Visibility = Visibility.Hidden;
         }
 
     }
