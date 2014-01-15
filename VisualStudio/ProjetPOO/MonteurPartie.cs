@@ -8,7 +8,7 @@
  * @author <a href="mailto:damien.cremilleux@insa-rennes.fr">Damien Crémilleux</a>
  * @author <a href="mailto:lauriane.holy@insa-rennes.fr">Lauriane Holy</a>
  * 
- * @date 06/01/2014
+ * @date 15/01/2014
  * @version 0.1
  */
 using System;

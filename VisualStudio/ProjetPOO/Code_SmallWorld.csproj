@@ -31,6 +31,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <PlatformTarget>x86</PlatformTarget>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -63,7 +64,6 @@
     <Compile Include="Unite.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="CreateurPartie_construire_1.sequencediagram" />
     <None Include="fabrique.cd" />
     <None Include="Global.cd" />
     <None Include="Monteur.cd" />
@@ -80,11 +80,6 @@
       <Project>{4ccf6e63-00d6-479d-a393-6ad600917dfd}</Project>
       <Name>Wrapper_SmallWorld</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="CreateurPartie_construire_1.sequencediagram.layout">
-      <DependentUpon>CreateurPartie_construire_1.sequencediagram</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

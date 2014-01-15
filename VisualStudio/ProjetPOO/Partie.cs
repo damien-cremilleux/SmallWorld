@@ -25,6 +25,105 @@ namespace SmallWorld
      */
     public interface InterPartie
     {
+        /**
+         * @fn vainqueurs()
+         * @brief Rend la liste des joueurs disposant du plus de points
+         * 
+         * @return Liste<Joueur> la liste des gagnants
+         */
+        List<Joueur> vainqueurs();
+
+        /**
+         * @fn changerJoueur
+         * @brief Change le joueur en cours, quand le joueur précédent a fini son tour
+         * 
+         * @return void
+         */
+        void changerJoueur();
+
+        /**
+         * @fn selectionnerUnite(int x, int y)
+         * @brief Obtenir l'ensemble des unités du joueur en cours se situant sur la case demandée
+         * 
+         * @param int <b>x</b> l'abcsisse de la case demandée
+         * @param int <b>y</b> l'ordonnée de la case demandée
+         * @return List<Unite> la liste des unités présentes sur la cases, pour le joueur courant
+         */
+        List<Unite> selectionnerUnite(int x, int y);
+
+       /**
+        * @fn selectionnerUniteAdverse(int x, int y)
+        * @brief Obtenir l'ensemble des unités des joueurs adverses du joueur en cours se situant sur la case demandée
+        * 
+        * @param int <b>x</b> l'abcsisse de la case demandée
+        * @param int <b>y</b> l'ordonnée de la case demandée
+        * @return List<Unite> la liste des unités présentes sur la cases, pour les adversaires du joueur courant
+        */
+        List<Unite> selectionnerUniteAdverse(int x, int y);
+
+       /**
+        * @fn peutSeDeplacer(int indiceUnite, int x, int y)
+        * @brief Indique si l'unité peut se déposer sur la case(x,y)
+        * 
+        * @param int <b>Unite</b> l'unité à déplacer
+        * @param int <b>x</b> l'abscisse de la case destination
+        * @param int <b>y</b> l'ordonnée de la case destination
+        * @return bool, vrai si le déplacement est possible, faux sinon
+        */
+        bool peutSeDeplacer(Unite unite, int x, int y);
+
+        /**
+         * @fn demanderDeplacement(int indiceUnite, int x, int y)
+         * @brief Déplacer, si possible, l'unité sur la case (x,y). En cas d'unités adverses, il y a combat.
+         * 
+         * @param int <b>indiceUnite</b> l'indice de l'unité à déplacer, dans le tableau des unités du joueurs en cours
+         * @param int <b>x</b> l'abscisse de la case destination
+         * @param int <b>y</b> l'ordonnée de la case destination
+         * @return int, 0 si l'unité ne peut pas se déplacer, 1, si elle se déplace sans combat, 2 s'il y a combat et qu'elle meurt,  3 si combat et déplacement possible, 4 si combat et déplacement non possible
+         */
+        int demanderDeplacement(Unite unite, int x, int y);
+
+        /**
+         * @fn verifierFinPartie()
+         * @brief Vérifier si la partie est finie (les joueurs adverses n'ont plus d'unité)
+         * 
+         * Met la variable PartieFinie à vraie si besoin 
+         * 
+         * @return void
+         */
+        void verifierFinPartie();
+
+        /**
+         * @fn enregistrer()
+         * @brief Enregistre une partie
+         * 
+         * @return bool, vrai si le nom de fichier est connu, faux sinon
+         */
+        bool enregistrer();
+
+        /**
+         * @fn EnregistrerSous(string nomFichier)
+         * @brief Enregistre la partie sous le nom passer en paramètre
+         * 
+         * @param string<b>nomFichier</b> le nom du fichier
+         * @return void
+         */
+        void enregistrerSous(string nomFichier);
+
+        /**
+         * @fn Charger(string nomFichier)
+         * @brief Charge la partie
+         * 
+         * @param string<b>nomFichier</b> le nom du fichier à charger
+         * @return Partie la partie à restaurer
+         */
+        Partie charger(string nomFichier);
+        
+        /**
+         * @fn restaurer()
+         * @brief Restaure les unités suite à une désérialisation
+         */
+        void restaurer();
     }
 
     /**
@@ -43,11 +142,6 @@ namespace SmallWorld
          * @brief Attribut <b>indiceJoueurEnCours</b> indice du joueur dont c'est le tour
          */
         private int indiceJoueurEnCours;
-
-        /**
-         * @brief Attribut <b>joueurEnCours</b> joueur dont c'est le tour
-         */
-        // private Joueur joueurEnCours; //TODO Supprimer si besoin
 
         /**
          * @brief Attribut <b>listeJoueurs</b> liste des joueurs de la partie
@@ -110,23 +204,6 @@ namespace SmallWorld
                 indiceJoueurEnCours = value;
             }
         }
-
-        /**
-         * @fn JoueurEnCours
-         * @brief Properties pour l'attribut joueurEnCours
-         */
-        /* public Joueur JoueurEnCours
-         {
-             get
-             {
-                 return joueurEnCours;
-             }
-             set
-             {
-                 joueurEnCours = value;
-             }
-         }*/
-        //TODO Supprimer si besoin
 
         /**
          * @fn ListeJoueurs
@@ -477,7 +554,7 @@ namespace SmallWorld
         * @param List<Unite> <b>listeUnite</b> la liste d'unité
         * @return Unite la meilleure unité défensive
         */
-        public Unite meilleureUnite(List<Unite> listeUnite)
+        private Unite meilleureUnite(List<Unite> listeUnite)
         {
             if (listeUnite.Count == 0)
             {
@@ -497,7 +574,6 @@ namespace SmallWorld
             }
 
         }
-
 
         /**
          * @fn verifierFinPartie()
@@ -548,7 +624,7 @@ namespace SmallWorld
          */
         public void enregistrerSous(string nomFichier)
         {
-            FileStream stream = File.Create(nomFichier + ".smallworld");
+            FileStream stream = File.Create(nomFichier);
             BinaryFormatter formatter = new BinaryFormatter();
             Console.WriteLine("Serializing");
             formatter.Serialize(stream, this);

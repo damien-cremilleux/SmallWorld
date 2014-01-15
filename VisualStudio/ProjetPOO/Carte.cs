@@ -7,7 +7,7 @@
  * @author <a href="mailto:damien.cremilleux@insa-rennes.fr">Damien Crémilleux</a>
  * @author <a href="mailto:lauriane.holy@insa-rennes.fr">Lauriane Holy</a>
  * 
- * @date 01/01/2014
+ * @date 15/01/2014
  * @version 0.1
  */
 using System;
@@ -17,15 +17,29 @@ using System.Text;
 
 namespace SmallWorld
 {
-
     /**
      * @interface InterCarte
      * @brief Interface pour Carte
      */
     public interface InterCarte
     {
+        /**
+         * @fn creerCarte()
+         * @brief Génération d'une nouvelle Carte
+         * 
+         * Génère une nouvelle Carte, suivant la stratégie demandée
+         * 
+         * @return void
+         */
         void creerCarte();
 
+        /**
+         * @fn definirStrategie(StrategieCarte strat)
+         * @brief Définit la stratégie à adopter pour la génération d'une nouvelle carte
+         * 
+         * @param StrategieCarte <b>strat</b> La nouvelle stratégie à adopter
+         * @return void
+         */
         void definirStrategie(StrategieCarte strat);
     }
 
@@ -149,16 +163,16 @@ namespace SmallWorld
         }
 
         /**
-         * @fn creerCarte
+         * @fn creerCarte()
          * @brief Génération d'une nouvelle Carte
          * 
-         * génère une nouvelle Carte, suivant la stratégie demandée
+         * Génère une nouvelle Carte, suivant la stratégie demandée
          * 
          * @return void
          */
         public void creerCarte()
         {
-           StrategieCarte.construire();
+            StrategieCarte.construire();
         }
 
         /**
@@ -173,6 +187,4 @@ namespace SmallWorld
             StrategieCarte = strat;
         }
     }
-
-
 }

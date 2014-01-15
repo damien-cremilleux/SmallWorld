@@ -9,21 +9,18 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="SmallWorld.FabriquePeuple">
-    <Position X="1.75" Y="1.5" Width="1.5" />
+    <Position X="1" Y="1" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAIAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAEAAAABAAAAAACAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>FabriquePeuple.cs</FileName>
     </TypeIdentifier>
-    <ShowAsAssociation>
-      <Property Name="Peuple" />
-    </ShowAsAssociation>
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="SmallWorld.PeupleGaulois">
     <Position X="2.5" Y="3.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>PeupleGaulois.cs</FileName>
+      <FileName>Peuple.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
@@ -31,7 +28,7 @@
     <Position X="4.5" Y="3.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>PeupleViking.cs</FileName>
+      <FileName>Peuple.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
@@ -39,7 +36,7 @@
     <Position X="6.25" Y="3.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>PeupleNain.cs</FileName>
+      <FileName>Peuple.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>

@@ -7,7 +7,7 @@
  * @author <a href="mailto:damien.cremilleux@insa-rennes.fr">Damien Crémilleux</a>
  * @author <a href="mailto:lauriane.holy@insa-rennes.fr">Lauriane Holy</a>
  * 
- * @date 07/01/2014
+ * @date 15/01/2014
  * @version 0.1
  */
 using System;
@@ -18,13 +18,18 @@ using Wrapper;
 
 namespace SmallWorld
 {
-
     /**
      * @interface InterUnite
      * @brief interface pour les unités
      */
     public unsafe interface InterUnite
     {
+        /**
+         * @fn calculPointVictoire()
+         * @brief Met à jour les points de victoire du joueur
+         */
+        void calculPointVictoire();
+
         /**
          * @fn attaquer(Unite uniteAdverse, int nbRoundCombat)
          * @brief attaquer une unité adverse, sachant le nombre de rounds
@@ -45,10 +50,64 @@ namespace SmallWorld
         bool seDeplacer(int x, int y);
 
         /**
+         * @fn peutSeDeplacer(int x, int y)
+         * @brief Indique si l'unité peut se déplacer sur une case
+         * 
+         * @param int <b>x</b> l'abscisse demandée
+         * @param int <b>y</b> l'ordonnée demandée
+         * @return bool vrai si l'unité peut se déplacer, faux sinon
+         */
+        bool peutSeDeplacer(int x, int y);
+
+        /**
+         * @fn calculerDeplacement
+         * @brief calculer les déplacements possibles
+         * 
+         * @return void
+         */
+        void calculerDeplacement();
+
+        /**
          * @fn passerSonTour
          * @brief l'unité passe son tour
          */
         void passerSonTour();
+
+        /**
+         * @fn perdreVie()
+         * @brief l'unité perd une vie
+         */
+        void perdreVie();
+
+       /**
+        * @fn nouveauTour()
+        * @brief Les attributs de l'unité sont mis à jour pour le nouveau tour
+        */
+        void nouveauTour();
+
+         /**
+         * @fn restaurer()
+         * @brief Restaure l'unité suite à une désérialisation
+         * 
+         * @return void
+         */
+        void restaurer(int* carte);
+
+        /**
+         * @fn suggererCaseNonPossible()
+         * @brief Suggère les cases de déplacement impossible pour une unité
+         * 
+         * @return List<Coordonnee> la liste des coordonnées impossibles
+         */
+        List<Coordonnees> suggererCaseNonPossible();
+
+        /**
+         * @fn suggererCaseOptimale()
+         * @brief Suggère les cases de déplacement pour une unité qui sont optimales
+         * 
+         * @return List<Coordonnee> la liste des coordonnées possibles
+         */
+        List<Coordonnees> suggererCaseOptimale();
     }
 
     /**
@@ -82,7 +141,6 @@ namespace SmallWorld
     [Serializable]
     public unsafe abstract class Unite : InterUnite
     {
-
         /**
          * @brief Attribut <b>position</b>, contient la position courante de l'unité
          */
@@ -360,6 +418,7 @@ namespace SmallWorld
          */
         public void attaquer(Unite uniteAdverse, int nbRoundCombat)
         {
+            Random random = new Random();
             while ((nbRoundCombat > 0) && (PointDeVie > 0) && (uniteAdverse.PointDeVie > 0))
             {
                 double probaAttaquantPerd = 0.5; //Par défaut on est à 50%
@@ -377,9 +436,8 @@ namespace SmallWorld
                         probaAttaquantPerd = 0.5 + ponderation;
                 }
 
-                Random r = new Random();
-                double random = r.Next(100);
-                if (random < (probaAttaquantPerd * 100))
+                double r = random.Next(100);
+                if (r < (probaAttaquantPerd * 100))
                 {
                     PointDeVie--;
                     Console.WriteLine("L'unité A perd une vie");
@@ -465,15 +523,6 @@ namespace SmallWorld
         }
 
         /**
-         * @fn mourir()
-         * @brief l'unité meurt
-         */
-        public void mourir()
-        {
-            throw new System.NotImplementedException();
-        }
-
-        /**
         * @fn nouveauTour()
         * @brief Les attributs de l'unité sont mis à jour pour le nouveau tour
         */
@@ -526,7 +575,7 @@ namespace SmallWorld
         }
 
         /**
-         * @fn suggererCaseOptimele()
+         * @fn suggererCaseOptimale()
          * @brief Suggère les cases de déplacement pour une unité qui sont optimales
          * 
          * @return List<Coordonnee> la liste des coordonnées possibles
