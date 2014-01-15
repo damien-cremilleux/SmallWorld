@@ -5,7 +5,7 @@
  * @author <a href="mailto:damien.cremilleux@insa-rennes.fr">Damien Crémilleux</a>
  * @author <a href="mailto:lauriane.holy@insa-rennes.fr">Lauriane Holy</a>
  * 
- * @date 06/01/2014
+ * @date 15/01/2014
  * @version 0.1
  */
 using System;
@@ -74,10 +74,26 @@ namespace SmallWorld
          */
         private int* tabCarte;
 
-         /**
-         * @brief Attibut <b>nomSauvegarde</b> le nom de la sauvegarde
-         */
+        /**
+        * @brief Attibut <b>nomSauvegarde</b> le nom de la sauvegarde
+        */
         private string nomSauvegarde;
+
+        /**
+         * @fn IndiceJoueurInitial
+         * @brief Properties pour l'attribut indiceJoueurInitial
+         */
+        public int IndiceJoueurInitial
+        {
+            get
+            {
+                return indiceJoueurInitial;
+            }
+            set
+            {
+                indiceJoueurInitial = value;
+            }
+        }
 
         /**
          * @fn IndiceJoueurEnCours
@@ -223,7 +239,8 @@ namespace SmallWorld
 
             //Le premier joueur est sélectionné au hasard
             Random r = new Random();
-            indiceJoueurInitial = r.Next(ListeJoueurs.Count + 1);
+            int premier = r.Next(ListeJoueurs.Count);
+            indiceJoueurInitial = premier;
             IndiceJoueurEnCours = indiceJoueurInitial;
         }
 
@@ -262,11 +279,16 @@ namespace SmallWorld
          */
         public void changerJoueur()
         {
-            //On met les points du joueur précédent à jour
+            //On met les points du joueur précédent à jour et ses unités passent leur tour
             this.ListeJoueurs[IndiceJoueurEnCours].calculerPointVictoire();
+            foreach (Unite unite in ListeJoueurs[IndiceJoueurEnCours].ListeUnite)
+            {
+                unite.passerSonTour();
+                unite.PointDeDeplacement = 0;
+            }
 
+            //On passe au joueur suivant
             IndiceJoueurEnCours = (IndiceJoueurEnCours + 1) % ListeJoueurs.Count;
-
             foreach (Unite unite in ListeJoueurs[IndiceJoueurEnCours].ListeUnite)
             {
                 unite.nouveauTour();
@@ -401,22 +423,26 @@ namespace SmallWorld
                         int nbRoundCombat;
                         Random r = new Random();
                         nbRoundCombat = 3 + r.Next(Math.Max(unite.PointDeVie, meilleureU.PointDeVie));
+                        Console.WriteLine("Il y a " + nbRoundCombat + " rouds");
                         unite.attaquer(meilleureU, nbRoundCombat);
 
                         //L'unité attaquante est morte
                         if (unite.PointDeVie == 0) //l'attaquant a perdu, son unité meurt
                         {
+                            Console.WriteLine("L'unité A a perdu, elle meurt");
                             foreach (Joueur j in ListeJoueurs)
                             {
                                 j.ListeUnite.Remove(unite);
                                 j.calculerPointVictoire();
                             }
+                            verifierFinPartie();
                             return 2;
                         }
 
                         //L'unité en défense est morte
                         if (meilleureU.PointDeVie == 0)
                         {
+                            Console.WriteLine("L'unité B meurt");
                             foreach (Joueur j in ListeJoueurs)
                             {
                                 j.ListeUnite.Remove(meilleureU);
@@ -426,14 +452,16 @@ namespace SmallWorld
                             if (selectionnerUniteAdverse(x, y).Count == 0)
                             {
                                 unite.seDeplacer(x, y);
+                                verifierFinPartie();
                                 return 3;
                             }
                         }
 
+                        verifierFinPartie();
                         return 4;
                     }
                 }
-
+                verifierFinPartie();
                 return 4;
             }
             else
@@ -454,7 +482,7 @@ namespace SmallWorld
             if (listeUnite.Count == 0)
             {
                 return null;
-           }
+            }
             else
             {
                 Unite meilleureU = listeUnite[0];
@@ -470,6 +498,27 @@ namespace SmallWorld
 
         }
 
+
+        /**
+         * @fn verifierFinPartie()
+         * @brief Vérifier si la partie est finie (les joueurs adverses n'ont plus d'unité)
+         * 
+         * Met la variable PartieFinie à vraie si besoin 
+         * 
+         * @return void
+         */
+        public void verifierFinPartie()
+        {
+            bool plusUnite = false;
+
+            foreach (Joueur j in ListeJoueurs)
+            {
+                plusUnite = plusUnite || (j.ListeUnite.Count == 0);
+            }
+
+            PartieFinie = plusUnite;
+        }
+
         /**
          * @fn Enregistrer()
          * @brief Enregistre une partie
@@ -480,7 +529,7 @@ namespace SmallWorld
         {
             if (nomSauvegarde != "")
             {
-               this.enregistrerSous(nomSauvegarde);
+                this.enregistrerSous(nomSauvegarde);
                 return true;
             }
             else
@@ -488,7 +537,7 @@ namespace SmallWorld
                 return false;
             }
         }
-        
+
 
         /**
          * @fn EnregistrerSous(string nomFichier)
@@ -499,7 +548,7 @@ namespace SmallWorld
          */
         public void enregistrerSous(string nomFichier)
         {
-            FileStream stream = File.Create(nomFichier+".smallworld");
+            FileStream stream = File.Create(nomFichier + ".smallworld");
             BinaryFormatter formatter = new BinaryFormatter();
             Console.WriteLine("Serializing");
             formatter.Serialize(stream, this);
@@ -559,9 +608,9 @@ namespace SmallWorld
             }
 
             //on restaure chaque unité
-            foreach(Joueur joueur in ListeJoueurs)
+            foreach (Joueur joueur in ListeJoueurs)
             {
-                foreach(Unite unite in joueur.ListeUnite)
+                foreach (Unite unite in joueur.ListeUnite)
                 {
                     unite.restaurer(tabCase);
                 }

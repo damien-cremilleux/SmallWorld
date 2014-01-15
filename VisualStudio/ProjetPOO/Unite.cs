@@ -337,10 +337,10 @@ namespace SmallWorld
          */
         public Unite()
         {
-            PointDeVie = 2;
-            PointAttaque = 2;
-            PointDefense = 1;
-            PointDeDeplacement = 1;
+            PointDeVie = Constantes.UNITE_POINT_VIE;
+            PointAttaque = Constantes.UNITE_POINT_ATT;
+            PointDefense = Constantes.UNITE_POINT_DEF;
+            PointDeDeplacement = Constantes.UNITE_POINT_DEPL;
             PasseSonTour = false;
             wrapperAlgo = new WrapperAlgo();
         }
@@ -365,8 +365,10 @@ namespace SmallWorld
                 double probaAttaquantPerd = 0.5; //Par défaut on est à 50%
                 if (PointAttaque != uniteAdverse.PointDefense)
                 {
-                    double coefficient = (Math.Abs(PointAttaque - uniteAdverse.PointDefense) / Math.Max(PointAttaque, uniteAdverse.PointDefense));
+                    double coefficient = ((double)Math.Abs(PointAttaque - uniteAdverse.PointDefense) / (double)Math.Max(PointAttaque, uniteAdverse.PointDefense));
+                    Console.WriteLine("Coefficient du combat" + coefficient);
                     double ponderation = coefficient * 0.5;
+                    Console.WriteLine("Pondération du combat" + ponderation);
 
                     if (PointAttaque > uniteAdverse.PointDefense)
                         probaAttaquantPerd = 0.5 - ponderation;
@@ -376,13 +378,16 @@ namespace SmallWorld
                 }
 
                 Random r = new Random();
-                if ((r.Next(100) * probaAttaquantPerd) > 50)
+                double random = r.Next(100);
+                if (random < (probaAttaquantPerd * 100))
                 {
                     PointDeVie--;
+                    Console.WriteLine("L'unité A perd une vie");
                 }
                 else
                 {
                     uniteAdverse.PointDeVie--;
+                    Console.WriteLine("L'unité B perd une vie");
                 }
                 nbRoundCombat--;
             }
@@ -512,15 +517,14 @@ namespace SmallWorld
             {
                 for (j = 0; j < TailleCarteJeu; j++)
                 {
-    
-                    if(TabDeplacement[i* TailleCarteJeu + j] < 2)
-                        listeRes.Add(new Coordonnees(i,j));
+                    if (TabDeplacement[i * TailleCarteJeu + j] < 2)
+                            listeRes.Add(new Coordonnees(i, j));
                 }
             }
-            
+
             return listeRes;
         }
-        
+
         /**
          * @fn suggererCaseOptimele()
          * @brief Suggère les cases de déplacement pour une unité qui sont optimales
@@ -535,12 +539,12 @@ namespace SmallWorld
             {
                 for (j = 0; j < TailleCarteJeu; j++)
                 {
-    
-                    if(TabDeplacement[i* TailleCarteJeu + j] > 2)
-                        listeRes.Add(new Coordonnees(i,j));
+
+                    if (TabDeplacement[i * TailleCarteJeu + j] > 2)
+                        listeRes.Add(new Coordonnees(i, j));
                 }
             }
-            
+
             return listeRes;
         }
     }
