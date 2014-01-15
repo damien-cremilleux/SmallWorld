@@ -337,10 +337,10 @@ namespace SmallWorld
          */
         public Unite()
         {
-            PointDeVie = 2;
-            PointAttaque = 2;
-            PointDefense = 1;
-            PointDeDeplacement = 1;
+            PointDeVie = Constantes.UNITE_POINT_VIE;
+            PointAttaque = Constantes.UNITE_POINT_ATT;
+            PointDefense = Constantes.UNITE_POINT_DEF;
+            PointDeDeplacement = Constantes.UNITE_POINT_DEPL;
             PasseSonTour = false;
             wrapperAlgo = new WrapperAlgo();
         }

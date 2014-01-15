@@ -267,9 +267,9 @@ namespace SmallWorld
 
             //Le premier joueur est sélectionné au hasard
             Random r = new Random();
-            int premier = r.Next(Partie.ListeJoueurs.Count + 1);
+            int premier = r.Next(Partie.ListeJoueurs.Count);
             Partie.IndiceJoueurInitial = premier;
-           Partie.IndiceJoueurEnCours = Partie.IndiceJoueurInitial;
+            Partie.IndiceJoueurEnCours = Partie.IndiceJoueurInitial;
         }
 
         /**
@@ -358,7 +358,7 @@ namespace SmallWorld
 
             Coordonnees coordJ1 = new Coordonnees(x1, y1);
             Coordonnees coordJ2 = new Coordonnees(x2, y2);
-            Coordonnees[] tabCoord = {coordJ1, coordJ2};
+            Coordonnees[] tabCoord = { coordJ1, coordJ2 };
 
             //On initialise chaque unité
             for (i = 0; i < Partie.ListeJoueurs.Count; i++)
