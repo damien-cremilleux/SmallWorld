@@ -10,41 +10,184 @@
     <Grid>
         <FlowDocumentPageViewer >
             <FlowDocument FontFamily="Segoe UI Light">
-                <Paragraph >
-                    <Label>SMALL WORLD</Label>
-
-Une fois le jeu lancé, vous arrivez au menu de sélection.
-  Vous pouvez alors : 
-                    - Créer une nouvelle partie,
-                    - Charger une partie 
-                    
-           I Creer une nouvelle partie
-  
-Lorsque vous créez nouvelle partie, un écran vous invite à entrer vos noms de joueurs ainsi que les peuples choisis.
-
-Deux joueurs ne peuvent pas avoir le même nom ou le même peuple.
-
-                   
-Si la sauvegarde que vous avez choisi est 
-vide, un écran vous invite à entrer votre nom 
-de joueur. 
-                    
-Pour valider vos joueurs, sélectionnez 
-"OK".
-                    
-
-Pour annuler et revenir à l'écran du 
-choix des sauvegardes, sélectionnez 
-la flèche d'annulation (à droite du 
-"OK") puis appuyez sur C ou Espace.
-Vous pouvez également effacer un 
-fichier ou quitter le jeu en 
-sélectionnant les options 
-correspondantes et en appuyant sur 
-Espace.
+                <Section FontSize="30" FontWeight="ExtraBold">
+                    <Paragraph>SMALL WORLD</Paragraph>
+                </Section>
 
 
+                <Paragraph FontSize="24" FontStyle="Italic">
+                    Règles
                 </Paragraph>
+
+                <Section>
+                    <Paragraph FontSize="18">
+                        Objectifs
+                    </Paragraph>
+
+                    <Paragraph FontSize="14">
+                        SmallWorld est un jeu tour-par-tour où chaque joueur dirige un peuple. Le but du jeu est de gérer des unités sur une carte pour obtenir le plus de points possible. Les points sont obtenus grâce au placement de chaque unité. Les unités d’un joueur peuvent se déplacer et attaquer les unités d’un autre joueur pour les détruire et occuper une case de la carte.
+                    </Paragraph>
+                </Section>
+
+                <Section>
+                    <Paragraph FontSize="18">
+                        La carte
+                    </Paragraph>
+                    <Paragraph FontSize="14">
+                        La carte est composée de cinq types de ressources : désert, eau, forêt, montagne et plaine. Les unités (à l'exception des vikings) ne peuvent pas se déplacer sur l'eau.
+                    </Paragraph>
+                    <Table CellSpacing="5">
+
+                        <TableRowGroup>
+                            <TableRow>
+                                <TableCell>
+                                    <Paragraph>Désert</Paragraph>
+                                </TableCell>
+                                <TableCell>
+                                    <Paragraph>Eau</Paragraph>
+                                </TableCell>
+                                <TableCell>
+                                    <Paragraph>Forêt</Paragraph>
+                                </TableCell>
+                                <TableCell>
+                                    <Paragraph>Montagne</Paragraph>
+                                </TableCell>
+                                <TableCell>
+                                    <Paragraph>Plaine</Paragraph>
+                                </TableCell>
+                            </TableRow>
+                        </TableRowGroup>
+
+                        <TableRowGroup>
+                            <TableRow>
+                                <TableCell>
+                                    <Paragraph>
+                                        <Image Width="50" Height="50" Source="/Resources/desert.png"/>
+                                    </Paragraph>
+                                </TableCell>
+                                <TableCell>
+                                    <Paragraph>
+                                        <Image Width="50" Height="50" Source="/Resources/water.png"/>
+                                    </Paragraph>
+                                </TableCell>
+                                <TableCell>
+                                    <Paragraph>
+                                        <Image Width="50" Height="50" Source="/Resources/forest.png"/>
+                                    </Paragraph>
+                                </TableCell>
+                                <TableCell>
+                                    <Paragraph>
+                                        <Image Width="50" Height="50" Source="/Resources/mountain.png"/>
+                                    </Paragraph>
+                                </TableCell>
+                                <TableCell>
+                                    <Paragraph>
+                                        <Image Width="50" Height="50" Source="/Resources/plaine.png"/>
+                                    </Paragraph>
+                                </TableCell>
+                            </TableRow>
+                        </TableRowGroup>
+                    </Table>
+                </Section>
+
+                <Section>
+                    <Paragraph FontSize="18">
+                        Les peuples
+                    </Paragraph>
+                    <Paragraph FontSize="14">
+                        Il existe trois peuples, Gaulois, Viking et Nain, ayant des caractéristiques très différentes influant sur les stratégies de jeu :
+                    </Paragraph>
+
+                    <Table CellSpacing="5">
+                        <TableRowGroup>
+                            <TableRow>
+                                <TableCell >
+                                    <Paragraph>Gaulois</Paragraph>
+                                </TableCell>
+                                <TableCell>
+                                    <Paragraph>
+                                        <Image Width="100" Height="100"  Source="/Resources/Gaulois.png"/>
+                                    </Paragraph>
+                                </TableCell>
+                                <TableCell>
+                                    <Paragraph  FontSize="12">
+                                        Le coût de déplacement sur une case Plaine est divisé par deux.
+
+Une unité Gauloise fournit 1 point de plus lorsqu’elle occupe une case du type plaine.
+
+Une unité Gauloise n’acquière aucun point sur les cases de type montagne.
+                                    </Paragraph>
+                                </TableCell>
+                            </TableRow>
+
+                            <TableRow>
+                                <TableCell>
+                                    <Paragraph>Nain</Paragraph>
+                                </TableCell>
+                                <TableCell>
+                                    <Paragraph>
+                                        <Image Width="100" Height="100"  Source="/Resources/dwarf.png"/>
+                                    </Paragraph>
+                                </TableCell>
+                                <TableCell>
+                                    <Paragraph  FontSize="12">
+                                        Lorsqu’elle se trouve sur une case montagne, une unité Nain a la capacité de se déplacer sur n’importe quelle case montage de la carte à condition qu’elle ne soit pas occupée par une unité adverse.
+
+Une unité Nain fournit 1 point de plus lorsqu’elle occupe une case forêt.
+
+Une unité Nain n’acquière aucun point sur les cases de type plaine.
+                                    </Paragraph>
+                                </TableCell>
+                            </TableRow>
+
+                            <TableRow>
+                                <TableCell>
+                                    <Paragraph>Viking</Paragraph>
+                                </TableCell>
+                                <TableCell>
+                                    <Paragraph>
+                                        <Image Width="100" Height="100" Source="/Resources/viking.png"/>
+                                    </Paragraph>
+                                </TableCell>
+                                <TableCell>
+                                    <Paragraph FontSize="12">
+                                        L’unité Viking a la capacité de se déplacer sur l’eau.
+
+L’occupation d’une case eau ne rapporte cependant aucun point.
+
+Une unité Viking fournit 1 point de plus lorsqu’elle occupe une case au bord de l’eau. Une unité Viking n’acquière aucun point sur les cases de type désert.
+                                    </Paragraph>
+                                </TableCell>
+                            </TableRow>
+
+                        </TableRowGroup>
+                    </Table>
+
+                </Section>
+
+                <Section>
+                    <Paragraph FontSize="18">
+                        Déroulement d'une partie
+                    </Paragraph>
+                    <Paragraph FontSize="14">
+                        Le premier joueur de la partie est choisi aléatoirement. Lorsqu’un joueur peut jouer (c.-à-d. une fois par tour), il peut déplacer toutes ses unités suivant leur nombre de déplacements (un déplacement sur une case coûte un point de déplacement). Il est possible pour chaque unité de passer son tour. Une unité combattante peut engager un combat s’il lui reste au moins un point de mouvement. Lorsqu’un joueur a fini son tour, c'est au joueur suivant de commencer son tour. La partie se termine lorsque le nombre de tours prédéfini en début de partie à été effectué, ou lorsqu’il ne reste qu’un seul joueur sur le plateau.
+                    </Paragraph>
+                </Section>
+
+                <Paragraph FontSize="24" FontStyle="Italic">
+                    Utilisation
+                </Paragraph>
+
+                <Section>
+                    <Paragraph FontSize="18">
+                        Menu principal
+                    </Paragraph>
+                    <Paragraph FontSize="14">
+                        C'est ici que l'on peut démarrer une nouvelle partie ! Il suffit de sélectionner l'option « Nouvelle partie ». Depuis ce menu, il est également possible de charger une partie préalablement sauvegardée. Si vous êtes perdus, le bouton aide est là pour vous.
+                        <Image Height="100" Width="100" Source="/Resources/PagePrincipale.png"/>
+                    </Paragraph>
+                </Section>
+
             </FlowDocument>
         </FlowDocumentPageViewer>
     </Grid>

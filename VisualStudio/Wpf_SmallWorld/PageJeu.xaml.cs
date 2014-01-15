@@ -228,6 +228,7 @@ namespace Wpf_SmallWorld
         /// <param name="e"> l'evt </param>
         private void rectangle_MouseLeftButtonDown(object sender, RoutedEventArgs e)
         {
+            UniteSelectionnee.Visibility = System.Windows.Visibility.Hidden;
             // Ne plus affiché de cases de suggestion
             CarteSuggestion.Children.Clear();
             InfoAction.Visibility = Visibility.Hidden;
@@ -237,10 +238,6 @@ namespace Wpf_SmallWorld
             var cas = rectangle.Tag as Case;
             int column = Grid.GetColumn(rectangle);
             int row = Grid.GetRow(rectangle);
-
-            ////enregistrement des coordonnées de la case selectionnée
-            //positionInitiale.Abscisse = column;
-            //positionInitiale.Ordonnee = row;
 
             // Maj de la selection sur le rectangle selectionné
             Grid.SetColumn(selectionRectangle, column);
@@ -491,7 +488,7 @@ namespace Wpf_SmallWorld
 
                 Rectangle suggestionOptimale = new Rectangle();
                 suggestionOptimale.StrokeThickness = 3;
-                suggestionOptimale.Stroke = Brushes.Red;
+                suggestionOptimale.Stroke = Brushes.Tomato;
 
                 // le blanchissement doit être au dessus de la carte et des unités
                 Panel.SetZIndex(suggestionOptimale, 60);

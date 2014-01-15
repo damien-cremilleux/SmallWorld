@@ -57,7 +57,7 @@ namespace Wpf_SmallWorld
             {
                 img = System.Windows.Interop.Imaging.CreateBitmapSourceFromHBitmap(Wpf_SmallWorld.Properties.Resources.viking.GetHbitmap(), IntPtr.Zero, Int32Rect.Empty, BitmapSizeOptions.FromEmptyOptions());
                 ImgPeuple.Fill = new ImageBrush(img);
-                ImgPeuple.Tag = "Unité Vicking";
+                ImgPeuple.Tag = "Unité Viking";
 
             }
             if (unite is InterUniteGauloise)

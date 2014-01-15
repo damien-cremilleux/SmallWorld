@@ -67,7 +67,14 @@
     <GenerateManifests>true</GenerateManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <SignManifests>true</SignManifests>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -178,12 +185,12 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="ClassDiagram1.cd" />
+    <None Include="Properties\app.manifest" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <AppDesigner Include="Properties\" />
-    <None Include="Wpf_SmallWorld_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -202,7 +209,7 @@
     <SplashScreen Include="Resources\smallWorld.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\free-paper-texture-2.jpg" />
+    <Resource Include="Resources\free-paper-texture-2.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\suiv.png">
@@ -272,34 +279,34 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\dwarf.png" />
+    <Resource Include="Resources\dwarf.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Gaulois.png" />
+    <Resource Include="Resources\Gaulois.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\viking.png" />
+    <Resource Include="Resources\viking.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\forest.jpg" />
+    <Resource Include="Resources\forest.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\plain.png" />
+    <Resource Include="Resources\plain.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\water.jpg" />
+    <Resource Include="Resources\water.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\desert.png" />
+    <Resource Include="Resources\desert.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\forest.png" />
+    <Resource Include="Resources\forest.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\mountain.png" />
+    <Resource Include="Resources\mountain.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\water.png" />
+    <Resource Include="Resources\water.png" />
     <BootstrapperPackage Include=".NETFramework,Version=v4.5">
       <Visible>False</Visible>
       <ProductName>Microsoft .NET Framework 4.5 %28x86 et x64%29</ProductName>
@@ -318,7 +325,10 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\plaine.png" />
+    <Resource Include="Resources\plaine.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PagePrincipale.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

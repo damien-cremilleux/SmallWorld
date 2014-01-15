@@ -69,7 +69,7 @@ namespace Wpf_SmallWorld
 
         private void Aide(object sender, RoutedEventArgs e)
         {
-            parent.PageSelection.Source = new Uri("ReglesJeu1.xaml", UriKind.Relative);
+            parent.PageSelection.Source = new Uri("ReglesJeu2.xaml", UriKind.Relative);
         }
 
         private void Quit(object sender, RoutedEventArgs e)

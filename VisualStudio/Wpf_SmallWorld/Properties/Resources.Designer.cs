@@ -133,6 +133,16 @@ namespace Wpf_SmallWorld.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap PagePrincipale {
+            get {
+                object obj = ResourceManager.GetObject("PagePrincipale", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap plain {
             get {
                 object obj = ResourceManager.GetObject("plain", resourceCulture);
