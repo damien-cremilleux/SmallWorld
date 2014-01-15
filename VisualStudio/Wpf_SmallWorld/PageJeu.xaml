@@ -8,7 +8,8 @@
 	  Title="PageJeu"
       Loaded="Window_Loaded"
       FontFamily="Segoe UI Light"
-      FontSize="16">
+      FontSize="16"
+      >
 
     <Grid KeyDown="passerSonTour"  >
         <Grid.RowDefinitions>
@@ -26,7 +27,7 @@
         <!--Menu-->
         <Grid Grid.Row="0" Grid.ColumnSpan="3" Background="#272A3D" >
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-                <Button Width="130" Click="Recharger" BorderThickness="1,0,0,0" Background="Transparent" Foreground="White">Recharger</Button>
+                <Button Width="130" Click="NouvellePartie" BorderThickness="1,0,0,0" Background="Transparent" Foreground="White">Nouvelle partie</Button>
                 <Button Width="130" Click="Sauvegarder" BorderThickness="1,0,0,0" Background="Transparent" Foreground="White">Sauvergarder</Button>
                 <Button Width="130" Click="Quitter" BorderThickness="1,0,0,0" Background="Transparent" Foreground="White">Quitter</Button>
             </StackPanel>
@@ -88,7 +89,7 @@
 
             <!--Bouton fin de tour-->
         <Grid Grid.Column="1" Grid.Row="3">
-            <Button Grid.Column="2" Height="auto" HorizontalAlignment="Center" Click="TourSuivant">
+            <Button Grid.Column="2" Height="auto" HorizontalAlignment="Center" Click="TourSuivant" Margin="10" FontSize="20">
                 <StackPanel Orientation="Horizontal">
                     <Label HorizontalAlignment="Center">Fin de tour pour :</Label>
                     <Label Name="JoueurEnCours" Content="{Binding Tag, ElementName=JoueurEnCours}" VerticalAlignment="center"/>

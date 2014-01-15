@@ -29,10 +29,11 @@ namespace Wpf_SmallWorld
         int deplacementautorise;
         bool testsauvegarder;
 
-        unsafe public PageJeu(Partie parti)
+        unsafe public PageJeu()
         {
             InitializeComponent();
-            this.partie = parti;
+            MainWindow parent = (Application.Current.MainWindow as MainWindow);
+            partie = parent.Partie;
             selected = false;
             positionInitiale = new Coordonnees(0, 0);
 
@@ -50,7 +51,8 @@ namespace Wpf_SmallWorld
         /// </summary>
         unsafe private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-
+            MainWindow parent = (Application.Current.MainWindow as MainWindow);
+            parent.WindowState = WindowState.Maximized;
             //Initialisation des données joueurs
             listejoueur();
 
@@ -538,6 +540,7 @@ namespace Wpf_SmallWorld
         /// <param name="e"></param>
         private void TourSuivant(object sender, RoutedEventArgs e)
         {
+            
             InfoUnites.Children.Clear();
             listeUnite(positionInitiale.Abscisse, positionInitiale.Ordonnee);
 
@@ -555,7 +558,7 @@ namespace Wpf_SmallWorld
             }
             else 
                 partieFini();
-          
+            AppartientUnite.Content = "";
         }
 
 
@@ -576,7 +579,6 @@ namespace Wpf_SmallWorld
                     vainqueurs += vainqueur.NomJ;
                 }
 
-                // S'il y a égalité
                 if (partie.vainqueurs().Count() == 1)
                 {
                     messageBoxText = "Partie terminée ! Bravo " + partie.vainqueurs()[0].NomJ + " ! Revanche ?";
@@ -589,13 +591,14 @@ namespace Wpf_SmallWorld
                 MessageBoxImage icon = MessageBoxImage.Question;
                 MessageBoxResult result = MessageBox.Show(messageBoxText, caption, button, icon);
 
-                // Relancer sur une nouvelle partie ou menu principal ?
+                MainWindow parent = (Application.Current.MainWindow as MainWindow);
                 switch (result)
                 {
                     case MessageBoxResult.Yes:
+                        parent.construireNouvellePartie();
+                        parent.PagePrincipale.Source = new Uri("PageJeu.xaml", UriKind.Relative);
                         break;
                     case MessageBoxResult.No:
-                        MainWindow parent = (Application.Current.MainWindow as MainWindow);
                         parent.Close();
                         break;
                 }
@@ -607,10 +610,10 @@ namespace Wpf_SmallWorld
         /// <summary>
         /// Rejouer une partie
         /// </summary>
-        private void Recharger(object sender, RoutedEventArgs e)
+        private void NouvellePartie(object sender, RoutedEventArgs e)
         {
-            // TODO
             MainWindow parent = (Application.Current.MainWindow as MainWindow);
+            parent.PagePrincipale.Source = new Uri("PagePrincipale.xaml", UriKind.Relative);
         }
 
         /// <summary>

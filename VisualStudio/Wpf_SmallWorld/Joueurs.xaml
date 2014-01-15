@@ -9,9 +9,7 @@
              FontFamily="Segoe UI Light"
              Height="550" Width="650">
     
-  
     <Grid>
-        
         <Grid.ColumnDefinitions>
             <ColumnDefinition />
         </Grid.ColumnDefinitions>

@@ -45,8 +45,7 @@ namespace Wpf_SmallWorld
         void Retour(object sender, RoutedEventArgs e)
         {
             MainWindow parent = (Application.Current.MainWindow as MainWindow);
-            parent.joueurs.Visibility = Visibility.Visible;
-            parent.carte.Visibility = Visibility.Hidden;
+            parent.PageSelection.Source = new Uri("Joueurs.xaml", UriKind.Relative);
         }
 
         /// <summary>
@@ -67,8 +66,9 @@ namespace Wpf_SmallWorld
                 partie = parent.construirePartie();
                
                 // Lancement du jeu 
-                PageJeu jeu = new PageJeu(partie);
-                parent.Content = jeu;
+                parent.PagePrincipale.Source = new Uri("PageJeu.xaml", UriKind.Relative);
+                parent.PageSelection.Visibility = Visibility.Collapsed;
+
             }
         }
 

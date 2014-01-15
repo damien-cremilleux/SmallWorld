@@ -86,10 +86,19 @@
     <Compile Include="PageJeu.xaml.cs">
       <DependentUpon>PageJeu.xaml</DependentUpon>
     </Compile>
+    <Compile Include="PagePrincipale.xaml.cs">
+      <DependentUpon>PagePrincipale.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="ReglesJeu1.xaml.cs">
+      <DependentUpon>ReglesJeu1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ReglesJeu2.xaml.cs">
+      <DependentUpon>ReglesJeu2.xaml</DependentUpon>
     </Compile>
     <Page Include="Carte.xaml">
       <SubType>Designer</SubType>
@@ -116,6 +125,18 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="PageJeu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PagePrincipale.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ReglesJeu1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ReglesJeu2.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -214,30 +235,6 @@
     </Resource>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\dwarf.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\dwarf.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Gaulois.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\viking.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\mountain.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\forest.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\plain.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\water.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.5">
       <Visible>False</Visible>
       <ProductName>Microsoft .NET Framework 4.5 %28x86 et x64%29</ProductName>
@@ -255,7 +252,37 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\TestFile.txt" />
+    <None Include="Resources\dwarf.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Gaulois.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\viking.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\forest.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\plain.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\water.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\desert.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\forest.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mountain.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\water.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\plaine.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
