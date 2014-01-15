@@ -379,7 +379,7 @@ namespace SmallWorld
 
                 Random r = new Random();
                 double random = r.Next(100);
-                if (random < (probaAttaquantPerd*100))
+                if (random < (probaAttaquantPerd * 100))
                 {
                     PointDeVie--;
                     Console.WriteLine("L'unité A perd une vie");
@@ -504,12 +504,12 @@ namespace SmallWorld
         }
 
         /**
-         * @fn suggererCase()
-         * @brief Suggère les cases de déplacement pour une unité
+         * @fn suggererCaseNonPossible()
+         * @brief Suggère les cases de déplacement impossible pour une unité
          * 
-         * @return List<Coordonnee> la liste des coordonnées possibles
+         * @return List<Coordonnee> la liste des coordonnées impossibles
          */
-        public List<Coordonnees> suggererCase()
+        public List<Coordonnees> suggererCaseNonPossible()
         {
             List<Coordonnees> listeRes = new List<Coordonnees>();
             int i, j;
@@ -517,15 +517,14 @@ namespace SmallWorld
             {
                 for (j = 0; j < TailleCarteJeu; j++)
                 {
-    
-                    if(TabDeplacement[i* TailleCarteJeu + j] > 1)
-                        listeRes.Add(new Coordonnees(i,j));
+                    if (TabDeplacement[i * TailleCarteJeu + j] < 2)
+                            listeRes.Add(new Coordonnees(i, j));
                 }
             }
-            
+
             return listeRes;
         }
-        
+
         /**
          * @fn suggererCaseOptimele()
          * @brief Suggère les cases de déplacement pour une unité qui sont optimales
@@ -540,12 +539,12 @@ namespace SmallWorld
             {
                 for (j = 0; j < TailleCarteJeu; j++)
                 {
-    
-                    if(TabDeplacement[i* TailleCarteJeu + j] > 2)
-                        listeRes.Add(new Coordonnees(i,j));
+
+                    if (TabDeplacement[i * TailleCarteJeu + j] > 2)
+                        listeRes.Add(new Coordonnees(i, j));
                 }
             }
-            
+
             return listeRes;
         }
     }

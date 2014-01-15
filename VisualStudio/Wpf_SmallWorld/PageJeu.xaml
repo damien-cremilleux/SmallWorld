@@ -51,6 +51,7 @@
                 <!--<Ellipse Fill="Gold" Width="10" Height="10" Name="unitj1" Panel.ZIndex="444" IsHitTestVisible="False" />
                 <Ellipse Fill="Pink" Width="10" Height="10" Name="unitj2" Panel.ZIndex="444" IsHitTestVisible="False" />-->
                 </Grid>
+                <Grid Grid.Column="0" Grid.Row="0" Name="CarteSuggestion" HorizontalAlignment="Center" VerticalAlignment="Center" Cursor="Hand"/>
                 <Grid Grid.Column="0" Grid.Row="0" Name="Unite" HorizontalAlignment="Center" VerticalAlignment="Center" Cursor="Hand"/>
             </Grid>
         </ScrollViewer>

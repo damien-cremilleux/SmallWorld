@@ -540,7 +540,7 @@ namespace SmallWorld
             Console.WriteLine("Deserializing");
             Partie p = (Partie)formatter.Deserialize(stream);
             stream.Close();
-
+            p.restaurer();
 
             return p;
         }

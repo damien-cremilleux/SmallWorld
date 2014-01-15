@@ -62,6 +62,7 @@ namespace Wpf_SmallWorld
             for (int c = 0; c < taille; c++)
             {
                 Carte.ColumnDefinitions.Add(new ColumnDefinition() { Width = new GridLength(50, GridUnitType.Pixel) });
+                CarteSuggestion.ColumnDefinitions.Add(new ColumnDefinition() { Width = new GridLength(50, GridUnitType.Pixel) });
                 Unite.ColumnDefinitions.Add(new ColumnDefinition() { Width = new GridLength(50, GridUnitType.Pixel) });
             }
 
@@ -69,7 +70,9 @@ namespace Wpf_SmallWorld
             {
 
                 Carte.RowDefinitions.Add(new RowDefinition() { Height = new GridLength(50, GridUnitType.Pixel) });
+                CarteSuggestion.RowDefinitions.Add(new RowDefinition() { Height = new GridLength(50, GridUnitType.Pixel) });
                 Unite.RowDefinitions.Add(new RowDefinition() { Height = new GridLength(50, GridUnitType.Pixel) });
+
                 for (int c = 0; c < taille; c++)
                 {
                     // Dans chaque case de la grille Carte on ajoute une tuile (logique) matérialisée par un rectangle (physique)
@@ -118,6 +121,8 @@ namespace Wpf_SmallWorld
 
             }
         }
+
+        //////////////////////////////////////////////////////// STYLE DES RECTANGLES ////////////////////////////////////////////////////////
 
         /// <summary>
         /// Permet de mettre la case à la texture de son type
@@ -202,6 +207,7 @@ namespace Wpf_SmallWorld
             return rectangle;
         }
 
+        //////////////////////////////////////////////////////// EVENEMENTS ////////////////////////////////////////////////////////
         /// <summary>
         /// Délégué : réponse à l'evt click gauche sur le rectangle, affichage des informations de la case (type case et unités présentes)
         /// </summary>
@@ -209,6 +215,8 @@ namespace Wpf_SmallWorld
         /// <param name="e"> l'evt </param>
         private void rectangle_MouseLeftButtonDown(object sender, RoutedEventArgs e)
         {
+            // Ne plus affiché de cases de suggestion
+            CarteSuggestion.Children.Clear();
 
             // Récuperation des données du rectangle selectionné
             var rectangle = sender as Rectangle;
@@ -235,70 +243,6 @@ namespace Wpf_SmallWorld
 
 
         /// <summary>
-        /// Affichages des unités présentent sur la case selectionnée
-        /// </summary>
-        private void listeUnite(int column, int row)
-        {
-
-            if (partie.selectionnerUniteAdverse(column, row).Count() == 0)
-            {
-                // Liste des unités du joueur en cours présentes sur la case (on crée une listbox contenant les usercontrols (InfoUnite)
-                // de chaque unités presentent sur la case pour le joueur courant (les cases sont cliquables)
-                ListBox listeUniteCase = new ListBox();
-
-                listeUniteCase.SelectionChanged += SelectUnite;
-
-                List<Unite> uniteCase = partie.selectionnerUnite(column, row);
-
-                List<InfoUnite> listeInfoUnite = new List<InfoUnite>();
-                foreach (Unite unite in uniteCase)
-                {
-                    InfoUnite infoUnite = new InfoUnite(unite);
-                    listeInfoUnite.Add(infoUnite);
-                }
-
-                listeUniteCase.ItemsSource = listeInfoUnite;
-                InfoUnites.Children.Add(listeUniteCase); 
-            }
-            else
-            {
-                // Affiche les unités du joueur adverse 
-                List<Unite> uniteCaseAdverse = partie.selectionnerUniteAdverse(column, row);
-                List<InfoUnite> listeInfoUniteAdverse = new List<InfoUnite>();
-                ListView listeUniteCaseAdverse = new ListView();
-                foreach (Unite unite in uniteCaseAdverse)
-                {
-                    InfoUnite infoUniteAdverse = new InfoUnite(unite);
-                    listeInfoUniteAdverse.Add(infoUniteAdverse);
-                }
-
-                listeUniteCaseAdverse.ItemsSource = listeInfoUniteAdverse;
-                InfoUnites.Children.Add(listeUniteCaseAdverse);
-            }
-
-        }
-
-        /// <summary>
-        /// Délégué : réponse à l'evt d'une touche enfoncée
-        /// </summary>
-        /// <param name="sender"> la grid</param>
-        /// <param name="args"> l'evt, la touche</param>
-        private void passerSonTour(object sender, KeyEventArgs e)
-        {
-            if (e.Key == Key.Space)
-            {
-                if (selected)
-                {
-                    MessageBox.Show("je suis dedans !!!");
-                    selectedUnit.PasseSonTour = true;
-                    InfoUnites.Children.Clear();
-                    listeUnite(selectedUnit.Position.Abscisse, selectedUnit.Position.Ordonnee);
-                }
-            }
-        }
-
-
-        /// <summary>
         /// Délégué : réponse à l'evt selection d'une unité
         /// </summary>
         /// <param name="sender"> le User Control de l'unité </param>
@@ -310,6 +254,8 @@ namespace Wpf_SmallWorld
             Grid.SetColumn(UniteSelectionnee, selectedUnit.Position.Abscisse);
             Grid.SetRow(UniteSelectionnee, selectedUnit.Position.Ordonnee);
             UniteSelectionnee.Visibility = System.Windows.Visibility.Visible;
+            CarteSuggestion.Children.Clear();
+            refreshSuggestion();
             selected = true;
         }
 
@@ -363,15 +309,15 @@ namespace Wpf_SmallWorld
                         break;
                 }
 
-
-                Unite.Children.Clear();
-                refreshUnite();
-
                 //regénération des éléments unités et joueurs pour mettre à jour
                 InfoUnites.Children.Clear();
                 listeUnite(positionInitiale.Abscisse, positionInitiale.Ordonnee);
                 InfoJoueurs.Children.Clear();
                 listejoueur();
+
+                Unite.Children.Clear();
+                refreshUnite();
+
 
                 // le joueur ne peut décider qu'une seule fois de la case de déplacement de l'unité
                 // selectionRectangleDeplacement.Visibility = System.Windows.Visibility.Hidden;
@@ -382,6 +328,7 @@ namespace Wpf_SmallWorld
             e.Handled = true;
         }
 
+        //////////////////////////////////////////////////////// RAFRAICHISSEMENT ////////////////////////////////////////////////////////
 
         /// <summary>
         /// Affichage de la liste des joueurs et de ses informations
@@ -396,6 +343,165 @@ namespace Wpf_SmallWorld
             }
         }
 
+        /// <summary>
+        /// Affichages des unités présentent sur la case selectionnée
+        /// </summary>
+        private void listeUnite(int column, int row)
+        {
+
+            if (partie.selectionnerUniteAdverse(column, row).Count() == 0)
+            {
+                // Liste des unités du joueur en cours présentes sur la case (on crée une listbox contenant les usercontrols (InfoUnite)
+                // de chaque unités presentent sur la case pour le joueur courant (les cases sont cliquables)
+                ListBox listeUniteCase = new ListBox();
+
+                listeUniteCase.SelectionChanged += SelectUnite;
+
+                List<Unite> uniteCase = partie.selectionnerUnite(column, row);
+
+                List<InfoUnite> listeInfoUnite = new List<InfoUnite>();
+                foreach (Unite unite in uniteCase)
+                {
+                    InfoUnite infoUnite = new InfoUnite(unite);
+                    listeInfoUnite.Add(infoUnite);
+                }
+
+                listeUniteCase.ItemsSource = listeInfoUnite;
+                InfoUnites.Children.Add(listeUniteCase);
+            }
+            else
+            {
+                // Affiche les unités du joueur adverse 
+                List<Unite> uniteCaseAdverse = partie.selectionnerUniteAdverse(column, row);
+                List<InfoUnite> listeInfoUniteAdverse = new List<InfoUnite>();
+                ListView listeUniteCaseAdverse = new ListView();
+                foreach (Unite unite in uniteCaseAdverse)
+                {
+                    InfoUnite infoUniteAdverse = new InfoUnite(unite);
+                    listeInfoUniteAdverse.Add(infoUniteAdverse);
+                }
+
+                listeUniteCaseAdverse.ItemsSource = listeInfoUniteAdverse;
+                InfoUnites.Children.Add(listeUniteCaseAdverse);
+            }
+
+        }
+
+        /// <summary>
+        /// Récupération de la position de l'unité , mise à jour de l'ellipse (physique) matérialisant l'unité
+        /// </summary>
+        unsafe private void refreshUnite()
+        {
+            foreach (Joueur joueur in partie.ListeJoueurs)
+            {
+                foreach (Unite unite in joueur.ListeUnite)
+                {
+                    int column = unite.Position.Abscisse;
+                    int row = unite.Position.Ordonnee;
+
+                    Rectangle rect = new Rectangle();
+                    RecColorUnite(joueur.PeupleJ, rect);
+                    Panel.SetZIndex(rect, 50);
+
+                    // mise à jour des attributs (column et Row) référencant la position dans la grille à rectangle
+                    Grid.SetColumn(rect, column);
+                    Grid.SetRow(rect, row);
+
+                    TextBlock test = new TextBlock();
+                    if (partie.selectionnerUnite(column, row).Count() == 0)
+                        test.Text = "" + partie.selectionnerUniteAdverse(column, row).Count();
+                    else
+                        test.Text = "" + partie.selectionnerUnite(column, row).Count();
+
+                    Panel.SetZIndex(test, 40);
+                    Grid.SetColumn(test, column);
+                    Grid.SetRow(test, row);
+
+                    // récuperation du type de la case 
+                    rect.Tag = partie.CartePartie.ListeCases[column][row] as Case;
+
+                    // Même évenements que les autres cases 
+                    rect.MouseLeftButtonDown += new MouseButtonEventHandler(rectangle_MouseLeftButtonDown);
+                    rect.MouseRightButtonDown += new MouseButtonEventHandler(rectangle_MouseRightButtonDown);
+
+                    Unite.Children.Add(rect);
+                    Unite.Children.Add(test);
+                }
+            }
+        }
+
+        /// <summary>
+        /// Affichage des suggestions des meilleurs cases et non disponibilité des cases 
+        /// </summary>
+        private void refreshSuggestion()
+        {
+            foreach (Coordonnees coordNonDispo in selectedUnit.suggererCaseNonPossible())
+            {
+                int columnNonDispo = coordNonDispo.Abscisse;
+                int rowNonDispo = coordNonDispo.Ordonnee;
+
+                Rectangle suggestionNonDispo = new Rectangle();
+                suggestionNonDispo.Fill = Brushes.White;
+                suggestionNonDispo.Opacity = 0.6;
+
+                // le blanchissement doit être au dessus de la carte et des unités
+                Panel.SetZIndex(suggestionNonDispo, 60);
+
+                // mise à jour des attributs (column et Row) référencant la position dans la grille à rectangle
+                Grid.SetColumn(suggestionNonDispo, columnNonDispo);
+                Grid.SetRow(suggestionNonDispo, rowNonDispo);
+
+                CarteSuggestion.Children.Add(suggestionNonDispo);
+            }
+
+            foreach (Coordonnees coordOptimale in selectedUnit.suggererCaseOptimale())
+            {
+                int column = coordOptimale.Abscisse;
+                int row = coordOptimale.Ordonnee;
+
+                Rectangle suggestionOptimale = new Rectangle();
+                suggestionOptimale.StrokeThickness = 3;
+                suggestionOptimale.Stroke = Brushes.Red;
+
+                // le blanchissement doit être au dessus de la carte et des unités
+                Panel.SetZIndex(suggestionOptimale, 60);
+
+                // mise à jour des attributs (column et Row) référencant la position dans la grille à rectangle
+                Grid.SetColumn(suggestionOptimale, column);
+                Grid.SetRow(suggestionOptimale, row);
+
+                // récuperation du type de la case 
+                suggestionOptimale.Tag = partie.CartePartie.ListeCases[column][row] as Case;
+
+                // Même évenements que les autres cases 
+                suggestionOptimale.MouseLeftButtonDown += new MouseButtonEventHandler(rectangle_MouseLeftButtonDown);
+                suggestionOptimale.MouseRightButtonDown += new MouseButtonEventHandler(rectangle_MouseRightButtonDown);
+
+                CarteSuggestion.Children.Add(suggestionOptimale);
+            }
+        }
+
+      
+        //////////////////////////////////////////////////////// Changement de joueur ////////////////////////////////////////////////////////
+        /// <summary>
+        /// Délégué : réponse à l'evt d'une touche enfoncée
+        /// </summary>
+        /// <param name="sender"> la grid</param>
+        /// <param name="args"> l'evt, la touche</param>
+        private void passerSonTour(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Space)
+            {
+                if (selected)
+                {
+                    MessageBox.Show("je suis dedans !!!");
+                    selectedUnit.PasseSonTour = true;
+                    InfoUnites.Children.Clear();
+                    listeUnite(selectedUnit.Position.Abscisse, selectedUnit.Position.Ordonnee);
+                }
+            }
+        }
+
 
         /// <summary>
         /// Délégué : réaction à l'evt : clic sur le bouton "Tour Suivant"
@@ -404,11 +510,16 @@ namespace Wpf_SmallWorld
         /// <param name="e"></param>
         private void TourSuivant(object sender, RoutedEventArgs e)
         {
+            InfoUnites.Children.Clear();
+            listeUnite(positionInitiale.Abscisse, positionInitiale.Ordonnee);
+
+            CarteSuggestion.Children.Clear();
             partie.changerJoueur();
 
             if (!partie.PartieFinie)
             {
                 NbTour.Text = "Nombre de tour restants :  " + partie.NbTourRestant;
+                Partie.Tag = partie;
                 //maj des données joueurs
                 InfoUnites.Children.Clear();
                 InfoJoueurs.Children.Clear();
@@ -452,48 +563,7 @@ namespace Wpf_SmallWorld
             }
         }
 
-        /// <summary>
-        /// Récupération de la position de l'unité , mise à jour de l'ellipse (physique) matérialisant l'unité
-        /// </summary>
-        unsafe private void refreshUnite()
-        {
-            foreach (Joueur joueur in partie.ListeJoueurs)
-            {
-                foreach (Unite unite in joueur.ListeUnite)
-                {
-                    int column = unite.Position.Abscisse;
-                    int row = unite.Position.Ordonnee;
 
-                    Rectangle rect = new Rectangle();
-                    RecColorUnite(joueur.PeupleJ, rect);
-                    Panel.SetZIndex(rect, 50);
-
-                    // mise à jour des attributs (column et Row) référencant la position dans la grille à rectangle
-                    Grid.SetColumn(rect, column);
-                    Grid.SetRow(rect, row);
-
-                    TextBlock test = new TextBlock();
-                    if (partie.selectionnerUnite(column, row).Count() == 0)
-                        test.Text = ""+partie.selectionnerUniteAdverse(column,row).Count();
-                    else
-                        test.Text = "" + partie.selectionnerUnite(column, row).Count();
-
-                    Panel.SetZIndex(test, 40);
-                    Grid.SetColumn(test, column);
-                    Grid.SetRow(test, row);
-
-                    // récuperation du type de la case 
-                    rect.Tag = partie.CartePartie.ListeCases[column][row] as Case;
-
-                    // Même évenements que les autres cases 
-                    rect.MouseLeftButtonDown += new MouseButtonEventHandler(rectangle_MouseLeftButtonDown);
-                    rect.MouseRightButtonDown += new MouseButtonEventHandler(rectangle_MouseRightButtonDown);
-
-                    Unite.Children.Add(rect);
-                    Unite.Children.Add(test);
-                }
-            }
-        }
 
 
         //Interaction du menu
@@ -504,6 +574,7 @@ namespace Wpf_SmallWorld
         private void Recharger(object sender, RoutedEventArgs e)
         {
             // TODO
+            MainWindow parent = (Application.Current.MainWindow as MainWindow);
         }
 
         /// <summary>
@@ -511,26 +582,26 @@ namespace Wpf_SmallWorld
         /// </summary>
         private void Sauvegarder(object sender, RoutedEventArgs e)
         {
-            testsauvegarder = partie.enregistrer();
-            if (!testsauvegarder)
+            //testsauvegarder = partie.enregistrer();
+            //if (!testsauvegarder)
+            //{
+            // Configuration de la boite de dialogue
+            Microsoft.Win32.SaveFileDialog dlg = new Microsoft.Win32.SaveFileDialog();
+            dlg.FileName = "Sauvegarde"; // Default file name
+            dlg.DefaultExt = ".sw"; // Default file extension
+            dlg.Filter = "Sauvegarde Small World (.sw)|*.smallWorld"; // Filter files by extension
+
+            // Show save file dialog box
+            Nullable<bool> result = dlg.ShowDialog();
+
+            // Process save file dialog box results
+            if (result == true)
             {
-                // Configuration de la boite de dialogue
-                Microsoft.Win32.SaveFileDialog dlg = new Microsoft.Win32.SaveFileDialog();
-                dlg.FileName = "Sauvegarde"; // Default file name
-                dlg.DefaultExt = ".sw"; // Default file extension
-                dlg.Filter = "Sauvegarde Small World (.sw)|*.smallWorld"; // Filter files by extension
-
-                // Show save file dialog box
-                Nullable<bool> result = dlg.ShowDialog();
-
-                // Process save file dialog box results
-                if (result == true)
-                {
-                    // Save document
-                    string filename = dlg.FileName;
-                    partie.enregistrerSous(filename);
-                }
+                // Save document
+                string filename = dlg.FileName;
+                partie.enregistrerSous(filename);
             }
+            //}
 
         }
 
