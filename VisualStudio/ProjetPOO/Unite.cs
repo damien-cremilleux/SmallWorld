@@ -413,12 +413,12 @@ namespace SmallWorld
          * 
          * @return void
          */
-        ~Unite()
-        {
-            wrapperAlgo.libererTab(TabCarte);
-            wrapperAlgo.libererTabDouble(TabCout);
-            wrapperAlgo.libererTab(TabDeplacement);
-        }
+        //~Unite()
+        //{
+        //    wrapperAlgo.libererTab(TabCarte);
+        //    wrapperAlgo.libererTabDouble(TabCout);
+        //    wrapperAlgo.libererTab(TabDeplacement);
+        //}
 
         /**
          * @fn calculPointVictoire()

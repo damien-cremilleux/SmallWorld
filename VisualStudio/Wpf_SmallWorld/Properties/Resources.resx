@@ -175,4 +175,22 @@
   <data name="PagePrincipale" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\PagePrincipale.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="PageCarte" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PageCarte.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PageInfoCarte" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PageInfoCarte.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PageInfoJoueur" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PageInfoJoueur.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PageJoueur" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PageJoueur.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PageSugg" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PageSugg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PageUnite" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PageUnite.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

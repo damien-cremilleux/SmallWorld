@@ -34,6 +34,11 @@ namespace Wpf_SmallWorld
             set { partie = value; }
         }
 
+        public CreateurPartie Createur
+        {
+            get { return createur; }
+        }
+
 
         public MainWindow()
         {

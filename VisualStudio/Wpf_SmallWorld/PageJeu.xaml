@@ -11,7 +11,7 @@
       FontSize="16"
       >
 
-    <Grid KeyDown="passerSonTour"  >
+    <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="30"/>
             <RowDefinition Height="auto"/>
@@ -82,7 +82,7 @@
         </ScrollViewer>
 
         <!--Information sur l'action que veut effectuer le joueur-->
-        <Grid Grid.Column="1" Grid.Row="3">
+        <Grid Grid.Column="2" Grid.Row="3">
             <Label Name="InfoAction" HorizontalAlignment="Center" VerticalAlignment="Top" Foreground="Red"/>
         </Grid>
             

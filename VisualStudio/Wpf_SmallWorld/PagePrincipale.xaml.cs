@@ -29,9 +29,9 @@ namespace Wpf_SmallWorld
         public PagePrincipale()
         {
             InitializeComponent();
-            createur = new CreateurPartie();
-            partie = new Partie();
             parent = (Application.Current.MainWindow as MainWindow);
+            createur = parent.Createur;
+            partie = parent.Partie;
         }
 
 
@@ -46,7 +46,6 @@ namespace Wpf_SmallWorld
         {
             parent.PageSelection.Visibility = Visibility.Collapsed;
 
-            //TODO
             // Configure open file dialog box
             Microsoft.Win32.OpenFileDialog dlg = new Microsoft.Win32.OpenFileDialog();
             dlg.FileName = "Sauvegarde"; // Default file name

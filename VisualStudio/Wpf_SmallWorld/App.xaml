@@ -7,8 +7,8 @@
 
     <Application.Resources>
 
+        <!-- Bouton radio pour le menu -->
         <Style x:Key="ButtonMenu" TargetType="RadioButton">
-            <!-- TODO Faire quelque chose de plus propre pour tous les background-->
             <Setter Property="Background" Value="#272A3D"/>
             <Setter Property="Foreground" Value="White"/>
             <Setter Property="FontSize" Value="20"/>
@@ -44,6 +44,7 @@
             </Setter>
         </Style>
 
+        <!-- Bouton pour acceder à la page suivante-->
         <Style x:Key="ButtonNext" TargetType="Button">
             <Setter Property="Foreground" Value="#272A3D"/>
             <Setter Property="FontSize" Value="20"/>
@@ -71,6 +72,7 @@
             </Setter>
         </Style>
 
+        <!-- Bouton pour retourner a la page précédente -->
         <Style x:Key="ButtonBack" TargetType="Button">
             <Setter Property="Foreground" Value="#272A3D"/>
             <Setter Property="FontSize" Value="20"/>
@@ -98,102 +100,7 @@
             </Setter>
         </Style>
 
-
-        <!-- RadioButton pour choix des peuples -->
-        <Style x:Key="RadioNains" TargetType="RadioButton">
-            <Setter Property="Background" Value="#272A3D"/>
-            <Setter Property="Foreground" Value="White" />
-            <Setter Property="Margin" Value="5,0,5,0" />
-
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="{x:Type RadioButton}">
-                        <Border Name="Button" Background="{TemplateBinding Background}">
-                            <DockPanel Width="100" Height="80">
-                                <Image DockPanel.Dock="Top" Source="Resources/smallWorld.png" Width="50" Height="30"/>
-                                <ContentPresenter Height="20" DockPanel.Dock="Bottom" VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
-                            </DockPanel>
-                        </Border>
-                        <ControlTemplate.Triggers>
-                            <Trigger Property="IsMouseOver" Value="true">
-                                <Setter Property="Background" Value="#DE2A2A"></Setter>
-                            </Trigger>
-
-                            <Trigger Property="IsChecked" Value="true">
-                                <Setter Property="Background" Value="#DE2A2A"></Setter>
-                            </Trigger>
-
-                        </ControlTemplate.Triggers>
-
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-        </Style>
-
-        <Style x:Key="RadioGaulois" TargetType="RadioButton">
-            <Setter Property="Background" Value="#272A3D"/>
-            <Setter Property="Foreground" Value="White" />
-            <Setter Property="Margin" Value="5,0,5,0" />
-
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="{x:Type RadioButton}">
-                        <Border Name="Button" Background="{TemplateBinding Background}">
-                            <DockPanel Width="100" Height="80">
-                                <Image DockPanel.Dock="Top" Source="Resources/smallWorld.png" Width="50" Height="30"/>
-
-                                <ContentPresenter Height="20" DockPanel.Dock="Bottom" VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
-                            </DockPanel>
-                        </Border>
-                        <ControlTemplate.Triggers>
-                            <Trigger Property="IsMouseOver" Value="true">
-                                <Setter Property="Background" Value="#DE2A2A"></Setter>
-                            </Trigger>
-
-                            <Trigger Property="IsChecked" Value="true">
-                                <Setter Property="Background" Value="#DE2A2A"></Setter>
-                            </Trigger>
-
-                        </ControlTemplate.Triggers>
-
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-        </Style>
-
-        <Style x:Key="RadioVikings" TargetType="RadioButton">
-            <Setter Property="Background" Value="#272A3D"/>
-            <Setter Property="Foreground" Value="White" />
-            <Setter Property="Margin" Value="5,0,5,0" />
-
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="{x:Type RadioButton}">
-                        <Border Name="Button" Background="{TemplateBinding Background}">
-                            <DockPanel Width="100" Height="80">
-                                <Image DockPanel.Dock="Top" Source="Resources/smallWorld.png" Width="50" Height="30"/>
-
-                                <ContentPresenter Height="20" DockPanel.Dock="Bottom" VerticalAlignment="Bottom" HorizontalAlignment="Center" />
-                            </DockPanel>
-                        </Border>
-                        <ControlTemplate.Triggers>
-                            <Trigger Property="IsMouseOver" Value="true">
-                                <Setter Property="Background" Value="#DE2A2A"></Setter>
-                            </Trigger>
-
-                            <Trigger Property="IsChecked" Value="true">
-                                <Setter Property="Background" Value="#DE2A2A"></Setter>
-                            </Trigger>
-
-                        </ControlTemplate.Triggers>
-
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-        </Style>
-
-
-        <!-- ne marche pas avec le tag, alors que le chemin est bien capté par le tag-->
+        <!-- Bouton radio pour le choix du peuple -->
         <Style x:Key="Radio" TargetType="RadioButton">
             <Setter Property="Background" Value="#272A3D"/>
             <Setter Property="Foreground" Value="White" />
@@ -205,7 +112,6 @@
                     <ControlTemplate TargetType="{x:Type RadioButton}">
                         <Border Name="Button" Background="{TemplateBinding Background}">
                             <DockPanel Width="100" Height="80">
-                                <!--<Image DockPanel.Dock="Top" Source="{Binding Tag}" Width="50" Height="30"/>-->
                                 <ContentPresenter Content="{TemplateBinding Content}" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                             </DockPanel>
                         </Border>
@@ -276,6 +182,7 @@
             <!-- visibilité par défaut = cachée -->
         </Style>
 
+        <!-- Style de la listBox -->
         <Style x:Key="{x:Type ListBox}" TargetType="ListBox">
             <Setter Property="Template">
                 <Setter.Value>
@@ -293,6 +200,7 @@
             </Setter>
         </Style>
 
+        <!-- Style de la listView -->
         <Style x:Key="{x:Type ListView}" TargetType="ListView">
             <Setter Property="Template">
                 <Setter.Value>

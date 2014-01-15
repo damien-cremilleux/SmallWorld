@@ -36,59 +36,40 @@
                     <Paragraph FontSize="14">
                         La carte est composée de cinq types de ressources : désert, eau, forêt, montagne et plaine. Les unités (à l'exception des vikings) ne peuvent pas se déplacer sur l'eau.
                     </Paragraph>
-                    <Table CellSpacing="5">
+                    <Paragraph>
+                        <InlineUIContainer>
+                            <Grid HorizontalAlignment="center">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="100"/>
+                                    <ColumnDefinition Width="100"/>
+                                    <ColumnDefinition Width="100"/>
+                                    <ColumnDefinition Width="100"/>
+                                    <ColumnDefinition Width="100"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
 
-                        <TableRowGroup>
-                            <TableRow>
-                                <TableCell>
-                                    <Paragraph>Désert</Paragraph>
-                                </TableCell>
-                                <TableCell>
-                                    <Paragraph>Eau</Paragraph>
-                                </TableCell>
-                                <TableCell>
-                                    <Paragraph>Forêt</Paragraph>
-                                </TableCell>
-                                <TableCell>
-                                    <Paragraph>Montagne</Paragraph>
-                                </TableCell>
-                                <TableCell>
-                                    <Paragraph>Plaine</Paragraph>
-                                </TableCell>
-                            </TableRow>
-                        </TableRowGroup>
+                                <TextBlock Grid.Column="0" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center">Désert</TextBlock>
+                                <Image Grid.Column="0" Grid.Row="1" Width="50" Height="50" Source="/Resources/desert.png" HorizontalAlignment="Center" VerticalAlignment="Center"/>
 
-                        <TableRowGroup>
-                            <TableRow>
-                                <TableCell>
-                                    <Paragraph>
-                                        <Image Width="50" Height="50" Source="/Resources/desert.png"/>
-                                    </Paragraph>
-                                </TableCell>
-                                <TableCell>
-                                    <Paragraph>
-                                        <Image Width="50" Height="50" Source="/Resources/water.png"/>
-                                    </Paragraph>
-                                </TableCell>
-                                <TableCell>
-                                    <Paragraph>
-                                        <Image Width="50" Height="50" Source="/Resources/forest.png"/>
-                                    </Paragraph>
-                                </TableCell>
-                                <TableCell>
-                                    <Paragraph>
-                                        <Image Width="50" Height="50" Source="/Resources/mountain.png"/>
-                                    </Paragraph>
-                                </TableCell>
-                                <TableCell>
-                                    <Paragraph>
-                                        <Image Width="50" Height="50" Source="/Resources/plaine.png"/>
-                                    </Paragraph>
-                                </TableCell>
-                            </TableRow>
-                        </TableRowGroup>
-                    </Table>
+                                <TextBlock Grid.Column="1" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center">Eau</TextBlock>
+                                <Image Grid.Column="1" Grid.Row="1" Width="50" Height="50" Source="/Resources/water.png" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+                                <TextBlock Grid.Column="2" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center">Forêt</TextBlock>
+                                <Image Grid.Column="2" Grid.Row="1" Width="50" Height="50" Source="/Resources/forest.png" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+                                <TextBlock Grid.Column="3" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center">Montagne</TextBlock>
+                                <Image Grid.Column="3" Grid.Row="1" Width="50" Height="50" Source="/Resources/mountain.png" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+                                <TextBlock Grid.Column="4" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center">Plaine</TextBlock>
+                                <Image Grid.Column="4" Grid.Row="1" Width="50" Height="50" Source="/Resources/plaine.png" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Grid>
+                        </InlineUIContainer>
+                    </Paragraph>
                 </Section>
+
 
                 <Section>
                     <Paragraph FontSize="18">
@@ -98,70 +79,53 @@
                         Il existe trois peuples, Gaulois, Viking et Nain, ayant des caractéristiques très différentes influant sur les stratégies de jeu :
                     </Paragraph>
 
-                    <Table CellSpacing="5">
-                        <TableRowGroup>
-                            <TableRow>
-                                <TableCell >
-                                    <Paragraph>Gaulois</Paragraph>
-                                </TableCell>
-                                <TableCell>
-                                    <Paragraph>
-                                        <Image Width="100" Height="100"  Source="/Resources/Gaulois.png"/>
-                                    </Paragraph>
-                                </TableCell>
-                                <TableCell>
-                                    <Paragraph  FontSize="12">
-                                        Le coût de déplacement sur une case Plaine est divisé par deux.
+                    <Paragraph>
+                        <InlineUIContainer>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="100"/>
+                                    <ColumnDefinition Width="120"/>
+                                    <ColumnDefinition />
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+
+
+                                <TextBlock Grid.Column="0" Grid.Row="0" HorizontalAlignment="center" VerticalAlignment="Center">Gaulois</TextBlock>
+                                <TextBlock Grid.Column="1" Grid.Row="0" HorizontalAlignment="center" VerticalAlignment="Center"> <Image Width="100" Height="100"  Source="/Resources/Gaulois.png"/></TextBlock>
+                                <TextBlock Grid.Column="2" Grid.Row="0" FontSize="12" TextWrapping="Wrap" HorizontalAlignment="center" VerticalAlignment="Center">   Le coût de déplacement sur une case Plaine est divisé par deux.
 
 Une unité Gauloise fournit 1 point de plus lorsqu’elle occupe une case du type plaine.
 
 Une unité Gauloise n’acquière aucun point sur les cases de type montagne.
-                                    </Paragraph>
-                                </TableCell>
-                            </TableRow>
+                                </TextBlock>
 
-                            <TableRow>
-                                <TableCell>
-                                    <Paragraph>Nain</Paragraph>
-                                </TableCell>
-                                <TableCell>
-                                    <Paragraph>
-                                        <Image Width="100" Height="100"  Source="/Resources/dwarf.png"/>
-                                    </Paragraph>
-                                </TableCell>
-                                <TableCell>
-                                    <Paragraph  FontSize="12">
-                                        Lorsqu’elle se trouve sur une case montagne, une unité Nain a la capacité de se déplacer sur n’importe quelle case montage de la carte à condition qu’elle ne soit pas occupée par une unité adverse.
+
+                                <TextBlock Grid.Column="0" Grid.Row="1" HorizontalAlignment="center" VerticalAlignment="Center">Nain</TextBlock>
+                                <TextBlock Grid.Column="1" Grid.Row="1" HorizontalAlignment="center" VerticalAlignment="Center">  <Image Width="100" Height="100"  Source="/Resources/dwarf.png"/></TextBlock>
+                                <TextBlock Grid.Column="2" Grid.Row="1" FontSize="12"  TextWrapping="Wrap" HorizontalAlignment="center" VerticalAlignment="Center">  
+                                     Lorsqu’elle se trouve sur une case montagne, une unité Nain a la capacité de se déplacer sur n’importe quelle case montage de la carte à condition qu’elle ne soit pas occupée par une unité adverse.
 
 Une unité Nain fournit 1 point de plus lorsqu’elle occupe une case forêt.
 
 Une unité Nain n’acquière aucun point sur les cases de type plaine.
-                                    </Paragraph>
-                                </TableCell>
-                            </TableRow>
+                                </TextBlock>
 
-                            <TableRow>
-                                <TableCell>
-                                    <Paragraph>Viking</Paragraph>
-                                </TableCell>
-                                <TableCell>
-                                    <Paragraph>
-                                        <Image Width="100" Height="100" Source="/Resources/viking.png"/>
-                                    </Paragraph>
-                                </TableCell>
-                                <TableCell>
-                                    <Paragraph FontSize="12">
-                                        L’unité Viking a la capacité de se déplacer sur l’eau.
+                                <TextBlock Grid.Column="0" Grid.Row="3" HorizontalAlignment="center" VerticalAlignment="Center">Viking</TextBlock>
+                                <TextBlock Grid.Column="1" Grid.Row="3" HorizontalAlignment="center" VerticalAlignment="Center"><Image Width="100" Height="100" Source="/Resources/viking.png"/></TextBlock>
+                                <TextBlock Grid.Column="2" Grid.Row="3" FontSize="12"  TextWrapping="Wrap" HorizontalAlignment="center" VerticalAlignment="Center">  
+                                     L’unité Viking a la capacité de se déplacer sur l’eau.
 
 L’occupation d’une case eau ne rapporte cependant aucun point.
 
 Une unité Viking fournit 1 point de plus lorsqu’elle occupe une case au bord de l’eau. Une unité Viking n’acquière aucun point sur les cases de type désert.
-                                    </Paragraph>
-                                </TableCell>
-                            </TableRow>
-
-                        </TableRowGroup>
-                    </Table>
+                                </TextBlock>
+                            </Grid>
+                        </InlineUIContainer>
+                    </Paragraph>
 
                 </Section>
 
@@ -184,9 +148,97 @@ Une unité Viking fournit 1 point de plus lorsqu’elle occupe une case au bord 
                     </Paragraph>
                     <Paragraph FontSize="14">
                         C'est ici que l'on peut démarrer une nouvelle partie ! Il suffit de sélectionner l'option « Nouvelle partie ». Depuis ce menu, il est également possible de charger une partie préalablement sauvegardée. Si vous êtes perdus, le bouton aide est là pour vous.
-                        <Image Height="100" Width="100" Source="/Resources/PagePrincipale.png"/>
+                    </Paragraph>
+                    <Paragraph>
+                        <Image Width="400" Height="400" Source="/Resources/PagePrincipale.png"/>
                     </Paragraph>
                 </Section>
+
+                <Section>
+                    <Paragraph FontSize="18">
+                        Nouvelle partie
+                    </Paragraph>
+                    <Paragraph FontSize="14">
+                        Lorsque vous créez une nouvelle partie, les joueurs devront tour à tour choisir leurs noms et leurs peuples, comme sur la capture d'écran ci dessus où  Damien avec les vikings affrontent les nains emmenés par Lauriane. Les peuples disposent de caractéristiques particulières (cf règles), choisissez les avec soin !
+                    </Paragraph>
+                    <Paragraph>
+                        <Image Width="400" Height="400" Source="/Resources/PageInfoJoueur.png"/>
+                    </Paragraph>
+                    <Paragraph>
+                        Enfin, il faudra choisir la taille de la carte avant de commencer. Plus la taille de la carte est élevée, plus le nombre de tour à jouer sera grand. Sur l'exemple ci-dessus, Damien et Lauriane ont décidé de jouer sur une carte petite.
+                    </Paragraph>
+                    <Paragraph>
+                        <Image Width="400" Height="400" Source="/Resources/PageInfoCarte.png"/>
+                    </Paragraph>
+                </Section>
+
+                <Section>
+                    <Paragraph FontSize="18">
+                        Interface de jeu
+                    </Paragraph>
+
+                    <Paragraph>
+                        <InlineUIContainer>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+
+                                <Image Grid.Row="0" Grid.Column="0" Width="200" Height="200" Source="/Resources/PageJoueur.png"/>
+
+                                <TextBlock FontSize="14" Grid.Column="1" Grid.Row="0" TextWrapping="Wrap">L'interface se compose autour d'un plateau de jeux. Les caractéristiques des différents joueurs sont indiqués à gauche. Le nombre de point de victoire et le nombre d'unité sont indiqués. Le joueur dont c'est le tour apparaît en surbrillance. C'est donc à Damien de jouer !
+                                </TextBlock>
+
+
+                                <Image Grid.Column="0" Grid.Row="1" Width="240" Height="240" Source="/Resources/PageUnite.png"/>
+
+                                <TextBlock Grid.Row="1" FontSize="14" Grid.Column="1" TextWrapping="Wrap">En cliquant sur une case du plateau de jeu, les unités positionnées sur cette case sont visibles à droite de l'interface.</TextBlock>
+                            </Grid>
+                        </InlineUIContainer>
+                    </Paragraph>
+                </Section>
+
+
+                <Section>
+                    <Paragraph FontSize="18">
+                        Se déplacer
+                    </Paragraph>
+                  
+                    <Paragraph>
+                        <InlineUIContainer>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+
+                                <Image Grid.Row="0" Grid.Column="0" Width="200" Height="200" Source="/Resources/PageCarte.png"/>
+
+                                <TextBlock FontSize="14" Grid.Column="1" Grid.Row="0" TextWrapping="Wrap">Sur la carte, les déplacements possibles d'une unité sélectionnée sont mis en surbrillance. Les vikings pouvant aller sur l'eau, les 4 cases autour sont possibles.
+                                </TextBlock>
+
+                                <Image Grid.Column="0" Grid.Row="1" Width="200" Height="200" Source="/Resources/PageSugg.png"/>
+
+                                <TextBlock Grid.Row="1" FontSize="14" Grid.Column="1" TextWrapping="Wrap">  On décide donc de déplacer une unité sur la plaine à droite. Pour cela, une fois l'unité sélectionnée, un clic droit sur la case désirée permet de demander le déplacement. Une unité sélectionnée est encadrée d'un cadre bleue.
+Si un déplacement permet de gagner plus de points, la case destination est encadrée en orange. Sur l'image ci dessous, l'unité naine permet de gagner plus de points si elle se déplace sur la forêt située au dessus d'elle.
+                                </TextBlock>
+                            </Grid>
+                        </InlineUIContainer>
+                    </Paragraph>
+                    
+                    
+                </Section>
+
+
 
             </FlowDocument>
         </FlowDocumentPageViewer>

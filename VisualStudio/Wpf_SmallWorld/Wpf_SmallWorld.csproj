@@ -121,9 +121,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="ReglesJeu1.xaml.cs">
-      <DependentUpon>ReglesJeu1.xaml</DependentUpon>
-    </Compile>
     <Compile Include="ReglesJeu2.xaml.cs">
       <DependentUpon>ReglesJeu2.xaml</DependentUpon>
     </Compile>
@@ -156,10 +153,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="PagePrincipale.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="ReglesJeu1.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -328,11 +321,28 @@
     <Resource Include="Resources\plaine.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\PagePrincipale.png" />
+    <Resource Include="Resources\PagePrincipale.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Resources\PageInfoJoueur.png" />
+  </ItemGroup>
   <ItemGroup>
     <Resource Include="smallworld.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\PageInfoCarte.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\PageJoueur.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\PageUnite.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\PageCarte.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\PageSugg.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
