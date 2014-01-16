@@ -84,7 +84,7 @@
 
         <!--Information sur l'action que veut effectuer le joueur-->
         <Grid Grid.Column="2" Grid.Row="3">
-            <Label Name="InfoAction" HorizontalAlignment="Center" VerticalAlignment="Top" Foreground="Red" FontSize="30"/>
+            <Label Name="InfoAction" HorizontalAlignment="Center" VerticalAlignment="Top" Foreground="Red" FontSize="18"/>
         </Grid>
             
 
